@@ -1,0 +1,95 @@
+d:\Documents\Visual Studio 2015\Projects\GBA Map Editor\GBA Map Editor\obj\Debug\PGMEWindowsUI.csprojResolveAssemblyReference.cache
+d:\Documents\Visual Studio 2015\Projects\GBA Map Editor\GBA Map Editor\obj\Debug\PGMEWindowsUI.Properties.Resources.resources
+d:\Documents\Visual Studio 2015\Projects\GBA Map Editor\GBA Map Editor\obj\Debug\PGMEWindowsUI.csproj.GenerateResource.Cache
+d:\Documents\Visual Studio 2015\Projects\GBA Map Editor\GBA Map Editor\obj\Debug\GBA Map Editor.exe
+d:\Documents\Visual Studio 2015\Projects\GBA Map Editor\GBA Map Editor\obj\Debug\GBA Map Editor.pdb
+d:\Documents\Visual Studio 2015\Projects\GBA Map Editor\GBA Map Editor\bin\Debug\GBA Map Editor.exe.config
+d:\Documents\Visual Studio 2015\Projects\GBA Map Editor\GBA Map Editor\bin\Debug\GBA Map Editor.exe
+d:\Documents\Visual Studio 2015\Projects\GBA Map Editor\GBA Map Editor\bin\Debug\GBA Map Editor.pdb
+d:\Documents\Visual Studio 2015\Projects\GBA Map Editor\GBA Map Editor\bin\Debug\es\GBA Map Editor.resources.dll
+d:\Documents\Visual Studio 2015\Projects\GBA Map Editor\GBA Map Editor\obj\Debug\PGMEWindowsUI.MainWindow.resources
+d:\Documents\Visual Studio 2015\Projects\GBA Map Editor\GBA Map Editor\obj\Debug\PGMEWindowsUI.MainWindow.es.resources
+d:\Documents\Visual Studio 2015\Projects\GBA Map Editor\GBA Map Editor\obj\Debug\es\GBA Map Editor.resources.dll
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\GBA Map Editor\bin\Debug\PGMEBackend.exe
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\GBA Map Editor\bin\Debug\YamlDotNet.dll
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\GBA Map Editor\bin\Debug\PGMEBackend.pdb
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\GBA Map Editor\bin\Debug\YamlDotNet.pdb
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\GBA Map Editor\bin\Debug\YamlDotNet.xml
+d:\Documents\Visual Studio 2015\Projects\GBA Map Editor\GBA Map Editor\bin\Debug\AME.yaml
+d:\Documents\Visual Studio 2015\Projects\GBA Map Editor\GBA Map Editor\bin\Debug\GBA.dll
+d:\Documents\Visual Studio 2015\Projects\GBA Map Editor\GBA Map Editor\bin\Debug\ROMhacking.dll
+d:\Documents\Visual Studio 2015\Projects\GBA Map Editor\GBA Map Editor\bin\Debug\Nintenlord.dll
+d:\Documents\Visual Studio 2015\Projects\GBA Map Editor\GBA Map Editor\bin\Debug\Nintenlord.Forms.dll
+d:\Documents\Visual Studio 2015\Projects\GBA Map Editor\GBA Map Editor\bin\Debug\GBA.pdb
+d:\Documents\Visual Studio 2015\Projects\GBA Map Editor\GBA Map Editor\bin\Debug\ROMhacking.pdb
+d:\Documents\Visual Studio 2015\Projects\GBA Map Editor\GBA Map Editor\bin\Debug\Nintenlord.pdb
+d:\Documents\Visual Studio 2015\Projects\GBA Map Editor\GBA Map Editor\bin\Debug\Nintenlord.Forms.pdb
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\PGMEWindowsUI\bin\Debug\GBA Map Editor.exe.config
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\PGMEWindowsUI\obj\Debug\GBA Map Editor.exe
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\PGMEWindowsUI\obj\Debug\GBA Map Editor.pdb
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\PGMEWindowsUI\obj\Debug\PGMEWindowsUI.csprojResolveAssemblyReference.cache
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\PGMEWindowsUI\obj\Debug\PGMEWindowsUI.MainWindow.resources
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\PGMEWindowsUI\obj\Debug\PGMEWindowsUI.Properties.Resources.resources
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\PGMEWindowsUI\obj\Debug\PGMEWindowsUI.MainWindow.es.resources
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\PGMEWindowsUI\obj\Debug\PGMEWindowsUI.csproj.GenerateResource.Cache
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\PGMEWindowsUI\bin\Debug\GBA Map Editor.exe
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\PGMEWindowsUI\bin\Debug\GBA Map Editor.pdb
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\PGMEWindowsUI\bin\Debug\es\GBA Map Editor.resources.dll
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\PGMEWindowsUI\bin\Debug\GBA.dll
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\PGMEWindowsUI\bin\Debug\ROMhacking.dll
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\PGMEWindowsUI\bin\Debug\YamlDotNet.dll
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\PGMEWindowsUI\bin\Debug\Nintenlord.dll
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\PGMEWindowsUI\bin\Debug\Nintenlord.Forms.dll
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\PGMEWindowsUI\bin\Debug\PGMEBackend.pdb
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\PGMEWindowsUI\bin\Debug\GBA.pdb
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\PGMEWindowsUI\bin\Debug\ROMhacking.pdb
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\PGMEWindowsUI\bin\Debug\YamlDotNet.pdb
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\PGMEWindowsUI\bin\Debug\YamlDotNet.xml
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\PGMEWindowsUI\bin\Debug\Nintenlord.pdb
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\PGMEWindowsUI\bin\Debug\Nintenlord.Forms.pdb
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\PGMEWindowsUI\obj\Debug\es\GBA Map Editor.resources.dll
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\PGMEWindowsUI\bin\Debug\PGMEBackend.dll
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\PGMEWindowsUI\obj\Debug\PGMEWindowsUI.AboutForm.resources
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\PGMEWindowsUI\bin\Debug\Be.Windows.Forms.HexBox.dll
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\PGMEWindowsUI\bin\Debug\OpenTK.dll.config
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\PGMEWindowsUI\bin\Debug\OpenTK.dll
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\PGMEWindowsUI\bin\Debug\OpenTK.GLControl.dll
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\PGMEWindowsUI\bin\Debug\OpenTK.pdb
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\PGMEWindowsUI\bin\Debug\OpenTK.xml
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor\PGMEWindowsUI\bin\Debug\OpenTK.GLControl.xml
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEWindowsUI\bin\Debug\GBA Map Editor.exe.config
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEWindowsUI\obj\Debug\GBA Map Editor.exe
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEWindowsUI\obj\Debug\GBA Map Editor.pdb
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEWindowsUI\obj\Debug\PGMEWindowsUI.csprojResolveAssemblyReference.cache
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEWindowsUI\obj\Debug\PGMEWindowsUI.AboutForm.resources
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEWindowsUI\obj\Debug\PGMEWindowsUI.MainWindow.resources
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEWindowsUI\obj\Debug\PGMEWindowsUI.Properties.Resources.resources
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEWindowsUI\obj\Debug\PGMEWindowsUI.MainWindow.es.resources
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEWindowsUI\obj\Debug\PGMEWindowsUI.csproj.GenerateResource.Cache
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEWindowsUI\bin\Debug\OpenTK.dll.config
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEWindowsUI\bin\Debug\GBA Map Editor.exe
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEWindowsUI\bin\Debug\GBA Map Editor.pdb
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEWindowsUI\bin\Debug\es\GBA Map Editor.resources.dll
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEWindowsUI\bin\Debug\Be.Windows.Forms.HexBox.dll
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEWindowsUI\bin\Debug\GBA.dll
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEWindowsUI\bin\Debug\OpenTK.dll
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEWindowsUI\bin\Debug\OpenTK.GLControl.dll
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEWindowsUI\bin\Debug\PGMEBackend.dll
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEWindowsUI\bin\Debug\ROMhacking.dll
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEWindowsUI\bin\Debug\YamlDotNet.dll
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEWindowsUI\bin\Debug\Nintenlord.dll
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEWindowsUI\bin\Debug\Nintenlord.Forms.dll
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEWindowsUI\bin\Debug\PGMEBackend.pdb
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEWindowsUI\bin\Debug\GBA.pdb
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEWindowsUI\bin\Debug\OpenTK.pdb
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEWindowsUI\bin\Debug\OpenTK.xml
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEWindowsUI\bin\Debug\OpenTK.GLControl.xml
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEWindowsUI\bin\Debug\ROMhacking.pdb
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEWindowsUI\bin\Debug\YamlDotNet.pdb
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEWindowsUI\bin\Debug\YamlDotNet.xml
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEWindowsUI\bin\Debug\Nintenlord.pdb
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEWindowsUI\bin\Debug\Nintenlord.Forms.pdb
+D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEWindowsUI\obj\Debug\es\GBA Map Editor.resources.dll
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEWindowsUI\bin\Debug\GBA Map Editor.exe.config
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEWindowsUI\obj\Debug\GBA Map Editor.exe
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEWindowsUI\obj\Debug\GBA Map Editor.pdb

@@ -1,0 +1,118 @@
+﻿---
+# Supported Games
+Games:
+    AXVE: &AXVE
+        RomCode:          AXVE
+
+    BPRE: &BPRE
+        RomCode:          BPRE
+        RomType:          FRLG
+        Name:             Pokémon FireRed (E)
+        Language:         English
+
+        PokemonCount:     412
+        PokemonNames:     0x144
+        PokemonPics:      0x2350AC
+        PokemonPals:      0x23730C
+        PokemonPicCount:  440
+
+        ItemNames:        0x3DB028
+
+    #    AttackNames:      0x247092
+    #    AttackTable:      0x25D7B4
+    #    AttackNameList:   0x2470A1
+
+    #    TrainerData:      0x23EAF0
+    #    TrainerClasses:   0x23E558
+    #    TrainerPics:      0x23957C
+    #    TrainerPals:      0x239A1C
+    #    TrainerPicCount:  147
+
+        MapBanks:         0x5524C
+        MapLayouts:       0x55194
+        MapLayoutCount:   0x17F
+        MapNames:         0xC0C94
+        MapNameCount:     0xC4D8A
+        MapNameTotal:     0xC0BE6
+
+    # This should be in the ROM but it's not and that makes me sad :(
+        MapBankCount:     0x2B
+        MapBankSizes:      [5,123,60,66,4,6,8,10,6,8,20,10,8,2,10,4,2,2,2,1,1,2,2,3,2,3,2,1,1,1,1,7,5,5,8,8,5,5,1,1,1,2,1]
+
+    #    WorldMap:         kantomap.bmp
+        WildPokemon:      0x82990
+
+    # Use better names for these
+        SpriteBase:       0x39FDB0
+        SpriteColors:     0x3A5158
+        SpriteNormalSet:  0x3A379C
+        SpriteSmallSet:   0x3A3748
+        SpriteLargeSet:   0x3A37F0
+        NumSprites:       153
+
+        MainTSPalCount:   8
+        MainTSBlocks:     0x280
+        LocalTSBlocks:    0x56
+        MainTSSize:       0x280
+        LocalTSSize:      0x140
+    #    MainTSHeight:     0x140
+    #    LocalTSHeight:    0xC0
+
+        WorldMapCount:    4
+        WorldMapGFX:      [0xC0330,0xC0330,0xC0330,0xC0330]        #Offsets of pointers
+        WorldMapTileMap:  [0xC035C,0xC0370,0xC0388,0xC03A4]
+        WorldMapPal:      [0xC2D10,0xC2D10,0xC2D10,0xC2D10]
+    # Necessary?
+    #    WorldMapPalSize:  [0x80,0x80,0x80,0x80]
+    #    WorldMapSlot:     [0x0,0x0,0x0,0x0]
+
+    # This is definitely wrong
+        FreespaceStart:   0x71A23C
+        FreespaceByte:    0xFF
+
+    BPEE: &BPEE
+        RomCode:          BPEE
+        RomType:          E
+        Name:             Pokémon Emerald (E)
+        Language:         English
+
+        PokemonCount:     412
+        PokemonNames:     0x144
+        PokemonPics:      0x30A194
+        PokemonPals:      0x303680
+        PokemonPicCount:  440
+
+    #    TrainerPicCount:  93
+    #    TrainerPics:      0x305654
+    #    TrainerPals:      0x30593C
+
+        MapBanks:         0x84AA4
+        MapLayouts:       0x849CC
+        MapLayoutCount:   0x1B9
+        MapNames:         0x123B44
+        MapNameTotal:     0x124584
+        MapBankCount:     0x22
+        MapBankSizes:     [57,5,5,6,7,8,9,7,7,14,8,17,10,23,13,15,15,2,2,2,3,1,1,1,108,61,89,2,1,13,1,1,2,1]
+
+    #    WorldMap:         hoennmap.bmp
+        WildPokemon:      0xB4D48
+
+    # Use better names for these
+        SpriteBase:       0x4975D8
+        SpriteColors:     0x50BBC8
+        SpriteNormalSet:  0x509580
+        SpriteSmallSet:   0x50952C
+        SpriteLargeSet:   0x5095D4
+        NumSprites:       244
+
+        MainTSPalCount:   7
+        MainTSBlocks:     0x200
+        LocalTSBlocks:    0xFE
+        MainTSSize:       0x280
+        LocalTSSize:      0x140
+    #    MainTSHeight:     0x140
+    #    LocalTSHeight:    0xC0
+
+        FreespaceStart:   0x9C0B20
+        FreespaceByte:    0x0
+...

@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BehaviorByteBlockedDown" xml:space="preserve">
+    <value>Blocked downwards</value>
+  </data>
+  <data name="BehaviorByteBlockedLeft" xml:space="preserve">
+    <value>Blocked leftwards</value>
+  </data>
+  <data name="BehaviorByteBlockedRight" xml:space="preserve">
+    <value>Blocked rightwards</value>
+  </data>
+  <data name="BehaviorByteBlockedUp" xml:space="preserve">
+    <value>Blocked upwards</value>
+  </data>
+  <data name="BehaviorByteBlueprints" xml:space="preserve">
+    <value>Blueprints script</value>
+  </data>
+  <data name="BehaviorByteBookshelf" xml:space="preserve">
+    <value>Bookshelf script</value>
+  </data>
+  <data name="BehaviorByteCoffee" xml:space="preserve">
+    <value>Coffee cup near computer script</value>
+  </data>
+  <data name="BehaviorByteComputer" xml:space="preserve">
+    <value>Non-usable computer script</value>
+  </data>
+  <data name="BehaviorByteCrackedIce" xml:space="preserve">
+    <value>Cracked ice</value>
+  </data>
+  <data name="BehaviorByteCutePoster" xml:space="preserve">
+    <value>Poster script</value>
+  </data>
+  <data name="BehaviorByteCycle" xml:space="preserve">
+    <value>Ride bike down (Cycling Road)</value>
+  </data>
+  <data name="BehaviorByteDishCabinet" xml:space="preserve">
+    <value>Dish cabinet script</value>
+  </data>
+  <data name="BehaviorByteDresser" xml:space="preserve">
+    <value>Dresser script</value>
+  </data>
+  <data name="BehaviorByteFastCurrent" xml:space="preserve">
+    <value>Fast moving current script</value>
+  </data>
+  <data name="BehaviorByteFootprints" xml:space="preserve">
+    <value>Footprints</value>
+  </data>
+  <data name="BehaviorByteFragileIce" xml:space="preserve">
+    <value>Fragile ice</value>
+  </data>
+  <data name="BehaviorByteGrassAnim" xml:space="preserve">
+    <value>Tall grass animation</value>
+  </data>
+  <data name="BehaviorByteHalfUnderwater" xml:space="preserve">
+    <value>Halfway underwater</value>
+  </data>
+  <data name="BehaviorByteIceSliding" xml:space="preserve">
+    <value>Ice sliding</value>
+  </data>
+  <data name="BehaviorByteIndigo1" xml:space="preserve">
+    <value>Indigo Plateau (ultimate goal)</value>
+  </data>
+  <data name="BehaviorByteIndigo2" xml:space="preserve">
+    <value>Indigo Plateau (highest authority)</value>
+  </data>
+  <data name="BehaviorByteJumpDown" xml:space="preserve">
+    <value>Jump down over block</value>
+  </data>
+  <data name="BehaviorByteJumpLeft" xml:space="preserve">
+    <value>Jump left over block</value>
+  </data>
+  <data name="BehaviorByteJumpRight" xml:space="preserve">
+    <value>Jump right over block</value>
+  </data>
+  <data name="BehaviorByteJumpUp" xml:space="preserve">
+    <value>Jump up over block</value>
+  </data>
+  <data name="BehaviorByteLights" xml:space="preserve">
+    <value>Blinkenlights script</value>
+  </data>
+  <data name="BehaviorByteMachinery" xml:space="preserve">
+    <value>Machinery script</value>
+  </data>
+  <data name="BehaviorByteNone" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="BehaviorBytePC" xml:space="preserve">
+    <value>PC script</value>
+  </data>
+  <data name="BehaviorBytePkmnCenter" xml:space="preserve">
+    <value>Pokémon Center sign script</value>
+  </data>
+  <data name="BehaviorBytePkmnMart" xml:space="preserve">
+    <value>Pokémon Mart sign script</value>
+  </data>
+  <data name="BehaviorByteRefrigerator" xml:space="preserve">
+    <value>Refrigerator script</value>
+  </data>
+  <data name="BehaviorByteSignpost" xml:space="preserve">
+    <value>Signpost (sign without A)</value>
+  </data>
+  <data name="BehaviorByteSink" xml:space="preserve">
+    <value>Sink script</value>
+  </data>
+  <data name="BehaviorByteSpinDown" xml:space="preserve">
+    <value>Spin pad down</value>
+  </data>
+  <data name="BehaviorByteSpinLeft" xml:space="preserve">
+    <value>Spin pad left</value>
+  </data>
+  <data name="BehaviorByteSpinRight" xml:space="preserve">
+    <value>Spin pad right</value>
+  </data>
+  <data name="BehaviorByteSpinUp" xml:space="preserve">
+    <value>Spin pad up</value>
+  </data>
+  <data name="BehaviorByteStopSpinning" xml:space="preserve">
+    <value>Stop spinning</value>
+  </data>
+  <data name="BehaviorByteTV" xml:space="preserve">
+    <value>TV script</value>
+  </data>
+  <data name="BehaviorByteVase" xml:space="preserve">
+    <value>Vase script</value>
+  </data>
+  <data name="BehaviorByteWarpArrowDown" xml:space="preserve">
+    <value>Warp, arrow down</value>
+  </data>
+  <data name="BehaviorByteWarpArrowLeft" xml:space="preserve">
+    <value>Warp, arrow left</value>
+  </data>
+  <data name="BehaviorByteWarpArrowRight" xml:space="preserve">
+    <value>Warp, arrow right</value>
+  </data>
+  <data name="BehaviorByteWarpArrowUp" xml:space="preserve">
+    <value>Warp, arrow up</value>
+  </data>
+  <data name="BehaviorByteWarpCave" xml:space="preserve">
+    <value>Warp, cave entrance</value>
+  </data>
+  <data name="BehaviorByteWarpDoor" xml:space="preserve">
+    <value>Warp, door animation</value>
+  </data>
+  <data name="BehaviorByteWarpEscalatorDown" xml:space="preserve">
+    <value>Warp, escalator down</value>
+  </data>
+  <data name="BehaviorByteWarpEscalatorUp" xml:space="preserve">
+    <value>Warp, escalator up</value>
+  </data>
+  <data name="BehaviorByteWarpHole" xml:space="preserve">
+    <value>Warp, falling in hole</value>
+  </data>
+  <data name="BehaviorByteWarpLadder" xml:space="preserve">
+    <value>Warp, ladder</value>
+  </data>
+  <data name="BehaviorByteWarpStairsDownLeft" xml:space="preserve">
+    <value>Warp, stairs down + left</value>
+  </data>
+  <data name="BehaviorByteWarpStairsDownRight" xml:space="preserve">
+    <value>Warp, stairs down + right</value>
+  </data>
+  <data name="BehaviorByteWarpStairsUpLeft" xml:space="preserve">
+    <value>Warp, stairs up + left</value>
+  </data>
+  <data name="BehaviorByteWarpStairsUpRight" xml:space="preserve">
+    <value>Warp, stairs up + right</value>
+  </data>
+  <data name="BehaviorByteWarpTeleport" xml:space="preserve">
+    <value>Warp, using teleporter</value>
+  </data>
+  <data name="BehaviorByteWindow1" xml:space="preserve">
+    <value>Window</value>
+  </data>
+  <data name="BehaviorByteWindow2" xml:space="preserve">
+    <value>Window type 2</value>
+  </data>
+  <data name="BehaviorByteWorldMap" xml:space="preserve">
+    <value>World map script</value>
+  </data>
+  <data name="FileNotFoundTitle" xml:space="preserve">
+    <value>File Not Found</value>
+  </data>
+  <data name="RestartToSaveLanguage" xml:space="preserve">
+    <value>You will need to restart the program to apply your language preference.</value>
+  </data>
+  <data name="RestartToSaveLanguageTitle" xml:space="preserve">
+    <value>Change Language</value>
+  </data>
+  <data name="ROMCodeNotFound" xml:space="preserve">
+    <value>ROM type {0} is not recognized.</value>
+  </data>
+  <data name="ROMCodeNotFoundTitle" xml:space="preserve">
+    <value>Unrecognized ROM</value>
+  </data>
+  <data name="ROMLoadedStatus" xml:space="preserve">
+    <value>ROM {0} loaded in {1} seconds.</value>
+  </data>
+  <data name="UnableToReadConfig" xml:space="preserve">
+    <value>Unable to read config file</value>
+  </data>
+  <data name="UnableToReadConfigTitle" xml:space="preserve">
+    <value>Unable to Read Config</value>
+  </data>
+  <data name="MapLoadedStatus" xml:space="preserve">
+    <value>Map {0} loaded in {1} seconds.</value>
+  </data>
+  <data name="UnknownSong" xml:space="preserve">
+    <value>Unknown Song</value>
+  </data>
+  <data name="CouldNotFindLayout" xml:space="preserve">
+    <value>Could not find {0} map layout(s).</value>
+  </data>
+  <data name="CouldNotFindLayoutTitle" xml:space="preserve">
+    <value>Could Not Find Map Layouts</value>
+  </data>
+  <data name="CouldNotReadTileset" xml:space="preserve">
+    <value>Could not read {0} tileset from layout {1}.
+Attempted to read tileset from offset: {2}.</value>
+  </data>
+  <data name="CouldNotReadTilesetTitle" xml:space="preserve">
+    <value>Tileset Error</value>
+  </data>
+  <data name="GlobalTileset" xml:space="preserve">
+    <value>global</value>
+  </data>
+  <data name="LocalTileset" xml:space="preserve">
+    <value>local</value>
+  </data>
+  <data name="UnknownIndex" xml:space="preserve">
+    <value>Unknown Index</value>
+  </data>
+</root>

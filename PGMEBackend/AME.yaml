@@ -1,0 +1,13 @@
+---
+ShowSprites:            true
+UsePlugins:             true
+ScriptEditor:           null
+PermissionTranslucency: 0.50
+Language:               null
+CreateBackups:          true
+BackupString:           null
+MapSortOrder:           Name
+HexPrefix:              0x
+ShowRawMapHeader:       false
+ShowRawLayoutHeader:    false
+...
