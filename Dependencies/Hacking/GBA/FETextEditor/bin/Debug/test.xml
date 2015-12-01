@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<ROM xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="Nintenlord">
+  <ROM_space>
+    <spaces>
+      <Usage>Free</Usage>
+      <SpaceArea>
+        <Offset>1</Offset>
+        <Size>1</Size>
+      </SpaceArea>
+      <SpaceArea>
+        <Offset>15</Offset>
+        <Size>10</Size>
+      </SpaceArea>
+    </spaces>
+  </ROM_space>
+  <CRC32>65535</CRC32>
+  <GameTitle>dfh</GameTitle>
+  <GameCode>test</GameCode>
+  <MakerCode>gadjf</MakerCode>
+</ROM>

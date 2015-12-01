@@ -1,0 +1,175 @@
+#ifndef EA_STDLIB_EVENT
+#define EA_STDLIB_EVENT
+
+//Old version defines are commented out.
+//#define EA_STDLIB_VERSION_2_5
+//#define EA_STDLIB_VERSION_2_6
+#define EA_STDLIB_VERSION_2_7
+
+
+/****************************************************************\
+Version 2.7
+
+How to use EA standard library:
+ Include this file, EAstdlib.event, to your code.
+ Then use macro's and definitions you see in 
+ EA Standard library folder.
+
+Changes:
+V 1.1:
+-Removed time from FlashCursor CURE code and replaced CUFL.
+ with STAL since they are the same code.
+-Added Text macros.
+V 1.2:
+-Added move manual helpers.
+-Changed DefeatAll FE7 to use ASME.
+-Added IFEV definition for backwards compability.
+V 1.3:
+-Made a macro for UNIT code levels.
+-Added True and False and some boolean operators.
+-Added possibility to not use default definitions.
+ Just define _NO_FE6_DEFINITIONS_ or equivelant in your own code.
+V 1.4:
+-Made macro for Event data pointer list editing.
+-Fixed a type with #endif.
+V 1.5:
+-Added CursorFlash macros for FE6 and FE7
+-Added tutorial disabling macro. Define DISABLE_TUTORIALS
+ before including this file to activate it. Define
+ EMPTY_TUTORIAL_OFFSET before including this file to use 
+ custom empty tutorial.
+-Added event pointer macro.
+-Added FE8 unit flag helpers.
+-Changed Sieze to Seize.
+-Made female class names consistantly use _F suffix.
+-Removed double definitions by renaming offending parties.
+-Renamed staff named Torch as TorchStaff.
+-Fixed FE6 ChestMoney macro.
+V 1.6:
+-Added Warp effect macro's for FE7 and FE8.
+V 2.0:
+-Moved most stuff to separate files.
+-Added reserved event ID definitions.
+-Changed Sieze without event pointer to not use event ID.
+-Fixed FE8 and FE6 EventPointerTable macro.
+-Changed Text macro for FE8.
+-Removed Change background macros.
+-Added FE6 World map event helpers.
+_Added Weather definitions for all 3 GBA games.
+-Added Empty for backwards compability.
+-Added battle data helpers.
+-Removed chapter pointer list helpers.
+V 2.1:
+-Added more main code helpers, including some common 
+ events they point to.
+-Added numeric helpers.
+-Added FE7 and 8 World map backwards compability definitions.
+V 2.2:
+-Added common event support for FE6 and FE8.
+-Fixed ReinforcementEvent for FE7.
+-Added convo background, music and chapter definitions
+ for FE8, thanks to flyingace24.
+-Added more FE7 world map definitions, thanks to Mariobro3828.
+-Added chapter and music definitions for FE6 and FE7.
+-Fixed problems with Battle data helpers.
+-Added GameOver definition.
+-Added DefeatBoss and DefeatAll for FE6, thanks to Arch.
+-Added MoveToChapter macro.
+-Fixed a typo in IsCreater macro.
+-Added FE7 AI definitions, thanks to Arch and Mariobro3828.
+-Added more FE7 music definitions, thanks to Cater-Pies.
+-Added many macros thanks to Blazer.
+-Fixed a problem in some TurnEventPlayer macros.
+-Added WorldMapPointerTable for FE8.
+-Added and fixed some common events for FE8.
+-Remade Warp macros for FE8.
+V 2.3:
+-Added CharacterEvent macros, thanks to Arch.
+V 2.4
+-Fixed WorldMapPointerTable indexing.
+-Fixed Silencer macros not having targets HP as a parameter.
+-Added TheEnd for FE7, thanks to Arch.
+V 2.5
+-Fixed ReinforcementEvent for FE8.
+-Added IfPlayerPhase for FE7.
+-Fixed TurnNPC for FE7.
+-Added SummonMonsters AI for FE8 thanks to Blademaster/Klok.
+-Changed LynModeEnding a bit.
+-Added some Event IDs for FE7.
+-Added Survive macro thanks to Arch.
+-Added LevelMerlinus for FE7.
+V 2.6
+-Added PromoteMainChar for FE6 thanks to Onmi.
+-Added Unit condition helpers for FE7.
+-Added battle data helpers for FE7.
+-Added IfUnitLucky and others thanks to Arch.
+-Added FancyAssasinEntry and FancyThiefEntry macros.
+-Added FE7 background definitions thanks to Astra.
+-Added TEX5 backwards compability code.
+-Added ClearBrownBox for FE7 thanks to Arch.
+-Stole Ballista helpers and FE8 battle helpers from Camtech.
+V 2.7
+-Changed FE7 and FE6 VillageEventItem and VillageEventMoney to match 
+ what the game uses.
+-Changed TileChange macro to fit new codes and added a warning.
+\****************************************************************/
+
+#include "EA Standard library\Boolean Logic.txt"
+
+#include "EA Standard library\Numeric Helpers.txt"
+
+#include "EA Standard library\Backward Compability.txt"
+
+#include "EA Standard library\Unit Helpers.txt"
+
+#include "EA Standard library\World Map Helpers.txt"
+
+#include "EA Standard library\Weather Definitions.txt"
+
+#include "EA Standard library\Chapter Structure Helpers.txt"
+
+#include "EA Standard library\Main Code Helpers.txt"
+
+#include "EA Standard library\Misc Helpers.txt"
+
+#include "EA Standard library\Convo Background Definitions.txt"
+
+#include "EA Standard library\Chapter Definitions.txt"
+
+#include "EA Standard library\Music Definitions.txt"
+
+#include "EA Standard library\End Of Chapter Helpers.txt"
+
+#include "EA Standard library\Convo Helpers.txt"
+
+#include "EA Standard library\Tile Changes.txt"
+
+#include "EA Standard library\Trap Helpers.txt"
+
+#ifdef _FE7_
+#ifdef DISABLE_TUTORIALS
+#include "EA Standard library\FE7 Tutorial Disabler.txt"
+#endif
+#endif
+
+#ifdef _FE6_
+#ifndef _NO_FE6_DEFINITIONS_
+#include "EA Standard library\FE6 Definitions.txt"
+#endif
+#endif
+
+#ifdef _FE7_
+#ifndef _NO_FE7_DEFINITIONS_
+#include "EA Standard library\FE7 Definitions.txt"
+#endif
+#endif
+
+
+#ifdef _FE8_
+#ifndef _NO_FE8_DEFINITIONS_
+#include "EA Standard library\FE8 Definitions.txt"
+#endif
+#endif
+
+
+#endif //EA_STDLIB_EVENT

@@ -1,0 +1,30 @@
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\LZ77 compressor\RLE\bin\Release\RLE.dll
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\LZ77 compressor\RLE\bin\Release\RLE.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\LZ77 compressor\RLE\bin\Release\Nintenlords Compressor.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\LZ77 compressor\RLE\bin\Release\Nintenlords Compressor.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\LZ77 compressor\RLE\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\LZ77 compressor\RLE\obj\Release\RLE.dll
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\LZ77 compressor\RLE\obj\Release\RLE.pdb
+C:\Users\Timo\Desktop\LZ77 compressor\RLE\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Timo\Desktop\LZ77 compressor\RLE\obj\Release\RLE.dll
+C:\Users\Timo\Desktop\LZ77 compressor\RLE\obj\Release\RLE.pdb
+C:\Users\Timo\Desktop\LZ77 compressor\RLE\bin\Release\RLE.dll
+C:\Users\Timo\Desktop\LZ77 compressor\RLE\bin\Release\RLE.pdb
+C:\Users\Timo\Desktop\LZ77 compressor\RLE\bin\Release\Nintenlords Compressor.exe
+C:\Users\Timo\Desktop\LZ77 compressor\RLE\bin\Release\Nintenlords Compressor.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\NL Compressor\RLE\bin\Release\RLE.dll
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\NL Compressor\RLE\bin\Release\RLE.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\NL Compressor\RLE\bin\Release\Nintenlords Compressor.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\NL Compressor\RLE\bin\Release\Nintenlords Compressor.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\NL Compressor\RLE\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\NL Compressor\RLE\obj\Release\RLE.dll
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\NL Compressor\RLE\obj\Release\RLE.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\RLE\bin\Release\RLE.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\RLE\bin\Release\RLE.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\RLE\bin\Release\Nintenlords Compressor.exe
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\RLE\bin\Release\Nintenlords Compressor.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\RLE\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\RLE\obj\Release\RLE.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\RLE\obj\Release\RLE.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\RLE\bin\Release\Nintenlord.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\RLE\bin\Release\Nintenlord.pdb

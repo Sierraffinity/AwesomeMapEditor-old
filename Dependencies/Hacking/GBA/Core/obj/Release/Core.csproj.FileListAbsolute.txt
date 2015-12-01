@@ -1,0 +1,13 @@
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\Core\bin\Release\Nintenlord.Feditor.Core.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\Core\bin\Release\Nintenlord.Feditor.Core.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\Core\bin\Release\GBA.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\Core\bin\Release\ROMhacking.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\Core\bin\Release\GBA.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\Core\bin\Release\ROMhacking.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\Core\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\Core\obj\Release\Nintenlord.Feditor.Core.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\Core\obj\Release\Nintenlord.Feditor.Core.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\Core\bin\Release\Nintenlord.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\Core\bin\Release\Nintenlord.Forms.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\Core\bin\Release\Nintenlord.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\Core\bin\Release\Nintenlord.Forms.pdb

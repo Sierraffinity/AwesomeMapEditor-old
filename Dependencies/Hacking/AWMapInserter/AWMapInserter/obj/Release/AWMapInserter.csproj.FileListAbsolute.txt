@@ -1,0 +1,10 @@
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\AWMapInserter\AWMapInserter\bin\Release\AWMapInserter.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\AWMapInserter\AWMapInserter\bin\Release\AWMapInserter.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\AWMapInserter\AWMapInserter\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\AWMapInserter\AWMapInserter\obj\Release\Nintenlord.AWMapInserter.Form1.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\AWMapInserter\AWMapInserter\obj\Release\AWMapInserter.Properties.Resources.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\AWMapInserter\AWMapInserter\obj\Release\AWMapInserter.csproj.GenerateResource.Cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\AWMapInserter\AWMapInserter\obj\Release\AWMapInserter.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\AWMapInserter\AWMapInserter\obj\Release\AWMapInserter.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\AWMapInserter\AWMapInserter\obj\Release\AWMapInserter.exe
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\AWMapInserter\AWMapInserter\obj\Release\AWMapInserter.pdb

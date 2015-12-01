@@ -1,0 +1,5 @@
+CODE test $eeeeeef eeeeeef 12 15*7 [13,16]
+TURN 15 ahhahahahahaaa 0xfuckeverything $Yeah (456/dfg)*9+54r6
+WEE tettte
+{Symbol(CODE), Symbol(test), IntegerLiteral($eeeeeef), Symbol(eeeeeef), IntegerLiteral(12), IntegerLiteral(15), MathOperator(*), IntegerLiteral(7), LeftSquareBracket([), IntegerLiteral(13), Comma(,), IntegerLiteral(16), RightSquareBracket(]), CodeEnder(NL), Symbol(TURN), IntegerLiteral(15), Symbol(ahhahahahahaaa), IntegerLiteral(0xfuckeverything), IntegerLiteral($Yeah), LeftParenthesis((), IntegerLiteral(456), MathOperator(/), Symbol(dfg), RightParenthesis()), MathOperator(*), IntegerLiteral(9), MathOperator(+), IntegerLiteral(54r6), CodeEnder(NL), Symbol(WEE), Symbol(tettte), CodeEnder(NL)}
+Success

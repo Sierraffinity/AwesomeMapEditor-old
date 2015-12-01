@@ -1,0 +1,31 @@
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\GBA\ROMhackingCore\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\GBA\ROMhackingCore\bin\Debug\ROMhacking.dll
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\GBA\ROMhackingCore\bin\Debug\ROMhacking.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\GBA\ROMhackingCore\obj\Debug\ROMhacking.dll
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\GBA\ROMhackingCore\obj\Debug\ROMhacking.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\GBA\ROMhackingCore\bin\Debug\ROMhacking.dll
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\GBA\ROMhackingCore\bin\Debug\ROMhacking.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\GBA\ROMhackingCore\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\GBA\ROMhackingCore\obj\Debug\ROMhacking.dll
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\GBA\ROMhackingCore\obj\Debug\ROMhacking.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\ROMhackingCore\bin\Debug\ROMhacking.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\ROMhackingCore\bin\Debug\ROMhacking.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\ROMhackingCore\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\ROMhackingCore\obj\Debug\ROMhacking.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\ROMhackingCore\obj\Debug\ROMhacking.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\ROMhackingCore\bin\Debug\Nintenlord.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\ROMhackingCore\bin\Debug\Nintenlord.pdb
+D:\Documents\Visual Studio 2015\Projects\Hacking\GBA\ROMhackingCore\bin\Debug\ROMhacking.dll
+D:\Documents\Visual Studio 2015\Projects\Hacking\GBA\ROMhackingCore\bin\Debug\ROMhacking.pdb
+D:\Documents\Visual Studio 2015\Projects\Hacking\GBA\ROMhackingCore\bin\Debug\Nintenlord.dll
+D:\Documents\Visual Studio 2015\Projects\Hacking\GBA\ROMhackingCore\bin\Debug\Nintenlord.pdb
+D:\Documents\Visual Studio 2015\Projects\Hacking\GBA\ROMhackingCore\obj\Debug\ROMhackingCore.csprojResolveAssemblyReference.cache
+D:\Documents\Visual Studio 2015\Projects\Hacking\GBA\ROMhackingCore\obj\Debug\ROMhacking.dll
+D:\Documents\Visual Studio 2015\Projects\Hacking\GBA\ROMhackingCore\obj\Debug\ROMhacking.pdb
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\Hacking\GBA\ROMhackingCore\bin\Debug\ROMhacking.dll
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\Hacking\GBA\ROMhackingCore\bin\Debug\ROMhacking.pdb
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\Hacking\GBA\ROMhackingCore\bin\Debug\Nintenlord.dll
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\Hacking\GBA\ROMhackingCore\bin\Debug\Nintenlord.pdb
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\Hacking\GBA\ROMhackingCore\obj\Debug\ROMhackingCore.csprojResolveAssemblyReference.cache
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\Hacking\GBA\ROMhackingCore\obj\Debug\ROMhacking.dll
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\Hacking\GBA\ROMhackingCore\obj\Debug\ROMhacking.pdb

@@ -1,0 +1,90 @@
+CODE test $eeeeeef eeeeeef 12 15*7 [13,16]
+TURN 15 ahhahahahahaaa 0xfuckeverything $Yeah (456/dfg)*9+54r6
+WEE tettte
+Symbol(CODE)
+Symbol(test)
+IntegerLiteral($eeeeeef)
+Symbol(eeeeeef)
+IntegerLiteral(12)
+IntegerLiteral(15)
+MathOperator(*)
+IntegerLiteral(7)
+LeftSquareBracket([)
+IntegerLiteral(13)
+Comma(,)
+IntegerLiteral(16)
+RightSquareBracket(])
+CodeEnder(NL)
+Symbol(TURN)
+IntegerLiteral(15)
+Symbol(ahhahahahahaaa)
+IntegerLiteral(0xfuckeverything)
+IntegerLiteral($Yeah)
+LeftParenthesis(()
+IntegerLiteral(456)
+MathOperator(/)
+Symbol(dfg)
+RightParenthesis())
+MathOperator(*)
+IntegerLiteral(9)
+MathOperator(+)
+IntegerLiteral(54r6)
+CodeEnder(NL)
+Symbol(WEE)
+Symbol(tettte)
+CodeEnder(NL)
+SatisfyParser`1 Parser: Error Predicate failed, got Symbol(CODE) at 0 size 1
+OptionParser`2 Parser: Success at 0 size 0
+TransformParser`3 Parser: Success at 0 size 0
+TokenTypeParser Parser: Success at 0 size 1
+TransformParser`3 Parser: Success at 0 size 1
+ManyParser`2 Parser: Success at 1 size 0
+TokenTypeParser Parser: Error Tokens type is Symbol, expected LeftSquareBracket: Symbol(test) at 1 size 1
+Vector Parser: Error Tokens type is Symbol, expected LeftSquareBracket: Symbol(test) at 1 size 1
+TransformParser`3 Parser: Error Tokens type is Symbol, expected LeftSquareBracket: Symbol(test) at 1 size 1
+Math values Parser: Success at 1 size 0
+TokenTypeParser Parser: Error Tokens type is Symbol, expected IntegerLiteral: Symbol(test) at 1 size 1
+TokenTypeParser Parser: Error Tokens type is Symbol, expected MathOperator: Symbol(test) at 1 size 1
+TokenTypeParser Parser: Error Tokens type is Symbol, expected LeftParenthesis: Symbol(test) at 1 size 1
+TokenTypeParser Parser: Error Tokens type is Symbol, expected RightParenthesis: Symbol(test) at 1 size 1
+TokenTypeParser Parser: Success at 1 size 1
+Choises Parser: Success at 1 size 1
+TokenTypeParser Parser: Success at 2 size 1
+Choises Parser: Success at 2 size 1
+TokenTypeParser Parser: Error Tokens type is Symbol, expected IntegerLiteral: Symbol(eeeeeef) at 3 size 1
+TokenTypeParser Parser: Error Tokens type is Symbol, expected MathOperator: Symbol(eeeeeef) at 3 size 1
+TokenTypeParser Parser: Error Tokens type is Symbol, expected LeftParenthesis: Symbol(eeeeeef) at 3 size 1
+TokenTypeParser Parser: Error Tokens type is Symbol, expected RightParenthesis: Symbol(eeeeeef) at 3 size 1
+TokenTypeParser Parser: Success at 3 size 1
+Choises Parser: Success at 3 size 1
+TokenTypeParser Parser: Success at 4 size 1
+Choises Parser: Success at 4 size 1
+TokenTypeParser Parser: Success at 5 size 1
+Choises Parser: Success at 5 size 1
+TokenTypeParser Parser: Error Tokens type is MathOperator, expected IntegerLiteral: MathOperator(*) at 6 size 1
+TokenTypeParser Parser: Success at 6 size 1
+Choises Parser: Success at 6 size 1
+TokenTypeParser Parser: Success at 7 size 1
+Choises Parser: Success at 7 size 1
+TokenTypeParser Parser: Error Tokens type is LeftSquareBracket, expected IntegerLiteral: LeftSquareBracket([) at 8 size 1
+TokenTypeParser Parser: Error Tokens type is LeftSquareBracket, expected MathOperator: LeftSquareBracket([) at 8 size 1
+TokenTypeParser Parser: Error Tokens type is LeftSquareBracket, expected LeftParenthesis: LeftSquareBracket([) at 8 size 1
+TokenTypeParser Parser: Error Tokens type is LeftSquareBracket, expected RightParenthesis: LeftSquareBracket([) at 8 size 1
+TokenTypeParser Parser: Error Tokens type is LeftSquareBracket, expected Symbol: LeftSquareBracket([) at 8 size 1
+Choises Parser: Error Tokens type is LeftSquareBracket, expected Symbol: LeftSquareBracket([) at 8 size 1
+Atom Parser: Success at 1 size 0
+TransformParser`3 Parser: Success at 1 size 0
+Parameter Parser: Success at 1 size 0
+TokenTypeParser Parser: Success at 8 size 1
+Vector params Parser: Success at 9 size 0
+Math values Parser: Success at 9 size 0
+TokenTypeParser Parser: Success at 9 size 1
+Choises Parser: Success at 9 size 1
+TokenTypeParser Parser: Error Tokens type is Comma, expected IntegerLiteral: Comma(,) at 10 size 1
+TokenTypeParser Parser: Error Tokens type is Comma, expected MathOperator: Comma(,) at 10 size 1
+TokenTypeParser Parser: Error Tokens type is Comma, expected LeftParenthesis: Comma(,) at 10 size 1
+TokenTypeParser Parser: Error Tokens type is Comma, expected RightParenthesis: Comma(,) at 10 size 1
+TokenTypeParser Parser: Error Tokens type is Comma, expected Symbol: Comma(,) at 10 size 1
+Choises Parser: Error Tokens type is Comma, expected Symbol: Comma(,) at 10 size 1
+Atom Parser: Success at 9 size 0
+TokenTypeParser Parser: Success at 10 size 1

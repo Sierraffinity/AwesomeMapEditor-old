@@ -1,0 +1,8 @@
+C:\Users\Timo\AppData\Local\Temporary Projects\Alltext editor\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Timo\AppData\Local\Temporary Projects\Alltext editor\obj\Debug\Alltext_editor.Form1.resources
+C:\Users\Timo\AppData\Local\Temporary Projects\Alltext editor\obj\Debug\Alltext_editor.Properties.Resources.resources
+C:\Users\Timo\AppData\Local\Temporary Projects\Alltext editor\obj\Debug\Alltext editor.csproj.GenerateResource.Cache
+C:\Users\Timo\AppData\Local\Temporary Projects\Alltext editor\bin\Debug\Alltext editor.exe
+C:\Users\Timo\AppData\Local\Temporary Projects\Alltext editor\bin\Debug\Alltext editor.pdb
+C:\Users\Timo\AppData\Local\Temporary Projects\Alltext editor\obj\Debug\Alltext editor.exe
+C:\Users\Timo\AppData\Local\Temporary Projects\Alltext editor\obj\Debug\Alltext editor.pdb

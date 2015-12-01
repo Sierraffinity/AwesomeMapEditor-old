@@ -1,0 +1,13 @@
+##Causes unit condition to be turned on.
+UNCM, 0x72, 12, -game:FE7 -indexMode:8
+##Character whose condition to change.
+	Character, 4, 2
+##Condition to change.
+	Condition, 8, 4, -preferredBase:2
+
+##Reverses units condition.
+UNCR, 0x73, 12, -game:FE7 -indexMode:8
+##Character whose condition to change.
+	Character, 4, 2
+##Condition to change.
+	Condition, 8, 4, -preferredBase:2

@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ARM disassembler", "ARM disassembler\ARM disassembler.vcproj", "{DBC6C0A0-0B6A-4538-BA52-AC2AF6C62817}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DBC6C0A0-0B6A-4538-BA52-AC2AF6C62817}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DBC6C0A0-0B6A-4538-BA52-AC2AF6C62817}.Debug|Win32.Build.0 = Debug|Win32
+		{DBC6C0A0-0B6A-4538-BA52-AC2AF6C62817}.Release|Win32.ActiveCfg = Release|Win32
+		{DBC6C0A0-0B6A-4538-BA52-AC2AF6C62817}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

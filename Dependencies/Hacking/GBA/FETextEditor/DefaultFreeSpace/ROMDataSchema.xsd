@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ROMDataSchema"
+    targetNamespace="Nintenlord"
+    elementFormDefault="qualified"
+    xmlns="Nintenlord"
+    xmlns:mstns="Nintenlord"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:element name="ROM">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ROM_space">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="spaces" type="mstns:Space" maxOccurs="unbounded" minOccurs="0"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CRC32" type="xs:unsignedInt" default="0"/>
+        <xs:element name="GameTitle" type="xs:string"/>
+        <xs:element name="GameCode" type="xs:string"/>
+        <xs:element name="MakerCode" type="xs:string"/>  
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Space">
+    <xs:sequence>
+      <xs:element name="Usage" type="xs:string"/>
+      <xs:element name="SpaceArea" type="mstns:OffsetSizePair" maxOccurs="unbounded"/>      
+      <!--Add something for referances?-->
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OffsetSizePair">
+    <xs:sequence>
+      <xs:element name ="Offset" type="xs:int"/>
+      <xs:element name ="Size" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

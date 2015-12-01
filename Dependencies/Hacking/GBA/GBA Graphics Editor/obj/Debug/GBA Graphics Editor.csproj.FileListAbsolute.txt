@@ -1,0 +1,68 @@
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\unLZ-GBA replacement\unLZ-GBA replacement\bin\Debug\NLZ-GBA Advance.exe.config
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\unLZ-GBA replacement\unLZ-GBA replacement\bin\Debug\NLZ-GBA Advance.exe.manifest
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\unLZ-GBA replacement\unLZ-GBA replacement\bin\Debug\NLZ-GBA Advance.application
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\unLZ-GBA replacement\unLZ-GBA replacement\bin\Debug\NLZ-GBA Advance.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\unLZ-GBA replacement\unLZ-GBA replacement\bin\Debug\NLZ-GBA Advance.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\unLZ-GBA replacement\unLZ-GBA replacement\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\unLZ-GBA replacement\unLZ-GBA replacement\obj\Debug\Nintenlord.GBA_Graphics_Editor.Color_Control.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\unLZ-GBA replacement\unLZ-GBA replacement\obj\Debug\Nintenlord.GBA_Graphics_Editor.Tile_Control.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\unLZ-GBA replacement\unLZ-GBA replacement\obj\Debug\Nintenlord.GBA_Graphics_Editor.Form1.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\unLZ-GBA replacement\unLZ-GBA replacement\obj\Debug\Nintenlord.GBA_Graphics_Editor.Palette_Control.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\unLZ-GBA replacement\unLZ-GBA replacement\obj\Debug\Nintenlord.GBA_Graphics_Editor.Palette_editor.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\unLZ-GBA replacement\unLZ-GBA replacement\obj\Debug\Nintenlord.GBA_Graphics_Editor.Properties.Resources.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\unLZ-GBA replacement\unLZ-GBA replacement\obj\Debug\Nintenlord.GBA_Graphics_Editor.baseToolForm.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\unLZ-GBA replacement\unLZ-GBA replacement\obj\Debug\Nintenlord.GBA_Graphics_Editor.ImageControl.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\unLZ-GBA replacement\unLZ-GBA replacement\obj\Debug\Nintenlord.GBA_Graphics_Editor.WriteToROM.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\unLZ-GBA replacement\unLZ-GBA replacement\obj\Debug\GBA Graphics Editor.csproj.GenerateResource.Cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\unLZ-GBA replacement\unLZ-GBA replacement\obj\Debug\NLZ-GBA Advance.exe.manifest
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\unLZ-GBA replacement\unLZ-GBA replacement\obj\Debug\NLZ-GBA Advance.application
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\unLZ-GBA replacement\unLZ-GBA replacement\obj\Debug\NLZ-GBA Advance.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\unLZ-GBA replacement\unLZ-GBA replacement\obj\Debug\NLZ-GBA Advance.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\unLZ-GBA replacement\unLZ-GBA replacement\bin\Debug\GBA Graphics Editor.exe.manifest
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\unLZ-GBA replacement\unLZ-GBA replacement\bin\Debug\GBA Graphics Editor.application
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\unLZ-GBA replacement\unLZ-GBA replacement\bin\Debug\GBA Graphics Editor.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\unLZ-GBA replacement\unLZ-GBA replacement\bin\Debug\GBA Graphics Editor.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\unLZ-GBA replacement\unLZ-GBA replacement\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\unLZ-GBA replacement\unLZ-GBA replacement\obj\Debug\Nintenlord.GBA_Graphics_Editor.Properties.Resources.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\unLZ-GBA replacement\unLZ-GBA replacement\obj\Debug\Nintenlord.GBA_Graphics_Editor.WriteToROM.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\unLZ-GBA replacement\unLZ-GBA replacement\obj\Debug\GBA Graphics Editor.csproj.GenerateResource.Cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\unLZ-GBA replacement\unLZ-GBA replacement\obj\Debug\GBA Graphics Editor.exe.manifest
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\unLZ-GBA replacement\unLZ-GBA replacement\obj\Debug\GBA Graphics Editor.application
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\unLZ-GBA replacement\unLZ-GBA replacement\obj\Debug\GBA Graphics Editor.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\unLZ-GBA replacement\unLZ-GBA replacement\obj\Debug\GBA Graphics Editor.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\unLZ-GBA replacement\unLZ-GBA replacement\obj\Debug\Nintenlord.GBA_Graphics_Editor.Forms.ColourForm.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\unLZ-GBA replacement\unLZ-GBA replacement\obj\Debug\Nintenlord.GBA_Graphics_Editor.Forms.ImageForm.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\unLZ-GBA replacement\unLZ-GBA replacement\obj\Debug\Nintenlord.GBA_Graphics_Editor.Forms.PaletteForm.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\unLZ-GBA replacement\unLZ-GBA replacement\obj\Debug\Nintenlord.GBA_Graphics_Editor.Forms.TileForm.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\unLZ-GBA replacement\unLZ-GBA replacement\obj\Debug\Nintenlord.GBA_Graphics_Editor.Forms.MainForm.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\unLZ-GBA replacement\unLZ-GBA replacement\obj\Debug\Nintenlord.GBA_Graphics_Editor.Forms.Palette_editor.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\unLZ-GBA replacement\unLZ-GBA replacement\obj\Debug\Nintenlord.GBA_Graphics_Editor.Forms.ToolForm.resources
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\GBA Graphics Editor\bin\Debug\GBA Graphics Editor.exe.config
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\GBA Graphics Editor\bin\Debug\GBA Graphics Editor.exe.manifest
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\GBA Graphics Editor\bin\Debug\GBA Graphics Editor.application
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\GBA Graphics Editor\bin\Debug\GBA Graphics Editor.exe
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\GBA Graphics Editor\bin\Debug\GBA Graphics Editor.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\GBA Graphics Editor\bin\Debug\GBA.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\GBA Graphics Editor\bin\Debug\ROMhacking.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\GBA Graphics Editor\bin\Debug\GBA.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\GBA Graphics Editor\bin\Debug\ROMhacking.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\GBA Graphics Editor\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\GBA Graphics Editor\obj\Debug\Nintenlord.GBA_Graphics_Editor.Forms.ColourForm.resources
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\GBA Graphics Editor\obj\Debug\Nintenlord.GBA_Graphics_Editor.Forms.ImageForm.resources
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\GBA Graphics Editor\obj\Debug\Nintenlord.GBA_Graphics_Editor.Forms.MainForm.resources
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\GBA Graphics Editor\obj\Debug\Nintenlord.GBA_Graphics_Editor.Forms.Palette_editor.resources
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\GBA Graphics Editor\obj\Debug\Nintenlord.GBA_Graphics_Editor.Forms.PaletteForm.resources
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\GBA Graphics Editor\obj\Debug\Nintenlord.GBA_Graphics_Editor.Forms.TileForm.resources
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\GBA Graphics Editor\obj\Debug\Nintenlord.GBA_Graphics_Editor.Properties.Resources.resources
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\GBA Graphics Editor\obj\Debug\Nintenlord.GBA_Graphics_Editor.Forms.ToolForm.resources
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\GBA Graphics Editor\obj\Debug\Nintenlord.GBA_Graphics_Editor.WriteToROM.resources
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\GBA Graphics Editor\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\GBA Graphics Editor\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\GBA Graphics Editor\obj\Debug\GBA Graphics Editor.exe.manifest
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\GBA Graphics Editor\obj\Debug\GBA Graphics Editor.application
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\GBA Graphics Editor\obj\Debug\GBA Graphics Editor.exe
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\GBA Graphics Editor\obj\Debug\GBA Graphics Editor.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\GBA Graphics Editor\bin\Debug\Nintenlord.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\GBA Graphics Editor\bin\Debug\Nintenlord.Forms.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\GBA Graphics Editor\bin\Debug\Nintenlord.Forms.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\GBA Graphics Editor\bin\Debug\Nintenlord.pdb

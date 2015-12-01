@@ -1,0 +1,21 @@
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\LZ77 compressor\FEDS portrait compression\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\LZ77 compressor\FEDS portrait compression\bin\Debug\FEDS portrait compression.dll
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\LZ77 compressor\FEDS portrait compression\bin\Debug\FEDS portrait compression.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\LZ77 compressor\FEDS portrait compression\obj\Debug\FEDS portrait compression.dll
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\LZ77 compressor\FEDS portrait compression\obj\Debug\FEDS portrait compression.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\NL Compressor\FEDS portrait compression\bin\Debug\FEDS portrait compression.dll
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\NL Compressor\FEDS portrait compression\bin\Debug\FEDS portrait compression.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\NL Compressor\FEDS portrait compression\bin\Debug\Nintenlords Compressor.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\NL Compressor\FEDS portrait compression\bin\Debug\Nintenlords Compressor.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\NL Compressor\FEDS portrait compression\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\NL Compressor\FEDS portrait compression\obj\Debug\FEDS portrait compression.dll
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\NL Compressor\FEDS portrait compression\obj\Debug\FEDS portrait compression.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\FEDS portrait compression\bin\Debug\FEDS portrait compression.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\FEDS portrait compression\bin\Debug\FEDS portrait compression.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\FEDS portrait compression\bin\Debug\Nintenlords Compressor.exe
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\FEDS portrait compression\bin\Debug\Nintenlords Compressor.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\FEDS portrait compression\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\FEDS portrait compression\obj\Debug\FEDS portrait compression.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\FEDS portrait compression\obj\Debug\FEDS portrait compression.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\FEDS portrait compression\bin\Debug\Nintenlord.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\FEDS portrait compression\bin\Debug\Nintenlord.pdb

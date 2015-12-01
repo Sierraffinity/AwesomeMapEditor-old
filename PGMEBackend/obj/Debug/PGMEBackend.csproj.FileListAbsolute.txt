@@ -64,3 +64,25 @@ D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEBackend\obj\D
 D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEBackend\obj\Debug\PGMEBackend.csproj.GenerateResource.Cache
 D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEBackend\obj\Debug\PGMEBackend.dll
 D:\Documents\Visual Studio 2015\Projects\GBA Map Editor - Test\PGMEBackend\obj\Debug\PGMEBackend.pdb
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEBackend\bin\Debug\OpenTK.dll.config
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEBackend\bin\Debug\PGMEBackend.dll.config
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEBackend\bin\Debug\PGMEBackend.dll
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEBackend\bin\Debug\PGMEBackend.pdb
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEBackend\bin\Debug\GBA.dll
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEBackend\bin\Debug\OpenTK.dll
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEBackend\bin\Debug\ROMhacking.dll
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEBackend\bin\Debug\YamlDotNet.dll
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEBackend\bin\Debug\Nintenlord.dll
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEBackend\bin\Debug\Nintenlord.Forms.dll
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEBackend\bin\Debug\GBA.pdb
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEBackend\bin\Debug\OpenTK.xml
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEBackend\bin\Debug\ROMhacking.pdb
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEBackend\bin\Debug\YamlDotNet.pdb
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEBackend\bin\Debug\YamlDotNet.xml
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEBackend\bin\Debug\Nintenlord.pdb
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEBackend\bin\Debug\Nintenlord.Forms.pdb
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEBackend\obj\Debug\PGMEBackend.csprojResolveAssemblyReference.cache
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEBackend\obj\Debug\PGMEBackend.InternalStrings.resources
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEBackend\obj\Debug\PGMEBackend.csproj.GenerateResource.Cache
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEBackend\obj\Debug\PGMEBackend.dll
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEBackend\obj\Debug\PGMEBackend.pdb

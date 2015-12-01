@@ -1,0 +1,7 @@
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\MyCompression\MyCompression\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\MyCompression\MyCompression\bin\Debug\MyCompression.dll
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\MyCompression\MyCompression\bin\Debug\MyCompression.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\MyCompression\MyCompression\bin\Debug\Nintenlords Compressor.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\MyCompression\MyCompression\bin\Debug\Nintenlords Compressor.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\MyCompression\MyCompression\obj\Debug\MyCompression.dll
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\MyCompression\MyCompression\obj\Debug\MyCompression.pdb

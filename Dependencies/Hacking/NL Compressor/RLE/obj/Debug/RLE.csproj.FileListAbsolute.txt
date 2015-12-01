@@ -1,0 +1,23 @@
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\LZ77 compressor\RLE\bin\Debug\RLE.dll
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\LZ77 compressor\RLE\bin\Debug\RLE.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\LZ77 compressor\RLE\bin\Debug\Nintenlords Compressor.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\LZ77 compressor\RLE\bin\Debug\Nintenlords Compressor.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\LZ77 compressor\RLE\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\LZ77 compressor\RLE\obj\Debug\RLE.dll
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\LZ77 compressor\RLE\obj\Debug\RLE.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\NL Compressor\RLE\bin\Debug\RLE.dll
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\NL Compressor\RLE\bin\Debug\RLE.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\NL Compressor\RLE\bin\Debug\Nintenlords Compressor.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\NL Compressor\RLE\bin\Debug\Nintenlords Compressor.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\NL Compressor\RLE\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\NL Compressor\RLE\obj\Debug\RLE.dll
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\NL Compressor\RLE\obj\Debug\RLE.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\RLE\bin\Debug\RLE.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\RLE\bin\Debug\RLE.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\RLE\bin\Debug\Nintenlords Compressor.exe
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\RLE\bin\Debug\Nintenlords Compressor.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\RLE\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\RLE\obj\Debug\RLE.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\RLE\obj\Debug\RLE.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\RLE\bin\Debug\Nintenlord.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\RLE\bin\Debug\Nintenlord.pdb

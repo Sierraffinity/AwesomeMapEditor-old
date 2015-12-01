@@ -1,0 +1,22 @@
+﻿
+
+Scope = ScopeAtoms
+ScopeAtoms = ScopeAtom ScopeAtoms | Λ
+ScopeAtom = Codes | "{" Scope "}" | Λ
+
+Codes = Code CodeEnder Codes | Λ
+CodeEnder = ";" | "\n"
+
+Code = Symbol ParamList
+ParamList = Param ParamList | Λ
+
+Param = Atom | "[" AtomList "]"
+AtomList = Atom "," AtomList | Atom
+
+Atom = B
+B = S "^" B | S "|" B | S "&" B | S
+S = E ">>" S | E "<<" S | E
+E = T "+" E | T "-" E | T
+T = F "*" T | F "/" T | F "%" T | F
+F = "-" G | "+" G | "~" G | G
+G = Symbol | IntegerLiteral | "(" B ")"

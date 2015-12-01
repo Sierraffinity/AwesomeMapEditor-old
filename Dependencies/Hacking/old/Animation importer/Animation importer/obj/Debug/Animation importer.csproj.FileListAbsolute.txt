@@ -1,0 +1,8 @@
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Animation importer\Animation importer\bin\Debug\Animation importer.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Animation importer\Animation importer\bin\Debug\Animation importer.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Animation importer\Animation importer\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Animation importer\Animation importer\obj\Debug\Animation importer.csproj.GenerateResource.Cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Animation importer\Animation importer\obj\Debug\Animation importer.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Animation importer\Animation importer\obj\Debug\Animation importer.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Animation importer\Animation importer\obj\Debug\Nintenlord.Animation_importer.Form1.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Animation importer\Animation importer\obj\Debug\Nintenlord.Animation_importer.Properties.Resources.resources

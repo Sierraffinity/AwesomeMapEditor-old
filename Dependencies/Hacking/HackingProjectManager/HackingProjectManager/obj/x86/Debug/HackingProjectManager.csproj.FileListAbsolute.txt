@@ -1,0 +1,10 @@
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\HackingProjectManager\HackingProjectManager\bin\Debug\HackingProjectManager.exe
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\HackingProjectManager\HackingProjectManager\bin\Debug\HackingProjectManager.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\HackingProjectManager\HackingProjectManager\bin\Debug\ROMhacking.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\HackingProjectManager\HackingProjectManager\bin\Debug\ROMhacking.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\HackingProjectManager\HackingProjectManager\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\HackingProjectManager\HackingProjectManager\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\HackingProjectManager\HackingProjectManager\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\HackingProjectManager\HackingProjectManager\obj\x86\Debug\HackingProjectManager.exe
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\HackingProjectManager\HackingProjectManager\obj\x86\Debug\HackingProjectManager.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\HackingProjectManager\HackingProjectManager\obj\x86\Debug\Nintenlord.HackingProjectManager.Properties.Resources.resources

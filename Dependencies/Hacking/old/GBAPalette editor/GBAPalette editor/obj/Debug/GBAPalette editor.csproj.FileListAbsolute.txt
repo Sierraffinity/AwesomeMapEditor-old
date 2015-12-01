@@ -1,0 +1,8 @@
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\GBAPalette editor\GBAPalette editor\bin\Debug\GBAPalette editor.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\GBAPalette editor\GBAPalette editor\bin\Debug\GBAPalette editor.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\GBAPalette editor\GBAPalette editor\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\GBAPalette editor\GBAPalette editor\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\GBAPalette editor\GBAPalette editor\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\GBAPalette editor\GBAPalette editor\obj\Debug\GBAPalette editor.csproj.GenerateResource.Cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\GBAPalette editor\GBAPalette editor\obj\Debug\GBAPalette editor.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\GBAPalette editor\GBAPalette editor\obj\Debug\GBAPalette editor.pdb

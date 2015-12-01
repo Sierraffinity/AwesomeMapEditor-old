@@ -43,15 +43,9 @@
     <AssemblyOriginatorKeyFile>DMAKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GBA">
-      <HintPath>..\..\Hacking\GBA\GBA\bin\Release\GBA.dll</HintPath>
-    </Reference>
     <Reference Include="OpenTK, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\OpenTK\1.1\Binaries\OpenTK\Release\OpenTK.dll</HintPath>
-    </Reference>
-    <Reference Include="ROMhacking">
-      <HintPath>..\..\Hacking\GBA\GBA\bin\Release\ROMhacking.dll</HintPath>
+      <HintPath>..\Dependencies\OpenTK.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -63,13 +57,16 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="YamlDotNet">
-      <HintPath>..\..\..\..\YamlDotNet\YamlDotNet.dll</HintPath>
+    <Reference Include="YamlDotNet, Version=3.8.0.0, Culture=neutral, PublicKeyToken=ec19458f3c15af5e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\YamlDotNet.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config.cs" />
     <Compile Include="DataBuffer.cs" />
+    <Compile Include="GLControls\GLBlockChooser.cs" />
+    <Compile Include="GLControls\GLMapEditor.cs" />
     <Compile Include="Graphics\ImageManipulator.cs" />
     <Compile Include="InternalStrings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -114,6 +111,20 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>InternalStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dependencies\Hacking\GBA\GBA\GBAcore.csproj">
+      <Project>{3be7150f-648c-4b5f-ba42-ae8306074e94}</Project>
+      <Name>GBAcore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dependencies\Hacking\GBA\ROMhackingCore\ROMhackingCore.csproj">
+      <Project>{1a9cca06-ef33-4625-8dc1-a6e83eb80e66}</Project>
+      <Name>ROMhackingCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dependencies\Nintenlord\Nintenlord.csproj">
+      <Project>{8fa48ef8-3e11-494a-b587-592d7c22efdf}</Project>
+      <Name>Nintenlord</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

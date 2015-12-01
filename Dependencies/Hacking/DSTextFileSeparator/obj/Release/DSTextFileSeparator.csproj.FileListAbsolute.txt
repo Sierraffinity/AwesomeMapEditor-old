@@ -1,0 +1,5 @@
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\DSTextFileSeparator\bin\Release\DSTextFileSeparator.exe
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\DSTextFileSeparator\bin\Release\DSTextFileSeparator.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\DSTextFileSeparator\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\DSTextFileSeparator\obj\Release\DSTextFileSeparator.exe
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\DSTextFileSeparator\obj\Release\DSTextFileSeparator.pdb

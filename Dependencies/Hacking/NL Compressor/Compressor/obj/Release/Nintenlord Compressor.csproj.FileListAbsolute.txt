@@ -1,0 +1,44 @@
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\LZ77 compressor\LZ77 compressor\bin\Release\Nintenlords Compressor.exe.manifest
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\LZ77 compressor\LZ77 compressor\bin\Release\Nintenlords Compressor.application
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\LZ77 compressor\LZ77 compressor\bin\Release\Nintenlords Compressor.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\LZ77 compressor\LZ77 compressor\bin\Release\Nintenlords Compressor.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\LZ77 compressor\LZ77 compressor\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\LZ77 compressor\LZ77 compressor\obj\Release\Nintenlord.LZ77_compressor.Form1.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\LZ77 compressor\LZ77 compressor\obj\Release\Nintenlord.Compressor.Properties.Resources.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\LZ77 compressor\LZ77 compressor\obj\Release\Nintenlord Compressor.csproj.GenerateResource.Cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\LZ77 compressor\LZ77 compressor\obj\Release\Nintenlords Compressor.exe.manifest
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\LZ77 compressor\LZ77 compressor\obj\Release\Nintenlords Compressor.application
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\LZ77 compressor\LZ77 compressor\obj\Release\Nintenlords Compressor.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\LZ77 compressor\LZ77 compressor\obj\Release\Nintenlords Compressor.pdb
+C:\Users\Timo\Desktop\LZ77 compressor\Compressor\obj\Release\Nintenlords Compressor.exe
+C:\Users\Timo\Desktop\LZ77 compressor\Compressor\obj\Release\Nintenlords Compressor.pdb
+C:\Users\Timo\Desktop\LZ77 compressor\Compressor\bin\Release\Nintenlords Compressor.exe.manifest
+C:\Users\Timo\Desktop\LZ77 compressor\Compressor\bin\Release\Nintenlords Compressor.application
+C:\Users\Timo\Desktop\LZ77 compressor\Compressor\bin\Release\Nintenlords Compressor.exe
+C:\Users\Timo\Desktop\LZ77 compressor\Compressor\bin\Release\Nintenlords Compressor.pdb
+C:\Users\Timo\Desktop\LZ77 compressor\Compressor\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Timo\Desktop\LZ77 compressor\Compressor\obj\Release\Nintenlord.LZ77_compressor.Form1.resources
+C:\Users\Timo\Desktop\LZ77 compressor\Compressor\obj\Release\Nintenlord.Compressor.Properties.Resources.resources
+C:\Users\Timo\Desktop\LZ77 compressor\Compressor\obj\Release\Nintenlord Compressor.csproj.GenerateResource.Cache
+C:\Users\Timo\Desktop\LZ77 compressor\Compressor\obj\Release\Nintenlords Compressor.exe.manifest
+C:\Users\Timo\Desktop\LZ77 compressor\Compressor\obj\Release\Nintenlords Compressor.application
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\NL Compressor\Compressor\obj\Release\Nintenlords Compressor.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\NL Compressor\Compressor\obj\Release\Nintenlords Compressor.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\NL Compressor\Compressor\bin\Release\Nintenlords Compressor.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\NL Compressor\Compressor\bin\Release\Nintenlords Compressor.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\NL Compressor\Compressor\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\NL Compressor\Compressor\obj\Release\Nintenlord.Compressor.Form1.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\NL Compressor\Compressor\obj\Release\Nintenlord Compressor.csproj.GenerateResource.Cache
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\Compressor\bin\Release\Nintenlords Compressor.exe.config
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\Compressor\bin\Release\Nintenlords Compressor.exe
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\Compressor\bin\Release\Nintenlords Compressor.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\Compressor\bin\Release\ROMhacking.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\Compressor\bin\Release\ROMhacking.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\Compressor\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\Compressor\obj\Release\Nintenlord.Compressor.Form1.resources
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\Compressor\obj\Release\GenerateResource.read.1.tlog
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\Compressor\obj\Release\GenerateResource.write.1.tlog
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\Compressor\obj\Release\Nintenlords Compressor.exe
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\Compressor\obj\Release\Nintenlords Compressor.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\Compressor\bin\Release\Nintenlord.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\NL Compressor\Compressor\bin\Release\Nintenlord.pdb

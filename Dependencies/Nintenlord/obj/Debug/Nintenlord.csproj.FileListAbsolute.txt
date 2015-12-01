@@ -1,0 +1,14 @@
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Nintenlord\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Nintenlord\bin\Debug\Nintenlord.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Nintenlord\bin\Debug\Nintenlord.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Nintenlord\obj\Debug\Nintenlord.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Nintenlord\obj\Debug\Nintenlord.pdb
+D:\Documents\Visual Studio 2015\Projects\Nintenlord\bin\Debug\Nintenlord.dll
+D:\Documents\Visual Studio 2015\Projects\Nintenlord\bin\Debug\Nintenlord.pdb
+D:\Documents\Visual Studio 2015\Projects\Nintenlord\obj\Debug\Nintenlord.csprojResolveAssemblyReference.cache
+D:\Documents\Visual Studio 2015\Projects\Nintenlord\obj\Debug\Nintenlord.dll
+D:\Documents\Visual Studio 2015\Projects\Nintenlord\obj\Debug\Nintenlord.pdb
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\Nintenlord\bin\Debug\Nintenlord.dll
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\Nintenlord\bin\Debug\Nintenlord.pdb
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\Nintenlord\obj\Debug\Nintenlord.dll
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\Nintenlord\obj\Debug\Nintenlord.pdb

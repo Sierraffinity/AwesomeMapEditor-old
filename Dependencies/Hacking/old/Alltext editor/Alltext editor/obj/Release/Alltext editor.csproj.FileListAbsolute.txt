@@ -1,0 +1,17 @@
+C:\Users\Timo\AppData\Local\Temporary Projects\Alltext editor\bin\Release\Alltext editor.exe
+C:\Users\Timo\AppData\Local\Temporary Projects\Alltext editor\bin\Release\Alltext editor.pdb
+C:\Users\Timo\AppData\Local\Temporary Projects\Alltext editor\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Timo\AppData\Local\Temporary Projects\Alltext editor\obj\Release\Alltext_editor.Form1.resources
+C:\Users\Timo\AppData\Local\Temporary Projects\Alltext editor\obj\Release\Alltext_editor.Properties.Resources.resources
+C:\Users\Timo\AppData\Local\Temporary Projects\Alltext editor\obj\Release\Alltext editor.csproj.GenerateResource.Cache
+C:\Users\Timo\AppData\Local\Temporary Projects\Alltext editor\obj\Release\Alltext editor.exe
+C:\Users\Timo\AppData\Local\Temporary Projects\Alltext editor\obj\Release\Alltext editor.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Alltext editor\Alltext editor\obj\Release\Alltext editor.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Alltext editor\Alltext editor\obj\Release\Alltext editor.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Alltext editor\Alltext editor\bin\Release\Alltext editor.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Alltext editor\Alltext editor\bin\Release\Alltext editor.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Alltext editor\Alltext editor\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Alltext editor\Alltext editor\obj\Release\Alltext_editor.Form1.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Alltext editor\Alltext editor\obj\Release\Alltext_editor.insertNewText.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Alltext editor\Alltext editor\obj\Release\Alltext_editor.Properties.Resources.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Alltext editor\Alltext editor\obj\Release\Alltext editor.csproj.GenerateResource.Cache

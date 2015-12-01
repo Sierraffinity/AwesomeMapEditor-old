@@ -1,0 +1,66 @@
+
+
+//Chapter data pointer list editing
+#ifdef _FE6_
+#define EventPointerListOffset 0x664398
+#define EventPointerTable(id,offset) "ORG EventPointerListOffset+(4*id); POIN offset"
+#endif
+
+#ifdef _FE7_
+#define EventPointerListOffset 0xC9C9C8
+#define EventPointerTable(id,offset) "ORG EventPointerListOffset+(4*id); POIN offset"
+#endif
+
+#ifdef _FE8_
+#define EventPointerListOffset 0x8B363C
+#define EventPointerTable(id,offset) "ORG EventPointerListOffset+(4*id); POIN offset"
+#endif
+
+
+//Go to preparations screen
+#ifdef _FE7_
+#define GotoPrepScreen "ENDB"
+#endif
+
+#ifdef _FE8_
+#define GotoPrepScreen "GOTO $591FD8; ENDA"
+#endif
+
+
+//Event ID's with special meanings
+#ifdef _FE6_
+#define NoID 0
+#define BossQuoteID 1
+#define BossDeathQuoteID 2 
+#define SiezeID 3
+#define GameOverID 0x65
+#define CathConvo1 0x67
+#define CathConvo2 0x68
+#define CathConvo3 0x69
+#define IliaSacaeRouteID 0x6B
+#define CathRecruited 0x70
+#endif
+
+#ifdef _FE7_
+#define NoID 0
+#define BossQuoteID 1
+#define BossDeathQuoteID 2 
+#define SiezeID 3
+#define GameOverID 0x65
+#define LloydOrLinusID 0x70
+#define HawkeyeDeadID 0x81
+#define 19xxBeatID 0x86
+#define DartDeadID 0x88
+#define PentXLouiseC 0x8A
+#define PentXLouiseB 0x8B
+#endif
+
+#ifdef _FE8_
+#define NoID 0
+#define BossQuoteID 1
+#define BossDeathQuoteID 2 
+#define SiezeID 3
+#define DefeatAllID 6
+#define GameOverID 0x65
+#endif
+

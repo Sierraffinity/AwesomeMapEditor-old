@@ -1,0 +1,16 @@
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\DSTextFileSeparator\bin\Debug\combine.cmd
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\DSTextFileSeparator\bin\Debug\dissect.cmd
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\DSTextFileSeparator\bin\Debug\DSTextFileEditor.exe.config
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\DSTextFileSeparator\bin\Debug\DSTextFileEditor.exe
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\DSTextFileSeparator\bin\Debug\DSTextFileEditor.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\DSTextFileSeparator\bin\Debug\GBA.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\DSTextFileSeparator\bin\Debug\ROMhacking.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\DSTextFileSeparator\bin\Debug\GBA.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\DSTextFileSeparator\bin\Debug\ROMhacking.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\DSTextFileSeparator\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\DSTextFileSeparator\obj\Debug\DSTextFileEditor.exe
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\DSTextFileSeparator\obj\Debug\DSTextFileEditor.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\DSTextFileSeparator\bin\Debug\Nintenlord.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\DSTextFileSeparator\bin\Debug\Nintenlord.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\DSTextFileSeparator\bin\Debug\Nintenlord.Forms.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\DSTextFileSeparator\bin\Debug\Nintenlord.Forms.pdb

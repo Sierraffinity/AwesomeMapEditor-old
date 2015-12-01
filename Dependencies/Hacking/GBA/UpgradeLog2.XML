@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="ROMHacking">
+</Property><Property Name="Solution File" Value="C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\ROMHacking.sln">
+</Property><Property Name="Date" Value="2. elokuuta 2011">
+</Property><Property Name="Time" Value="20:54">
+</Property><Property Name="Log Number" Value="2">
+</Property></Properties><Event ErrorLevel="0" Project="GBAcore" Source="GBA\GBAcore.csproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="GBAcore" Source="GBA\GBAcore.csproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="GBA ASM editor" Source="GBA ASM editor\GBA ASM editor.csproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="GBA ASM editor" Source="GBA ASM editor\GBA ASM editor.csproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="1" Project="GBA Graphics Editor" Source="GBA Graphics Editor\GBA Graphics Editor.csproj" Description="Your project is targeting .NET Framework 2.0 or 3.0. If your project uses assemblies requiring a newer .NET Framework, your project will fail to build. You can change the .NET Framework version by clicking Properties on the project menu and then selecting a new version in the '.NET Framework' dropdown box. (In Visual Basic, this is located on the Compile tab by clicking the 'Advanced Compiler Options...' button.)">
+</Event><Event ErrorLevel="0" Project="GBA Graphics Editor" Source="GBA Graphics Editor\GBA Graphics Editor.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="GBA Graphics Editor" Source="GBA Graphics Editor\GBA Graphics Editor.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="MAR array inserter" Source="MAR array inserter\MAR array inserter.csproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="MAR array inserter" Source="MAR array inserter\MAR array inserter.csproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="UPSpatcher" Source="UPSpatcher\UPSpatcher.csproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="UPSpatcher" Source="UPSpatcher\UPSpatcher.csproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="ROMhackingCore" Source="ROMhackingCore\ROMhackingCore.csproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="ROMhackingCore" Source="ROMhackingCore\ROMhackingCore.csproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="LZ77" Source="..\NL Compressor\LZ77\LZ77.csproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="LZ77" Source="..\NL Compressor\LZ77\LZ77.csproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="FEDS portrait compression" Source="..\NL Compressor\FEDS portrait compression\FEDS portrait compression.csproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="FEDS portrait compression" Source="..\NL Compressor\FEDS portrait compression\FEDS portrait compression.csproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="RLE" Source="..\NL Compressor\RLE\RLE.csproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="RLE" Source="..\NL Compressor\RLE\RLE.csproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="Nintenlord Compressor" Source="..\NL Compressor\Compressor\Nintenlord Compressor.csproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="Nintenlord Compressor" Source="..\NL Compressor\Compressor\Nintenlord Compressor.csproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="NLZFileTester" Source="NLZFileTester\NLZFileTester.csproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="NLZFileTester" Source="NLZFileTester\NLZFileTester.csproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="BinaryTreeTest" Source="BinaryTreeTest\BinaryTreeTest.csproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="BinaryTreeTest" Source="BinaryTreeTest\BinaryTreeTest.csproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="FETextEditor" Source="FETextEditor\FETextEditor.csproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="FETextEditor" Source="FETextEditor\FETextEditor.csproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="Core" Source="..\Event assembler\Core\Core.csproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="Core" Source="..\Event assembler\Core\Core.csproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="Event assembler" Source="..\Event assembler\Event assembler\Event assembler.csproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="Event assembler" Source="..\Event assembler\Event assembler\Event assembler.csproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="NigthmareListToEAdefinitions" Source="..\Event assembler\NigthmareListToEAdefinitions\NigthmareListToEAdefinitions.csproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="NigthmareListToEAdefinitions" Source="..\Event assembler\NigthmareListToEAdefinitions\NigthmareListToEAdefinitions.csproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="ReadBinaryAndWriteText" Source="..\Event assembler\ReadBinaryAndWriteText\ReadBinaryAndWriteText.csproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="ReadBinaryAndWriteText" Source="..\Event assembler\ReadBinaryAndWriteText\ReadBinaryAndWriteText.csproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="TiledMapInserter" Source="TiledMapInserter\TiledMapInserter.csproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="TiledMapInserter" Source="TiledMapInserter\TiledMapInserter.csproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="LZ11" Source="..\NL Compressor\LZ11\LZ11.csproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="LZ11" Source="..\NL Compressor\LZ11\LZ11.csproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="DSTextFileEditor" Source="..\DSTextFileSeparator\DSTextFileEditor.csproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="DSTextFileEditor" Source="..\DSTextFileSeparator\DSTextFileEditor.csproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="NLsFeditor" Source="..\NLsFeditor\NLsFeditor.csproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="NLsFeditor" Source="..\NLsFeditor\NLsFeditor.csproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="NLightmare" Source="..\NLightmare\NLightmare.csproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="NLightmare" Source="..\NLightmare\NLightmare.csproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="PortraitInserter" Source="..\PortraitInserter\PortraitInserter.csproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="PortraitInserter" Source="..\PortraitInserter\PortraitInserter.csproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="Core" Source="Core\Core.csproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="Core" Source="Core\Core.csproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="" Source="ROMHacking.sln" Description="The solution file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="" Source="ROMHacking.sln" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="GBA Graphics Editor" Source="GBA Graphics Editor\GBA Graphics Editor.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

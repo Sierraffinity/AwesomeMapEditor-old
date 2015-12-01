@@ -1,0 +1,8 @@
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\SappyXMLEditor\SappyXMLEditor\bin\Debug\SappyXMLEditor.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\SappyXMLEditor\SappyXMLEditor\bin\Debug\SappyXMLEditor.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\SappyXMLEditor\SappyXMLEditor\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\SappyXMLEditor\SappyXMLEditor\obj\Debug\SappyXMLEditor.Properties.Resources.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\SappyXMLEditor\SappyXMLEditor\obj\Debug\SappyXMLEditor.csproj.GenerateResource.Cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\SappyXMLEditor\SappyXMLEditor\obj\Debug\SappyXMLEditor.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\SappyXMLEditor\SappyXMLEditor\obj\Debug\SappyXMLEditor.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\SappyXMLEditor\SappyXMLEditor\obj\Debug\SappyXMLEditor.Form1.resources

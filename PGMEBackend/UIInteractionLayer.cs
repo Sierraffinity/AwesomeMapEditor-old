@@ -48,5 +48,9 @@ namespace PGMEBackend
         void QuitApplication(int code);
 
         void LoadMap(object map);
+
+        void SetGLMapEditorSize(int w, int h);
+        void SetGLBlockChooserSize(int h);
+
     }
 }

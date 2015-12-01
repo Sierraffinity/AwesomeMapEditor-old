@@ -1,0 +1,76 @@
+##Changes the AI of a unit.
+##FE8 version uses value loaded to memory slot 1.
+CHAI, 0x32, 12, -game:FE6 -indexMode:8
+##Character whose AI to change.
+	Character, 4, 2
+##Changes AI.
+	AI, 8, 4, -coordinate:4
+
+CHAI, 0x32, 12, -game:FE6 -indexMode:8
+	Character, 4, 2
+##Changes AI.
+	AI 1, 8, 1
+##Changes AI.
+	AI 2, 9, 1
+##Changes AI.
+	AI 3, 10, 1
+##Changes AI.
+	AI 4, 11, 1
+
+CHAI, 0x32, 12, -game:FE6 -indexMode:8
+	Character, 4, 2
+	AI, 8, 4
+
+#Chapters: 20A
+CHAI, 0x33, 12, -game:FE6 -indexMode:8
+##Position of the unit whose AI to change.
+	Position, 4, 4, coordinates:2 -preferredBase:10
+	AI, 8, 4, -coordinate:4
+
+CHAI, 0x33, 12, -game:FE6 -indexMode:8
+	Position, 4, 4, coordinates:2 -preferredBase:10
+	AI 1, 8, 1
+	AI 2, 9, 1
+	AI 3, 10, 1
+	AI 4, 11, 1
+
+CHAI, 0x33, 12, -game:FE6 -indexMode:8
+	Position, 4, 4, coordinates:2 -preferredBase:10
+	AI, 8, 4
+
+
+
+
+CHAI, 0x74, 12, -game:FE7 -indexMode:8
+	Character, 4, 2
+	AI, 8, 4, -coordinate:4
+
+CHAI, 0x74, 12, -game:FE7 -indexMode:8
+	Character, 4, 2
+	AI 1, 8, 1
+	AI 2, 9, 1
+	AI 3, 10, 1
+	AI 4, 11, 1
+
+CHAI, 0x74, 12, -game:FE7 -indexMode:8
+	Character, 4, 2
+	AI, 8, 4
+
+
+CHAI, 0x75, 12, -game:FE7 -indexMode:8
+	Position, 4, 4, -coordinate:2 -preferredBase:10
+	AI, 8, 4, -coordinate:4
+
+CHAI, 0x75, 12, -game:FE7 -indexMode:8
+	Position, 4, 4, -coordinate:2 -preferredBase:10
+	AI 1, 8, 1
+	AI 2, 9, 1
+	AI 3, 10, 1
+	AI 4, 11, 1
+
+CHAI, 0x75, 12, -game:FE7 -indexMode:8
+	Position, 4, 4, -coordinate:2 -preferredBase:10
+	AI, 8, 4
+
+#CHAI, 0x3920, 4, -game:FE8 -indexMode:8
+#	Character, 2, 2

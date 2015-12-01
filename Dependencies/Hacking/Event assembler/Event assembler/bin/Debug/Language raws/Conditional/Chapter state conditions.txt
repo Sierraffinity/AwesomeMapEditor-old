@@ -1,0 +1,54 @@
+
+#Chapter: 11A
+##Executes events if Event ID has been used.
+IFET, 0x23, 12, -game:FE6 -indexMode:8
+##Evend ID to check.
+	Event ID, 4, 4
+	Value, 8, 4
+
+IFET, 0x4D, 12, -game:FE7 -indexMode:8
+	Conditional ID, 4, 2
+	Event ID, 8, 2
+
+
+#Chapters: 4, 7, 9...
+##Executes events if Event ID hasn't been used.
+IFEF, 0x22, 12, -game:FE6 -indexMode:8
+##Evend ID to check.
+	Event ID, 4, 4
+	Value, 8, 4
+
+IFEF, 0x4C, 12, -game:FE7 -indexMode:8
+	Conditional ID, 4, 2
+	Event ID, 8, 2
+
+
+##Executes events if it's Hector mode.
+IFHM, 0x4F, 8, -game:FE7 -indexMode:8
+	Conditional ID, 4, 2
+
+##Executes events if it's Eliwood mode.
+IFEM, 0x50, 8, -game:FE7 -indexMode:8
+	Conditional ID, 4, 2
+
+##Executes events if based on previous convos
+##Yes/No choise.
+IFYN, 0x52, 8, -game:FE7 -indexMode:8
+	Conditional ID, 4, 2
+
+##Executes events if based on previous convos
+##Yes/No choise.
+IFNY, 0x53, 8, -game:FE7 -indexMode:8
+	Conditional ID, 4, 2
+
+
+##Executes events if it's tutorial mode.
+IFTT, 0x54, 8, -game:FE7 -indexMode:8
+	Conditional ID, 4, 2
+
+##Executes events if specified turn hans't passed yet.
+IFTU, 0x56, 8, -game:FE7 -indexMode:8
+	Conditional ID, 4, 2
+##Turn to check.
+	Turn, 2, 2, -preferredBase:10
+

@@ -1,0 +1,616 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Core</name>
+    </assembly>
+    <members>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.IParameterized">
+            <summary>
+            A code that can take a certain amount of parameters. 
+            </summary>
+        </member>
+        <member name="P:Nintenlord.Event_Assembler.Core.Code.IParameterized.MinAmountOfParameters">
+            <summary>
+            Minimun amount of parameters accepted or -1 if no minimun exists.
+            </summary>
+        </member>
+        <member name="P:Nintenlord.Event_Assembler.Core.Code.IParameterized.MaxAmountOfParameters">
+            <summary>
+            Maximun amount of parameters accepted or -1 if no maximun exists.
+            </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Templates.CodeTemplate">
+            <summary>
+            Template for stored text code
+            </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Templates.ICodeTemplate">
+            <summary>
+            Template for assembly code
+            </summary>
+        </member>
+        <member name="M:Nintenlord.Event_Assembler.Core.Code.Templates.ICodeTemplate.Matches(Nintenlord.Event_Assembler.Core.Code.Language.Types.Type[])">
+            <summary>
+            Checks if code split to parameters matches this template
+            </summary>
+            <param name="parameterTypes">Code split to parameters.</param>
+            <returns>True if code fits this template, else false</returns>
+            <exception cref="!:NullReferanceException">If code is null or any of items in code are null.</exception>
+        </member>
+        <member name="M:Nintenlord.Event_Assembler.Core.Code.Templates.ICodeTemplate.GetLengthBytes(Nintenlord.Event_Assembler.Core.Code.Language.Expression.Parameter{System.Int32}[])">
+            <summary>
+            Gets the length of code that matches this template in bytes
+            </summary>
+            <param name="parameters">Code whose lenght to match</param>
+            <returns>Lenght of the code in bytes</returns>
+        </member>
+        <member name="M:Nintenlord.Event_Assembler.Core.Code.Templates.ICodeTemplate.GetData(Nintenlord.Event_Assembler.Core.Code.Language.Expression.Parameter{System.Int32}[],System.Func{System.String,System.Nullable{System.Int32}})">
+            <summary>
+            Gets the binary data of code
+            </summary>
+            <param name="parameters">Code that matches this template</param>
+            <param name="messageHandler">Message handling class</param>
+            <returns>Binary data of the code</returns>
+        </member>
+        <member name="M:Nintenlord.Event_Assembler.Core.Code.Templates.ICodeTemplate.Matches(System.Byte[],System.Int32)">
+            <summary>
+            Checks if binary data matches the
+            </summary>
+            <param name="data">Binary data</param>
+            <param name="offset">Position on the data to match</param>
+            <returns>True if data at offset matches this template, else false</returns>
+            <exception cref="!:IndexOutOfRange">If offset is smaller than 0 or larger or equal than data.Lenght</exception>
+        </member>
+        <member name="M:Nintenlord.Event_Assembler.Core.Code.Templates.ICodeTemplate.GetLengthBytes(System.Byte[],System.Int32)">
+            <summary>
+            Gets the length of binary data that matches this template in bytes
+            </summary>
+            <param name="code">Binary data</param>
+            <param name="offset">Position on the data to match</param>
+            <returns>Lenght of the code in bytes</returns>
+            <exception cref="!:IndexOutOfRange">If offset is smaller than 0 or larger or equal than data.Lenght</exception>
+        </member>
+        <member name="M:Nintenlord.Event_Assembler.Core.Code.Templates.ICodeTemplate.GetAssembly(System.Byte[],System.Int32)">
+            <summary>
+            Gets the assembly code of the binary data matching this template
+            </summary>
+            <param name="code">Binary data</param>
+            <param name="offset">Position of the code on the data</param>
+            <param name="messageHandler">Message handling class</param>
+            <returns>Assembly code matching the binary data</returns>
+            <exception cref="!:IndexOutOfRange">If offset is smaller than 0 or larger or equal than data.Lenght</exception>
+        </member>
+        <member name="P:Nintenlord.Event_Assembler.Core.Code.Templates.ICodeTemplate.MaxRepetition">
+            <summary>
+            Max repetition of this template as parameters
+            </summary>
+        </member>
+        <member name="P:Nintenlord.Event_Assembler.Core.Code.Templates.ICodeTemplate.EndingCode">
+            <summary>
+            If this template should end disassembling 
+            </summary>
+        </member>
+        <member name="P:Nintenlord.Event_Assembler.Core.Code.Templates.ICodeTemplate.OffsetMod">
+            <summary>
+            The modulus where the offset of this template should be 0
+            </summary>
+        </member>
+        <member name="P:Nintenlord.Event_Assembler.Core.Code.Templates.ICodeTemplate.AmountOfFixedCode">
+            <summary>
+            Amount of fixed code in this template.
+            </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Language.EACodeLanguageDisassembler">
+            <summary>
+            To be generealized.
+            </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Language.Expression.Sum`1">
+            <summary>
+            TODO: Update summary.
+            </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Language.Expression.BinaryOperator`1">
+            <summary>
+            TODO: Update summary.
+            </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Language.Expression.Tree.BitwiseXor`1">
+            <summary>
+            TODO: Update summary.
+            </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Templates.TemplateParameter">
+            <summary>
+            Parameter for code templates
+            </summary>
+        </member>
+        <member name="M:Nintenlord.Event_Assembler.Core.Code.StringReplacers.OriginalReplacer.GetContainedOriginals(System.String,System.Collections.Generic.IDictionary{System.Int32,System.String})">
+            <summary>
+            
+            </summary>
+            <param name="s"></param>
+            <param name="containedOriginals"></param>
+            <returns></returns>
+            <remarks>Surpricingly, the fastest way I've managed to do this.
+            Make this ingore makro parameters in search.</remarks>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Preprocessors.IPreprocessor">
+            <summary>
+            Preprocessor of code
+            </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.GBA.GBAPointerMaker">
+            <summary>
+            Makes GBA ROM pointers from ROM offsets
+            </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.IPointerMaker">
+            <summary>
+            Makes pointers out of offsets
+            </summary>
+        </member>
+        <member name="M:Nintenlord.Event_Assembler.Core.IPointerMaker.MakePointer(System.Int32)">
+            <summary>
+            Creates a valid pointer out of offset
+            </summary>
+            <param name="offset">Offset to transform</param>
+            <returns>A pointer</returns>
+        </member>
+        <member name="M:Nintenlord.Event_Assembler.Core.IPointerMaker.MakeOffset(System.Int32)">
+            <summary>
+            Makes a offset out of a pointer
+            </summary>
+            <param name="pointer">Pointer whose pointed offset to get</param>
+            <returns>Offset pointed by the pointer</returns>
+        </member>
+        <member name="M:Nintenlord.Event_Assembler.Core.IPointerMaker.IsAValidPointer(System.Int32)">
+            <summary>
+            Checks if the pointer is valid
+            </summary>
+            <param name="pointer">Pointer to check</param>
+            <returns>True if pointer is valid, else false</returns>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Language.Parser.TokenTypeParser">
+            <summary>
+            TODO: Update summary.
+            </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Language.Expression.Tree.BitwiseAnd`1">
+            <summary>
+            TODO: Update summary.
+            </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Collections.IDefineCollection">
+            <summary>
+            Collection for storing definitions and macros.
+            </summary>
+        </member>
+        <member name="M:Nintenlord.Event_Assembler.Core.Collections.IDefineCollection.Add(System.String,System.String,System.String[])">
+            <summary>
+            Adds a new item with name original and parameters and with replacer.
+            </summary>
+            <param name="original"></param>
+            <param name="replacer"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Nintenlord.Event_Assembler.Core.Collections.IDefineCollection.Add(System.String,System.String)">
+            <summary>
+            Adds a new item with name original with 0 parameters and with replacer.
+            </summary>
+            <param name="original"></param>
+            <param name="replacer"></param>
+        </member>
+        <member name="M:Nintenlord.Event_Assembler.Core.Collections.IDefineCollection.ContainsName(System.String,System.String[])">
+            <summary>
+            Checks if this collection contains an item with specified number of parameters.
+            </summary>
+            <param name="item"></param>
+            <param name="numberOfParameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nintenlord.Event_Assembler.Core.Collections.IDefineCollection.ContainsName(System.String)">
+            <summary>
+            Checks if this collection contains an item with 0 parameters.
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nintenlord.Event_Assembler.Core.Collections.IDefineCollection.Remove(System.String,System.String[])">
+            <summary>
+            Removes the defined original with the parameters.
+            </summary>
+            <param name="original"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Nintenlord.Event_Assembler.Core.Collections.IDefineCollection.Remove(System.String)">
+            <summary>
+            Removes the defined original with 0 parameters.
+            </summary>
+            <param name="original"></param>
+        </member>
+        <member name="M:Nintenlord.Event_Assembler.Core.Collections.IDefineCollection.ApplyDefines(System.String,System.String@)">
+            <summary>
+            Applies the defines on the original and returns the result.
+            </summary>
+            <param name="original"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Language.Expression.Minus`1">
+            <summary>
+            TODO: Update summary.
+            </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.IO.Input.IInputStream">
+            <summary>
+            Only used for preprocessing.
+            </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Language.Types.MetaType">
+            <summary>
+            Type of the type
+            </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Collections.DefineCollectionOld">
+            <summary>
+            Collection for containing defines and macros
+            </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Preprocessors.NopPreprocessor">
+            <summary>
+            Preproserror that does nothing.
+            </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Language.EACodeLanguage">
+            <summary>
+            Event assemblers code language
+            </summary>
+        </member>
+        <member name="M:Nintenlord.Event_Assembler.Core.Code.Language.EACodeLanguage.#ctor(System.String,Nintenlord.Event_Assembler.Core.IPointerMaker,System.Tuple{System.String,System.Collections.Generic.List{Nintenlord.Event_Assembler.Core.Code.Language.Priority}}[][],Nintenlord.Event_Assembler.Core.Code.Templates.ICodeTemplateStorer,System.StringComparer)">
+            <summary>
+            Creates a new Event Assembler code language
+            </summary>
+            <param name="name">Name of the language</param>
+            <param name="pointerMaker">Pointer maker for this language</param>
+            <param name="pointerList">Pointer list of this langauge, String is the name of the 
+            label to point to, List are the priorities that are pointed to.</param>
+            <param name="pointerListParameters">Array of amount of pointers per POIN code for pointer list.</param>
+        </member>
+        <member name="M:Nintenlord.Event_Assembler.Core.Code.Language.EACodeLanguage.IsReserved(System.String)">
+            <summary>
+            Checks if code should be undefinable. Do not raise errors based on this.
+            </summary>
+            <param name="word"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Nintenlord.Event_Assembler.Core.Code.Language.EACodeLanguage.Name">
+            <summary>
+            Name of the langauge.
+            </summary>
+        </member>
+        <member name="P:Nintenlord.Event_Assembler.Core.Code.Language.EACodeLanguage.MessageLog">
+            <summary>
+            Mesage handler to use for assembling and disassembling
+            </summary>
+        </member>
+        <member name="P:Nintenlord.Event_Assembler.Core.Code.Language.EACodeLanguage.MainPriorities">
+            <summary>
+            Priorities for disassembling main codes
+            </summary>
+        </member>
+        <member name="P:Nintenlord.Event_Assembler.Core.Code.Language.EACodeLanguage.UnitPriorities">
+            <summary>
+            Priorities for disassembling unit codes
+            </summary>
+        </member>
+        <member name="P:Nintenlord.Event_Assembler.Core.Code.Language.EACodeLanguage.TrapPriorities">
+            <summary>
+            Priorities for disassembling ballista codes
+            </summary>
+        </member>
+        <member name="P:Nintenlord.Event_Assembler.Core.Code.Language.EACodeLanguage.NormalPriorities">
+            <summary>
+            Priorities for disassembling normal codes
+            </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Language.Expression.Tree.BitwiseOr`1">
+            <summary>
+            TODO: Update summary.
+            </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Templates.RawCodeTemplate">
+            <summary>
+            Template for raw hex code
+            </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Language.FE6CodeLanguage">
+            <summary>
+            Code language for FE6
+            </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Language.Expression.Multiply`1">
+            <summary>
+            TODO: Update summary.
+            </summary>
+        </member>
+        <member name="F:Nintenlord.Event_Assembler.Core.Code.Language.EAExpressionAssembler.scopeStructure">
+            <summary>
+            scope -> (parent scope, scope symbols)
+            Refactor as a separate class with access modifiers like public, private etc..
+            </summary>
+        </member>
+        <member name="M:Nintenlord.Event_Assembler.Core.Code.Language.EAExpressionAssembler.GetText(Nintenlord.Event_Assembler.Core.Code.Language.Expression.Code{System.Int32},Nintenlord.Event_Assembler.Core.Code.Language.Expression.Scope{System.Int32})">
+            <summary>
+            Turns code to text for printing.
+            </summary>
+            <param name="code"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Language.Expression.Tree.LabelDefinition`1">
+            <summary>
+            TODO: Update summary.
+            </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Preprocessors.BuiltInMacros.InsertText">
+            <summary>
+            TODO: Update summary.
+            </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Program">
+             <summary>
+             Done:
+                   Fix problem with merging codes making label positions vanish.
+                   Fix template comparing to return UNIT instead of UNIT 0.
+                   Fix problem with 1 bit long parameters.
+                   Fix problem with bits getting reversed when reading/writing. *A FEATURE, NOT A BUG*
+                   Make preprocessor handle stacked block comments properly.
+                   Make sure paths like \Test\test.txt are processed correctly.
+                   Fix Template choosing 0 0 0 0 over [0,0,0,0]
+                   Make EACodeLanguage to reveal it's codes somehow.
+                   Add pool ability to preprocessor, with second parameter as optional label name.
+                   Add built-in macros like ?(), >(), =(), cond(), vector buiding and unbuilding, etc.
+                   Rewrite macro storing to make searching faster.
+                   Rewrite code template storing to make searching faster.
+                   Remove ChooseEnum from IMEssageLog.
+                   Move LanguageRawsAnalyzer to Core.
+                   Make codes give better error codes if code exists but amount of parameters is right.
+                   Make $XX008001 fail properly.
+            
+             Later releases:
+                   Make preprocessor properly report errors with line "#"
+                   Make Disassembly use BinaryReader or some sort of input-stream somehow.
+                   Make recursive macros work properly.
+                   Move game specific things to separate files.
+                   Add support for disassembling fixed (other parameters affect) amount of pointed code.
+                   Make structure disassembly more modular.
+                   More options to disassembly.
+                   Add list/vector processing macros aka Head, Tail and Cons, then implement EAstdlib
+                     macros based on them like Map, Fold and etc.
+                   Add built-in macro for getting lists/vectors length.
+                   Make IDefineCollection to reveal it's defines and macros somehow.
+                   Make language raws processing and code assembling more modular for possible future IDE.
+                   Type system(class, character, position etc)
+                   Disassembly rewrite to use types(meaning Eliwood will appear in disassembled chapters)
+                   All the remaining language specific things to raws, meaning you can add custom languages
+                   Make macros give better error codes if macro exists but amount of parameters is right.
+             </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Templates.GenericFE8Template">
+            <summary>
+            Generic FE8 code to help disassembly
+            </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Language.Types.Type">
+            <summary>
+            Class representing type information.
+            </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Language.Parser.MathParser`1">
+            <summary>
+            TODO: Update summary.
+            </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Language.Code">
+            <summary>
+            Helper class for templates and codes
+            </summary>
+        </member>
+        <member name="M:Nintenlord.Event_Assembler.Core.Code.Language.Code.#ctor(System.String[],Nintenlord.Event_Assembler.Core.Code.Templates.ICodeTemplate,System.Int32)">
+            <summary>
+            Creates a new Code from template and matching text.
+            </summary>
+            <param name="line">Code split to parameters</param>
+            <param name="template">Template of this code</param>
+        </member>
+        <member name="M:Nintenlord.Event_Assembler.Core.Code.Language.Code.op_Equality(Nintenlord.Event_Assembler.Core.Code.Language.Code,Nintenlord.Event_Assembler.Core.Code.Language.Code)">
+            <summary>
+            Checks if Codes have the same template
+            </summary>
+            <param name="a">Instance of Code</param>
+            <param name="b">Instance of Code</param>
+            <returns>Returns true codes use the same template, else false</returns>
+        </member>
+        <member name="M:Nintenlord.Event_Assembler.Core.Code.Language.Code.op_Inequality(Nintenlord.Event_Assembler.Core.Code.Language.Code,Nintenlord.Event_Assembler.Core.Code.Language.Code)">
+            <summary>
+            Checks if Codes do not have the same template
+            </summary>
+            <param name="a">Instance of Code</param>
+            <param name="b">Instance of Code</param>
+            <returns>Returns true codes use different template, else false</returns>
+        </member>
+        <member name="M:Nintenlord.Event_Assembler.Core.Code.Language.Code.GetHashCode">
+            <summary>
+            Return templates hash code
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nintenlord.Event_Assembler.Core.Code.Language.Code.Equals(System.Object)">
+            <summary>
+            Checks if obj is a Code and uses the same template
+            </summary>
+            <param name="obj">Object to compare</param>
+            <returns>True if obj is Code and has same themplate, else false</returns>
+        </member>
+        <member name="P:Nintenlord.Event_Assembler.Core.Code.Language.Code.Template">
+            <summary>
+            The template of this code
+            </summary>
+        </member>
+        <member name="P:Nintenlord.Event_Assembler.Core.Code.Language.Code.Text">
+            <summary>
+            The text of this code
+            </summary>
+        </member>
+        <member name="P:Nintenlord.Event_Assembler.Core.Code.Language.Code.Length">
+            <summary>
+            Lenght of this code in bytes
+            </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Language.Expression.Division`1">
+            <summary>
+            TODO: Update summary.
+            </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Templates.TerminatingStringTemplate">
+            <summary>
+            Template for terminating string of data
+            </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Templates.CodeFillerTemplate">
+            <summary>
+            Template for code filler
+            </summary>
+            <remarks>TODO: Replace with macro</remarks>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Language.Priority">
+            <summary>
+            Code priorities
+            </summary>
+        </member>
+        <member name="F:Nintenlord.Event_Assembler.Core.Code.Language.Priority.none">
+            <summary>
+            Defauls priority
+            </summary>
+        </member>
+        <member name="F:Nintenlord.Event_Assembler.Core.Code.Language.Priority.main">
+            <summary>
+            Priority for main codes
+            </summary>
+        </member>
+        <member name="F:Nintenlord.Event_Assembler.Core.Code.Language.Priority.high">
+            <summary>
+            Unused
+            </summary>
+        </member>
+        <member name="F:Nintenlord.Event_Assembler.Core.Code.Language.Priority.low">
+            <summary>
+            For general, non-specific codes
+            </summary>
+        </member>
+        <member name="F:Nintenlord.Event_Assembler.Core.Code.Language.Priority.pointer">
+            <summary>
+            For pointer lists
+            </summary>
+        </member>
+        <member name="F:Nintenlord.Event_Assembler.Core.Code.Language.Priority.unit">
+            <summary>
+            For unit data
+            </summary>
+        </member>
+        <member name="F:Nintenlord.Event_Assembler.Core.Code.Language.Priority.moveManual">
+            <summary>
+            For move manuals used by movement codes
+            </summary>
+        </member>
+        <member name="F:Nintenlord.Event_Assembler.Core.Code.Language.Priority.shopList">
+            <summary>
+            For shops item lists
+            </summary>
+        </member>
+        <member name="F:Nintenlord.Event_Assembler.Core.Code.Language.Priority.ballista">
+            <summary>
+            For ballista data
+            </summary>
+        </member>
+        <member name="F:Nintenlord.Event_Assembler.Core.Code.Language.Priority.ASM">
+            <summary>
+            For assembly language
+            </summary>
+        </member>
+        <member name="F:Nintenlord.Event_Assembler.Core.Code.Language.Priority.battleData">
+            <summary>
+            For battle data used by fighting codes
+            </summary>
+        </member>
+        <member name="F:Nintenlord.Event_Assembler.Core.Code.Language.Priority.reinforcementData">
+            <summary>
+            For reinforcement data used by unit data
+            </summary>
+        </member>
+        <member name="F:Nintenlord.Event_Assembler.Core.Code.Language.Priority.coordList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Nintenlord.Event_Assembler.Core.Code.Language.Priority.unknown">
+            <summary>
+            Unknown priority
+            </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Language.FE7CodeLanguage">
+            <summary>
+            Code language for FE7
+            </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Language.Expression.Modulus`1">
+            <summary>
+            TODO: Update summary.
+            </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Language.Expression.Folding">
+            <summary>
+            TODO: Update summary.
+            </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Language.Expression.Tree.BitShiftRight`1">
+            <summary>
+            TODO: Update summary.
+            </summary>
+        </member>
+        <member name="M:Nintenlord.Event_Assembler.Core.Code.Templates.TemplateComparer.Compare(Nintenlord.Event_Assembler.Core.Code.Templates.ICodeTemplate,Nintenlord.Event_Assembler.Core.Code.Templates.ICodeTemplate)">
+            <summary>
+            Compares two templates and finds the better match.
+            </summary>
+            <param name="a"></param>
+            <param name="b"></param>
+            <returns>Positive if a is better match, negative if b is better, else 0.</returns>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.LanguageProcessor">
+            <summary>
+            Loads language raws and processes them into languages and codes
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Nintenlord.Event_Assembler.Core.Code.LanguageProcessor.ParseLinesInFile(System.String,System.Collections.Generic.IEnumerable{System.String})" -->
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Language.Parser.ScopeParser`1">
+            <summary>
+            TODO: Update summary.
+            </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Language.Expression.Tree.BitShiftLeft`1">
+            <summary>
+            TODO: Update summary.
+            </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Language.FE8CodeLanguage">
+            <summary>
+            Code language for FE8
+            </summary>
+        </member>
+        <member name="T:Nintenlord.Event_Assembler.Core.Code.Language.Lexer.Tokeniser">
+            <summary>
+            TODO: Update summary.
+            </summary>
+        </member>
+    </members>
+</doc>

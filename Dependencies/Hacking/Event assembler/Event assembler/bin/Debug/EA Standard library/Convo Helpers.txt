@@ -1,0 +1,28 @@
+
+//Show text with background and return to map
+#ifdef _FE6_
+#define Text(text) "TEX1 text; REMA"
+#define Text(background,text) "FADI 0x10; HIDEMAP; BACG background; FADU 0x10; SHOWMAP; TEX1 text; REMA"
+#endif
+
+#ifdef _FE7_
+#define Text(text) "TEX1 text; REMA"
+#define Text(background,text) "FADI 0x10; HIDEMAP; BACG background; FADU 0x10; SHOWMAP; TEX1 text; REMA"
+#define ClearBrownBox "_ASM0x42 0x83181"
+#endif
+
+#ifdef _FE8_
+#define Text(text) "TEXTSTART; TEXTSHOW text; TEXTEND; REMA"
+#define Text(background,text) "_SETVAL 2 background; _SETVAL 3 text; GOTO $9EE310"
+#endif
+
+
+//Smooth changing to CG
+#ifdef _FE7_
+#define ChangeToCutScene(cutscene) "FADICG 0x10; HIDEMAP; SHCG cutscene; FADUCG 0x10; SHOWMAP"
+#endif
+
+//Shows text on a scroll
+#ifdef _FE7_
+#define ScrollText(textID) "TEX6 7 [0,0] textID; _ASM0x42 $83181; _0x89"
+#endif

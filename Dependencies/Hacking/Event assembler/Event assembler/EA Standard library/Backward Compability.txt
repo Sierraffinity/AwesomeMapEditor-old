@@ -1,0 +1,51 @@
+#define Empty " "
+
+#ifdef _FE7_
+#define IFEV IFEF
+#define TEX5 TEXTCG
+
+//Old world map codes
+
+#define PTBU TEXTBOXTOTOP
+#define PTBD TEXTBOXTOBOTTOM
+#define CTEW REMOVETEXTBOX
+#define LOPR SHOWPORTRAIT
+#define REPR REMOVEPORTRAIT
+#define LWMA LOADWM
+#define FAMA FADETOWM
+#define LWMC HIGHLIGHT
+#define FLDT PLACEDOT
+#define SWMD STARTWM
+#define REPL RIPPLE
+#define CMSP PUTSPRITE
+#define RMSP REMSPRITE
+
+#endif
+
+#ifdef _FE8_
+
+//IFCD replacement
+#define IfCharacterDead(char, condID) "_SETVAL 2 char; _SETCONDITION condID 0xC 2"
+
+//IFCA replacement
+#define IfCharacterActive(char, condID) "_SETVAL 7 char; _SETCONDITION condID 0xC 7"
+
+//MONE replacement
+#define GiveMoney(vill, amount) "_SETVAL 3 amount; _GIVEITEMTOMAIN vill"
+
+//ITGC replacement
+#define GiveItemToCharacter(char, item) "_SETVAL 3 item; _GIVEITEMTO char"
+
+//ITGV replacement
+#define GiveItemToCurrent(item) "_SETVAL 3 item; _GIVEITEMTO 0xFFFF"
+
+//ITGM replacement
+#define GiveItemToMain(item) "_SETVAL 3 item; _GIVEITEMTOMAIN 0"
+
+//CMDS replacement
+#define BattleStart "_SETVAL 0xD 0"
+
+//CMDL replacement
+#define BattleCommand(command) "_SETVAL 1 command; _SAVEFORBATTLE"
+
+#endif

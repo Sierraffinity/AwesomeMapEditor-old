@@ -1,0 +1,51 @@
+//Made by markyjoe1990 of Youtube
+//Modified by Nintenlord
+
+#define DISABLE_TUTORIALS
+#include EAstdlib.event
+
+EventPointerTable(0x??,Pointers)
+
+
+org 0x????????
+Pointers:
+POIN Turn_events 
+POIN Character_events 
+POIN Location_events 
+POIN Misc_events
+POIN BallistaData BallistaData
+POIN Bad Bad Bad Bad
+POIN Good Good Good Good
+POIN Opening_event Ending_event
+
+Bad:
+UNIT
+
+Good:
+UNIT
+
+Turn_events:
+TURN
+
+Character_events:
+CHAR
+
+Location_events:
+LOCA
+
+Misc_events:
+CauseGameOverIfLordDies
+AFEV
+
+Opening_event:
+ENDA
+
+Ending_event:
+MoveToChapter(0x??)
+
+BallistaData:
+BLST
+
+
+MESSAGE Events end at offset currentOffset
+//The map for this chapter is at offset: ????????

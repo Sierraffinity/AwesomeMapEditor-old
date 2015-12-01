@@ -1,0 +1,121 @@
+##Loads a map to use.
+LOADWM, 0xAC, 16, -game:FE7 -indexMode:8
+##The ID of the map to load.
+	Map to load, 4, 2
+##Position of the camera on the map after
+##it is loaded in pixels.
+	Position, 8, 4, coordinates:2 -preferredBase:10
+##Way to load the map.
+	Way to load, 12, 2 
+
+##Lights up an area on the world map.
+HIGHLIGHT, 0xB9, 16, -game:FE7 -indexMode:8
+##Area on the world map to light up.
+	Area to light up, 8, 1
+
+##Fade into a map.
+FADETOWM, 0xC8, 16, -game:FE7 -indexMode:8
+##Position on the map to fade to in pixels.
+	Position, 4, 4, coordinates:2 -preferredBase:10
+##Map to fade into.
+	Map to load, 8, 2
+	Unknown, 10, 2
+	Unknown2, 12, 4
+
+##Creates a flashing dot on the map.
+PLACEDOT, 0xBD, 20, -game:FE7 -indexMode:8
+##Map ID of the dot.
+	ID, 4, 1
+##Position of the dot on the world map in pixels.
+	Position, 8, 4, coordinates:2 -preferredBase:10
+##Palette of the dot.
+	Palette, 12, 1
+
+##Rippling effect.
+RIPPLE, 0xC9, 8, -game:FE7 -indexMode:8
+##Position of teh rippling effect on the world map.
+	Position, 4, 4, coordinates:2 -preferredBase:10
+
+
+
+#HIGHLIGHT, 0x40B8, 8, -game:FE8 -indexMode:8
+#	Area to light up, 4, 1
+
+PLACEDOT, 0xBC60, 12, -game:FE8 -indexMode:8	
+	Palette, 6, 1
+##Position of the dot.
+	Position ID, 8, 1
+##Special effect on the dot.
+	Special effect, 10, 1
+
+#Chapters: 1
+##Zoom/nove to position in the larger world map.
+ZOOMTO, 0x4F, 8, -game:FE6 -indexMode:8
+##Position in pixels to move.
+	Coordinates, 4, 4, -coordinates:2 -preferredBase:10
+
+#Chapters: 16
+##Returns to larger world map.
+ZOOMOUT, 0x50, 4, -game:FE6 -indexMode:8
+
+#Chapters: Tutorial
+##Highlights a country on the world map.
+HIGHLIGHT, 0x5B, 8, -game:FE6 -indexMode:8
+##Object ID of the highlighting.
+##All items shown at once must have an unique ID.
+	Map object ID, 4, 2
+##ID of the country to highlight.
+	Country ID, 6, 2
+
+#Chapters: 1
+##Shows an arrow.
+SHOWARROW, 0x5A, 8, -game:FE6 -indexMode:8
+##Which arrow to show. All arrows are premade.
+	Arrow ID, 4, 2
+##Color of the arrow.
+	Color, 6, 2
+
+#Chapters: Tutorial
+##Places a highlighted dot on the world map.
+PLACEDOT, 0x5E, 16, -game:FE6 -indexMode:8
+##Map object ID of the dot.
+##All items shown at once must have an unique ID.
+	Map object ID, 4, 4
+##Position of the dot in pixels on the world map.
+	Position, 8, 4, -coordinates:2 -preferredBase:10
+##Color of the dot.
+	Color, 12, 4
+
+#Chapters: Tutorial
+##Removes a map object.
+REMOVE2, 0x5F, 8, -game:FE6 -indexMode:8
+##Map object to remove.
+	Map object ID, 4, 4
+
+##Removes a map object.
+REMOVE1, 0x52, 8, -game:FE6 -indexMode:8
+##Map object to remove.
+	Map object ID, 4, 4
+
+#Chapters: 1
+##Places a flag on the world map.
+PLACEFLAG, 0x60, 16, -game:FE6 -indexMode:8
+##Map ID of the flag.
+##All items shown at once must have an unique ID.
+	Map object ID, 4, 4
+##Position of the flag on the world map in pixels.
+	Position, 8, 4, -coordinates:2 -preferredBase:10
+##Color of the flag.
+	Flag color, 12, 4
+
+#Chapters: 16
+##Removes a map object.
+REMOVE4, 0x61, 8, -game:FE6 -indexMode:8
+##Map object to remove.
+	Map object ID, 4, 4
+
+#Chapters: Tutorial
+##Removes map object
+REMOVE3, 0x63, 8, -game:FE6 -indexMode:8
+##Map object to remove.
+	Map object ID, 4, 4

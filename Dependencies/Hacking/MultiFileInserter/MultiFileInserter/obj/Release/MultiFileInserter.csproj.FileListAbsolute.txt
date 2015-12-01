@@ -1,0 +1,12 @@
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\MultiFileInserter\MultiFileInserter\bin\Release\MultiFileInserter.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\MultiFileInserter\MultiFileInserter\bin\Release\MultiFileInserter.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\MultiFileInserter\MultiFileInserter\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\MultiFileInserter\MultiFileInserter\obj\Release\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\MultiFileInserter\MultiFileInserter\obj\Release\MultiFileInserter.csproj.GenerateResource.Cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\MultiFileInserter\MultiFileInserter\obj\Release\MultiFileInserter.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\MultiFileInserter\MultiFileInserter\obj\Release\MultiFileInserter.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\MultiFileInserter\MultiFileInserter\obj\Release\WindowsFormsApplication1.Form1.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\MultiFileInserter\MultiFileInserter\bin\Release\MultiFileInserter.exe.manifest
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\MultiFileInserter\MultiFileInserter\bin\Release\MultiFileInserter.application
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\MultiFileInserter\MultiFileInserter\obj\Release\MultiFileInserter.exe.manifest
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\MultiFileInserter\MultiFileInserter\obj\Release\MultiFileInserter.application

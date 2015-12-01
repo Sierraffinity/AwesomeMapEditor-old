@@ -1,0 +1,35 @@
+
+##Places or moves a map sprite.
+PUTSPRITE, 0xB7, 20, -game:FE7 -indexMode:8
+##ID of the sprite.
+	ID, 4, 2
+##Position of the sprite on the world map in pixels.
+	Position, 8, 4, -coordinates:2 -preferredBase:10
+##Class of the sprite.
+	Class, 12, 1
+##Sprite colour, walking speed and whether camera follows it.
+	Sprite properties, 13, 1
+##ID that separates srpites with same class.
+	In-class ID, 14, 1
+	Unknown, 15, 1
+	Unknown2, 16, 4
+
+PUTSPRITE, 0x9E60, 12, -game:FE8 -indexMode:8
+	ID, 4, 2
+	Class, 6, 1
+##Colour of the sprite.
+	Allegiance, 8, 1
+##Unknown.
+	Dunno, 10, 2
+
+
+##Removes a map sprite.
+REMSPRITE, 0xB8, 12, -game:FE7 -indexMode:8
+##ID of the sprite.
+	ID, 4, 2
+##unknown.
+	Value, 8, 4
+
+
+REMSPRITE, 0xA040, 8, -game:FE8 -indexMode:8
+	ID, 4, 2

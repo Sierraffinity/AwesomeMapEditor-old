@@ -1,0 +1,676 @@
+
+_SETVAL, 0x0540, 8, -game:FE8 -indexMode:8
+	Memory slot, 2, 2
+	Value, 4, 4
+
+_SAVEFORBATTLE, 0x721, 4, -game:FE8 -indexMode:8
+
+_GOTO_HELL, 0xA40, 8, -game:FE8 -indexMode:8
+	0xFFFFFFFF, 4, 4, -fixed
+
+_SETCONDITION, 0xC40, 8, -game:FE8 -indexMode:8
+	Conditional ID, 2, 2
+	Unknown, 4, 2
+	Unknown2, 6, 2
+
+_SETCONDITION2, 0xC41, 8, -game:FE8 -indexMode:8
+	Conditional ID, 2, 2
+	Unknown, 4, 2
+	Unknown2, 6, 2
+
+_ASMC2, 0xD41, 8, -language:FE8 -indexMode:8
+	Offset, 4, 4, -pointer:ASM
+
+_MUSICSOMETHING, 0x1321, 4, -game:FE8 -indexMode:8
+	Something, 2, 2, -preferredBase:10 -signed
+	
+_LOAD1, 0x2C40, 8, -game:FE8 -indexMode:8 
+	Dunno, 2, 2
+	Pointer, 4, 4, -pointer:unit
+
+_LOAD_WHATEVER, 0x2C40, 8, -game:FE8 -indexMode:8 
+	Dunno, 2, 2
+	0xFFFFFFFF, 4, 4, -fixed
+
+_LOAD2, 0x2C41, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Pointer, 4, 4, -pointer:unit
+
+_LOAD3, 0x2C42, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Pointer, 4, 4, -pointer:unit
+
+#Movement codes
+_MOVE, 0x2F40, 8, -game:FE8 -indexMode:8
+	Dunno, 2, 2
+	Character, 4, 2
+	Position to move to, 6, 2, -coordinate:2 -preferredBase:10
+
+_MOVE1, 0x2F41, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+	Value3, 6, 2
+
+_MOVE2, 0x2F42, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+	Value3, 6, 2
+
+_MOVE3, 0x2F43, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+	Value3, 6, 2
+	
+_WARP, 0x2F48, 8, -game:FE8 -indexMode:8
+	Unknown1, 2, 2
+	Unknown2, 4, 2
+	Position, 6, 2, coordinates:2 -preferredBase:10
+
+_GIVEITEMTO, 0x3720, 4, -game:FE8 -indexMode:8
+	Character, 2, 2
+
+_GIVEITEMTOMAIN, 0x3721, 4, -game:FE8 -indexMode:8
+	Village or cutscene, 2, 2
+
+
+	
+_0x0220, 0x0220, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+_0x0221, 0x0221, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+_0x0228, 0x0228, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+_0x0229, 0x0229, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+#Fades out of BG to map
+_0x0320, 0x0320, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+_0x0321, 0x0321, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+
+_0x0420, 0x0420, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+
+_0x0620, 0x0620, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+_0x0621, 0x0621, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+_0x0625, 0x0625, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+#Scripted battles related?
+_0x0722, 0x0722, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+#Conditions related?
+_0x0C44, 0x0C44, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+	Value3, 6, 2
+
+_0x0C45, 0x0C45, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+	Value3, 6, 2
+
+#Stalling?
+_0x0E22, 0x0E22, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+_0x0E23, 0x0E23, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+
+_0x0F20, 0x0F20, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+_0x0F21, 0x0F21, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+_0x0F23, 0x0F23, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+
+_0x1020, 0x1020, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+
+_0x1120, 0x1120, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+
+#Music related codes?
+#MUEN
+_0x1322, 0x1322, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+_0x1324, 0x1324, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+_0x1326, 0x1326, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+_0x1328, 0x1328, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+
+_0x1620, 0x1620, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+
+#All parameters always zero
+_0x1860, 0x1860, 12, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+	Value3, 6, 2
+	Value4, 8, 2
+	Value5, 10, 2
+
+_0x1861, 0x1861, 12, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+	Value3, 6, 2
+	Value4, 8, 2
+	Value5, 10, 2
+
+_0x1862, 0x1862, 12, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+	Value3, 6, 2
+	Value4, 8, 2
+	Value5, 10, 2
+
+
+_0x1920, 0x1920, 4, -game:FE8 -indexMode:8
+
+_0x1922, 0x1922, 4, -game:FE8 -indexMode:8
+
+_0x1923, 0x1923, 4, -game:FE8 -indexMode:8
+
+_0x1924, 0x1924, 4, -game:FE8 -indexMode:8
+
+_0x1925, 0x1925, 4, -game:FE8 -indexMode:8
+
+_0x1927, 0x1927, 4, -game:FE8 -indexMode:8
+
+_0x1928, 0x1928, 4, -game:FE8 -indexMode:8
+
+_0x1929, 0x1929, 4, -game:FE8 -indexMode:8
+
+#Text?
+
+#Removes bubbles and portraits
+_0x1A21, 0x1A21, 4, -game:FE8 -indexMode:8
+
+_0x1A22, 0x1A22, 4, -game:FE8 -indexMode:8
+
+_0x1A23, 0x1A23, 4, -game:FE8 -indexMode:8
+
+#This is the solo text box used in the final chapter with the Demon King speaking.
+#Followed by _SETVAL 0xB 0xXX00YY
+_0x1A24, 0x1A24, 4, -game:FE8 -indexMode:8
+	
+_0x1A25, 0x1A25, 4, -game:FE8 -indexMode:8
+
+#MORETEXT
+_0x1B21, 0x1B21, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+#Shows backgrounds?
+
+#Changes bg without removing palettes if val1 = 0xFFFF
+_0x2140, 0x2140, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+	Value3, 6, 2
+
+_0x2141, 0x2141, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+	Value3, 6, 2
+
+
+_0x2220, 0x2220, 4, -game:FE8 -indexMode:8
+
+#Camera codes?
+_0x2620, 0x2620, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+_0x2629, 0x2629, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+
+_0x2720, 0x2720, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+_0x2721, 0x2721, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+#FoW related?
+_0x2920, 0x2920, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+#Moving to chapter related?
+_0x2A23, 0x2A23, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+_0x2A24, 0x2A24, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+
+_0x2B22, 0x2B22, 4, -game:FE8 -indexMode:8
+
+
+_0x2D20, 0x2D20, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+_0x2E21, 0x2E21, 4, -game:FE8 -indexMode:8
+
+_0x3240, 0x3240, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+
+_0x3242, 0x3242, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+
+
+_0x3322, 0x3322, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+_0x3320, 0x3320, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+_0x3323, 0x3323, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+_0x3325, 0x3325, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+_0x3326, 0x3326, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+_0x3327, 0x3327, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+_0x3328, 0x3328, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+#Unit editing?
+_0x3420, 0x3420, 4, -game:FE8 -indexMode:8
+	Character, 2, 2
+
+_0x3421, 0x3421, 4, -game:FE8 -indexMode:8
+	Character, 2, 2
+
+_0x3425, 0x3425, 4, -game:FE8 -indexMode:8
+	Character, 2, 2
+
+_0x3428, 0x3428, 4, -game:FE8 -indexMode:8
+	Character, 2, 2
+
+_0x342A, 0x342A, 4, -game:FE8 -indexMode:8
+	Character, 2, 2
+
+_0x342B, 0x342B, 4, -game:FE8 -indexMode:8
+	Character, 2, 2
+
+_0x342C, 0x342C, 4, -game:FE8 -indexMode:8
+	Character, 2, 2
+
+_0x342D, 0x342D, 4, -game:FE8 -indexMode:8
+	Character, 2, 2
+
+_0x342E, 0x342E, 4, -game:FE8 -indexMode:8
+	Character, 2, 2
+
+
+_0x3640, 0x3640, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+	Value3, 6, 2
+
+#Item giving related?
+_0x3722, 0x3722, 4, -game:FE8 -indexMode:8
+
+#AI changing?
+_0x3920, 0x3920, 4, -game:FE8 -indexMode:8
+	Character, 2, 2
+
+_0x3921, 0x3921, 4, -game:FE8 -indexMode:8
+	Character, 2, 2
+
+#Text?
+_0x3A40, 0x3A40, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+#Always zero
+	Value2, 4, 2
+#Always zero
+	Value3, 6, 2
+
+_0x3E20, 0x3E20, 4, -game:FE8 -indexMode:8
+
+
+_0x4040, 0x4040, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+	Value3, 6, 2
+
+
+_0x4120, 0x4120, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+_0x4121, 0x4121, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+_0x412F, 0x412F, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+
+_0x4220, 0x4220, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+_0x422F, 0x422F, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+
+_0x4320, 0x4320, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+_0x4420, 0x4420, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+
+_0x4520, 0x4520, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+_0x452F, 0x452F, 4, -game:FE8 -indexMode:8
+	Value1, 2, 2
+
+
+#World map codes
+	
+
+_0x8340, 0x8340, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+	Value3, 6, 2
+
+_0x8440, 0x8440, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+#Always zero
+	Value3, 6, 2
+
+#Parameters always zero
+_0x8540, 0x8540, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+	Value3, 6, 2
+
+_0x8680, 0x8680, 16, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+	Value3, 6, 2
+	Value4, 8, 2
+	Value5, 10, 2
+	Value6, 12, 2
+	Value7, 14, 2
+
+_0x8780, 0x8780, 16, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+	Value3, 6, 2
+	Value4, 8, 2
+	Value5, 10, 2
+#Always zero
+	Value6, 12, 2
+#Always zero
+	Value7, 14, 2
+
+_0x8880, 0x8880, 16, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+	Value3, 6, 2
+	Value4, 8, 2
+	Value5, 10, 2
+#Always zero
+	Value6, 12, 2
+#Always zero
+	Value7, 14, 2
+
+_0x8920, 0x8920, 4, -game:FE8 -indexMode:8
+
+_0x9040, 0x9040, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+#Always zero
+	Value3, 6, 2
+
+_0x9140, 0x9140, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+#Always zero
+	Value3, 6, 2
+
+_0x9240, 0x9240, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+#Always zero
+	Value3, 6, 2
+
+_0x9340, 0x9340, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+#Always zero
+	Value3, 6, 2
+	
+_0x9440, 0x9440, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+#Always zero
+	Value3, 6, 2
+
+_0x9540, 0x9540, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+#Always zero
+	Value3, 6, 2
+	
+_0x9640, 0x9640, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+#Always zero
+	Value3, 6, 2
+
+_0x9720, 0x9720, 4, -game:FE8 -indexMode:8
+
+_0x9920, 0x9920, 4, -game:FE8 -indexMode:8
+
+_0x9A40, 0x9A40, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+#Always zero
+	Value3, 6, 2
+
+_0x9B40, 0x9B40, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+#Always zero
+	Value3, 6, 2
+	
+_0x9D40, 0x9D40, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+#Always zero
+	Value3, 6, 2
+
+#All parameters 0
+_0xA140, 0xA140, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+	Value3, 6, 2
+	
+#All parameters 0
+_0xA240, 0xA240, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+	Value3, 6, 2
+
+_0xA340, 0xA340, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+	Value3, 6, 2 
+
+_0xA440, 0xA440, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+	Value3, 6, 2  
+
+_0xA520, 0xA520, 4, -game:FE8 -indexMode:8
+
+_0xA640, 0xA640, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+	Value3, 6, 2
+
+_0xA760, 0xA760, 12, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+	Value3, 6, 2
+	Value4, 8, 2
+	Value5, 10, 2
+
+_0xA8C0, 0xA8C0, 24, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+	Value3, 6, 2
+	Value4, 8, 2
+	Value5, 10, 2
+	Value6, 12, 2
+	Value7, 14, 2
+	Value8, 16, 2
+	Value9, 18, 2
+	Value10, 20, 2
+#Always 0
+	Value11, 22, 2
+		
+_0xA980, 0xA980, 16, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+	Value3, 6, 2
+	Value4, 8, 2
+	Value5, 10, 2
+	Value6, 12, 2
+	Value7, 14, 2
+	
+_0xAA40, 0xAA40, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+#Always 0
+	Value3, 6, 2
+	
+_0xAB40, 0xAB40, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+#Always 0
+	Value3, 6, 2
+	
+_0xAC40, 0xAC40, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+	Value3, 6, 2
+	
+_0xAF40, 0xAF40, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+	Value3, 6, 2
+
+_0xB120, 0xB120, 4, -game:FE8 -indexMode:8
+
+#All parameters 0
+_0xB240, 0xB240, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+	Value3, 6, 2
+
+_0xB320, 0xB320, 4, -game:FE8 -indexMode:8
+
+_0xB460, 0xB460, 12, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+	Value3, 6, 2
+	Value4, 8, 2
+#Always 0
+	Value5, 10, 2
+	
+_0xB520, 0xB520, 4, -game:FE8 -indexMode:8
+
+_0xB680, 0xB680, 16, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+	Value3, 6, 2
+	Value4, 8, 2
+	Value5, 10, 2
+	Value6, 12, 2
+#Always 0
+	Value7, 14, 2
+
+_0xB720, 0xB720, 4, -game:FE8 -indexMode:8
+
+_0xB840, 0xB840, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+#Always 0
+	Value3, 6, 2
+
+_0xB940, 0xB940, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+#Always 0
+	Value3, 6, 2
+
+_0xBA40, 0xBA40, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+#Always 0
+	Value3, 6, 2
+
+_0xBD40, 0xBD40, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+	Value3, 6, 2
+
+_0xBE40, 0xBE40, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+	Value3, 6, 2
+
+_0xC220, 0xC220, 4, -game:FE8 -indexMode:8
+	
+_0xC360, 0xC360, 12, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+	Value3, 6, 2
+	Value4, 8, 2
+#Always 0
+	Value5, 10, 2
+	
+_0xC540, 0xC540, 8, -game:FE8 -indexMode:8
+	Value1, 2, 2
+	Value2, 4, 2
+#Always 0
+	Value3, 6, 2
+
+_0xC720, 0xC720, 4, -game:FE8 -indexMode:8
+
+_0xC920, 0xC920, 4, -game:FE8 -indexMode:8

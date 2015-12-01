@@ -1,0 +1,8 @@
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\NLZFileTester\bin\Release\NLZFileTester.exe.config
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\NLZFileTester\bin\Release\NLZFileTester.exe
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\NLZFileTester\bin\Release\NLZFileTester.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\NLZFileTester\bin\Release\ROMhacking.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\NLZFileTester\bin\Release\ROMhacking.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\NLZFileTester\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\NLZFileTester\obj\Release\NLZFileTester.exe
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\NLZFileTester\obj\Release\NLZFileTester.pdb

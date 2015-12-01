@@ -1,0 +1,5 @@
+
+//Tile change macro
+#ifdef _FE7_
+#define TileMap(TCN,X1,X2,L1,L2,TilePointer) "WARNING Use Tiled for tile changes instead; BYTE TCN X1 X2 L1 L2 0 0 0; POIN TilePointer"
+#endif

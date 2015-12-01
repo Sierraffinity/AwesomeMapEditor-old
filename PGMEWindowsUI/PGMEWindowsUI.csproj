@@ -67,17 +67,13 @@
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Be.Windows.Forms.HexBox, Version=1.6.0.38937, Culture=neutral, PublicKeyToken=e0e5adf0ebc99863, processorArchitecture=MSIL">
+    <Reference Include="OpenTK, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Libraries\Be.Windows.Forms.HexBox.dll</HintPath>
+      <HintPath>..\Dependencies\OpenTK.dll</HintPath>
     </Reference>
-    <Reference Include="GBA">
-      <HintPath>..\..\Hacking\GBA\GBA\bin\Release\GBA.dll</HintPath>
-    </Reference>
-    <Reference Include="OpenTK, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL" />
-    <Reference Include="OpenTK.GLControl, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL" />
-    <Reference Include="ROMhacking">
-      <HintPath>..\..\Hacking\GBA\GBA\bin\Release\ROMhacking.dll</HintPath>
+    <Reference Include="OpenTK.GLControl, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\OpenTK.GLControl.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -142,6 +138,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Dependencies\Be.HexEditor-1.6.0\sources\Be.HexEditor\Be.HexEditor.csproj">
+      <Project>{ff4adb46-210e-429e-9176-68613f5cbe90}</Project>
+      <Name>Be.HexEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dependencies\Be.HexEditor-1.6.0\sources\Be.Windows.Forms.HexBox\Be.Windows.Forms.HexBox.csproj">
+      <Project>{26c5f25f-b450-4caf-ad8b-b8d11ae73457}</Project>
+      <Name>Be.Windows.Forms.HexBox</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dependencies\Hacking\GBA\GBA\GBAcore.csproj">
+      <Project>{3be7150f-648c-4b5f-ba42-ae8306074e94}</Project>
+      <Name>GBAcore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dependencies\Nintenlord.Forms\Nintenlord.Forms.csproj">
+      <Project>{d0fe49cc-1b13-4c04-b3c1-c1a9b1872a36}</Project>
+      <Name>Nintenlord.Forms</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PGMEBackend\PGMEBackend.csproj">
       <Project>{1683693f-34e2-44b3-be78-fbc1e224858f}</Project>
       <Name>PGMEBackend</Name>

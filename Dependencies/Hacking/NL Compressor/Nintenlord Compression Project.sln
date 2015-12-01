@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LZ77", "LZ77\LZ77.csproj", "{06D37D28-562A-44E0-88C1-63994E14BC2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FEDS portrait compression", "FEDS portrait compression\FEDS portrait compression.csproj", "{49A4E7E3-AB5D-4F1E-84D4-59824D55BE4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RLE", "RLE\RLE.csproj", "{20651994-5C5D-4B15-A393-D9C8701F6550}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nintenlord Compressor", "Compressor\Nintenlord Compressor.csproj", "{F0F8753D-5960-43B4-81F6-A0018A7762A5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{06D37D28-562A-44E0-88C1-63994E14BC2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06D37D28-562A-44E0-88C1-63994E14BC2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06D37D28-562A-44E0-88C1-63994E14BC2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06D37D28-562A-44E0-88C1-63994E14BC2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49A4E7E3-AB5D-4F1E-84D4-59824D55BE4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49A4E7E3-AB5D-4F1E-84D4-59824D55BE4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49A4E7E3-AB5D-4F1E-84D4-59824D55BE4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49A4E7E3-AB5D-4F1E-84D4-59824D55BE4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20651994-5C5D-4B15-A393-D9C8701F6550}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20651994-5C5D-4B15-A393-D9C8701F6550}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20651994-5C5D-4B15-A393-D9C8701F6550}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20651994-5C5D-4B15-A393-D9C8701F6550}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0F8753D-5960-43B4-81F6-A0018A7762A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0F8753D-5960-43B4-81F6-A0018A7762A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0F8753D-5960-43B4-81F6-A0018A7762A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0F8753D-5960-43B4-81F6-A0018A7762A5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

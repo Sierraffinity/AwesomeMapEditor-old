@@ -75,7 +75,7 @@ namespace PGMEBackend
 
         public static void DrawOutlineRect(double x, double y, double w, double h)
         {
-            if(w < 0)
+            if (w < 0)
             {
                 w = -w;
                 x -= w;
@@ -264,9 +264,9 @@ namespace PGMEBackend
             DrawQuad(blx, bly, brx, bry, trx, trY, tlx, tly);
 
             GL.PopMatrix();
-            GL.PushMatrix();
+            /*GL.PushMatrix();
 
-            /*
+            
             SetColor(1, 0, 0, 1);
             GL.Translate(x, y, 0);
             GL.Scale(w / 2, h / 2, 1);

@@ -1,0 +1,15 @@
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\GBA\BinaryTreeTest\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\GBA\BinaryTreeTest\bin\Debug\BinaryTreeTest.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\GBA\BinaryTreeTest\bin\Debug\BinaryTreeTest.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\GBA\BinaryTreeTest\bin\Debug\ROMhacking.dll
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\GBA\BinaryTreeTest\bin\Debug\ROMhacking.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\GBA\BinaryTreeTest\obj\Debug\BinaryTreeTest.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\GBA\BinaryTreeTest\obj\Debug\BinaryTreeTest.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\BinaryTreeTest\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\BinaryTreeTest\bin\Debug\BinaryTreeTest.exe.config
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\BinaryTreeTest\bin\Debug\BinaryTreeTest.exe
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\BinaryTreeTest\bin\Debug\BinaryTreeTest.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\BinaryTreeTest\bin\Debug\ROMhacking.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\BinaryTreeTest\bin\Debug\ROMhacking.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\BinaryTreeTest\obj\Debug\BinaryTreeTest.exe
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\BinaryTreeTest\obj\Debug\BinaryTreeTest.pdb

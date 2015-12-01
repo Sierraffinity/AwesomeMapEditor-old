@@ -1,0 +1,5 @@
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\Nintenlord\Nintenlord\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\Nintenlord\Nintenlord\bin\Debug\Nintenlord.dll
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\Nintenlord\Nintenlord\bin\Debug\Nintenlord.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\Nintenlord\Nintenlord\obj\Debug\Nintenlord.dll
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\Nintenlord\Nintenlord\obj\Debug\Nintenlord.pdb

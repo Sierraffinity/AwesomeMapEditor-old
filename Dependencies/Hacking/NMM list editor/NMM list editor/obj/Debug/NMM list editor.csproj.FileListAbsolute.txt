@@ -1,0 +1,10 @@
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\NMM list editor\NMM list editor\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\NMM list editor\NMM list editor\bin\Debug\NMM list editor.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\NMM list editor\NMM list editor\bin\Debug\NMM list editor.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\NMM list editor\NMM list editor\obj\Debug\NMM list editor.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\NMM list editor\NMM list editor\obj\Debug\NMM list editor.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\NMM list editor\NMM list editor\obj\Debug\NMM list editor.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\NMM list editor\NMM list editor\obj\Debug\NMM list editor.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\NMM list editor\NMM list editor\bin\Debug\NMM list editor.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\NMM list editor\NMM list editor\bin\Debug\NMM list editor.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\NMM list editor\NMM list editor\obj\Debug\ResolveAssemblyReference.cache

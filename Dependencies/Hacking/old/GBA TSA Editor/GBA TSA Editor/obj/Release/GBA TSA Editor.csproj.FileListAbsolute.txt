@@ -1,0 +1,11 @@
+C:\Users\Timo\AppData\Local\Temporary Projects\GBA TSA Editor\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Timo\AppData\Local\Temporary Projects\GBA TSA Editor\obj\Release\GBA_TSA_Editor.Properties.Resources.resources
+C:\Users\Timo\AppData\Local\Temporary Projects\GBA TSA Editor\obj\Release\GBA TSA Editor.csproj.GenerateResource.Cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\GBA TSA Editor\GBA TSA Editor\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\GBA TSA Editor\GBA TSA Editor\obj\Release\Nintenlord.GBA_TSA_Editor.Properties.Resources.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\GBA TSA Editor\GBA TSA Editor\obj\Release\GBA TSA Editor.csproj.GenerateResource.Cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\GBA TSA Editor\GBA TSA Editor\bin\Release\GBA TSA Editor.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\GBA TSA Editor\GBA TSA Editor\bin\Release\GBA TSA Editor.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\GBA TSA Editor\GBA TSA Editor\obj\Release\GBA TSA Editor.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\GBA TSA Editor\GBA TSA Editor\obj\Release\GBA TSA Editor.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\GBA TSA Editor\GBA TSA Editor\obj\Release\GBA_TSA_Editor.Form1.resources

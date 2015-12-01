@@ -1102,220 +1102,124 @@ namespace PGMEWindowsUI
             hexViewerRawLayoutHeader.ByteProvider = new DynamicByteProvider(currentLayout.rawData, true, false, false);
         }
 
-        bool mapWindowLoaded = false;
+        PGMEBackend.GLControls.GLMapEditor glMapEditor;
+        PGMEBackend.GLControls.GLBlockChooser glBlockChooser;
 
         private void glControlMapEditor_Load(object sender, EventArgs e)
         {
-            GL.ClearColor(Color.Transparent);
-            SetupViewport(glControlMapEditor.Width, glControlMapEditor.Height);
-            mapEditorRectColor = rectDefaultColor;
-            mapWindowLoaded = true;
+            glControlMapEditor.MakeCurrent();
+            glMapEditor = new PGMEBackend.GLControls.GLMapEditor(glControlMapEditor.Width, glControlMapEditor.Height);
         }
-
-        private void SetupViewport(int width, int height)
+        
+        private void glControlBlocks_Load(object sender, EventArgs e)
         {
-            int w = width;
-            int h = height;
-            GL.MatrixMode(MatrixMode.Projection);
-            GL.LoadIdentity();
-            GL.Ortho(0, w, h, 0, -1, 1); // Top left corner pixel has coordinate (0, 0)
-            GL.Viewport(0, 0, w, h); // Use all of the glControl painting area
+            glControlBlocks.MakeCurrent();
+            glBlockChooser = new PGMEBackend.GLControls.GLBlockChooser(glControlBlocks.Width, glControlBlocks.Height);
         }
 
         private void glControlMapEditor_Paint(object sender, PaintEventArgs e)
         {
-            if (!mapWindowLoaded) // Play nice
+            if (!glMapEditor) // Play nice
                 return;
 
             glControlMapEditor.MakeCurrent();
-            SetupViewport(glControlMapEditor.Width, glControlMapEditor.Height);
-
-            GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
-            GL.MatrixMode(MatrixMode.Modelview);
-            GL.LoadIdentity();
-            int w = glControlMapEditor.Width;
-            int h = glControlMapEditor.Height;
-            GL.Enable(EnableCap.Texture2D);
-            GL.Enable(EnableCap.Blend);
-            GL.BlendFunc(BlendingFactorSrc.SrcAlpha, BlendingFactorDest.OneMinusSrcAlpha);
-
-            RenderMap();
-
-            GL.Disable(EnableCap.Texture2D);
-            GL.Disable(EnableCap.Blend);
+            glMapEditor.Paint(glControlMapEditor.Width, glControlMapEditor.Height);
             glControlMapEditor.SwapBuffers();
         }
-
-        private void RenderMap()
-        {
-            if (!mapLoaded)
-                return;
-            MapLayout layout = PGMEBackend.Program.currentLayout;
-            if (layout != null)
-            {
-                layout.Draw((PGMEBackend.Program.currentLayout.globalTileset != null) ? PGMEBackend.Program.currentLayout.globalTileset.tileSheets : null,
-                            (PGMEBackend.Program.currentLayout.localTileset != null) ? PGMEBackend.Program.currentLayout.localTileset.tileSheets : null, 0, 0, 1);
-                glControlMapEditor.Width = layout.layoutWidth * 16;
-                glControlMapEditor.Height = layout.layoutHeight * 16;
-                if (mapEditorMouseX != -1 && mapEditorMouseY != -1)
-                {
-                    int x = mapEditorMouseX * 16;
-                    int y = mapEditorMouseY * 16;
-                    int endX = mapEditorEndMouseX * 16;
-                    int endY = mapEditorEndMouseY * 16;
-
-                    if (mapEditorEndMouseX >= glControlMapEditor.Width / 16)
-                        endX = ((glControlMapEditor.Width - 1) / 16) * 16;
-                    if (mapEditorEndMouseY >= glControlMapEditor.Height / 16)
-                        endY = ((glControlMapEditor.Height - 1) / 16) * 16;
-
-                    int width = x - endX;
-                    int height = y - endY;
-
-                    Surface.DrawOutlineRect(endX + (width < 0 ? 16 : 0), endY + (height < 0 ? 16 : 0), width + (width >= 0 ? 16 : -16), height + (height >= 0 ? 16 : -16), mapEditorRectColor);
-                }
-            }
-        }
-
-        bool blockChooserLoaded = false;
-
-        private void glControlBlocks_Load(object sender, EventArgs e)
-        {
-            blockChooserLoaded = true;
-            GL.ClearColor(Color.Transparent);
-            SetupViewport(glControlBlocks.Width, glControlBlocks.Height);
-        }
-
+        
         private void glControlBlocks_Paint(object sender, PaintEventArgs e)
         {
-            if (!blockChooserLoaded) // Play nice
+            if (!glBlockChooser) // Play nice
                 return;
 
             glControlBlocks.MakeCurrent();
-            SetupViewport(glControlBlocks.Width, glControlBlocks.Height);
-
-            GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
-            GL.MatrixMode(MatrixMode.Modelview);
-            GL.LoadIdentity();
-            int w = glControlBlocks.Width;
-            int h = glControlBlocks.Height;
-            GL.Enable(EnableCap.Texture2D);
-            GL.Enable(EnableCap.Blend);
-            GL.BlendFunc(BlendingFactorSrc.SrcAlpha, BlendingFactorDest.OneMinusSrcAlpha);
-
-            RenderBlockChooser();
-
-            GL.Disable(EnableCap.Texture2D);
-            GL.Disable(EnableCap.Blend);
+            glBlockChooser.Paint(glControlBlocks.Width, glControlBlocks.Height);
             glControlBlocks.SwapBuffers();
         }
-
-        private void RenderBlockChooser()
+        
+        public void SetGLMapEditorSize(int w, int h)
         {
-            if (!mapLoaded)
-                return;
-            MapTileset globalTileset = PGMEBackend.Program.currentLayout.globalTileset;
-            MapTileset localTileset = PGMEBackend.Program.currentLayout.localTileset;
-            int height = 0;
-            if (globalTileset != null && globalTileset.blockSet != null)
-            {
-                globalTileset.blockSet.Draw((globalTileset != null) ? globalTileset.tileSheets : null, (localTileset != null) ? localTileset.tileSheets : null, 0, 0, 1);
-                height += globalTileset.blockSet.blocks.Length * 2;
-            }
-            if (localTileset != null && localTileset.blockSet != null)
-            {
-                localTileset.blockSet.Draw((globalTileset != null) ? globalTileset.tileSheets : null, (localTileset != null) ? localTileset.tileSheets : null, 0, PGMEBackend.Program.currentGame.MainTSBlocks * 2, 1);
-                height += localTileset.blockSet.blocks.Length * 2;
-            }
-            glControlBlocks.Height = height;
+            glControlMapEditor.Width = w;
+            glControlMapEditor.Height = h;
         }
 
-        private int mapEditorMouseX = -1;
-        private int mapEditorMouseY = -1;
-        private int mapEditorEndMouseX = -1;
-        private int mapEditorEndMouseY = -1;
-        private int mapEditorSelectWidth = 0;
-        private int mapEditorSelectHeight = 0;
+        public void SetGLBlockChooserSize(int h)
+        {
+            glControlBlocks.Height = h;
+        }
 
         private void glControlMapEditor_MouseMove(object sender, MouseEventArgs e)
         {
-            int oldX = mapEditorMouseX;
-            int oldY = mapEditorMouseY;
+            int oldX = glMapEditor.mouseX;
+            int oldY = glMapEditor.mouseY;
 
-            mapEditorMouseX = e.X / 16;
-            mapEditorMouseY = e.Y / 16;
-
-            if (mapEditorMouseX >= glControlMapEditor.Width / 16)
-                mapEditorMouseX = (glControlMapEditor.Width - 1) / 16;
-            if (mapEditorMouseY >= glControlMapEditor.Height / 16)
-                mapEditorMouseY = (glControlMapEditor.Height - 1) / 16;
-
-            if (mapEditorMouseX < 0)
-                mapEditorMouseX = 0;
-            if (mapEditorMouseY < 0)
-                mapEditorMouseY = 0;
-
-            if (mapEditorButtons != MouseButtons.Right)
-            {
-                mapEditorSelectWidth = Math.Abs(mapEditorSelectWidth);
-                mapEditorSelectHeight = Math.Abs(mapEditorSelectHeight);
-                mapEditorEndMouseX = mapEditorMouseX + mapEditorSelectWidth;
-                mapEditorEndMouseY = mapEditorMouseY + mapEditorSelectHeight;
-            }
-
-            if((oldX != mapEditorMouseX) || (oldY != mapEditorMouseY))
+            glMapEditor.MouseMove(e.X, e.Y);
+            
+            if((oldX != glMapEditor.mouseX) || (oldY != glMapEditor.mouseY))
                 glControlMapEditor.Invalidate();
+        }
+
+        private void glControlBlocks_MouseMove(object sender, MouseEventArgs e)
+        {
+            int oldX = glBlockChooser.mouseX;
+            int oldY = glBlockChooser.mouseY;
+
+            glBlockChooser.MouseMove(e.X, e.Y);
+
+            if ((oldX != glBlockChooser.mouseX) || (oldY != glBlockChooser.mouseY))
+                glControlBlocks.Invalidate();
         }
 
         private void glControlMapEditor_MouseLeave(object sender, EventArgs e)
         {
-            mapEditorMouseX = -1;
-            mapEditorMouseY = -1;
-            mapEditorEndMouseX = -1;
-            mapEditorEndMouseY = -1;
+            glMapEditor.MouseLeave();
+            glControlMapEditor.Invalidate();
+        }
+        
+        private void glControlBlocks_MouseLeave(object sender, EventArgs e)
+        {
+            glBlockChooser.MouseLeave();
+            glControlBlocks.Invalidate();
+        }
+        
+        private void glControlMapEditor_MouseDown(object sender, MouseEventArgs e)
+        {
+            if ((PGMEBackend.MouseButtons)e.Button == glMapEditor.buttons)
+                return;
+            glMapEditor.MouseDown((PGMEBackend.MouseButtons)e.Button);
             glControlMapEditor.Invalidate();
         }
 
-        private MouseButtons mapEditorButtons;
-
-        private Color mapEditorRectColor;
-        private Color rectDefaultColor = Color.FromArgb(0, 255, 0);
-        private Color rectPaintColor = Color.FromArgb(255, 0, 0);
-        private Color rectSelectColor = Color.FromArgb(255, 255, 0);
-
-        private void glControlMapEditor_MouseDown(object sender, MouseEventArgs e)
+        private void glControlBlocks_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Button == mapEditorButtons)
+            if ((PGMEBackend.MouseButtons)e.Button == glBlockChooser.buttons)
                 return;
-            mapEditorButtons = e.Button;
-            if (mapEditorButtons == MouseButtons.Left)
-                mapEditorRectColor = rectPaintColor;
-            else if (mapEditorButtons == MouseButtons.Right)
-            {
-                mapEditorSelectWidth = 0;
-                mapEditorSelectHeight = 0;
-                mapEditorEndMouseX = mapEditorMouseX;
-                mapEditorEndMouseY = mapEditorMouseY;
-                mapEditorRectColor = rectSelectColor;
-            }
-            else
-                mapEditorRectColor = rectDefaultColor;
-            glControlMapEditor.Invalidate();
+            glBlockChooser.MouseDown((PGMEBackend.MouseButtons)e.Button);
+            glControlBlocks.Invalidate();
         }
 
         private void glControlMapEditor_MouseUp(object sender, MouseEventArgs e)
         {
-            mapEditorSelectWidth = mapEditorMouseX - mapEditorEndMouseX;
-            mapEditorSelectHeight = mapEditorMouseY - mapEditorEndMouseY;
-
-            mapEditorButtons = MouseButtons.None;
-            mapEditorRectColor = rectDefaultColor;
+            glMapEditor.MouseUp();
             glControlMapEditor.Invalidate();
+        }
+
+        private void glControlBlocks_MouseUp(object sender, MouseEventArgs e)
+        {
+            glBlockChooser.MouseUp();
+            glControlBlocks.Invalidate();
         }
 
         private void glControlMapEditor_MouseEnter(object sender, EventArgs e)
         {
 
         }
+        
+        private void glControlBlocks_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

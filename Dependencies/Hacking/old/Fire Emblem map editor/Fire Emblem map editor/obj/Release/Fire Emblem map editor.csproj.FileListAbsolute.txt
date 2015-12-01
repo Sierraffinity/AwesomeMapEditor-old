@@ -1,0 +1,8 @@
+C:\Users\Timo\Documents\Visual Studio 2005\Projects\Fire Emblem map editor\Fire Emblem map editor\bin\Release\Fire Emblem map editor.exe
+C:\Users\Timo\Documents\Visual Studio 2005\Projects\Fire Emblem map editor\Fire Emblem map editor\bin\Release\Fire Emblem map editor.pdb
+C:\Users\Timo\Documents\Visual Studio 2005\Projects\Fire Emblem map editor\Fire Emblem map editor\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2005\Projects\Fire Emblem map editor\Fire Emblem map editor\obj\Release\Fire_Emblem_Map_Editor.Graphics.resources
+C:\Users\Timo\Documents\Visual Studio 2005\Projects\Fire Emblem map editor\Fire Emblem map editor\obj\Release\WindowsApplication1.Properties.Resources.resources
+C:\Users\Timo\Documents\Visual Studio 2005\Projects\Fire Emblem map editor\Fire Emblem map editor\obj\Release\Fire Emblem map editor.csproj.GenerateResource.Cache
+C:\Users\Timo\Documents\Visual Studio 2005\Projects\Fire Emblem map editor\Fire Emblem map editor\obj\Release\Fire Emblem map editor.exe
+C:\Users\Timo\Documents\Visual Studio 2005\Projects\Fire Emblem map editor\Fire Emblem map editor\obj\Release\Fire Emblem map editor.pdb

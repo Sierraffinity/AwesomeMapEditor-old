@@ -1,0 +1,34 @@
+
+##Executes events if character is fielded.
+IFUF, 0x57, 12, -game:FE7 -indexMode:8
+	Unknown, 2, 2	
+	Conditional ID, 4, 2
+##Character to check.
+	Character, 8, 2
+
+#Chapters: 3
+##Executes events if character isn't active.
+IFCNA, 0x24, 12, -game:FE6 -indexMode:8
+	Conditional ID, 4, 4
+##Character to check.
+	Character, 8, 4
+
+##Executes events if character is active.
+IFCA, 0x4E, 12, -game:FE7 -indexMode:8
+	Unknown, 2, 2
+	Conditional ID, 4, 4
+##Character to check.
+	Character, 8, 2
+	
+##Executes events if character is dead.
+IFCD, 0x55, 16, -game:FE7 -indexMode:8
+	Conditional ID, 4, 2
+##Character to check.
+	Character, 8, 2
+	0, 12, 2, -fixed
+
+IFCD, 0x55, 16, -game:FE7 -indexMode:8
+	Conditional ID, 4, 2
+	Character, 8, 2
+##Unknown parameter, usually 0.
+	Dunno, 12, 2

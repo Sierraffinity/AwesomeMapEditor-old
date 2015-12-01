@@ -1,0 +1,8 @@
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\AWMapInserter\AWMapInserter\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\AWMapInserter\AWMapInserter\obj\Debug\AWMapInserter.Properties.Resources.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\AWMapInserter\AWMapInserter\obj\Debug\AWMapInserter.csproj.GenerateResource.Cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\AWMapInserter\AWMapInserter\obj\Debug\Nintenlord.AWMapInserter.Form1.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\AWMapInserter\AWMapInserter\bin\Debug\AWMapInserter.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\AWMapInserter\AWMapInserter\bin\Debug\AWMapInserter.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\AWMapInserter\AWMapInserter\obj\Debug\AWMapInserter.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\Hacking\AWMapInserter\AWMapInserter\obj\Debug\AWMapInserter.pdb

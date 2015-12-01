@@ -1,0 +1,10 @@
+C:\Users\Timo\Documents\Visual Studio 2005\Projects\GBA pal maker\GBA pal maker\bin\Release\GBA pal maker.exe
+C:\Users\Timo\Documents\Visual Studio 2005\Projects\GBA pal maker\GBA pal maker\bin\Release\GBA pal maker.pdb
+C:\Users\Timo\Documents\Visual Studio 2005\Projects\GBA pal maker\GBA pal maker\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2005\Projects\GBA pal maker\GBA pal maker\obj\Release\GBA pal maker.exe
+C:\Users\Timo\Documents\Visual Studio 2005\Projects\GBA pal maker\GBA pal maker\obj\Release\GBA pal maker.pdb
+C:\Users\Timo\Documents\Visual Studio 2005\Projects\GBA pal maker\GBA pal maker\bin\Debug\GBA pal maker.exe
+C:\Users\Timo\Documents\Visual Studio 2005\Projects\GBA pal maker\GBA pal maker\bin\Debug\GBA pal maker.pdb
+C:\Users\Timo\Documents\Visual Studio 2005\Projects\GBA pal maker\GBA pal maker\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2005\Projects\GBA pal maker\GBA pal maker\obj\Debug\GBA pal maker.exe
+C:\Users\Timo\Documents\Visual Studio 2005\Projects\GBA pal maker\GBA pal maker\obj\Debug\GBA pal maker.pdb

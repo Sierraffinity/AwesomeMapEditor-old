@@ -1,0 +1,114 @@
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\EA Standard library\Backward Compability.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\EA Standard library\Boolean Logic.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\EA Standard library\Chapter Definitions.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\EA Standard library\Chapter Structure Helpers.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\EA Standard library\Convo Background Definitions.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\EA Standard library\Convo Helpers.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\EAstdlib Macro and Command List.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\EA Standard library\End Of Chapter Helpers.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\EA Standard library\FE6 Definitions.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\EA Standard library\FE7 Definitions.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\EA Standard library\FE7 Tutorial Disabler.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\EA Standard library\FE8 Definitions.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\EA Standard library\Main Code Helpers.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\EA Standard library\Misc Helpers.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\EA Standard library\Music Definitions.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\EA Standard library\Numeric Helpers.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\EA Standard library\Tile Changes.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\EA Standard library\Unit Helpers.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\EA Standard library\Weather Definitions.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\EA Standard library\World Map Helpers.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\FE7 Template.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\ASM Code.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Camera.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Conditional\ASM conditions.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Conditional\Basic.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Conditional\Chapter state conditions.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Conditional\Character conditions.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Convos\Fade in or out.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Convos\Return from convo.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Convos\Show backgrounds.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Convos\Text.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Cursor.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\End of event.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Event execution manipulation.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Event ID manipulation.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Item and money\Items.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Item and money\Money.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Main codes\After event.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Main codes\Area event.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Main codes\Character based events.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Main codes\Location based event.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Main codes\Others.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Main codes\Turn based event.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Map\Change map.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Map\Load map.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Move to chapter.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Music and sound\Change music.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Music and sound\Change volume.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Out of beginning blackness.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Pointer.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Stall.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Units\Change affiliation.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Units\Change AI.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Units\Change unit condition.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Units\Disappear.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Units\End of unit changing.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Units\Kill, kill everyone, muhahahahahaaaa.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Units\Loading.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Units\Make units fight.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Units\Moving.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Units\Promote units.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Units\Reappear.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Units\Unit.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Units\Warp.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Weather and fog.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\World map\Basic.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\World map\Map sprites.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\World map\Map.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\World map\Portraits.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\World map\Text.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\_ExperimentalFE6.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\_ExperimentalFE7.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\_ExperimentalFE8.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\README.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Scripts\Footer.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Scripts\Header.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Scripts\How to use.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\EAstdlib.event
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Language.raws
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Scripts\Assemble FE6 chapters.cmd
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Scripts\Assemble FE6 world maps.cmd
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Scripts\Assemble FE7 chapters.cmd
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Scripts\Assemble FE7 world maps.cmd
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Scripts\Assemble FE8 chapters.cmd
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Scripts\Assemble FE8 world maps.cmd
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Scripts\Disassemble FE8 world maps.cmd
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Scripts\Disassemble FE6 chapters.cmd
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Scripts\Disassemble FE6 world maps.cmd
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Scripts\Disassemble FE7 chapters.cmd
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Scripts\Disassemble FE7 world maps.cmd
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Scripts\Disassemble FE8 chapters.cmd
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Scripts\Generate docs.cmd
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Event assembler.exe
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Event assembler.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Core.exe
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\ROMhacking.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\ROMhacking.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Core.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\obj\Release\Nintenlord.Event_Assembler.UserInterface.EnumChooser.resources
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\obj\Release\Nintenlord.Event_Assembler.UserInterface.EnumChooserForm.resources
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\obj\Release\Nintenlord.Event_Assembler.UserInterface.MainForm.resources
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\obj\Release\Nintenlord.Event_Assembler.UserInterface.TextShower.resources
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\obj\Release\GenerateResource.read.1.tlog
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\obj\Release\GenerateResource.write.1.tlog
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\obj\Release\Event assembler.exe
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\obj\Release\Event assembler.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\EA Standard library\Trap Helpers.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Traps.txt
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Nintenlord.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Nintenlord.Forms.dll
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Nintenlord.Forms.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Nintenlord.pdb
+C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\Event assembler\Event assembler\bin\Release\Language raws\Raw code.txt

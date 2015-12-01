@@ -1,0 +1,8 @@
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\MultiFileInserter\MultiFileInserter\bin\Debug\MultiFileInserter.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\MultiFileInserter\MultiFileInserter\bin\Debug\MultiFileInserter.pdb
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\MultiFileInserter\MultiFileInserter\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\MultiFileInserter\MultiFileInserter\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\MultiFileInserter\MultiFileInserter\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\MultiFileInserter\MultiFileInserter\obj\Debug\MultiFileInserter.csproj.GenerateResource.Cache
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\MultiFileInserter\MultiFileInserter\obj\Debug\MultiFileInserter.exe
+C:\Users\Timo\Documents\Visual Studio 2008\Projects\MultiFileInserter\MultiFileInserter\obj\Debug\MultiFileInserter.pdb

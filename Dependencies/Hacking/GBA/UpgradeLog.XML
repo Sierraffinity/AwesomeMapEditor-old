@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="ROMHacking">
+</Property><Property Name="Solution File" Value="C:\Users\Timo\Documents\Visual Studio 2010\Projects\Hacking\GBA\ROMHacking.sln">
+</Property><Property Name="Date" Value="21. tammikuuta 2011">
+</Property><Property Name="Time" Value="15:51">
+</Property></Properties><Event ErrorLevel="1" Project="GBAcore" Source="GBA\GBAcore.csproj" Description="Your project is targeting .NET Framework 2.0 or 3.0. If your project uses assemblies requiring a newer .NET Framework, your project will fail to build. You can change the .NET Framework version by clicking Properties on the project menu and then selecting a new version in the '.NET Framework' dropdown box. (In Visual Basic, this is located on the Compile tab by clicking the 'Advanced Compiler Options...' button.)">
+</Event><Event ErrorLevel="0" Project="GBAcore" Source="GBA\GBAcore.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="GBAcore" Source="GBA\GBAcore.csproj" Description="Converted">
+</Event><Event ErrorLevel="1" Project="GBA ASM editor" Source="GBA ASM editor\GBA ASM editor.csproj" Description="Your project is targeting .NET Framework 2.0 or 3.0. If your project uses assemblies requiring a newer .NET Framework, your project will fail to build. You can change the .NET Framework version by clicking Properties on the project menu and then selecting a new version in the '.NET Framework' dropdown box. (In Visual Basic, this is located on the Compile tab by clicking the 'Advanced Compiler Options...' button.)">
+</Event><Event ErrorLevel="0" Project="GBA ASM editor" Source="GBA ASM editor\GBA ASM editor.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="GBA ASM editor" Source="GBA ASM editor\GBA ASM editor.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="GBA Graphics Editor" Source="GBA Graphics Editor\GBA Graphics Editor.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="GBA Graphics Editor" Source="GBA Graphics Editor\GBA Graphics Editor.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="MAR array inserter" Source="MAR array inserter\MAR array inserter.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="MAR array inserter" Source="MAR array inserter\MAR array inserter.csproj" Description="Converted">
+</Event><Event ErrorLevel="1" Project="MegamanBattleNetworkMapEditor" Source="MegamanBattleNetworkMapEditor\MegamanBattleNetworkMapEditor.csproj" Description="Your project is targeting .NET Framework 2.0 or 3.0. If your project uses assemblies requiring a newer .NET Framework, your project will fail to build. You can change the .NET Framework version by clicking Properties on the project menu and then selecting a new version in the '.NET Framework' dropdown box. (In Visual Basic, this is located on the Compile tab by clicking the 'Advanced Compiler Options...' button.)">
+</Event><Event ErrorLevel="0" Project="MegamanBattleNetworkMapEditor" Source="MegamanBattleNetworkMapEditor\MegamanBattleNetworkMapEditor.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="MegamanBattleNetworkMapEditor" Source="MegamanBattleNetworkMapEditor\MegamanBattleNetworkMapEditor.csproj" Description="Converted">
+</Event><Event ErrorLevel="1" Project="UPSpatcher" Source="UPSpatcher\UPSpatcher.csproj" Description="Your project is targeting .NET Framework 2.0 or 3.0. If your project uses assemblies requiring a newer .NET Framework, your project will fail to build. You can change the .NET Framework version by clicking Properties on the project menu and then selecting a new version in the '.NET Framework' dropdown box. (In Visual Basic, this is located on the Compile tab by clicking the 'Advanced Compiler Options...' button.)">
+</Event><Event ErrorLevel="0" Project="UPSpatcher" Source="UPSpatcher\UPSpatcher.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="UPSpatcher" Source="UPSpatcher\UPSpatcher.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="ROMhackingCore" Source="ROMhackingCore\ROMhackingCore.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="ROMhackingCore" Source="ROMhackingCore\ROMhackingCore.csproj" Description="Converted">
+</Event><Event ErrorLevel="1" Project="LZ77" Source="..\NL Compressor\LZ77\LZ77.csproj" Description="Your project is targeting .NET Framework 2.0 or 3.0. If your project uses assemblies requiring a newer .NET Framework, your project will fail to build. You can change the .NET Framework version by clicking Properties on the project menu and then selecting a new version in the '.NET Framework' dropdown box. (In Visual Basic, this is located on the Compile tab by clicking the 'Advanced Compiler Options...' button.)">
+</Event><Event ErrorLevel="0" Project="LZ77" Source="..\NL Compressor\LZ77\LZ77.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="LZ77" Source="..\NL Compressor\LZ77\LZ77.csproj" Description="Converted">
+</Event><Event ErrorLevel="1" Project="FEDS portrait compression" Source="..\NL Compressor\FEDS portrait compression\FEDS portrait compression.csproj" Description="Your project is targeting .NET Framework 2.0 or 3.0. If your project uses assemblies requiring a newer .NET Framework, your project will fail to build. You can change the .NET Framework version by clicking Properties on the project menu and then selecting a new version in the '.NET Framework' dropdown box. (In Visual Basic, this is located on the Compile tab by clicking the 'Advanced Compiler Options...' button.)">
+</Event><Event ErrorLevel="0" Project="FEDS portrait compression" Source="..\NL Compressor\FEDS portrait compression\FEDS portrait compression.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="FEDS portrait compression" Source="..\NL Compressor\FEDS portrait compression\FEDS portrait compression.csproj" Description="Converted">
+</Event><Event ErrorLevel="1" Project="RLE" Source="..\NL Compressor\RLE\RLE.csproj" Description="Your project is targeting .NET Framework 2.0 or 3.0. If your project uses assemblies requiring a newer .NET Framework, your project will fail to build. You can change the .NET Framework version by clicking Properties on the project menu and then selecting a new version in the '.NET Framework' dropdown box. (In Visual Basic, this is located on the Compile tab by clicking the 'Advanced Compiler Options...' button.)">
+</Event><Event ErrorLevel="0" Project="RLE" Source="..\NL Compressor\RLE\RLE.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="RLE" Source="..\NL Compressor\RLE\RLE.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Nintenlord Compressor" Source="..\NL Compressor\Compressor\Nintenlord Compressor.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Nintenlord Compressor" Source="..\NL Compressor\Compressor\Nintenlord Compressor.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="NLZFileTester" Source="NLZFileTester\NLZFileTester.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="NLZFileTester" Source="NLZFileTester\NLZFileTester.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="BinaryTreeTest" Source="BinaryTreeTest\BinaryTreeTest.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="BinaryTreeTest" Source="BinaryTreeTest\BinaryTreeTest.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="ROMHacking.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="ROMHacking.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="GBAcore" Source="GBA\GBAcore.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="GBA ASM editor" Source="GBA ASM editor\GBA ASM editor.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="GBA Graphics Editor" Source="GBA Graphics Editor\GBA Graphics Editor.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="MAR array inserter" Source="MAR array inserter\MAR array inserter.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="MegamanBattleNetworkMapEditor" Source="MegamanBattleNetworkMapEditor\MegamanBattleNetworkMapEditor.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="LZ77" Source="..\NL Compressor\LZ77\LZ77.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="FEDS portrait compression" Source="..\NL Compressor\FEDS portrait compression\FEDS portrait compression.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="RLE" Source="..\NL Compressor\RLE\RLE.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Nintenlord Compressor" Source="..\NL Compressor\Compressor\Nintenlord Compressor.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="NLZFileTester" Source="NLZFileTester\NLZFileTester.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="BinaryTreeTest" Source="BinaryTreeTest\BinaryTreeTest.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="UPSpatcher" Source="UPSpatcher\UPSpatcher.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="ROMhackingCore" Source="ROMhackingCore\ROMhackingCore.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>
