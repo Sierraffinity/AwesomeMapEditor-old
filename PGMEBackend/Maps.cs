@@ -296,31 +296,105 @@ namespace PGMEBackend
             }
         }
 
-        public void Draw(Spritesheet[] globalSheets, Spritesheet[] localSheets, int xPos, int yPos, double scale)
-        {
-            for(int i = 0; i < layoutHeight; i++)
-            {
-                for(int j = 0; j < layoutWidth; j++)
-                {
-                    short block = layout[i * layoutWidth + j];
-                    short blockIndex = (short)(block & 0x3FF);
+        public class VisualMapTile {
+            public FrameBuffer buffer;
+            public int xpos = 0;
+            public int ypos = 0;
+            public int Width = 64;
+            public int Height = 64;
+            public bool Redraw = true;
+        }
 
-                    if (blockIndex < Program.currentGame.MainTSBlocks)
+        public void Unload()
+        {
+            foreach (var v in drawTiles)
+                v.buffer.Dispose();
+            drawTiles.Clear();
+        }
+
+        public List<VisualMapTile> drawTiles;
+
+        public void RefreshChunks(Spritesheet[] globalSheets, Spritesheet[] localSheets, int xPos, int yPos, double scale)
+        {
+            if (drawTiles == null || drawTiles.Count == 0)
+            {
+                drawTiles = new List<VisualMapTile>();
+                int tilesx = Math.Max(layoutWidth / 16, 1);
+                int tilesy = Math.Max(layoutHeight / 16, 1);
+                int tileWidth = layoutWidth / tilesx;
+                int tileHeight = layoutHeight / tilesy;
+                int xtiles = layoutWidth / tileWidth;
+                int ytiles = layoutHeight / tileHeight;
+                for (int y = 0; y < ytiles; y++)
+                {
+                    for (int x = 0; x < xtiles; x++)
                     {
-                        if (globalTileset != null)
-                            globalTileset.blockSet.blocks[blockIndex].Draw(globalSheets, localSheets, xPos + j * 16, yPos + i * 16, scale);
-                        else
-                            Surface.DrawRect(xPos, yPos, 16, 16, Color.Black);
-                    }
-                    else
-                    {
-                        if (localTileset != null)
-                            localTileset.blockSet.blocks[blockIndex - Program.currentGame.MainTSBlocks].Draw(globalSheets, localSheets, xPos + j * 16, yPos + i * 16, scale);
-                        else
-                            Surface.DrawRect(xPos, yPos, 16, 16, Color.Black);
+                        var tile = new VisualMapTile();
+                        tile.Width = tileWidth;
+                        tile.Height = tileHeight;
+                        tile.buffer = new FrameBuffer(tileWidth * 16, tileHeight * 16);
+                        tile.xpos = x * tileWidth;
+                        tile.ypos = y * tileHeight;
+                        drawTiles.Add(tile);
                     }
                 }
             }
+
+            foreach (var v in drawTiles)
+            {
+                if (v.Redraw)
+                {
+                    FrameBuffer.Active = v.buffer;
+                    OpenTK.Graphics.OpenGL.GL.PushMatrix();
+                    {
+                        int xoff = v.xpos * 16;
+                        int yoff = v.ypos * 16;
+                        for (int i = v.ypos; i < v.ypos + v.Height; i++)
+                        {
+                            for (int j = v.xpos; j < v.xpos + v.Width; j++)
+                            {
+                                short block = layout[i * layoutWidth + j];
+                                short blockIndex = (short)(block & 0x3FF);
+
+                                if (blockIndex < Program.currentGame.MainTSBlocks)
+                                {
+                                    if (globalTileset != null)
+                                        globalTileset.blockSet.blocks[blockIndex].Draw(globalSheets, localSheets, xPos + j * 16 - xoff, yPos + i * 16 - yoff, scale);
+                                    else
+                                        Surface.DrawRect(xPos - xoff, yPos - yoff, 16, 16, Color.Black);
+                                }
+                                else
+                                {
+                                    if (localTileset != null)
+                                        localTileset.blockSet.blocks[blockIndex - Program.currentGame.MainTSBlocks].Draw(globalSheets, localSheets, xPos + j * 16 - xoff, yPos + i * 16 - yoff, scale);
+                                    else
+                                        Surface.DrawRect(xPos - xoff, yPos - yoff, 16, 16, Color.Black);
+                                }
+                            }
+                        }
+
+                        OpenTK.Graphics.OpenGL.GL.PopMatrix();
+                    }
+                    FrameBuffer.Active = null;
+                    v.Redraw = false;
+                }
+            }
+        }
+
+        public void Draw(Spritesheet[] globalSheets, Spritesheet[] localSheets, int xPos, int yPos, double scale)
+        {
+
+            foreach (var v in drawTiles)
+            {
+                Surface.SetColor(Color.White);
+                Surface.SetTexture(v.buffer.ColorTexture);
+                Surface.DrawRect(v.xpos * 16, v.ypos * 16, v.buffer.Width, v.buffer.Height);
+
+                /*Surface.SetTexture(null);
+                Surface.SetColor(Color.Cyan);
+                Surface.DrawOutlineRect(v.xpos * 16, v.ypos * 16, v.buffer.Width, v.buffer.Height);*/
+            }
+            Surface.SetTexture(null);
         }
     }
 

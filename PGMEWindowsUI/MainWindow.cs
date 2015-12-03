@@ -1220,6 +1220,9 @@ namespace PGMEWindowsUI
 
         }
 
-
+        private void panel8_Scroll(object sender, ScrollEventArgs e)
+        {
+            glControlMapEditor.Invalidate();
+        }
     }
 }

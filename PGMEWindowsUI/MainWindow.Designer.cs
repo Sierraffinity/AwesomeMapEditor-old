@@ -837,8 +837,10 @@ namespace PGMEWindowsUI
             // panel8
             // 
             resources.ApplyResources(this.panel8, "panel8");
+            this.panel8.BackColor = System.Drawing.SystemColors.Control;
             this.panel8.Controls.Add(this.glControlMapEditor);
             this.panel8.Name = "panel8";
+            this.panel8.Scroll += new System.Windows.Forms.ScrollEventHandler(this.panel8_Scroll);
             // 
             // glControlMapEditor
             // 
@@ -951,6 +953,7 @@ namespace PGMEWindowsUI
             // blockPaintPanel
             // 
             resources.ApplyResources(this.blockPaintPanel, "blockPaintPanel");
+            this.blockPaintPanel.BackColor = System.Drawing.SystemColors.Control;
             this.blockPaintPanel.Controls.Add(this.glControlBlocks);
             this.blockPaintPanel.Name = "blockPaintPanel";
             // 

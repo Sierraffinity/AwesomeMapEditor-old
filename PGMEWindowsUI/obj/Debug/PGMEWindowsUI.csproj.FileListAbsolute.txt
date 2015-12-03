@@ -131,3 +131,44 @@ D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEWindowsUI\obj\De
 D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEWindowsUI\obj\Debug\es\GBA Map Editor.resources.dll
 D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEWindowsUI\obj\Debug\GBA Map Editor.exe
 D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEWindowsUI\obj\Debug\GBA Map Editor.pdb
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\bin\Debug\GBA Map Editor.exe.config
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\obj\Debug\GBA Map Editor.exe
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\obj\Debug\GBA Map Editor.pdb
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\bin\Debug\OpenTK.dll.config
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\bin\Debug\GBA Map Editor.exe
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\bin\Debug\GBA Map Editor.pdb
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\bin\Debug\es\GBA Map Editor.resources.dll
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\bin\Debug\Be.Windows.Forms.HexBox.dll
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\bin\Debug\GBA.dll
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\bin\Debug\Nintenlord.Forms.dll
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\bin\Debug\OpenTK.dll
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\bin\Debug\OpenTK.GLControl.dll
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\bin\Debug\PGMEBackend.dll
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\bin\Debug\ROMhacking.dll
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\bin\Debug\Nintenlord.dll
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\bin\Debug\YamlDotNet.dll
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\bin\Debug\Be.HexEditor.pdb
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\bin\Debug\Be.Windows.Forms.HexBox.pdb
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\bin\Debug\Be.Windows.Forms.HexBox.xml
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\bin\Debug\GBA.pdb
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\bin\Debug\Nintenlord.Forms.pdb
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\bin\Debug\PGMEBackend.pdb
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\bin\Debug\OpenTK.xml
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\bin\Debug\OpenTK.GLControl.xml
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\bin\Debug\ROMhacking.pdb
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\bin\Debug\Nintenlord.pdb
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\bin\Debug\YamlDotNet.pdb
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\bin\Debug\YamlDotNet.xml
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\bin\Debug\de\Be.HexEditor.resources.dll
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\bin\Debug\it\Be.HexEditor.resources.dll
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\bin\Debug\ja\Be.HexEditor.resources.dll
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\bin\Debug\ru\Be.HexEditor.resources.dll
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\bin\Debug\zh-Hans\Be.HexEditor.resources.dll
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\obj\Debug\PGMEWindowsUI.csprojResolveAssemblyReference.cache
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\obj\Debug\PGMEWindowsUI.AboutForm.resources
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\obj\Debug\PGMEWindowsUI.MainWindow.resources
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\obj\Debug\PGMEWindowsUI.Properties.Resources.resources
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\obj\Debug\PGMEWindowsUI.MainWindow.es.resources
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\obj\Debug\PGMEWindowsUI.csproj.GenerateResource.Cache
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\obj\Debug\es\GBA Map Editor.resources.dll
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\bin\Debug\Be.HexEditor.dll

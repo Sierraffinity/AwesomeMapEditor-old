@@ -45,3 +45,14 @@ D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\Hacking\GBA\GBA\bin\
 D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\Hacking\GBA\GBA\obj\Debug\GBAcore.csprojResolveAssemblyReference.cache
 D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\Hacking\GBA\GBA\obj\Debug\GBA.dll
 D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\Hacking\GBA\GBA\obj\Debug\GBA.pdb
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\Dependencies\Hacking\GBA\GBA\bin\Debug\GBA.dll
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\Dependencies\Hacking\GBA\GBA\bin\Debug\GBA.pdb
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\Dependencies\Hacking\GBA\GBA\bin\Debug\Nintenlord.dll
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\Dependencies\Hacking\GBA\GBA\bin\Debug\Nintenlord.Forms.dll
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\Dependencies\Hacking\GBA\GBA\bin\Debug\ROMhacking.dll
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\Dependencies\Hacking\GBA\GBA\bin\Debug\Nintenlord.Forms.pdb
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\Dependencies\Hacking\GBA\GBA\bin\Debug\Nintenlord.pdb
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\Dependencies\Hacking\GBA\GBA\bin\Debug\ROMhacking.pdb
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\Dependencies\Hacking\GBA\GBA\obj\Debug\GBAcore.csprojResolveAssemblyReference.cache
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\Dependencies\Hacking\GBA\GBA\obj\Debug\GBA.dll
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\Dependencies\Hacking\GBA\GBA\obj\Debug\GBA.pdb

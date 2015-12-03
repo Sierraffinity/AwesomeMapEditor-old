@@ -67,6 +67,7 @@
     <Compile Include="DataBuffer.cs" />
     <Compile Include="GLControls\GLBlockChooser.cs" />
     <Compile Include="GLControls\GLMapEditor.cs" />
+    <Compile Include="Graphics\FrameBuffer.cs" />
     <Compile Include="Graphics\ImageManipulator.cs" />
     <Compile Include="InternalStrings.Designer.cs">
       <AutoGen>True</AutoGen>

@@ -28,7 +28,7 @@ using System.Drawing.Imaging;
 
 namespace PGMEBackend
 {
-    public class Spritesheet
+    public class Spritesheet : IDisposable
     {
         public int Rows;
         public int Columns;
@@ -127,6 +127,12 @@ namespace PGMEBackend
                     Draw(i, x * w, y * h, scale);
                 }
             }
+        }
+
+        public void Dispose()
+        {
+            Texture.Dispose();
+            Texture = null;
         }
     }
 }

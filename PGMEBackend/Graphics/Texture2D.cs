@@ -29,7 +29,7 @@ namespace PGMEBackend
         Linear
     }
 
-    public class Texture2D
+    public class Texture2D : IDisposable
     {
         public static Texture2D Load(BitmapData TextureData, TextureFilteringMode mode)
         {
@@ -122,6 +122,8 @@ namespace PGMEBackend
             return Load(path, TextureFilteringMode.Linear);
         }
 
+        public Texture2D() { }
+
         public void Draw(double x, double y, double scale)
         {
             Surface.DrawTexturedRect(this, x, y, Width * scale, Height * scale);
@@ -136,6 +138,15 @@ namespace PGMEBackend
             if (tex == null)
                 return 0;
             return tex.ID;
+        }
+
+        public void Dispose()
+        {
+            if (ID != 0)
+            {
+                GL.DeleteTexture(ID);
+                ID = 0;
+            }
         }
     }
 }

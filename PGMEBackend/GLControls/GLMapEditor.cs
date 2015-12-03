@@ -43,31 +43,51 @@ namespace PGMEBackend.GLControls
 
         private void SetupViewport()
         {
-            GL.MatrixMode(MatrixMode.Projection);
-            GL.LoadIdentity();
-            GL.Ortho(0, width, height, 0, -1, 1); // Top left corner pixel has coordinate (0, 0)
             GL.Viewport(0, 0, width, height); // Use all of the glControl painting area
         }
 
         public void Paint(int w, int h)
         {
+            GL.Enable(EnableCap.Texture2D);
+            GL.Enable(EnableCap.Blend);
+            GL.BlendFunc(BlendingFactorSrc.SrcAlpha, BlendingFactorDest.OneMinusSrcAlpha);
+            PreRender();
+
             width = w;
             height = h;
             SetupViewport();
 
+            GL.ClearColor(Color.Transparent);
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
+
+            GL.MatrixMode(MatrixMode.Projection);
+            GL.LoadIdentity();
+            var proj = OpenTK.Matrix4.CreateOrthographicOffCenter(0, width, height, 0, -1, 1);
+            GL.LoadMatrix(ref proj);
+
             GL.MatrixMode(MatrixMode.Modelview);
             GL.LoadIdentity();
-            GL.Enable(EnableCap.Texture2D);
-            GL.Enable(EnableCap.Blend);
-            GL.BlendFunc(BlendingFactorSrc.SrcAlpha, BlendingFactorDest.OneMinusSrcAlpha);
 
             Render();
 
             GL.Disable(EnableCap.Texture2D);
             GL.Disable(EnableCap.Blend);
+
+            var err = GL.GetError();
+            if (err != ErrorCode.NoError)
+                System.Windows.Forms.MessageBox.Show(err.ToString(), "OpenGL Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
         }
-        
+
+        private void PreRender()
+        {
+            var layout = Program.currentLayout;
+            if (layout != null)
+            {
+                layout.RefreshChunks((Program.currentLayout.globalTileset != null) ? Program.currentLayout.globalTileset.tileSheets : null,
+                            (Program.currentLayout.localTileset != null) ? Program.currentLayout.localTileset.tileSheets : null, 0, 0, 1);
+            }
+        }
+
         private void Render()
         {
             MapLayout layout = Program.currentLayout;
@@ -114,6 +134,11 @@ namespace PGMEBackend.GLControls
             if (mouseY < 0)
                 mouseY = 0;
 
+            if (buttons == MouseButtons.Left)
+            {
+                Paint();
+            }
+
             if (buttons != MouseButtons.Right)
             {
                 selectWidth = Math.Abs(selectWidth);
@@ -132,11 +157,36 @@ namespace PGMEBackend.GLControls
             mouseY = -1;
         }
 
+        void Paint()
+        {
+            // insert painting code
+            for (int j = mouseY; j <= mouseY + selectHeight; j++)
+            {
+                for (int i = mouseX; i <= mouseX + selectWidth; i++)
+                {
+                    foreach (var v in Program.currentLayout.drawTiles)
+                    {
+                        if (v.Redraw)
+                            continue;
+                        if (i <= v.xpos + v.Width && i >= v.xpos && j >= v.ypos && j <= v.ypos + v.Height)
+                        {
+                            v.Redraw = true;
+                            Console.WriteLine("Redrawing " + v.buffer.FBOHandle);
+                            continue;
+                        }
+                    }
+                }
+            }
+        }
+
         public void MouseDown(MouseButtons button)
         {
             buttons = button;
             if (buttons == MouseButtons.Left)
+            {
                 rectColor = rectPaintColor;
+                Paint();
+            }
             else if (buttons == MouseButtons.Right)
             {
                 selectWidth = 0;

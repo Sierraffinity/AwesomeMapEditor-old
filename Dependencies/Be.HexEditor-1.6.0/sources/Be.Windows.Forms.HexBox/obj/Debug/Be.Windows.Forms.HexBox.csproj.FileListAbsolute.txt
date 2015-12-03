@@ -15,3 +15,12 @@ D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\Be.HexEditor-1.6.0\s
 D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\Be.HexEditor-1.6.0\sources\Be.Windows.Forms.HexBox\obj\Debug\Be.Windows.Forms.HexBox.csproj.GenerateResource.Cache
 D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\Be.HexEditor-1.6.0\sources\Be.Windows.Forms.HexBox\obj\Debug\Be.Windows.Forms.HexBox.dll
 D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\Be.HexEditor-1.6.0\sources\Be.Windows.Forms.HexBox\obj\Debug\Be.Windows.Forms.HexBox.pdb
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\Dependencies\Be.HexEditor-1.6.0\sources\Be.Windows.Forms.HexBox\bin\Debug\Be.Windows.Forms.HexBox.dll
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\Dependencies\Be.HexEditor-1.6.0\sources\Be.Windows.Forms.HexBox\bin\Debug\Be.Windows.Forms.HexBox.pdb
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\Dependencies\Be.HexEditor-1.6.0\sources\Be.Windows.Forms.HexBox\bin\Debug\Be.Windows.Forms.HexBox.xml
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\Dependencies\Be.HexEditor-1.6.0\sources\Be.Windows.Forms.HexBox\obj\Debug\Be.Windows.Forms.HexBox.csprojResolveAssemblyReference.cache
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\Dependencies\Be.HexEditor-1.6.0\sources\Be.Windows.Forms.HexBox\obj\Debug\Be.Windows.Forms.HexBox.resources
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\Dependencies\Be.HexEditor-1.6.0\sources\Be.Windows.Forms.HexBox\obj\Debug\Be.Windows.Forms.Properties.Resources.resources
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\Dependencies\Be.HexEditor-1.6.0\sources\Be.Windows.Forms.HexBox\obj\Debug\Be.Windows.Forms.HexBox.csproj.GenerateResource.Cache
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\Dependencies\Be.HexEditor-1.6.0\sources\Be.Windows.Forms.HexBox\obj\Debug\Be.Windows.Forms.HexBox.dll
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\Dependencies\Be.HexEditor-1.6.0\sources\Be.Windows.Forms.HexBox\obj\Debug\Be.Windows.Forms.HexBox.pdb

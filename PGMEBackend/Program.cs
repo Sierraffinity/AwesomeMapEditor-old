@@ -277,6 +277,11 @@ namespace PGMEBackend
             Stopwatch loadTime = new Stopwatch();
             loadTime.Start();
 
+            if (currentLayout != null)
+            {
+                currentLayout.Unload();
+            }
+
             if (map.GetType() == typeof(Map))
             {
                 currentMap = (Map)map;

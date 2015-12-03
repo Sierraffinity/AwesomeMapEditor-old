@@ -86,3 +86,25 @@ D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEBackend\obj\Debu
 D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEBackend\obj\Debug\PGMEBackend.csproj.GenerateResource.Cache
 D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEBackend\obj\Debug\PGMEBackend.dll
 D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEBackend\obj\Debug\PGMEBackend.pdb
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEBackend\bin\Debug\OpenTK.dll.config
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEBackend\bin\Debug\PGMEBackend.dll.config
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEBackend\bin\Debug\PGMEBackend.dll
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEBackend\bin\Debug\PGMEBackend.pdb
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEBackend\bin\Debug\GBA.dll
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEBackend\bin\Debug\Nintenlord.dll
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEBackend\bin\Debug\OpenTK.dll
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEBackend\bin\Debug\ROMhacking.dll
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEBackend\bin\Debug\YamlDotNet.dll
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEBackend\bin\Debug\Nintenlord.Forms.dll
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEBackend\bin\Debug\GBA.pdb
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEBackend\bin\Debug\ROMhacking.pdb
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEBackend\bin\Debug\Nintenlord.pdb
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEBackend\bin\Debug\OpenTK.xml
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEBackend\bin\Debug\YamlDotNet.pdb
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEBackend\bin\Debug\YamlDotNet.xml
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEBackend\bin\Debug\Nintenlord.Forms.pdb
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEBackend\obj\Debug\PGMEBackend.csprojResolveAssemblyReference.cache
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEBackend\obj\Debug\PGMEBackend.InternalStrings.resources
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEBackend\obj\Debug\PGMEBackend.csproj.GenerateResource.Cache
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEBackend\obj\Debug\PGMEBackend.dll
+C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEBackend\obj\Debug\PGMEBackend.pdb
