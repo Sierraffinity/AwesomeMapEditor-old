@@ -321,6 +321,8 @@ namespace PGMEBackend
                 drawTiles = new List<VisualMapTile>();
                 int tilesx = Math.Max(layoutWidth / 16, 1);
                 int tilesy = Math.Max(layoutHeight / 16, 1);
+                tilesx += layoutWidth % tilesx;
+                tilesy += layoutWidth % tilesy;
                 int tileWidth = layoutWidth / tilesx;
                 int tileHeight = layoutHeight / tilesy;
                 int xtiles = layoutWidth / tileWidth;
