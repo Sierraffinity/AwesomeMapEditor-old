@@ -36,3 +36,10 @@ C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\Dependencies\Hacking\GBA\
 C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\Dependencies\Hacking\GBA\ROMhackingCore\obj\Debug\ROMhackingCore.csprojResolveAssemblyReference.cache
 C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\Dependencies\Hacking\GBA\ROMhackingCore\obj\Debug\ROMhacking.dll
 C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\Dependencies\Hacking\GBA\ROMhackingCore\obj\Debug\ROMhacking.pdb
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\Dependencies\Hacking\GBA\ROMhackingCore\bin\Debug\ROMhacking.dll
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\Dependencies\Hacking\GBA\ROMhackingCore\bin\Debug\ROMhacking.pdb
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\Dependencies\Hacking\GBA\ROMhackingCore\bin\Debug\Nintenlord.dll
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\Dependencies\Hacking\GBA\ROMhackingCore\bin\Debug\Nintenlord.pdb
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\Dependencies\Hacking\GBA\ROMhackingCore\obj\Debug\ROMhackingCore.csprojResolveAssemblyReference.cache
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\Dependencies\Hacking\GBA\ROMhackingCore\obj\Debug\ROMhacking.dll
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\Dependencies\Hacking\GBA\ROMhackingCore\obj\Debug\ROMhacking.pdb

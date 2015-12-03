@@ -788,6 +788,7 @@ namespace PGMEWindowsUI
             this.mapListTreeView.BeforeCollapse += new System.Windows.Forms.TreeViewCancelEventHandler(this.mapListTreeView_BeforeCollapse);
             this.mapListTreeView.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.mapListTreeView_BeforeExpand);
             this.mapListTreeView.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.mapListTreeView_NodeMouseDoubleClick);
+            this.mapListTreeView.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mapListTreeView_KeyPress);
             // 
             // mainTabControl
             // 
@@ -837,7 +838,7 @@ namespace PGMEWindowsUI
             // panel8
             // 
             resources.ApplyResources(this.panel8, "panel8");
-            this.panel8.BackColor = System.Drawing.SystemColors.Control;
+            this.panel8.BackColor = System.Drawing.Color.Transparent;
             this.panel8.Controls.Add(this.glControlMapEditor);
             this.panel8.Name = "panel8";
             this.panel8.Scroll += new System.Windows.Forms.ScrollEventHandler(this.panel8_Scroll);
@@ -953,7 +954,7 @@ namespace PGMEWindowsUI
             // blockPaintPanel
             // 
             resources.ApplyResources(this.blockPaintPanel, "blockPaintPanel");
-            this.blockPaintPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.blockPaintPanel.BackColor = System.Drawing.Color.Transparent;
             this.blockPaintPanel.Controls.Add(this.glControlBlocks);
             this.blockPaintPanel.Name = "blockPaintPanel";
             // 

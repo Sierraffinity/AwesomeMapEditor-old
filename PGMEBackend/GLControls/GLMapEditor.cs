@@ -72,10 +72,11 @@ namespace PGMEBackend.GLControls
 
             GL.Disable(EnableCap.Texture2D);
             GL.Disable(EnableCap.Blend);
-
+            /*
             var err = GL.GetError();
             if (err != ErrorCode.NoError)
                 System.Windows.Forms.MessageBox.Show(err.ToString(), "OpenGL Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+            */
         }
 
         private void PreRender()

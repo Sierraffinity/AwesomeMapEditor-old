@@ -95,7 +95,6 @@ D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEWindowsUI\bin\De
 D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEWindowsUI\bin\Debug\GBA Map Editor.exe
 D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEWindowsUI\bin\Debug\GBA Map Editor.pdb
 D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEWindowsUI\bin\Debug\es\GBA Map Editor.resources.dll
-D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEWindowsUI\bin\Debug\Be.HexEditor.exe
 D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEWindowsUI\bin\Debug\Be.Windows.Forms.HexBox.dll
 D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEWindowsUI\bin\Debug\GBA.dll
 D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEWindowsUI\bin\Debug\OpenTK.dll
@@ -172,3 +171,4 @@ C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\obj\Debug\P
 C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\obj\Debug\PGMEWindowsUI.csproj.GenerateResource.Cache
 C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\obj\Debug\es\GBA Map Editor.resources.dll
 C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\PGMEWindowsUI\bin\Debug\Be.HexEditor.dll
+D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\PGMEWindowsUI\bin\Debug\Be.HexEditor.dll

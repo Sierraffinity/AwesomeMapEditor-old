@@ -674,10 +674,15 @@ namespace PGMEWindowsUI
 
         private void mapListTreeView_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            TreeNode node = ((TreeView)sender).SelectedNode;
-            if (node == null)
-                return;
-            if (node.Nodes.Count == 0 && node.Tag != null)
+            //TreeNode node = ((TreeView)sender).SelectedNode;
+            TreeNode node = e.Node;
+            //((TreeView)sender).SelectedNode = node;
+            LoadMapFromNode(node);
+        }
+
+        void LoadMapFromNode(TreeNode node)
+        {
+            if (node != null && node.Nodes.Count == 0 && node.Tag != null)
             {
                 if (currentTreeNode != null)
                 {
@@ -1223,6 +1228,22 @@ namespace PGMEWindowsUI
         private void panel8_Scroll(object sender, ScrollEventArgs e)
         {
             glControlMapEditor.Invalidate();
+        }
+
+        private void mapListTreeView_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           if (mapListTreeView.SelectedNode != null && e.KeyChar == (char)Keys.Return)
+            {
+                TreeNode node = ((TreeView)sender).SelectedNode;
+                if (node.Nodes.Count == 0)
+                {
+                    LoadMapFromNode(node);
+                }
+                else if (!node.IsExpanded)
+                    node.Expand();
+                else
+                    node.Collapse();
+            }
         }
     }
 }
