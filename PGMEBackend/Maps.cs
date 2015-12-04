@@ -323,6 +323,7 @@ namespace PGMEBackend
                 int tilesy = Math.Max(layoutHeight / 16, 1);
                 tilesx += layoutWidth % tilesx;
                 tilesy += layoutWidth % tilesy;
+
                 int tileWidth = layoutWidth / tilesx;
                 int tileHeight = layoutHeight / tilesy;
                 int xtiles = layoutWidth / tileWidth;
@@ -339,6 +340,43 @@ namespace PGMEBackend
                         tile.ypos = y * tileHeight;
                         drawTiles.Add(tile);
                     }
+                }
+
+                int xremain = layoutWidth - xtiles * tileWidth;
+                int yremain = layoutHeight - ytiles * tileHeight;
+                if (xremain > 0)
+                    for (int y = 0; y < ytiles; y++)
+                    {
+                        var tile = new VisualMapTile();
+                        tile.Width = xremain;
+                        tile.Height = tileHeight;
+                        tile.buffer = new FrameBuffer(tile.Width * 16, tile.Height * 16);
+                        tile.xpos = xtiles * tileWidth;
+                        tile.ypos = y * tileHeight;
+                        drawTiles.Add(tile);
+                    }
+
+                if (yremain > 0)
+                    for (int x = 0; x < xtiles; x++)
+                    {
+                        var tile = new VisualMapTile();
+                        tile.Width = tileWidth;
+                        tile.Height = yremain;
+                        tile.buffer = new FrameBuffer(tile.Width * 16, tile.Height * 16);
+                        tile.xpos = x * tileWidth;
+                        tile.ypos = ytiles * tileHeight;
+                        drawTiles.Add(tile);
+                    }
+
+                if ((xremain > 0) && (yremain > 0))
+                {
+                    var tile = new VisualMapTile();
+                    tile.Width = xremain;
+                    tile.Height = yremain;
+                    tile.buffer = new FrameBuffer(tile.Width * 16, tile.Height * 16);
+                    tile.xpos = xtiles * tileWidth;
+                    tile.ypos = ytiles * tileHeight;
+                    drawTiles.Add(tile);
                 }
             }
 
@@ -391,11 +429,17 @@ namespace PGMEBackend
                 Surface.SetColor(Color.White);
                 Surface.SetTexture(v.buffer.ColorTexture);
                 Surface.DrawRect(v.xpos * 16, v.ypos * 16, v.buffer.Width, v.buffer.Height);
-
-                /*Surface.SetTexture(null);
-                Surface.SetColor(Color.Cyan);
-                Surface.DrawOutlineRect(v.xpos * 16, v.ypos * 16, v.buffer.Width, v.buffer.Height);*/
             }
+
+            /*
+            foreach (var v in drawTiles)
+            {
+                Surface.SetTexture(null);
+                Surface.SetColor(Color.Cyan);
+                Surface.DrawOutlineRect(v.xpos * 16, v.ypos * 16, v.buffer.Width, v.buffer.Height);
+            }
+            // */
+
             Surface.SetTexture(null);
         }
     }

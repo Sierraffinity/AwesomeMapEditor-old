@@ -126,7 +126,6 @@ namespace PGMEBackend
         {
             if (Active == this)
                 return;
-            Console.WriteLine("Setting active RT to " + FBOHandle);
             GL.Ext.BindFramebuffer(FramebufferTarget.FramebufferExt, FBOHandle);
             GL.PushAttrib(AttribMask.ViewportBit);
             GL.Viewport(0, 0, Width, Height);

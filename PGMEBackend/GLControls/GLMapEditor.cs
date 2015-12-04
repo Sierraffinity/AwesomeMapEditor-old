@@ -169,7 +169,7 @@ namespace PGMEBackend.GLControls
                     {
                         if (v.Redraw)
                             continue;
-                        if (i <= v.xpos + v.Width && i >= v.xpos && j >= v.ypos && j <= v.ypos + v.Height)
+                        if (i < v.xpos + v.Width && i >= v.xpos && j >= v.ypos && j < v.ypos + v.Height)
                         {
                             v.Redraw = true;
                             Console.WriteLine("Redrawing " + v.buffer.FBOHandle);
