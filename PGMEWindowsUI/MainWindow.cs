@@ -676,8 +676,32 @@ namespace PGMEWindowsUI
         {
             //TreeNode node = ((TreeView)sender).SelectedNode;
             TreeNode node = e.Node;
-            //((TreeView)sender).SelectedNode = node;
-            LoadMapFromNode(node);
+            if(((TreeView)sender).SelectedNode == node)
+                LoadMapFromNode(node);
+        }
+
+        private void mapListTreeView_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+
+
+        private void mapListTreeView_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (mapListTreeView.SelectedNode != null && e.KeyCode == Keys.Enter)
+            {
+                TreeNode node = ((TreeView)sender).SelectedNode;
+                if (node.Nodes.Count == 0)
+                {
+                    LoadMapFromNode(node);
+                }
+                else if (!node.IsExpanded)
+                    node.Expand();
+                else
+                    node.Collapse();
+                e.SuppressKeyPress = true;      //needed to prevent sound
+            }
         }
 
         void LoadMapFromNode(TreeNode node)
@@ -698,14 +722,11 @@ namespace PGMEWindowsUI
                 currentTreeNode = node;
             }
         }
-
-        bool mapLoaded = false;
-
+        
         public void LoadMap(object map)
         {
             LoadEditorTab(map);
             LoadHeaderTab(map);
-            mapLoaded = true;
         }
 
         public void LoadEditorTab(object maybeaMap)
@@ -1107,38 +1128,35 @@ namespace PGMEWindowsUI
             hexViewerRawLayoutHeader.ByteProvider = new DynamicByteProvider(currentLayout.rawData, true, false, false);
         }
 
-        PGMEBackend.GLControls.GLMapEditor glMapEditor;
-        PGMEBackend.GLControls.GLBlockChooser glBlockChooser;
-
         private void glControlMapEditor_Load(object sender, EventArgs e)
         {
             glControlMapEditor.MakeCurrent();
-            glMapEditor = new PGMEBackend.GLControls.GLMapEditor(glControlMapEditor.Width, glControlMapEditor.Height);
+            PGMEBackend.Program.glMapEditor = new PGMEBackend.GLControls.GLMapEditor(glControlMapEditor.Width, glControlMapEditor.Height);
         }
         
         private void glControlBlocks_Load(object sender, EventArgs e)
         {
             glControlBlocks.MakeCurrent();
-            glBlockChooser = new PGMEBackend.GLControls.GLBlockChooser(glControlBlocks.Width, glControlBlocks.Height);
+            PGMEBackend.Program.glBlockChooser = new PGMEBackend.GLControls.GLBlockChooser(glControlBlocks.Width, glControlBlocks.Height);
         }
 
         private void glControlMapEditor_Paint(object sender, PaintEventArgs e)
         {
-            if (!glMapEditor) // Play nice
+            if (!PGMEBackend.Program.glMapEditor) // Play nice
                 return;
 
             glControlMapEditor.MakeCurrent();
-            glMapEditor.Paint(glControlMapEditor.Width, glControlMapEditor.Height);
+            PGMEBackend.Program.glMapEditor.Paint(glControlMapEditor.Width, glControlMapEditor.Height);
             glControlMapEditor.SwapBuffers();
         }
         
         private void glControlBlocks_Paint(object sender, PaintEventArgs e)
         {
-            if (!glBlockChooser) // Play nice
+            if (!PGMEBackend.Program.glBlockChooser) // Play nice
                 return;
 
             glControlBlocks.MakeCurrent();
-            glBlockChooser.Paint(glControlBlocks.Width, glControlBlocks.Height);
+            PGMEBackend.Program.glBlockChooser.Paint(glControlBlocks.Width, glControlBlocks.Height);
             glControlBlocks.SwapBuffers();
         }
         
@@ -1155,63 +1173,63 @@ namespace PGMEWindowsUI
 
         private void glControlMapEditor_MouseMove(object sender, MouseEventArgs e)
         {
-            int oldX = glMapEditor.mouseX;
-            int oldY = glMapEditor.mouseY;
+            int oldX = PGMEBackend.Program.glMapEditor.mouseX;
+            int oldY = PGMEBackend.Program.glMapEditor.mouseY;
 
-            glMapEditor.MouseMove(e.X, e.Y);
+            PGMEBackend.Program.glMapEditor.MouseMove(e.X, e.Y);
             
-            if((oldX != glMapEditor.mouseX) || (oldY != glMapEditor.mouseY))
+            if((oldX != PGMEBackend.Program.glMapEditor.mouseX) || (oldY != PGMEBackend.Program.glMapEditor.mouseY))
                 glControlMapEditor.Invalidate();
         }
 
         private void glControlBlocks_MouseMove(object sender, MouseEventArgs e)
         {
-            int oldX = glBlockChooser.mouseX;
-            int oldY = glBlockChooser.mouseY;
+            int oldX = PGMEBackend.Program.glBlockChooser.mouseX;
+            int oldY = PGMEBackend.Program.glBlockChooser.mouseY;
 
-            glBlockChooser.MouseMove(e.X, e.Y);
+            PGMEBackend.Program.glBlockChooser.MouseMove(e.X, e.Y);
 
-            if ((oldX != glBlockChooser.mouseX) || (oldY != glBlockChooser.mouseY))
+            if ((oldX != PGMEBackend.Program.glBlockChooser.mouseX) || (oldY != PGMEBackend.Program.glBlockChooser.mouseY))
                 glControlBlocks.Invalidate();
         }
 
         private void glControlMapEditor_MouseLeave(object sender, EventArgs e)
         {
-            glMapEditor.MouseLeave();
+            PGMEBackend.Program.glMapEditor.MouseLeave();
             glControlMapEditor.Invalidate();
         }
         
         private void glControlBlocks_MouseLeave(object sender, EventArgs e)
         {
-            glBlockChooser.MouseLeave();
+            PGMEBackend.Program.glBlockChooser.MouseLeave();
             glControlBlocks.Invalidate();
         }
         
         private void glControlMapEditor_MouseDown(object sender, MouseEventArgs e)
         {
-            if ((PGMEBackend.MouseButtons)e.Button == glMapEditor.buttons)
+            if ((PGMEBackend.MouseButtons)e.Button == PGMEBackend.Program.glMapEditor.buttons)
                 return;
-            glMapEditor.MouseDown((PGMEBackend.MouseButtons)e.Button);
+            PGMEBackend.Program.glMapEditor.MouseDown((PGMEBackend.MouseButtons)e.Button);
             glControlMapEditor.Invalidate();
         }
 
         private void glControlBlocks_MouseDown(object sender, MouseEventArgs e)
         {
-            if ((PGMEBackend.MouseButtons)e.Button == glBlockChooser.buttons)
+            if ((PGMEBackend.MouseButtons)e.Button == PGMEBackend.Program.glBlockChooser.buttons)
                 return;
-            glBlockChooser.MouseDown((PGMEBackend.MouseButtons)e.Button);
+            PGMEBackend.Program.glBlockChooser.MouseDown((PGMEBackend.MouseButtons)e.Button);
             glControlBlocks.Invalidate();
         }
 
         private void glControlMapEditor_MouseUp(object sender, MouseEventArgs e)
         {
-            glMapEditor.MouseUp();
+            PGMEBackend.Program.glMapEditor.MouseUp();
             glControlMapEditor.Invalidate();
         }
 
         private void glControlBlocks_MouseUp(object sender, MouseEventArgs e)
         {
-            glBlockChooser.MouseUp();
+            PGMEBackend.Program.glBlockChooser.MouseUp();
             glControlBlocks.Invalidate();
         }
 
@@ -1228,22 +1246,6 @@ namespace PGMEWindowsUI
         private void panel8_Scroll(object sender, ScrollEventArgs e)
         {
             glControlMapEditor.Invalidate();
-        }
-
-        private void mapListTreeView_KeyPress(object sender, KeyPressEventArgs e)
-        {
-           if (mapListTreeView.SelectedNode != null && e.KeyChar == (char)Keys.Return)
-            {
-                TreeNode node = ((TreeView)sender).SelectedNode;
-                if (node.Nodes.Count == 0)
-                {
-                    LoadMapFromNode(node);
-                }
-                else if (!node.IsExpanded)
-                    node.Expand();
-                else
-                    node.Collapse();
-            }
         }
     }
 }

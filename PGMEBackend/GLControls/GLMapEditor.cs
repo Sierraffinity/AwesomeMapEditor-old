@@ -147,15 +147,14 @@ namespace PGMEBackend.GLControls
                 endMouseX = mouseX + selectWidth;
                 endMouseY = mouseY + selectHeight;
             }
-
         }
 
         public void MouseLeave()
         {
             mouseX = -1;
             mouseY = -1;
-            mouseX = -1;
-            mouseY = -1;
+            endMouseX = -1;
+            endMouseY = -1;
         }
 
         void Paint()

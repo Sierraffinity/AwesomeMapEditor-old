@@ -20,6 +20,8 @@ namespace PGMEBackend.GLControls
         public int mouseY = -1;
         public int endMouseX = -1;
         public int endMouseY = -1;
+        public int selectX = 0;
+        public int selectY = 0;
         public int selectWidth = 0;
         public int selectHeight = 0;
 
@@ -33,7 +35,7 @@ namespace PGMEBackend.GLControls
             height = h;
             GL.ClearColor(Color.Transparent);
             SetupViewport();
-            rectColor = rectDefaultColor;
+            rectColor = rectPaintColor;
         }
 
         public static implicit operator bool (GLBlockChooser b)
@@ -85,22 +87,22 @@ namespace PGMEBackend.GLControls
                     height += (int)Math.Ceiling(localTileset.blockSet.blocks.Length / 8.0d) * 16;
                 }
                 Program.mainGUI.SetGLBlockChooserSize(height);
-                if (mouseX != -1 && mouseY != -1)
+
+                int x = selectX * 16;
+                int y = selectY * 16;
+                int w = selectWidth * 16;
+                int h = selectHeight * 16;
+
+                if (selectX + selectWidth >= width / 16)
+                    w = ((width - 1) / 16 - selectX) * 16;
+                if (endMouseY >= height / 16)
+                    h = ((height - 1) / 16 - selectY) * 16;
+                
+                Surface.DrawOutlineRect(x + (w < 0 ? 16 : 0), y + (h < 0 ? 16 : 0), w + (w >= 0 ? 16 : -16), h + (h >= 0 ? 16 : -16), rectColor);
+
+                if (buttons != MouseButtons.Right)
                 {
-                    int x = mouseX * 16;
-                    int y = mouseY * 16;
-                    int endX = endMouseX * 16;
-                    int endY = endMouseY * 16;
-
-                    if (endMouseX >= width / 16)
-                        endX = ((width - 1) / 16) * 16;
-                    if (endMouseY >= height / 16)
-                        endY = ((height - 1) / 16) * 16;
-
-                    int w = x - endX;
-                    int h = y - endY;
-
-                    Surface.DrawOutlineRect(endX + (w < 0 ? 16 : 0), endY + (h < 0 ? 16 : 0), w + (w >= 0 ? 16 : -16), h + (h >= 0 ? 16 : -16), rectColor);
+                    Surface.DrawOutlineRect(mouseX * 16, mouseY * 16, 16, 16, rectDefaultColor);
                 }
             }
         }
@@ -120,22 +122,21 @@ namespace PGMEBackend.GLControls
             if (mouseY < 0)
                 mouseY = 0;
 
-            if (buttons != MouseButtons.Right)
+            if (buttons == MouseButtons.Right)
             {
-                selectWidth = Math.Abs(selectWidth);
-                selectHeight = Math.Abs(selectHeight);
-                endMouseX = mouseX + selectWidth;
-                endMouseY = mouseY + selectHeight;
+                selectX = (mouseX > endMouseX) ? endMouseX : mouseX;
+                selectY = (mouseY > endMouseY) ? endMouseY : mouseY;
+                selectWidth = Math.Abs(mouseX - endMouseX);
+                selectHeight = Math.Abs(mouseY - endMouseY);
             }
-
         }
 
         public void MouseLeave()
         {
             mouseX = -1;
             mouseY = -1;
-            mouseX = -1;
-            mouseY = -1;
+            endMouseX = -1;
+            endMouseY = -1;
         }
 
         public void MouseDown(MouseButtons button)
@@ -145,6 +146,8 @@ namespace PGMEBackend.GLControls
                 rectColor = rectPaintColor;
             else if (buttons == MouseButtons.Right)
             {
+                selectX = mouseX;
+                selectY = mouseY;
                 selectWidth = 0;
                 selectHeight = 0;
                 endMouseX = mouseX;
@@ -157,11 +160,15 @@ namespace PGMEBackend.GLControls
 
         public void MouseUp()
         {
-            selectWidth = mouseX - endMouseX;
-            selectHeight = mouseY - endMouseY;
+            selectX = (mouseX > endMouseX) ? endMouseX : mouseX;
+            selectY = (mouseY > endMouseY) ? endMouseY : mouseY;
+            selectWidth = Math.Abs(mouseX - endMouseX);
+            selectHeight = Math.Abs(mouseY - endMouseY);
+            Program.glMapEditor.selectWidth = selectWidth;
+            Program.glMapEditor.selectHeight = selectHeight;
 
             buttons = MouseButtons.None;
-            rectColor = rectDefaultColor;
+            rectColor = rectPaintColor;
         }
 
     }

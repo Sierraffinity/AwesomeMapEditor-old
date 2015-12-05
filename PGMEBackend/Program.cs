@@ -58,6 +58,9 @@ namespace PGMEBackend
         public static Map currentMap;
         public static MapLayout currentLayout;
 
+        public static GLControls.GLMapEditor glMapEditor;
+        public static GLControls.GLBlockChooser glBlockChooser;
+
         static void Main()
         {
             //Initialize();

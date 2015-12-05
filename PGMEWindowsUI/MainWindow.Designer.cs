@@ -788,7 +788,7 @@ namespace PGMEWindowsUI
             this.mapListTreeView.BeforeCollapse += new System.Windows.Forms.TreeViewCancelEventHandler(this.mapListTreeView_BeforeCollapse);
             this.mapListTreeView.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.mapListTreeView_BeforeExpand);
             this.mapListTreeView.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.mapListTreeView_NodeMouseDoubleClick);
-            this.mapListTreeView.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mapListTreeView_KeyPress);
+            this.mapListTreeView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.mapListTreeView_KeyDown);
             // 
             // mainTabControl
             // 
