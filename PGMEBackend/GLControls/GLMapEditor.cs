@@ -20,8 +20,9 @@ namespace PGMEBackend.GLControls
         public int mouseY = -1;
         public int endMouseX = -1;
         public int endMouseY = -1;
-        public int selectWidth = 0;
-        public int selectHeight = 0;
+        public int selectWidth = 1;
+        public int selectHeight = 1;
+        public short[] selectArray = { 0 };
 
         public Color rectDefaultColor = Color.FromArgb(0, 255, 0);
         public Color rectPaintColor = Color.FromArgb(255, 0, 0);
@@ -114,7 +115,7 @@ namespace PGMEBackend.GLControls
 
                     int w = x - endX;
                     int h = y - endY;
-
+                    
                     Surface.DrawOutlineRect(endX + (w < 0 ? 16 : 0), endY + (h < 0 ? 16 : 0), w + (w >= 0 ? 16 : -16), h + (h >= 0 ? 16 : -16), rectColor);
                 }
             }
@@ -137,6 +138,7 @@ namespace PGMEBackend.GLControls
 
             if (buttons == MouseButtons.Left)
             {
+                Program.currentLayout.PaintBlocksToMap(selectArray, mouseX, mouseY, selectWidth, selectHeight);
                 Paint();
             }
 
@@ -144,8 +146,8 @@ namespace PGMEBackend.GLControls
             {
                 selectWidth = Math.Abs(selectWidth);
                 selectHeight = Math.Abs(selectHeight);
-                endMouseX = mouseX + selectWidth;
-                endMouseY = mouseY + selectHeight;
+                endMouseX = mouseX + selectWidth - 1;
+                endMouseY = mouseY + selectHeight - 1;
             }
         }
 
@@ -185,12 +187,13 @@ namespace PGMEBackend.GLControls
             if (buttons == MouseButtons.Left)
             {
                 rectColor = rectPaintColor;
+                Program.currentLayout.PaintBlocksToMap(selectArray, mouseX, mouseY, selectWidth, selectHeight);
                 Paint();
             }
             else if (buttons == MouseButtons.Right)
             {
-                selectWidth = 0;
-                selectHeight = 0;
+                selectWidth = 1;
+                selectHeight = 1;
                 endMouseX = mouseX;
                 endMouseY = mouseY;
                 rectColor = rectSelectColor;
@@ -201,8 +204,29 @@ namespace PGMEBackend.GLControls
 
         public void MouseUp()
         {
-            selectWidth = mouseX - endMouseX;
-            selectHeight = mouseY - endMouseY;
+            if (buttons == MouseButtons.Right)
+            {
+                selectWidth = Math.Abs(mouseX - endMouseX) + 1;
+                selectHeight = Math.Abs(mouseY - endMouseY) + 1;
+
+                selectArray = new short[selectWidth * selectHeight];
+
+                for (int i = 0; i < selectHeight; i++)
+                    for (int j = 0; j < selectWidth; j++)
+                        selectArray[(i * selectWidth) + j] = Program.currentLayout.layout[(((mouseX > endMouseX) ? endMouseX : mouseX) + (((mouseY > endMouseY) ? endMouseY : mouseY) * Program.currentLayout.layoutWidth)) + (i * Program.currentLayout.layoutWidth) + j];
+                
+                /*
+                foreach (var item in selectArray)
+                {
+                    Console.WriteLine(item.ToString("X4"));
+                }*/
+
+                if (selectWidth == 1 && selectHeight == 1)
+                    Program.glBlockChooser.SelectBlock(selectArray[0] & 0x3FF);
+
+                else if (selectWidth > 1 || selectHeight > 1)
+                    Program.glBlockChooser.SelectBlock(-1);
+            }
 
             buttons = MouseButtons.None;
             rectColor = rectDefaultColor;

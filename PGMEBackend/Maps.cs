@@ -209,6 +209,7 @@ namespace PGMEBackend
         public MapTileset globalTileset;
         public MapTileset localTileset;
 
+        public byte[] rawLayout;
         public short[] layout;
 
         public bool edited
@@ -229,12 +230,29 @@ namespace PGMEBackend
 
             if (mapDataPointer > 0 && mapDataPointer < Program.ROM.Length)
             {
-                byte[] rawLayout = ROM.GetData(mapDataPointer, layoutWidth * layoutHeight * 4);
+                rawLayout = ROM.GetData(mapDataPointer, layoutWidth * layoutHeight * 4);
                 layout = new short[rawLayout.Length / 2];
-                Buffer.BlockCopy(rawLayout, 0, layout, 0, rawLayout.Length);
+                LoadLayoutFromRaw();
             }
         }
-        
+
+        public void LoadLayoutFromRaw()
+        {
+            Buffer.BlockCopy(rawLayout, 0, layout, 0, rawLayout.Length);
+        }
+
+        public void PaintBlocksToMap(short[] blockArray, int x, int y, int w, int h)
+        {
+            for (int i = 0; i < h; i++)
+            {
+                for (int j = 0; j < w; j++)
+                {
+                    if ((x + j < layoutWidth) && (y + i < layoutHeight))
+                        layout[(x + (y * layoutWidth)) + (i * layoutWidth) + j] = blockArray[(i * w) + j];
+                }
+            }
+        }
+
         public void LoadLayoutHeaderFromRaw(GBAROM ROM)
         {
             layoutWidth = BitConverter.ToInt32(rawData, 0);

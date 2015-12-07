@@ -1177,9 +1177,9 @@ namespace PGMEWindowsUI
             int oldY = PGMEBackend.Program.glMapEditor.mouseY;
 
             PGMEBackend.Program.glMapEditor.MouseMove(e.X, e.Y);
-            
-            if((oldX != PGMEBackend.Program.glMapEditor.mouseX) || (oldY != PGMEBackend.Program.glMapEditor.mouseY))
-                glControlMapEditor.Invalidate();
+
+            if ((oldX != PGMEBackend.Program.glMapEditor.mouseX) || (oldY != PGMEBackend.Program.glMapEditor.mouseY))
+                RefreshMapEditorControl();
         }
 
         private void glControlBlocks_MouseMove(object sender, MouseEventArgs e)
@@ -1190,19 +1190,19 @@ namespace PGMEWindowsUI
             PGMEBackend.Program.glBlockChooser.MouseMove(e.X, e.Y);
 
             if ((oldX != PGMEBackend.Program.glBlockChooser.mouseX) || (oldY != PGMEBackend.Program.glBlockChooser.mouseY))
-                glControlBlocks.Invalidate();
+                RefreshBlockEditorControl();
         }
 
         private void glControlMapEditor_MouseLeave(object sender, EventArgs e)
         {
             PGMEBackend.Program.glMapEditor.MouseLeave();
-            glControlMapEditor.Invalidate();
+            RefreshMapEditorControl();
         }
         
         private void glControlBlocks_MouseLeave(object sender, EventArgs e)
         {
             PGMEBackend.Program.glBlockChooser.MouseLeave();
-            glControlBlocks.Invalidate();
+            RefreshBlockEditorControl();
         }
         
         private void glControlMapEditor_MouseDown(object sender, MouseEventArgs e)
@@ -1210,7 +1210,7 @@ namespace PGMEWindowsUI
             if ((PGMEBackend.MouseButtons)e.Button == PGMEBackend.Program.glMapEditor.buttons)
                 return;
             PGMEBackend.Program.glMapEditor.MouseDown((PGMEBackend.MouseButtons)e.Button);
-            glControlMapEditor.Invalidate();
+            RefreshMapEditorControl();
         }
 
         private void glControlBlocks_MouseDown(object sender, MouseEventArgs e)
@@ -1218,19 +1218,19 @@ namespace PGMEWindowsUI
             if ((PGMEBackend.MouseButtons)e.Button == PGMEBackend.Program.glBlockChooser.buttons)
                 return;
             PGMEBackend.Program.glBlockChooser.MouseDown((PGMEBackend.MouseButtons)e.Button);
-            glControlBlocks.Invalidate();
+            RefreshBlockEditorControl();
         }
 
         private void glControlMapEditor_MouseUp(object sender, MouseEventArgs e)
         {
             PGMEBackend.Program.glMapEditor.MouseUp();
-            glControlMapEditor.Invalidate();
+            RefreshMapEditorControl();
         }
 
         private void glControlBlocks_MouseUp(object sender, MouseEventArgs e)
         {
             PGMEBackend.Program.glBlockChooser.MouseUp();
-            glControlBlocks.Invalidate();
+            RefreshBlockEditorControl();
         }
 
         private void glControlMapEditor_MouseEnter(object sender, EventArgs e)
@@ -1243,9 +1243,43 @@ namespace PGMEWindowsUI
 
         }
 
-        private void panel8_Scroll(object sender, ScrollEventArgs e)
+        public void RefreshMapEditorControl()
         {
             glControlMapEditor.Invalidate();
+        }
+
+        public void RefreshBlockEditorControl()
+        {
+            glControlBlocks.Invalidate();
+        }
+
+        private void panel8_Scroll(object sender, ScrollEventArgs e)
+        {
+            RefreshMapEditorControl();
+        }
+
+        public void ScrollBlockChooserToBlock(int blockNum)
+        {
+            using (Control c = new Control() { Parent = blockPaintPanel, Height = 16, Top = (blockNum / 8) * 16 + blockPaintPanel.AutoScrollPosition.Y })
+            {
+                blockPaintPanel.ScrollControlIntoView(c);
+            }
+        }
+
+        private void blockPaintPanel_Scroll(object sender, ScrollEventArgs e)
+        {
+            RefreshBlockEditorControl();
+        }
+    }
+
+    class GLPanel : Panel
+    {
+        protected override Point ScrollToControl(Control activeControl)
+        {
+            if (activeControl is OpenTK.GLControl)
+                return this.AutoScrollPosition;
+            else
+                return base.ScrollToControl(activeControl);
         }
     }
 }

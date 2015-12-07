@@ -52,5 +52,8 @@ namespace PGMEBackend
         void SetGLMapEditorSize(int w, int h);
         void SetGLBlockChooserSize(int h);
 
+        void RefreshMapEditorControl();
+        void RefreshBlockEditorControl();
+        void ScrollBlockChooserToBlock(int blockNum);
     }
 }

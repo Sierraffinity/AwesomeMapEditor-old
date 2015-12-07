@@ -307,7 +307,7 @@ namespace PGMEBackend
             string elapsedTime = ts.Seconds + "." + (ts.Milliseconds / 10);
 
             mainGUI.SetTitleText(programTitle + " | " + currentFileName + " | " + ((currentMap != null) ? currentMap.name : currentLayout.name));
-            mainGUI.SetLoadingStatus(String.Format(rmInternalStrings.GetString("MapLoadedStatus"), (currentMap != null) ? currentMap.name : currentLayout.name, elapsedTime));
+            mainGUI.SetLoadingStatus(string.Format(rmInternalStrings.GetString("MapLoadedStatus"), (currentMap != null) ? currentMap.name : currentLayout.name, elapsedTime));
 
         }
         
