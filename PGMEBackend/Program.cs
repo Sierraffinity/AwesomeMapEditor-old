@@ -49,6 +49,9 @@ namespace PGMEBackend
         public static int maxLayout;
         public static int mapLayoutNotFoundCount;
         public static bool extraLayoutsLoaded;
+        public static bool isEdited = false;
+        public static int timeOfDay = 2;
+        public static int currentEditorTab = 0;
 
         static string currentFilePath;
         static string currentFileName;
@@ -80,7 +83,6 @@ namespace PGMEBackend
 
         public static void LoadROM()
         {
-            
             string filename = mainGUI.ShowFileOpenDialog("Open ROM", "GBA ROM Files|*.gba|Binary Files|*.bin|All Files|*", false);
             if (filename.Length > 0)
             {
@@ -95,9 +97,14 @@ namespace PGMEBackend
 
         public static void LoadROM(string filename)
         {
-            
-            if (ROM.Edited && ShowMessageBox(rmInternalStrings.GetString("UnsavedChanges"), rmInternalStrings.GetString("UnsavedChangesTitle"), "OKCancel", "Warning") == "Cancel")
+            if (ROM.Edited || isEdited)
+            {
+                string result = ShowMessageBox(rmInternalStrings.GetString("UnsavedChanges"), rmInternalStrings.GetString("UnsavedChangesTitle"), "YesNoCancel", "Warning");
+                if (result == "Yes")
+                    SaveROM();
+                else if (result == "Cancel")
                     return;
+            }
 
             Stopwatch loadTime = new Stopwatch();
             loadTime.Start();
@@ -115,6 +122,8 @@ namespace PGMEBackend
                 mapLayoutNotFoundCount = 0;
                 mainGUI.ClearMapNodes();
                 extraLayoutsLoaded = false;
+                currentLayout = null;
+
                 mapTilesets = new SortedDictionary<int, MapTileset>();
                 mapLayouts = new Dictionary<int, MapLayout>();
                 LoadMapLayouts();
@@ -179,10 +188,15 @@ namespace PGMEBackend
             }
             catch(KeyNotFoundException)
             {
-                ShowMessageBox(String.Format(rmInternalStrings.GetString("ROMCodeNotFound"), ROM.GameCode), rmInternalStrings.GetString("ROMCodeNotFoundTitle"), "OK", "Warning");
+                ShowMessageBox(string.Format(rmInternalStrings.GetString("ROMCodeNotFound"), ROM.GameCode), rmInternalStrings.GetString("ROMCodeNotFoundTitle"), "OK", "Warning");
                 return -1;
             }
             return 0;
+        }
+
+        public static void SaveROM()
+        {
+
         }
 
         public static void IOException(Exception ex)
@@ -275,8 +289,20 @@ namespace PGMEBackend
             return true;
         }
 
-        public static void LoadMap(object map)
+        public static int LoadMap(object map)
         {
+            if (isEdited)
+            {
+                string result = UnsavedChangesDialog();
+                if (result == "Yes")
+                    SaveMap();
+                else if (result == "No")
+                    currentLayout.LoadLayoutFromRaw();
+                else if (result == "Cancel")
+                    return 1;
+                isEdited = false;
+            }
+
             Stopwatch loadTime = new Stopwatch();
             loadTime.Start();
 
@@ -285,17 +311,16 @@ namespace PGMEBackend
                 currentLayout.Unload();
             }
 
-            if (map.GetType() == typeof(Map))
+            if (map is Map)
             {
                 currentMap = (Map)map;
                 currentLayout = ((Map)map).layout;
             }
-            else if (map.GetType() == typeof(MapLayout))
+            else if (map is MapLayout)
             {
                 currentMap = null;
                 currentLayout = (MapLayout)map;
             }
-
 
             mainGUI.LoadMap(map);
             mainGUI.EnableControlsOnMapLoad();
@@ -308,7 +333,13 @@ namespace PGMEBackend
 
             mainGUI.SetTitleText(programTitle + " | " + currentFileName + " | " + ((currentMap != null) ? currentMap.name : currentLayout.name));
             mainGUI.SetLoadingStatus(string.Format(rmInternalStrings.GetString("MapLoadedStatus"), (currentMap != null) ? currentMap.name : currentLayout.name, elapsedTime));
+            return 0;
+        }
 
+        public static void SaveMap()
+        {
+            currentLayout.WriteLayoutToRaw();
+            isEdited = false;
         }
         
         private static void LoadMapNames()
@@ -495,12 +526,15 @@ namespace PGMEBackend
                 return '[' + character.ToString("X2") + ']';
             }
         }
-
-        public static bool TryToQuitApplication()
+        
+        public static string UnsavedChangesQuitDialog()
         {
-            if (!ROM.Edited || ShowMessageBox(string.Format(rmInternalStrings.GetString("UnsavedChanges"), rmInternalStrings.GetString("QuitApplication")), rmInternalStrings.GetString("UnsavedChangesTitle"), "OKCancel", "Warning") == "OK")
-                return true;
-            return false;
+            return ShowMessageBox(rmInternalStrings.GetString("UnsavedChangesExit"), rmInternalStrings.GetString("UnsavedChangesTitle"), "YesNoCancel", "Warning");
+        }
+
+        public static string UnsavedChangesDialog()
+        {
+            return ShowMessageBox(rmInternalStrings.GetString("UnsavedChanges"), rmInternalStrings.GetString("UnsavedChangesTitle"), "YesNoCancel", "Warning");
         }
     }
 

@@ -103,6 +103,20 @@ namespace PGMEWindowsUI
             }
 
             InitializeComponent();
+            LoadConfig();
+
+            mapListTreeView.ImageList = imageListMapTree;
+            mainTabControl.ImageList = imageListTabControl;
+            for (int i = 0; i < mainTabControl.TabPages.Count; i++)
+                mainTabControl.TabPages[i].ImageIndex = i;
+            PGMEBackend.Program.SetMainGUITitle(this.Text);
+            SetInitialCheckedStuff();
+            SetMapSortOrder(settings.MapSortOrder);
+            mapTreeNodes = new Dictionary<int, TreeNode>();
+        }
+
+        private void LoadConfig()
+        {
             foreach (TextBox hexPrefixBox in GetAll(this, typeof(TextBox)))
             {
                 if (hexPrefixBox.Name.Contains("hexPrefixBox"))
@@ -113,19 +127,20 @@ namespace PGMEWindowsUI
                 if (hexNumberBox.Name.Contains("hexNumberBox"))
                     hexNumberBox.Validating += HexTextBox_Validating;
             }
+            
+            mapXPosLabel.Text = "X: " + settings.HexPrefix + "00";
+            mapYPosLabel.Text = "Y: " + settings.HexPrefix + "00";
+            eventXPosLabel.Text = "X: " + settings.HexPrefix + "00";
+            eventYPosLabel.Text = "Y: " + settings.HexPrefix + "00";
+
+            toolStripShowGrid.Checked = settings.ShowGrid;
+            toolStripEventsShowGrid.Checked = settings.ShowGrid;
+            showGridToolStripMenuItem.Checked = settings.ShowGrid;
+
             cbHeaderTabShowRawMapHeader.Checked = settings.ShowRawMapHeader;
             cbHeaderTabShowRawLayoutHeader.Checked = settings.ShowRawLayoutHeader;
-            gbHeaderTabRawMapHeader.Visible = cbHeaderTabShowRawMapHeader.Checked;
-            gbHeaderTabRawLayoutHeader.Visible = cbHeaderTabShowRawLayoutHeader.Checked;
-
-            mapListTreeView.ImageList = imageListMapTree;
-            mainTabControl.ImageList = imageListTabControl;
-            for (int i = 0; i < mainTabControl.TabPages.Count; i++)
-                mainTabControl.TabPages[i].ImageIndex = i;
-            PGMEBackend.Program.SetMainGUITitle(this.Text);
-            SetInitialCheckedStuff();
-            SetMapSortOrder(settings.MapSortOrder);
-            mapTreeNodes = new Dictionary<int, TreeNode>();
+            gbHeaderTabRawMapHeader.Visible = settings.ShowRawMapHeader;
+            gbHeaderTabRawLayoutHeader.Visible = settings.ShowRawLayoutHeader;
         }
 
         public IEnumerable<Control> GetAll(Control control, Type type)
@@ -361,8 +376,8 @@ namespace PGMEWindowsUI
 
             //Initialize comboboxes to default values
             cboEventTypes.SelectedIndex = 0;
-            cboTimeofDayMap.SelectedIndex = 2;
-            cboTimeofDayEvents.SelectedIndex = 2;
+            //cboTimeofDayMap.SelectedIndex = 2;
+            //cboTimeofDayEvents.SelectedIndex = 2;
             cboEncounterTypes.SelectedIndex = 0;
 
             //disable already enabled stuff in case a ROM had already been loaded
@@ -371,12 +386,16 @@ namespace PGMEWindowsUI
 
             //set some defaults
             mainTabControl.SelectedIndex = 0;
+            glControlBlocks.Size = new Size(128, 64);
+            glControlMapEditor.Size = new Size(64, 64);
         }
 
         public void EnableControlsOnMapLoad()
         {
             mainTabControl.Enabled = true;
             toolStripMenuItemConnectionEditor.Enabled = true;
+            tsmiSaveMap.Enabled = true;
+            toolStripSaveMap.Enabled = true;
         }
 
         private void mapNameToolStripMenuItem_Click(object sender, EventArgs e)
@@ -474,7 +493,7 @@ namespace PGMEWindowsUI
             mapTreeNodes.Clear();
             mapListTreeView.Nodes.Clear();
         }
-
+        
         public void LoadMapNodes()
         {
             mapListTreeView.BeginUpdate();
@@ -708,6 +727,7 @@ namespace PGMEWindowsUI
         {
             if (node != null && node.Nodes.Count == 0 && node.Tag != null)
             {
+                PGMEBackend.Program.LoadMap(node.Tag);
                 if (currentTreeNode != null)
                 {
                     currentTreeNode.ImageKey = "Map";
@@ -715,10 +735,6 @@ namespace PGMEWindowsUI
                 }
                 node.ImageKey = "Map Selected";
                 node.SelectedImageKey = "Map Selected";
-                if (node.Tag.GetType() == typeof(Map))
-                    PGMEBackend.Program.LoadMap((Map)node.Tag);
-                else if (node.Tag.GetType() == typeof(MapLayout))
-                    PGMEBackend.Program.LoadMap((MapLayout)node.Tag);
                 currentTreeNode = node;
             }
         }
@@ -740,8 +756,8 @@ namespace PGMEWindowsUI
             if (mapLayout.localTileset != null)
                 mapLayout.localTileset.Initialize();
 
-            glControlMapEditor.Invalidate();
-            glControlBlocks.Invalidate();
+            RefreshMapEditorControl();
+            RefreshBlockEditorControl();
         }
 
         public void LoadHeaderTab(object maybeaMap)
@@ -930,13 +946,13 @@ namespace PGMEWindowsUI
 
         private void tsmiExit_Click(object sender, EventArgs e)
         {
-            if (PGMEBackend.Program.TryToQuitApplication())
-                QuitApplication(0);
+            QuitApplication(0);
         }
 
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
-            e.Cancel = !PGMEBackend.Program.TryToQuitApplication();
+            if(PGMEBackend.Program.ROM.Edited || PGMEBackend.Program.isEdited)
+                e.Cancel = PGMEBackend.Program.UnsavedChangesQuitDialog() == "Cancel";
         }
 
         private void tsmiAbout_Click(object sender, EventArgs e)
@@ -1179,7 +1195,13 @@ namespace PGMEWindowsUI
             PGMEBackend.Program.glMapEditor.MouseMove(e.X, e.Y);
 
             if ((oldX != PGMEBackend.Program.glMapEditor.mouseX) || (oldY != PGMEBackend.Program.glMapEditor.mouseY))
+            {
+                mapXPosLabel.Text = "X: " + settings.HexPrefix + PGMEBackend.Program.glMapEditor.mouseX.ToString("X2");
+                mapYPosLabel.Text = "Y: " + settings.HexPrefix + PGMEBackend.Program.glMapEditor.mouseY.ToString("X2");
+                eventXPosLabel.Text = "X: " + settings.HexPrefix + PGMEBackend.Program.glMapEditor.mouseX.ToString("X2");
+                eventYPosLabel.Text = "Y: " + settings.HexPrefix + PGMEBackend.Program.glMapEditor.mouseY.ToString("X2");
                 RefreshMapEditorControl();
+            }
         }
 
         private void glControlBlocks_MouseMove(object sender, MouseEventArgs e)
@@ -1269,6 +1291,74 @@ namespace PGMEWindowsUI
         private void blockPaintPanel_Scroll(object sender, ScrollEventArgs e)
         {
             RefreshBlockEditorControl();
+        }
+
+        private void toolStripShowGrid_Click(object sender, EventArgs e)
+        {
+            ChangeGridState();
+        }
+
+        private void showGridToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangeGridState();
+        }
+
+        private void toolStripSaveMap_Click(object sender, EventArgs e)
+        {
+            PGMEBackend.Program.SaveMap();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            PGMEBackend.Program.SaveMap();
+        }
+
+        private void cboTimeofDayMap_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PGMEBackend.Program.timeOfDay = (sender as ToolStripComboBox).SelectedIndex;
+        }
+
+        private void mainTabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if ((sender as TabControl).SelectedIndex == 0)
+            {
+                glControlMapEditor.Parent = mapPaintPanel;
+                PGMEBackend.Program.currentEditorTab &= ~2;
+            }
+            else if ((sender as TabControl).SelectedIndex == 1)
+            {
+                glControlMapEditor.Parent = eventPaintPanel;
+                PGMEBackend.Program.currentEditorTab &= 2;
+            }
+        }
+
+        private void toolStripEventsShowGrid_Click(object sender, EventArgs e)
+        {
+            ChangeGridState();
+        }
+
+        private void ChangeGridState()
+        {
+            toolStripShowGrid.Checked = !toolStripShowGrid.Checked;
+            toolStripEventsShowGrid.Checked = toolStripShowGrid.Checked;
+            showGridToolStripMenuItem.Checked = toolStripShowGrid.Checked;
+            settings.ShowGrid = toolStripShowGrid.Checked;
+            WriteConfig();
+            RefreshMapEditorControl();
+        }
+
+        private void paintTabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if ((sender as TabControl).SelectedIndex == 0)
+            {
+                glControlBlocks.Parent = blockPaintPanel;
+                PGMEBackend.Program.currentEditorTab &= ~1;
+            }
+            else if ((sender as TabControl).SelectedIndex == 1)
+            {
+                glControlBlocks.Parent = movementPaintPanel;
+                PGMEBackend.Program.currentEditorTab &= 1;
+            }
         }
     }
 

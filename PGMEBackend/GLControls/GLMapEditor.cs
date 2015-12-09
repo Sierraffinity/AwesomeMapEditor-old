@@ -101,6 +101,16 @@ namespace PGMEBackend.GLControls
 
                 width = layout.layoutWidth * 16;
                 height = layout.layoutHeight * 16;
+
+                if(Config.settings.ShowGrid)
+                {
+                    Surface.SetColor(Color.Black);
+                    for(int i = 0; i < layout.layoutWidth; i++)
+                        Surface.DrawLine(new double[] { i * 16, 0, i * 16, height });
+                    for (int i = 0; i < layout.layoutHeight; i++)
+                        Surface.DrawLine(new double[] { 0, i * 16, width, i * 16 });
+                }
+
                 if (mouseX != -1 && mouseY != -1)
                 {
                     int x = mouseX * 16;
@@ -120,7 +130,7 @@ namespace PGMEBackend.GLControls
                 }
             }
         }
-
+        
         public void MouseMove(int x, int y)
         {
             mouseX = x / 16;

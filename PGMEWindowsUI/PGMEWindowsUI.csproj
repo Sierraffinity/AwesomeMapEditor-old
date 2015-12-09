@@ -79,6 +79,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Dependencies\OpenTK.GLControl.dll</HintPath>
     </Reference>
+    <Reference Include="ROMhacking, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Hacking\GBA\GBA\bin\Release\ROMhacking.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -291,10 +295,13 @@
     <None Include="Resources\folder_closed_map_16x16.png" />
     <None Include="Resources\image_16x16.png" />
     <None Include="Resources\advance-map_16x16.png" />
+    <None Include="Resources\diskette_map_32x32.png" />
+    <None Include="Resources\diskette_map_16x16.png" />
     <Content Include="Resources\map_16x16.png" />
     <Content Include="Resources\folder_page_16x16.png" />
     <None Include="Resources\map_header_16x16.png" />
     <Content Include="Resources\page_16x16.png" />
+    <Content Include="Resources\permissions.png" />
     <Content Include="Resources\PKMNQuestionMark_32x32.png" />
     <None Include="Resources\viewsprites_32x32.png" />
     <None Include="Resources\viewsprites_16x16.png" />

@@ -159,6 +159,7 @@ namespace PGMEBackend
         public class AMESettings
         {
             public bool ShowSprites { get; set; }
+            public bool ShowGrid { get; set; }
             public bool UsePlugins { get; set; }
             public string ScriptEditor { get; set; }
             public float PermissionTranslucency { get; set; }

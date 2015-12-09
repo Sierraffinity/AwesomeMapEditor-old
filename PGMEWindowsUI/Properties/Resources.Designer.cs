@@ -193,6 +193,16 @@ namespace PGMEWindowsUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap diskette_map_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("diskette_map_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap diskette_map_32x32 {
             get {
                 object obj = ResourceManager.GetObject("diskette_map_32x32", resourceCulture);
@@ -416,6 +426,16 @@ namespace PGMEWindowsUI.Properties {
         internal static System.Drawing.Bitmap pencil_16x16 {
             get {
                 object obj = ResourceManager.GetObject("pencil_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap permissions {
+            get {
+                object obj = ResourceManager.GetObject("permissions", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

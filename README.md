@@ -1,5 +1,5 @@
 # Awesome Map Editor
-Awesome Map Editor (AME) is a map editor for 3rd generation Pokémon games: Ruby, FireRed, LeafGreen, Sapphire, and Emerald.
+Awesome Map Editor (AME) is a map editor for 3rd generation Pokémon games: Ruby, Sapphire, FireRed, LeafGreen, and Emerald.
 
 ## Dependencies (included)
 [Nintenlord's GBA I/O library](http://serenesforest.net/forums/index.php?showtopic=26913) (look for the download under "Source codes")

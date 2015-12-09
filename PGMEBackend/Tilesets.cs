@@ -165,13 +165,15 @@ namespace PGMEBackend
 
         public void Draw(Spritesheet[] globalSheets, Spritesheet[] localSheets, int xPos, int yPos, double scale)
         {
-            for (int i = 0; i < tileArray.Length; i++)
+            GL.Disable(EnableCap.Blend);
+            for (int i = 0; i < 4; i++)
             {
-                if (i < 4)
-                    GL.Disable(EnableCap.Blend);
                 tileArray[i].Draw(globalSheets, localSheets, xPos + ((i % 2) * 8), yPos + (((i % 4) / 2) * 8), scale);
-                if (i < 4)
-                    GL.Enable(EnableCap.Blend);
+            }
+            GL.Enable(EnableCap.Blend);
+            for (int i = 4; i < tileArray.Length; i++)
+            {
+                tileArray[i].Draw(globalSheets, localSheets, xPos + ((i % 2) * 8), yPos + (((i % 4) / 2) * 8), scale);
             }
         }
     }

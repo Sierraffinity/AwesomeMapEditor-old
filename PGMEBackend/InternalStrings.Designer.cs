@@ -665,7 +665,7 @@ namespace PGMEBackend {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You will need to restart the program to apply your language preference..
+        ///   Looks up a localized string similar to The program will need to be restarted to apply the new language preference..
         /// </summary>
         internal static string RestartToSaveLanguage {
             get {
@@ -742,6 +742,35 @@ namespace PGMEBackend {
         internal static string UnknownSong {
             get {
                 return ResourceManager.GetString("UnknownSong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There are changes that haven&apos;t been saved.
+        ///Save changes before continuing?.
+        /// </summary>
+        internal static string UnsavedChanges {
+            get {
+                return ResourceManager.GetString("UnsavedChanges", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There are changes that haven&apos;t been saved.
+        ///Save changes before exiting?.
+        /// </summary>
+        internal static string UnsavedChangesExit {
+            get {
+                return ResourceManager.GetString("UnsavedChangesExit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unsaved Changes.
+        /// </summary>
+        internal static string UnsavedChangesTitle {
+            get {
+                return ResourceManager.GetString("UnsavedChangesTitle", resourceCulture);
             }
         }
     }

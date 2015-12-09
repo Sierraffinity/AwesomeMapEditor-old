@@ -50,18 +50,38 @@ namespace PGMEWindowsUI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.splitMapListAndPaint = new System.Windows.Forms.SplitContainer();
             this.tsMapListTree = new System.Windows.Forms.ToolStrip();
+            this.tsddbMapSortOrder = new System.Windows.Forms.ToolStripDropDownButton();
+            this.mapNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mapBankToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mapLayoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mapTilesetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mapListTreeView = new System.Windows.Forms.TreeView();
             this.mainTabControl = new System.Windows.Forms.TabControl();
             this.mapTabPage = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.borderBlocksBox = new System.Windows.Forms.GroupBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.mapEditorPanel = new System.Windows.Forms.Panel();
+            this.mapPaintPanel = new PGMEWindowsUI.GLPanel();
+            this.glControlMapEditor = new OpenTK.GLControl();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.cboTimeofDayMap = new System.Windows.Forms.ToolStripComboBox();
+            this.mapXPosLabel = new System.Windows.Forms.ToolStripLabel();
+            this.mapYPosLabel = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton14 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripShowGrid = new System.Windows.Forms.ToolStripButton();
             this.paintTabControl = new System.Windows.Forms.TabControl();
             this.blocksTabPage = new System.Windows.Forms.TabPage();
+            this.blockPaintPanel = new PGMEWindowsUI.GLPanel();
+            this.glControlBlocks = new OpenTK.GLControl();
             this.movementTabPage = new System.Windows.Forms.TabPage();
-            this.movementPaintPanel = new System.Windows.Forms.Panel();
+            this.movementPaintPanel = new PGMEWindowsUI.GLPanel();
             this.eventsTabPage = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -83,6 +103,8 @@ namespace PGMEWindowsUI
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.textBox10 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -109,6 +131,8 @@ namespace PGMEWindowsUI
             this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
             this.panelSignEvent = new System.Windows.Forms.Panel();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.textBox26 = new System.Windows.Forms.TextBox();
@@ -132,7 +156,9 @@ namespace PGMEWindowsUI
             this.textBox24 = new System.Windows.Forms.TextBox();
             this.textBox25 = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
             this.textBox12 = new System.Windows.Forms.TextBox();
+            this.button7 = new System.Windows.Forms.Button();
             this.textBox23 = new System.Windows.Forms.TextBox();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.label29 = new System.Windows.Forms.Label();
@@ -147,21 +173,44 @@ namespace PGMEWindowsUI
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.textBox14 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.textBox17 = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.eventEditorPanel = new System.Windows.Forms.Panel();
+            this.eventPaintPanel = new PGMEWindowsUI.GLPanel();
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
             this.cboTimeofDayEvents = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripEventsShowGrid = new System.Windows.Forms.ToolStripButton();
+            this.eventXPosLabel = new System.Windows.Forms.ToolStripLabel();
+            this.eventYPosLabel = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripButton17 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.blocksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.belowTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.translucentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboveTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wildTabPage = new System.Windows.Forms.TabPage();
             this.panel6 = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
             this.cboEncounterTypes = new System.Windows.Forms.ComboBox();
             this.label38 = new System.Windows.Forms.Label();
             this.grbGrassEncounters = new System.Windows.Forms.GroupBox();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.pictureBox15 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label51 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
@@ -233,8 +282,13 @@ namespace PGMEWindowsUI
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.grbFishingRodEncounters = new System.Windows.Forms.GroupBox();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
+            this.pictureBox28 = new System.Windows.Forms.PictureBox();
+            this.pictureBox32 = new System.Windows.Forms.PictureBox();
+            this.pictureBox29 = new System.Windows.Forms.PictureBox();
             this.numericUpDown75 = new System.Windows.Forms.NumericUpDown();
+            this.pictureBox30 = new System.Windows.Forms.PictureBox();
             this.numericUpDown74 = new System.Windows.Forms.NumericUpDown();
+            this.pictureBox31 = new System.Windows.Forms.PictureBox();
             this.textBox73 = new System.Windows.Forms.TextBox();
             this.comboBox46 = new System.Windows.Forms.ComboBox();
             this.label75 = new System.Windows.Forms.Label();
@@ -259,11 +313,14 @@ namespace PGMEWindowsUI
             this.comboBox43 = new System.Windows.Forms.ComboBox();
             this.textBox67 = new System.Windows.Forms.TextBox();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.pictureBox35 = new System.Windows.Forms.PictureBox();
             this.numericUpDown81 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown80 = new System.Windows.Forms.NumericUpDown();
             this.textBox83 = new System.Windows.Forms.TextBox();
             this.comboBox49 = new System.Windows.Forms.ComboBox();
+            this.pictureBox33 = new System.Windows.Forms.PictureBox();
             this.numericUpDown79 = new System.Windows.Forms.NumericUpDown();
+            this.pictureBox34 = new System.Windows.Forms.PictureBox();
             this.numericUpDown78 = new System.Windows.Forms.NumericUpDown();
             this.textBox76 = new System.Windows.Forms.TextBox();
             this.comboBox48 = new System.Windows.Forms.ComboBox();
@@ -275,6 +332,7 @@ namespace PGMEWindowsUI
             this.label100 = new System.Windows.Forms.Label();
             this.label99 = new System.Windows.Forms.Label();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.pictureBox37 = new System.Windows.Forms.PictureBox();
             this.numericUpDown85 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown84 = new System.Windows.Forms.NumericUpDown();
             this.textBox85 = new System.Windows.Forms.TextBox();
@@ -282,6 +340,7 @@ namespace PGMEWindowsUI
             this.numericUpDown83 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown82 = new System.Windows.Forms.NumericUpDown();
             this.textBox84 = new System.Windows.Forms.TextBox();
+            this.pictureBox36 = new System.Windows.Forms.PictureBox();
             this.comboBox50 = new System.Windows.Forms.ComboBox();
             this.label103 = new System.Windows.Forms.Label();
             this.label101 = new System.Windows.Forms.Label();
@@ -295,6 +354,11 @@ namespace PGMEWindowsUI
             this.trackBar4 = new System.Windows.Forms.TrackBar();
             this.textBox82 = new System.Windows.Forms.TextBox();
             this.grbOtherEncounters = new System.Windows.Forms.GroupBox();
+            this.pictureBox16 = new System.Windows.Forms.PictureBox();
+            this.pictureBox17 = new System.Windows.Forms.PictureBox();
+            this.pictureBox18 = new System.Windows.Forms.PictureBox();
+            this.pictureBox19 = new System.Windows.Forms.PictureBox();
+            this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.label57 = new System.Windows.Forms.Label();
             this.label77 = new System.Windows.Forms.Label();
             this.label78 = new System.Windows.Forms.Label();
@@ -330,6 +394,11 @@ namespace PGMEWindowsUI
             this.textBox72 = new System.Windows.Forms.TextBox();
             this.trackBar2 = new System.Windows.Forms.TrackBar();
             this.grbWaterEncounters = new System.Windows.Forms.GroupBox();
+            this.pictureBox23 = new System.Windows.Forms.PictureBox();
+            this.pictureBox24 = new System.Windows.Forms.PictureBox();
+            this.pictureBox25 = new System.Windows.Forms.PictureBox();
+            this.pictureBox26 = new System.Windows.Forms.PictureBox();
+            this.pictureBox27 = new System.Windows.Forms.PictureBox();
             this.label93 = new System.Windows.Forms.Label();
             this.label109 = new System.Windows.Forms.Label();
             this.label110 = new System.Windows.Forms.Label();
@@ -439,119 +508,59 @@ namespace PGMEWindowsUI
             this.label73 = new System.Windows.Forms.Label();
             this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemOpenROM = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiReloadROM = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiSaveMap = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemSaveROM = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemSaveROMAs = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.backupsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.createOnOpenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nameFormatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hexPrefixToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.mainToolStrip = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.mainStatusStrip = new System.Windows.Forms.StatusStrip();
-            this.tsslLoadingStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mapPaintPanel = new PGMEWindowsUI.GLPanel();
-            this.glControlMapEditor = new OpenTK.GLControl();
-            this.blockPaintPanel = new PGMEWindowsUI.GLPanel();
-            this.glControlBlocks = new OpenTK.GLControl();
-            this.tsddbMapSortOrder = new System.Windows.Forms.ToolStripDropDownButton();
-            this.mapNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mapBankToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mapLayoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mapTilesetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton14 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.toolStripButton16 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton17 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox28 = new System.Windows.Forms.PictureBox();
-            this.pictureBox32 = new System.Windows.Forms.PictureBox();
-            this.pictureBox29 = new System.Windows.Forms.PictureBox();
-            this.pictureBox30 = new System.Windows.Forms.PictureBox();
-            this.pictureBox31 = new System.Windows.Forms.PictureBox();
-            this.pictureBox35 = new System.Windows.Forms.PictureBox();
-            this.pictureBox33 = new System.Windows.Forms.PictureBox();
-            this.pictureBox34 = new System.Windows.Forms.PictureBox();
-            this.pictureBox37 = new System.Windows.Forms.PictureBox();
-            this.pictureBox36 = new System.Windows.Forms.PictureBox();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
-            this.pictureBox17 = new System.Windows.Forms.PictureBox();
-            this.pictureBox18 = new System.Windows.Forms.PictureBox();
-            this.pictureBox19 = new System.Windows.Forms.PictureBox();
-            this.pictureBox20 = new System.Windows.Forms.PictureBox();
-            this.pictureBox23 = new System.Windows.Forms.PictureBox();
-            this.pictureBox24 = new System.Windows.Forms.PictureBox();
-            this.pictureBox25 = new System.Windows.Forms.PictureBox();
-            this.pictureBox26 = new System.Windows.Forms.PictureBox();
-            this.pictureBox27 = new System.Windows.Forms.PictureBox();
-            this.toolStripMenuItemOpenROM = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiReloadROM = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemSaveROM = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemSaveROMAs = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemTilesetEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemConnectionEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemWorldMapEditor = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showGridToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemLanguage = new System.Windows.Forms.ToolStripMenuItem();
             this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.espanolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.françaisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deutschToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemScriptEditor = new System.Windows.Forms.ToolStripMenuItem();
+            this.backupsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createOnOpenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nameFormatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hexPrefixToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemReadme = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.mainToolStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripOpen = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSaveMap = new System.Windows.Forms.ToolStripButton();
             this.toolStripSave = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripBlockEditor = new System.Windows.Forms.ToolStripButton();
             this.toolStripConnectionEditor = new System.Windows.Forms.ToolStripButton();
             this.toolStripWorldMapEditor = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripPluginManager = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.mainStatusStrip = new System.Windows.Forms.StatusStrip();
+            this.tsslLoadingStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.splitMapListAndPaint)).BeginInit();
             this.splitMapListAndPaint.Panel1.SuspendLayout();
             this.splitMapListAndPaint.Panel2.SuspendLayout();
@@ -561,10 +570,13 @@ namespace PGMEWindowsUI
             this.mapTabPage.SuspendLayout();
             this.panel2.SuspendLayout();
             this.borderBlocksBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.mapEditorPanel.SuspendLayout();
+            this.mapPaintPanel.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.paintTabControl.SuspendLayout();
             this.blocksTabPage.SuspendLayout();
+            this.blockPaintPanel.SuspendLayout();
             this.movementTabPage.SuspendLayout();
             this.eventsTabPage.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -582,12 +594,23 @@ namespace PGMEWindowsUI
             this.groupBox3.SuspendLayout();
             this.panelWarpEvent.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.eventEditorPanel.SuspendLayout();
             this.toolStrip3.SuspendLayout();
             this.wildTabPage.SuspendLayout();
             this.panel6.SuspendLayout();
             this.grbGrassEncounters.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown26)).BeginInit();
@@ -616,8 +639,13 @@ namespace PGMEWindowsUI
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.grbFishingRodEncounters.SuspendLayout();
             this.groupBox16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox32)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown75)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown74)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown73)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown72)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown71)).BeginInit();
@@ -627,20 +655,30 @@ namespace PGMEWindowsUI
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown67)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown68)).BeginInit();
             this.groupBox15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox35)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown81)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown80)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox33)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown79)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox34)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown78)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown77)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown76)).BeginInit();
             this.groupBox14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox37)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown85)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown84)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown83)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown82)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox36)).BeginInit();
             this.groupBox13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).BeginInit();
             this.grbOtherEncounters.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown32)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown33)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown34)).BeginInit();
@@ -654,6 +692,11 @@ namespace PGMEWindowsUI
             this.groupBox12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             this.grbWaterEncounters.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown56)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown57)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown58)).BeginInit();
@@ -683,42 +726,6 @@ namespace PGMEWindowsUI
             this.mainMenuStrip.SuspendLayout();
             this.mainToolStrip.SuspendLayout();
             this.mainStatusStrip.SuspendLayout();
-            this.mapPaintPanel.SuspendLayout();
-            this.blockPaintPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox32)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox35)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox33)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox34)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox37)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox36)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
             this.SuspendLayout();
             // 
             // splitMapListAndPaint
@@ -745,6 +752,46 @@ namespace PGMEWindowsUI
             this.tsddbMapSortOrder});
             this.tsMapListTree.Name = "tsMapListTree";
             // 
+            // tsddbMapSortOrder
+            // 
+            this.tsddbMapSortOrder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsddbMapSortOrder.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mapNameToolStripMenuItem,
+            this.mapBankToolStripMenuItem,
+            this.mapLayoutToolStripMenuItem,
+            this.mapTilesetToolStripMenuItem});
+            resources.ApplyResources(this.tsddbMapSortOrder, "tsddbMapSortOrder");
+            this.tsddbMapSortOrder.Name = "tsddbMapSortOrder";
+            this.tsddbMapSortOrder.Click += new System.EventHandler(this.tsddbMapSortOrder_Click);
+            // 
+            // mapNameToolStripMenuItem
+            // 
+            this.mapNameToolStripMenuItem.CheckOnClick = true;
+            resources.ApplyResources(this.mapNameToolStripMenuItem, "mapNameToolStripMenuItem");
+            this.mapNameToolStripMenuItem.Name = "mapNameToolStripMenuItem";
+            this.mapNameToolStripMenuItem.Click += new System.EventHandler(this.mapNameToolStripMenuItem_Click);
+            // 
+            // mapBankToolStripMenuItem
+            // 
+            this.mapBankToolStripMenuItem.CheckOnClick = true;
+            resources.ApplyResources(this.mapBankToolStripMenuItem, "mapBankToolStripMenuItem");
+            this.mapBankToolStripMenuItem.Name = "mapBankToolStripMenuItem";
+            this.mapBankToolStripMenuItem.Click += new System.EventHandler(this.mapBankToolStripMenuItem_Click);
+            // 
+            // mapLayoutToolStripMenuItem
+            // 
+            this.mapLayoutToolStripMenuItem.Image = global::PGMEWindowsUI.Properties.Resources.sort_map_16x16;
+            this.mapLayoutToolStripMenuItem.Name = "mapLayoutToolStripMenuItem";
+            resources.ApplyResources(this.mapLayoutToolStripMenuItem, "mapLayoutToolStripMenuItem");
+            this.mapLayoutToolStripMenuItem.Click += new System.EventHandler(this.mapLayoutToolStripMenuItem_Click);
+            // 
+            // mapTilesetToolStripMenuItem
+            // 
+            this.mapTilesetToolStripMenuItem.CheckOnClick = true;
+            resources.ApplyResources(this.mapTilesetToolStripMenuItem, "mapTilesetToolStripMenuItem");
+            this.mapTilesetToolStripMenuItem.Name = "mapTilesetToolStripMenuItem";
+            this.mapTilesetToolStripMenuItem.Click += new System.EventHandler(this.mapTilesetToolStripMenuItem_Click);
+            // 
             // mapListTreeView
             // 
             resources.ApplyResources(this.mapListTreeView, "mapListTreeView");
@@ -763,6 +810,7 @@ namespace PGMEWindowsUI
             resources.ApplyResources(this.mainTabControl, "mainTabControl");
             this.mainTabControl.Name = "mainTabControl";
             this.mainTabControl.SelectedIndex = 0;
+            this.mainTabControl.SelectedIndexChanged += new System.EventHandler(this.mainTabControl_SelectedIndexChanged);
             // 
             // mapTabPage
             // 
@@ -786,6 +834,12 @@ namespace PGMEWindowsUI
             this.borderBlocksBox.Name = "borderBlocksBox";
             this.borderBlocksBox.TabStop = false;
             // 
+            // pictureBox3
+            // 
+            resources.ApplyResources(this.pictureBox3, "pictureBox3");
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.TabStop = false;
+            // 
             // mapEditorPanel
             // 
             resources.ApplyResources(this.mapEditorPanel, "mapEditorPanel");
@@ -793,11 +847,36 @@ namespace PGMEWindowsUI
             this.mapEditorPanel.Controls.Add(this.toolStrip1);
             this.mapEditorPanel.Name = "mapEditorPanel";
             // 
+            // mapPaintPanel
+            // 
+            resources.ApplyResources(this.mapPaintPanel, "mapPaintPanel");
+            this.mapPaintPanel.BackColor = System.Drawing.Color.Transparent;
+            this.mapPaintPanel.Controls.Add(this.glControlMapEditor);
+            this.mapPaintPanel.Name = "mapPaintPanel";
+            this.mapPaintPanel.Scroll += new System.Windows.Forms.ScrollEventHandler(this.panel8_Scroll);
+            // 
+            // glControlMapEditor
+            // 
+            this.glControlMapEditor.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.glControlMapEditor.BackColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.glControlMapEditor, "glControlMapEditor");
+            this.glControlMapEditor.Name = "glControlMapEditor";
+            this.glControlMapEditor.VSync = false;
+            this.glControlMapEditor.Load += new System.EventHandler(this.glControlMapEditor_Load);
+            this.glControlMapEditor.Paint += new System.Windows.Forms.PaintEventHandler(this.glControlMapEditor_Paint);
+            this.glControlMapEditor.MouseDown += new System.Windows.Forms.MouseEventHandler(this.glControlMapEditor_MouseDown);
+            this.glControlMapEditor.MouseEnter += new System.EventHandler(this.glControlMapEditor_MouseEnter);
+            this.glControlMapEditor.MouseLeave += new System.EventHandler(this.glControlMapEditor_MouseLeave);
+            this.glControlMapEditor.MouseMove += new System.Windows.Forms.MouseEventHandler(this.glControlMapEditor_MouseMove);
+            this.glControlMapEditor.MouseUp += new System.Windows.Forms.MouseEventHandler(this.glControlMapEditor_MouseUp);
+            // 
             // toolStrip1
             // 
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cboTimeofDayMap,
+            this.mapXPosLabel,
+            this.mapYPosLabel,
             this.toolStripButton5,
             this.toolStripButton6,
             this.toolStripButton10,
@@ -805,7 +884,7 @@ namespace PGMEWindowsUI
             this.toolStripButton12,
             this.toolStripButton13,
             this.toolStripButton14,
-            this.toolStripButton15});
+            this.toolStripShowGrid});
             resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Name = "toolStrip1";
             // 
@@ -813,14 +892,69 @@ namespace PGMEWindowsUI
             // 
             this.cboTimeofDayMap.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.cboTimeofDayMap.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTimeofDayMap.Items.AddRange(new object[] {
-            resources.GetString("cboTimeofDayMap.Items"),
-            resources.GetString("cboTimeofDayMap.Items1"),
-            resources.GetString("cboTimeofDayMap.Items2"),
-            resources.GetString("cboTimeofDayMap.Items3"),
-            resources.GetString("cboTimeofDayMap.Items4")});
             this.cboTimeofDayMap.Name = "cboTimeofDayMap";
             resources.ApplyResources(this.cboTimeofDayMap, "cboTimeofDayMap");
+            this.cboTimeofDayMap.SelectedIndexChanged += new System.EventHandler(this.cboTimeofDayMap_SelectedIndexChanged);
+            // 
+            // mapXPosLabel
+            // 
+            resources.ApplyResources(this.mapXPosLabel, "mapXPosLabel");
+            this.mapXPosLabel.Name = "mapXPosLabel";
+            // 
+            // mapYPosLabel
+            // 
+            resources.ApplyResources(this.mapYPosLabel, "mapYPosLabel");
+            this.mapYPosLabel.Name = "mapYPosLabel";
+            // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolStripButton5, "toolStripButton5");
+            this.toolStripButton5.Name = "toolStripButton5";
+            // 
+            // toolStripButton6
+            // 
+            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolStripButton6, "toolStripButton6");
+            this.toolStripButton6.Name = "toolStripButton6";
+            // 
+            // toolStripButton10
+            // 
+            this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolStripButton10, "toolStripButton10");
+            this.toolStripButton10.Name = "toolStripButton10";
+            // 
+            // toolStripButton11
+            // 
+            this.toolStripButton11.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolStripButton11, "toolStripButton11");
+            this.toolStripButton11.Name = "toolStripButton11";
+            // 
+            // toolStripButton12
+            // 
+            this.toolStripButton12.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolStripButton12, "toolStripButton12");
+            this.toolStripButton12.Name = "toolStripButton12";
+            // 
+            // toolStripButton13
+            // 
+            this.toolStripButton13.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolStripButton13, "toolStripButton13");
+            this.toolStripButton13.Name = "toolStripButton13";
+            // 
+            // toolStripButton14
+            // 
+            this.toolStripButton14.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolStripButton14, "toolStripButton14");
+            this.toolStripButton14.Name = "toolStripButton14";
+            // 
+            // toolStripShowGrid
+            // 
+            this.toolStripShowGrid.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripShowGrid.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolStripShowGrid, "toolStripShowGrid");
+            this.toolStripShowGrid.Name = "toolStripShowGrid";
+            this.toolStripShowGrid.Click += new System.EventHandler(this.toolStripShowGrid_Click);
             // 
             // paintTabControl
             // 
@@ -829,6 +963,7 @@ namespace PGMEWindowsUI
             this.paintTabControl.Controls.Add(this.movementTabPage);
             this.paintTabControl.Name = "paintTabControl";
             this.paintTabControl.SelectedIndex = 0;
+            this.paintTabControl.SelectedIndexChanged += new System.EventHandler(this.paintTabControl_SelectedIndexChanged);
             // 
             // blocksTabPage
             // 
@@ -836,6 +971,28 @@ namespace PGMEWindowsUI
             resources.ApplyResources(this.blocksTabPage, "blocksTabPage");
             this.blocksTabPage.Name = "blocksTabPage";
             this.blocksTabPage.UseVisualStyleBackColor = true;
+            // 
+            // blockPaintPanel
+            // 
+            resources.ApplyResources(this.blockPaintPanel, "blockPaintPanel");
+            this.blockPaintPanel.BackColor = System.Drawing.Color.Transparent;
+            this.blockPaintPanel.Controls.Add(this.glControlBlocks);
+            this.blockPaintPanel.Name = "blockPaintPanel";
+            this.blockPaintPanel.Scroll += new System.Windows.Forms.ScrollEventHandler(this.blockPaintPanel_Scroll);
+            // 
+            // glControlBlocks
+            // 
+            this.glControlBlocks.BackColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.glControlBlocks, "glControlBlocks");
+            this.glControlBlocks.Name = "glControlBlocks";
+            this.glControlBlocks.VSync = false;
+            this.glControlBlocks.Load += new System.EventHandler(this.glControlBlocks_Load);
+            this.glControlBlocks.Paint += new System.Windows.Forms.PaintEventHandler(this.glControlBlocks_Paint);
+            this.glControlBlocks.MouseDown += new System.Windows.Forms.MouseEventHandler(this.glControlBlocks_MouseDown);
+            this.glControlBlocks.MouseEnter += new System.EventHandler(this.glControlBlocks_MouseEnter);
+            this.glControlBlocks.MouseLeave += new System.EventHandler(this.glControlBlocks_MouseLeave);
+            this.glControlBlocks.MouseMove += new System.Windows.Forms.MouseEventHandler(this.glControlBlocks_MouseMove);
+            this.glControlBlocks.MouseUp += new System.Windows.Forms.MouseEventHandler(this.glControlBlocks_MouseUp);
             // 
             // movementTabPage
             // 
@@ -852,7 +1009,7 @@ namespace PGMEWindowsUI
             // eventsTabPage
             // 
             this.eventsTabPage.Controls.Add(this.panel3);
-            this.eventsTabPage.Controls.Add(this.panel1);
+            this.eventsTabPage.Controls.Add(this.eventEditorPanel);
             resources.ApplyResources(this.eventsTabPage, "eventsTabPage");
             this.eventsTabPage.Name = "eventsTabPage";
             this.eventsTabPage.UseVisualStyleBackColor = true;
@@ -1016,6 +1173,19 @@ namespace PGMEWindowsUI
             resources.ApplyResources(this.textBox10, "textBox10");
             this.textBox10.Name = "textBox10";
             // 
+            // button2
+            // 
+            this.button2.ForeColor = System.Drawing.Color.Red;
+            resources.ApplyResources(this.button2, "button2");
+            this.button2.Name = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // textBox9
             // 
             resources.ApplyResources(this.textBox9, "textBox9");
@@ -1161,6 +1331,19 @@ namespace PGMEWindowsUI
             this.panelSignEvent.Controls.Add(this.textBox28);
             this.panelSignEvent.Name = "panelSignEvent";
             // 
+            // button8
+            // 
+            this.button8.ForeColor = System.Drawing.Color.Red;
+            resources.ApplyResources(this.button8, "button8");
+            this.button8.Name = "button8";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            resources.ApplyResources(this.button9, "button9");
+            this.button9.Name = "button9";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
             // textBox18
             // 
             resources.ApplyResources(this.textBox18, "textBox18");
@@ -1299,10 +1482,23 @@ namespace PGMEWindowsUI
             resources.ApplyResources(this.label19, "label19");
             this.label19.Name = "label19";
             // 
+            // button6
+            // 
+            this.button6.ForeColor = System.Drawing.Color.Red;
+            resources.ApplyResources(this.button6, "button6");
+            this.button6.Name = "button6";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
             // textBox12
             // 
             resources.ApplyResources(this.textBox12, "textBox12");
             this.textBox12.Name = "textBox12";
+            // 
+            // button7
+            // 
+            resources.ApplyResources(this.button7, "button7");
+            this.button7.Name = "button7";
+            this.button7.UseVisualStyleBackColor = true;
             // 
             // textBox23
             // 
@@ -1391,6 +1587,19 @@ namespace PGMEWindowsUI
             resources.ApplyResources(this.textBox14, "textBox14");
             this.textBox14.Name = "textBox14";
             // 
+            // button4
+            // 
+            this.button4.ForeColor = System.Drawing.Color.Red;
+            resources.ApplyResources(this.button4, "button4");
+            this.button4.Name = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            resources.ApplyResources(this.button5, "button5");
+            this.button5.Name = "button5";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
             // comboBox5
             // 
             this.comboBox5.FormattingEnabled = true;
@@ -1417,25 +1626,27 @@ namespace PGMEWindowsUI
             resources.ApplyResources(this.textBox17, "textBox17");
             this.textBox17.Name = "textBox17";
             // 
-            // panel1
+            // eventEditorPanel
             // 
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.toolStrip3);
-            this.panel1.Name = "panel1";
+            resources.ApplyResources(this.eventEditorPanel, "eventEditorPanel");
+            this.eventEditorPanel.Controls.Add(this.eventPaintPanel);
+            this.eventEditorPanel.Controls.Add(this.toolStrip3);
+            this.eventEditorPanel.Name = "eventEditorPanel";
             // 
-            // panel4
+            // eventPaintPanel
             // 
-            resources.ApplyResources(this.panel4, "panel4");
-            this.panel4.Controls.Add(this.pictureBox2);
-            this.panel4.Name = "panel4";
+            resources.ApplyResources(this.eventPaintPanel, "eventPaintPanel");
+            this.eventPaintPanel.BackColor = System.Drawing.Color.Transparent;
+            this.eventPaintPanel.Name = "eventPaintPanel";
             // 
             // toolStrip3
             // 
             this.toolStrip3.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cboTimeofDayEvents,
-            this.toolStripButton16,
+            this.toolStripEventsShowGrid,
+            this.eventXPosLabel,
+            this.eventYPosLabel,
             this.toolStripButton17,
             this.toolStripDropDownButton1});
             resources.ApplyResources(this.toolStrip3, "toolStrip3");
@@ -1445,6 +1656,7 @@ namespace PGMEWindowsUI
             // 
             this.cboTimeofDayEvents.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.cboTimeofDayEvents.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.cboTimeofDayEvents, "cboTimeofDayEvents");
             this.cboTimeofDayEvents.Items.AddRange(new object[] {
             resources.GetString("cboTimeofDayEvents.Items"),
             resources.GetString("cboTimeofDayEvents.Items1"),
@@ -1452,8 +1664,65 @@ namespace PGMEWindowsUI
             resources.GetString("cboTimeofDayEvents.Items3"),
             resources.GetString("cboTimeofDayEvents.Items4")});
             this.cboTimeofDayEvents.Name = "cboTimeofDayEvents";
-            resources.ApplyResources(this.cboTimeofDayEvents, "cboTimeofDayEvents");
             this.cboTimeofDayEvents.Click += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // toolStripEventsShowGrid
+            // 
+            this.toolStripEventsShowGrid.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripEventsShowGrid.CheckOnClick = true;
+            this.toolStripEventsShowGrid.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolStripEventsShowGrid, "toolStripEventsShowGrid");
+            this.toolStripEventsShowGrid.Name = "toolStripEventsShowGrid";
+            this.toolStripEventsShowGrid.Click += new System.EventHandler(this.toolStripEventsShowGrid_Click);
+            // 
+            // eventXPosLabel
+            // 
+            resources.ApplyResources(this.eventXPosLabel, "eventXPosLabel");
+            this.eventXPosLabel.Name = "eventXPosLabel";
+            // 
+            // eventYPosLabel
+            // 
+            resources.ApplyResources(this.eventYPosLabel, "eventYPosLabel");
+            this.eventYPosLabel.Name = "eventYPosLabel";
+            // 
+            // toolStripButton17
+            // 
+            this.toolStripButton17.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolStripButton17, "toolStripButton17");
+            this.toolStripButton17.Name = "toolStripButton17";
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.blocksToolStripMenuItem,
+            this.belowTopToolStripMenuItem,
+            this.translucentToolStripMenuItem,
+            this.aboveTopToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = global::PGMEWindowsUI.Properties.Resources.viewsprites_16x16;
+            resources.ApplyResources(this.toolStripDropDownButton1, "toolStripDropDownButton1");
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            // 
+            // blocksToolStripMenuItem
+            // 
+            this.blocksToolStripMenuItem.Name = "blocksToolStripMenuItem";
+            resources.ApplyResources(this.blocksToolStripMenuItem, "blocksToolStripMenuItem");
+            // 
+            // belowTopToolStripMenuItem
+            // 
+            this.belowTopToolStripMenuItem.Name = "belowTopToolStripMenuItem";
+            resources.ApplyResources(this.belowTopToolStripMenuItem, "belowTopToolStripMenuItem");
+            // 
+            // translucentToolStripMenuItem
+            // 
+            this.translucentToolStripMenuItem.Name = "translucentToolStripMenuItem";
+            resources.ApplyResources(this.translucentToolStripMenuItem, "translucentToolStripMenuItem");
+            // 
+            // aboveTopToolStripMenuItem
+            // 
+            this.aboveTopToolStripMenuItem.Name = "aboveTopToolStripMenuItem";
+            resources.ApplyResources(this.aboveTopToolStripMenuItem, "aboveTopToolStripMenuItem");
             // 
             // wildTabPage
             // 
@@ -1581,6 +1850,114 @@ namespace PGMEWindowsUI
             resources.ApplyResources(this.grbGrassEncounters, "grbGrassEncounters");
             this.grbGrassEncounters.Name = "grbGrassEncounters";
             this.grbGrassEncounters.TabStop = false;
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox12.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            resources.ApplyResources(this.pictureBox12, "pictureBox12");
+            this.pictureBox12.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.TabStop = false;
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox13.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            resources.ApplyResources(this.pictureBox13, "pictureBox13");
+            this.pictureBox13.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.TabStop = false;
+            // 
+            // pictureBox14
+            // 
+            this.pictureBox14.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox14.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            resources.ApplyResources(this.pictureBox14, "pictureBox14");
+            this.pictureBox14.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.TabStop = false;
+            // 
+            // pictureBox15
+            // 
+            this.pictureBox15.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox15.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            resources.ApplyResources(this.pictureBox15, "pictureBox15");
+            this.pictureBox15.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox15.Name = "pictureBox15";
+            this.pictureBox15.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox8.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            resources.ApplyResources(this.pictureBox8, "pictureBox8");
+            this.pictureBox8.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox9.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            resources.ApplyResources(this.pictureBox9, "pictureBox9");
+            this.pictureBox9.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox10.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            resources.ApplyResources(this.pictureBox10, "pictureBox10");
+            this.pictureBox10.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.TabStop = false;
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox11.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            resources.ApplyResources(this.pictureBox11, "pictureBox11");
+            this.pictureBox11.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox7.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            resources.ApplyResources(this.pictureBox7, "pictureBox7");
+            this.pictureBox7.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox6.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            resources.ApplyResources(this.pictureBox6, "pictureBox6");
+            this.pictureBox6.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox5.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            resources.ApplyResources(this.pictureBox5, "pictureBox5");
+            this.pictureBox5.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox4.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            resources.ApplyResources(this.pictureBox4, "pictureBox4");
+            this.pictureBox4.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.TabStop = false;
             // 
             // label51
             // 
@@ -2129,6 +2506,33 @@ namespace PGMEWindowsUI
             this.groupBox16.Name = "groupBox16";
             this.groupBox16.TabStop = false;
             // 
+            // pictureBox28
+            // 
+            this.pictureBox28.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox28.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            resources.ApplyResources(this.pictureBox28, "pictureBox28");
+            this.pictureBox28.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox28.Name = "pictureBox28";
+            this.pictureBox28.TabStop = false;
+            // 
+            // pictureBox32
+            // 
+            this.pictureBox32.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox32.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            resources.ApplyResources(this.pictureBox32, "pictureBox32");
+            this.pictureBox32.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox32.Name = "pictureBox32";
+            this.pictureBox32.TabStop = false;
+            // 
+            // pictureBox29
+            // 
+            this.pictureBox29.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox29.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            resources.ApplyResources(this.pictureBox29, "pictureBox29");
+            this.pictureBox29.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox29.Name = "pictureBox29";
+            this.pictureBox29.TabStop = false;
+            // 
             // numericUpDown75
             // 
             resources.ApplyResources(this.numericUpDown75, "numericUpDown75");
@@ -2139,6 +2543,15 @@ namespace PGMEWindowsUI
             0,
             0});
             // 
+            // pictureBox30
+            // 
+            this.pictureBox30.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox30.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            resources.ApplyResources(this.pictureBox30, "pictureBox30");
+            this.pictureBox30.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox30.Name = "pictureBox30";
+            this.pictureBox30.TabStop = false;
+            // 
             // numericUpDown74
             // 
             resources.ApplyResources(this.numericUpDown74, "numericUpDown74");
@@ -2148,6 +2561,15 @@ namespace PGMEWindowsUI
             0,
             0,
             0});
+            // 
+            // pictureBox31
+            // 
+            this.pictureBox31.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox31.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            resources.ApplyResources(this.pictureBox31, "pictureBox31");
+            this.pictureBox31.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox31.Name = "pictureBox31";
+            this.pictureBox31.TabStop = false;
             // 
             // textBox73
             // 
@@ -2338,6 +2760,15 @@ namespace PGMEWindowsUI
             this.groupBox15.Name = "groupBox15";
             this.groupBox15.TabStop = false;
             // 
+            // pictureBox35
+            // 
+            this.pictureBox35.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox35.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            resources.ApplyResources(this.pictureBox35, "pictureBox35");
+            this.pictureBox35.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox35.Name = "pictureBox35";
+            this.pictureBox35.TabStop = false;
+            // 
             // numericUpDown81
             // 
             resources.ApplyResources(this.numericUpDown81, "numericUpDown81");
@@ -2370,6 +2801,15 @@ namespace PGMEWindowsUI
             resources.ApplyResources(this.comboBox49, "comboBox49");
             this.comboBox49.Name = "comboBox49";
             // 
+            // pictureBox33
+            // 
+            this.pictureBox33.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox33.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            resources.ApplyResources(this.pictureBox33, "pictureBox33");
+            this.pictureBox33.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox33.Name = "pictureBox33";
+            this.pictureBox33.TabStop = false;
+            // 
             // numericUpDown79
             // 
             resources.ApplyResources(this.numericUpDown79, "numericUpDown79");
@@ -2379,6 +2819,15 @@ namespace PGMEWindowsUI
             0,
             0,
             0});
+            // 
+            // pictureBox34
+            // 
+            this.pictureBox34.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox34.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            resources.ApplyResources(this.pictureBox34, "pictureBox34");
+            this.pictureBox34.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox34.Name = "pictureBox34";
+            this.pictureBox34.TabStop = false;
             // 
             // numericUpDown78
             // 
@@ -2467,6 +2916,15 @@ namespace PGMEWindowsUI
             this.groupBox14.Name = "groupBox14";
             this.groupBox14.TabStop = false;
             // 
+            // pictureBox37
+            // 
+            this.pictureBox37.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox37.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            resources.ApplyResources(this.pictureBox37, "pictureBox37");
+            this.pictureBox37.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox37.Name = "pictureBox37";
+            this.pictureBox37.TabStop = false;
+            // 
             // numericUpDown85
             // 
             resources.ApplyResources(this.numericUpDown85, "numericUpDown85");
@@ -2523,6 +2981,15 @@ namespace PGMEWindowsUI
             // 
             resources.ApplyResources(this.textBox84, "textBox84");
             this.textBox84.Name = "textBox84";
+            // 
+            // pictureBox36
+            // 
+            this.pictureBox36.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox36.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            resources.ApplyResources(this.pictureBox36, "pictureBox36");
+            this.pictureBox36.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox36.Name = "pictureBox36";
+            this.pictureBox36.TabStop = false;
             // 
             // comboBox50
             // 
@@ -2633,6 +3100,51 @@ namespace PGMEWindowsUI
             resources.ApplyResources(this.grbOtherEncounters, "grbOtherEncounters");
             this.grbOtherEncounters.Name = "grbOtherEncounters";
             this.grbOtherEncounters.TabStop = false;
+            // 
+            // pictureBox16
+            // 
+            this.pictureBox16.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox16.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            resources.ApplyResources(this.pictureBox16, "pictureBox16");
+            this.pictureBox16.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.TabStop = false;
+            // 
+            // pictureBox17
+            // 
+            this.pictureBox17.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox17.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            resources.ApplyResources(this.pictureBox17, "pictureBox17");
+            this.pictureBox17.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox17.Name = "pictureBox17";
+            this.pictureBox17.TabStop = false;
+            // 
+            // pictureBox18
+            // 
+            this.pictureBox18.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox18.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            resources.ApplyResources(this.pictureBox18, "pictureBox18");
+            this.pictureBox18.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox18.Name = "pictureBox18";
+            this.pictureBox18.TabStop = false;
+            // 
+            // pictureBox19
+            // 
+            this.pictureBox19.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox19.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            resources.ApplyResources(this.pictureBox19, "pictureBox19");
+            this.pictureBox19.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox19.Name = "pictureBox19";
+            this.pictureBox19.TabStop = false;
+            // 
+            // pictureBox20
+            // 
+            this.pictureBox20.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox20.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            resources.ApplyResources(this.pictureBox20, "pictureBox20");
+            this.pictureBox20.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox20.Name = "pictureBox20";
+            this.pictureBox20.TabStop = false;
             // 
             // label57
             // 
@@ -2911,6 +3423,51 @@ namespace PGMEWindowsUI
             resources.ApplyResources(this.grbWaterEncounters, "grbWaterEncounters");
             this.grbWaterEncounters.Name = "grbWaterEncounters";
             this.grbWaterEncounters.TabStop = false;
+            // 
+            // pictureBox23
+            // 
+            this.pictureBox23.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox23.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            resources.ApplyResources(this.pictureBox23, "pictureBox23");
+            this.pictureBox23.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox23.Name = "pictureBox23";
+            this.pictureBox23.TabStop = false;
+            // 
+            // pictureBox24
+            // 
+            this.pictureBox24.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox24.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            resources.ApplyResources(this.pictureBox24, "pictureBox24");
+            this.pictureBox24.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox24.Name = "pictureBox24";
+            this.pictureBox24.TabStop = false;
+            // 
+            // pictureBox25
+            // 
+            this.pictureBox25.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox25.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            resources.ApplyResources(this.pictureBox25, "pictureBox25");
+            this.pictureBox25.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox25.Name = "pictureBox25";
+            this.pictureBox25.TabStop = false;
+            // 
+            // pictureBox26
+            // 
+            this.pictureBox26.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox26.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            resources.ApplyResources(this.pictureBox26, "pictureBox26");
+            this.pictureBox26.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox26.Name = "pictureBox26";
+            this.pictureBox26.TabStop = false;
+            // 
+            // pictureBox27
+            // 
+            this.pictureBox27.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox27.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            resources.ApplyResources(this.pictureBox27, "pictureBox27");
+            this.pictureBox27.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
+            this.pictureBox27.Name = "pictureBox27";
+            this.pictureBox27.TabStop = false;
             // 
             // label93
             // 
@@ -3744,7 +4301,6 @@ namespace PGMEWindowsUI
             this.helpToolStripMenuItem});
             resources.ApplyResources(this.mainMenuStrip, "mainMenuStrip");
             this.mainMenuStrip.Name = "mainMenuStrip";
-            this.mainMenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             // 
             // fileToolStripMenuItem
             // 
@@ -3752,6 +4308,7 @@ namespace PGMEWindowsUI
             this.toolStripMenuItemOpenROM,
             this.tsmiReloadROM,
             this.toolStripSeparator6,
+            this.tsmiSaveMap,
             this.toolStripMenuItemSaveROM,
             this.toolStripMenuItemSaveROMAs,
             this.toolStripSeparator7,
@@ -3759,10 +4316,39 @@ namespace PGMEWindowsUI
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
             // 
+            // toolStripMenuItemOpenROM
+            // 
+            resources.ApplyResources(this.toolStripMenuItemOpenROM, "toolStripMenuItemOpenROM");
+            this.toolStripMenuItemOpenROM.Name = "toolStripMenuItemOpenROM";
+            this.toolStripMenuItemOpenROM.Click += new System.EventHandler(this.toolStripMenuItemOpenROM_Click);
+            // 
+            // tsmiReloadROM
+            // 
+            resources.ApplyResources(this.tsmiReloadROM, "tsmiReloadROM");
+            this.tsmiReloadROM.Name = "tsmiReloadROM";
+            this.tsmiReloadROM.Click += new System.EventHandler(this.tsmiReloadROM_Click);
+            // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
             resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
+            // 
+            // tsmiSaveMap
+            // 
+            resources.ApplyResources(this.tsmiSaveMap, "tsmiSaveMap");
+            this.tsmiSaveMap.Image = global::PGMEWindowsUI.Properties.Resources.diskette_map_16x16;
+            this.tsmiSaveMap.Name = "tsmiSaveMap";
+            this.tsmiSaveMap.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // toolStripMenuItemSaveROM
+            // 
+            resources.ApplyResources(this.toolStripMenuItemSaveROM, "toolStripMenuItemSaveROM");
+            this.toolStripMenuItemSaveROM.Name = "toolStripMenuItemSaveROM";
+            // 
+            // toolStripMenuItemSaveROMAs
+            // 
+            resources.ApplyResources(this.toolStripMenuItemSaveROMAs, "toolStripMenuItemSaveROMAs");
+            this.toolStripMenuItemSaveROMAs.Name = "toolStripMenuItemSaveROMAs";
             // 
             // toolStripSeparator7
             // 
@@ -3774,147 +4360,6 @@ namespace PGMEWindowsUI
             this.tsmiExit.Name = "tsmiExit";
             resources.ApplyResources(this.tsmiExit, "tsmiExit");
             this.tsmiExit.Click += new System.EventHandler(this.tsmiExit_Click);
-            // 
-            // toolsToolStripMenuItem
-            // 
-            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItemTilesetEditor,
-            this.toolStripMenuItemConnectionEditor,
-            this.toolStripMenuItemWorldMapEditor});
-            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            resources.ApplyResources(this.toolsToolStripMenuItem, "toolsToolStripMenuItem");
-            // 
-            // settingsToolStripMenuItem
-            // 
-            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItemLanguage,
-            this.toolStripMenuItemScriptEditor,
-            this.backupsToolStripMenuItem,
-            this.hexPrefixToolStripMenuItem});
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
-            // 
-            // backupsToolStripMenuItem
-            // 
-            this.backupsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createOnOpenToolStripMenuItem,
-            this.nameFormatToolStripMenuItem});
-            this.backupsToolStripMenuItem.Name = "backupsToolStripMenuItem";
-            resources.ApplyResources(this.backupsToolStripMenuItem, "backupsToolStripMenuItem");
-            // 
-            // createOnOpenToolStripMenuItem
-            // 
-            this.createOnOpenToolStripMenuItem.CheckOnClick = true;
-            this.createOnOpenToolStripMenuItem.Name = "createOnOpenToolStripMenuItem";
-            resources.ApplyResources(this.createOnOpenToolStripMenuItem, "createOnOpenToolStripMenuItem");
-            // 
-            // nameFormatToolStripMenuItem
-            // 
-            this.nameFormatToolStripMenuItem.Name = "nameFormatToolStripMenuItem";
-            resources.ApplyResources(this.nameFormatToolStripMenuItem, "nameFormatToolStripMenuItem");
-            // 
-            // hexPrefixToolStripMenuItem
-            // 
-            this.hexPrefixToolStripMenuItem.Name = "hexPrefixToolStripMenuItem";
-            resources.ApplyResources(this.hexPrefixToolStripMenuItem, "hexPrefixToolStripMenuItem");
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItemReadme,
-            this.tsmiAbout});
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
-            // 
-            // tsmiAbout
-            // 
-            this.tsmiAbout.Name = "tsmiAbout";
-            resources.ApplyResources(this.tsmiAbout, "tsmiAbout");
-            this.tsmiAbout.Click += new System.EventHandler(this.tsmiAbout_Click);
-            // 
-            // mainToolStrip
-            // 
-            this.mainToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.mainToolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.mainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripOpen,
-            this.toolStripSave,
-            this.toolStripButton7,
-            this.toolStripSeparator1,
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripSeparator2,
-            this.toolStripButton3,
-            this.toolStripButton4,
-            this.toolStripSeparator3,
-            this.toolStripBlockEditor,
-            this.toolStripConnectionEditor,
-            this.toolStripWorldMapEditor,
-            this.toolStripSeparator4,
-            this.toolStripPluginManager,
-            this.toolStripSeparator5,
-            this.toolStripButton9});
-            resources.ApplyResources(this.mainToolStrip, "mainToolStrip");
-            this.mainToolStrip.Name = "mainToolStrip";
-            this.mainToolStrip.Stretch = true;
-            this.mainToolStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
-            // 
-            // mainStatusStrip
-            // 
-            this.mainStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsslLoadingStatus,
-            this.toolStripStatusLabel2,
-            this.toolStripStatusLabel3,
-            this.toolStripStatusLabel4});
-            resources.ApplyResources(this.mainStatusStrip, "mainStatusStrip");
-            this.mainStatusStrip.Name = "mainStatusStrip";
-            // 
-            // tsslLoadingStatus
-            // 
-            this.tsslLoadingStatus.Name = "tsslLoadingStatus";
-            resources.ApplyResources(this.tsslLoadingStatus, "tsslLoadingStatus");
-            // 
-            // toolStripStatusLabel2
-            // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            resources.ApplyResources(this.toolStripStatusLabel2, "toolStripStatusLabel2");
-            this.toolStripStatusLabel2.Spring = true;
-            // 
-            // toolStripStatusLabel3
-            // 
-            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            resources.ApplyResources(this.toolStripStatusLabel3, "toolStripStatusLabel3");
-            // 
-            // toolStripStatusLabel4
-            // 
-            this.toolStripStatusLabel4.IsLink = true;
-            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            resources.ApplyResources(this.toolStripStatusLabel4, "toolStripStatusLabel4");
             // 
             // editToolStripMenuItem
             // 
@@ -3934,534 +4379,14 @@ namespace PGMEWindowsUI
             this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
             resources.ApplyResources(this.redoToolStripMenuItem, "redoToolStripMenuItem");
             // 
-            // mapPaintPanel
-            // 
-            resources.ApplyResources(this.mapPaintPanel, "mapPaintPanel");
-            this.mapPaintPanel.BackColor = System.Drawing.Color.Transparent;
-            this.mapPaintPanel.Controls.Add(this.glControlMapEditor);
-            this.mapPaintPanel.Name = "mapPaintPanel";
-            this.mapPaintPanel.Scroll += new System.Windows.Forms.ScrollEventHandler(this.panel8_Scroll);
-            // 
-            // glControlMapEditor
-            // 
-            this.glControlMapEditor.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.glControlMapEditor.BackColor = System.Drawing.Color.Black;
-            resources.ApplyResources(this.glControlMapEditor, "glControlMapEditor");
-            this.glControlMapEditor.Name = "glControlMapEditor";
-            this.glControlMapEditor.VSync = false;
-            this.glControlMapEditor.Load += new System.EventHandler(this.glControlMapEditor_Load);
-            this.glControlMapEditor.Paint += new System.Windows.Forms.PaintEventHandler(this.glControlMapEditor_Paint);
-            this.glControlMapEditor.MouseDown += new System.Windows.Forms.MouseEventHandler(this.glControlMapEditor_MouseDown);
-            this.glControlMapEditor.MouseEnter += new System.EventHandler(this.glControlMapEditor_MouseEnter);
-            this.glControlMapEditor.MouseLeave += new System.EventHandler(this.glControlMapEditor_MouseLeave);
-            this.glControlMapEditor.MouseMove += new System.Windows.Forms.MouseEventHandler(this.glControlMapEditor_MouseMove);
-            this.glControlMapEditor.MouseUp += new System.Windows.Forms.MouseEventHandler(this.glControlMapEditor_MouseUp);
-            // 
-            // blockPaintPanel
-            // 
-            resources.ApplyResources(this.blockPaintPanel, "blockPaintPanel");
-            this.blockPaintPanel.BackColor = System.Drawing.Color.Transparent;
-            this.blockPaintPanel.Controls.Add(this.glControlBlocks);
-            this.blockPaintPanel.Name = "blockPaintPanel";
-            this.blockPaintPanel.Scroll += new System.Windows.Forms.ScrollEventHandler(this.blockPaintPanel_Scroll);
-            // 
-            // glControlBlocks
-            // 
-            this.glControlBlocks.BackColor = System.Drawing.Color.Black;
-            resources.ApplyResources(this.glControlBlocks, "glControlBlocks");
-            this.glControlBlocks.Name = "glControlBlocks";
-            this.glControlBlocks.VSync = true;
-            this.glControlBlocks.Load += new System.EventHandler(this.glControlBlocks_Load);
-            this.glControlBlocks.Paint += new System.Windows.Forms.PaintEventHandler(this.glControlBlocks_Paint);
-            this.glControlBlocks.MouseDown += new System.Windows.Forms.MouseEventHandler(this.glControlBlocks_MouseDown);
-            this.glControlBlocks.MouseEnter += new System.EventHandler(this.glControlBlocks_MouseEnter);
-            this.glControlBlocks.MouseLeave += new System.EventHandler(this.glControlBlocks_MouseLeave);
-            this.glControlBlocks.MouseMove += new System.Windows.Forms.MouseEventHandler(this.glControlBlocks_MouseMove);
-            this.glControlBlocks.MouseUp += new System.Windows.Forms.MouseEventHandler(this.glControlBlocks_MouseUp);
-            // 
-            // tsddbMapSortOrder
-            // 
-            this.tsddbMapSortOrder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsddbMapSortOrder.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mapNameToolStripMenuItem,
-            this.mapBankToolStripMenuItem,
-            this.mapLayoutToolStripMenuItem,
-            this.mapTilesetToolStripMenuItem});
-            resources.ApplyResources(this.tsddbMapSortOrder, "tsddbMapSortOrder");
-            this.tsddbMapSortOrder.Name = "tsddbMapSortOrder";
-            this.tsddbMapSortOrder.Click += new System.EventHandler(this.tsddbMapSortOrder_Click);
-            // 
-            // mapNameToolStripMenuItem
-            // 
-            this.mapNameToolStripMenuItem.CheckOnClick = true;
-            resources.ApplyResources(this.mapNameToolStripMenuItem, "mapNameToolStripMenuItem");
-            this.mapNameToolStripMenuItem.Name = "mapNameToolStripMenuItem";
-            this.mapNameToolStripMenuItem.Click += new System.EventHandler(this.mapNameToolStripMenuItem_Click);
-            // 
-            // mapBankToolStripMenuItem
-            // 
-            this.mapBankToolStripMenuItem.CheckOnClick = true;
-            resources.ApplyResources(this.mapBankToolStripMenuItem, "mapBankToolStripMenuItem");
-            this.mapBankToolStripMenuItem.Name = "mapBankToolStripMenuItem";
-            this.mapBankToolStripMenuItem.Click += new System.EventHandler(this.mapBankToolStripMenuItem_Click);
-            // 
-            // mapLayoutToolStripMenuItem
-            // 
-            this.mapLayoutToolStripMenuItem.Image = global::PGMEWindowsUI.Properties.Resources.sort_map_16x16;
-            this.mapLayoutToolStripMenuItem.Name = "mapLayoutToolStripMenuItem";
-            resources.ApplyResources(this.mapLayoutToolStripMenuItem, "mapLayoutToolStripMenuItem");
-            this.mapLayoutToolStripMenuItem.Click += new System.EventHandler(this.mapLayoutToolStripMenuItem_Click);
-            // 
-            // mapTilesetToolStripMenuItem
-            // 
-            this.mapTilesetToolStripMenuItem.CheckOnClick = true;
-            resources.ApplyResources(this.mapTilesetToolStripMenuItem, "mapTilesetToolStripMenuItem");
-            this.mapTilesetToolStripMenuItem.Name = "mapTilesetToolStripMenuItem";
-            this.mapTilesetToolStripMenuItem.Click += new System.EventHandler(this.mapTilesetToolStripMenuItem_Click);
-            // 
-            // pictureBox3
-            // 
-            resources.ApplyResources(this.pictureBox3, "pictureBox3");
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.TabStop = false;
-            // 
-            // toolStripButton5
-            // 
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.toolStripButton5, "toolStripButton5");
-            this.toolStripButton5.Name = "toolStripButton5";
-            // 
-            // toolStripButton6
-            // 
-            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.toolStripButton6, "toolStripButton6");
-            this.toolStripButton6.Name = "toolStripButton6";
-            // 
-            // toolStripButton10
-            // 
-            this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.toolStripButton10, "toolStripButton10");
-            this.toolStripButton10.Name = "toolStripButton10";
-            // 
-            // toolStripButton11
-            // 
-            this.toolStripButton11.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.toolStripButton11, "toolStripButton11");
-            this.toolStripButton11.Name = "toolStripButton11";
-            // 
-            // toolStripButton12
-            // 
-            this.toolStripButton12.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.toolStripButton12, "toolStripButton12");
-            this.toolStripButton12.Name = "toolStripButton12";
-            // 
-            // toolStripButton13
-            // 
-            this.toolStripButton13.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.toolStripButton13, "toolStripButton13");
-            this.toolStripButton13.Name = "toolStripButton13";
-            // 
-            // toolStripButton14
-            // 
-            this.toolStripButton14.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.toolStripButton14, "toolStripButton14");
-            this.toolStripButton14.Name = "toolStripButton14";
-            // 
-            // toolStripButton15
-            // 
-            this.toolStripButton15.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripButton15.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.toolStripButton15, "toolStripButton15");
-            this.toolStripButton15.Name = "toolStripButton15";
-            // 
-            // button2
-            // 
-            this.button2.ForeColor = System.Drawing.Color.Red;
-            resources.ApplyResources(this.button2, "button2");
-            this.button2.Name = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.ForeColor = System.Drawing.Color.Red;
-            resources.ApplyResources(this.button8, "button8");
-            this.button8.Name = "button8";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            resources.ApplyResources(this.button9, "button9");
-            this.button9.Name = "button9";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.ForeColor = System.Drawing.Color.Red;
-            resources.ApplyResources(this.button6, "button6");
-            this.button6.Name = "button6";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            resources.ApplyResources(this.button7, "button7");
-            this.button7.Name = "button7";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.ForeColor = System.Drawing.Color.Red;
-            resources.ApplyResources(this.button4, "button4");
-            this.button4.Name = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            resources.ApplyResources(this.button5, "button5");
-            this.button5.Name = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox2
-            // 
-            resources.ApplyResources(this.pictureBox2, "pictureBox2");
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.TabStop = false;
-            // 
-            // toolStripButton16
-            // 
-            this.toolStripButton16.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripButton16.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.toolStripButton16, "toolStripButton16");
-            this.toolStripButton16.Name = "toolStripButton16";
-            // 
-            // toolStripButton17
-            // 
-            this.toolStripButton17.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.toolStripButton17, "toolStripButton17");
-            this.toolStripButton17.Name = "toolStripButton17";
-            // 
-            // toolStripDropDownButton1
-            // 
-            this.toolStripDropDownButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDropDownButton1.Image = global::PGMEWindowsUI.Properties.Resources.viewsprites_16x16;
-            resources.ApplyResources(this.toolStripDropDownButton1, "toolStripDropDownButton1");
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox12.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            resources.ApplyResources(this.pictureBox12, "pictureBox12");
-            this.pictureBox12.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.TabStop = false;
-            // 
-            // pictureBox13
-            // 
-            this.pictureBox13.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox13.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            resources.ApplyResources(this.pictureBox13, "pictureBox13");
-            this.pictureBox13.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.TabStop = false;
-            // 
-            // pictureBox14
-            // 
-            this.pictureBox14.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox14.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            resources.ApplyResources(this.pictureBox14, "pictureBox14");
-            this.pictureBox14.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.TabStop = false;
-            // 
-            // pictureBox15
-            // 
-            this.pictureBox15.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox15.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            resources.ApplyResources(this.pictureBox15, "pictureBox15");
-            this.pictureBox15.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox8.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            resources.ApplyResources(this.pictureBox8, "pictureBox8");
-            this.pictureBox8.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox9.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            resources.ApplyResources(this.pictureBox9, "pictureBox9");
-            this.pictureBox9.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.TabStop = false;
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox10.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            resources.ApplyResources(this.pictureBox10, "pictureBox10");
-            this.pictureBox10.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.TabStop = false;
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox11.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            resources.ApplyResources(this.pictureBox11, "pictureBox11");
-            this.pictureBox11.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox7.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            resources.ApplyResources(this.pictureBox7, "pictureBox7");
-            this.pictureBox7.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox6.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            resources.ApplyResources(this.pictureBox6, "pictureBox6");
-            this.pictureBox6.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox5.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            resources.ApplyResources(this.pictureBox5, "pictureBox5");
-            this.pictureBox5.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox4.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            resources.ApplyResources(this.pictureBox4, "pictureBox4");
-            this.pictureBox4.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox28
-            // 
-            this.pictureBox28.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox28.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            resources.ApplyResources(this.pictureBox28, "pictureBox28");
-            this.pictureBox28.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox28.Name = "pictureBox28";
-            this.pictureBox28.TabStop = false;
-            // 
-            // pictureBox32
-            // 
-            this.pictureBox32.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox32.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            resources.ApplyResources(this.pictureBox32, "pictureBox32");
-            this.pictureBox32.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox32.Name = "pictureBox32";
-            this.pictureBox32.TabStop = false;
-            // 
-            // pictureBox29
-            // 
-            this.pictureBox29.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox29.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            resources.ApplyResources(this.pictureBox29, "pictureBox29");
-            this.pictureBox29.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox29.Name = "pictureBox29";
-            this.pictureBox29.TabStop = false;
-            // 
-            // pictureBox30
-            // 
-            this.pictureBox30.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox30.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            resources.ApplyResources(this.pictureBox30, "pictureBox30");
-            this.pictureBox30.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox30.Name = "pictureBox30";
-            this.pictureBox30.TabStop = false;
-            // 
-            // pictureBox31
-            // 
-            this.pictureBox31.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox31.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            resources.ApplyResources(this.pictureBox31, "pictureBox31");
-            this.pictureBox31.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox31.Name = "pictureBox31";
-            this.pictureBox31.TabStop = false;
-            // 
-            // pictureBox35
-            // 
-            this.pictureBox35.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox35.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            resources.ApplyResources(this.pictureBox35, "pictureBox35");
-            this.pictureBox35.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox35.Name = "pictureBox35";
-            this.pictureBox35.TabStop = false;
-            // 
-            // pictureBox33
-            // 
-            this.pictureBox33.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox33.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            resources.ApplyResources(this.pictureBox33, "pictureBox33");
-            this.pictureBox33.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox33.Name = "pictureBox33";
-            this.pictureBox33.TabStop = false;
-            // 
-            // pictureBox34
-            // 
-            this.pictureBox34.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox34.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            resources.ApplyResources(this.pictureBox34, "pictureBox34");
-            this.pictureBox34.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox34.Name = "pictureBox34";
-            this.pictureBox34.TabStop = false;
-            // 
-            // pictureBox37
-            // 
-            this.pictureBox37.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox37.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            resources.ApplyResources(this.pictureBox37, "pictureBox37");
-            this.pictureBox37.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox37.Name = "pictureBox37";
-            this.pictureBox37.TabStop = false;
-            // 
-            // pictureBox36
-            // 
-            this.pictureBox36.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox36.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            resources.ApplyResources(this.pictureBox36, "pictureBox36");
-            this.pictureBox36.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox36.Name = "pictureBox36";
-            this.pictureBox36.TabStop = false;
-            // 
-            // pictureBox16
-            // 
-            this.pictureBox16.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox16.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            resources.ApplyResources(this.pictureBox16, "pictureBox16");
-            this.pictureBox16.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.TabStop = false;
-            // 
-            // pictureBox17
-            // 
-            this.pictureBox17.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox17.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            resources.ApplyResources(this.pictureBox17, "pictureBox17");
-            this.pictureBox17.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.TabStop = false;
-            // 
-            // pictureBox18
-            // 
-            this.pictureBox18.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox18.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            resources.ApplyResources(this.pictureBox18, "pictureBox18");
-            this.pictureBox18.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.TabStop = false;
-            // 
-            // pictureBox19
-            // 
-            this.pictureBox19.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox19.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            resources.ApplyResources(this.pictureBox19, "pictureBox19");
-            this.pictureBox19.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.TabStop = false;
-            // 
-            // pictureBox20
-            // 
-            this.pictureBox20.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox20.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            resources.ApplyResources(this.pictureBox20, "pictureBox20");
-            this.pictureBox20.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.TabStop = false;
-            // 
-            // pictureBox23
-            // 
-            this.pictureBox23.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox23.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            resources.ApplyResources(this.pictureBox23, "pictureBox23");
-            this.pictureBox23.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox23.Name = "pictureBox23";
-            this.pictureBox23.TabStop = false;
-            // 
-            // pictureBox24
-            // 
-            this.pictureBox24.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox24.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            resources.ApplyResources(this.pictureBox24, "pictureBox24");
-            this.pictureBox24.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox24.Name = "pictureBox24";
-            this.pictureBox24.TabStop = false;
-            // 
-            // pictureBox25
-            // 
-            this.pictureBox25.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox25.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            resources.ApplyResources(this.pictureBox25, "pictureBox25");
-            this.pictureBox25.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox25.Name = "pictureBox25";
-            this.pictureBox25.TabStop = false;
-            // 
-            // pictureBox26
-            // 
-            this.pictureBox26.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox26.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            resources.ApplyResources(this.pictureBox26, "pictureBox26");
-            this.pictureBox26.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox26.Name = "pictureBox26";
-            this.pictureBox26.TabStop = false;
-            // 
-            // pictureBox27
-            // 
-            this.pictureBox27.ErrorImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox27.Image = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            resources.ApplyResources(this.pictureBox27, "pictureBox27");
-            this.pictureBox27.InitialImage = global::PGMEWindowsUI.Properties.Resources.PKMNQuestionMark_32x32;
-            this.pictureBox27.Name = "pictureBox27";
-            this.pictureBox27.TabStop = false;
-            // 
-            // toolStripMenuItemOpenROM
-            // 
-            resources.ApplyResources(this.toolStripMenuItemOpenROM, "toolStripMenuItemOpenROM");
-            this.toolStripMenuItemOpenROM.Name = "toolStripMenuItemOpenROM";
-            this.toolStripMenuItemOpenROM.Click += new System.EventHandler(this.toolStripMenuItemOpenROM_Click);
-            // 
-            // tsmiReloadROM
-            // 
-            resources.ApplyResources(this.tsmiReloadROM, "tsmiReloadROM");
-            this.tsmiReloadROM.Name = "tsmiReloadROM";
-            this.tsmiReloadROM.Click += new System.EventHandler(this.tsmiReloadROM_Click);
-            // 
-            // toolStripMenuItemSaveROM
-            // 
-            resources.ApplyResources(this.toolStripMenuItemSaveROM, "toolStripMenuItemSaveROM");
-            this.toolStripMenuItemSaveROM.Name = "toolStripMenuItemSaveROM";
-            // 
-            // toolStripMenuItemSaveROMAs
-            // 
-            resources.ApplyResources(this.toolStripMenuItemSaveROMAs, "toolStripMenuItemSaveROMAs");
-            this.toolStripMenuItemSaveROMAs.Name = "toolStripMenuItemSaveROMAs";
+            // toolsToolStripMenuItem
+            // 
+            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemTilesetEditor,
+            this.toolStripMenuItemConnectionEditor,
+            this.toolStripMenuItemWorldMapEditor});
+            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
+            resources.ApplyResources(this.toolsToolStripMenuItem, "toolsToolStripMenuItem");
             // 
             // toolStripMenuItemTilesetEditor
             // 
@@ -4478,6 +4403,25 @@ namespace PGMEWindowsUI
             // 
             resources.ApplyResources(this.toolStripMenuItemWorldMapEditor, "toolStripMenuItemWorldMapEditor");
             this.toolStripMenuItemWorldMapEditor.Name = "toolStripMenuItemWorldMapEditor";
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showGridToolStripMenuItem,
+            this.toolStripMenuItemLanguage,
+            this.toolStripMenuItemScriptEditor,
+            this.backupsToolStripMenuItem,
+            this.hexPrefixToolStripMenuItem});
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
+            // 
+            // showGridToolStripMenuItem
+            // 
+            this.showGridToolStripMenuItem.CheckOnClick = true;
+            this.showGridToolStripMenuItem.Image = global::PGMEWindowsUI.Properties.Resources.grid_16x16;
+            this.showGridToolStripMenuItem.Name = "showGridToolStripMenuItem";
+            resources.ApplyResources(this.showGridToolStripMenuItem, "showGridToolStripMenuItem");
+            this.showGridToolStripMenuItem.Click += new System.EventHandler(this.showGridToolStripMenuItem_Click);
             // 
             // toolStripMenuItemLanguage
             // 
@@ -4526,10 +4470,75 @@ namespace PGMEWindowsUI
             resources.ApplyResources(this.toolStripMenuItemScriptEditor, "toolStripMenuItemScriptEditor");
             this.toolStripMenuItemScriptEditor.Name = "toolStripMenuItemScriptEditor";
             // 
+            // backupsToolStripMenuItem
+            // 
+            this.backupsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createOnOpenToolStripMenuItem,
+            this.nameFormatToolStripMenuItem});
+            this.backupsToolStripMenuItem.Name = "backupsToolStripMenuItem";
+            resources.ApplyResources(this.backupsToolStripMenuItem, "backupsToolStripMenuItem");
+            // 
+            // createOnOpenToolStripMenuItem
+            // 
+            this.createOnOpenToolStripMenuItem.CheckOnClick = true;
+            this.createOnOpenToolStripMenuItem.Name = "createOnOpenToolStripMenuItem";
+            resources.ApplyResources(this.createOnOpenToolStripMenuItem, "createOnOpenToolStripMenuItem");
+            // 
+            // nameFormatToolStripMenuItem
+            // 
+            this.nameFormatToolStripMenuItem.Name = "nameFormatToolStripMenuItem";
+            resources.ApplyResources(this.nameFormatToolStripMenuItem, "nameFormatToolStripMenuItem");
+            // 
+            // hexPrefixToolStripMenuItem
+            // 
+            this.hexPrefixToolStripMenuItem.Name = "hexPrefixToolStripMenuItem";
+            resources.ApplyResources(this.hexPrefixToolStripMenuItem, "hexPrefixToolStripMenuItem");
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemReadme,
+            this.tsmiAbout});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
+            // 
             // toolStripMenuItemReadme
             // 
             resources.ApplyResources(this.toolStripMenuItemReadme, "toolStripMenuItemReadme");
             this.toolStripMenuItemReadme.Name = "toolStripMenuItemReadme";
+            // 
+            // tsmiAbout
+            // 
+            this.tsmiAbout.Name = "tsmiAbout";
+            resources.ApplyResources(this.tsmiAbout, "tsmiAbout");
+            this.tsmiAbout.Click += new System.EventHandler(this.tsmiAbout_Click);
+            // 
+            // mainToolStrip
+            // 
+            this.mainToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.mainToolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.mainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripOpen,
+            this.toolStripSave,
+            this.toolStripSeparator1,
+            this.toolStripSaveMap,
+            this.toolStripButton1,
+            this.toolStripButton2,
+            this.toolStripSeparator2,
+            this.toolStripButton3,
+            this.toolStripButton4,
+            this.toolStripSeparator3,
+            this.toolStripBlockEditor,
+            this.toolStripConnectionEditor,
+            this.toolStripWorldMapEditor,
+            this.toolStripSeparator4,
+            this.toolStripPluginManager,
+            this.toolStripSeparator5,
+            this.toolStripButton9});
+            resources.ApplyResources(this.mainToolStrip, "mainToolStrip");
+            this.mainToolStrip.Name = "mainToolStrip";
+            this.mainToolStrip.Stretch = true;
+            this.mainToolStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
             // toolStripOpen
             // 
@@ -4538,12 +4547,25 @@ namespace PGMEWindowsUI
             this.toolStripOpen.Name = "toolStripOpen";
             this.toolStripOpen.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
+            // toolStripSaveMap
+            // 
+            this.toolStripSaveMap.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolStripSaveMap, "toolStripSaveMap");
+            this.toolStripSaveMap.Image = global::PGMEWindowsUI.Properties.Resources.diskette_map_32x32;
+            this.toolStripSaveMap.Name = "toolStripSaveMap";
+            this.toolStripSaveMap.Click += new System.EventHandler(this.toolStripSaveMap_Click);
+            // 
             // toolStripSave
             // 
             this.toolStripSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.toolStripSave, "toolStripSave");
             this.toolStripSave.Name = "toolStripSave";
             this.toolStripSave.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
             // toolStripButton1
             // 
@@ -4557,6 +4579,11 @@ namespace PGMEWindowsUI
             resources.ApplyResources(this.toolStripButton2, "toolStripButton2");
             this.toolStripButton2.Name = "toolStripButton2";
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
+            // 
             // toolStripButton3
             // 
             this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -4568,6 +4595,11 @@ namespace PGMEWindowsUI
             this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.toolStripButton4, "toolStripButton4");
             this.toolStripButton4.Name = "toolStripButton4";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
             // 
             // toolStripBlockEditor
             // 
@@ -4587,11 +4619,21 @@ namespace PGMEWindowsUI
             resources.ApplyResources(this.toolStripWorldMapEditor, "toolStripWorldMapEditor");
             this.toolStripWorldMapEditor.Name = "toolStripWorldMapEditor";
             // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
+            // 
             // toolStripPluginManager
             // 
             this.toolStripPluginManager.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.toolStripPluginManager, "toolStripPluginManager");
             this.toolStripPluginManager.Name = "toolStripPluginManager";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
             // 
             // toolStripButton9
             // 
@@ -4599,12 +4641,37 @@ namespace PGMEWindowsUI
             resources.ApplyResources(this.toolStripButton9, "toolStripButton9");
             this.toolStripButton9.Name = "toolStripButton9";
             // 
-            // toolStripButton7
+            // mainStatusStrip
             // 
-            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.toolStripButton7, "toolStripButton7");
-            this.toolStripButton7.Image = global::PGMEWindowsUI.Properties.Resources.diskette_map_32x32;
-            this.toolStripButton7.Name = "toolStripButton7";
+            this.mainStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsslLoadingStatus,
+            this.toolStripStatusLabel2,
+            this.toolStripStatusLabel3,
+            this.toolStripStatusLabel4});
+            resources.ApplyResources(this.mainStatusStrip, "mainStatusStrip");
+            this.mainStatusStrip.Name = "mainStatusStrip";
+            // 
+            // tsslLoadingStatus
+            // 
+            this.tsslLoadingStatus.Name = "tsslLoadingStatus";
+            resources.ApplyResources(this.tsslLoadingStatus, "tsslLoadingStatus");
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            resources.ApplyResources(this.toolStripStatusLabel2, "toolStripStatusLabel2");
+            this.toolStripStatusLabel2.Spring = true;
+            // 
+            // toolStripStatusLabel3
+            // 
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            resources.ApplyResources(this.toolStripStatusLabel3, "toolStripStatusLabel3");
+            // 
+            // toolStripStatusLabel4
+            // 
+            this.toolStripStatusLabel4.IsLink = true;
+            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
+            resources.ApplyResources(this.toolStripStatusLabel4, "toolStripStatusLabel4");
             // 
             // MainWindow
             // 
@@ -4629,12 +4696,15 @@ namespace PGMEWindowsUI
             this.mapTabPage.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.borderBlocksBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.mapEditorPanel.ResumeLayout(false);
             this.mapEditorPanel.PerformLayout();
+            this.mapPaintPanel.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.paintTabControl.ResumeLayout(false);
             this.blocksTabPage.ResumeLayout(false);
+            this.blockPaintPanel.ResumeLayout(false);
             this.movementTabPage.ResumeLayout(false);
             this.eventsTabPage.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -4659,9 +4729,8 @@ namespace PGMEWindowsUI
             this.panelWarpEvent.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel4.ResumeLayout(false);
+            this.eventEditorPanel.ResumeLayout(false);
+            this.eventEditorPanel.PerformLayout();
             this.toolStrip3.ResumeLayout(false);
             this.toolStrip3.PerformLayout();
             this.wildTabPage.ResumeLayout(false);
@@ -4669,6 +4738,18 @@ namespace PGMEWindowsUI
             this.panel6.PerformLayout();
             this.grbGrassEncounters.ResumeLayout(false);
             this.grbGrassEncounters.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown26)).EndInit();
@@ -4700,8 +4781,13 @@ namespace PGMEWindowsUI
             this.grbFishingRodEncounters.PerformLayout();
             this.groupBox16.ResumeLayout(false);
             this.groupBox16.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox32)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown75)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown74)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown73)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown72)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown71)).EndInit();
@@ -4712,23 +4798,33 @@ namespace PGMEWindowsUI
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown68)).EndInit();
             this.groupBox15.ResumeLayout(false);
             this.groupBox15.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox35)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown81)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown80)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox33)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown79)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox34)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown78)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown77)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown76)).EndInit();
             this.groupBox14.ResumeLayout(false);
             this.groupBox14.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox37)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown85)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown84)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown83)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown82)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox36)).EndInit();
             this.groupBox13.ResumeLayout(false);
             this.groupBox13.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).EndInit();
             this.grbOtherEncounters.ResumeLayout(false);
             this.grbOtherEncounters.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown32)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown33)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown34)).EndInit();
@@ -4744,6 +4840,11 @@ namespace PGMEWindowsUI
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             this.grbWaterEncounters.ResumeLayout(false);
             this.grbWaterEncounters.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown56)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown57)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown58)).EndInit();
@@ -4786,42 +4887,6 @@ namespace PGMEWindowsUI
             this.mainToolStrip.PerformLayout();
             this.mainStatusStrip.ResumeLayout(false);
             this.mainStatusStrip.PerformLayout();
-            this.mapPaintPanel.ResumeLayout(false);
-            this.blockPaintPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox32)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox35)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox33)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox34)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox37)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox36)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4917,7 +4982,7 @@ namespace PGMEWindowsUI
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel eventEditorPanel;
         private System.Windows.Forms.Panel panelWarpEvent;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label22;
@@ -4980,8 +5045,7 @@ namespace PGMEWindowsUI
         private System.Windows.Forms.ToolStripMenuItem mapNameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mapBankToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mapTilesetToolStripMenuItem;
-        private System.Windows.Forms.ToolStripButton toolStripButton16;
-        private System.Windows.Forms.ToolStripButton toolStripButton17;
+        private System.Windows.Forms.ToolStripButton toolStripEventsShowGrid;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.ComboBox cboEncounterTypes;
@@ -5057,8 +5121,6 @@ namespace PGMEWindowsUI
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.TextBox textBox30;
         private System.Windows.Forms.TreeView mapListTreeView;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Label label90;
         private System.Windows.Forms.TextBox tbHeaderTabBorderWidth;
@@ -5311,9 +5373,20 @@ namespace PGMEWindowsUI
         private System.Windows.Forms.GroupBox borderBlocksBox;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel mapEditorPanel;
-        private OpenTK.GLControl glControlMapEditor;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripComboBox cboTimeofDayMap;
+        private System.Windows.Forms.ToolStripButton toolStripShowGrid;
+        private System.Windows.Forms.TabControl paintTabControl;
+        private System.Windows.Forms.TabPage blocksTabPage;
+        private OpenTK.GLControl glControlBlocks;
+        private System.Windows.Forms.TabPage movementTabPage;
+        private GLPanel blockPaintPanel;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem undoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem redoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton toolStripSaveMap;
+        private System.Windows.Forms.ToolStripMenuItem showGridToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSaveMap;
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.ToolStripButton toolStripButton6;
         private System.Windows.Forms.ToolStripButton toolStripButton10;
@@ -5321,18 +5394,19 @@ namespace PGMEWindowsUI
         private System.Windows.Forms.ToolStripButton toolStripButton12;
         private System.Windows.Forms.ToolStripButton toolStripButton13;
         private System.Windows.Forms.ToolStripButton toolStripButton14;
-        private System.Windows.Forms.ToolStripButton toolStripButton15;
-        private System.Windows.Forms.TabControl paintTabControl;
-        private System.Windows.Forms.TabPage blocksTabPage;
-        private OpenTK.GLControl glControlBlocks;
-        private System.Windows.Forms.TabPage movementTabPage;
-        private System.Windows.Forms.Panel movementPaintPanel;
         private GLPanel mapPaintPanel;
-        private GLPanel blockPaintPanel;
-        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem undoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem redoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripButton toolStripButton7;
+        private OpenTK.GLControl glControlMapEditor;
+        private GLPanel eventPaintPanel;
+        private System.Windows.Forms.ToolStripButton toolStripButton17;
+        private System.Windows.Forms.ToolStripLabel mapXPosLabel;
+        private System.Windows.Forms.ToolStripLabel mapYPosLabel;
+        private System.Windows.Forms.ToolStripMenuItem blocksToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem belowTopToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem translucentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboveTopToolStripMenuItem;
+        private System.Windows.Forms.ToolStripLabel eventXPosLabel;
+        private System.Windows.Forms.ToolStripLabel eventYPosLabel;
+        private GLPanel movementPaintPanel;
     }
 }
 

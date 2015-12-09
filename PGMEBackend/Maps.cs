@@ -18,6 +18,7 @@
 // along with Awesome Map Editor. If not, see <http://www.gnu.org/licenses/>.
 
 using Nintenlord.ROMHacking.GBA;
+using OpenTK.Graphics.OpenGL;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -241,8 +242,14 @@ namespace PGMEBackend
             Buffer.BlockCopy(rawLayout, 0, layout, 0, rawLayout.Length);
         }
 
+        public void WriteLayoutToRaw()
+        {
+            Buffer.BlockCopy(layout, 0, rawLayout, 0, rawLayout.Length);
+        }
+
         public void PaintBlocksToMap(short[] blockArray, int x, int y, int w, int h)
         {
+            Program.isEdited = true;
             for (int i = 0; i < h; i++)
             {
                 for (int j = 0; j < w; j++)
@@ -441,13 +448,15 @@ namespace PGMEBackend
 
         public void Draw(Spritesheet[] globalSheets, Spritesheet[] localSheets, int xPos, int yPos, double scale)
         {
-
+            GL.Disable(EnableCap.Blend);
             foreach (var v in drawTiles)
             {
                 Surface.SetColor(Color.White);
                 Surface.SetTexture(v.buffer.ColorTexture);
                 Surface.DrawRect(v.xpos * 16, v.ypos * 16, v.buffer.Width, v.buffer.Height);
             }
+
+            GL.Enable(EnableCap.Blend);
 
             /*
             foreach (var v in drawTiles)

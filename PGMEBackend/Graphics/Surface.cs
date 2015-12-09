@@ -329,7 +329,7 @@ namespace PGMEBackend
             GL.Begin(PrimitiveType.LineStrip);
             for (int i = 0; i < pos.Length; i += 2)
             {
-                GL.Vertex2(pos[i], pos[i + 1]);
+                GL.Vertex2(pos[i] + 1, pos[i + 1]);
             }
             GL.End();
         }
