@@ -154,7 +154,11 @@ namespace PGMEWindowsUI
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-
+            UndoManager.OnModified += (nl, ev) => {
+                undoToolStripMenuItem.Enabled = UndoManager.HasUndo;
+                redoToolStripMenuItem.Enabled = UndoManager.HasRedo;
+                RefreshMapEditorControl();
+            };
         }
 
         public void QuitApplication(int code)
@@ -1360,6 +1364,35 @@ namespace PGMEWindowsUI
                 PGMEBackend.Program.currentEditorTab &= 1;
             }
         }
+
+        private void undoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UndoManager.Undo();
+        }
+
+        private void redoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UndoManager.Redo();
+        }
+
+        /*
+        // Undo example usage
+        // Note that the redo gets called automatically
+        private void thisIsATestOfTheUndoSystemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UndoManager.PushAction(new PGMEBackend.Undo.UndoSetProperty(this, "Text", DateTime.Now.ToString()));
+            
+            var oldTitle = Text;
+            UndoManager.PushAction(() =>
+            {
+                Text = "fuck this shit";
+            }, () =>
+            {
+                Text = oldTitle;
+            });
+
+        }
+        */
     }
 
     class GLPanel : Panel

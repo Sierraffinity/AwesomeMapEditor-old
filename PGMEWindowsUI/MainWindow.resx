@@ -9502,7 +9502,7 @@
     <value>hexViewerRawMapHeader</value>
   </data>
   <data name="&gt;&gt;hexViewerRawMapHeader.Type" xml:space="preserve">
-    <value>Be.Windows.Forms.HexBox, Be.Windows.Forms.HexBox, Version=1.6.0.32122, Culture=neutral, PublicKeyToken=null</value>
+    <value>Be.Windows.Forms.HexBox, Be.Windows.Forms.HexBox, Version=1.6.0.42178, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;hexViewerRawMapHeader.Parent" xml:space="preserve">
     <value>gbHeaderTabRawMapHeader</value>
@@ -10798,7 +10798,7 @@
     <value>hexViewerRawLayoutHeader</value>
   </data>
   <data name="&gt;&gt;hexViewerRawLayoutHeader.Type" xml:space="preserve">
-    <value>Be.Windows.Forms.HexBox, Be.Windows.Forms.HexBox, Version=1.6.0.32122, Culture=neutral, PublicKeyToken=null</value>
+    <value>Be.Windows.Forms.HexBox, Be.Windows.Forms.HexBox, Version=1.6.0.42178, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;hexViewerRawLayoutHeader.Parent" xml:space="preserve">
     <value>gbHeaderTabRawLayoutHeader</value>
@@ -11752,6 +11752,9 @@
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;File</value>
   </data>
+  <data name="undoToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="undoToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+Z</value>
   </data>
@@ -11760,6 +11763,9 @@
   </data>
   <data name="undoToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Undo</value>
+  </data>
+  <data name="redoToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="redoToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+Y</value>
@@ -12895,12 +12901,6 @@
   <data name="&gt;&gt;toolStripOpen.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripSaveMap.Name" xml:space="preserve">
-    <value>toolStripSaveMap</value>
-  </data>
-  <data name="&gt;&gt;toolStripSaveMap.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;toolStripSave.Name" xml:space="preserve">
     <value>toolStripSave</value>
   </data>
@@ -12912,6 +12912,12 @@
   </data>
   <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSaveMap.Name" xml:space="preserve">
+    <value>toolStripSaveMap</value>
+  </data>
+  <data name="&gt;&gt;toolStripSaveMap.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripButton1.Name" xml:space="preserve">
     <value>toolStripButton1</value>

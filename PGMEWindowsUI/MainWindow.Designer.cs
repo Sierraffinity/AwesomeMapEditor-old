@@ -540,9 +540,9 @@ namespace PGMEWindowsUI
             this.tsmiAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.mainToolStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripOpen = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSaveMap = new System.Windows.Forms.ToolStripButton();
             this.toolStripSave = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSaveMap = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -4371,13 +4371,15 @@ namespace PGMEWindowsUI
             // 
             // undoToolStripMenuItem
             // 
-            this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
             resources.ApplyResources(this.undoToolStripMenuItem, "undoToolStripMenuItem");
+            this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
+            this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
             // 
             // redoToolStripMenuItem
             // 
-            this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
             resources.ApplyResources(this.redoToolStripMenuItem, "redoToolStripMenuItem");
+            this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
+            this.redoToolStripMenuItem.Click += new System.EventHandler(this.redoToolStripMenuItem_Click);
             // 
             // toolsToolStripMenuItem
             // 
@@ -4547,14 +4549,6 @@ namespace PGMEWindowsUI
             this.toolStripOpen.Name = "toolStripOpen";
             this.toolStripOpen.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // toolStripSaveMap
-            // 
-            this.toolStripSaveMap.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.toolStripSaveMap, "toolStripSaveMap");
-            this.toolStripSaveMap.Image = global::PGMEWindowsUI.Properties.Resources.diskette_map_32x32;
-            this.toolStripSaveMap.Name = "toolStripSaveMap";
-            this.toolStripSaveMap.Click += new System.EventHandler(this.toolStripSaveMap_Click);
-            // 
             // toolStripSave
             // 
             this.toolStripSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -4566,6 +4560,14 @@ namespace PGMEWindowsUI
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+            // 
+            // toolStripSaveMap
+            // 
+            this.toolStripSaveMap.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolStripSaveMap, "toolStripSaveMap");
+            this.toolStripSaveMap.Image = global::PGMEWindowsUI.Properties.Resources.diskette_map_32x32;
+            this.toolStripSaveMap.Name = "toolStripSaveMap";
+            this.toolStripSaveMap.Click += new System.EventHandler(this.toolStripSaveMap_Click);
             // 
             // toolStripButton1
             // 

@@ -79,10 +79,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Dependencies\OpenTK.GLControl.dll</HintPath>
     </Reference>
-    <Reference Include="ROMhacking, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Hacking\GBA\GBA\bin\Release\ROMhacking.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -160,6 +156,10 @@
       <Project>{3be7150f-648c-4b5f-ba42-ae8306074e94}</Project>
       <Name>GBAcore</Name>
       <EmbedInteropTypes>False</EmbedInteropTypes>
+    </ProjectReference>
+    <ProjectReference Include="..\Dependencies\Hacking\GBA\ROMhackingCore\ROMhackingCore.csproj">
+      <Project>{1a9cca06-ef33-4625-8dc1-a6e83eb80e66}</Project>
+      <Name>ROMhackingCore</Name>
     </ProjectReference>
     <ProjectReference Include="..\Dependencies\Nintenlord.Forms\Nintenlord.Forms.csproj">
       <Project>{d0fe49cc-1b13-4c04-b3c1-c1a9b1872a36}</Project>

@@ -148,8 +148,8 @@ namespace PGMEBackend.GLControls
 
             if (buttons == MouseButtons.Left)
             {
-                Program.currentLayout.PaintBlocksToMap(selectArray, mouseX, mouseY, selectWidth, selectHeight);
-                Paint();
+                PaintBlocksToMap(selectArray, mouseX, mouseY, selectWidth, selectHeight);
+                //Paint();
             }
 
             if (buttons != MouseButtons.Right)
@@ -169,6 +169,7 @@ namespace PGMEBackend.GLControls
             endMouseY = -1;
         }
 
+        [Obsolete("Now handled by undo code")]
         void Paint()
         {
             // insert painting code
@@ -191,14 +192,36 @@ namespace PGMEBackend.GLControls
             }
         }
 
+        public void PaintBlocksToMap(short[] blockArray, int x, int y, int w, int h)
+        {
+            bool found = false;
+            for (int i = 0; i < h; i++)
+            {
+                for (int j = 0; j < w; j++)
+                {
+                    if ((x + j < Program.currentLayout.layoutWidth) && (y + i < Program.currentLayout.layoutHeight))
+                    {
+                        if (Program.currentLayout.layout[(x + (y * Program.currentLayout.layoutWidth)) + (i * Program.currentLayout.layoutWidth) + j] != blockArray[(i * w) + j])
+                            found = true;
+                    }
+                    if (found)
+                        break;
+                }
+                if (found)
+                    break;
+            }
+            if (found)
+                UndoManager.Add(new Undo.PaintUndo(blockArray, x, y, w, h));
+        }
+
         public void MouseDown(MouseButtons button)
         {
             buttons = button;
             if (buttons == MouseButtons.Left)
             {
                 rectColor = rectPaintColor;
-                Program.currentLayout.PaintBlocksToMap(selectArray, mouseX, mouseY, selectWidth, selectHeight);
-                Paint();
+                PaintBlocksToMap(selectArray, mouseX, mouseY, selectWidth, selectHeight);
+                //Paint();
             }
             else if (buttons == MouseButtons.Right)
             {

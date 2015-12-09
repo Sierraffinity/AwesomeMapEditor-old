@@ -83,6 +83,9 @@
     <Compile Include="Graphics\Texture2D.cs" />
     <Compile Include="Tilesets.cs" />
     <Compile Include="UIInteractionLayer.cs" />
+    <Compile Include="Undo\ExampleUndoStep.cs" />
+    <Compile Include="Undo\PaintUndo.cs" />
+    <Compile Include="Undo\UndoManager.cs" />
     <None Include="Music.yaml" />
     <None Include="BehaviorBytes.yaml" />
     <None Include="DMAKey.pfx" />

@@ -172,4 +172,35 @@ namespace PGMEBackend
             }
         }
     }
+
+    public class TemporaryFramebuffer : FrameBuffer {
+        private FrameBuffer oldActive;
+        public TemporaryFramebuffer(int width, int height)
+            :base(width, height)
+        {
+            oldActive = Active;
+            Active = this;
+        }
+
+        public Texture2D Commit()
+        {
+            var tex = ColorTexture;
+            if (FBOHandle != 0)
+            {
+                GL.DeleteFramebuffer(FBOHandle);
+                FBOHandle = 0;
+            }
+            Active = oldActive;
+            return tex;
+        }
+
+        new public void Dispose()
+        {
+            if (FBOHandle != 0)
+            {
+                GL.DeleteFramebuffer(FBOHandle);
+                FBOHandle = 0;
+            }
+        }
+    }
 }
