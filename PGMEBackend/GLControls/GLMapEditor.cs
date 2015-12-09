@@ -300,7 +300,53 @@ namespace PGMEBackend.GLControls
             }
             else if (buttons == MouseButtons.Left)
             {
-                UndoManager.Add(new Undo.PaintUndo(oldLayout, Program.currentLayout.layout), false);
+                int x = int.MaxValue;
+                int y = int.MaxValue;
+                int w = -1;
+                int h = -1;
+
+                for (int i = 0; i < oldLayout.Length; i++)
+                {
+                    if (oldLayout[i] != Program.currentLayout.layout[i])
+                    {
+                        if(i % Program.currentLayout.layoutWidth < x)
+                            x = i % Program.currentLayout.layoutWidth;
+                        if (i / Program.currentLayout.layoutWidth < y)
+                            y = i / Program.currentLayout.layoutWidth;
+                    }
+                }
+
+                if (x < int.MaxValue && y < int.MaxValue)
+                {
+                    for (int i = oldLayout.Length - 1; i >= 0; i--)
+                    {
+                        if (oldLayout[i] != Program.currentLayout.layout[i])
+                        {
+                            if (i % Program.currentLayout.layoutWidth - x + 1 > w)
+                                w = i % Program.currentLayout.layoutWidth - x + 1;
+                            if (i / Program.currentLayout.layoutWidth - y + 1 > h)
+                                h = i / Program.currentLayout.layoutWidth - y + 1;
+                        }
+                    }
+
+                    if (w > 0 && h > 0)
+                    {
+                        short[] oldData = new short[w * h];
+                        short[] newData = new short[w * h];
+                        for (int k = 0; k < h; k++)
+                        {
+                            for (int l = 0; l < w; l++)
+                            {
+                                if ((x + l < Program.currentLayout.layoutWidth) && (y + k < Program.currentLayout.layoutHeight))
+                                {
+                                    oldData[(k * w) + l] = oldLayout[(x + (y * Program.currentLayout.layoutWidth)) + (k * Program.currentLayout.layoutWidth) + l];
+                                    newData[(k * w) + l] = Program.currentLayout.layout[(x + (y * Program.currentLayout.layoutWidth)) + (k * Program.currentLayout.layoutWidth) + l];
+                                }
+                            }
+                        }
+                        UndoManager.Add(new Undo.PaintUndo(oldData, newData, x, y, w, h), false);
+                    }
+                }
             }
 
             buttons = MouseButtons.None;
