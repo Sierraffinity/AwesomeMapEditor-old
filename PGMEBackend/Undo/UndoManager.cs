@@ -95,7 +95,13 @@ namespace PGMEBackend
 
         public static void Add(UndoStep node)
         {
-            node.CallRedo();
+            Add(node, true);
+        }
+        
+        public static void Add(UndoStep node, bool callRedo)
+        {
+            if(callRedo)
+                node.CallRedo();
             undoStack.Push(node);
             redoStack.Clear();
             if (OnModified != null)

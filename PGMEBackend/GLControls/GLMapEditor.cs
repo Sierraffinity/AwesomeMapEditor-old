@@ -195,6 +195,8 @@ namespace PGMEBackend.GLControls
             }
         }
 
+        short[] oldLayout;
+
         public void PaintBlocksToMap(short[] blockArray, int x, int y, int w, int h)
         {
             bool found = false;
@@ -214,7 +216,38 @@ namespace PGMEBackend.GLControls
                     break;
             }
             if (found)
-                UndoManager.Add(new Undo.PaintUndo(blockArray, x, y, w, h));
+            {
+                Console.WriteLine("Painting of " + w * h + " blocks...");
+                for (int i = 0; i < h; i++)
+                {
+                    for (int j = 0; j < w; j++)
+                    {
+                        if ((x + j < Program.currentLayout.layoutWidth) && (y + i < Program.currentLayout.layoutHeight))
+                        {
+                            Console.WriteLine("Drawing at (" + (x + j) + ", " + (y + i) + "): " + blockArray[i * w + j]);
+                            Program.currentLayout.layout[(x + (y * Program.currentLayout.layoutWidth)) + (i * Program.currentLayout.layoutWidth) + j] = blockArray[(i * w) + j];
+                        }
+                    }
+                }
+
+                for (int j = y; j <= y + h; j++)
+                {
+                    for (int i = x; i <= x + w; i++)
+                    {
+                        foreach (var v in Program.currentLayout.drawTiles)
+                        {
+                            if (v.Redraw)
+                                continue;
+                            if (i < v.xpos + v.Width && i >= v.xpos && j >= v.ypos && j < v.ypos + v.Height)
+                            {
+                                v.Redraw = true;
+                                Console.WriteLine("Redrawing " + v.buffer.FBOHandle);
+                                continue;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         public void MouseDown(MouseButtons button)
@@ -223,6 +256,8 @@ namespace PGMEBackend.GLControls
             if (buttons == MouseButtons.Left)
             {
                 rectColor = rectPaintColor;
+                oldLayout = new short[Program.currentLayout.layoutWidth * Program.currentLayout.layoutHeight];
+                Buffer.BlockCopy(Program.currentLayout.layout, 0, oldLayout, 0, Program.currentLayout.layout.Length);
                 PaintBlocksToMap(selectArray, mouseX, mouseY, selectWidth, selectHeight);
                 //Paint();
             }
@@ -262,6 +297,10 @@ namespace PGMEBackend.GLControls
 
                 else if (selectWidth > 1 || selectHeight > 1)
                     Program.glBlockChooser.SelectBlock(-1);
+            }
+            else if (buttons == MouseButtons.Left)
+            {
+                UndoManager.Add(new Undo.PaintUndo(oldLayout, Program.currentLayout.layout), false);
             }
 
             buttons = MouseButtons.None;

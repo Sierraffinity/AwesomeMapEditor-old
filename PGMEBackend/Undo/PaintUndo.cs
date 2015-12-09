@@ -7,56 +7,24 @@ namespace PGMEBackend.Undo
 {
     public class PaintUndo : UndoStep
     {
-        short[] blockArray;
         short[] oldLayout;
-        int x;
-        int y;
-        int w;
-        int h;
-        bool editedStep = false;
-        public PaintUndo(short[] BlockArray, int X, int Y, int W, int H)
+        short[] newLayout;
+        public PaintUndo(short[] OldLayout, short[] NewLayout)
         {
-            x = X;
-            y = Y;
-            w = W;
-            h = H;
-
-            oldLayout = new short[BlockArray.Length];
-            for (int i = 0; i < h; i++)
-            {
-                for (int j = 0; j < w; j++)
-                {
-                    if ((x + j < Program.currentLayout.layoutWidth) && (y + i < Program.currentLayout.layoutHeight))
-                    {
-                        oldLayout[(i * w) + j] = Program.currentLayout.layout[(x + (y * Program.currentLayout.layoutWidth)) + (i * Program.currentLayout.layoutWidth) + j];
-                        Console.WriteLine("Storing at (" + (x + j) + ", " + (y + i) + "): " + oldLayout[i*w+j]);
-                    }
-                }
-            }
-
-            blockArray = BlockArray;
+            oldLayout = OldLayout;
+            newLayout = NewLayout;
         }
 
-        public override void CallRedo()
+        public override void CallUndo()
         {
             if (firstStep)
-                Program.isEdited = true;
-            Console.WriteLine("Painting of " + w * h + " blocks...");
-            for (int i = 0; i < h; i++)
-            {
-                for (int j = 0; j < w; j++)
-                {
-                    if ((x + j < Program.currentLayout.layoutWidth) && (y + i < Program.currentLayout.layoutHeight))
-                    {
-                        Console.WriteLine("Drawing at (" + (x + j) + ", " + (y + i) + "): " + blockArray[i * w + j]);
-                        Program.currentLayout.layout[(x + (y * Program.currentLayout.layoutWidth)) + (i * Program.currentLayout.layoutWidth) + j] = blockArray[(i * w) + j];
-                    }
-                }
-            }
+                Program.isEdited = false;
+            Console.WriteLine("Undoing painting of " + Program.currentLayout.layoutWidth * Program.currentLayout.layoutHeight + " blocks...");
+            Buffer.BlockCopy(oldLayout, 0, Program.currentLayout.layout, 0, Program.currentLayout.layout.Length);
 
-            for (int j = y; j <= y + h; j++)
+            for (int j = 0; j <= Program.currentLayout.layoutHeight; j++)
             {
-                for (int i = x; i <= x + w; i++)
+                for (int i = 0; i <= Program.currentLayout.layoutWidth; i++)
                 {
                     foreach (var v in Program.currentLayout.drawTiles)
                     {
@@ -73,25 +41,16 @@ namespace PGMEBackend.Undo
             }
         }
 
-        public override void CallUndo()
+        public override void CallRedo()
         {
             if (firstStep)
-                Program.isEdited = false;
-            Console.WriteLine("Undoing painting of " + w * h + " blocks...");
-            for (int i = 0; i < h; i++)
+                Program.isEdited = true;
+            Console.WriteLine("Redoing painting of " + Program.currentLayout.layoutWidth * Program.currentLayout.layoutHeight + " blocks...");
+            Buffer.BlockCopy(newLayout, 0, Program.currentLayout.layout, 0, Program.currentLayout.layout.Length);
+
+            for (int j = 0; j <= Program.currentLayout.layoutHeight; j++)
             {
-                for (int j = 0; j < w; j++)
-                {
-                    if ((x + j < Program.currentLayout.layoutWidth) && (y + i < Program.currentLayout.layoutHeight))
-                    {
-                        Console.WriteLine("Drawing at (" + (x + j) + ", " + (y + i) + "): " + oldLayout[i * w + j]);
-                        Program.currentLayout.layout[(x + (y * Program.currentLayout.layoutWidth)) + (i * Program.currentLayout.layoutWidth) + j] = oldLayout[(i * w) + j];
-                    }
-                }
-            }
-            for (int j = y; j <= y + h; j++)
-            {
-                for (int i = x; i <= x + w; i++)
+                for (int i = 0; i <= Program.currentLayout.layoutWidth; i++)
                 {
                     foreach (var v in Program.currentLayout.drawTiles)
                     {
