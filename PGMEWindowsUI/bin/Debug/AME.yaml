@@ -1,9 +1,0 @@
----
-ShowSprites: true
-UsePlugins: true
-PermissionTranslucency: 0.5
-Language: en
-CreateBackups: true
-MapSortOrder: Name
-HexPrefix: 0x
-...
