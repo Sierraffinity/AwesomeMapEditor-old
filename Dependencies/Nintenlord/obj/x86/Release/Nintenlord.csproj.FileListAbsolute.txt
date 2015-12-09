@@ -1,5 +1,0 @@
-C:\Users\Timo\Documents\Visual Studio 2010\Projects\Nintenlord\bin\x86\Release\Nintenlord.dll
-C:\Users\Timo\Documents\Visual Studio 2010\Projects\Nintenlord\bin\x86\Release\Nintenlord.pdb
-C:\Users\Timo\Documents\Visual Studio 2010\Projects\Nintenlord\obj\x86\Release\ResolveAssemblyReference.cache
-C:\Users\Timo\Documents\Visual Studio 2010\Projects\Nintenlord\obj\x86\Release\Nintenlord.dll
-C:\Users\Timo\Documents\Visual Studio 2010\Projects\Nintenlord\obj\x86\Release\Nintenlord.pdb

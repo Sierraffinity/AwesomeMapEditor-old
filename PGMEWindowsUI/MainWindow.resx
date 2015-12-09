@@ -9502,7 +9502,7 @@
     <value>hexViewerRawMapHeader</value>
   </data>
   <data name="&gt;&gt;hexViewerRawMapHeader.Type" xml:space="preserve">
-    <value>Be.Windows.Forms.HexBox, Be.Windows.Forms.HexBox, Version=1.6.0.42178, Culture=neutral, PublicKeyToken=null</value>
+    <value>Be.Windows.Forms.HexBox, Be.Windows.Forms.HexBox, Version=1.6.0.2176, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;hexViewerRawMapHeader.Parent" xml:space="preserve">
     <value>gbHeaderTabRawMapHeader</value>
@@ -10798,7 +10798,7 @@
     <value>hexViewerRawLayoutHeader</value>
   </data>
   <data name="&gt;&gt;hexViewerRawLayoutHeader.Type" xml:space="preserve">
-    <value>Be.Windows.Forms.HexBox, Be.Windows.Forms.HexBox, Version=1.6.0.42178, Culture=neutral, PublicKeyToken=null</value>
+    <value>Be.Windows.Forms.HexBox, Be.Windows.Forms.HexBox, Version=1.6.0.2176, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;hexViewerRawLayoutHeader.Parent" xml:space="preserve">
     <value>gbHeaderTabRawLayoutHeader</value>
@@ -11759,7 +11759,7 @@
     <value>Ctrl+Z</value>
   </data>
   <data name="undoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 22</value>
+    <value>174, 22</value>
   </data>
   <data name="undoToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Undo</value>
@@ -11768,10 +11768,10 @@
     <value>False</value>
   </data>
   <data name="redoToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Y</value>
+    <value>Ctrl+Shift+Z</value>
   </data>
   <data name="redoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 22</value>
+    <value>174, 22</value>
   </data>
   <data name="redoToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Redo</value>

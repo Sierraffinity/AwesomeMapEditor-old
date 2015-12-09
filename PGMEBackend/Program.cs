@@ -304,6 +304,7 @@ namespace PGMEBackend
             }
 
             Stopwatch loadTime = new Stopwatch();
+            UndoManager.Clear();
             loadTime.Start();
 
             if (currentLayout != null)

@@ -109,6 +109,9 @@ namespace PGMEBackend.GLControls
 
         public void MouseMove(int x, int y)
         {
+            int oldMouseX = mouseX;
+            int oldMouseY = mouseY;
+
             mouseX = x / 16;
             mouseY = y / 16;
 
@@ -121,7 +124,8 @@ namespace PGMEBackend.GLControls
                 mouseX = 0;
             if (mouseY < 0)
                 mouseY = 0;
-            if (buttons == MouseButtons.Left)
+
+            if (buttons == MouseButtons.Left && (mouseX != oldMouseX || mouseY != oldMouseY))
             {
                 selectX = mouseX;
                 selectY = mouseY;

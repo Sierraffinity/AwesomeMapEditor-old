@@ -7,10 +7,25 @@ namespace PGMEBackend
 {
     public class UndoStep
     {
-        public UndoStep() { }
+        public bool firstStep = false;
+
+        public UndoStep()
+        {
+            if (Program.isEdited == false)
+            {
+                Program.isEdited = true;
+                firstStep = true;
+            }
+        }
 
         public UndoStep(Action undo, Action redo)
         {
+            if (Program.isEdited == false)
+            {
+                Program.isEdited = true;
+                firstStep = true;
+            }
+
             Undo = undo;
             Redo = redo;
         }
@@ -21,13 +36,21 @@ namespace PGMEBackend
         public virtual void CallUndo()
         {
             if (Undo != null)
+            {
+                if (firstStep)
+                    Program.isEdited = false;
                 Undo.Invoke();
+            }
         }
 
         public virtual void CallRedo()
         {
             if (Redo != null)
+            {
+                if (firstStep)
+                    Program.isEdited = true;
                 Redo.Invoke();
+            }
         }
     }
 
@@ -61,6 +84,8 @@ namespace PGMEBackend
         {
             undoStack.Clear();
             redoStack.Clear();
+            if (OnModified != null)
+                OnModified.Invoke(null, new UndoRedoEventArgs { });
         }
 
         public static void Add(Action redo, Action undo)

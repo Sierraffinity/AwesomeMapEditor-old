@@ -708,8 +708,6 @@ namespace PGMEWindowsUI
 
         }
 
-
-
         private void mapListTreeView_KeyDown(object sender, KeyEventArgs e)
         {
             if (mapListTreeView.SelectedNode != null && e.KeyCode == Keys.Enter)
@@ -731,7 +729,11 @@ namespace PGMEWindowsUI
         {
             if (node != null && node.Nodes.Count == 0 && node.Tag != null)
             {
-                PGMEBackend.Program.LoadMap(node.Tag);
+                if (PGMEBackend.Program.LoadMap(node.Tag) != 0)
+                {
+                    mapListTreeView.SelectedNode = currentTreeNode;
+                    return;
+                }
                 if (currentTreeNode != null)
                 {
                     currentTreeNode.ImageKey = "Map";
@@ -1393,6 +1395,8 @@ namespace PGMEWindowsUI
 
         }
         */
+
+
     }
 
     class GLPanel : Panel
