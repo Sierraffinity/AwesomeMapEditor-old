@@ -298,7 +298,7 @@ namespace PGMEBackend
                     localTileset = Program.mapTilesets[localTilesetPointer];
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 Program.loadExceptions.Add(new TilesetLoadErrorException(string.Format(Program.rmInternalStrings.GetString("CouldNotReadTileset"), Program.rmInternalStrings.GetString("LocalTileset"), Config.settings.HexPrefix + layoutIndex.ToString("X4"), globalTilesetPointer.ToString("X"))));
             }
@@ -410,7 +410,7 @@ namespace PGMEBackend
                 if (v.Redraw)
                 {
                     FrameBuffer.Active = v.buffer;
-                    OpenTK.Graphics.OpenGL.GL.PushMatrix();
+                    GL.PushMatrix();
                     {
                         int xoff = v.xpos * 16;
                         int yoff = v.ypos * 16;
@@ -438,7 +438,7 @@ namespace PGMEBackend
                             }
                         }
 
-                        OpenTK.Graphics.OpenGL.GL.PopMatrix();
+                        GL.PopMatrix();
                     }
                     FrameBuffer.Active = null;
                     v.Redraw = false;

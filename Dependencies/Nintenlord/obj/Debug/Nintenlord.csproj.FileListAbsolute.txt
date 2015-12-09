@@ -18,6 +18,5 @@ C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\Dependencies\Nintenlord\o
 C:\Users\Ian\OneDrive\Documents\Awesome Map Editor\AME\Dependencies\Nintenlord\obj\Debug\Nintenlord.pdb
 D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\Dependencies\Nintenlord\bin\Debug\Nintenlord.dll
 D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\Dependencies\Nintenlord\bin\Debug\Nintenlord.pdb
-D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\Dependencies\Nintenlord\obj\Debug\Nintenlord.csprojResolveAssemblyReference.cache
 D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\Dependencies\Nintenlord\obj\Debug\Nintenlord.dll
 D:\Documents\Visual Studio 2015\Projects\Awesome Map Editor\Dependencies\Nintenlord\obj\Debug\Nintenlord.pdb

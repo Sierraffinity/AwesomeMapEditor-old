@@ -13,6 +13,7 @@ namespace PGMEBackend.Undo
         int y;
         int w;
         int h;
+        bool editedStep = false;
         public PaintUndo(short[] BlockArray, int X, int Y, int W, int H)
         {
             x = X;
@@ -38,6 +39,8 @@ namespace PGMEBackend.Undo
 
         public override void CallRedo()
         {
+            if (firstStep)
+                Program.isEdited = true;
             Console.WriteLine("Painting of " + w * h + " blocks...");
             for (int i = 0; i < h; i++)
             {
@@ -72,6 +75,8 @@ namespace PGMEBackend.Undo
 
         public override void CallUndo()
         {
+            if (firstStep)
+                Program.isEdited = false;
             Console.WriteLine("Undoing painting of " + w * h + " blocks...");
             for (int i = 0; i < h; i++)
             {
