@@ -14,7 +14,7 @@ namespace PGMEBackend.GLControls
         int width = 0;
         int height = 0;
 
-        public MouseButtons buttons;
+        public MapEditorTools tool = MapEditorTools.None;
 
         public int mouseX = -1;
         public int mouseY = -1;
@@ -100,7 +100,7 @@ namespace PGMEBackend.GLControls
                 
                 Surface.DrawOutlineRect(x + (w < 0 ? 16 : 0), y + (h < 0 ? 16 : 0), w + (w >= 0 ? 0 : -16), h + (h >= 0 ? 0 : -16), rectColor);
 
-                if (buttons == MouseButtons.None)
+                if (tool == MapEditorTools.None)
                 {
                     Surface.DrawOutlineRect(mouseX * 16, mouseY * 16, 16, 16, rectDefaultColor);
                 }
@@ -125,7 +125,7 @@ namespace PGMEBackend.GLControls
             if (mouseY < 0)
                 mouseY = 0;
 
-            if (buttons == MouseButtons.Left && (mouseX != oldMouseX || mouseY != oldMouseY))
+            if (tool == MapEditorTools.Pencil && (mouseX != oldMouseX || mouseY != oldMouseY))
             {
                 selectX = mouseX;
                 selectY = mouseY;
@@ -134,7 +134,7 @@ namespace PGMEBackend.GLControls
                 selectWidth = 1;
                 selectHeight = 1;
             }
-            else if (buttons == MouseButtons.Right)
+            else if (tool == MapEditorTools.Eyedropper)
             {
                 selectX = (mouseX > endMouseX) ? endMouseX : mouseX;
                 selectY = (mouseY > endMouseY) ? endMouseY : mouseY;
@@ -151,48 +151,54 @@ namespace PGMEBackend.GLControls
             endMouseY = -1;
         }
 
-        public void MouseDown(MouseButtons button)
+        public void MouseDown(MapEditorTools Tool)
         {
-            buttons = button;
-            if (buttons == MouseButtons.Left || buttons == MouseButtons.Right)
+            if (tool == MapEditorTools.None)
             {
-                selectX = mouseX;
-                selectY = mouseY;
-                selectWidth = 1;
-                selectHeight = 1;
-                endMouseX = mouseX;
-                endMouseY = mouseY;
-                if (buttons == MouseButtons.Left)
-                    rectColor = rectPaintColor;
+                tool = Tool;
+                if (tool == MapEditorTools.Pencil || tool == MapEditorTools.Eyedropper)
+                {
+                    selectX = mouseX;
+                    selectY = mouseY;
+                    selectWidth = 1;
+                    selectHeight = 1;
+                    endMouseX = mouseX;
+                    endMouseY = mouseY;
+                    if (tool == MapEditorTools.Pencil)
+                        rectColor = rectPaintColor;
+                    else
+                        rectColor = rectSelectColor;
+                }
                 else
-                    rectColor = rectSelectColor;
+                    rectColor = rectDefaultColor;
             }
-            else
-                rectColor = rectDefaultColor;
         }
 
-        public void MouseUp()
+        public void MouseUp(MapEditorTools Tool)
         {
-            selectX = (mouseX > endMouseX) ? endMouseX : mouseX;
-            selectY = (mouseY > endMouseY) ? endMouseY : mouseY;
-            selectWidth = Math.Abs(mouseX - endMouseX) + 1;
-            selectHeight = Math.Abs(mouseY - endMouseY) + 1;
-            Program.glMapEditor.selectWidth = selectWidth;
-            Program.glMapEditor.selectHeight = selectHeight;
-
-            Program.glMapEditor.selectArray = new short[selectWidth * selectHeight];
-
-            for (int i = 0; i < selectHeight; i++)
-                for (int j = 0; j < selectWidth; j++)
-                    Program.glMapEditor.selectArray[(i * selectWidth) + j] = (short)((selectX + (selectY * 8)) + (i * 8) + j);
-            /*
-            foreach (var item in Program.glMapEditor.selectArray)
+            if (tool == Tool)
             {
-                Console.WriteLine(item.ToString("X4"));
-            }*/
+                selectX = (mouseX > endMouseX) ? endMouseX : mouseX;
+                selectY = (mouseY > endMouseY) ? endMouseY : mouseY;
+                selectWidth = Math.Abs(mouseX - endMouseX) + 1;
+                selectHeight = Math.Abs(mouseY - endMouseY) + 1;
+                Program.glMapEditor.selectWidth = selectWidth;
+                Program.glMapEditor.selectHeight = selectHeight;
 
-            buttons = MouseButtons.None;
-            rectColor = rectPaintColor;
+                Program.glMapEditor.selectArray = new short[selectWidth * selectHeight];
+
+                for (int i = 0; i < selectHeight; i++)
+                    for (int j = 0; j < selectWidth; j++)
+                        Program.glMapEditor.selectArray[(i * selectWidth) + j] = (short)((selectX + (selectY * 8)) + (i * 8) + j);
+                /*
+                foreach (var item in Program.glMapEditor.selectArray)
+                {
+                    Console.WriteLine(item.ToString("X4"));
+                }*/
+
+                tool = MapEditorTools.None;
+                rectColor = rectPaintColor;
+            }
         }
 
         public void SelectBlock(int blockNum)

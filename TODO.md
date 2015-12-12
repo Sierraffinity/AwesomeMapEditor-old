@@ -5,9 +5,9 @@
 - [ ] Day/Night systems compatibility
 
 ## Map editor tab
-- [ ] Fill bucket
-- [ ] Fill All bucket
-- [ ] Connect toolbar tools to actions
+- [X] Fill bucket
+- [X] Fill All bucket
+- [X] Connect toolbar tools to actions
 - [ ] Movement permissions
 	- [ ] Changing drawing code from map mode to perms mode as needed
 	- [ ] Drawing in picker

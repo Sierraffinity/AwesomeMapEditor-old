@@ -57,6 +57,7 @@ namespace PGMEBackend
         static string currentFileName;
 
         public static ResourceManager rmInternalStrings = InternalStrings.ResourceManager;
+        public static ResourceManager rmResources = Properties.Resources.ResourceManager;
 
         public static Map currentMap;
         public static MapLayout currentLayout;
@@ -538,15 +539,13 @@ namespace PGMEBackend
             return ShowMessageBox(rmInternalStrings.GetString("UnsavedChanges"), rmInternalStrings.GetString("UnsavedChangesTitle"), "YesNoCancel", "Warning");
         }
     }
-
-    [Flags]
-    public enum MouseButtons
+    
+    public enum MapEditorTools
     {
-        None = 0x00000000,
-        Left = 0x00100000,
-        Right = 0x00200000,
-        Middle = 0x00400000,
-        XButton1 = 0x00800000,
-        XButton2 = 0x01000000
+        None,
+        Pencil,
+        Eyedropper,
+        Fill,
+        FillAll
     }
 }

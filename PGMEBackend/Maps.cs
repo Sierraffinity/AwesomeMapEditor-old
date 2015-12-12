@@ -332,9 +332,12 @@ namespace PGMEBackend
 
         public void Unload()
         {
-            foreach (var v in drawTiles)
-                v.buffer.Dispose();
-            drawTiles.Clear();
+            if (drawTiles != null)
+            {
+                foreach (var v in drawTiles)
+                    v.buffer.Dispose();
+                drawTiles.Clear();
+            }
         }
 
         public List<VisualMapTile> drawTiles;

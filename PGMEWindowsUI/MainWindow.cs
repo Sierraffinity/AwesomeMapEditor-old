@@ -184,10 +184,9 @@ namespace PGMEWindowsUI
             foreach (ToolStripMenuItem item in toolStripMenuItemLanguage.DropDownItems)
             {
                 if (item.Tag.Equals(lang))
-                {
                     item.Checked = true;
-                    break;
-                }
+                else
+                    item.Checked = false;
             }
         }
 
@@ -234,51 +233,37 @@ namespace PGMEWindowsUI
         {
 
         }
-
+        
         private void englishToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SetLanguage("en");
-            YouOnlyCheckOne(sender);
         }
 
         private void espanolToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SetLanguage("es");
-            YouOnlyCheckOne(sender);
         }
 
         private void françaisToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SetLanguage("fr");
-            YouOnlyCheckOne(sender);
         }
 
         private void deutschToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SetLanguage("de");
-            YouOnlyCheckOne(sender);
         }
-
-        private void YouOnlyCheckOne(object sender)
-        {
-            foreach (ToolStripMenuItem item in ((ToolStripMenuItem)sender).GetCurrentParent().Items)
-            {
-                if ((item != null) && (item != sender))
-                {
-                    item.Checked = false;
-                }
-            }
-        }
-
+        
         private void SetLanguage(string lang)
         {
             settings.Language = lang;
             WriteConfig();
+            SetCheckedLanguage(lang);
 
             MessageBox.Show(PGMEBackend.Program.rmInternalStrings.GetString("RestartToSaveLanguage", new CultureInfo(lang)), PGMEBackend.Program.rmInternalStrings.GetString("RestartToSaveLanguageTitle", new CultureInfo(lang)), MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        static Dictionary<string, MessageBoxButtons> BoxButtons = new Dictionary<string, System.Windows.Forms.MessageBoxButtons>
+        static Dictionary<string, MessageBoxButtons> BoxButtons = new Dictionary<string, MessageBoxButtons>
             {
                 { "OK", MessageBoxButtons.OK },
                 { "OKCancel", MessageBoxButtons.OKCancel },
@@ -287,7 +272,7 @@ namespace PGMEWindowsUI
                 { "YesNoCancel", MessageBoxButtons.YesNoCancel }
             };
 
-        static Dictionary<string, MessageBoxIcon> BoxIcons = new Dictionary<string, System.Windows.Forms.MessageBoxIcon>
+        static Dictionary<string, MessageBoxIcon> BoxIcons = new Dictionary<string, MessageBoxIcon>
             {
                 { "Error", MessageBoxIcon.Error },
                 { "Information", MessageBoxIcon.Information },
@@ -318,8 +303,7 @@ namespace PGMEWindowsUI
         {
             return DialogResults[MessageBox.Show(body, title, BoxButtons[buttons], BoxIcons[icon])];
         }
-
-
+        
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
@@ -400,12 +384,12 @@ namespace PGMEWindowsUI
             toolStripMenuItemConnectionEditor.Enabled = true;
             tsmiSaveMap.Enabled = true;
             toolStripSaveMap.Enabled = true;
+            tsbMapEditorMouse.Checked = true;
         }
 
         private void mapNameToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SetMapSortOrder("Name");
-            YouOnlyCheckOne(sender);
             ClearMapNodes();
             LoadMapNodes();
         }
@@ -413,7 +397,6 @@ namespace PGMEWindowsUI
         private void mapBankToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SetMapSortOrder("Bank");
-            YouOnlyCheckOne(sender);
             ClearMapNodes();
             LoadMapNodes();
         }
@@ -421,7 +404,6 @@ namespace PGMEWindowsUI
         private void mapLayoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SetMapSortOrder("Layout");
-            YouOnlyCheckOne(sender);
             ClearMapNodes();
             LoadMapNodes();
         }
@@ -429,7 +411,6 @@ namespace PGMEWindowsUI
         private void mapTilesetToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SetMapSortOrder("Tileset");
-            YouOnlyCheckOne(sender);
             ClearMapNodes();
             LoadMapNodes();
         }
@@ -457,6 +438,18 @@ namespace PGMEWindowsUI
             }
             settings.MapSortOrder = order;
             WriteConfig();
+            SetCheckedMapSortOrder(order);
+        }
+
+        private void SetCheckedMapSortOrder(string order)
+        {
+            foreach (ToolStripMenuItem item in tsddbMapSortOrder.DropDownItems)
+            {
+                if (item.Tag.Equals(order))
+                    item.Checked = true;
+                else
+                    item.Checked = false;
+            }
         }
 
         private void label55_Click(object sender, EventArgs e)
@@ -1235,30 +1228,46 @@ namespace PGMEWindowsUI
         
         private void glControlMapEditor_MouseDown(object sender, MouseEventArgs e)
         {
-            if ((PGMEBackend.MouseButtons)e.Button == PGMEBackend.Program.glMapEditor.buttons)
+            MapEditorTools tool = GetTool(e.Button);
+            if (tool == PGMEBackend.Program.glMapEditor.tool)
                 return;
-            PGMEBackend.Program.glMapEditor.MouseDown((PGMEBackend.MouseButtons)e.Button);
+            PGMEBackend.Program.glMapEditor.MouseDown(tool);
             RefreshMapEditorControl();
         }
 
         private void glControlBlocks_MouseDown(object sender, MouseEventArgs e)
         {
-            if ((PGMEBackend.MouseButtons)e.Button == PGMEBackend.Program.glBlockChooser.buttons)
+            MapEditorTools tool = GetTool(e.Button);
+            if (tool == PGMEBackend.Program.glMapEditor.tool)
                 return;
-            PGMEBackend.Program.glBlockChooser.MouseDown((PGMEBackend.MouseButtons)e.Button);
+            PGMEBackend.Program.glBlockChooser.MouseDown(tool);
             RefreshBlockEditorControl();
         }
 
         private void glControlMapEditor_MouseUp(object sender, MouseEventArgs e)
         {
-            PGMEBackend.Program.glMapEditor.MouseUp();
+            PGMEBackend.Program.glMapEditor.MouseUp(GetTool(e.Button));
             RefreshMapEditorControl();
         }
 
         private void glControlBlocks_MouseUp(object sender, MouseEventArgs e)
         {
-            PGMEBackend.Program.glBlockChooser.MouseUp();
+            PGMEBackend.Program.glBlockChooser.MouseUp(GetTool(e.Button));
             RefreshBlockEditorControl();
+        }
+
+        private MapEditorTools GetTool(MouseButtons b)
+        {
+            if ((tsbMapEditorMouse.Checked && b == MouseButtons.Left) || tsbMapEditorPencil.Checked)
+                return MapEditorTools.Pencil;
+            else if((tsbMapEditorMouse.Checked && b == MouseButtons.Right) || tsbMapEditorEyedropper.Checked)
+                return MapEditorTools.Eyedropper;
+            else if ((tsbMapEditorMouse.Checked && b == MouseButtons.Middle && isControlPressed) || tsbMapEditorFillAll.Checked)
+                return MapEditorTools.FillAll;
+            else if((tsbMapEditorMouse.Checked && b == MouseButtons.Middle) || tsbMapEditorFill.Checked)
+                return MapEditorTools.Fill;
+            else
+                return MapEditorTools.None;
         }
 
         private void glControlMapEditor_MouseEnter(object sender, EventArgs e)
@@ -1375,6 +1384,57 @@ namespace PGMEWindowsUI
         private void redoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UndoManager.Redo();
+        }
+
+        private void tsbMapEditorMouse_Click(object sender, EventArgs e)
+        {
+            SetCheckedMapTool("None");
+        }
+
+        private void tsbMapEditorPencil_Click(object sender, EventArgs e)
+        {
+            SetCheckedMapTool("Pencil");
+        }
+
+        private void tsbMapEditorEyedropper_Click(object sender, EventArgs e)
+        {
+            SetCheckedMapTool("Eyedropper");
+        }
+
+        private void tsbMapEditorFill_Click(object sender, EventArgs e)
+        {
+            SetCheckedMapTool("Fill");
+        }
+
+        private void tsbMapEditorFillAll_Click(object sender, EventArgs e)
+        {
+            SetCheckedMapTool("FillAll");
+        }
+        
+        private void SetCheckedMapTool(string tool)
+        {
+            foreach (ToolStripItem item in tsMapEditorTab.Items)
+            {
+                if (item.Tag != null && item is ToolStripButton)
+                {
+                    if (item.Tag.Equals(tool))
+                        (item as ToolStripButton).Checked = true;
+                    else
+                        (item as ToolStripButton).Checked = false;
+                }
+            }
+        }
+
+        bool isControlPressed = false;
+
+        private void glControlMapEditor_KeyDown(object sender, KeyEventArgs e)
+        {
+            isControlPressed = e.Control;
+        }
+
+        private void glControlMapEditor_KeyUp(object sender, KeyEventArgs e)
+        {
+            isControlPressed = e.Control;
         }
 
         /*

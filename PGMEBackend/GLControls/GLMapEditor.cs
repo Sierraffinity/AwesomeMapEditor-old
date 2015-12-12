@@ -14,7 +14,7 @@ namespace PGMEBackend.GLControls
         int width = 0;
         int height = 0;
 
-        public MouseButtons buttons;
+        public MapEditorTools tool = MapEditorTools.None;
 
         public int mouseX = -1;
         public int mouseY = -1;
@@ -149,13 +149,13 @@ namespace PGMEBackend.GLControls
             if (mouseY < 0)
                 mouseY = 0;
 
-            if (buttons == MouseButtons.Left && (mouseX != oldMouseX || mouseY != oldMouseY))
+            if (tool == MapEditorTools.Pencil && (mouseX != oldMouseX || mouseY != oldMouseY))
             {
                 PaintBlocksToMap(selectArray, mouseX, mouseY, selectWidth, selectHeight);
                 //Paint();
             }
 
-            if (buttons != MouseButtons.Right)
+            if (tool != MapEditorTools.Eyedropper)
             {
                 selectWidth = Math.Abs(selectWidth);
                 selectHeight = Math.Abs(selectHeight);
@@ -250,107 +250,233 @@ namespace PGMEBackend.GLControls
             }
         }
 
-        public void MouseDown(MouseButtons button)
+        public void MouseDown(MapEditorTools Tool)
         {
-            buttons = button;
-            if (buttons == MouseButtons.Left)
+            if (tool == MapEditorTools.None)
             {
-                rectColor = rectPaintColor;
-                oldLayout = new short[Program.currentLayout.layoutWidth * Program.currentLayout.layoutHeight];
-                Buffer.BlockCopy(Program.currentLayout.layout, 0, oldLayout, 0, Program.currentLayout.layout.Length);
-                PaintBlocksToMap(selectArray, mouseX, mouseY, selectWidth, selectHeight);
-                //Paint();
+                tool = Tool;
+                if (tool == MapEditorTools.Pencil)
+                {
+                    rectColor = rectPaintColor;
+                    oldLayout = new short[Program.currentLayout.layoutWidth * Program.currentLayout.layoutHeight];
+                    Buffer.BlockCopy(Program.currentLayout.layout, 0, oldLayout, 0, Program.currentLayout.layout.Length);
+                    PaintBlocksToMap(selectArray, mouseX, mouseY, selectWidth, selectHeight);
+                    //Paint();
+                }
+                else if (tool == MapEditorTools.Eyedropper)
+                {
+                    selectWidth = 1;
+                    selectHeight = 1;
+                    endMouseX = mouseX;
+                    endMouseY = mouseY;
+                    rectColor = rectSelectColor;
+                }
+                else if (tool == MapEditorTools.Fill)
+                {
+                    if (selectArray.Length == 1)
+                    {
+                        short originalBlock = (short)(Program.currentLayout.layout[(mouseX + (mouseY * Program.currentLayout.layoutWidth))] & 0x3FF);
+                        short newBlock = (short)(selectArray[0] & 0x3FF);
+                        rectColor = rectPaintColor;
+                        if (originalBlock != newBlock)
+                        {
+                            oldLayout = new short[Program.currentLayout.layoutWidth * Program.currentLayout.layoutHeight];
+                            Buffer.BlockCopy(Program.currentLayout.layout, 0, oldLayout, 0, Program.currentLayout.layout.Length);
+                            FillBlocks(mouseX, mouseY, originalBlock, newBlock);
+                            StoreChangesToUndoBufferAndRedraw();
+                        }
+                    }
+                }
+                else if (tool == MapEditorTools.FillAll)
+                {
+                    if (selectArray.Length == 1)
+                    {
+                        short originalBlock = (short)(Program.currentLayout.layout[(mouseX + (mouseY * Program.currentLayout.layoutWidth))] & 0x3FF);
+                        short newBlock = (short)(selectArray[0] & 0x3FF);
+                        if (originalBlock != newBlock)
+                        {
+                            rectColor = rectPaintColor;
+                            oldLayout = new short[Program.currentLayout.layoutWidth * Program.currentLayout.layoutHeight];
+                            Buffer.BlockCopy(Program.currentLayout.layout, 0, oldLayout, 0, Program.currentLayout.layout.Length);
+                            for (int i = 0; i < Program.currentLayout.layout.Length; i++)
+                            {
+                                if ((short)(Program.currentLayout.layout[i] & 0x3FF) == originalBlock)
+                                    Program.currentLayout.layout[i] = (short)(newBlock + (Program.currentLayout.layout[i] & 0xFC00));
+                            }
+                            StoreChangesToUndoBufferAndRedraw();
+                        }
+                    }
+                }
+                else
+                    rectColor = rectDefaultColor;
             }
-            else if (buttons == MouseButtons.Right)
-            {
-                selectWidth = 1;
-                selectHeight = 1;
-                endMouseX = mouseX;
-                endMouseY = mouseY;
-                rectColor = rectSelectColor;
-            }
-            else
-                rectColor = rectDefaultColor;
         }
 
-        public void MouseUp()
+        public void FillBlocks(int x, int y, short originalBlock, short newBlock)
         {
-            if (buttons == MouseButtons.Right)
+            if (x >= 0 && x < Program.currentLayout.layoutWidth &&
+                y >= 0 && y < Program.currentLayout.layoutHeight &&
+                (short)(Program.currentLayout.layout[x + (y * Program.currentLayout.layoutWidth)] & 0x3FF) == originalBlock)
             {
-                selectWidth = Math.Abs(mouseX - endMouseX) + 1;
-                selectHeight = Math.Abs(mouseY - endMouseY) + 1;
-
-                selectArray = new short[selectWidth * selectHeight];
-
-                for (int i = 0; i < selectHeight; i++)
-                    for (int j = 0; j < selectWidth; j++)
-                        selectArray[(i * selectWidth) + j] = Program.currentLayout.layout[(((mouseX > endMouseX) ? endMouseX : mouseX) + (((mouseY > endMouseY) ? endMouseY : mouseY) * Program.currentLayout.layoutWidth)) + (i * Program.currentLayout.layoutWidth) + j];
-                
-                /*
-                foreach (var item in selectArray)
-                {
-                    Console.WriteLine(item.ToString("X4"));
-                }*/
-
-                if (selectWidth == 1 && selectHeight == 1)
-                    Program.glBlockChooser.SelectBlock(selectArray[0] & 0x3FF);
-
-                else if (selectWidth > 1 || selectHeight > 1)
-                    Program.glBlockChooser.SelectBlock(-1);
+                Program.currentLayout.layout[x + (y * Program.currentLayout.layoutWidth)] = (short)(newBlock + (Program.currentLayout.layout[x + (y * Program.currentLayout.layoutWidth)] & 0xFC00));
+                FillBlocks(x, y + 1, originalBlock, newBlock);
+                FillBlocks(x, y - 1, originalBlock, newBlock);
+                FillBlocks(x - 1, y, originalBlock, newBlock);
+                FillBlocks(x + 1, y, originalBlock, newBlock);
             }
-            else if (buttons == MouseButtons.Left)
-            {
-                int x = int.MaxValue;
-                int y = int.MaxValue;
-                int w = -1;
-                int h = -1;
+        }
 
-                for (int i = 0; i < oldLayout.Length; i++)
+        public void StoreChangesToUndoBufferAndRedraw()
+        {
+            int x = int.MaxValue;
+            int y = int.MaxValue;
+            int w = -1;
+            int h = -1;
+
+            for (int i = 0; i < oldLayout.Length; i++)
+            {
+                if (oldLayout[i] != Program.currentLayout.layout[i])
+                {
+                    if (i % Program.currentLayout.layoutWidth < x)
+                        x = i % Program.currentLayout.layoutWidth;
+                    if (i / Program.currentLayout.layoutWidth < y)
+                        y = i / Program.currentLayout.layoutWidth;
+                }
+            }
+
+            if (x < int.MaxValue && y < int.MaxValue)
+            {
+                for (int i = oldLayout.Length - 1; i >= 0; i--)
                 {
                     if (oldLayout[i] != Program.currentLayout.layout[i])
                     {
-                        if(i % Program.currentLayout.layoutWidth < x)
-                            x = i % Program.currentLayout.layoutWidth;
-                        if (i / Program.currentLayout.layoutWidth < y)
-                            y = i / Program.currentLayout.layoutWidth;
+                        if (i % Program.currentLayout.layoutWidth - x + 1 > w)
+                            w = i % Program.currentLayout.layoutWidth - x + 1;
+                        if (i / Program.currentLayout.layoutWidth - y + 1 > h)
+                            h = i / Program.currentLayout.layoutWidth - y + 1;
                     }
                 }
 
-                if (x < int.MaxValue && y < int.MaxValue)
+                if (w > 0 && h > 0)
                 {
-                    for (int i = oldLayout.Length - 1; i >= 0; i--)
+                    short[] oldData = new short[w * h];
+                    short[] newData = new short[w * h];
+                    for (int k = 0; k < h; k++)
                     {
-                        if (oldLayout[i] != Program.currentLayout.layout[i])
+                        for (int l = 0; l < w; l++)
                         {
-                            if (i % Program.currentLayout.layoutWidth - x + 1 > w)
-                                w = i % Program.currentLayout.layoutWidth - x + 1;
-                            if (i / Program.currentLayout.layoutWidth - y + 1 > h)
-                                h = i / Program.currentLayout.layoutWidth - y + 1;
+                            if ((x + l < Program.currentLayout.layoutWidth) && (y + k < Program.currentLayout.layoutHeight))
+                            {
+                                oldData[(k * w) + l] = oldLayout[(x + (y * Program.currentLayout.layoutWidth)) + (k * Program.currentLayout.layoutWidth) + l];
+                                newData[(k * w) + l] = Program.currentLayout.layout[(x + (y * Program.currentLayout.layoutWidth)) + (k * Program.currentLayout.layoutWidth) + l];
+                            }
                         }
                     }
 
-                    if (w > 0 && h > 0)
+                    for (int j = y; j <= y + h; j++)
                     {
-                        short[] oldData = new short[w * h];
-                        short[] newData = new short[w * h];
-                        for (int k = 0; k < h; k++)
+                        for (int i = x; i <= x + w; i++)
                         {
-                            for (int l = 0; l < w; l++)
+                            foreach (var v in Program.currentLayout.drawTiles)
                             {
-                                if ((x + l < Program.currentLayout.layoutWidth) && (y + k < Program.currentLayout.layoutHeight))
+                                if (v.Redraw)
+                                    continue;
+                                if (i < v.xpos + v.Width && i >= v.xpos && j >= v.ypos && j < v.ypos + v.Height)
                                 {
-                                    oldData[(k * w) + l] = oldLayout[(x + (y * Program.currentLayout.layoutWidth)) + (k * Program.currentLayout.layoutWidth) + l];
-                                    newData[(k * w) + l] = Program.currentLayout.layout[(x + (y * Program.currentLayout.layoutWidth)) + (k * Program.currentLayout.layoutWidth) + l];
+                                    v.Redraw = true;
+                                    Console.WriteLine("Redrawing " + v.buffer.FBOHandle);
+                                    continue;
                                 }
                             }
                         }
-                        UndoManager.Add(new Undo.PaintUndo(oldData, newData, x, y, w, h), false);
                     }
+
+                    UndoManager.Add(new Undo.PaintUndo(oldData, newData, x, y, w, h), false);
                 }
             }
+        }
 
-            buttons = MouseButtons.None;
-            rectColor = rectDefaultColor;
+        public void MouseUp(MapEditorTools Tool)
+        {
+            if (tool == Tool)
+            {
+                if (tool == MapEditorTools.Eyedropper)
+                {
+                    selectWidth = Math.Abs(mouseX - endMouseX) + 1;
+                    selectHeight = Math.Abs(mouseY - endMouseY) + 1;
+
+                    selectArray = new short[selectWidth * selectHeight];
+
+                    for (int i = 0; i < selectHeight; i++)
+                        for (int j = 0; j < selectWidth; j++)
+                            selectArray[(i * selectWidth) + j] = Program.currentLayout.layout[(((mouseX > endMouseX) ? endMouseX : mouseX) + (((mouseY > endMouseY) ? endMouseY : mouseY) * Program.currentLayout.layoutWidth)) + (i * Program.currentLayout.layoutWidth) + j];
+
+                    /*
+                    foreach (var item in selectArray)
+                    {
+                        Console.WriteLine(item.ToString("X4"));
+                    }*/
+
+                    if (selectWidth == 1 && selectHeight == 1)
+                        Program.glBlockChooser.SelectBlock(selectArray[0] & 0x3FF);
+
+                    else if (selectWidth > 1 || selectHeight > 1)
+                        Program.glBlockChooser.SelectBlock(-1);
+                }
+                else if (tool == MapEditorTools.Pencil)
+                {
+                    int x = int.MaxValue;
+                    int y = int.MaxValue;
+                    int w = -1;
+                    int h = -1;
+
+                    for (int i = 0; i < oldLayout.Length; i++)
+                    {
+                        if (oldLayout[i] != Program.currentLayout.layout[i])
+                        {
+                            if (i % Program.currentLayout.layoutWidth < x)
+                                x = i % Program.currentLayout.layoutWidth;
+                            if (i / Program.currentLayout.layoutWidth < y)
+                                y = i / Program.currentLayout.layoutWidth;
+                        }
+                    }
+
+                    if (x < int.MaxValue && y < int.MaxValue)
+                    {
+                        for (int i = oldLayout.Length - 1; i >= 0; i--)
+                        {
+                            if (oldLayout[i] != Program.currentLayout.layout[i])
+                            {
+                                if (i % Program.currentLayout.layoutWidth - x + 1 > w)
+                                    w = i % Program.currentLayout.layoutWidth - x + 1;
+                                if (i / Program.currentLayout.layoutWidth - y + 1 > h)
+                                    h = i / Program.currentLayout.layoutWidth - y + 1;
+                            }
+                        }
+
+                        if (w > 0 && h > 0)
+                        {
+                            short[] oldData = new short[w * h];
+                            short[] newData = new short[w * h];
+                            for (int k = 0; k < h; k++)
+                            {
+                                for (int l = 0; l < w; l++)
+                                {
+                                    if ((x + l < Program.currentLayout.layoutWidth) && (y + k < Program.currentLayout.layoutHeight))
+                                    {
+                                        oldData[(k * w) + l] = oldLayout[(x + (y * Program.currentLayout.layoutWidth)) + (k * Program.currentLayout.layoutWidth) + l];
+                                        newData[(k * w) + l] = Program.currentLayout.layout[(x + (y * Program.currentLayout.layoutWidth)) + (k * Program.currentLayout.layoutWidth) + l];
+                                    }
+                                }
+                            }
+                            UndoManager.Add(new Undo.PaintUndo(oldData, newData, x, y, w, h), false);
+                        }
+                    }
+                }
+
+                tool = MapEditorTools.None;
+                rectColor = rectDefaultColor;
+            }
         }
     }
 }
