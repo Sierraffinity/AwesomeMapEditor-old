@@ -18,21 +18,21 @@
 	- [ ] Stamp on map
 	- [ ] Write changes to map
 
-## Event editor tab
-- [ ] Parse events
-	- [ ] Sprites
+## Entity editor tab
+- [ ] Parse entities
+	- [ ] NPCs
 	- [ ] Signs
 	- [ ] Warps
-	- [ ] Scripts
+	- [ ] Triggers
 	- [ ] Flight pos (not a true event but still)
 	- [ ] Game start pos (not a true event but still)
-- [ ] Edit events
-- [ ] Change drawing code from map mode to event mode as needed
-- [ ] Draw events
-- [ ] Select events
-- [ ] Move events
-- [ ] Select multiple events
-- [ ] Move multiple events
+- [ ] Edit entities
+- [ ] Change drawing code from map mode to entity mode as needed
+- [ ] Draw entities
+- [ ] Select entities
+- [ ] Move entities
+- [ ] Select multiple entities
+- [ ] Move multiple entities
 - [ ] Save data
 
 ## Wild Pokémon tab
