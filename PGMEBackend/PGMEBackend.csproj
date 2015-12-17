@@ -65,6 +65,9 @@
   <ItemGroup>
     <Compile Include="Config.cs" />
     <Compile Include="DataBuffer.cs" />
+    <Compile Include="GLControls\GLBorderBlocks.cs" />
+    <Compile Include="GLControls\GLEntityEditor.cs" />
+    <Compile Include="GLControls\GLPermsChooser.cs" />
     <Compile Include="GLControls\GLBlockChooser.cs" />
     <Compile Include="GLControls\GLMapEditor.cs" />
     <Compile Include="Graphics\FrameBuffer.cs" />
@@ -89,6 +92,7 @@
     <Compile Include="Tilesets.cs" />
     <Compile Include="UIInteractionLayer.cs" />
     <Compile Include="Undo\ExampleUndoStep.cs" />
+    <Compile Include="Undo\PaintBorderUndo.cs" />
     <Compile Include="Undo\PaintUndo.cs" />
     <Compile Include="Undo\UndoManager.cs" />
     <None Include="Music.yaml" />

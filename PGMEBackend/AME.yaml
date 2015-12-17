@@ -2,7 +2,7 @@
 ShowSprites:            true
 UsePlugins:             true
 ScriptEditor:           null
-PermissionTranslucency: 0.50
+PermissionTranslucency: 50
 Language:               null
 CreateBackups:          true
 BackupString:           null

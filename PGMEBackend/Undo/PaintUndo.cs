@@ -28,7 +28,7 @@ namespace PGMEBackend.Undo
         {
             if (firstStep)
                 Program.isEdited = false;
-            Console.WriteLine("Undoing painting of " + Program.currentLayout.layoutWidth * Program.currentLayout.layoutHeight + " blocks...");
+            Console.WriteLine("Undoing painting of " + newLayout.Length + " blocks...");
             for (int i = 0; i < h; i++)
             {
                 for (int j = 0; j < w; j++)
@@ -63,7 +63,7 @@ namespace PGMEBackend.Undo
         {
             if (firstStep)
                 Program.isEdited = true;
-            Console.WriteLine("Redoing painting of " + Program.currentLayout.layoutWidth * Program.currentLayout.layoutHeight + " blocks...");
+            Console.WriteLine("Redoing painting of " + newLayout.Length + " blocks...");
             for (int i = 0; i < h; i++)
             {
                 for (int j = 0; j < w; j++)

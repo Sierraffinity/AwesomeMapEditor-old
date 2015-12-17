@@ -85,7 +85,16 @@ namespace PGMEBackend
             Draw(sprite, x, y, false, false, scale);
         }
 
+        public void Draw(int sprite, double x, double y, double scale, int alpha)
+        {
+            Draw(sprite, x, y, false, false, scale, alpha);
+        }
         public void Draw(int sprite, double x, double y, bool xFlip, bool yFlip, double scale)
+        {
+            Draw(sprite, x, y, xFlip, yFlip, scale, 255);
+        }
+
+        public void Draw(int sprite, double x, double y, bool xFlip, bool yFlip, double scale, int alpha)
         {
             double uvtw = ((double)TileWidth) / ((double)Texture.Width);
             double uvth = ((double)TileHeight) / ((double)Texture.Height);
@@ -112,7 +121,7 @@ namespace PGMEBackend
                 uvym = t;
             }
 
-            Surface.DrawTexturedRectUV(Texture, x, y, TileWidth * scale, TileHeight * scale, uvx, uvy, uvxm, uvy, uvxm, uvym, uvx, uvym);
+            Surface.DrawTexturedRectUV(Texture, x, y, TileWidth * scale, TileHeight * scale, uvx, uvy, uvxm, uvy, uvxm, uvym, uvx, uvym, Color.FromArgb(alpha, Color.White));
         }
 
         public void DebugDraw(double scale)

@@ -8,31 +8,37 @@
 - [X] Fill bucket
 - [X] Fill All bucket
 - [X] Connect toolbar tools to actions
-- [ ] Movement permissions
-	- [ ] Changing drawing code from map mode to perms mode as needed
-	- [ ] Drawing in picker
-	- [ ] Selecting in picker
-	- [ ] Painting on map
-	- [ ] Eyedropper on map
-	- [ ] Fill on map
-	- [ ] Stamp on map
-	- [ ] Write changes to map
+- [X] Movement permissions
+	- [X] Changing drawing code from map mode to perms mode as needed
+	- [X] Drawing in picker
+	- [X] Selecting in picker
+	- [X] Painting on map
+	- [X] Eyedropper on map
+	- [X] Fill on map
+	- [X] Stamp on map
+	- [X] Write changes to map
+- [X] Border block
+	- [X] Painting
+	- [X] Eyedropper
+	- [ ] Change sizes for FRLG
+	- [ ] Center when changing sizes
+	- [ ] Expand vertically if needed
 
-## Event editor tab
-- [ ] Parse events
-	- [ ] Sprites
+## Entity editor tab
+- [ ] Parse entities
+	- [ ] NPCs
 	- [ ] Signs
 	- [ ] Warps
-	- [ ] Scripts
-	- [ ] Flight pos (not a true event but still)
-	- [ ] Game start pos (not a true event but still)
-- [ ] Edit events
-- [ ] Change drawing code from map mode to event mode as needed
-- [ ] Draw events
-- [ ] Select events
-- [ ] Move events
-- [ ] Select multiple events
-- [ ] Move multiple events
+	- [ ] Triggers
+	- [ ] Flight pos (not a true entity but still)
+	- [ ] Game start pos (not a true entity but still)
+- [ ] Edit entities
+- [ ] Change duplicated drawing code from map editing to entity editing
+- [ ] Draw entities
+- [ ] Select entities
+- [ ] Move entities
+- [ ] Select multiple entities
+- [ ] Move multiple entities
 - [ ] Save data
 
 ## Wild Pokémon tab

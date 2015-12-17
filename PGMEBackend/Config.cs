@@ -162,7 +162,7 @@ namespace PGMEBackend
             public bool ShowGrid { get; set; }
             public bool UsePlugins { get; set; }
             public string ScriptEditor { get; set; }
-            public float PermissionTranslucency { get; set; }
+            public int PermissionTranslucency { get; set; }
             public string Language { get; set; }
             public bool CreateBackups { get; set; }
             public string BackupString { get; set; }

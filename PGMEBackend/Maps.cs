@@ -213,6 +213,9 @@ namespace PGMEBackend
         public byte[] rawLayout;
         public short[] layout;
 
+        public byte[] rawBorder;
+        public short[] border;
+
         public bool edited
         {
             get { return !rawDataOrig.SequenceEqual(rawData); }
@@ -228,6 +231,13 @@ namespace PGMEBackend
                 rawDataOrig = ROM.GetData(offset, 0x18);
             rawData = (byte[])rawDataOrig.Clone();
             LoadLayoutHeaderFromRaw(ROM);
+
+            if (borderBlocksPointer > 0 && borderBlocksPointer < Program.ROM.Length)
+            {
+                rawBorder = ROM.GetData(borderBlocksPointer, borderWidth * borderHeight * 4);
+                border = new short[rawBorder.Length / 2];
+                LoadBorderFromRaw();
+            }
 
             if (mapDataPointer > 0 && mapDataPointer < Program.ROM.Length)
             {
@@ -245,6 +255,16 @@ namespace PGMEBackend
         public void WriteLayoutToRaw()
         {
             Buffer.BlockCopy(layout, 0, rawLayout, 0, rawLayout.Length);
+        }
+
+        public void LoadBorderFromRaw()
+        {
+            Buffer.BlockCopy(rawBorder, 0, border, 0, rawBorder.Length);
+        }
+
+        public void WriteBorderToRaw()
+        {
+            Buffer.BlockCopy(border, 0, rawBorder, 0, rawBorder.Length);
         }
 
         public void PaintBlocksToMap(short[] blockArray, int x, int y, int w, int h)
@@ -274,6 +294,13 @@ namespace PGMEBackend
                 borderHeight = rawData[0x19];
                 buffer1 = rawData[0x1A];
                 buffer2 = rawData[0x1B];
+            }
+            else
+            {
+                borderWidth = 2;
+                borderHeight = 2;
+                buffer1 = 0;
+                buffer2 = 0;
             }
 
             try
@@ -423,6 +450,7 @@ namespace PGMEBackend
                             {
                                 short block = layout[i * layoutWidth + j];
                                 short blockIndex = (short)(block & 0x3FF);
+                                byte movementPerm = (byte)((block & 0xFC00) >> 10);
 
                                 if (blockIndex < Program.currentGame.MainTSBlocks)
                                 {
@@ -437,6 +465,11 @@ namespace PGMEBackend
                                         localTileset.blockSet.blocks[blockIndex - Program.currentGame.MainTSBlocks].Draw(globalSheets, localSheets, xPos + j * 16 - xoff, yPos + i * 16 - yoff, scale);
                                     else
                                         Surface.DrawRect(xPos - xoff, yPos - yoff, 16, 16, Color.Black);
+                                }
+
+                                if (Program.showingPerms)
+                                {
+                                    Program.glMapEditor.movementPerms.Draw(movementPerm, xPos + j * 16 - xoff, yPos + i * 16 - yoff, scale, (Config.settings.PermissionTranslucency * 255) / 100);
                                 }
                             }
                         }
@@ -469,6 +502,35 @@ namespace PGMEBackend
                 Surface.DrawOutlineRect(v.xpos * 16, v.ypos * 16, v.buffer.Width, v.buffer.Height);
             }
             // */
+
+            Surface.SetTexture(null);
+        }
+        
+        public void DrawBorder(Spritesheet[] globalSheets, Spritesheet[] localSheets, int xPos, int yPos, double scale)
+        {
+            for (int i = 0; i < borderHeight; i++)
+            {
+                for (int j = 0; j < borderWidth; j++)
+                {
+                    short block = border[i * borderWidth + j];
+                    short blockIndex = (short)(block & 0x3FF);
+
+                    if (blockIndex < Program.currentGame.MainTSBlocks)
+                    {
+                        if (globalTileset != null)
+                            globalTileset.blockSet.blocks[blockIndex].Draw(globalSheets, localSheets, xPos + j * 16, yPos + i * 16, scale);
+                        else
+                            Surface.DrawRect(xPos, yPos, 16, 16, Color.Black);
+                    }
+                    else
+                    {
+                        if (localTileset != null)
+                            localTileset.blockSet.blocks[blockIndex - Program.currentGame.MainTSBlocks].Draw(globalSheets, localSheets, xPos + j * 16, yPos + i * 16, scale);
+                        else
+                            Surface.DrawRect(xPos, yPos, 16, 16, Color.Black);
+                    }
+                }
+            }
 
             Surface.SetTexture(null);
         }

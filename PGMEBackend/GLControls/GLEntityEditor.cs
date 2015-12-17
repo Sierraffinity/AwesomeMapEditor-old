@@ -7,7 +7,7 @@ using System.Text;
 
 namespace PGMEBackend.GLControls
 {
-    class GLMapEditor
+    class GLEntityEditor
     {
         Color rectColor;
 
@@ -20,24 +20,23 @@ namespace PGMEBackend.GLControls
         public int mouseY = -1;
         public int endMouseX = -1;
         public int endMouseY = -1;
+        public int selectWidth = 1;
+        public int selectHeight = 1;
 
         public Color rectDefaultColor = Color.FromArgb(0, 255, 0);
         public Color rectPaintColor = Color.FromArgb(255, 0, 0);
         public Color rectSelectColor = Color.FromArgb(255, 255, 0);
 
-        public Spritesheet movementPerms;
-
-        public GLMapEditor(int w, int h)
+        public GLEntityEditor(int w, int h)
         {
             width = w;
             height = h;
             GL.ClearColor(Color.Transparent);
             SetupViewport();
             rectColor = rectDefaultColor;
-            movementPerms = Spritesheet.Load(Properties.Resources.permissions, 16, 16);
         }
 
-        public static implicit operator bool (GLMapEditor b)
+        public static implicit operator bool (GLEntityEditor b)
         {
             return b != null;
         }
@@ -95,12 +94,12 @@ namespace PGMEBackend.GLControls
             MapLayout layout = Program.currentLayout;
             if (layout != null)
             {
-                width = layout.layoutWidth * 16;
-                height = layout.layoutHeight * 16;
-
-                Program.mainGUI.SetGLMapEditorSize(width, height);
                 layout.Draw((Program.currentLayout.globalTileset != null) ? Program.currentLayout.globalTileset.tileSheets : null,
                             (Program.currentLayout.localTileset != null) ? Program.currentLayout.localTileset.tileSheets : null, 0, 0, 1);
+                Program.mainGUI.SetGLEntityEditorSize(layout.layoutWidth * 16, layout.layoutHeight * 16);
+
+                width = layout.layoutWidth * 16;
+                height = layout.layoutHeight * 16;
 
                 if(Config.settings.ShowGrid)
                 {
@@ -151,29 +150,16 @@ namespace PGMEBackend.GLControls
 
             if (tool == MapEditorTools.Pencil && (mouseX != oldMouseX || mouseY != oldMouseY))
             {
-                if(Program.showingPerms)
-                    PaintPermsToMap(Program.glPermsChooser.selectArray, mouseX, mouseY, Program.glPermsChooser.editorSelectWidth, Program.glPermsChooser.editorSelectHeight);
-                else
-                    PaintBlocksToMap(Program.glBlockChooser.selectArray, mouseX, mouseY, Program.glBlockChooser.editorSelectWidth, Program.glBlockChooser.editorSelectHeight);
+                PaintBlocksToMap(Program.glBlockChooser.selectArray, mouseX, mouseY, selectWidth, selectHeight);
                 //Paint();
             }
 
             if (tool != MapEditorTools.Eyedropper)
             {
-                if (Program.showingPerms)
-                {
-                    Program.glPermsChooser.editorSelectWidth = Math.Abs(Program.glPermsChooser.editorSelectWidth);
-                    Program.glPermsChooser.editorSelectHeight = Math.Abs(Program.glPermsChooser.editorSelectHeight);
-                    endMouseX = mouseX + Program.glPermsChooser.editorSelectWidth - 1;
-                    endMouseY = mouseY + Program.glPermsChooser.editorSelectHeight - 1;
-                }
-                else
-                {
-                    Program.glBlockChooser.editorSelectWidth = Math.Abs(Program.glBlockChooser.editorSelectWidth);
-                    Program.glBlockChooser.editorSelectHeight = Math.Abs(Program.glBlockChooser.editorSelectHeight);
-                    endMouseX = mouseX + Program.glBlockChooser.editorSelectWidth - 1;
-                    endMouseY = mouseY + Program.glBlockChooser.editorSelectHeight - 1;
-                }
+                selectWidth = Math.Abs(selectWidth);
+                selectHeight = Math.Abs(selectHeight);
+                endMouseX = mouseX + selectWidth - 1;
+                endMouseY = mouseY + selectHeight - 1;
             }
         }
 
@@ -184,7 +170,7 @@ namespace PGMEBackend.GLControls
             endMouseX = -1;
             endMouseY = -1;
         }
-        /*
+
         [Obsolete("Now handled by undo code")]
         void Paint()
         {
@@ -206,7 +192,7 @@ namespace PGMEBackend.GLControls
                     }
                 }
             }
-        }*/
+        }
 
         short[] oldLayout;
 
@@ -238,12 +224,7 @@ namespace PGMEBackend.GLControls
                         if ((x + j < Program.currentLayout.layoutWidth) && (y + i < Program.currentLayout.layoutHeight))
                         {
                             Console.WriteLine("Drawing at (" + (x + j) + ", " + (y + i) + "): " + blockArray[i * w + j]);
-                            if (blockArray.Length == 1)
-                                Program.currentLayout.layout[(x + (y * Program.currentLayout.layoutWidth)) + (i * Program.currentLayout.layoutWidth) + j] =
-                                    (short)((blockArray[0] & 0x3FF) + (Program.currentLayout.layout[(x + (y * Program.currentLayout.layoutWidth)) + (i * Program.currentLayout.layoutWidth) + j] & 0xFC00));
-                            else
-                                Program.currentLayout.layout[(x + (y * Program.currentLayout.layoutWidth)) + (i * Program.currentLayout.layoutWidth) + j] =
-                                    blockArray[(i * w) + j];
+                            Program.currentLayout.layout[(x + (y * Program.currentLayout.layoutWidth)) + (i * Program.currentLayout.layoutWidth) + j] = blockArray[(i * w) + j];
                         }
                     }
                 }
@@ -265,69 +246,6 @@ namespace PGMEBackend.GLControls
                         }
                     }
                 }
-            }
-        }
-
-        public void PaintPermsToMap(byte[] permsArray, int x, int y, int w, int h)
-        {
-            bool found = false;
-            for (int i = 0; i < h; i++)
-            {
-                for (int j = 0; j < w; j++)
-                {
-                    if ((x + j < Program.currentLayout.layoutWidth) && (y + i < Program.currentLayout.layoutHeight))
-                    {
-                        if (Program.currentLayout.layout[(x + (y * Program.currentLayout.layoutWidth)) + (i * Program.currentLayout.layoutWidth) + j] != permsArray[(i * w) + j])
-                            found = true;
-                    }
-                    if (found)
-                        break;
-                }
-                if (found)
-                    break;
-            }
-            if (found)
-            {
-                Console.WriteLine("Painting of " + w * h + " blocks...");
-                for (int i = 0; i < h; i++)
-                {
-                    for (int j = 0; j < w; j++)
-                    {
-                        if ((x + j < Program.currentLayout.layoutWidth) && (y + i < Program.currentLayout.layoutHeight))
-                        {
-                            Console.WriteLine("Drawing at (" + (x + j) + ", " + (y + i) + "): " + permsArray[i * w + j]);
-                            Program.currentLayout.layout[(x + (y * Program.currentLayout.layoutWidth)) + (i * Program.currentLayout.layoutWidth) + j] =
-                                (short)((Program.currentLayout.layout[(x + (y * Program.currentLayout.layoutWidth)) + (i * Program.currentLayout.layoutWidth) + j] & 0x3FF) + (permsArray[(i * w) + j] << 10));
-                        }
-                    }
-                }
-
-                for (int j = y; j <= y + h; j++)
-                {
-                    for (int i = x; i <= x + w; i++)
-                    {
-                        foreach (var v in Program.currentLayout.drawTiles)
-                        {
-                            if (v.Redraw)
-                                continue;
-                            if (i < v.xpos + v.Width && i >= v.xpos && j >= v.ypos && j < v.ypos + v.Height)
-                            {
-                                v.Redraw = true;
-                                Console.WriteLine("Redrawing " + v.buffer.FBOHandle);
-                                continue;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        public void RedrawAllChunks()
-        {
-            foreach (var v in Program.currentLayout.drawTiles)
-            {
-                v.Redraw = true;
-                Console.WriteLine("Redrawing " + v.buffer.FBOHandle);
             }
         }
 
@@ -341,24 +259,13 @@ namespace PGMEBackend.GLControls
                     rectColor = rectPaintColor;
                     oldLayout = new short[Program.currentLayout.layoutWidth * Program.currentLayout.layoutHeight];
                     Buffer.BlockCopy(Program.currentLayout.layout, 0, oldLayout, 0, Program.currentLayout.layout.Length);
-                    if(Program.showingPerms)
-                        PaintPermsToMap(Program.glPermsChooser.selectArray, mouseX, mouseY, Program.glPermsChooser.editorSelectWidth, Program.glPermsChooser.editorSelectHeight);
-                    else
-                        PaintBlocksToMap(Program.glBlockChooser.selectArray, mouseX, mouseY, Program.glBlockChooser.editorSelectWidth, Program.glBlockChooser.editorSelectHeight);
+                    PaintBlocksToMap(Program.glBlockChooser.selectArray, mouseX, mouseY, selectWidth, selectHeight);
                     //Paint();
                 }
                 else if (tool == MapEditorTools.Eyedropper)
                 {
-                    if (Program.showingPerms)
-                    {
-                        Program.glPermsChooser.editorSelectWidth = 1;
-                        Program.glPermsChooser.editorSelectHeight = 1;
-                    }
-                    else
-                    {
-                        Program.glBlockChooser.editorSelectWidth = 1;
-                        Program.glBlockChooser.editorSelectHeight = 1;
-                    }
+                    selectWidth = 1;
+                    selectHeight = 1;
                     endMouseX = mouseX;
                     endMouseY = mouseY;
                     rectColor = rectSelectColor;
@@ -367,31 +274,15 @@ namespace PGMEBackend.GLControls
                 {
                     if (Program.glBlockChooser.selectArray.Length == 1)
                     {
-                        if (Program.showingPerms)
+                        short originalBlock = (short)(Program.currentLayout.layout[(mouseX + (mouseY * Program.currentLayout.layoutWidth))] & 0x3FF);
+                        short newBlock = (short)(Program.glBlockChooser.selectArray[0] & 0x3FF);
+                        rectColor = rectPaintColor;
+                        if (originalBlock != newBlock)
                         {
-                            byte originalPerm = (byte)((Program.currentLayout.layout[(mouseX + (mouseY * Program.currentLayout.layoutWidth))] & 0xFC00) >> 10);
-                            byte newPerm = Program.glPermsChooser.selectArray[0];
-                            rectColor = rectPaintColor;
-                            if (originalPerm != newPerm)
-                            {
-                                oldLayout = new short[Program.currentLayout.layoutWidth * Program.currentLayout.layoutHeight];
-                                Buffer.BlockCopy(Program.currentLayout.layout, 0, oldLayout, 0, Program.currentLayout.layout.Length);
-                                FillPerms(mouseX, mouseY, originalPerm, newPerm);
-                                StoreChangesToUndoBufferAndRedraw();
-                            }
-                        }
-                        else
-                        {
-                            short originalBlock = (short)(Program.currentLayout.layout[(mouseX + (mouseY * Program.currentLayout.layoutWidth))] & 0x3FF);
-                            short newBlock = (short)(Program.glBlockChooser.selectArray[0] & 0x3FF);
-                            rectColor = rectPaintColor;
-                            if (originalBlock != newBlock)
-                            {
-                                oldLayout = new short[Program.currentLayout.layoutWidth * Program.currentLayout.layoutHeight];
-                                Buffer.BlockCopy(Program.currentLayout.layout, 0, oldLayout, 0, Program.currentLayout.layout.Length);
-                                FillBlocks(mouseX, mouseY, originalBlock, newBlock);
-                                StoreChangesToUndoBufferAndRedraw();
-                            }
+                            oldLayout = new short[Program.currentLayout.layoutWidth * Program.currentLayout.layoutHeight];
+                            Buffer.BlockCopy(Program.currentLayout.layout, 0, oldLayout, 0, Program.currentLayout.layout.Length);
+                            FillBlocks(mouseX, mouseY, originalBlock, newBlock);
+                            StoreChangesToUndoBufferAndRedraw();
                         }
                     }
                 }
@@ -399,39 +290,19 @@ namespace PGMEBackend.GLControls
                 {
                     if (Program.glBlockChooser.selectArray.Length == 1)
                     {
-                        if (Program.showingPerms)
+                        short originalBlock = (short)(Program.currentLayout.layout[(mouseX + (mouseY * Program.currentLayout.layoutWidth))] & 0x3FF);
+                        short newBlock = (short)(Program.glBlockChooser.selectArray[0] & 0x3FF);
+                        if (originalBlock != newBlock)
                         {
-                            byte originalPerm = (byte)((Program.currentLayout.layout[(mouseX + (mouseY * Program.currentLayout.layoutWidth))] & 0xFC00) >> 10);
-                            byte newPerm = Program.glPermsChooser.selectArray[0];
                             rectColor = rectPaintColor;
-                            if (originalPerm != newPerm)
+                            oldLayout = new short[Program.currentLayout.layoutWidth * Program.currentLayout.layoutHeight];
+                            Buffer.BlockCopy(Program.currentLayout.layout, 0, oldLayout, 0, Program.currentLayout.layout.Length);
+                            for (int i = 0; i < Program.currentLayout.layout.Length; i++)
                             {
-                                oldLayout = new short[Program.currentLayout.layoutWidth * Program.currentLayout.layoutHeight];
-                                Buffer.BlockCopy(Program.currentLayout.layout, 0, oldLayout, 0, Program.currentLayout.layout.Length);
-                                for (int i = 0; i < Program.currentLayout.layout.Length; i++)
-                                {
-                                    if ((byte)((Program.currentLayout.layout[i] & 0xFC00) >> 10) == originalPerm)
-                                        Program.currentLayout.layout[i] = (short)((Program.currentLayout.layout[i] & 0x3FF) + (newPerm << 10));
-                                }
-                                StoreChangesToUndoBufferAndRedraw();
+                                if ((short)(Program.currentLayout.layout[i] & 0x3FF) == originalBlock)
+                                    Program.currentLayout.layout[i] = (short)(newBlock + (Program.currentLayout.layout[i] & 0xFC00));
                             }
-                        }
-                        else
-                        {
-                            short originalBlock = (short)(Program.currentLayout.layout[(mouseX + (mouseY * Program.currentLayout.layoutWidth))] & 0x3FF);
-                            short newBlock = (short)(Program.glBlockChooser.selectArray[0] & 0x3FF);
-                            if (originalBlock != newBlock)
-                            {
-                                rectColor = rectPaintColor;
-                                oldLayout = new short[Program.currentLayout.layoutWidth * Program.currentLayout.layoutHeight];
-                                Buffer.BlockCopy(Program.currentLayout.layout, 0, oldLayout, 0, Program.currentLayout.layout.Length);
-                                for (int i = 0; i < Program.currentLayout.layout.Length; i++)
-                                {
-                                    if ((short)(Program.currentLayout.layout[i] & 0x3FF) == originalBlock)
-                                        Program.currentLayout.layout[i] = (short)(newBlock + (Program.currentLayout.layout[i] & 0xFC00));
-                                }
-                                StoreChangesToUndoBufferAndRedraw();
-                            }
+                            StoreChangesToUndoBufferAndRedraw();
                         }
                     }
                 }
@@ -451,20 +322,6 @@ namespace PGMEBackend.GLControls
                 FillBlocks(x, y - 1, originalBlock, newBlock);
                 FillBlocks(x - 1, y, originalBlock, newBlock);
                 FillBlocks(x + 1, y, originalBlock, newBlock);
-            }
-        }
-
-        public void FillPerms(int x, int y, byte originalPerm, byte newPerm)
-        {
-            if (x >= 0 && x < Program.currentLayout.layoutWidth &&
-                y >= 0 && y < Program.currentLayout.layoutHeight &&
-                (byte)((Program.currentLayout.layout[x + (y * Program.currentLayout.layoutWidth)] & 0xFC00) >> 10) == originalPerm)
-            {
-                Program.currentLayout.layout[x + (y * Program.currentLayout.layoutWidth)] = (short)((Program.currentLayout.layout[x + (y * Program.currentLayout.layoutWidth)] & 0x3FF) + (newPerm << 10));
-                FillPerms(x, y + 1, originalPerm, newPerm);
-                FillPerms(x, y - 1, originalPerm, newPerm);
-                FillPerms(x - 1, y, originalPerm, newPerm);
-                FillPerms(x + 1, y, originalPerm, newPerm);
             }
         }
 
@@ -544,40 +401,26 @@ namespace PGMEBackend.GLControls
             {
                 if (tool == MapEditorTools.Eyedropper)
                 {
-                    if (Program.showingPerms)
+                    selectWidth = Math.Abs(mouseX - endMouseX) + 1;
+                    selectHeight = Math.Abs(mouseY - endMouseY) + 1;
+
+                    Program.glBlockChooser.selectArray = new short[selectWidth * selectHeight];
+
+                    for (int i = 0; i < selectHeight; i++)
+                        for (int j = 0; j < selectWidth; j++)
+                            Program.glBlockChooser.selectArray[(i * selectWidth) + j] = Program.currentLayout.layout[(((mouseX > endMouseX) ? endMouseX : mouseX) + (((mouseY > endMouseY) ? endMouseY : mouseY) * Program.currentLayout.layoutWidth)) + (i * Program.currentLayout.layoutWidth) + j];
+
+                    /*
+                    foreach (var item in selectArray)
                     {
-                        Program.glPermsChooser.editorSelectWidth = Math.Abs(mouseX - endMouseX) + 1;
-                        Program.glPermsChooser.editorSelectHeight = Math.Abs(mouseY - endMouseY) + 1;
+                        Console.WriteLine(item.ToString("X4"));
+                    }*/
 
-                        Program.glPermsChooser.selectArray = new byte[Program.glPermsChooser.editorSelectWidth * Program.glPermsChooser.editorSelectHeight];
+                    if (selectWidth == 1 && selectHeight == 1)
+                        Program.glBlockChooser.SelectBlock(Program.glBlockChooser.selectArray[0] & 0x3FF);
 
-                        for (int i = 0; i < Program.glPermsChooser.editorSelectHeight; i++)
-                            for (int j = 0; j < Program.glPermsChooser.editorSelectWidth; j++)
-                                Program.glPermsChooser.selectArray[(i * Program.glPermsChooser.editorSelectWidth) + j] = (byte)((Program.currentLayout.layout[(((mouseX > endMouseX) ? endMouseX : mouseX) + (((mouseY > endMouseY) ? endMouseY : mouseY) * Program.currentLayout.layoutWidth)) + (i * Program.currentLayout.layoutWidth) + j] & 0xFC00) >> 10);
-                        
-                        if (Program.glPermsChooser.editorSelectWidth == 1 && Program.glPermsChooser.editorSelectHeight == 1)
-                            Program.glPermsChooser.SelectPerm(Program.glPermsChooser.selectArray[0]);
-
-                        else if (Program.glPermsChooser.editorSelectWidth > 1 || Program.glPermsChooser.editorSelectHeight > 1)
-                            Program.glPermsChooser.SelectPerm(-1);
-                    }
-                    else
-                    {
-                        Program.glBlockChooser.editorSelectWidth = Math.Abs(mouseX - endMouseX) + 1;
-                        Program.glBlockChooser.editorSelectHeight = Math.Abs(mouseY - endMouseY) + 1;
-
-                        Program.glBlockChooser.selectArray = new short[Program.glBlockChooser.editorSelectWidth * Program.glBlockChooser.editorSelectHeight];
-
-                        for (int i = 0; i < Program.glBlockChooser.editorSelectHeight; i++)
-                            for (int j = 0; j < Program.glBlockChooser.editorSelectWidth; j++)
-                                Program.glBlockChooser.selectArray[(i * Program.glBlockChooser.editorSelectWidth) + j] = Program.currentLayout.layout[(((mouseX > endMouseX) ? endMouseX : mouseX) + (((mouseY > endMouseY) ? endMouseY : mouseY) * Program.currentLayout.layoutWidth)) + (i * Program.currentLayout.layoutWidth) + j];
-
-                        if (Program.glBlockChooser.editorSelectWidth == 1 && Program.glBlockChooser.editorSelectHeight == 1)
-                            Program.glBlockChooser.SelectBlock(Program.glBlockChooser.selectArray[0] & 0x3FF);
-
-                        else if (Program.glBlockChooser.editorSelectWidth > 1 || Program.glBlockChooser.editorSelectHeight > 1)
-                            Program.glBlockChooser.SelectBlock(-1);
-                    }
+                    else if (selectWidth > 1 || selectHeight > 1)
+                        Program.glBlockChooser.SelectBlock(-1);
                 }
                 else if (tool == MapEditorTools.Pencil)
                 {

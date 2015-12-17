@@ -50,10 +50,16 @@ namespace PGMEBackend
         void LoadMap(object map);
 
         void SetGLMapEditorSize(int w, int h);
-        void SetGLBlockChooserSize(int h);
+        void SetGLBlockChooserSize(int w, int h);
+        void SetGLBorderBlocksSize(int w, int h);
+        void SetGLEntityEditorSize(int w, int h);
 
         void RefreshMapEditorControl();
         void RefreshBlockEditorControl();
+        void RefreshPermsChooserControl();
+        void RefreshBorderBlocksControl();
+        void RefreshEntityEditorControl();
         void ScrollBlockChooserToBlock(int blockNum);
+        void ScrollPermChooserToPerm(int permNum);
     }
 }

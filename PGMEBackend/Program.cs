@@ -51,7 +51,6 @@ namespace PGMEBackend
         public static bool extraLayoutsLoaded;
         public static bool isEdited = false;
         public static int timeOfDay = 2;
-        public static int currentEditorTab = 0;
 
         static string currentFilePath;
         static string currentFileName;
@@ -64,6 +63,11 @@ namespace PGMEBackend
 
         public static GLControls.GLMapEditor glMapEditor;
         public static GLControls.GLBlockChooser glBlockChooser;
+        public static GLControls.GLPermsChooser glPermsChooser;
+        public static GLControls.GLBorderBlocks glBorderBlocks;
+        public static GLControls.GLEntityEditor glEntityEditor;
+
+        public static bool showingPerms = false;
 
         static void Main()
         {
@@ -308,6 +312,7 @@ namespace PGMEBackend
             UndoManager.Clear();
             loadTime.Start();
 
+            mainGUI.EnableControlsOnMapLoad();
             if (currentLayout != null)
             {
                 currentLayout.Unload();
@@ -325,7 +330,6 @@ namespace PGMEBackend
             }
 
             mainGUI.LoadMap(map);
-            mainGUI.EnableControlsOnMapLoad();
 
             //Stop timer
             loadTime.Stop();
@@ -537,6 +541,12 @@ namespace PGMEBackend
         public static string UnsavedChangesDialog()
         {
             return ShowMessageBox(rmInternalStrings.GetString("UnsavedChanges"), rmInternalStrings.GetString("UnsavedChangesTitle"), "YesNoCancel", "Warning");
+        }
+
+        public static void ChangePermsVisibility(bool showPerms)
+        {
+            showingPerms = showPerms;
+            glMapEditor.RedrawAllChunks();
         }
     }
     

@@ -380,11 +380,14 @@ namespace PGMEWindowsUI
 
         public void EnableControlsOnMapLoad()
         {
-            mainTabControl.Enabled = true;
-            toolStripMenuItemConnectionEditor.Enabled = true;
-            tsmiSaveMap.Enabled = true;
-            toolStripSaveMap.Enabled = true;
-            tsbMapEditorMouse.Checked = true;
+            if (PGMEBackend.Program.currentLayout == null)
+            {
+                mainTabControl.Enabled = true;
+                toolStripMenuItemConnectionEditor.Enabled = true;
+                tsmiSaveMap.Enabled = true;
+                toolStripSaveMap.Enabled = true;
+                tsbMapEditorMouse.Checked = true;
+            }
         }
 
         private void mapNameToolStripMenuItem_Click(object sender, EventArgs e)
@@ -757,6 +760,7 @@ namespace PGMEWindowsUI
 
             RefreshMapEditorControl();
             RefreshBlockEditorControl();
+            RefreshBorderBlocksControl();
         }
 
         public void LoadHeaderTab(object maybeaMap)
@@ -1159,7 +1163,7 @@ namespace PGMEWindowsUI
         {
             if (!PGMEBackend.Program.glMapEditor) // Play nice
                 return;
-
+            
             glControlMapEditor.MakeCurrent();
             PGMEBackend.Program.glMapEditor.Paint(glControlMapEditor.Width, glControlMapEditor.Height);
             glControlMapEditor.SwapBuffers();
@@ -1169,7 +1173,7 @@ namespace PGMEWindowsUI
         {
             if (!PGMEBackend.Program.glBlockChooser) // Play nice
                 return;
-
+            
             glControlBlocks.MakeCurrent();
             PGMEBackend.Program.glBlockChooser.Paint(glControlBlocks.Width, glControlBlocks.Height);
             glControlBlocks.SwapBuffers();
@@ -1181,9 +1185,22 @@ namespace PGMEWindowsUI
             glControlMapEditor.Height = h;
         }
 
-        public void SetGLBlockChooserSize(int h)
+        public void SetGLBlockChooserSize(int w, int h)
         {
+            glControlBlocks.Width = w;
             glControlBlocks.Height = h;
+        }
+
+        public void SetGLBorderBlocksSize(int w, int h)
+        {
+            glControlBorderBlocks.Width = w;
+            glControlBorderBlocks.Height = h;
+        }
+
+        public void SetGLEntityEditorSize(int w, int h)
+        {
+            glControlEntityEditor.Width = w;
+            glControlEntityEditor.Height = h;
         }
 
         private void glControlMapEditor_MouseMove(object sender, MouseEventArgs e)
@@ -1290,6 +1307,21 @@ namespace PGMEWindowsUI
             glControlBlocks.Invalidate();
         }
 
+        public void RefreshPermsChooserControl()
+        {
+            glControlPermsChooser.Invalidate();
+        }
+
+        public void RefreshBorderBlocksControl()
+        {
+            glControlBorderBlocks.Invalidate();
+        }
+
+        public void RefreshEntityEditorControl()
+        {
+            glControlEntityEditor.Invalidate();
+        }
+
         private void panel8_Scroll(object sender, ScrollEventArgs e)
         {
             RefreshMapEditorControl();
@@ -1300,6 +1332,14 @@ namespace PGMEWindowsUI
             using (Control c = new Control() { Parent = blockPaintPanel, Height = 16, Top = (blockNum / 8) * 16 + blockPaintPanel.AutoScrollPosition.Y })
             {
                 blockPaintPanel.ScrollControlIntoView(c);
+            }
+        }
+
+        public void ScrollPermChooserToPerm(int permNum)
+        {
+            using (Control c = new Control() { Parent = movementPaintPanel, Height = 16, Top = (permNum / 4) * 16 + movementPaintPanel.AutoScrollPosition.Y })
+            {
+                movementPaintPanel.ScrollControlIntoView(c);
             }
         }
 
@@ -1335,16 +1375,7 @@ namespace PGMEWindowsUI
 
         private void mainTabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if ((sender as TabControl).SelectedIndex == 0)
-            {
-                glControlMapEditor.Parent = mapPaintPanel;
-                PGMEBackend.Program.currentEditorTab &= ~2;
-            }
-            else if ((sender as TabControl).SelectedIndex == 1)
-            {
-                glControlMapEditor.Parent = eventPaintPanel;
-                PGMEBackend.Program.currentEditorTab &= 2;
-            }
+
         }
 
         private void toolStripEventsShowGrid_Click(object sender, EventArgs e)
@@ -1360,22 +1391,10 @@ namespace PGMEWindowsUI
             settings.ShowGrid = toolStripShowGrid.Checked;
             WriteConfig();
             RefreshMapEditorControl();
+            RefreshBlockEditorControl();
+            RefreshBorderBlocksControl();
         }
-
-        private void paintTabControl_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if ((sender as TabControl).SelectedIndex == 0)
-            {
-                glControlBlocks.Parent = blockPaintPanel;
-                PGMEBackend.Program.currentEditorTab &= ~1;
-            }
-            else if ((sender as TabControl).SelectedIndex == 1)
-            {
-                glControlBlocks.Parent = movementPaintPanel;
-                PGMEBackend.Program.currentEditorTab &= 1;
-            }
-        }
-
+        
         private void undoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UndoManager.Undo();
@@ -1437,6 +1456,149 @@ namespace PGMEWindowsUI
             isControlPressed = e.Control;
         }
 
+        private void glControlPermsChooser_Load(object sender, EventArgs e)
+        {
+            glControlPermsChooser.MakeCurrent();
+            PGMEBackend.Program.glPermsChooser = new PGMEBackend.GLControls.GLPermsChooser(glControlPermsChooser.Width, glControlPermsChooser.Height);
+        }
+
+        private void glControlPermsChooser_Paint(object sender, PaintEventArgs e)
+        {
+            if (!PGMEBackend.Program.glPermsChooser) // Play nice
+                return;
+
+            glControlPermsChooser.MakeCurrent();
+            PGMEBackend.Program.glPermsChooser.Paint(glControlPermsChooser.Width, glControlPermsChooser.Height);
+            glControlPermsChooser.SwapBuffers();
+        }
+
+        private void glControlBorderBlocks_Load(object sender, EventArgs e)
+        {
+            glControlBorderBlocks.MakeCurrent();
+            PGMEBackend.Program.glBorderBlocks = new PGMEBackend.GLControls.GLBorderBlocks(glControlBorderBlocks.Width, glControlBorderBlocks.Height);
+        }
+
+        private void glControlBorderBlocks_Paint(object sender, PaintEventArgs e)
+        {
+            if (!PGMEBackend.Program.glBorderBlocks) // Play nice
+                return;
+
+            glControlBorderBlocks.MakeCurrent();
+            PGMEBackend.Program.glBorderBlocks.Paint(glControlBorderBlocks.Width, glControlBorderBlocks.Height);
+            glControlBorderBlocks.SwapBuffers();
+        }
+
+        private void glControlEntityEditor_Load(object sender, EventArgs e)
+        {
+            glControlEntityEditor.MakeCurrent();
+            PGMEBackend.Program.glEntityEditor = new PGMEBackend.GLControls.GLEntityEditor(glControlEntityEditor.Width, glControlEntityEditor.Height);
+        }
+
+        private void glControlEntityEditor_Paint(object sender, PaintEventArgs e)
+        {
+            if (!PGMEBackend.Program.glEntityEditor) // Play nice
+                return;
+
+            glControlEntityEditor.MakeCurrent();
+            PGMEBackend.Program.glEntityEditor.Paint(glControlEntityEditor.Width, glControlEntityEditor.Height);
+            glControlEntityEditor.SwapBuffers();
+        }
+
+        private void glControlPermsChooser_MouseDown(object sender, MouseEventArgs e)
+        {
+            MapEditorTools tool = MapEditorTools.None;
+            if (e.Button != MouseButtons.None)
+                tool = MapEditorTools.Pencil;
+            if (tool == PGMEBackend.Program.glMapEditor.tool)
+                return;
+            PGMEBackend.Program.glPermsChooser.MouseDown(tool);
+            RefreshPermsChooserControl();
+        }
+
+        private void glControlPermsChooser_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void glControlPermsChooser_MouseLeave(object sender, EventArgs e)
+        {
+            PGMEBackend.Program.glPermsChooser.MouseLeave();
+            RefreshPermsChooserControl();
+        }
+
+        private void glControlPermsChooser_MouseMove(object sender, MouseEventArgs e)
+        {
+            int oldX = PGMEBackend.Program.glPermsChooser.mouseX;
+            int oldY = PGMEBackend.Program.glPermsChooser.mouseY;
+
+            PGMEBackend.Program.glPermsChooser.MouseMove(e.X, e.Y);
+
+            if ((oldX != PGMEBackend.Program.glPermsChooser.mouseX) || (oldY != PGMEBackend.Program.glPermsChooser.mouseY))
+                RefreshPermsChooserControl();
+        }
+
+        private void glControlPermsChooser_MouseUp(object sender, MouseEventArgs e)
+        {
+            MapEditorTools tool = MapEditorTools.None;
+            if (e.Button != MouseButtons.None)
+                tool = MapEditorTools.Pencil;
+            PGMEBackend.Program.glPermsChooser.MouseUp(tool);
+            RefreshPermsChooserControl();
+        }
+
+        private void glControlBorderBlocks_KeyDown(object sender, KeyEventArgs e)
+        {
+            isControlPressed = e.Control;
+        }
+
+        private void glControlBorderBlocks_KeyUp(object sender, KeyEventArgs e)
+        {
+            isControlPressed = e.Control;
+        }
+
+        private void glControlBorderBlocks_MouseDown(object sender, MouseEventArgs e)
+        {
+            MapEditorTools tool = GetTool(e.Button);
+            if (tool == PGMEBackend.Program.glBorderBlocks.tool)
+                return;
+            PGMEBackend.Program.glBorderBlocks.MouseDown(tool);
+            RefreshBorderBlocksControl();
+        }
+
+        private void glControlBorderBlocks_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void glControlBorderBlocks_MouseLeave(object sender, EventArgs e)
+        {
+            PGMEBackend.Program.glBorderBlocks.MouseLeave();
+            RefreshBorderBlocksControl();
+        }
+
+        private void glControlBorderBlocks_MouseMove(object sender, MouseEventArgs e)
+        {
+            int oldX = PGMEBackend.Program.glBorderBlocks.mouseX;
+            int oldY = PGMEBackend.Program.glBorderBlocks.mouseY;
+
+            PGMEBackend.Program.glBorderBlocks.MouseMove(e.X, e.Y);
+
+            if ((oldX != PGMEBackend.Program.glBorderBlocks.mouseX) || (oldY != PGMEBackend.Program.glBorderBlocks.mouseY))
+                RefreshBorderBlocksControl();
+        }
+
+        private void glControlBorderBlocks_MouseUp(object sender, MouseEventArgs e)
+        {
+            PGMEBackend.Program.glBorderBlocks.MouseUp(GetTool(e.Button));
+            RefreshBorderBlocksControl();
+        }
+
+        private void paintTabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PGMEBackend.Program.ChangePermsVisibility((sender as TabControl).SelectedIndex == 1);
+            RefreshMapEditorControl();
+        }
+
         /*
         // Undo example usage
         // Note that the redo gets called automatically
@@ -1455,7 +1617,6 @@ namespace PGMEWindowsUI
 
         }
         */
-
 
     }
 

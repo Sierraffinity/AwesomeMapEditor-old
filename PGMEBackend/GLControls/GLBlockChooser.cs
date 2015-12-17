@@ -24,11 +24,14 @@ namespace PGMEBackend.GLControls
         public int selectY = 0;
         public int selectWidth = 1;
         public int selectHeight = 1;
+        public int editorSelectWidth = 1;
+        public int editorSelectHeight = 1;
+        public short[] selectArray = { 0 };
 
         public Color rectDefaultColor = Color.FromArgb(0, 255, 0);
         public Color rectPaintColor = Color.FromArgb(255, 0, 0);
         public Color rectSelectColor = Color.FromArgb(255, 255, 0);
-
+        
         public GLBlockChooser(int w, int h)
         {
             width = w;
@@ -86,8 +89,8 @@ namespace PGMEBackend.GLControls
                     localTileset.blockSet.Draw((globalTileset != null) ? globalTileset.tileSheets : null, (localTileset != null) ? localTileset.tileSheets : null, 0, height, 1);
                     height += (int)Math.Ceiling(localTileset.blockSet.blocks.Length / 8.0d) * 16;
                 }
-                Program.mainGUI.SetGLBlockChooserSize(height);
-
+                Program.mainGUI.SetGLBlockChooserSize(128, height);
+                    
                 int x = selectX * 16;
                 int y = selectY * 16;
                 int w = selectWidth * 16;
@@ -97,7 +100,7 @@ namespace PGMEBackend.GLControls
                     w = ((width - 1) / 16 - selectX) * 16;
                 if (selectY + selectHeight > height / 16)
                     h = ((height - 1) / 16 - selectY) * 16;
-                
+
                 Surface.DrawOutlineRect(x + (w < 0 ? 16 : 0), y + (h < 0 ? 16 : 0), w + (w >= 0 ? 0 : -16), h + (h >= 0 ? 0 : -16), rectColor);
 
                 if (tool == MapEditorTools.None)
@@ -182,14 +185,12 @@ namespace PGMEBackend.GLControls
                 selectY = (mouseY > endMouseY) ? endMouseY : mouseY;
                 selectWidth = Math.Abs(mouseX - endMouseX) + 1;
                 selectHeight = Math.Abs(mouseY - endMouseY) + 1;
-                Program.glMapEditor.selectWidth = selectWidth;
-                Program.glMapEditor.selectHeight = selectHeight;
 
-                Program.glMapEditor.selectArray = new short[selectWidth * selectHeight];
+                selectArray = new short[selectWidth * selectHeight];
 
                 for (int i = 0; i < selectHeight; i++)
                     for (int j = 0; j < selectWidth; j++)
-                        Program.glMapEditor.selectArray[(i * selectWidth) + j] = (short)((selectX + (selectY * 8)) + (i * 8) + j);
+                        selectArray[(i * selectWidth) + j] = (short)((selectX + (selectY * 8)) + (i * 8) + j);
                 /*
                 foreach (var item in Program.glMapEditor.selectArray)
                 {
@@ -203,18 +204,18 @@ namespace PGMEBackend.GLControls
 
         public void SelectBlock(int blockNum)
         {
-            Program.glBlockChooser.selectWidth = 1;
-            Program.glBlockChooser.selectHeight = 1;
+            selectWidth = 1;
+            selectHeight = 1;
             if (blockNum >= 0)
             {
-                Program.glBlockChooser.selectX = blockNum % 8;
-                Program.glBlockChooser.selectY = blockNum / 8;
+                selectX = blockNum % 8;
+                selectY = blockNum / 8;
                 Program.mainGUI.ScrollBlockChooserToBlock(blockNum);
             }
             else
             {
-                Program.glBlockChooser.selectX = -1;
-                Program.glBlockChooser.selectY = -1;
+                selectX = -1;
+                selectY = -1;
             }
 
             Program.mainGUI.RefreshBlockEditorControl();
