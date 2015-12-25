@@ -5,7 +5,6 @@ ScriptEditor:           null
 PermissionTranslucency: 50
 Language:               null
 CreateBackups:          true
-BackupString:           null
 MapSortOrder:           Name
 HexPrefix:              0x
 ShowRawMapHeader:       false

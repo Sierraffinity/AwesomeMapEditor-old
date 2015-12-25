@@ -483,6 +483,16 @@ namespace PGMEWindowsUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Question_mark {
+            get {
+                object obj = ResourceManager.GetObject("Question_mark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap save_as_16x16 {
             get {
                 object obj = ResourceManager.GetObject("save_as_16x16", resourceCulture);
@@ -506,6 +516,16 @@ namespace PGMEWindowsUI.Properties {
         internal static System.Drawing.Bitmap script_go_16x16 {
             get {
                 object obj = ResourceManager.GetObject("script_go_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap setting_tools_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("setting_tools_16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

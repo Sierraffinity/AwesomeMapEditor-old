@@ -36,6 +36,7 @@ using Be.Windows.Forms;
 using OpenTK.Graphics;
 using OpenTK.Graphics.OpenGL;
 using System.Drawing.Imaging;
+using System.IO;
 
 namespace PGMEWindowsUI
 {
@@ -110,7 +111,6 @@ namespace PGMEWindowsUI
             for (int i = 0; i < mainTabControl.TabPages.Count; i++)
                 mainTabControl.TabPages[i].ImageIndex = i;
             PGMEBackend.Program.SetMainGUITitle(this.Text);
-            SetInitialCheckedStuff();
             SetMapSortOrder(settings.MapSortOrder);
             mapTreeNodes = new Dictionary<int, TreeNode>();
         }
@@ -152,6 +152,8 @@ namespace PGMEWindowsUI
                                       .Where(c => c.GetType() == type);
         }
 
+        private MRUManager mruManager;
+
         private void MainWindow_Load(object sender, EventArgs e)
         {
             UndoManager.OnModified += (nl, ev) => {
@@ -159,6 +161,30 @@ namespace PGMEWindowsUI
                 redoToolStripMenuItem.Enabled = UndoManager.HasRedo;
                 RefreshMapEditorControl();
             };
+            mruManager = new MRUManager(
+            //the menu item that will contain the recent files
+            recentFilesToolStripMenuItem,
+
+            //the funtion that will be called when a recent file gets clicked.
+            recentFileGotClicked_handler,
+
+            null,
+            
+            10);
+        }
+
+        public void recentFileGotClicked_handler(object sender, EventArgs e)
+        {
+            string fName = (sender as ToolStripItem).Text.Substring((sender as ToolStripItem).Text.IndexOf(' ') + 1); ;
+            if (!File.Exists(fName))
+            {
+                if (MessageBox.Show(string.Format(PGMEBackend.Program.rmInternalStrings.GetString("RecentFileNotFound"), fName), PGMEBackend.Program.rmInternalStrings.GetString("FileNotFoundTitle"),
+                         MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    mruManager.RemoveRecentFile(fName);
+                return;
+            }
+
+            PGMEBackend.Program.LoadROM(fName);
         }
 
         public void QuitApplication(int code)
@@ -173,23 +199,6 @@ namespace PGMEWindowsUI
             }
         }
 
-        private void SetInitialCheckedStuff()
-        {
-            SetCheckedLanguage(settings.Language);
-            createOnOpenToolStripMenuItem.Checked = settings.CreateBackups;
-        }
-
-        private void SetCheckedLanguage(string lang)
-        {
-            foreach (ToolStripMenuItem item in toolStripMenuItemLanguage.DropDownItems)
-            {
-                if (item.Tag.Equals(lang))
-                    item.Checked = true;
-                else
-                    item.Checked = false;
-            }
-        }
-
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             PGMEBackend.Program.LoadROM();
@@ -198,6 +207,11 @@ namespace PGMEWindowsUI
         private void toolStripMenuItemOpenROM_Click(object sender, EventArgs e)
         {
             PGMEBackend.Program.LoadROM();
+        }
+
+        public void AddRecentFile(string openedFile)
+        {
+            mruManager.AddRecentFile(openedFile);
         }
 
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -232,35 +246,6 @@ namespace PGMEWindowsUI
         private void mapAndBlocksSplitContainer_Panel2_Paint(object sender, PaintEventArgs e)
         {
 
-        }
-        
-        private void englishToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SetLanguage("en");
-        }
-
-        private void espanolToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SetLanguage("es");
-        }
-
-        private void françaisToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SetLanguage("fr");
-        }
-
-        private void deutschToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SetLanguage("de");
-        }
-        
-        private void SetLanguage(string lang)
-        {
-            settings.Language = lang;
-            WriteConfig();
-            SetCheckedLanguage(lang);
-
-            MessageBox.Show(PGMEBackend.Program.rmInternalStrings.GetString("RestartToSaveLanguage", new CultureInfo(lang)), PGMEBackend.Program.rmInternalStrings.GetString("RestartToSaveLanguageTitle", new CultureInfo(lang)), MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         static Dictionary<string, MessageBoxButtons> BoxButtons = new Dictionary<string, MessageBoxButtons>
@@ -387,6 +372,7 @@ namespace PGMEWindowsUI
                 tsmiSaveMap.Enabled = true;
                 toolStripSaveMap.Enabled = true;
                 tsbMapEditorMouse.Checked = true;
+                showGridToolStripMenuItem.Enabled = true;
             }
         }
 
@@ -492,12 +478,13 @@ namespace PGMEWindowsUI
         {
             mapTreeNodes.Clear();
             mapListTreeView.Nodes.Clear();
+            backupTree.Nodes.Clear();
         }
-        
+
+        TreeView backupTree = new TreeView();
+
         public void LoadMapNodes()
         {
-            mapListTreeView.BeginUpdate();
-
             int i = 0;
             switch (settings.MapSortOrder)
             {
@@ -508,7 +495,7 @@ namespace PGMEWindowsUI
                         var mapNameNode = new TreeNode("[" + mapName.Key.ToString("X2") + "] " + mapName.Value.Name);
                         mapNameNode.SelectedImageKey = "Folder Closed";
                         mapNameNode.ImageKey = "Folder Closed";
-                        mapListTreeView.Nodes.Add(mapNameNode);
+                        backupTree.Nodes.Add(mapNameNode);
                         mapTreeNodes.Add(mapName.Key, mapNameNode);
 
                     }
@@ -525,9 +512,9 @@ namespace PGMEWindowsUI
                             }
                             catch (KeyNotFoundException)
                             {
-                                if (!mapListTreeView.Nodes.Contains(mapTreeNodes[0xFF]))
+                                if (!backupTree.Nodes.Contains(mapTreeNodes[0xFF]))
                                 {
-                                    mapListTreeView.Nodes.Add(mapTreeNodes[0xFF]);
+                                    backupTree.Nodes.Add(mapTreeNodes[0xFF]);
                                 }
                                 var node = mapTreeNodes[0xFF].Nodes.Add("mapNode" + i++, map.name);
                                 node.Tag = map;
@@ -543,7 +530,7 @@ namespace PGMEWindowsUI
                         var bankNode = new TreeNode("[" + mapBank.Key.ToString("X2") + "]");
                         bankNode.SelectedImageKey = "Folder Closed";
                         bankNode.ImageKey = "Folder Closed";
-                        mapListTreeView.Nodes.Add(bankNode);
+                        backupTree.Nodes.Add(bankNode);
                         mapTreeNodes.Add(mapBank.Key, bankNode);
                         foreach (Map map in mapBank.Value.GetBank().Values)
                         {
@@ -559,7 +546,7 @@ namespace PGMEWindowsUI
                     {
                         var mapLayoutNode = new TreeNode(mapLayout.Value.name);
                         mapLayoutNode.Tag = mapLayout.Value;
-                        mapListTreeView.Nodes.Add(mapLayoutNode);
+                        backupTree.Nodes.Add(mapLayoutNode);
                         mapTreeNodes.Add(mapLayout.Key, mapLayoutNode);
                     }
                     foreach (MapBank mapBank in PGMEBackend.Program.mapBanks.Values)
@@ -575,10 +562,11 @@ namespace PGMEWindowsUI
                     }
                     break;
                 case "Tileset":
+                    int j = 0;
                     foreach (KeyValuePair<int, MapTileset> mapTileset in PGMEBackend.Program.mapTilesets)
                     {
-                        var mapTilesetNode = new TreeNode("[" + mapTileset.Key.ToString("X8") + "]");
-                        mapListTreeView.Nodes.Add(mapTilesetNode);
+                        var mapTilesetNode = new TreeNode("[" + j++ + "] " + settings.HexPrefix + (mapTileset.Key + 0x8000000).ToString("X8"));
+                        backupTree.Nodes.Add(mapTilesetNode);
                         mapTreeNodes.Add(mapTileset.Key, mapTilesetNode);
                     }
                     foreach (MapBank mapBank in PGMEBackend.Program.mapBanks.Values)
@@ -625,7 +613,39 @@ namespace PGMEWindowsUI
                     }
                     break;
             }
-            mapListTreeView.EndUpdate();
+            CopyTreeNodes(backupTree, mapListTreeView);
+        }
+
+        public void CopyTreeNodes(TreeView treeview1, TreeView treeview2)
+        {
+            TreeNode newTn;
+            foreach (TreeNode tn in treeview1.Nodes)
+            {
+                newTn = (TreeNode)tn.Clone();
+                newTn.Nodes.Clear();
+                bool matchesFilter = newTn.Text.ToLower().Contains(tsMapFilter.Text.ToLower());
+                if (CopyChildren(newTn, tn, matchesFilter) || matchesFilter)
+                    treeview2.Nodes.Add(newTn);
+            }
+        }
+        public bool CopyChildren(TreeNode parent, TreeNode original, bool forceCreate)
+        {
+            TreeNode newTn;
+            bool shouldCreateParent = false;
+            foreach (TreeNode tn in original.Nodes)
+            {
+                newTn = (TreeNode)tn.Clone();
+                newTn.Nodes.Clear();
+                bool matchesFilter = newTn.Text.ToLower().Contains(tsMapFilter.Text.ToLower()) || forceCreate;
+                bool childrenWantParent = false;
+                if (tn.Nodes.Count != 0)
+                    childrenWantParent = CopyChildren(newTn, tn, matchesFilter);
+                if (childrenWantParent || matchesFilter)
+                    shouldCreateParent = true;
+                if (childrenWantParent || matchesFilter)
+                    parent.Nodes.Add(newTn);
+            }
+            return shouldCreateParent;
         }
 
         public void LoadMapDropdowns()
@@ -1195,6 +1215,10 @@ namespace PGMEWindowsUI
         {
             glControlBorderBlocks.Width = w;
             glControlBorderBlocks.Height = h;
+            glControlBorderBlocks.Location = new Point(78 - (w /2), glControlBorderBlocks.Location.Y);
+            borderBlocksBox.Size = new Size(borderBlocksBox.Size.Width, 24 + h);
+            paintTabControl.Location = new Point(paintTabControl.Location.X, 30 + h);
+            paintTabControl.Size = new Size(paintTabControl.Size.Width, 550 - h);
         }
 
         public void SetGLEntityEditorSize(int w, int h)
@@ -1375,7 +1399,18 @@ namespace PGMEWindowsUI
 
         private void mainTabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            bool oldValue = PGMEBackend.Program.showingPerms;
+            if (mainTabControl.SelectedIndex == 0)
+            {
+                if (paintTabControl.SelectedIndex == 1)
+                    PGMEBackend.Program.showingPerms = true;
+                else
+                    PGMEBackend.Program.showingPerms = false;
+            }
+            else
+                PGMEBackend.Program.showingPerms = false;
+            if(oldValue != PGMEBackend.Program.showingPerms)
+                PGMEBackend.Program.glMapEditor.RedrawAllChunks();
         }
 
         private void toolStripEventsShowGrid_Click(object sender, EventArgs e)
@@ -1443,19 +1478,7 @@ namespace PGMEWindowsUI
                 }
             }
         }
-
-        bool isControlPressed = false;
-
-        private void glControlMapEditor_KeyDown(object sender, KeyEventArgs e)
-        {
-            isControlPressed = e.Control;
-        }
-
-        private void glControlMapEditor_KeyUp(object sender, KeyEventArgs e)
-        {
-            isControlPressed = e.Control;
-        }
-
+        
         private void glControlPermsChooser_Load(object sender, EventArgs e)
         {
             glControlPermsChooser.MakeCurrent();
@@ -1599,6 +1622,53 @@ namespace PGMEWindowsUI
             RefreshMapEditorControl();
         }
 
+        bool isControlPressed = false;
+
+        private void MainWindow_KeyDown(object sender, KeyEventArgs e)
+        {
+            isControlPressed = e.Control;
+        }
+
+        private void MainWindow_KeyUp(object sender, KeyEventArgs e)
+        {
+            isControlPressed = e.Control;
+        }
+
+        public int permTransPreview = -1;
+
+        public int PermTransPreviewValue()
+        {
+            return permTransPreview;
+        }
+
+        private void tsmiSettings_Click(object sender, EventArgs e)
+        {
+            SettingsDialog permTransDialog = new SettingsDialog(this);
+            DialogResult result = permTransDialog.ShowDialog();
+            if(result != DialogResult.OK && PGMEBackend.Program.currentLayout != null)
+            {
+                PGMEBackend.Program.glMapEditor.RedrawAllChunks();
+                RefreshMapEditorControl();
+            }
+            permTransPreview = -1;
+        }
+
+        public void PreviewPermTranslucency(int value)
+        {
+            permTransPreview = value;
+            if (PGMEBackend.Program.currentLayout != null)
+            {
+                PGMEBackend.Program.glMapEditor.RedrawAllChunks();
+                RefreshMapEditorControl();
+            }
+        }
+
+        private void tsMapFilter_TextChanged(object sender, EventArgs e)
+        {
+            ClearMapNodes();
+            LoadMapNodes();
+        }
+        
         /*
         // Undo example usage
         // Note that the redo gets called automatically

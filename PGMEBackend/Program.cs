@@ -118,6 +118,7 @@ namespace PGMEBackend
 
             if (OpenROM(filename) == 0)
             {
+                mainGUI.AddRecentFile(filename);
                 currentFilePath = filename;
                 currentFileName = Path.GetFileName(filename);
 
@@ -302,7 +303,7 @@ namespace PGMEBackend
                 if (result == "Yes")
                     SaveMap();
                 else if (result == "No")
-                    currentLayout.LoadLayoutFromRaw();
+                    currentLayout.LoadLayoutHeaderFromRaw(ROM);
                 else if (result == "Cancel")
                     return 1;
                 isEdited = false;

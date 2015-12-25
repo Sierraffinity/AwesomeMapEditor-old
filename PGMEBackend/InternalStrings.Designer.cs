@@ -592,6 +592,15 @@ namespace PGMEBackend {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Clear List.
+        /// </summary>
+        internal static string ClearList {
+            get {
+                return ResourceManager.GetString("ClearList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Could not find {0} map layout(s)..
         /// </summary>
         internal static string CouldNotFindLayout {
@@ -661,6 +670,16 @@ namespace PGMEBackend {
         internal static string MapLoadedStatus {
             get {
                 return ResourceManager.GetString("MapLoadedStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} was not found.
+        ///Remove from recent files list?.
+        /// </summary>
+        internal static string RecentFileNotFound {
+            get {
+                return ResourceManager.GetString("RecentFileNotFound", resourceCulture);
             }
         }
         

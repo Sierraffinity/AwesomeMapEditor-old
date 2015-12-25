@@ -231,20 +231,6 @@ namespace PGMEBackend
                 rawDataOrig = ROM.GetData(offset, 0x18);
             rawData = (byte[])rawDataOrig.Clone();
             LoadLayoutHeaderFromRaw(ROM);
-
-            if (borderBlocksPointer > 0 && borderBlocksPointer < Program.ROM.Length)
-            {
-                rawBorder = ROM.GetData(borderBlocksPointer, borderWidth * borderHeight * 4);
-                border = new short[rawBorder.Length / 2];
-                LoadBorderFromRaw();
-            }
-
-            if (mapDataPointer > 0 && mapDataPointer < Program.ROM.Length)
-            {
-                rawLayout = ROM.GetData(mapDataPointer, layoutWidth * layoutHeight * 4);
-                layout = new short[rawLayout.Length / 2];
-                LoadLayoutFromRaw();
-            }
         }
 
         public void LoadLayoutFromRaw()
@@ -290,8 +276,8 @@ namespace PGMEBackend
             localTilesetPointer = BitConverter.ToInt32(rawData, 0x14) - 0x8000000;
             if (Program.currentGame.RomType == "FRLG")
             {
-                borderWidth = rawData[0x18];
-                borderHeight = rawData[0x19];
+                borderWidth = (rawData[0x18] <= 8) ? rawData[0x18] : 8;
+                borderHeight = (rawData[0x19] <= 8) ? rawData[0x19] : 8;
                 buffer1 = rawData[0x1A];
                 buffer2 = rawData[0x1B];
             }
@@ -301,6 +287,20 @@ namespace PGMEBackend
                 borderHeight = 2;
                 buffer1 = 0;
                 buffer2 = 0;
+            }
+
+            if (borderBlocksPointer > 0 && borderBlocksPointer < Program.ROM.Length)
+            {
+                rawBorder = ROM.GetData(borderBlocksPointer, borderWidth * borderHeight * 4);
+                border = new short[rawBorder.Length / 2];
+                LoadBorderFromRaw();
+            }
+
+            if (mapDataPointer > 0 && mapDataPointer < Program.ROM.Length)
+            {
+                rawLayout = ROM.GetData(mapDataPointer, layoutWidth * layoutHeight * 4);
+                layout = new short[rawLayout.Length / 2];
+                LoadLayoutFromRaw();
             }
 
             try
@@ -469,7 +469,7 @@ namespace PGMEBackend
 
                                 if (Program.showingPerms)
                                 {
-                                    Program.glMapEditor.movementPerms.Draw(movementPerm, xPos + j * 16 - xoff, yPos + i * 16 - yoff, scale, (Config.settings.PermissionTranslucency * 255) / 100);
+                                    Program.glMapEditor.movementPerms.Draw(movementPerm, xPos + j * 16 - xoff, yPos + i * 16 - yoff, scale, (((Program.mainGUI.PermTransPreviewValue() >= 0) ? Program.mainGUI.PermTransPreviewValue() : Config.settings.PermissionTranslucency) * 255) / 100);
                                 }
                             }
                         }

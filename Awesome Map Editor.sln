@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGMEWindowsUI", "PGMEWindowsUI\PGMEWindowsUI.csproj", "{D2052647-5C6A-44CF-A54B-BFB9A83CA6A0}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -34,6 +34,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Be.HexEditor", "Dependencies\Be.HexEditor-1.6.0\sources\Be.HexEditor\Be.HexEditor.csproj", "{FF4ADB46-210E-429E-9176-68613F5CBE90}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Be.Windows.Forms.HexBox", "Dependencies\Be.HexEditor-1.6.0\sources\Be.Windows.Forms.HexBox\Be.Windows.Forms.HexBox.csproj", "{26C5F25F-B450-4CAF-AD8B-B8D11AE73457}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SplitButton", "Dependencies\SplitButton\SplitButton.csproj", "{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -379,6 +381,46 @@ Global
 		{26C5F25F-B450-4CAF-AD8B-B8D11AE73457}.Release-Unsigned|Any CPU.Build.0 = Release|Any CPU
 		{26C5F25F-B450-4CAF-AD8B-B8D11AE73457}.Release-Unsigned|x86.ActiveCfg = Release|Any CPU
 		{26C5F25F-B450-4CAF-AD8B-B8D11AE73457}.Release-Unsigned|x86.Build.0 = Release|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Debug|x86.Build.0 = Debug|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Debug-UnitySubset-v35|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Debug-UnitySubset-v35|Any CPU.Build.0 = Debug|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Debug-UnitySubset-v35|x86.ActiveCfg = Debug|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Debug-UnitySubset-v35|x86.Build.0 = Debug|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Documentation|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Documentation|Any CPU.Build.0 = Debug|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Documentation|x86.ActiveCfg = Debug|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Documentation|x86.Build.0 = Debug|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Nsis|Any CPU.ActiveCfg = Release|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Nsis|Any CPU.Build.0 = Release|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Nsis|x86.ActiveCfg = Release|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Nsis|x86.Build.0 = Release|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Release|x86.ActiveCfg = Release|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Release|x86.Build.0 = Release|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Release-Portable-Signed|Any CPU.ActiveCfg = Release|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Release-Portable-Signed|Any CPU.Build.0 = Release|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Release-Portable-Signed|x86.ActiveCfg = Release|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Release-Portable-Signed|x86.Build.0 = Release|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Release-Portable-Unsigned|Any CPU.ActiveCfg = Release|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Release-Portable-Unsigned|Any CPU.Build.0 = Release|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Release-Portable-Unsigned|x86.ActiveCfg = Release|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Release-Portable-Unsigned|x86.Build.0 = Release|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Release-Signed|Any CPU.ActiveCfg = Release|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Release-Signed|Any CPU.Build.0 = Release|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Release-Signed|x86.ActiveCfg = Release|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Release-Signed|x86.Build.0 = Release|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Release-UnitySubset-v35|Any CPU.ActiveCfg = Release|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Release-UnitySubset-v35|Any CPU.Build.0 = Release|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Release-UnitySubset-v35|x86.ActiveCfg = Release|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Release-UnitySubset-v35|x86.Build.0 = Release|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Release-Unsigned|Any CPU.ActiveCfg = Release|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Release-Unsigned|Any CPU.Build.0 = Release|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Release-Unsigned|x86.ActiveCfg = Release|Any CPU
+		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Release-Unsigned|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

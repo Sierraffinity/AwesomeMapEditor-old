@@ -103,6 +103,13 @@
     <Compile Include="MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="MRUManager.cs" />
+    <Compile Include="SettingsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsDialog.Designer.cs">
+      <DependentUpon>SettingsDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AboutForm.resx">
@@ -115,6 +122,9 @@
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsDialog.resx">
+      <DependentUpon>SettingsDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -165,6 +175,10 @@
       <Project>{d0fe49cc-1b13-4c04-b3c1-c1a9b1872a36}</Project>
       <Name>Nintenlord.Forms</Name>
       <EmbedInteropTypes>False</EmbedInteropTypes>
+    </ProjectReference>
+    <ProjectReference Include="..\Dependencies\SplitButton\SplitButton.csproj">
+      <Project>{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}</Project>
+      <Name>SplitButton</Name>
     </ProjectReference>
     <ProjectReference Include="..\PGMEBackend\PGMEBackend.csproj">
       <Project>{1683693f-34e2-44b3-be78-fbc1e224858f}</Project>
@@ -284,6 +298,8 @@
     <None Include="Resources\arrow_refresh_16x16.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\setting_tools_16x16.png" />
+    <None Include="Resources\Question mark.png" />
     <None Include="Resources\sort_map_16x16.png" />
     <None Include="Resources\wildgrass_16x16.png" />
     <None Include="Resources\folder_image_16x16.png" />

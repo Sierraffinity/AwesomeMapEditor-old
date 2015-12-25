@@ -165,11 +165,13 @@ namespace PGMEBackend
             public int PermissionTranslucency { get; set; }
             public string Language { get; set; }
             public bool CreateBackups { get; set; }
-            public string BackupString { get; set; }
             public string MapSortOrder { get; set; }
-            public string HexPrefix { get; set; }
+            private string _hexPrefix;
+            public string HexPrefix { get { return _hexPrefix; }
+                                      set { _hexPrefix = value.Substring(0, (value.Length >= 2) ? 2 : value.Length); } }
             public bool ShowRawMapHeader { get; set; }
             public bool ShowRawLayoutHeader { get; set; }
+            public LinkedList<string> RecentlyUsedFiles { get; set; }
         }
 
         public class BehaviorLists

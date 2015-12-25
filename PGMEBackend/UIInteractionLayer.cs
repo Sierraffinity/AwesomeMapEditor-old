@@ -61,5 +61,9 @@ namespace PGMEBackend
         void RefreshEntityEditorControl();
         void ScrollBlockChooserToBlock(int blockNum);
         void ScrollPermChooserToPerm(int permNum);
+
+        int PermTransPreviewValue();
+
+        void AddRecentFile(string fname);
     }
 }

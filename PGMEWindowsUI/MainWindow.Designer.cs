@@ -55,6 +55,7 @@ namespace PGMEWindowsUI
             this.mapBankToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mapLayoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mapTilesetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsMapFilter = new System.Windows.Forms.ToolStripTextBox();
             this.mapListTreeView = new System.Windows.Forms.TreeView();
             this.mainTabControl = new System.Windows.Forms.TabControl();
             this.mapTabPage = new System.Windows.Forms.TabPage();
@@ -535,18 +536,9 @@ namespace PGMEWindowsUI
             this.toolStripMenuItemTilesetEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemConnectionEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemWorldMapEditor = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.showGridToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemLanguage = new System.Windows.Forms.ToolStripMenuItem();
-            this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.espanolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.françaisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deutschToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemScriptEditor = new System.Windows.Forms.ToolStripMenuItem();
-            this.backupsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.createOnOpenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nameFormatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hexPrefixToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemReadme = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAbout = new System.Windows.Forms.ToolStripMenuItem();
@@ -581,6 +573,8 @@ namespace PGMEWindowsUI
             this.glControlPermsChooser = new OpenTK.GLControl();
             this.eventPaintPanel = new PGMEWindowsUI.GLPanel();
             this.glControlEntityEditor = new OpenTK.GLControl();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+            this.recentFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitMapListAndPaint)).BeginInit();
             this.splitMapListAndPaint.Panel1.SuspendLayout();
             this.splitMapListAndPaint.Panel2.SuspendLayout();
@@ -765,7 +759,8 @@ namespace PGMEWindowsUI
             resources.ApplyResources(this.tsMapListTree, "tsMapListTree");
             this.tsMapListTree.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.tsMapListTree.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsddbMapSortOrder});
+            this.tsddbMapSortOrder,
+            this.tsMapFilter});
             this.tsMapListTree.Name = "tsMapListTree";
             // 
             // tsddbMapSortOrder
@@ -811,6 +806,13 @@ namespace PGMEWindowsUI
             this.mapTilesetToolStripMenuItem.Name = "mapTilesetToolStripMenuItem";
             this.mapTilesetToolStripMenuItem.Tag = "Tileset";
             this.mapTilesetToolStripMenuItem.Click += new System.EventHandler(this.mapTilesetToolStripMenuItem_Click);
+            // 
+            // tsMapFilter
+            // 
+            this.tsMapFilter.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsMapFilter.Name = "tsMapFilter";
+            resources.ApplyResources(this.tsMapFilter, "tsMapFilter");
+            this.tsMapFilter.TextChanged += new System.EventHandler(this.tsMapFilter_TextChanged);
             // 
             // mapListTreeView
             // 
@@ -4451,7 +4453,6 @@ namespace PGMEWindowsUI
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
             this.toolsToolStripMenuItem,
-            this.settingsToolStripMenuItem,
             this.helpToolStripMenuItem});
             resources.ApplyResources(this.mainMenuStrip, "mainMenuStrip");
             this.mainMenuStrip.Name = "mainMenuStrip";
@@ -4465,6 +4466,8 @@ namespace PGMEWindowsUI
             this.tsmiSaveMap,
             this.toolStripMenuItemSaveROM,
             this.toolStripMenuItemSaveROMAs,
+            this.toolStripSeparator9,
+            this.recentFilesToolStripMenuItem,
             this.toolStripSeparator7,
             this.tsmiExit});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -4540,7 +4543,10 @@ namespace PGMEWindowsUI
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemTilesetEditor,
             this.toolStripMenuItemConnectionEditor,
-            this.toolStripMenuItemWorldMapEditor});
+            this.toolStripMenuItemWorldMapEditor,
+            this.toolStripSeparator8,
+            this.showGridToolStripMenuItem,
+            this.tsmiSettings});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             resources.ApplyResources(this.toolsToolStripMenuItem, "toolsToolStripMenuItem");
             // 
@@ -4560,95 +4566,24 @@ namespace PGMEWindowsUI
             resources.ApplyResources(this.toolStripMenuItemWorldMapEditor, "toolStripMenuItemWorldMapEditor");
             this.toolStripMenuItemWorldMapEditor.Name = "toolStripMenuItemWorldMapEditor";
             // 
-            // settingsToolStripMenuItem
+            // toolStripSeparator8
             // 
-            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.showGridToolStripMenuItem,
-            this.toolStripMenuItemLanguage,
-            this.toolStripMenuItemScriptEditor,
-            this.backupsToolStripMenuItem,
-            this.hexPrefixToolStripMenuItem});
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            resources.ApplyResources(this.toolStripSeparator8, "toolStripSeparator8");
             // 
             // showGridToolStripMenuItem
             // 
             this.showGridToolStripMenuItem.CheckOnClick = true;
+            resources.ApplyResources(this.showGridToolStripMenuItem, "showGridToolStripMenuItem");
             this.showGridToolStripMenuItem.Image = global::PGMEWindowsUI.Properties.Resources.grid_16x16;
             this.showGridToolStripMenuItem.Name = "showGridToolStripMenuItem";
-            resources.ApplyResources(this.showGridToolStripMenuItem, "showGridToolStripMenuItem");
-            this.showGridToolStripMenuItem.Click += new System.EventHandler(this.showGridToolStripMenuItem_Click);
             // 
-            // toolStripMenuItemLanguage
+            // tsmiSettings
             // 
-            this.toolStripMenuItemLanguage.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.englishToolStripMenuItem,
-            this.espanolToolStripMenuItem,
-            this.françaisToolStripMenuItem,
-            this.deutschToolStripMenuItem});
-            resources.ApplyResources(this.toolStripMenuItemLanguage, "toolStripMenuItemLanguage");
-            this.toolStripMenuItemLanguage.Name = "toolStripMenuItemLanguage";
-            // 
-            // englishToolStripMenuItem
-            // 
-            this.englishToolStripMenuItem.CheckOnClick = true;
-            this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
-            resources.ApplyResources(this.englishToolStripMenuItem, "englishToolStripMenuItem");
-            this.englishToolStripMenuItem.Tag = "en";
-            this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
-            // 
-            // espanolToolStripMenuItem
-            // 
-            this.espanolToolStripMenuItem.CheckOnClick = true;
-            this.espanolToolStripMenuItem.Name = "espanolToolStripMenuItem";
-            resources.ApplyResources(this.espanolToolStripMenuItem, "espanolToolStripMenuItem");
-            this.espanolToolStripMenuItem.Tag = "es";
-            this.espanolToolStripMenuItem.Click += new System.EventHandler(this.espanolToolStripMenuItem_Click);
-            // 
-            // françaisToolStripMenuItem
-            // 
-            this.françaisToolStripMenuItem.CheckOnClick = true;
-            this.françaisToolStripMenuItem.Name = "françaisToolStripMenuItem";
-            resources.ApplyResources(this.françaisToolStripMenuItem, "françaisToolStripMenuItem");
-            this.françaisToolStripMenuItem.Tag = "fr";
-            this.françaisToolStripMenuItem.Click += new System.EventHandler(this.françaisToolStripMenuItem_Click);
-            // 
-            // deutschToolStripMenuItem
-            // 
-            this.deutschToolStripMenuItem.CheckOnClick = true;
-            this.deutschToolStripMenuItem.Name = "deutschToolStripMenuItem";
-            resources.ApplyResources(this.deutschToolStripMenuItem, "deutschToolStripMenuItem");
-            this.deutschToolStripMenuItem.Tag = "de";
-            this.deutschToolStripMenuItem.Click += new System.EventHandler(this.deutschToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItemScriptEditor
-            // 
-            resources.ApplyResources(this.toolStripMenuItemScriptEditor, "toolStripMenuItemScriptEditor");
-            this.toolStripMenuItemScriptEditor.Name = "toolStripMenuItemScriptEditor";
-            // 
-            // backupsToolStripMenuItem
-            // 
-            this.backupsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createOnOpenToolStripMenuItem,
-            this.nameFormatToolStripMenuItem});
-            this.backupsToolStripMenuItem.Name = "backupsToolStripMenuItem";
-            resources.ApplyResources(this.backupsToolStripMenuItem, "backupsToolStripMenuItem");
-            // 
-            // createOnOpenToolStripMenuItem
-            // 
-            this.createOnOpenToolStripMenuItem.CheckOnClick = true;
-            this.createOnOpenToolStripMenuItem.Name = "createOnOpenToolStripMenuItem";
-            resources.ApplyResources(this.createOnOpenToolStripMenuItem, "createOnOpenToolStripMenuItem");
-            // 
-            // nameFormatToolStripMenuItem
-            // 
-            this.nameFormatToolStripMenuItem.Name = "nameFormatToolStripMenuItem";
-            resources.ApplyResources(this.nameFormatToolStripMenuItem, "nameFormatToolStripMenuItem");
-            // 
-            // hexPrefixToolStripMenuItem
-            // 
-            this.hexPrefixToolStripMenuItem.Name = "hexPrefixToolStripMenuItem";
-            resources.ApplyResources(this.hexPrefixToolStripMenuItem, "hexPrefixToolStripMenuItem");
+            this.tsmiSettings.Image = global::PGMEWindowsUI.Properties.Resources.setting_tools_16x16;
+            this.tsmiSettings.Name = "tsmiSettings";
+            resources.ApplyResources(this.tsmiSettings, "tsmiSettings");
+            this.tsmiSettings.Click += new System.EventHandler(this.tsmiSettings_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -4846,8 +4781,6 @@ namespace PGMEWindowsUI
             this.glControlMapEditor.VSync = false;
             this.glControlMapEditor.Load += new System.EventHandler(this.glControlMapEditor_Load);
             this.glControlMapEditor.Paint += new System.Windows.Forms.PaintEventHandler(this.glControlMapEditor_Paint);
-            this.glControlMapEditor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.glControlMapEditor_KeyDown);
-            this.glControlMapEditor.KeyUp += new System.Windows.Forms.KeyEventHandler(this.glControlMapEditor_KeyUp);
             this.glControlMapEditor.MouseDown += new System.Windows.Forms.MouseEventHandler(this.glControlMapEditor_MouseDown);
             this.glControlMapEditor.MouseEnter += new System.EventHandler(this.glControlMapEditor_MouseEnter);
             this.glControlMapEditor.MouseLeave += new System.EventHandler(this.glControlMapEditor_MouseLeave);
@@ -4913,6 +4846,16 @@ namespace PGMEWindowsUI
             this.glControlEntityEditor.Load += new System.EventHandler(this.glControlEntityEditor_Load);
             this.glControlEntityEditor.Paint += new System.Windows.Forms.PaintEventHandler(this.glControlEntityEditor_Paint);
             // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            resources.ApplyResources(this.toolStripSeparator9, "toolStripSeparator9");
+            // 
+            // recentFilesToolStripMenuItem
+            // 
+            this.recentFilesToolStripMenuItem.Name = "recentFilesToolStripMenuItem";
+            resources.ApplyResources(this.recentFilesToolStripMenuItem, "recentFilesToolStripMenuItem");
+            // 
             // MainWindow
             // 
             resources.ApplyResources(this, "$this");
@@ -4921,10 +4864,13 @@ namespace PGMEWindowsUI
             this.Controls.Add(this.mainStatusStrip);
             this.Controls.Add(this.mainToolStrip);
             this.Controls.Add(this.mainMenuStrip);
+            this.KeyPreview = true;
             this.MainMenuStrip = this.mainMenuStrip;
             this.Name = "MainWindow";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
             this.Load += new System.EventHandler(this.MainWindow_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainWindow_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MainWindow_KeyUp);
             this.splitMapListAndPaint.Panel1.ResumeLayout(false);
             this.splitMapListAndPaint.Panel1.PerformLayout();
             this.splitMapListAndPaint.Panel2.ResumeLayout(false);
@@ -5133,7 +5079,6 @@ namespace PGMEWindowsUI
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemOpenROM;
         private System.Windows.Forms.ToolStripMenuItem tsmiReloadROM;
-        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStrip mainToolStrip;
@@ -5158,52 +5103,133 @@ namespace PGMEWindowsUI
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSaveROMAs;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripMenuItem tsmiExit;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemScriptEditor;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemTilesetEditor;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemReadme;
         private System.Windows.Forms.ToolStripMenuItem tsmiAbout;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemConnectionEditor;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemWorldMapEditor;
         private System.Windows.Forms.StatusStrip mainStatusStrip;
-        private System.Windows.Forms.SplitContainer splitMapListAndPaint;
-        private System.Windows.Forms.TabControl mainTabControl;
-        private System.Windows.Forms.TabPage mapTabPage;
-        private System.Windows.Forms.TabPage entitiesTabPage;
-        private System.Windows.Forms.TabPage wildTabPage;
-        private System.Windows.Forms.TabPage headerTabPage;
         private System.Windows.Forms.ToolStripStatusLabel tsslLoadingStatus;
-        private System.Windows.Forms.ToolStrip tsMapListTree;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
-        private System.Windows.Forms.ToolStrip toolStrip3;
-        private System.Windows.Forms.ToolStripComboBox cboTimeofDayEvents;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem undoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem redoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton toolStripSaveMap;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSaveMap;
+        private System.Windows.Forms.ToolStripMenuItem showGridToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSettings;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        private System.Windows.Forms.TabControl mainTabControl;
+        private System.Windows.Forms.TabPage mapTabPage;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.GroupBox borderBlocksBox;
+        private OpenTK.GLControl glControlBorderBlocks;
+        private System.Windows.Forms.Panel mapEditorPanel;
+        private GLPanel mapPaintPanel;
+        private OpenTK.GLControl glControlMapEditor;
+        private System.Windows.Forms.ToolStrip tsMapEditorTab;
+        private System.Windows.Forms.ToolStripComboBox cboTimeofDayMap;
+        private System.Windows.Forms.ToolStripLabel mapXPosLabel;
+        private System.Windows.Forms.ToolStripLabel mapYPosLabel;
+        private System.Windows.Forms.ToolStripButton tsbMapEditorMouse;
+        private System.Windows.Forms.ToolStripButton tsbMapEditorPencil;
+        private System.Windows.Forms.ToolStripButton tsbMapEditorEyedropper;
+        private System.Windows.Forms.ToolStripButton tsbMapEditorFill;
+        private System.Windows.Forms.ToolStripButton tsbMapEditorFillAll;
+        private System.Windows.Forms.ToolStripButton toolStripShowGrid;
+        private System.Windows.Forms.TabControl paintTabControl;
+        private System.Windows.Forms.TabPage blocksTabPage;
+        private GLPanel blockPaintPanel;
+        private OpenTK.GLControl glControlBlocks;
+        private System.Windows.Forms.TabPage movementTabPage;
+        private GLPanel movementPaintPanel;
+        private OpenTK.GLControl glControlPermsChooser;
+        private System.Windows.Forms.TabPage entitiesTabPage;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel eventEditorPanel;
-        private System.Windows.Forms.Panel panelWarpEvent;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.NumericUpDown numericUpDown10;
+        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ComboBox cboEventTypes;
+        private System.Windows.Forms.NumericUpDown numericUpDown10;
+        private System.Windows.Forms.Panel panelSpriteEvent;
+        private System.Windows.Forms.TextBox hexPrefixBox23;
+        private System.Windows.Forms.TextBox hexPrefixBox22;
+        private System.Windows.Forms.TextBox hexPrefixBox21;
+        private System.Windows.Forms.TextBox hexPrefixBox20;
+        private System.Windows.Forms.TextBox hexPrefixBox19;
+        private System.Windows.Forms.TextBox hexPrefixBox18;
+        private System.Windows.Forms.TextBox hexPrefixBox17;
+        private System.Windows.Forms.TextBox hexPrefixBox16;
+        private System.Windows.Forms.TextBox hexPrefixBox15;
+        private System.Windows.Forms.TextBox hexPrefixBox14;
+        private System.Windows.Forms.TextBox hexPrefixBox13;
+        private System.Windows.Forms.TextBox hexPrefixBox12;
+        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.NumericUpDown numericUpDown7;
+        private System.Windows.Forms.NumericUpDown numericUpDown6;
+        private System.Windows.Forms.Panel panelSignEvent;
+        private System.Windows.Forms.TextBox textBox59;
+        private System.Windows.Forms.TextBox textBox58;
+        private System.Windows.Forms.TextBox textBox57;
+        private System.Windows.Forms.TextBox textBox56;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox textBox26;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox comboBox9;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.TextBox textBox27;
+        private System.Windows.Forms.TextBox textBox28;
         private System.Windows.Forms.Panel panelScriptEvent;
+        private System.Windows.Forms.TextBox textBox79;
+        private System.Windows.Forms.TextBox textBox78;
+        private System.Windows.Forms.TextBox textBox77;
+        private System.Windows.Forms.TextBox textBox64;
+        private System.Windows.Forms.TextBox textBox62;
+        private System.Windows.Forms.TextBox textBox61;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.TextBox textBox29;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox textBox20;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox textBox75;
+        private System.Windows.Forms.TextBox textBox65;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.TextBox textBox24;
@@ -5218,32 +5244,58 @@ namespace PGMEWindowsUI
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TextBox textBox21;
         private System.Windows.Forms.TextBox textBox22;
-        private System.Windows.Forms.Panel panelSignEvent;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBox26;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox9;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.TextBox textBox27;
-        private System.Windows.Forms.TextBox textBox28;
-        private System.Windows.Forms.ToolStripDropDownButton tsddbMapSortOrder;
-        private System.Windows.Forms.ToolStripMenuItem mapNameToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mapBankToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mapTilesetToolStripMenuItem;
+        private System.Windows.Forms.Panel panelWarpEvent;
+        private System.Windows.Forms.TextBox textBox94;
+        private System.Windows.Forms.TextBox textBox93;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox textBox86;
+        private System.Windows.Forms.TextBox textBox81;
+        private System.Windows.Forms.TextBox textBox80;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.Panel eventEditorPanel;
+        private GLPanel eventPaintPanel;
+        private OpenTK.GLControl glControlEntityEditor;
+        private System.Windows.Forms.ToolStrip toolStrip3;
+        private System.Windows.Forms.ToolStripComboBox cboTimeofDayEvents;
         private System.Windows.Forms.ToolStripButton toolStripEventsShowGrid;
+        private System.Windows.Forms.ToolStripLabel eventXPosLabel;
+        private System.Windows.Forms.ToolStripLabel eventYPosLabel;
+        private System.Windows.Forms.ToolStripButton toolStripButton17;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripMenuItem blocksToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem belowTopToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem translucentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboveTopToolStripMenuItem;
+        private System.Windows.Forms.TabPage wildTabPage;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.Button button10;
         private System.Windows.Forms.ComboBox cboEncounterTypes;
         private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button button10;
         private System.Windows.Forms.GroupBox grbGrassEncounters;
+        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.PictureBox pictureBox13;
+        private System.Windows.Forms.PictureBox pictureBox14;
+        private System.Windows.Forms.PictureBox pictureBox15;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Label label53;
@@ -5309,61 +5361,10 @@ namespace PGMEWindowsUI
         private System.Windows.Forms.TextBox textBox31;
         private System.Windows.Forms.NumericUpDown numericUpDown5;
         private System.Windows.Forms.NumericUpDown numericUpDown8;
+        private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.TextBox textBox30;
-        private System.Windows.Forms.TreeView mapListTreeView;
-        private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.Label label90;
-        private System.Windows.Forms.TextBox tbHeaderTabBorderWidth;
-        private System.Windows.Forms.TextBox tbHeaderTabBorderHeight;
-        private System.Windows.Forms.Label label91;
-        private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.Label label81;
-        private System.Windows.Forms.TextBox tbHeaderTabMapWidth;
-        private System.Windows.Forms.TextBox tbHeaderTabMapHeight;
-        private System.Windows.Forms.Label label79;
-        private System.Windows.Forms.TextBox hexNumberBoxHeaderTabLocalTilesetPointer;
-        private System.Windows.Forms.Label label73;
-        private System.Windows.Forms.TextBox hexNumberBoxHeaderTabMapPointer;
-        private System.Windows.Forms.Label label87;
-        private System.Windows.Forms.TextBox hexNumberBoxHeaderTabGlobalTilesetPointer;
-        private System.Windows.Forms.Label label88;
-        private System.Windows.Forms.TextBox hexNumberBoxHeaderTabBorderPointer;
-        private System.Windows.Forms.Label label80;
-        private System.Windows.Forms.TextBox hexNumberBoxHeaderTabConnectionDataPointer;
-        private System.Windows.Forms.Label label72;
-        private System.Windows.Forms.TextBox hexNumberBoxHeaderTabEventDataPointer;
-        private System.Windows.Forms.Label label71;
-        private System.Windows.Forms.TextBox hexNumberBoxHeaderTabLevelScriptPointer;
-        private System.Windows.Forms.Label label70;
-        private System.Windows.Forms.Label label69;
-        private System.Windows.Forms.Label label67;
-        private System.Windows.Forms.Label label68;
-        private System.Windows.Forms.ComboBox cbHeaderTabBattleTransition;
-        private System.Windows.Forms.ComboBox cbHeaderTabMapType;
-        private System.Windows.Forms.Label label66;
-        private System.Windows.Forms.Label label65;
-        private System.Windows.Forms.ComboBox cbHeaderTabWeather;
-        private System.Windows.Forms.ComboBox cbHeaderTabVisibility;
-        private System.Windows.Forms.Label label64;
-        private System.Windows.Forms.TextBox hexNumberBoxHeaderTabMusic;
-        private System.Windows.Forms.ComboBox cbHeaderTabMusic;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.TextBox hexNumberBoxHeaderTabMapNames;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.ComboBox cbHeaderTabMapNames;
-        private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.PictureBox pictureBox13;
-        private System.Windows.Forms.PictureBox pictureBox14;
-        private System.Windows.Forms.PictureBox pictureBox15;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.GroupBox grbFishingRodEncounters;
         private System.Windows.Forms.GroupBox groupBox16;
         private System.Windows.Forms.PictureBox pictureBox28;
@@ -5517,151 +5518,90 @@ namespace PGMEWindowsUI
         private System.Windows.Forms.Label label129;
         private System.Windows.Forms.TextBox textBox92;
         private System.Windows.Forms.TrackBar trackBar5;
-        private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.TextBox hexNumberBoxHeaderTabLayoutIndex;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemLanguage;
-        private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem espanolToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem françaisToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deutschToolStripMenuItem;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
-        private System.Windows.Forms.ToolStripMenuItem backupsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem createOnOpenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nameFormatToolStripMenuItem;
-        private System.Windows.Forms.TextBox hexNumberBoxHeaderTabLayoutHeaderPointer;
-        private System.Windows.Forms.CheckBox cbHeaderTabCanEscape;
-        private System.Windows.Forms.CheckBox cbHeaderTabCanRideBike;
-        private System.Windows.Forms.CheckBox cbHeaderTabCanRun;
-        private System.Windows.Forms.CheckBox cbHeaderTabShowsName;
-        private System.Windows.Forms.TextBox hexPrefixBox11;
-        private System.Windows.Forms.TextBox hexPrefixBox9;
-        private System.Windows.Forms.TextBox hexPrefixBox10;
-        private System.Windows.Forms.TextBox hexPrefixBox8;
-        private System.Windows.Forms.TextBox hexPrefixBox7;
-        private System.Windows.Forms.TextBox hexPrefixBox4;
-        private System.Windows.Forms.TextBox hexPrefixBox2;
-        private System.Windows.Forms.TextBox hexPrefixBox3;
-        private System.Windows.Forms.TextBox hexPrefixBox1;
-        private System.Windows.Forms.TextBox hexPrefixBox6;
-        private System.Windows.Forms.TextBox hexPrefixBox5;
-        private System.Windows.Forms.ToolStripMenuItem hexPrefixToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mapLayoutToolStripMenuItem;
+        private System.Windows.Forms.TabPage headerTabPage;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.GroupBox gbHeaderTabRawLayoutHeader;
-        private Be.Windows.Forms.HexBox hexViewerRawLayoutHeader;
         private System.Windows.Forms.GroupBox gbHeaderTabMapHeader;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.GroupBox gbHeaderTabRawMapHeader;
         private Be.Windows.Forms.HexBox hexViewerRawMapHeader;
-        private System.Windows.Forms.GroupBox gbHeaderTabLayoutHeader;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TextBox hexPrefixBox7;
+        private System.Windows.Forms.TextBox hexNumberBoxHeaderTabLayoutHeaderPointer;
+        private System.Windows.Forms.TextBox hexPrefixBox4;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.TextBox hexPrefixBox5;
+        private System.Windows.Forms.TextBox hexNumberBoxHeaderTabMapNames;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.ComboBox cbHeaderTabMapNames;
+        private System.Windows.Forms.TextBox hexPrefixBox2;
+        private System.Windows.Forms.ComboBox cbHeaderTabMusic;
+        private System.Windows.Forms.TextBox hexPrefixBox3;
+        private System.Windows.Forms.TextBox hexNumberBoxHeaderTabMusic;
+        private System.Windows.Forms.TextBox hexPrefixBox1;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.CheckBox cbHeaderTabCanEscape;
+        private System.Windows.Forms.ComboBox cbHeaderTabVisibility;
+        private System.Windows.Forms.CheckBox cbHeaderTabCanRideBike;
+        private System.Windows.Forms.ComboBox cbHeaderTabWeather;
+        private System.Windows.Forms.CheckBox cbHeaderTabCanRun;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.CheckBox cbHeaderTabShowsName;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.TextBox hexPrefixBox6;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.TextBox hexNumberBoxHeaderTabLayoutIndex;
+        private System.Windows.Forms.ComboBox cbHeaderTabMapType;
+        private System.Windows.Forms.TextBox hexNumberBoxHeaderTabConnectionDataPointer;
+        private System.Windows.Forms.ComboBox cbHeaderTabBattleTransition;
+        private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.TextBox hexNumberBoxHeaderTabEventDataPointer;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.TextBox hexNumberBoxHeaderTabLevelScriptPointer;
+        private System.Windows.Forms.Label label70;
         private System.Windows.Forms.CheckBox cbHeaderTabShowRawMapHeader;
+        private System.Windows.Forms.GroupBox gbHeaderTabLayoutHeader;
         private System.Windows.Forms.CheckBox cbHeaderTabShowRawLayoutHeader;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.GroupBox borderBlocksBox;
-        private System.Windows.Forms.Panel mapEditorPanel;
-        private System.Windows.Forms.ToolStrip tsMapEditorTab;
-        private System.Windows.Forms.ToolStripComboBox cboTimeofDayMap;
-        private System.Windows.Forms.ToolStripButton toolStripShowGrid;
-        private System.Windows.Forms.TabControl paintTabControl;
-        private System.Windows.Forms.TabPage blocksTabPage;
-        private System.Windows.Forms.TabPage movementTabPage;
-        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem undoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem redoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripButton toolStripSaveMap;
-        private System.Windows.Forms.ToolStripMenuItem showGridToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tsmiSaveMap;
-        private System.Windows.Forms.ToolStripButton tsbMapEditorMouse;
-        private System.Windows.Forms.ToolStripButton tsbMapEditorPencil;
-        private System.Windows.Forms.ToolStripButton tsbMapEditorEyedropper;
-        private System.Windows.Forms.ToolStripButton tsbMapEditorFill;
-        private System.Windows.Forms.ToolStripButton tsbMapEditorFillAll;
-        private GLPanel mapPaintPanel;
-        private OpenTK.GLControl glControlMapEditor;
-        private System.Windows.Forms.ToolStripButton toolStripButton17;
-        private System.Windows.Forms.ToolStripLabel mapXPosLabel;
-        private System.Windows.Forms.ToolStripLabel mapYPosLabel;
-        private System.Windows.Forms.ToolStripMenuItem blocksToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem belowTopToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem translucentToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aboveTopToolStripMenuItem;
-        private System.Windows.Forms.ToolStripLabel eventXPosLabel;
-        private System.Windows.Forms.ToolStripLabel eventYPosLabel;
-        private GLPanel movementPaintPanel;
-        private System.Windows.Forms.TextBox textBox59;
-        private System.Windows.Forms.TextBox textBox58;
-        private System.Windows.Forms.TextBox textBox57;
-        private System.Windows.Forms.TextBox textBox56;
-        private System.Windows.Forms.TextBox textBox79;
-        private System.Windows.Forms.TextBox textBox78;
-        private System.Windows.Forms.TextBox textBox77;
-        private System.Windows.Forms.TextBox textBox64;
-        private System.Windows.Forms.TextBox textBox62;
-        private System.Windows.Forms.TextBox textBox61;
-        private System.Windows.Forms.TextBox textBox75;
-        private System.Windows.Forms.TextBox textBox65;
-        private System.Windows.Forms.TextBox textBox94;
-        private System.Windows.Forms.TextBox textBox93;
-        private System.Windows.Forms.TextBox textBox86;
-        private System.Windows.Forms.TextBox textBox81;
-        private System.Windows.Forms.TextBox textBox80;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Panel panelSpriteEvent;
-        private System.Windows.Forms.TextBox hexPrefixBox23;
-        private System.Windows.Forms.TextBox hexPrefixBox22;
-        private System.Windows.Forms.TextBox hexPrefixBox21;
-        private System.Windows.Forms.TextBox hexPrefixBox20;
-        private System.Windows.Forms.TextBox hexPrefixBox19;
-        private System.Windows.Forms.TextBox hexPrefixBox18;
-        private System.Windows.Forms.TextBox hexPrefixBox17;
-        private System.Windows.Forms.TextBox hexPrefixBox16;
-        private System.Windows.Forms.TextBox hexPrefixBox15;
-        private System.Windows.Forms.TextBox hexPrefixBox14;
-        private System.Windows.Forms.TextBox hexPrefixBox13;
-        private System.Windows.Forms.TextBox hexPrefixBox12;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown7;
-        private System.Windows.Forms.NumericUpDown numericUpDown6;
-        private GLPanel eventPaintPanel;
-        private OpenTK.GLControl glControlBorderBlocks;
-        private OpenTK.GLControl glControlPermsChooser;
-        private OpenTK.GLControl glControlEntityEditor;
-        private GLPanel blockPaintPanel;
-        private OpenTK.GLControl glControlBlocks;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.GroupBox gbHeaderTabRawLayoutHeader;
+        private Be.Windows.Forms.HexBox hexViewerRawLayoutHeader;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.TextBox hexPrefixBox11;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Label label81;
+        private System.Windows.Forms.TextBox tbHeaderTabMapWidth;
+        private System.Windows.Forms.TextBox tbHeaderTabMapHeight;
+        private System.Windows.Forms.Label label79;
+        private System.Windows.Forms.TextBox hexPrefixBox9;
+        private System.Windows.Forms.Label label80;
+        private System.Windows.Forms.TextBox hexPrefixBox10;
+        private System.Windows.Forms.TextBox hexNumberBoxHeaderTabBorderPointer;
+        private System.Windows.Forms.TextBox hexPrefixBox8;
+        private System.Windows.Forms.Label label88;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.Label label90;
+        private System.Windows.Forms.TextBox tbHeaderTabBorderWidth;
+        private System.Windows.Forms.TextBox tbHeaderTabBorderHeight;
+        private System.Windows.Forms.Label label91;
+        private System.Windows.Forms.TextBox hexNumberBoxHeaderTabGlobalTilesetPointer;
+        private System.Windows.Forms.Label label87;
+        private System.Windows.Forms.TextBox hexNumberBoxHeaderTabLocalTilesetPointer;
+        private System.Windows.Forms.TextBox hexNumberBoxHeaderTabMapPointer;
+        private System.Windows.Forms.Label label73;
+        private System.Windows.Forms.TreeView mapListTreeView;
+        private System.Windows.Forms.ToolStrip tsMapListTree;
+        private System.Windows.Forms.ToolStripDropDownButton tsddbMapSortOrder;
+        private System.Windows.Forms.ToolStripMenuItem mapNameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mapBankToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mapLayoutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mapTilesetToolStripMenuItem;
+        private System.Windows.Forms.ToolStripTextBox tsMapFilter;
+        private System.Windows.Forms.SplitContainer splitMapListAndPaint;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
+        private System.Windows.Forms.ToolStripMenuItem recentFilesToolStripMenuItem;
     }
 }
 

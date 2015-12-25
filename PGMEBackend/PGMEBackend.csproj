@@ -72,6 +72,11 @@
     <Compile Include="GLControls\GLMapEditor.cs" />
     <Compile Include="Graphics\FrameBuffer.cs" />
     <Compile Include="Graphics\ImageManipulator.cs" />
+    <Compile Include="InternalStrings.es.Designer.cs">
+      <DependentUpon>InternalStrings.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="InternalStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -120,6 +125,10 @@
     <None Include="AME.yaml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="InternalStrings.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>InternalStrings.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="InternalStrings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>InternalStrings.Designer.cs</LastGenOutput>

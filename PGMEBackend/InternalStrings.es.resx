@@ -298,10 +298,10 @@
     <value>File Not Found</value>
   </data>
   <data name="RestartToSaveLanguage" xml:space="preserve">
-    <value>The program will need to be restarted to apply the new language preference.</value>
+    <value>El programa tendrá que ser reiniciado para aplicar la preferencia nueva de idioma.</value>
   </data>
   <data name="RestartToSaveLanguageTitle" xml:space="preserve">
-    <value>Change Language</value>
+    <value>Cambio de Idioma</value>
   </data>
   <data name="ROMCodeNotFound" xml:space="preserve">
     <value>ROM type {0} is not recognized.</value>
@@ -356,12 +356,5 @@ Save changes before exiting?</value>
   </data>
   <data name="UnsavedChangesTitle" xml:space="preserve">
     <value>Unsaved Changes</value>
-  </data>
-  <data name="ClearList" xml:space="preserve">
-    <value>Clear List</value>
-  </data>
-  <data name="RecentFileNotFound" xml:space="preserve">
-    <value>{0} was not found.
-Remove from recent files list?</value>
   </data>
 </root>
