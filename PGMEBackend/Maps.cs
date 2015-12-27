@@ -224,7 +224,7 @@ namespace PGMEBackend
         public MapLayout(int index, int offset, GBAROM ROM)
         {
             layoutIndex = index;
-            name = "[" + layoutIndex.ToString("X4") + "]";
+            name = "[" + layoutIndex.ToString("X4") + "] " + Program.rmInternalStrings.GetString("Layout");
             if (Program.currentGame.RomType == "FRLG")
                 rawDataOrig = ROM.GetData(offset, 0x1C);
             else

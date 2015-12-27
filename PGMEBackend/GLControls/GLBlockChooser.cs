@@ -11,8 +11,8 @@ namespace PGMEBackend.GLControls
     {
         Color rectColor;
 
-        int width = 0;
-        int height = 0;
+        public int width = 0;
+        public int height = 0;
 
         public MapEditorTools tool = MapEditorTools.None;
 
@@ -80,16 +80,11 @@ namespace PGMEBackend.GLControls
             {
                 MapTileset globalTileset = Program.currentLayout.globalTileset;
                 MapTileset localTileset = Program.currentLayout.localTileset;
-                height = (int)Math.Ceiling(Program.currentGame.MainTSBlocks / 8.0d) * 16;
                 if (globalTileset != null && globalTileset.blockSet != null)
                     globalTileset.blockSet.Draw((globalTileset != null) ? globalTileset.tileSheets : null, (localTileset != null) ? localTileset.tileSheets : null, 0, 0, 1);
 
                 if (localTileset != null && localTileset.blockSet != null)
-                {
                     localTileset.blockSet.Draw((globalTileset != null) ? globalTileset.tileSheets : null, (localTileset != null) ? localTileset.tileSheets : null, 0, height, 1);
-                    height += (int)Math.Ceiling(localTileset.blockSet.blocks.Length / 8.0d) * 16;
-                }
-                Program.mainGUI.SetGLBlockChooserSize(128, height);
                     
                 int x = selectX * 16;
                 int y = selectY * 16;

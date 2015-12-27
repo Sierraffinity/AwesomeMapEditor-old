@@ -11,8 +11,8 @@ namespace PGMEBackend.GLControls
     {
         Color rectColor;
 
-        int width = 0;
-        int height = 0;
+        public int width = 0;
+        public int height = 0;
 
         public MapEditorTools tool = MapEditorTools.None;
 
@@ -95,10 +95,6 @@ namespace PGMEBackend.GLControls
             MapLayout layout = Program.currentLayout;
             if (layout != null)
             {
-                width = layout.layoutWidth * 16;
-                height = layout.layoutHeight * 16;
-
-                Program.mainGUI.SetGLMapEditorSize(width, height);
                 layout.Draw((Program.currentLayout.globalTileset != null) ? Program.currentLayout.globalTileset.tileSheets : null,
                             (Program.currentLayout.localTileset != null) ? Program.currentLayout.localTileset.tileSheets : null, 0, 0, 1);
 

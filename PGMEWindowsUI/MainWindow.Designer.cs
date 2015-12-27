@@ -565,6 +565,8 @@ namespace PGMEWindowsUI
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+            this.recentFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mapPaintPanel = new PGMEWindowsUI.GLPanel();
             this.glControlMapEditor = new OpenTK.GLControl();
             this.blockPaintPanel = new PGMEWindowsUI.GLPanel();
@@ -573,8 +575,7 @@ namespace PGMEWindowsUI
             this.glControlPermsChooser = new OpenTK.GLControl();
             this.eventPaintPanel = new PGMEWindowsUI.GLPanel();
             this.glControlEntityEditor = new OpenTK.GLControl();
-            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
-            this.recentFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.emptyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitMapListAndPaint)).BeginInit();
             this.splitMapListAndPaint.Panel1.SuspendLayout();
             this.splitMapListAndPaint.Panel2.SuspendLayout();
@@ -4764,6 +4765,18 @@ namespace PGMEWindowsUI
             this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
             resources.ApplyResources(this.toolStripStatusLabel4, "toolStripStatusLabel4");
             // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            resources.ApplyResources(this.toolStripSeparator9, "toolStripSeparator9");
+            // 
+            // recentFilesToolStripMenuItem
+            // 
+            this.recentFilesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.emptyToolStripMenuItem});
+            this.recentFilesToolStripMenuItem.Name = "recentFilesToolStripMenuItem";
+            resources.ApplyResources(this.recentFilesToolStripMenuItem, "recentFilesToolStripMenuItem");
+            // 
             // mapPaintPanel
             // 
             resources.ApplyResources(this.mapPaintPanel, "mapPaintPanel");
@@ -4846,15 +4859,10 @@ namespace PGMEWindowsUI
             this.glControlEntityEditor.Load += new System.EventHandler(this.glControlEntityEditor_Load);
             this.glControlEntityEditor.Paint += new System.Windows.Forms.PaintEventHandler(this.glControlEntityEditor_Paint);
             // 
-            // toolStripSeparator9
+            // emptyToolStripMenuItem
             // 
-            this.toolStripSeparator9.Name = "toolStripSeparator9";
-            resources.ApplyResources(this.toolStripSeparator9, "toolStripSeparator9");
-            // 
-            // recentFilesToolStripMenuItem
-            // 
-            this.recentFilesToolStripMenuItem.Name = "recentFilesToolStripMenuItem";
-            resources.ApplyResources(this.recentFilesToolStripMenuItem, "recentFilesToolStripMenuItem");
+            resources.ApplyResources(this.emptyToolStripMenuItem, "emptyToolStripMenuItem");
+            this.emptyToolStripMenuItem.Name = "emptyToolStripMenuItem";
             // 
             // MainWindow
             // 
@@ -5602,6 +5610,7 @@ namespace PGMEWindowsUI
         private System.Windows.Forms.SplitContainer splitMapListAndPaint;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
         private System.Windows.Forms.ToolStripMenuItem recentFilesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem emptyToolStripMenuItem;
     }
 }
 

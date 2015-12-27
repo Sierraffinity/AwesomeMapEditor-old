@@ -588,32 +588,59 @@ namespace PGMEWindowsUI
                     foreach (KeyValuePair<int, MapLayout> mapLayout in PGMEBackend.Program.mapLayouts)
                     {
                         TreeNode node;
-                        if (mapTreeNodes.ContainsKey(mapLayout.Value.globalTilesetPointer))
+                        if (mapTreeNodes.ContainsKey(mapLayout.Value.globalTilesetPointer) && GetNodeFromTag(mapLayout.Value, mapTreeNodes[mapLayout.Value.globalTilesetPointer]) == null)
                         {
-                            if (mapTreeNodes[mapLayout.Value.globalTilesetPointer].Nodes.Count == 0)
-                            {
-                                node = mapTreeNodes[mapLayout.Value.globalTilesetPointer].Nodes.Add("mapNode" + i++, mapLayout.Value.name);
-                                node.Tag = mapLayout.Value;
-                                mapTreeNodes.Add(mapLayout.Key, node);
-                                mapTreeNodes[mapLayout.Value.globalTilesetPointer].SelectedImageKey = "Map Folder Closed";
-                                mapTreeNodes[mapLayout.Value.globalTilesetPointer].ImageKey = "Map Folder Closed";
-                            }
+                            node = mapTreeNodes[mapLayout.Value.globalTilesetPointer].Nodes.Add("mapNode" + i++, mapLayout.Value.name);
+                            node.Tag = mapLayout.Value;
+                            //mapTreeNodes.Add(mapLayout.Key, node);
+                            mapTreeNodes[mapLayout.Value.globalTilesetPointer].SelectedImageKey = "Map Folder Closed";
+                            mapTreeNodes[mapLayout.Value.globalTilesetPointer].ImageKey = "Map Folder Closed";
                         }
-                        if (mapTreeNodes.ContainsKey(mapLayout.Value.localTilesetPointer))
+                        if (mapTreeNodes.ContainsKey(mapLayout.Value.localTilesetPointer) && GetNodeFromTag(mapLayout.Value, mapTreeNodes[mapLayout.Value.localTilesetPointer]) == null)
                         {
-                            if (mapTreeNodes[mapLayout.Value.localTilesetPointer].Nodes.Count == 0)
-                            {
-                                node = mapTreeNodes[mapLayout.Value.localTilesetPointer].Nodes.Add("mapNode" + i++, mapLayout.Value.name);
-                                node.Tag = mapLayout.Value;
-                                mapTreeNodes.Add(mapLayout.Key, node);
-                                mapTreeNodes[mapLayout.Value.localTilesetPointer].SelectedImageKey = "Map Folder Closed";
-                                mapTreeNodes[mapLayout.Value.localTilesetPointer].ImageKey = "Map Folder Closed";
-                            }
+                            node = mapTreeNodes[mapLayout.Value.localTilesetPointer].Nodes.Add("mapNode" + i++, mapLayout.Value.name);
+                            node.Tag = mapLayout.Value;
+                            //mapTreeNodes.Add(mapLayout.Key, node);
+                            mapTreeNodes[mapLayout.Value.localTilesetPointer].SelectedImageKey = "Map Folder Closed";
+                            mapTreeNodes[mapLayout.Value.localTilesetPointer].ImageKey = "Map Folder Closed";
                         }
                     }
                     break;
             }
             CopyTreeNodes(backupTree, mapListTreeView);
+            if (PGMEBackend.Program.currentLayout != null)
+            {
+                TreeNode itemNode = null;
+                object tag = null;
+                if (PGMEBackend.Program.currentMap != null)
+                    tag = PGMEBackend.Program.currentMap;
+                else
+                    tag = PGMEBackend.Program.currentLayout;
+                foreach (TreeNode node in mapListTreeView.Nodes)
+                {
+                    itemNode = GetNodeFromTag(tag, node);
+                    if (itemNode != null)
+                    {
+                        itemNode.EnsureVisible();
+                        itemNode.ImageKey = "Map Selected";
+                        currentTreeNode = itemNode;
+                        break;
+                    }
+                }
+            }
+        }
+
+        public TreeNode GetNodeFromTag(object tag, TreeNode rootNode)
+        {
+            if (rootNode.Tag != null && rootNode.Tag.Equals(tag))
+                return rootNode;
+            foreach (TreeNode node in rootNode.Nodes)
+            {
+                TreeNode next = GetNodeFromTag(tag, node);
+                if (next != null)
+                    return next;
+            }
+            return null;
         }
 
         public void CopyTreeNodes(TreeView treeview1, TreeView treeview2)
@@ -778,6 +805,18 @@ namespace PGMEWindowsUI
             if (mapLayout.localTileset != null)
                 mapLayout.localTileset.Initialize();
 
+            PGMEBackend.Program.glMapEditor.width = PGMEBackend.Program.currentLayout.layoutWidth * 16;
+            PGMEBackend.Program.glMapEditor.height = PGMEBackend.Program.currentLayout.layoutHeight * 16;
+            SetGLMapEditorSize(PGMEBackend.Program.glMapEditor.width, PGMEBackend.Program.glMapEditor.height);
+
+            int blockChooserHeight = (int)Math.Ceiling(PGMEBackend.Program.currentGame.MainTSBlocks / 8.0d) * 16;
+            if (PGMEBackend.Program.currentLayout.localTileset != null && PGMEBackend.Program.currentLayout.localTileset.blockSet != null)
+                blockChooserHeight += (int)Math.Ceiling(PGMEBackend.Program.currentLayout.localTileset.blockSet.blocks.Length / 8.0d) * 16;
+            PGMEBackend.Program.glBlockChooser.height = blockChooserHeight;
+            SetGLBlockChooserSize(PGMEBackend.Program.glBlockChooser.width, PGMEBackend.Program.glBlockChooser.height);
+
+            SetGLBorderBlocksSize(mapLayout.borderWidth * 16, mapLayout.borderHeight * 16);
+            
             RefreshMapEditorControl();
             RefreshBlockEditorControl();
             RefreshBorderBlocksControl();

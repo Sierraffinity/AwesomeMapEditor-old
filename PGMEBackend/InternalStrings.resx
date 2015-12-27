@@ -360,6 +360,9 @@ Save changes before exiting?</value>
   <data name="ClearList" xml:space="preserve">
     <value>Clear List</value>
   </data>
+  <data name="Layout" xml:space="preserve">
+    <value>Map Layout</value>
+  </data>
   <data name="RecentFileNotFound" xml:space="preserve">
     <value>{0} was not found.
 Remove from recent files list?</value>

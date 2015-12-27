@@ -656,6 +656,15 @@ namespace PGMEBackend {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Map Layout.
+        /// </summary>
+        internal static string Layout {
+            get {
+                return ResourceManager.GetString("Layout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to local.
         /// </summary>
         internal static string LocalTileset {

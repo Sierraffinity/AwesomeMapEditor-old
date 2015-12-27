@@ -73,8 +73,7 @@ namespace PGMEBackend.GLControls
             {
                 width = layout.borderWidth * 16;
                 height = layout.borderHeight * 16;
-
-                Program.mainGUI.SetGLBorderBlocksSize(width, height);
+                
                 layout.DrawBorder((Program.currentLayout.globalTileset != null) ? Program.currentLayout.globalTileset.tileSheets : null,
                             (Program.currentLayout.localTileset != null) ? Program.currentLayout.localTileset.tileSheets : null, 0, 0, 1);
                 /*
