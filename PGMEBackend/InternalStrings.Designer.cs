@@ -638,6 +638,24 @@ namespace PGMEBackend {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to delete this entity?.
+        /// </summary>
+        internal static string DeleteEntity {
+            get {
+                return ResourceManager.GetString("DeleteEntity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        internal static string DeleteEntityTitle {
+            get {
+                return ResourceManager.GetString("DeleteEntityTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to File Not Found.
         /// </summary>
         internal static string FileNotFoundTitle {
@@ -683,8 +701,44 @@ namespace PGMEBackend {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} was not found.
-        ///Remove from recent files list?.
+        ///   Looks up a localized string similar to Multiple entities selected..
+        /// </summary>
+        internal static string MultipleEntitiesSelected {
+            get {
+                return ResourceManager.GetString("MultipleEntitiesSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There are no entities of this type available on this map..
+        /// </summary>
+        internal static string NoEntitiesOfThisType {
+            get {
+                return ResourceManager.GetString("NoEntitiesOfThisType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have not yet chosen a script editor.
+        ///Would you like to go to the Settings dialog and choose an editor?.
+        /// </summary>
+        internal static string NoScriptEditorSpecified {
+            get {
+                return ResourceManager.GetString("NoScriptEditorSpecified", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No Script Editor Chosen.
+        /// </summary>
+        internal static string NoScriptEditorSpecifiedTitle {
+            get {
+                return ResourceManager.GetString("NoScriptEditorSpecifiedTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The file &apos;{0}&apos; cannot be opened. Do you want to remove the reference to it from the Recent Files list?.
         /// </summary>
         internal static string RecentFileNotFound {
             get {

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using PGMEBackend.Entities;
 
 namespace PGMEBackend.GLControls
 {
@@ -14,18 +15,21 @@ namespace PGMEBackend.GLControls
         int width = 0;
         int height = 0;
 
-        public MapEditorTools tool = MapEditorTools.None;
+        public EntityEditorTools tool = EntityEditorTools.None;
 
         public int mouseX = -1;
         public int mouseY = -1;
         public int endMouseX = -1;
         public int endMouseY = -1;
-        public int selectWidth = 1;
-        public int selectHeight = 1;
 
         public Color rectDefaultColor = Color.FromArgb(0, 255, 0);
         public Color rectPaintColor = Color.FromArgb(255, 0, 0);
         public Color rectSelectColor = Color.FromArgb(255, 255, 0);
+        public Color npcBoundsColor = Color.Magenta;
+
+        public Spritesheet entityTypes;
+
+        public List<Entity> currentEntity;
 
         public GLEntityEditor(int w, int h)
         {
@@ -34,6 +38,7 @@ namespace PGMEBackend.GLControls
             GL.ClearColor(Color.Transparent);
             SetupViewport();
             rectColor = rectDefaultColor;
+            entityTypes = Spritesheet.Load(Properties.Resources.Entities_16x16, 16, 16);
         }
 
         public static implicit operator bool (GLEntityEditor b)
@@ -94,8 +99,8 @@ namespace PGMEBackend.GLControls
             MapLayout layout = Program.currentLayout;
             if (layout != null)
             {
-                layout.Draw((Program.currentLayout.globalTileset != null) ? Program.currentLayout.globalTileset.tileSheets : null,
-                            (Program.currentLayout.localTileset != null) ? Program.currentLayout.localTileset.tileSheets : null, 0, 0, 1);
+                layout.Draw((layout.globalTileset != null) ? layout.globalTileset.tileSheets : null,
+                            (layout.localTileset != null) ? layout.localTileset.tileSheets : null, 0, 0, 1);
                 Program.mainGUI.SetGLEntityEditorSize(layout.layoutWidth * 16, layout.layoutHeight * 16);
 
                 width = layout.layoutWidth * 16;
@@ -110,18 +115,47 @@ namespace PGMEBackend.GLControls
                         Surface.DrawLine(new double[] { 0, i * 16, width, i * 16 });
                 }
 
-                if (mouseX != -1 && mouseY != -1)
+                if (Program.currentMap != null)
+                {
+                    foreach (NPC npc in Program.currentMap.NPCs)
+                    {
+                        entityTypes.Draw(0, npc.xPos * 16, npc.yPos * 16, 1, 192);
+                    }
+
+                    foreach (Warp warp in Program.currentMap.Warps)
+                    {
+                        entityTypes.Draw(1, warp.xPos * 16, warp.yPos * 16, 1, 192);
+                    }
+
+                    foreach (Trigger trigger in Program.currentMap.Triggers)
+                    {
+                        entityTypes.Draw(2, trigger.xPos * 16, trigger.yPos * 16, 1, 192);
+                    }
+
+                    foreach (Sign sign in Program.currentMap.Signs)
+                    {
+                        entityTypes.Draw(3, sign.xPos * 16, sign.yPos * 16, 1, 192);
+                    }
+                }
+
+                if (currentEntity.Count == 1 && currentEntity[0] is NPC)
+                    Surface.DrawOutlineRect((currentEntity[0].xPos - (currentEntity[0] as NPC).xBounds) * 16, (currentEntity[0].yPos - (currentEntity[0] as NPC).yBounds) * 16, (currentEntity[0] as NPC).xBounds * 32 + 16, (currentEntity[0] as NPC).yBounds * 32 + 16, npcBoundsColor);
+
+                foreach (Entity ent in currentEntity)
+                    Surface.DrawOutlineRect(ent.xPos * 16, ent.yPos * 16, 16, 16, rectPaintColor);
+                
+                if (tool == EntityEditorTools.RectSelect || (mouseX >= 0 && mouseY >= 0 && mouseX < layout.layoutWidth && mouseY < layout.layoutHeight))
                 {
                     int x = mouseX * 16;
                     int y = mouseY * 16;
                     int endX = endMouseX * 16;
                     int endY = endMouseY * 16;
-
+                    
                     if (endMouseX >= width / 16)
                         endX = ((width - 1) / 16) * 16;
                     if (endMouseY >= height / 16)
                         endY = ((height - 1) / 16) * 16;
-
+                    
                     int w = x - endX;
                     int h = y - endY;
                     
@@ -129,7 +163,9 @@ namespace PGMEBackend.GLControls
                 }
             }
         }
-        
+
+        bool mouseMoved = false;
+
         public void MouseMove(int x, int y)
         {
             int oldMouseX = mouseX;
@@ -137,30 +173,83 @@ namespace PGMEBackend.GLControls
 
             mouseX = x / 16;
             mouseY = y / 16;
-
+            /*
             if (mouseX >= width / 16)
                 mouseX = (width - 1) / 16;
             if (mouseY >= height / 16)
                 mouseY = (height - 1) / 16;
+            */
+            if (x < 0)
+                mouseX--;
+            if (y < 0)
+                mouseY--;
+            
+            if (mouseX == oldMouseX && mouseY == oldMouseY)
+                return;
 
-            if (mouseX < 0)
-                mouseX = 0;
-            if (mouseY < 0)
-                mouseY = 0;
-
-            if (tool == MapEditorTools.Pencil && (mouseX != oldMouseX || mouseY != oldMouseY))
+            if ((tool == EntityEditorTools.Move || tool == EntityEditorTools.MultiSelect) && clickedOnEntity && currentEntity.Count != 0)
             {
-                PaintBlocksToMap(Program.glBlockChooser.selectArray, mouseX, mouseY, selectWidth, selectHeight);
-                //Paint();
-            }
+                foreach (Entity ent in currentEntity)
+                {
+                    ent.xPos += (short)(mouseX - oldMouseX);
+                    ent.yPos += (short)(mouseY - oldMouseY);
+                    Program.isEdited = true;
+                }
 
-            if (tool != MapEditorTools.Eyedropper)
-            {
-                selectWidth = Math.Abs(selectWidth);
-                selectHeight = Math.Abs(selectHeight);
-                endMouseX = mouseX + selectWidth - 1;
-                endMouseY = mouseY + selectHeight - 1;
+                if (currentEntity.Count == 1)
+                    Program.mainGUI.LoadEntityView(currentEntity[0]);
+                else if (currentEntity.Count > 1)
+                    Program.mainGUI.MultipleEntitiesSelected();
+
+                mouseMoved = true;
             }
+            else if (tool == EntityEditorTools.MultiSelect && !clickedOnEntity)
+                rectColor = rectDefaultColor;
+
+            if (tool == EntityEditorTools.RectSelect)
+            {
+                List<Entity> newSelection = new List<Entity>();
+                foreach (NPC npc in Program.currentMap.NPCs)
+                {
+                    if(IsEntityWithinBounds(npc, mouseX, mouseY, endMouseX, endMouseY))
+                        newSelection.Add(npc);
+                }
+                foreach (Warp warp in Program.currentMap.Warps)
+                {
+                    if (IsEntityWithinBounds(warp, mouseX, mouseY, endMouseX, endMouseY))
+                        newSelection.Add(warp);
+                }
+                foreach (Trigger trigger in Program.currentMap.Triggers)
+                {
+                    if (IsEntityWithinBounds(trigger, mouseX, mouseY, endMouseX, endMouseY))
+                        newSelection.Add(trigger);
+                }
+                foreach (Sign sign in Program.currentMap.Signs)
+                {
+                    if (IsEntityWithinBounds(sign, mouseX, mouseY, endMouseX, endMouseY))
+                        newSelection.Add(sign);
+                }
+
+                if (newSelection.Count > 0)
+                    currentEntity = newSelection;
+
+                if (currentEntity.Count == 1)
+                    Program.mainGUI.LoadEntityView(GetEntityType(currentEntity[0]), GetEntityNum(currentEntity[0]));
+                else if (currentEntity.Count > 1)
+                    Program.mainGUI.MultipleEntitiesSelected();
+            }
+            else
+            {
+                endMouseX = mouseX;
+                endMouseY = mouseY;
+            }
+        }
+
+        public bool IsEntityWithinBounds(Entity entity, int x1, int y1, int x2, int y2)
+        {
+            if (entity.xPos >= (mouseX < endMouseX ? mouseX : endMouseX) && entity.yPos >= (mouseY < endMouseY ? mouseY : endMouseY) && entity.xPos <= (mouseX > endMouseX ? mouseX : endMouseX) && entity.yPos <= (mouseY > endMouseY ? mouseY : endMouseY))
+                return true;
+            return false;
         }
 
         public void MouseLeave()
@@ -170,140 +259,73 @@ namespace PGMEBackend.GLControls
             endMouseX = -1;
             endMouseY = -1;
         }
-
-        [Obsolete("Now handled by undo code")]
-        void Paint()
+        
+        public Entity GetTopEntityFromPos(int x, int y)
         {
-            // insert painting code
-            for (int j = mouseY; j <= mouseY + selectHeight; j++)
+            foreach (Sign sign in Program.currentMap.Signs)
             {
-                for (int i = mouseX; i <= mouseX + selectWidth; i++)
-                {
-                    foreach (var v in Program.currentLayout.drawTiles)
-                    {
-                        if (v.Redraw)
-                            continue;
-                        if (i < v.xpos + v.Width && i >= v.xpos && j >= v.ypos && j < v.ypos + v.Height)
-                        {
-                            v.Redraw = true;
-                            Console.WriteLine("Redrawing " + v.buffer.FBOHandle);
-                            continue;
-                        }
-                    }
-                }
+                if (sign.xPos == mouseX && sign.yPos == mouseY)
+                    return sign;
             }
+            foreach (Trigger trigger in Program.currentMap.Triggers)
+            {
+                if (trigger.xPos == mouseX && trigger.yPos == mouseY)
+                    return trigger;
+            }
+            foreach (Warp warp in Program.currentMap.Warps)
+            {
+                if (warp.xPos == mouseX && warp.yPos == mouseY)
+                    return warp;
+            }
+            foreach (NPC npc in Program.currentMap.NPCs)
+            {
+                if (npc.xPos == mouseX && npc.yPos == mouseY)
+                    return npc;
+            }
+            return null;
         }
 
-        short[] oldLayout;
+        bool clickedOnEntity = false;
 
-        public void PaintBlocksToMap(short[] blockArray, int x, int y, int w, int h)
+        public void MouseDown(EntityEditorTools Tool)
         {
-            bool found = false;
-            for (int i = 0; i < h; i++)
-            {
-                for (int j = 0; j < w; j++)
-                {
-                    if ((x + j < Program.currentLayout.layoutWidth) && (y + i < Program.currentLayout.layoutHeight))
-                    {
-                        if (Program.currentLayout.layout[(x + (y * Program.currentLayout.layoutWidth)) + (i * Program.currentLayout.layoutWidth) + j] != blockArray[(i * w) + j])
-                            found = true;
-                    }
-                    if (found)
-                        break;
-                }
-                if (found)
-                    break;
-            }
-            if (found)
-            {
-                Console.WriteLine("Painting of " + w * h + " blocks...");
-                for (int i = 0; i < h; i++)
-                {
-                    for (int j = 0; j < w; j++)
-                    {
-                        if ((x + j < Program.currentLayout.layoutWidth) && (y + i < Program.currentLayout.layoutHeight))
-                        {
-                            Console.WriteLine("Drawing at (" + (x + j) + ", " + (y + i) + "): " + blockArray[i * w + j]);
-                            Program.currentLayout.layout[(x + (y * Program.currentLayout.layoutWidth)) + (i * Program.currentLayout.layoutWidth) + j] = blockArray[(i * w) + j];
-                        }
-                    }
-                }
-
-                for (int j = y; j <= y + h; j++)
-                {
-                    for (int i = x; i <= x + w; i++)
-                    {
-                        foreach (var v in Program.currentLayout.drawTiles)
-                        {
-                            if (v.Redraw)
-                                continue;
-                            if (i < v.xpos + v.Width && i >= v.xpos && j >= v.ypos && j < v.ypos + v.Height)
-                            {
-                                v.Redraw = true;
-                                Console.WriteLine("Redrawing " + v.buffer.FBOHandle);
-                                continue;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        public void MouseDown(MapEditorTools Tool)
-        {
-            if (tool == MapEditorTools.None)
+            if (tool == EntityEditorTools.None && Program.currentMap != null)
             {
                 tool = Tool;
-                if (tool == MapEditorTools.Pencil)
+                if (tool == EntityEditorTools.Move)
                 {
-                    rectColor = rectPaintColor;
-                    oldLayout = new short[Program.currentLayout.layoutWidth * Program.currentLayout.layoutHeight];
-                    Buffer.BlockCopy(Program.currentLayout.layout, 0, oldLayout, 0, Program.currentLayout.layout.Length);
-                    PaintBlocksToMap(Program.glBlockChooser.selectArray, mouseX, mouseY, selectWidth, selectHeight);
-                    //Paint();
+                    Entity mouseOn = GetTopEntityFromPos(mouseX, mouseY);
+                    if (mouseOn != null)
+                    {
+                        clickedOnEntity = true;
+                        rectColor = rectSelectColor;
+                        if (currentEntity.Count <= 1 || (currentEntity.Count > 1 && !currentEntity.Contains(mouseOn)))
+                        {
+                            currentEntity = new List<Entity> { mouseOn };
+                            Program.mainGUI.LoadEntityView(GetEntityType(mouseOn), GetEntityNum(mouseOn));
+                        }
+                    }
                 }
-                else if (tool == MapEditorTools.Eyedropper)
+                else if (tool == EntityEditorTools.RectSelect)
                 {
-                    selectWidth = 1;
-                    selectHeight = 1;
                     endMouseX = mouseX;
                     endMouseY = mouseY;
                     rectColor = rectSelectColor;
                 }
-                else if (tool == MapEditorTools.Fill)
+                else if (tool == EntityEditorTools.MultiSelect)
                 {
-                    if (Program.glBlockChooser.selectArray.Length == 1)
+                    Entity mouseOn = GetTopEntityFromPos(mouseX, mouseY);
+                    if (mouseOn != null)
                     {
-                        short originalBlock = (short)(Program.currentLayout.layout[(mouseX + (mouseY * Program.currentLayout.layoutWidth))] & 0x3FF);
-                        short newBlock = (short)(Program.glBlockChooser.selectArray[0] & 0x3FF);
-                        rectColor = rectPaintColor;
-                        if (originalBlock != newBlock)
+                        rectColor = rectSelectColor;
+                        if (!currentEntity.Remove(mouseOn))
                         {
-                            oldLayout = new short[Program.currentLayout.layoutWidth * Program.currentLayout.layoutHeight];
-                            Buffer.BlockCopy(Program.currentLayout.layout, 0, oldLayout, 0, Program.currentLayout.layout.Length);
-                            FillBlocks(mouseX, mouseY, originalBlock, newBlock);
-                            StoreChangesToUndoBufferAndRedraw();
+                            clickedOnEntity = true;
+                            currentEntity.Add(mouseOn);
                         }
-                    }
-                }
-                else if (tool == MapEditorTools.FillAll)
-                {
-                    if (Program.glBlockChooser.selectArray.Length == 1)
-                    {
-                        short originalBlock = (short)(Program.currentLayout.layout[(mouseX + (mouseY * Program.currentLayout.layoutWidth))] & 0x3FF);
-                        short newBlock = (short)(Program.glBlockChooser.selectArray[0] & 0x3FF);
-                        if (originalBlock != newBlock)
-                        {
-                            rectColor = rectPaintColor;
-                            oldLayout = new short[Program.currentLayout.layoutWidth * Program.currentLayout.layoutHeight];
-                            Buffer.BlockCopy(Program.currentLayout.layout, 0, oldLayout, 0, Program.currentLayout.layout.Length);
-                            for (int i = 0; i < Program.currentLayout.layout.Length; i++)
-                            {
-                                if ((short)(Program.currentLayout.layout[i] & 0x3FF) == originalBlock)
-                                    Program.currentLayout.layout[i] = (short)(newBlock + (Program.currentLayout.layout[i] & 0xFC00));
-                            }
-                            StoreChangesToUndoBufferAndRedraw();
-                        }
+
+                        if (currentEntity.Count == 1)
+                            Program.mainGUI.LoadEntityView(GetEntityType(currentEntity[0]), GetEntityNum(currentEntity[0]));
                     }
                 }
                 else
@@ -311,171 +333,115 @@ namespace PGMEBackend.GLControls
             }
         }
 
-        public void FillBlocks(int x, int y, short originalBlock, short newBlock)
+        public static int GetEntityType(Entity entity)
         {
-            if (x >= 0 && x < Program.currentLayout.layoutWidth &&
-                y >= 0 && y < Program.currentLayout.layoutHeight &&
-                (short)(Program.currentLayout.layout[x + (y * Program.currentLayout.layoutWidth)] & 0x3FF) == originalBlock)
-            {
-                Program.currentLayout.layout[x + (y * Program.currentLayout.layoutWidth)] = (short)(newBlock + (Program.currentLayout.layout[x + (y * Program.currentLayout.layoutWidth)] & 0xFC00));
-                FillBlocks(x, y + 1, originalBlock, newBlock);
-                FillBlocks(x, y - 1, originalBlock, newBlock);
-                FillBlocks(x - 1, y, originalBlock, newBlock);
-                FillBlocks(x + 1, y, originalBlock, newBlock);
-            }
+            if (entity is NPC)
+                return 0;
+            else if (entity is Warp)
+                return 1;
+            else if (entity is Trigger)
+                return 2;
+            else if (entity is Sign)
+                return 3;
+            return -1;
         }
-
-        public void StoreChangesToUndoBufferAndRedraw()
+        
+        public static int GetEntityNum(Entity entity)
         {
-            int x = int.MaxValue;
-            int y = int.MaxValue;
-            int w = -1;
-            int h = -1;
-
-            for (int i = 0; i < oldLayout.Length; i++)
+            if (entity is NPC)
             {
-                if (oldLayout[i] != Program.currentLayout.layout[i])
+                int i = 0;
+                foreach(NPC npc in Program.currentMap.NPCs)
                 {
-                    if (i % Program.currentLayout.layoutWidth < x)
-                        x = i % Program.currentLayout.layoutWidth;
-                    if (i / Program.currentLayout.layoutWidth < y)
-                        y = i / Program.currentLayout.layoutWidth;
+                    if (npc == entity)
+                        return i;
+                    i++;
                 }
             }
-
-            if (x < int.MaxValue && y < int.MaxValue)
+            else if (entity is Warp)
             {
-                for (int i = oldLayout.Length - 1; i >= 0; i--)
+                int i = 0;
+                foreach (Warp warp in Program.currentMap.Warps)
                 {
-                    if (oldLayout[i] != Program.currentLayout.layout[i])
-                    {
-                        if (i % Program.currentLayout.layoutWidth - x + 1 > w)
-                            w = i % Program.currentLayout.layoutWidth - x + 1;
-                        if (i / Program.currentLayout.layoutWidth - y + 1 > h)
-                            h = i / Program.currentLayout.layoutWidth - y + 1;
-                    }
-                }
-
-                if (w > 0 && h > 0)
-                {
-                    short[] oldData = new short[w * h];
-                    short[] newData = new short[w * h];
-                    for (int k = 0; k < h; k++)
-                    {
-                        for (int l = 0; l < w; l++)
-                        {
-                            if ((x + l < Program.currentLayout.layoutWidth) && (y + k < Program.currentLayout.layoutHeight))
-                            {
-                                oldData[(k * w) + l] = oldLayout[(x + (y * Program.currentLayout.layoutWidth)) + (k * Program.currentLayout.layoutWidth) + l];
-                                newData[(k * w) + l] = Program.currentLayout.layout[(x + (y * Program.currentLayout.layoutWidth)) + (k * Program.currentLayout.layoutWidth) + l];
-                            }
-                        }
-                    }
-
-                    for (int j = y; j <= y + h; j++)
-                    {
-                        for (int i = x; i <= x + w; i++)
-                        {
-                            foreach (var v in Program.currentLayout.drawTiles)
-                            {
-                                if (v.Redraw)
-                                    continue;
-                                if (i < v.xpos + v.Width && i >= v.xpos && j >= v.ypos && j < v.ypos + v.Height)
-                                {
-                                    v.Redraw = true;
-                                    Console.WriteLine("Redrawing " + v.buffer.FBOHandle);
-                                    continue;
-                                }
-                            }
-                        }
-                    }
-
-                    UndoManager.Add(new Undo.PaintUndo(oldData, newData, x, y, w, h), false);
+                    if (warp == entity)
+                        return i;
+                    i++;
                 }
             }
+            else if (entity is Trigger)
+            {
+                int i = 0;
+                foreach (Trigger trigger in Program.currentMap.Triggers)
+                {
+                    if (trigger == entity)
+                        return i;
+                    i++;
+                }
+            }
+            else if (entity is Sign)
+            {
+                int i = 0;
+                foreach (Sign sign in Program.currentMap.Signs)
+                {
+                    if (sign == entity)
+                        return i;
+                    i++;
+                }
+            }
+            return -1;
         }
-
-        public void MouseUp(MapEditorTools Tool)
+        
+        public void MouseUp(EntityEditorTools Tool)
         {
             if (tool == Tool)
             {
-                if (tool == MapEditorTools.Eyedropper)
+                if (tool == EntityEditorTools.Move && !mouseMoved)
                 {
-                    selectWidth = Math.Abs(mouseX - endMouseX) + 1;
-                    selectHeight = Math.Abs(mouseY - endMouseY) + 1;
-
-                    Program.glBlockChooser.selectArray = new short[selectWidth * selectHeight];
-
-                    for (int i = 0; i < selectHeight; i++)
-                        for (int j = 0; j < selectWidth; j++)
-                            Program.glBlockChooser.selectArray[(i * selectWidth) + j] = Program.currentLayout.layout[(((mouseX > endMouseX) ? endMouseX : mouseX) + (((mouseY > endMouseY) ? endMouseY : mouseY) * Program.currentLayout.layoutWidth)) + (i * Program.currentLayout.layoutWidth) + j];
-
-                    /*
-                    foreach (var item in selectArray)
+                    Entity mouseOn = GetTopEntityFromPos(mouseX, mouseY);
+                    if (mouseOn != null)
                     {
-                        Console.WriteLine(item.ToString("X4"));
-                    }*/
-
-                    if (selectWidth == 1 && selectHeight == 1)
-                        Program.glBlockChooser.SelectBlock(Program.glBlockChooser.selectArray[0] & 0x3FF);
-
-                    else if (selectWidth > 1 || selectHeight > 1)
-                        Program.glBlockChooser.SelectBlock(-1);
-                }
-                else if (tool == MapEditorTools.Pencil)
-                {
-                    int x = int.MaxValue;
-                    int y = int.MaxValue;
-                    int w = -1;
-                    int h = -1;
-
-                    for (int i = 0; i < oldLayout.Length; i++)
-                    {
-                        if (oldLayout[i] != Program.currentLayout.layout[i])
-                        {
-                            if (i % Program.currentLayout.layoutWidth < x)
-                                x = i % Program.currentLayout.layoutWidth;
-                            if (i / Program.currentLayout.layoutWidth < y)
-                                y = i / Program.currentLayout.layoutWidth;
-                        }
-                    }
-
-                    if (x < int.MaxValue && y < int.MaxValue)
-                    {
-                        for (int i = oldLayout.Length - 1; i >= 0; i--)
-                        {
-                            if (oldLayout[i] != Program.currentLayout.layout[i])
-                            {
-                                if (i % Program.currentLayout.layoutWidth - x + 1 > w)
-                                    w = i % Program.currentLayout.layoutWidth - x + 1;
-                                if (i / Program.currentLayout.layoutWidth - y + 1 > h)
-                                    h = i / Program.currentLayout.layoutWidth - y + 1;
-                            }
-                        }
-
-                        if (w > 0 && h > 0)
-                        {
-                            short[] oldData = new short[w * h];
-                            short[] newData = new short[w * h];
-                            for (int k = 0; k < h; k++)
-                            {
-                                for (int l = 0; l < w; l++)
-                                {
-                                    if ((x + l < Program.currentLayout.layoutWidth) && (y + k < Program.currentLayout.layoutHeight))
-                                    {
-                                        oldData[(k * w) + l] = oldLayout[(x + (y * Program.currentLayout.layoutWidth)) + (k * Program.currentLayout.layoutWidth) + l];
-                                        newData[(k * w) + l] = Program.currentLayout.layout[(x + (y * Program.currentLayout.layoutWidth)) + (k * Program.currentLayout.layoutWidth) + l];
-                                    }
-                                }
-                            }
-                            UndoManager.Add(new Undo.PaintUndo(oldData, newData, x, y, w, h), false);
-                        }
+                        currentEntity = new List<Entity> { mouseOn };
+                        Program.mainGUI.LoadEntityView(GetEntityType(mouseOn), GetEntityNum(mouseOn));
                     }
                 }
+                else if (tool == EntityEditorTools.RectSelect)
+                {
+                    endMouseX = mouseX;
+                    endMouseY = mouseY;
+                }
 
-                tool = MapEditorTools.None;
+                tool = EntityEditorTools.None;
                 rectColor = rectDefaultColor;
+                mouseMoved = false;
+                clickedOnEntity = false;
             }
         }
+
+        public void MouseDoubleClick()
+        {
+            Entity entity = GetTopEntityFromPos(mouseX, mouseY);
+            if (entity != null)
+            {
+                if (entity is Warp)
+                {
+                    /*Program.mainGUI.LoadEntityView(1, (entity as Warp).destWarpNumber);
+                    Warp.currentWarp = (entity as Warp).destWarpNumber;
+                    Program.LoadMap((entity as Warp).destMapBank, (entity as Warp).destMapNum);*/
+                    Program.mainGUI.FollowWarp(entity as Warp);
+                }
+                else
+                {
+                    Program.mainGUI.LaunchScriptEditor(entity.scriptOffset);
+                }
+            }
+        }
+    }
+
+    public enum EntityEditorTools
+    {
+        None,
+        Move,
+        RectSelect,
+        MultiSelect
     }
 }

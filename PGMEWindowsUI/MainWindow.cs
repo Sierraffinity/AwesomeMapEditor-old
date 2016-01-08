@@ -37,11 +37,18 @@ using OpenTK.Graphics;
 using OpenTK.Graphics.OpenGL;
 using System.Drawing.Imaging;
 using System.IO;
+using PGMEBackend.Entities;
+using PGMEBackend.GLControls;
 
 namespace PGMEWindowsUI
 {
     public partial class MainWindow : Form, UIInteractionLayer
     {
+        bool editorTabLoaded = false;
+        bool entityTabLoaded = false;
+        bool wildTabLoaded = false;
+        bool headerTabLoaded = false;
+
         static ImageList _imageListMapTree;
         public static ImageList imageListMapTree
         {
@@ -293,33 +300,87 @@ namespace PGMEWindowsUI
         {
 
         }
-
+        
         private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
         {
             HideEventEditors();
-            switch (cboEventTypes.SelectedIndex)
+            PGMEBackend.Program.currentEntityType = cboEventTypes.SelectedIndex;
+
+            switch (PGMEBackend.Program.currentEntityType)
             {
                 default:
                     panelSpriteEvent.Visible = true;
+                    nudEntityNum.Enabled = true;
+                    if(PGMEBackend.Program.currentMap != null && PGMEBackend.Program.currentMap.NPCs != null)
+                        SetEntityNumValues(NPC.currentNPC, PGMEBackend.Program.currentMap.NPCs.Length - 1);
+                    LoadNPCView(PGMEBackend.Program.currentMap, (int)nudEntityNum.Value);
                     break;
                 case 1:
                     panelWarpEvent.Visible = true;
+                    nudEntityNum.Enabled = true;
+                    if (PGMEBackend.Program.currentMap != null && PGMEBackend.Program.currentMap.Warps != null)
+                        SetEntityNumValues(Warp.currentWarp, PGMEBackend.Program.currentMap.Warps.Length - 1);
+                    LoadWarpView(PGMEBackend.Program.currentMap, (int)nudEntityNum.Value);
                     break;
                 case 2:
                     panelScriptEvent.Visible = true;
+                    nudEntityNum.Enabled = true;
+                    if (PGMEBackend.Program.currentMap != null && PGMEBackend.Program.currentMap.Triggers != null)
+                        SetEntityNumValues(Trigger.currentTrigger, PGMEBackend.Program.currentMap.Triggers.Length - 1);
+                    LoadTriggerView(PGMEBackend.Program.currentMap, (int)nudEntityNum.Value);
                     break;
                 case 3:
                     panelSignEvent.Visible = true;
+                    nudEntityNum.Enabled = true;
+                    if (PGMEBackend.Program.currentMap != null && PGMEBackend.Program.currentMap.Signs != null)
+                        SetEntityNumValues(Sign.currentSign, PGMEBackend.Program.currentMap.Signs.Length - 1);
+                    LoadSignView(PGMEBackend.Program.currentMap, (int)nudEntityNum.Value);
                     break;
             }
         }
 
-        private void HideEventEditors()
+        private void nudEntityNum_ValueChanged(object sender, EventArgs e)
         {
-            panelSpriteEvent.Visible = false;
-            panelWarpEvent.Visible = false;
-            panelScriptEvent.Visible = false;
-            panelSignEvent.Visible = false;
+            switch (PGMEBackend.Program.currentEntityType)
+            {
+                default:
+                    NPC.currentNPC = (int)nudEntityNum.Value;
+                    LoadNPCView(PGMEBackend.Program.currentMap, NPC.currentNPC);
+                    break;
+                case 1:
+                    Warp.currentWarp = (int)nudEntityNum.Value;
+                    LoadWarpView(PGMEBackend.Program.currentMap, Warp.currentWarp);
+                    break;
+                case 2:
+                    Trigger.currentTrigger = (int)nudEntityNum.Value;
+                    LoadTriggerView(PGMEBackend.Program.currentMap, Trigger.currentTrigger);
+                    break;
+                case 3:
+                    Sign.currentSign = (int)nudEntityNum.Value;
+                    LoadSignView(PGMEBackend.Program.currentMap, Sign.currentSign);
+                    break;
+            }
+        }
+
+        void SetEntityNumValues(int value, int max)
+        {
+            if (PGMEBackend.Program.currentMap != null)
+            {
+                if (max >= 0)
+                    nudEntityNum.Maximum = max;
+                else
+                    nudEntityNum.Maximum = 0;
+
+                if (value <= nudEntityNum.Maximum)
+                    nudEntityNum.Value = value;
+                else
+                    nudEntityNum.Value = nudEntityNum.Maximum;
+            }
+            else
+            {
+                nudEntityNum.Value = 0;
+                nudEntityNum.Maximum = 0;
+            }
         }
 
         public void EnableControlsOnROMLoad()
@@ -374,6 +435,11 @@ namespace PGMEWindowsUI
                 tsbMapEditorMouse.Checked = true;
                 showGridToolStripMenuItem.Enabled = true;
             }
+
+            editorTabLoaded = false;
+            entityTabLoaded = false;
+            wildTabLoaded = false;
+            headerTabLoaded = false;
         }
 
         private void mapNameToolStripMenuItem_Click(object sender, EventArgs e)
@@ -785,33 +851,49 @@ namespace PGMEWindowsUI
                 node.ImageKey = "Map Selected";
                 node.SelectedImageKey = "Map Selected";
                 currentTreeNode = node;
+                node.EnsureVisible();
             }
         }
         
         public void LoadMap(object map)
         {
-            LoadEditorTab(map);
-            LoadHeaderTab(map);
+            switch (mainTabControl.SelectedIndex)
+            {
+                default:
+                    LoadEditorTab(map);
+                    break;
+                case 1:
+                    LoadEntityTab(map);
+                    break;
+                case 3:
+                    LoadHeaderTab(map);
+                    break;
+            }
         }
 
         public void LoadEditorTab(object maybeaMap)
         {
-            MapLayout mapLayout = PGMEBackend.Program.currentLayout;
+            MapLayout mapLayout;
+            if (maybeaMap is Map)
+                mapLayout = (maybeaMap as Map).layout;
+            else
+                mapLayout = maybeaMap as MapLayout;
+
             if (mapLayout == null)
                 return;
 
-            if(mapLayout.globalTileset != null)
-                mapLayout.globalTileset.Initialize();
+            if (mapLayout.globalTileset != null)
+                mapLayout.globalTileset.Initialize(mapLayout);
             if (mapLayout.localTileset != null)
-                mapLayout.localTileset.Initialize();
+                mapLayout.localTileset.Initialize(mapLayout);
 
-            PGMEBackend.Program.glMapEditor.width = PGMEBackend.Program.currentLayout.layoutWidth * 16;
-            PGMEBackend.Program.glMapEditor.height = PGMEBackend.Program.currentLayout.layoutHeight * 16;
+            PGMEBackend.Program.glMapEditor.width = mapLayout.layoutWidth * 16;
+            PGMEBackend.Program.glMapEditor.height = mapLayout.layoutHeight * 16;
             SetGLMapEditorSize(PGMEBackend.Program.glMapEditor.width, PGMEBackend.Program.glMapEditor.height);
 
             int blockChooserHeight = (int)Math.Ceiling(PGMEBackend.Program.currentGame.MainTSBlocks / 8.0d) * 16;
-            if (PGMEBackend.Program.currentLayout.localTileset != null && PGMEBackend.Program.currentLayout.localTileset.blockSet != null)
-                blockChooserHeight += (int)Math.Ceiling(PGMEBackend.Program.currentLayout.localTileset.blockSet.blocks.Length / 8.0d) * 16;
+            if (mapLayout.localTileset != null && mapLayout.localTileset.blockSet != null)
+                blockChooserHeight += (int)Math.Ceiling(mapLayout.localTileset.blockSet.blocks.Length / 8.0d) * 16;
             PGMEBackend.Program.glBlockChooser.height = blockChooserHeight;
             SetGLBlockChooserSize(PGMEBackend.Program.glBlockChooser.width, PGMEBackend.Program.glBlockChooser.height);
 
@@ -820,6 +902,194 @@ namespace PGMEWindowsUI
             RefreshMapEditorControl();
             RefreshBlockEditorControl();
             RefreshBorderBlocksControl();
+
+            editorTabLoaded = true;
+        }
+        
+        public void LoadEntityTab(object Map)
+        {
+            if (Map == null || !(Map is Map))
+            {
+                DisableEntityPage();
+                if(Map is MapLayout)
+                {
+                    MapLayout mapLayout = Map as MapLayout;
+
+                    if (mapLayout.globalTileset != null)
+                        mapLayout.globalTileset.Initialize(mapLayout);
+                    if (mapLayout.localTileset != null)
+                        mapLayout.localTileset.Initialize(mapLayout);
+
+                    RefreshEntityEditorControl();
+                    entityTabLoaded = true;
+                }
+                return;
+            }
+
+            panelEntityData.Enabled = true;
+
+            Map map = Map as Map;
+
+            if (map.layout.globalTileset != null)
+                map.layout.globalTileset.Initialize(map.layout);
+            if (map.layout.localTileset != null)
+                map.layout.localTileset.Initialize(map.layout);
+            
+            cboEventTypes.SelectedIndex = PGMEBackend.Program.currentEntityType;
+            switch(PGMEBackend.Program.currentEntityType)
+            {
+                default:
+                    SetEntityNumValues(NPC.currentNPC, map.NPCs.Length - 1);
+                    LoadNPCView(map, NPC.currentNPC);
+                    PGMEBackend.Program.glEntityEditor.currentEntity = new List<Entity> { map.NPCs[NPC.currentNPC] };
+                    break;
+                case 1:
+                    SetEntityNumValues(Warp.currentWarp, map.Warps.Length - 1);
+                    LoadWarpView(map, Warp.currentWarp);
+                    PGMEBackend.Program.glEntityEditor.currentEntity = new List<Entity> { map.Warps[Warp.currentWarp] };
+                    break;
+                case 2:
+                    SetEntityNumValues(Trigger.currentTrigger, map.Triggers.Length - 1);
+                    LoadTriggerView(map, Trigger.currentTrigger);
+                    PGMEBackend.Program.glEntityEditor.currentEntity = new List<Entity> { map.Triggers[Trigger.currentTrigger] };
+                    break;
+                case 3:
+                    SetEntityNumValues(Sign.currentSign, map.Signs.Length - 1);
+                    LoadSignView(map, Sign.currentSign);
+                    PGMEBackend.Program.glEntityEditor.currentEntity = new List<Entity> { map.Signs[Sign.currentSign] };
+                    break;
+            }
+
+            RefreshEntityEditorControl();
+
+            entityTabLoaded = true;
+        }
+
+        public void DisableEntityPage()
+        {
+            panelEntityData.Enabled = false;
+            cboEventTypes.SelectedIndex = 0;
+            SetEntityNumValues(0, 0);
+            foreach (Control ctrl in panelSpriteEvent.Controls)
+            {
+                DisableEntityViewControl(ctrl);
+            }
+        }
+
+        public void LoadNPCView(Map map, int npcNum)
+        {
+            if (map != null && map.NPCs != null && map.NPCs.Length > npcNum)
+                LoadNPCView(map.NPCs[npcNum]);
+            else
+                NoEntitiesOfType();
+        }
+
+        public void LoadNPCView(NPC npc)
+        {
+            panelSpriteEvent.Visible = true;
+            nudEntityNum.Enabled = true;
+            nudNPCNum.Value = npc.npcNumber;
+            nudNPCSpriteNum.Value = npc.spriteNumber;
+            hexNumberBoxNPCReplacement.Text = npc.replacement.ToString("X2");
+            hexNumberBoxNPCFiller1.Text = npc.filler1.ToString("X2");
+            hexNumberBoxNPCXPos.Text = npc.xPos.ToString("X4");
+            hexNumberBoxNPCYPos.Text = npc.yPos.ToString("X4");
+            cbNPCHeight.SelectedIndex = npc.height;
+            cbNPCIdleAnim.SelectedIndex = npc.idleAnimation;
+            hexNumberBoxNPCXBound.Text = npc.xBounds.ToString("X1");
+            hexNumberBoxNPCYBound.Text = npc.yBounds.ToString("X1");
+            hexNumberBoxNPCFiller2.Text = npc.filler2.ToString("X2");
+            hexNumberBoxNPCTrainer.Text = npc.trainer.ToString("X2");
+            hexNumberBoxNPCFiller3.Text = npc.filler3.ToString("X2");
+            hexNumberBoxNPCViewRadius.Text = npc.viewRadius.ToString("X2");
+            hexNumberBoxNPCFiller4.Text = npc.filler4.ToString("X2");
+            hexNumberBoxNPCScriptOffset.Text = (npc.scriptOffset + 0x8000000).ToString("X8");
+            hexNumberBoxNPCVisibilityFlag.Text = npc.visibilityFlag.ToString("X4");
+            hexNumberBoxNPCFiller5.Text = npc.filler5.ToString("X2");
+            hexNumberBoxNPCFiller6.Text = npc.filler6.ToString("X2");
+            PGMEBackend.Program.glEntityEditor.currentEntity = new List<Entity> { npc };
+            RefreshEntityEditorControl();
+        }
+        
+        public void LoadWarpView(Map map, int warpNum)
+        {
+            if (map.Warps.Length > warpNum)
+                LoadWarpView(map.Warps[warpNum]);
+            else
+                NoEntitiesOfType();
+        }
+
+        public void LoadWarpView(Warp warp)
+        {
+            panelWarpEvent.Visible = true;
+            nudEntityNum.Enabled = true;
+            hexNumberBoxWarpXPos.Text = warp.xPos.ToString("X4");
+            hexNumberBoxWarpYPos.Text = warp.yPos.ToString("X4");
+            cbWarpHeight.SelectedIndex = warp.height;
+            hexNumberBoxWarpNum.Text = warp.destWarpNum.ToString("X2");
+            hexNumberBoxWarpBank.Text = warp.destMapBank.ToString("X2");
+            hexNumberBoxWarpMap.Text = warp.destMapNum.ToString("X2");
+            PGMEBackend.Program.glEntityEditor.currentEntity = new List<Entity> { warp };
+            RefreshEntityEditorControl();
+        }
+        
+        public void LoadSignView(Map map, int signNum)
+        {
+            if (map != null && map.Signs != null && map.Signs.Length > signNum)
+                LoadSignView(map.Signs[signNum]);
+            else
+                NoEntitiesOfType();
+        }
+
+        public void LoadSignView(Sign sign)
+        {
+            panelSignEvent.Visible = true;
+            nudEntityNum.Enabled = true;
+            hexNumberBoxSignXPos.Text = sign.xPos.ToString("X4");
+            hexNumberBoxSignYPos.Text = sign.yPos.ToString("X4");
+            cbSignHeight.SelectedIndex = sign.height;
+            cbSignType.SelectedIndex = sign.type;
+            hexNumberBoxSignFiller1.Text = sign.filler1.ToString("X2");
+            hexNumberBoxSignFiller2.Text = sign.filler2.ToString("X2");
+            hexNumberBoxSignScriptOffset.Text = (sign.scriptOffset + 0x8000000).ToString("X8");
+            PGMEBackend.Program.glEntityEditor.currentEntity = new List<Entity> { sign };
+            RefreshEntityEditorControl();
+        }
+        
+        public void LoadTriggerView(Map map, int triggerNum)
+        {
+            if (map != null && map.Triggers != null && map.Triggers.Length > triggerNum)
+                LoadTriggerView(map.Triggers[triggerNum]);
+            else
+                NoEntitiesOfType();
+        }
+
+        public void LoadTriggerView(Trigger trigger)
+        {
+            panelScriptEvent.Visible = true;
+            nudEntityNum.Enabled = true;
+            hexNumberBoxTriggerXPos.Text = trigger.xPos.ToString("X4");
+            hexNumberBoxTriggerXPos.Text = trigger.yPos.ToString("X4");
+            cbTriggerHeight.SelectedIndex = trigger.height;
+            hexNumberBoxTriggerFiller1.Text = trigger.filler1.ToString("X2");
+            hexNumberBoxTriggerVariable.Text = trigger.variable.ToString("X4");
+            hexNumberBoxTriggerValue.Text = trigger.value.ToString("X4");
+            hexNumberBoxTriggerFiller2.Text = trigger.filler2.ToString("X2");
+            hexNumberBoxTriggerFiller3.Text = trigger.filler3.ToString("X2");
+            hexNumberBoxTriggerScriptOffset.Text = (trigger.scriptOffset + 0x8000000).ToString("X8");
+            PGMEBackend.Program.glEntityEditor.currentEntity = new List<Entity> { trigger };
+            RefreshEntityEditorControl();
+        }
+        
+        public void DisableEntityViewControl(Control ctrl)
+        {
+            ctrl.Enabled = false;
+            if (ctrl is NumericUpDown)
+                (ctrl as NumericUpDown).Value = 0;
+            else if (ctrl is ComboBox)
+                (ctrl as ComboBox).SelectedIndex = 0;
+            else if (ctrl is TextBox && !ctrl.Name.Contains("hexPrefixBox"))
+                (ctrl as TextBox).Text = 0.ToString("X" + (ctrl as TextBox).MaxLength);
         }
 
         public void LoadHeaderTab(object maybeaMap)
@@ -885,11 +1155,14 @@ namespace PGMEWindowsUI
                 gbHeaderTabRawLayoutHeader.Visible = false;
                 gbHeaderTabLayoutHeader.Visible = false;
             }
+
+            headerTabLoaded = true;
         }
 
         private void LoadHeaderTabMapHeader(Map map)
         {
             hexViewerRawMapHeader.ByteProvider = new DynamicByteProvider(map.rawData, true, false, false);
+            hexBox1.ByteProvider = new DynamicByteProvider(map.rawData, true, false, false);
             hexNumberBoxHeaderTabLayoutHeaderPointer.Text = (map.mapDataPointer + 0x8000000).ToString("X8");
             hexNumberBoxHeaderTabEventDataPointer.Text = (map.eventDataPointer + 0x8000000).ToString("X8");
             hexNumberBoxHeaderTabLevelScriptPointer.Text = (map.mapScriptDataPointer + 0x8000000).ToString("X8");
@@ -1042,7 +1315,7 @@ namespace PGMEWindowsUI
         {
             Map currentMap = PGMEBackend.Program.currentMap;
             currentMap.rawData = (hexViewerRawMapHeader.ByteProvider as DynamicByteProvider).Bytes.ToArray();
-            currentMap.LoadMapHeaderFromRaw();
+            currentMap.LoadMapHeaderFromRaw(PGMEBackend.Program.ROM);
             LoadHeaderTabMapHeader(currentMap);
         }
 
@@ -1252,12 +1525,13 @@ namespace PGMEWindowsUI
 
         public void SetGLBorderBlocksSize(int w, int h)
         {
+            int totalHeight = borderBlocksBox.Height + paintTabControl.Height;
             glControlBorderBlocks.Width = w;
             glControlBorderBlocks.Height = h;
             glControlBorderBlocks.Location = new Point(78 - (w /2), glControlBorderBlocks.Location.Y);
             borderBlocksBox.Size = new Size(borderBlocksBox.Size.Width, 24 + h);
             paintTabControl.Location = new Point(paintTabControl.Location.X, 30 + h);
-            paintTabControl.Size = new Size(paintTabControl.Size.Width, 550 - h);
+            paintTabControl.Size = new Size(paintTabControl.Size.Width, totalHeight - borderBlocksBox.Height);
         }
 
         public void SetGLEntityEditorSize(int w, int h)
@@ -1277,8 +1551,6 @@ namespace PGMEWindowsUI
             {
                 mapXPosLabel.Text = "X: " + settings.HexPrefix + PGMEBackend.Program.glMapEditor.mouseX.ToString("X2");
                 mapYPosLabel.Text = "Y: " + settings.HexPrefix + PGMEBackend.Program.glMapEditor.mouseY.ToString("X2");
-                eventXPosLabel.Text = "X: " + settings.HexPrefix + PGMEBackend.Program.glMapEditor.mouseX.ToString("X2");
-                eventYPosLabel.Text = "Y: " + settings.HexPrefix + PGMEBackend.Program.glMapEditor.mouseY.ToString("X2");
                 RefreshMapEditorControl();
             }
         }
@@ -1294,6 +1566,39 @@ namespace PGMEWindowsUI
                 RefreshBlockEditorControl();
         }
 
+        private void glControlEntityEditor_MouseMove(object sender, MouseEventArgs e)
+        {
+            int oldX = PGMEBackend.Program.glEntityEditor.mouseX;
+            int oldY = PGMEBackend.Program.glEntityEditor.mouseY;
+
+            PGMEBackend.Program.glEntityEditor.MouseMove(e.X, e.Y);
+
+            if ((oldX != PGMEBackend.Program.glEntityEditor.mouseX) || (oldY != PGMEBackend.Program.glEntityEditor.mouseY))
+            {
+                if (PGMEBackend.Program.glEntityEditor.mouseX >= 0)
+                {
+                    eventXPosLabel.Width = 43;
+                    eventXPosLabel.Text = "X: " + settings.HexPrefix + PGMEBackend.Program.glEntityEditor.mouseX.ToString("X2");
+                }
+                else
+                {
+                    eventXPosLabel.Width = 48;
+                    eventXPosLabel.Text = "X: -" + settings.HexPrefix + Math.Abs(PGMEBackend.Program.glEntityEditor.mouseX).ToString("X2");
+                }
+                if (PGMEBackend.Program.glEntityEditor.mouseY >= 0)
+                {
+                    eventYPosLabel.Width = 43;
+                    eventYPosLabel.Text = "Y: " + settings.HexPrefix + PGMEBackend.Program.glEntityEditor.mouseY.ToString("X2");
+                }
+                else
+                {
+                    eventYPosLabel.Width = 48;
+                    eventYPosLabel.Text = "Y: -" + settings.HexPrefix + Math.Abs(PGMEBackend.Program.glEntityEditor.mouseY).ToString("X2");
+                }
+                RefreshEntityEditorControl();
+            }
+        }
+
         private void glControlMapEditor_MouseLeave(object sender, EventArgs e)
         {
             PGMEBackend.Program.glMapEditor.MouseLeave();
@@ -1305,10 +1610,16 @@ namespace PGMEWindowsUI
             PGMEBackend.Program.glBlockChooser.MouseLeave();
             RefreshBlockEditorControl();
         }
-        
+
+        private void glControlEntityEditor_MouseLeave(object sender, EventArgs e)
+        {
+            PGMEBackend.Program.glEntityEditor.MouseLeave();
+            RefreshEntityEditorControl();
+        }
+
         private void glControlMapEditor_MouseDown(object sender, MouseEventArgs e)
         {
-            MapEditorTools tool = GetTool(e.Button);
+            MapEditorTools tool = GetMapEditorTool(e.Button);
             if (tool == PGMEBackend.Program.glMapEditor.tool)
                 return;
             PGMEBackend.Program.glMapEditor.MouseDown(tool);
@@ -1317,26 +1628,46 @@ namespace PGMEWindowsUI
 
         private void glControlBlocks_MouseDown(object sender, MouseEventArgs e)
         {
-            MapEditorTools tool = GetTool(e.Button);
+            MapEditorTools tool = GetMapEditorTool(e.Button);
             if (tool == PGMEBackend.Program.glMapEditor.tool)
                 return;
             PGMEBackend.Program.glBlockChooser.MouseDown(tool);
             RefreshBlockEditorControl();
         }
 
+        private void glControlEntityEditor_MouseDown(object sender, MouseEventArgs e)
+        {
+            EntityEditorTools tool = GetEntityEditorTool(e.Button);
+            if (tool == PGMEBackend.Program.glEntityEditor.tool)
+                return;
+            PGMEBackend.Program.glEntityEditor.MouseDown(tool);
+            RefreshEntityEditorControl();
+        }
+        
+        private void glControlEntityEditor_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            PGMEBackend.Program.glEntityEditor.MouseDoubleClick();
+        }
+
         private void glControlMapEditor_MouseUp(object sender, MouseEventArgs e)
         {
-            PGMEBackend.Program.glMapEditor.MouseUp(GetTool(e.Button));
+            PGMEBackend.Program.glMapEditor.MouseUp(GetMapEditorTool(e.Button));
             RefreshMapEditorControl();
         }
 
         private void glControlBlocks_MouseUp(object sender, MouseEventArgs e)
         {
-            PGMEBackend.Program.glBlockChooser.MouseUp(GetTool(e.Button));
+            PGMEBackend.Program.glBlockChooser.MouseUp(GetMapEditorTool(e.Button));
             RefreshBlockEditorControl();
         }
 
-        private MapEditorTools GetTool(MouseButtons b)
+        private void glControlEntityEditor_MouseUp(object sender, MouseEventArgs e)
+        {
+            PGMEBackend.Program.glEntityEditor.MouseUp(GetEntityEditorTool(e.Button));
+            RefreshEntityEditorControl();
+        }
+
+        private MapEditorTools GetMapEditorTool(MouseButtons b)
         {
             if ((tsbMapEditorMouse.Checked && b == MouseButtons.Left) || tsbMapEditorPencil.Checked)
                 return MapEditorTools.Pencil;
@@ -1350,12 +1681,29 @@ namespace PGMEWindowsUI
                 return MapEditorTools.None;
         }
 
+        private EntityEditorTools GetEntityEditorTool(MouseButtons b)
+        {
+            if ((tsbMapEditorMouse.Checked && b == MouseButtons.Left && isControlPressed) || tsbMapEditorFillAll.Checked)
+                return EntityEditorTools.MultiSelect;
+            else if ((tsbMapEditorMouse.Checked && b == MouseButtons.Left) || tsbMapEditorPencil.Checked)
+                return EntityEditorTools.Move;
+            else if ((tsbMapEditorMouse.Checked && b == MouseButtons.Right) || tsbMapEditorEyedropper.Checked)
+                return EntityEditorTools.RectSelect;
+            else
+                return EntityEditorTools.None;
+        }
+
         private void glControlMapEditor_MouseEnter(object sender, EventArgs e)
         {
 
         }
         
         private void glControlBlocks_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void glControlEntityEditor_MouseEnter(object sender, EventArgs e)
         {
 
         }
@@ -1445,9 +1793,24 @@ namespace PGMEWindowsUI
                     PGMEBackend.Program.showingPerms = true;
                 else
                     PGMEBackend.Program.showingPerms = false;
+                if (!editorTabLoaded)
+                    LoadEditorTab((PGMEBackend.Program.currentMap != null) ? PGMEBackend.Program.currentMap : (object)PGMEBackend.Program.currentLayout);
             }
             else
+            {
                 PGMEBackend.Program.showingPerms = false;
+                switch(mainTabControl.SelectedIndex)
+                {
+                    case 1:
+                        if (!entityTabLoaded)
+                            LoadEntityTab((PGMEBackend.Program.currentMap != null) ? PGMEBackend.Program.currentMap : (object)PGMEBackend.Program.currentLayout);
+                        break;
+                    case 3:
+                        if(!headerTabLoaded)
+                            LoadHeaderTab((PGMEBackend.Program.currentMap != null) ? PGMEBackend.Program.currentMap : (object)PGMEBackend.Program.currentLayout);
+                        break;
+                }
+            }
             if(oldValue != PGMEBackend.Program.showingPerms)
                 PGMEBackend.Program.glMapEditor.RedrawAllChunks();
         }
@@ -1464,9 +1827,14 @@ namespace PGMEWindowsUI
             showGridToolStripMenuItem.Checked = toolStripShowGrid.Checked;
             settings.ShowGrid = toolStripShowGrid.Checked;
             WriteConfig();
-            RefreshMapEditorControl();
-            RefreshBlockEditorControl();
-            RefreshBorderBlocksControl();
+            if (mainTabControl.SelectedIndex == 1)
+                RefreshEntityEditorControl();
+            else
+            {
+                RefreshMapEditorControl();
+                RefreshBlockEditorControl();
+                RefreshBorderBlocksControl();
+            }
         }
         
         private void undoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1620,7 +1988,7 @@ namespace PGMEWindowsUI
 
         private void glControlBorderBlocks_MouseDown(object sender, MouseEventArgs e)
         {
-            MapEditorTools tool = GetTool(e.Button);
+            MapEditorTools tool = GetMapEditorTool(e.Button);
             if (tool == PGMEBackend.Program.glBorderBlocks.tool)
                 return;
             PGMEBackend.Program.glBorderBlocks.MouseDown(tool);
@@ -1651,7 +2019,7 @@ namespace PGMEWindowsUI
 
         private void glControlBorderBlocks_MouseUp(object sender, MouseEventArgs e)
         {
-            PGMEBackend.Program.glBorderBlocks.MouseUp(GetTool(e.Button));
+            PGMEBackend.Program.glBorderBlocks.MouseUp(GetMapEditorTool(e.Button));
             RefreshBorderBlocksControl();
         }
 
@@ -1682,9 +2050,14 @@ namespace PGMEWindowsUI
 
         private void tsmiSettings_Click(object sender, EventArgs e)
         {
+            OpenSettingsWindow();
+        }
+
+        public void OpenSettingsWindow()
+        {
             SettingsDialog permTransDialog = new SettingsDialog(this);
             DialogResult result = permTransDialog.ShowDialog();
-            if(result != DialogResult.OK && PGMEBackend.Program.currentLayout != null)
+            if (result != DialogResult.OK && PGMEBackend.Program.currentLayout != null)
             {
                 PGMEBackend.Program.glMapEditor.RedrawAllChunks();
                 RefreshMapEditorControl();
@@ -1707,7 +2080,206 @@ namespace PGMEWindowsUI
             ClearMapNodes();
             LoadMapNodes();
         }
+
+        private void mainTabControl_DrawItem(object sender, DrawItemEventArgs e)
+        {
+
+        }
         
+        private void btnCreateNewEntity_Click(object sender, EventArgs e)
+        {
+            switch(cboEventTypes.SelectedIndex)
+            {
+                default:
+                    panelSpriteEvent.Visible = true;
+                    nudEntityNum.Enabled = true;
+                    Array.Resize(ref PGMEBackend.Program.currentMap.NPCs, PGMEBackend.Program.currentMap.NPCs.Length + 1);
+                    PGMEBackend.Program.currentMap.NPCs[PGMEBackend.Program.currentMap.NPCs.Length - 1] = new NPC();
+                    SetEntityNumValues(PGMEBackend.Program.currentMap.NPCs.Length - 1, PGMEBackend.Program.currentMap.NPCs.Length - 1);
+                    break;
+                case 1:
+                    panelWarpEvent.Visible = true;
+                    nudEntityNum.Enabled = true;
+                    Array.Resize(ref PGMEBackend.Program.currentMap.Warps, PGMEBackend.Program.currentMap.Warps.Length + 1);
+                    PGMEBackend.Program.currentMap.Warps[PGMEBackend.Program.currentMap.Warps.Length - 1] = new Warp();
+                    SetEntityNumValues(PGMEBackend.Program.currentMap.Warps.Length - 1, PGMEBackend.Program.currentMap.Warps.Length - 1);
+                    break;
+                case 2:
+                    panelScriptEvent.Visible = true;
+                    nudEntityNum.Enabled = true;
+                    Array.Resize(ref PGMEBackend.Program.currentMap.Triggers, PGMEBackend.Program.currentMap.Triggers.Length + 1);
+                    PGMEBackend.Program.currentMap.Triggers[PGMEBackend.Program.currentMap.Triggers.Length - 1] = new Trigger();
+                    SetEntityNumValues(PGMEBackend.Program.currentMap.Triggers.Length - 1, PGMEBackend.Program.currentMap.Triggers.Length - 1);
+                    break;
+                case 3:
+                    panelSignEvent.Visible = true;
+                    nudEntityNum.Enabled = true;
+                    Array.Resize(ref PGMEBackend.Program.currentMap.Signs, PGMEBackend.Program.currentMap.Signs.Length + 1);
+                    PGMEBackend.Program.currentMap.Signs[PGMEBackend.Program.currentMap.Signs.Length - 1] = new Sign();
+                    SetEntityNumValues(PGMEBackend.Program.currentMap.Signs.Length - 1, PGMEBackend.Program.currentMap.Signs.Length - 1);
+                    break;
+            }
+        }
+
+        public void LoadEntityView(int entityType, int entityNum)
+        {
+            cboEventTypes.SelectedIndex = entityType;
+            nudEntityNum.Value = entityNum;
+            nudEntityNum.Enabled = true;
+            switch (entityType)
+            {
+                default:
+                    panelSpriteEvent.Visible = true;
+                    break;
+                case 1:
+                    panelWarpEvent.Visible = true;
+                    break;
+                case 2:
+                    panelScriptEvent.Visible = true;
+                    break;
+                case 3:
+                    panelSignEvent.Visible = true;
+                    break;
+            }
+        }
+
+        public void LoadEntityView(Entity entity)
+        {
+            if (entity is NPC)
+                LoadNPCView(entity as NPC);
+            else if (entity is Warp)
+                LoadWarpView(entity as Warp);
+            else if (entity is Trigger)
+                LoadTriggerView(entity as Trigger);
+            else if (entity is Sign)
+                LoadSignView(entity as Sign);
+        }
+
+        private void btnDeleteNPC_Click(object sender, EventArgs e)
+        {
+            if(ShowMessageBox(PGMEBackend.Program.rmInternalStrings.GetString("DeleteEntity"), PGMEBackend.Program.rmInternalStrings.GetString("DeleteEntityTitle"), "YesNo", "Warning") == "Yes")
+            {
+                NPC.DeleteNPC(NPC.currentNPC);
+                SetEntityNumValues(NPC.currentNPC, PGMEBackend.Program.currentMap.NPCs.Length - 1);
+                LoadNPCView(PGMEBackend.Program.currentMap, NPC.currentNPC);
+            }
+        }
+
+        private void btnDeleteWarp_Click(object sender, EventArgs e)
+        {
+            if (ShowMessageBox(PGMEBackend.Program.rmInternalStrings.GetString("DeleteEntity"), PGMEBackend.Program.rmInternalStrings.GetString("DeleteEntityTitle"), "YesNo", "Warning") == "Yes")
+            {
+                Warp.DeleteWarp(Warp.currentWarp);
+                SetEntityNumValues(Warp.currentWarp, PGMEBackend.Program.currentMap.Warps.Length - 1);
+                LoadWarpView(PGMEBackend.Program.currentMap, Warp.currentWarp);
+            }
+        }
+
+        private void btnDeleteTrigger_Click(object sender, EventArgs e)
+        {
+            if (ShowMessageBox(PGMEBackend.Program.rmInternalStrings.GetString("DeleteEntity"), PGMEBackend.Program.rmInternalStrings.GetString("DeleteEntityTitle"), "YesNo", "Warning") == "Yes")
+            {
+                Trigger.DeleteTrigger(Trigger.currentTrigger);
+                SetEntityNumValues(Trigger.currentTrigger, PGMEBackend.Program.currentMap.Triggers.Length - 1);
+                LoadTriggerView(PGMEBackend.Program.currentMap, Trigger.currentTrigger);
+            }
+        }
+
+        private void btnDeleteSign_Click(object sender, EventArgs e)
+        {
+            if (ShowMessageBox(PGMEBackend.Program.rmInternalStrings.GetString("DeleteEntity"), PGMEBackend.Program.rmInternalStrings.GetString("DeleteEntityTitle"), "YesNo", "Warning") == "Yes")
+            {
+                Sign.DeleteSign(Sign.currentSign);
+                SetEntityNumValues(Sign.currentSign, PGMEBackend.Program.currentMap.Signs.Length - 1);
+                LoadSignView(PGMEBackend.Program.currentMap, Sign.currentSign);
+            }
+        }
+        
+        public void MultipleEntitiesSelected()
+        {
+            labelEntityDataPanel.Text = PGMEBackend.Program.rmInternalStrings.GetString("MultipleEntitiesSelected");
+            HideEventEditors();
+        }
+
+        public void NoEntitiesOfType()
+        {
+            labelEntityDataPanel.Text = PGMEBackend.Program.rmInternalStrings.GetString("NoEntitiesOfThisType");
+            HideEventEditors();
+        }
+
+        private void HideEventEditors()
+        {
+            nudEntityNum.Enabled = false;
+            panelSpriteEvent.Visible = false;
+            panelWarpEvent.Visible = false;
+            panelScriptEvent.Visible = false;
+            panelSignEvent.Visible = false;
+        }
+
+        public void FollowWarp(Warp warp)
+        {
+            FollowWarp(warp.destMapBank, warp.destMapNum, warp.destWarpNum);
+        }
+
+        public void FollowWarp(int mapBank, int mapNum, int warpNum)
+        {
+            Map destMap = PGMEBackend.Program.mapBanks[mapBank].Bank[mapNum];
+            if (destMap != null)
+            {
+                TreeNode itemNode = null;
+                foreach (TreeNode node in mapListTreeView.Nodes)
+                {
+                    itemNode = GetNodeFromTag(destMap, node);
+                    if (itemNode != null)
+                    {
+                        LoadMapFromNode(itemNode);
+                        break;
+                    }
+                }
+            }
+            cboEventTypes.SelectedIndex = 1;
+            nudEntityNum.Value = warpNum;
+            //LoadMap((entity as Warp).destMapBank, (entity as Warp).destMapNum);
+        }
+
+        private void btnTravelToWarpDest_Click(object sender, EventArgs e)
+        {
+            FollowWarp(PGMEBackend.Program.glEntityEditor.currentEntity[0] as Warp);
+        }
+
+        public int LaunchScriptEditor(int scriptOffset)
+        {
+            if(string.IsNullOrEmpty(settings.ScriptEditor))
+            {
+                string result = ShowMessageBox(PGMEBackend.Program.rmInternalStrings.GetString("NoScriptEditorSpecified"), PGMEBackend.Program.rmInternalStrings.GetString("NoScriptEditorSpecifiedTitle"), "YesNo");
+                if (result == "No")
+                    return -1;
+                OpenSettingsWindow();
+                return 1;
+            }
+            if (scriptOffset < 0 || scriptOffset >= 0x2000000)
+                scriptOffset = 0;
+            if (System.Diagnostics.Process.Start(settings.ScriptEditor, PGMEBackend.Program.ROM.ROMPath + scriptOffset.ToString("X8")) != null)
+                return 0;
+            else
+                return -1;
+        }
+
+        private void btnNPCOpenScript_Click(object sender, EventArgs e)
+        {
+            LaunchScriptEditor(PGMEBackend.Program.glEntityEditor.currentEntity[0].scriptOffset);
+        }
+
+        private void btnSignOpenScript_Click(object sender, EventArgs e)
+        {
+            LaunchScriptEditor(PGMEBackend.Program.glEntityEditor.currentEntity[0].scriptOffset);
+        }
+
+        private void btnTriggerOpenScript_Click(object sender, EventArgs e)
+        {
+            LaunchScriptEditor(PGMEBackend.Program.glEntityEditor.currentEntity[0].scriptOffset);
+        }
+
         /*
         // Undo example usage
         // Note that the redo gets called automatically

@@ -51,6 +51,7 @@ namespace PGMEBackend
         public static bool extraLayoutsLoaded;
         public static bool isEdited = false;
         public static int timeOfDay = 2;
+        public static int currentEntityType = 0;
 
         static string currentFilePath;
         static string currentFileName;
@@ -246,7 +247,7 @@ namespace PGMEBackend
                     mapBanks.Add(currentBank, new MapBank());
                     for (int currentMap = 0, bankScan = ROM.ReadPointer(romMapBank); currentMap < mapBankSizes[currentBank]; currentMap++)
                     {
-                        mapBanks[currentBank].AddMap(currentMap, new Map(bankScan, ROM, currentBank, currentMap));
+                        mapBanks[currentBank].AddMap(currentMap, new Map(ROM.ReadPointer(bankScan), ROM, currentBank, currentMap));
                         bankScan += 4;
                     }
                     romMapBank += 4;
@@ -303,7 +304,11 @@ namespace PGMEBackend
                 if (result == "Yes")
                     SaveMap();
                 else if (result == "No")
+                {
+                    if(currentMap != null)
+                        currentMap.LoadMapHeaderFromRaw(ROM);
                     currentLayout.LoadLayoutHeaderFromRaw(ROM);
+                }
                 else if (result == "Cancel")
                     return 1;
                 isEdited = false;
@@ -549,14 +554,5 @@ namespace PGMEBackend
             showingPerms = showPerms;
             glMapEditor.RedrawAllChunks();
         }
-    }
-    
-    public enum MapEditorTools
-    {
-        None,
-        Pencil,
-        Eyedropper,
-        Fill,
-        FillAll
     }
 }

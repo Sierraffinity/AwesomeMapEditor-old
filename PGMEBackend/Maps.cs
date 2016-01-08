@@ -20,6 +20,7 @@
 using Nintenlord.ROMHacking.GBA;
 using OpenTK.Graphics.OpenGL;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -35,7 +36,10 @@ namespace PGMEBackend
 
         public byte[] rawDataOrig;
         public byte[] rawData;
-        public int headerPointer;
+        public int offset;
+        public int currentBank;
+        public int currentMap;
+
         public int mapDataPointer;
         public int eventDataPointer;
         public int mapScriptDataPointer;
@@ -56,20 +60,32 @@ namespace PGMEBackend
         public bool canRideBike;
         public bool canEscape;
 
+        public Entities.NPC[] NPCs;
+        public Entities.Warp[] Warps;
+        public Entities.Trigger[] Triggers;
+        public Entities.Sign[] Signs;
+
+        public MapLayout layout;
+
         public bool edited
         {
             get { return !rawDataOrig.SequenceEqual(rawData); }
         }
 
-        public MapLayout layout;
-
-        public Map(int pointer, GBAROM ROM, int currentBank, int currentMap)
+        public Map()
         {
-            headerPointer = ROM.ReadPointer(pointer);
-            rawDataOrig = ROM.GetData(headerPointer, 0x1C);
+
+        }
+
+        public Map(int Offset, GBAROM ROM, int CurrentBank, int CurrentMap)
+        {
+            offset = Offset;
+            currentBank = CurrentBank;
+            currentMap = CurrentMap;
+            rawDataOrig = ROM.GetData(offset, 0x1C);
             rawData = (byte[])rawDataOrig.Clone();
 
-            LoadMapHeaderFromRaw();
+            LoadMapHeaderFromRaw(ROM);
             name = "[" + currentBank.ToString("X2") + ", " + currentMap.ToString("X2") + "] " + Program.mapNames[mapNameIndex].Name;
 
             if (Program.mapLayouts.ContainsKey(mapLayoutIndex))
@@ -96,7 +112,7 @@ namespace PGMEBackend
             None = 0x0000, CanRideBike = 0x0001, CanEscape = 0x0002, CanRun = 0x0004, ShowsName = 0x0008
         }
 
-        public void LoadMapHeaderFromRaw()
+        public void LoadMapHeaderFromRaw(GBAROM ROM)
         {
             mapDataPointer = BitConverter.ToInt32(rawData, 0x0) - 0x8000000;
             eventDataPointer = BitConverter.ToInt32(rawData, 0x4) - 0x8000000;
@@ -125,6 +141,41 @@ namespace PGMEBackend
                 canRun = (optionsByte3 & (int)EOptions.CanRun) == (int)EOptions.CanRun;
                 canRideBike = (optionsByte3 & (int)EOptions.CanRideBike) == (int)EOptions.CanRideBike;
                 canEscape = (optionsByte3 & (int)EOptions.CanEscape) == (int)EOptions.CanEscape;
+            }
+
+            LoadEntitiesFromRaw(ROM);
+        }
+
+        void LoadEntitiesFromRaw(GBAROM ROM)
+        {
+            byte[] entityRaws = ROM.GetData(eventDataPointer, 0x14);
+
+            NPCs = new Entities.NPC[entityRaws[0]];
+            int npcOffset = BitConverter.ToInt32(entityRaws, 0x4) - 0x8000000;
+            for (int i = 0; i < NPCs.Length; i++)
+            {
+                NPCs[i] = new Entities.NPC(npcOffset + i * 0x18, ROM);
+            }
+
+            Warps = new Entities.Warp[entityRaws[1]];
+            int warpOffset = BitConverter.ToInt32(entityRaws, 0x8) - 0x8000000;
+            for (int i = 0; i < Warps.Length; i++)
+            {
+                Warps[i] = new Entities.Warp(warpOffset + i * 0x8, ROM);
+            }
+
+            Triggers = new Entities.Trigger[entityRaws[2]];
+            int triggerOffset = BitConverter.ToInt32(entityRaws, 0xC) - 0x8000000;
+            for (int i = 0; i < Triggers.Length; i++)
+            {
+                Triggers[i] = new Entities.Trigger(triggerOffset + i * 0x10, ROM);
+            }
+
+            Signs = new Entities.Sign[entityRaws[3]];
+            int signOffset = BitConverter.ToInt32(entityRaws, 0x10) - 0x8000000;
+            for (int i = 0; i < Signs.Length; i++)
+            {
+                Signs[i] = new Entities.Sign(signOffset + i * 0xC, ROM);
             }
         }
 
@@ -219,6 +270,11 @@ namespace PGMEBackend
         public bool edited
         {
             get { return !rawDataOrig.SequenceEqual(rawData); }
+        }
+
+        public MapLayout()
+        {
+
         }
 
         public MapLayout(int index, int offset, GBAROM ROM)

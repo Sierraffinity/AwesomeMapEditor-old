@@ -77,11 +77,93 @@ namespace PGMEWindowsUI
             this.blocksTabPage = new System.Windows.Forms.TabPage();
             this.movementTabPage = new System.Windows.Forms.TabPage();
             this.entitiesTabPage = new System.Windows.Forms.TabPage();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.panelEntityData = new System.Windows.Forms.Panel();
+            this.btnCreateNewEntity = new System.Windows.Forms.Button();
             this.cboEventTypes = new System.Windows.Forms.ComboBox();
-            this.numericUpDown10 = new System.Windows.Forms.NumericUpDown();
+            this.nudEntityNum = new System.Windows.Forms.NumericUpDown();
+            this.panelSignEvent = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.hexNumberBoxSignFiller1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox59 = new System.Windows.Forms.TextBox();
+            this.textBox58 = new System.Windows.Forms.TextBox();
+            this.textBox57 = new System.Windows.Forms.TextBox();
+            this.textBox56 = new System.Windows.Forms.TextBox();
+            this.btnDeleteSign = new System.Windows.Forms.Button();
+            this.btnSignOpenScript = new System.Windows.Forms.Button();
+            this.hexNumberBoxSignScriptOffset = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.hexNumberBoxSignFiller2 = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.cbSignType = new System.Windows.Forms.ComboBox();
+            this.cbSignHeight = new System.Windows.Forms.ComboBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.labelSignPosition = new System.Windows.Forms.Label();
+            this.hexNumberBoxSignXPos = new System.Windows.Forms.TextBox();
+            this.panelScriptEvent = new System.Windows.Forms.Panel();
+            this.textBox79 = new System.Windows.Forms.TextBox();
+            this.textBox78 = new System.Windows.Forms.TextBox();
+            this.textBox77 = new System.Windows.Forms.TextBox();
+            this.textBox64 = new System.Windows.Forms.TextBox();
+            this.textBox62 = new System.Windows.Forms.TextBox();
+            this.textBox61 = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.hexNumberBoxTriggerFiller2 = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.hexNumberBoxTriggerFiller1 = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox75 = new System.Windows.Forms.TextBox();
+            this.textBox65 = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.hexNumberBoxTriggerVariable = new System.Windows.Forms.TextBox();
+            this.hexNumberBoxTriggerValue = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.btnDeleteTrigger = new System.Windows.Forms.Button();
+            this.hexNumberBoxTriggerScriptOffset = new System.Windows.Forms.TextBox();
+            this.btnTriggerOpenScript = new System.Windows.Forms.Button();
+            this.hexNumberBoxTriggerFiller3 = new System.Windows.Forms.TextBox();
+            this.cbTriggerHeight = new System.Windows.Forms.ComboBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.labelTriggerPosition = new System.Windows.Forms.Label();
+            this.hexNumberBoxTriggerYPos = new System.Windows.Forms.TextBox();
+            this.hexNumberBoxTriggerXPos = new System.Windows.Forms.TextBox();
+            this.panelWarpEvent = new System.Windows.Forms.Panel();
+            this.textBox94 = new System.Windows.Forms.TextBox();
+            this.textBox93 = new System.Windows.Forms.TextBox();
+            this.gbWarpDestination = new System.Windows.Forms.GroupBox();
+            this.textBox86 = new System.Windows.Forms.TextBox();
+            this.textBox81 = new System.Windows.Forms.TextBox();
+            this.textBox80 = new System.Windows.Forms.TextBox();
+            this.labelWarpNumber = new System.Windows.Forms.Label();
+            this.labelWarpBank = new System.Windows.Forms.Label();
+            this.labelWarpMap = new System.Windows.Forms.Label();
+            this.hexNumberBoxWarpMap = new System.Windows.Forms.TextBox();
+            this.hexNumberBoxWarpNum = new System.Windows.Forms.TextBox();
+            this.hexNumberBoxWarpBank = new System.Windows.Forms.TextBox();
+            this.btnDeleteWarp = new System.Windows.Forms.Button();
+            this.btnWarpTravelToDest = new System.Windows.Forms.Button();
+            this.cbWarpHeight = new System.Windows.Forms.ComboBox();
+            this.labelWarpHeight = new System.Windows.Forms.Label();
+            this.labelWarpPosition = new System.Windows.Forms.Label();
+            this.hexNumberBoxWarpYPos = new System.Windows.Forms.TextBox();
+            this.hexNumberBoxWarpXPos = new System.Windows.Forms.TextBox();
             this.panelSpriteEvent = new System.Windows.Forms.Panel();
+            this.hexPrefixBox27 = new System.Windows.Forms.TextBox();
+            this.hexNumberBoxNPCViewRadius = new System.Windows.Forms.TextBox();
+            this.labelNPCFiller4 = new System.Windows.Forms.Label();
+            this.hexPrefixBox28 = new System.Windows.Forms.TextBox();
+            this.hexNumberBoxNPCFiller6 = new System.Windows.Forms.TextBox();
+            this.labelNPCFiller6 = new System.Windows.Forms.Label();
+            this.hexPrefixBox26 = new System.Windows.Forms.TextBox();
+            this.hexNumberBoxNPCXBound = new System.Windows.Forms.TextBox();
+            this.hexPrefixBox25 = new System.Windows.Forms.TextBox();
+            this.hexPrefixBox24 = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.hexBox1 = new Be.Windows.Forms.HexBox();
             this.hexPrefixBox23 = new System.Windows.Forms.TextBox();
             this.hexPrefixBox22 = new System.Windows.Forms.TextBox();
             this.hexPrefixBox21 = new System.Windows.Forms.TextBox();
@@ -94,106 +176,39 @@ namespace PGMEWindowsUI
             this.hexPrefixBox14 = new System.Windows.Forms.TextBox();
             this.hexPrefixBox13 = new System.Windows.Forms.TextBox();
             this.hexPrefixBox12 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
-            this.panelSignEvent = new System.Windows.Forms.Panel();
-            this.textBox59 = new System.Windows.Forms.TextBox();
-            this.textBox58 = new System.Windows.Forms.TextBox();
-            this.textBox57 = new System.Windows.Forms.TextBox();
-            this.textBox56 = new System.Windows.Forms.TextBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.textBox26 = new System.Windows.Forms.TextBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox9 = new System.Windows.Forms.ComboBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.textBox27 = new System.Windows.Forms.TextBox();
-            this.textBox28 = new System.Windows.Forms.TextBox();
-            this.panelScriptEvent = new System.Windows.Forms.Panel();
-            this.textBox79 = new System.Windows.Forms.TextBox();
-            this.textBox78 = new System.Windows.Forms.TextBox();
-            this.textBox77 = new System.Windows.Forms.TextBox();
-            this.textBox64 = new System.Windows.Forms.TextBox();
-            this.textBox62 = new System.Windows.Forms.TextBox();
-            this.textBox61 = new System.Windows.Forms.TextBox();
-            this.label37 = new System.Windows.Forms.Label();
-            this.textBox29 = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox75 = new System.Windows.Forms.TextBox();
-            this.textBox65 = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.textBox25 = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.panelWarpEvent = new System.Windows.Forms.Panel();
-            this.textBox94 = new System.Windows.Forms.TextBox();
-            this.textBox93 = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox86 = new System.Windows.Forms.TextBox();
-            this.textBox81 = new System.Windows.Forms.TextBox();
-            this.textBox80 = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.hexNumberBoxNPCFiller3 = new System.Windows.Forms.TextBox();
+            this.labelNPCFiller3 = new System.Windows.Forms.Label();
+            this.hexNumberBoxNPCFiller2 = new System.Windows.Forms.TextBox();
+            this.labelNPCFiller2 = new System.Windows.Forms.Label();
+            this.labelNPCFiller1 = new System.Windows.Forms.Label();
+            this.hexNumberBoxNPCFiller1 = new System.Windows.Forms.TextBox();
+            this.btnDeleteNPC = new System.Windows.Forms.Button();
+            this.btnNPCOpenScript = new System.Windows.Forms.Button();
+            this.hexNumberBoxNPCFiller5 = new System.Windows.Forms.TextBox();
+            this.labelNPCFiller5 = new System.Windows.Forms.Label();
+            this.hexNumberBoxNPCVisibilityFlag = new System.Windows.Forms.TextBox();
+            this.labelNPCVisibilityFlag = new System.Windows.Forms.Label();
+            this.hexNumberBoxNPCScriptOffset = new System.Windows.Forms.TextBox();
+            this.labelNPCScriptEditor = new System.Windows.Forms.Label();
+            this.hexNumberBoxNPCFiller4 = new System.Windows.Forms.TextBox();
+            this.labelNPCViewRadius = new System.Windows.Forms.Label();
+            this.hexNumberBoxNPCTrainer = new System.Windows.Forms.TextBox();
+            this.labelNPCTrainer = new System.Windows.Forms.Label();
+            this.hexNumberBoxNPCYBound = new System.Windows.Forms.TextBox();
+            this.labelNPCMovementBoundaries = new System.Windows.Forms.Label();
+            this.labelNPCIdleAnimation = new System.Windows.Forms.Label();
+            this.cbNPCIdleAnim = new System.Windows.Forms.ComboBox();
+            this.cbNPCHeight = new System.Windows.Forms.ComboBox();
+            this.labelNPCHeight = new System.Windows.Forms.Label();
+            this.labelNPCPosition = new System.Windows.Forms.Label();
+            this.hexNumberBoxNPCYPos = new System.Windows.Forms.TextBox();
+            this.labelNPCReplacement = new System.Windows.Forms.Label();
+            this.labelNPCSpriteNumber = new System.Windows.Forms.Label();
+            this.labelNPCNumber = new System.Windows.Forms.Label();
+            this.hexNumberBoxNPCXPos = new System.Windows.Forms.TextBox();
+            this.hexNumberBoxNPCReplacement = new System.Windows.Forms.TextBox();
+            this.nudNPCSpriteNum = new System.Windows.Forms.NumericUpDown();
+            this.nudNPCNum = new System.Windows.Forms.NumericUpDown();
             this.eventEditorPanel = new System.Windows.Forms.Panel();
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
             this.cboTimeofDayEvents = new System.Windows.Forms.ToolStripComboBox();
@@ -201,7 +216,7 @@ namespace PGMEWindowsUI
             this.eventXPosLabel = new System.Windows.Forms.ToolStripLabel();
             this.eventYPosLabel = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton17 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.tsddbNPCDisplay = new System.Windows.Forms.ToolStripDropDownButton();
             this.blocksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.belowTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.translucentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -527,6 +542,9 @@ namespace PGMEWindowsUI
             this.tsmiSaveMap = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemSaveROM = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemSaveROMAs = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+            this.recentFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.emptyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiExit = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -565,8 +583,8 @@ namespace PGMEWindowsUI
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
-            this.recentFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.labelEntityDataPanel = new System.Windows.Forms.Label();
+            this.hexNumberBoxSignYPos = new System.Windows.Forms.TextBox();
             this.mapPaintPanel = new PGMEWindowsUI.GLPanel();
             this.glControlMapEditor = new OpenTK.GLControl();
             this.blockPaintPanel = new PGMEWindowsUI.GLPanel();
@@ -575,7 +593,6 @@ namespace PGMEWindowsUI
             this.glControlPermsChooser = new OpenTK.GLControl();
             this.eventPaintPanel = new PGMEWindowsUI.GLPanel();
             this.glControlEntityEditor = new OpenTK.GLControl();
-            this.emptyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitMapListAndPaint)).BeginInit();
             this.splitMapListAndPaint.Panel1.SuspendLayout();
             this.splitMapListAndPaint.Panel2.SuspendLayout();
@@ -591,16 +608,17 @@ namespace PGMEWindowsUI
             this.blocksTabPage.SuspendLayout();
             this.movementTabPage.SuspendLayout();
             this.entitiesTabPage.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).BeginInit();
-            this.panelSpriteEvent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
+            this.panelEntityData.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEntityNum)).BeginInit();
             this.panelSignEvent.SuspendLayout();
             this.panelScriptEvent.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panelWarpEvent.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.gbWarpDestination.SuspendLayout();
+            this.panelSpriteEvent.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNPCSpriteNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNPCNum)).BeginInit();
             this.eventEditorPanel.SuspendLayout();
             this.toolStrip3.SuspendLayout();
             this.wildTabPage.SuspendLayout();
@@ -992,31 +1010,33 @@ namespace PGMEWindowsUI
             // 
             // entitiesTabPage
             // 
-            this.entitiesTabPage.Controls.Add(this.panel3);
+            this.entitiesTabPage.Controls.Add(this.panelEntityData);
             this.entitiesTabPage.Controls.Add(this.eventEditorPanel);
             resources.ApplyResources(this.entitiesTabPage, "entitiesTabPage");
             this.entitiesTabPage.Name = "entitiesTabPage";
             this.entitiesTabPage.UseVisualStyleBackColor = true;
             // 
-            // panel3
+            // panelEntityData
             // 
-            resources.ApplyResources(this.panel3, "panel3");
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.cboEventTypes);
-            this.panel3.Controls.Add(this.numericUpDown10);
-            this.panel3.Controls.Add(this.panelSpriteEvent);
-            this.panel3.Controls.Add(this.panelSignEvent);
-            this.panel3.Controls.Add(this.panelScriptEvent);
-            this.panel3.Controls.Add(this.panelWarpEvent);
-            this.panel3.Name = "panel3";
+            resources.ApplyResources(this.panelEntityData, "panelEntityData");
+            this.panelEntityData.Controls.Add(this.btnCreateNewEntity);
+            this.panelEntityData.Controls.Add(this.cboEventTypes);
+            this.panelEntityData.Controls.Add(this.nudEntityNum);
+            this.panelEntityData.Controls.Add(this.panelSpriteEvent);
+            this.panelEntityData.Controls.Add(this.panelSignEvent);
+            this.panelEntityData.Controls.Add(this.panelScriptEvent);
+            this.panelEntityData.Controls.Add(this.panelWarpEvent);
+            this.panelEntityData.Controls.Add(this.labelEntityDataPanel);
+            this.panelEntityData.Name = "panelEntityData";
             // 
-            // button3
+            // btnCreateNewEntity
             // 
-            this.button3.ForeColor = System.Drawing.Color.Red;
-            this.button3.Image = global::PGMEWindowsUI.Properties.Resources.add_16x16;
-            resources.ApplyResources(this.button3, "button3");
-            this.button3.Name = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnCreateNewEntity.ForeColor = System.Drawing.Color.Red;
+            this.btnCreateNewEntity.Image = global::PGMEWindowsUI.Properties.Resources.add_16x16;
+            resources.ApplyResources(this.btnCreateNewEntity, "btnCreateNewEntity");
+            this.btnCreateNewEntity.Name = "btnCreateNewEntity";
+            this.btnCreateNewEntity.UseVisualStyleBackColor = true;
+            this.btnCreateNewEntity.Click += new System.EventHandler(this.btnCreateNewEntity_Click);
             // 
             // cboEventTypes
             // 
@@ -1031,14 +1051,557 @@ namespace PGMEWindowsUI
             this.cboEventTypes.Name = "cboEventTypes";
             this.cboEventTypes.SelectedIndexChanged += new System.EventHandler(this.comboBox6_SelectedIndexChanged);
             // 
-            // numericUpDown10
+            // nudEntityNum
             // 
-            resources.ApplyResources(this.numericUpDown10, "numericUpDown10");
-            this.numericUpDown10.Name = "numericUpDown10";
+            resources.ApplyResources(this.nudEntityNum, "nudEntityNum");
+            this.nudEntityNum.Name = "nudEntityNum";
+            this.nudEntityNum.ValueChanged += new System.EventHandler(this.nudEntityNum_ValueChanged);
+            // 
+            // panelSignEvent
+            // 
+            resources.ApplyResources(this.panelSignEvent, "panelSignEvent");
+            this.panelSignEvent.Controls.Add(this.textBox1);
+            this.panelSignEvent.Controls.Add(this.hexNumberBoxSignFiller1);
+            this.panelSignEvent.Controls.Add(this.label1);
+            this.panelSignEvent.Controls.Add(this.textBox59);
+            this.panelSignEvent.Controls.Add(this.textBox58);
+            this.panelSignEvent.Controls.Add(this.textBox57);
+            this.panelSignEvent.Controls.Add(this.textBox56);
+            this.panelSignEvent.Controls.Add(this.btnDeleteSign);
+            this.panelSignEvent.Controls.Add(this.btnSignOpenScript);
+            this.panelSignEvent.Controls.Add(this.hexNumberBoxSignScriptOffset);
+            this.panelSignEvent.Controls.Add(this.label23);
+            this.panelSignEvent.Controls.Add(this.hexNumberBoxSignFiller2);
+            this.panelSignEvent.Controls.Add(this.label33);
+            this.panelSignEvent.Controls.Add(this.label34);
+            this.panelSignEvent.Controls.Add(this.cbSignType);
+            this.panelSignEvent.Controls.Add(this.cbSignHeight);
+            this.panelSignEvent.Controls.Add(this.label35);
+            this.panelSignEvent.Controls.Add(this.labelSignPosition);
+            this.panelSignEvent.Controls.Add(this.hexNumberBoxSignYPos);
+            this.panelSignEvent.Controls.Add(this.hexNumberBoxSignXPos);
+            this.panelSignEvent.Name = "panelSignEvent";
+            // 
+            // textBox1
+            // 
+            resources.ApplyResources(this.textBox1, "textBox1");
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.TabStop = false;
+            // 
+            // hexNumberBoxSignFiller1
+            // 
+            resources.ApplyResources(this.hexNumberBoxSignFiller1, "hexNumberBoxSignFiller1");
+            this.hexNumberBoxSignFiller1.Name = "hexNumberBoxSignFiller1";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
+            // textBox59
+            // 
+            resources.ApplyResources(this.textBox59, "textBox59");
+            this.textBox59.Name = "textBox59";
+            this.textBox59.ReadOnly = true;
+            this.textBox59.TabStop = false;
+            // 
+            // textBox58
+            // 
+            resources.ApplyResources(this.textBox58, "textBox58");
+            this.textBox58.Name = "textBox58";
+            this.textBox58.ReadOnly = true;
+            this.textBox58.TabStop = false;
+            // 
+            // textBox57
+            // 
+            resources.ApplyResources(this.textBox57, "textBox57");
+            this.textBox57.Name = "textBox57";
+            this.textBox57.ReadOnly = true;
+            this.textBox57.TabStop = false;
+            // 
+            // textBox56
+            // 
+            resources.ApplyResources(this.textBox56, "textBox56");
+            this.textBox56.Name = "textBox56";
+            this.textBox56.ReadOnly = true;
+            this.textBox56.TabStop = false;
+            // 
+            // btnDeleteSign
+            // 
+            this.btnDeleteSign.ForeColor = System.Drawing.Color.Red;
+            resources.ApplyResources(this.btnDeleteSign, "btnDeleteSign");
+            this.btnDeleteSign.Name = "btnDeleteSign";
+            this.btnDeleteSign.UseVisualStyleBackColor = true;
+            this.btnDeleteSign.Click += new System.EventHandler(this.btnDeleteSign_Click);
+            // 
+            // btnSignOpenScript
+            // 
+            resources.ApplyResources(this.btnSignOpenScript, "btnSignOpenScript");
+            this.btnSignOpenScript.Name = "btnSignOpenScript";
+            this.btnSignOpenScript.UseVisualStyleBackColor = true;
+            this.btnSignOpenScript.Click += new System.EventHandler(this.btnSignOpenScript_Click);
+            // 
+            // hexNumberBoxSignScriptOffset
+            // 
+            resources.ApplyResources(this.hexNumberBoxSignScriptOffset, "hexNumberBoxSignScriptOffset");
+            this.hexNumberBoxSignScriptOffset.Name = "hexNumberBoxSignScriptOffset";
+            // 
+            // label23
+            // 
+            resources.ApplyResources(this.label23, "label23");
+            this.label23.Name = "label23";
+            // 
+            // hexNumberBoxSignFiller2
+            // 
+            resources.ApplyResources(this.hexNumberBoxSignFiller2, "hexNumberBoxSignFiller2");
+            this.hexNumberBoxSignFiller2.Name = "hexNumberBoxSignFiller2";
+            // 
+            // label33
+            // 
+            resources.ApplyResources(this.label33, "label33");
+            this.label33.Name = "label33";
+            // 
+            // label34
+            // 
+            resources.ApplyResources(this.label34, "label34");
+            this.label34.Name = "label34";
+            // 
+            // cbSignType
+            // 
+            this.cbSignType.FormattingEnabled = true;
+            this.cbSignType.Items.AddRange(new object[] {
+            resources.GetString("cbSignType.Items"),
+            resources.GetString("cbSignType.Items1"),
+            resources.GetString("cbSignType.Items2"),
+            resources.GetString("cbSignType.Items3"),
+            resources.GetString("cbSignType.Items4"),
+            resources.GetString("cbSignType.Items5"),
+            resources.GetString("cbSignType.Items6"),
+            resources.GetString("cbSignType.Items7"),
+            resources.GetString("cbSignType.Items8")});
+            resources.ApplyResources(this.cbSignType, "cbSignType");
+            this.cbSignType.Name = "cbSignType";
+            // 
+            // cbSignHeight
+            // 
+            this.cbSignHeight.FormattingEnabled = true;
+            this.cbSignHeight.Items.AddRange(new object[] {
+            resources.GetString("cbSignHeight.Items"),
+            resources.GetString("cbSignHeight.Items1"),
+            resources.GetString("cbSignHeight.Items2"),
+            resources.GetString("cbSignHeight.Items3"),
+            resources.GetString("cbSignHeight.Items4"),
+            resources.GetString("cbSignHeight.Items5"),
+            resources.GetString("cbSignHeight.Items6"),
+            resources.GetString("cbSignHeight.Items7"),
+            resources.GetString("cbSignHeight.Items8"),
+            resources.GetString("cbSignHeight.Items9"),
+            resources.GetString("cbSignHeight.Items10"),
+            resources.GetString("cbSignHeight.Items11"),
+            resources.GetString("cbSignHeight.Items12"),
+            resources.GetString("cbSignHeight.Items13"),
+            resources.GetString("cbSignHeight.Items14"),
+            resources.GetString("cbSignHeight.Items15")});
+            resources.ApplyResources(this.cbSignHeight, "cbSignHeight");
+            this.cbSignHeight.Name = "cbSignHeight";
+            // 
+            // label35
+            // 
+            resources.ApplyResources(this.label35, "label35");
+            this.label35.Name = "label35";
+            // 
+            // labelSignPosition
+            // 
+            resources.ApplyResources(this.labelSignPosition, "labelSignPosition");
+            this.labelSignPosition.Name = "labelSignPosition";
+            // 
+            // hexNumberBoxSignXPos
+            // 
+            resources.ApplyResources(this.hexNumberBoxSignXPos, "hexNumberBoxSignXPos");
+            this.hexNumberBoxSignXPos.Name = "hexNumberBoxSignXPos";
+            // 
+            // panelScriptEvent
+            // 
+            resources.ApplyResources(this.panelScriptEvent, "panelScriptEvent");
+            this.panelScriptEvent.Controls.Add(this.textBox79);
+            this.panelScriptEvent.Controls.Add(this.textBox78);
+            this.panelScriptEvent.Controls.Add(this.textBox77);
+            this.panelScriptEvent.Controls.Add(this.textBox64);
+            this.panelScriptEvent.Controls.Add(this.textBox62);
+            this.panelScriptEvent.Controls.Add(this.textBox61);
+            this.panelScriptEvent.Controls.Add(this.label37);
+            this.panelScriptEvent.Controls.Add(this.hexNumberBoxTriggerFiller2);
+            this.panelScriptEvent.Controls.Add(this.label27);
+            this.panelScriptEvent.Controls.Add(this.hexNumberBoxTriggerFiller1);
+            this.panelScriptEvent.Controls.Add(this.label32);
+            this.panelScriptEvent.Controls.Add(this.groupBox3);
+            this.panelScriptEvent.Controls.Add(this.label19);
+            this.panelScriptEvent.Controls.Add(this.btnDeleteTrigger);
+            this.panelScriptEvent.Controls.Add(this.hexNumberBoxTriggerScriptOffset);
+            this.panelScriptEvent.Controls.Add(this.btnTriggerOpenScript);
+            this.panelScriptEvent.Controls.Add(this.hexNumberBoxTriggerFiller3);
+            this.panelScriptEvent.Controls.Add(this.cbTriggerHeight);
+            this.panelScriptEvent.Controls.Add(this.label29);
+            this.panelScriptEvent.Controls.Add(this.labelTriggerPosition);
+            this.panelScriptEvent.Controls.Add(this.hexNumberBoxTriggerYPos);
+            this.panelScriptEvent.Controls.Add(this.hexNumberBoxTriggerXPos);
+            this.panelScriptEvent.Name = "panelScriptEvent";
+            // 
+            // textBox79
+            // 
+            resources.ApplyResources(this.textBox79, "textBox79");
+            this.textBox79.Name = "textBox79";
+            this.textBox79.ReadOnly = true;
+            this.textBox79.TabStop = false;
+            // 
+            // textBox78
+            // 
+            resources.ApplyResources(this.textBox78, "textBox78");
+            this.textBox78.Name = "textBox78";
+            this.textBox78.ReadOnly = true;
+            this.textBox78.TabStop = false;
+            // 
+            // textBox77
+            // 
+            resources.ApplyResources(this.textBox77, "textBox77");
+            this.textBox77.Name = "textBox77";
+            this.textBox77.ReadOnly = true;
+            this.textBox77.TabStop = false;
+            // 
+            // textBox64
+            // 
+            resources.ApplyResources(this.textBox64, "textBox64");
+            this.textBox64.Name = "textBox64";
+            this.textBox64.ReadOnly = true;
+            this.textBox64.TabStop = false;
+            // 
+            // textBox62
+            // 
+            resources.ApplyResources(this.textBox62, "textBox62");
+            this.textBox62.Name = "textBox62";
+            this.textBox62.ReadOnly = true;
+            this.textBox62.TabStop = false;
+            // 
+            // textBox61
+            // 
+            resources.ApplyResources(this.textBox61, "textBox61");
+            this.textBox61.Name = "textBox61";
+            this.textBox61.ReadOnly = true;
+            this.textBox61.TabStop = false;
+            // 
+            // label37
+            // 
+            resources.ApplyResources(this.label37, "label37");
+            this.label37.Name = "label37";
+            // 
+            // hexNumberBoxTriggerFiller2
+            // 
+            resources.ApplyResources(this.hexNumberBoxTriggerFiller2, "hexNumberBoxTriggerFiller2");
+            this.hexNumberBoxTriggerFiller2.Name = "hexNumberBoxTriggerFiller2";
+            // 
+            // label27
+            // 
+            resources.ApplyResources(this.label27, "label27");
+            this.label27.Name = "label27";
+            // 
+            // hexNumberBoxTriggerFiller1
+            // 
+            resources.ApplyResources(this.hexNumberBoxTriggerFiller1, "hexNumberBoxTriggerFiller1");
+            this.hexNumberBoxTriggerFiller1.Name = "hexNumberBoxTriggerFiller1";
+            // 
+            // label32
+            // 
+            resources.ApplyResources(this.label32, "label32");
+            this.label32.Name = "label32";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.textBox75);
+            this.groupBox3.Controls.Add(this.textBox65);
+            this.groupBox3.Controls.Add(this.label28);
+            this.groupBox3.Controls.Add(this.label31);
+            this.groupBox3.Controls.Add(this.hexNumberBoxTriggerVariable);
+            this.groupBox3.Controls.Add(this.hexNumberBoxTriggerValue);
+            resources.ApplyResources(this.groupBox3, "groupBox3");
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.TabStop = false;
+            // 
+            // textBox75
+            // 
+            resources.ApplyResources(this.textBox75, "textBox75");
+            this.textBox75.Name = "textBox75";
+            this.textBox75.ReadOnly = true;
+            this.textBox75.TabStop = false;
+            // 
+            // textBox65
+            // 
+            resources.ApplyResources(this.textBox65, "textBox65");
+            this.textBox65.Name = "textBox65";
+            this.textBox65.ReadOnly = true;
+            this.textBox65.TabStop = false;
+            // 
+            // label28
+            // 
+            resources.ApplyResources(this.label28, "label28");
+            this.label28.Name = "label28";
+            // 
+            // label31
+            // 
+            resources.ApplyResources(this.label31, "label31");
+            this.label31.Name = "label31";
+            // 
+            // hexNumberBoxTriggerVariable
+            // 
+            resources.ApplyResources(this.hexNumberBoxTriggerVariable, "hexNumberBoxTriggerVariable");
+            this.hexNumberBoxTriggerVariable.Name = "hexNumberBoxTriggerVariable";
+            // 
+            // hexNumberBoxTriggerValue
+            // 
+            resources.ApplyResources(this.hexNumberBoxTriggerValue, "hexNumberBoxTriggerValue");
+            this.hexNumberBoxTriggerValue.Name = "hexNumberBoxTriggerValue";
+            // 
+            // label19
+            // 
+            resources.ApplyResources(this.label19, "label19");
+            this.label19.Name = "label19";
+            // 
+            // btnDeleteTrigger
+            // 
+            this.btnDeleteTrigger.ForeColor = System.Drawing.Color.Red;
+            resources.ApplyResources(this.btnDeleteTrigger, "btnDeleteTrigger");
+            this.btnDeleteTrigger.Name = "btnDeleteTrigger";
+            this.btnDeleteTrigger.UseVisualStyleBackColor = true;
+            this.btnDeleteTrigger.Click += new System.EventHandler(this.btnDeleteTrigger_Click);
+            // 
+            // hexNumberBoxTriggerScriptOffset
+            // 
+            resources.ApplyResources(this.hexNumberBoxTriggerScriptOffset, "hexNumberBoxTriggerScriptOffset");
+            this.hexNumberBoxTriggerScriptOffset.Name = "hexNumberBoxTriggerScriptOffset";
+            // 
+            // btnTriggerOpenScript
+            // 
+            resources.ApplyResources(this.btnTriggerOpenScript, "btnTriggerOpenScript");
+            this.btnTriggerOpenScript.Name = "btnTriggerOpenScript";
+            this.btnTriggerOpenScript.UseVisualStyleBackColor = true;
+            this.btnTriggerOpenScript.Click += new System.EventHandler(this.btnTriggerOpenScript_Click);
+            // 
+            // hexNumberBoxTriggerFiller3
+            // 
+            resources.ApplyResources(this.hexNumberBoxTriggerFiller3, "hexNumberBoxTriggerFiller3");
+            this.hexNumberBoxTriggerFiller3.Name = "hexNumberBoxTriggerFiller3";
+            // 
+            // cbTriggerHeight
+            // 
+            this.cbTriggerHeight.FormattingEnabled = true;
+            this.cbTriggerHeight.Items.AddRange(new object[] {
+            resources.GetString("cbTriggerHeight.Items"),
+            resources.GetString("cbTriggerHeight.Items1"),
+            resources.GetString("cbTriggerHeight.Items2"),
+            resources.GetString("cbTriggerHeight.Items3"),
+            resources.GetString("cbTriggerHeight.Items4"),
+            resources.GetString("cbTriggerHeight.Items5"),
+            resources.GetString("cbTriggerHeight.Items6"),
+            resources.GetString("cbTriggerHeight.Items7"),
+            resources.GetString("cbTriggerHeight.Items8"),
+            resources.GetString("cbTriggerHeight.Items9"),
+            resources.GetString("cbTriggerHeight.Items10"),
+            resources.GetString("cbTriggerHeight.Items11"),
+            resources.GetString("cbTriggerHeight.Items12"),
+            resources.GetString("cbTriggerHeight.Items13"),
+            resources.GetString("cbTriggerHeight.Items14"),
+            resources.GetString("cbTriggerHeight.Items15")});
+            resources.ApplyResources(this.cbTriggerHeight, "cbTriggerHeight");
+            this.cbTriggerHeight.Name = "cbTriggerHeight";
+            // 
+            // label29
+            // 
+            resources.ApplyResources(this.label29, "label29");
+            this.label29.Name = "label29";
+            // 
+            // labelTriggerPosition
+            // 
+            resources.ApplyResources(this.labelTriggerPosition, "labelTriggerPosition");
+            this.labelTriggerPosition.Name = "labelTriggerPosition";
+            // 
+            // hexNumberBoxTriggerYPos
+            // 
+            resources.ApplyResources(this.hexNumberBoxTriggerYPos, "hexNumberBoxTriggerYPos");
+            this.hexNumberBoxTriggerYPos.Name = "hexNumberBoxTriggerYPos";
+            // 
+            // hexNumberBoxTriggerXPos
+            // 
+            resources.ApplyResources(this.hexNumberBoxTriggerXPos, "hexNumberBoxTriggerXPos");
+            this.hexNumberBoxTriggerXPos.Name = "hexNumberBoxTriggerXPos";
+            // 
+            // panelWarpEvent
+            // 
+            resources.ApplyResources(this.panelWarpEvent, "panelWarpEvent");
+            this.panelWarpEvent.Controls.Add(this.textBox94);
+            this.panelWarpEvent.Controls.Add(this.textBox93);
+            this.panelWarpEvent.Controls.Add(this.gbWarpDestination);
+            this.panelWarpEvent.Controls.Add(this.btnDeleteWarp);
+            this.panelWarpEvent.Controls.Add(this.btnWarpTravelToDest);
+            this.panelWarpEvent.Controls.Add(this.cbWarpHeight);
+            this.panelWarpEvent.Controls.Add(this.labelWarpHeight);
+            this.panelWarpEvent.Controls.Add(this.labelWarpPosition);
+            this.panelWarpEvent.Controls.Add(this.hexNumberBoxWarpYPos);
+            this.panelWarpEvent.Controls.Add(this.hexNumberBoxWarpXPos);
+            this.panelWarpEvent.Name = "panelWarpEvent";
+            // 
+            // textBox94
+            // 
+            resources.ApplyResources(this.textBox94, "textBox94");
+            this.textBox94.Name = "textBox94";
+            this.textBox94.ReadOnly = true;
+            this.textBox94.TabStop = false;
+            // 
+            // textBox93
+            // 
+            resources.ApplyResources(this.textBox93, "textBox93");
+            this.textBox93.Name = "textBox93";
+            this.textBox93.ReadOnly = true;
+            this.textBox93.TabStop = false;
+            // 
+            // gbWarpDestination
+            // 
+            this.gbWarpDestination.Controls.Add(this.textBox86);
+            this.gbWarpDestination.Controls.Add(this.textBox81);
+            this.gbWarpDestination.Controls.Add(this.textBox80);
+            this.gbWarpDestination.Controls.Add(this.labelWarpNumber);
+            this.gbWarpDestination.Controls.Add(this.labelWarpBank);
+            this.gbWarpDestination.Controls.Add(this.labelWarpMap);
+            this.gbWarpDestination.Controls.Add(this.hexNumberBoxWarpMap);
+            this.gbWarpDestination.Controls.Add(this.hexNumberBoxWarpNum);
+            this.gbWarpDestination.Controls.Add(this.hexNumberBoxWarpBank);
+            resources.ApplyResources(this.gbWarpDestination, "gbWarpDestination");
+            this.gbWarpDestination.Name = "gbWarpDestination";
+            this.gbWarpDestination.TabStop = false;
+            this.gbWarpDestination.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // textBox86
+            // 
+            resources.ApplyResources(this.textBox86, "textBox86");
+            this.textBox86.Name = "textBox86";
+            this.textBox86.ReadOnly = true;
+            this.textBox86.TabStop = false;
+            // 
+            // textBox81
+            // 
+            resources.ApplyResources(this.textBox81, "textBox81");
+            this.textBox81.Name = "textBox81";
+            this.textBox81.ReadOnly = true;
+            this.textBox81.TabStop = false;
+            // 
+            // textBox80
+            // 
+            resources.ApplyResources(this.textBox80, "textBox80");
+            this.textBox80.Name = "textBox80";
+            this.textBox80.ReadOnly = true;
+            this.textBox80.TabStop = false;
+            // 
+            // labelWarpNumber
+            // 
+            resources.ApplyResources(this.labelWarpNumber, "labelWarpNumber");
+            this.labelWarpNumber.Name = "labelWarpNumber";
+            // 
+            // labelWarpBank
+            // 
+            resources.ApplyResources(this.labelWarpBank, "labelWarpBank");
+            this.labelWarpBank.Name = "labelWarpBank";
+            // 
+            // labelWarpMap
+            // 
+            resources.ApplyResources(this.labelWarpMap, "labelWarpMap");
+            this.labelWarpMap.Name = "labelWarpMap";
+            // 
+            // hexNumberBoxWarpMap
+            // 
+            resources.ApplyResources(this.hexNumberBoxWarpMap, "hexNumberBoxWarpMap");
+            this.hexNumberBoxWarpMap.Name = "hexNumberBoxWarpMap";
+            // 
+            // hexNumberBoxWarpNum
+            // 
+            resources.ApplyResources(this.hexNumberBoxWarpNum, "hexNumberBoxWarpNum");
+            this.hexNumberBoxWarpNum.Name = "hexNumberBoxWarpNum";
+            // 
+            // hexNumberBoxWarpBank
+            // 
+            resources.ApplyResources(this.hexNumberBoxWarpBank, "hexNumberBoxWarpBank");
+            this.hexNumberBoxWarpBank.Name = "hexNumberBoxWarpBank";
+            // 
+            // btnDeleteWarp
+            // 
+            this.btnDeleteWarp.ForeColor = System.Drawing.Color.Red;
+            resources.ApplyResources(this.btnDeleteWarp, "btnDeleteWarp");
+            this.btnDeleteWarp.Name = "btnDeleteWarp";
+            this.btnDeleteWarp.UseVisualStyleBackColor = true;
+            this.btnDeleteWarp.Click += new System.EventHandler(this.btnDeleteWarp_Click);
+            // 
+            // btnWarpTravelToDest
+            // 
+            resources.ApplyResources(this.btnWarpTravelToDest, "btnWarpTravelToDest");
+            this.btnWarpTravelToDest.Name = "btnWarpTravelToDest";
+            this.btnWarpTravelToDest.UseVisualStyleBackColor = true;
+            this.btnWarpTravelToDest.Click += new System.EventHandler(this.btnTravelToWarpDest_Click);
+            // 
+            // cbWarpHeight
+            // 
+            this.cbWarpHeight.FormattingEnabled = true;
+            this.cbWarpHeight.Items.AddRange(new object[] {
+            resources.GetString("cbWarpHeight.Items"),
+            resources.GetString("cbWarpHeight.Items1"),
+            resources.GetString("cbWarpHeight.Items2"),
+            resources.GetString("cbWarpHeight.Items3"),
+            resources.GetString("cbWarpHeight.Items4"),
+            resources.GetString("cbWarpHeight.Items5"),
+            resources.GetString("cbWarpHeight.Items6"),
+            resources.GetString("cbWarpHeight.Items7"),
+            resources.GetString("cbWarpHeight.Items8"),
+            resources.GetString("cbWarpHeight.Items9"),
+            resources.GetString("cbWarpHeight.Items10"),
+            resources.GetString("cbWarpHeight.Items11"),
+            resources.GetString("cbWarpHeight.Items12"),
+            resources.GetString("cbWarpHeight.Items13"),
+            resources.GetString("cbWarpHeight.Items14"),
+            resources.GetString("cbWarpHeight.Items15")});
+            resources.ApplyResources(this.cbWarpHeight, "cbWarpHeight");
+            this.cbWarpHeight.Name = "cbWarpHeight";
+            // 
+            // labelWarpHeight
+            // 
+            resources.ApplyResources(this.labelWarpHeight, "labelWarpHeight");
+            this.labelWarpHeight.Name = "labelWarpHeight";
+            // 
+            // labelWarpPosition
+            // 
+            resources.ApplyResources(this.labelWarpPosition, "labelWarpPosition");
+            this.labelWarpPosition.Name = "labelWarpPosition";
+            // 
+            // hexNumberBoxWarpYPos
+            // 
+            resources.ApplyResources(this.hexNumberBoxWarpYPos, "hexNumberBoxWarpYPos");
+            this.hexNumberBoxWarpYPos.Name = "hexNumberBoxWarpYPos";
+            // 
+            // hexNumberBoxWarpXPos
+            // 
+            resources.ApplyResources(this.hexNumberBoxWarpXPos, "hexNumberBoxWarpXPos");
+            this.hexNumberBoxWarpXPos.Name = "hexNumberBoxWarpXPos";
             // 
             // panelSpriteEvent
             // 
             resources.ApplyResources(this.panelSpriteEvent, "panelSpriteEvent");
+            this.panelSpriteEvent.Controls.Add(this.hexPrefixBox27);
+            this.panelSpriteEvent.Controls.Add(this.hexNumberBoxNPCViewRadius);
+            this.panelSpriteEvent.Controls.Add(this.labelNPCFiller4);
+            this.panelSpriteEvent.Controls.Add(this.hexPrefixBox28);
+            this.panelSpriteEvent.Controls.Add(this.hexNumberBoxNPCFiller6);
+            this.panelSpriteEvent.Controls.Add(this.labelNPCFiller6);
+            this.panelSpriteEvent.Controls.Add(this.hexPrefixBox26);
+            this.panelSpriteEvent.Controls.Add(this.hexNumberBoxNPCXBound);
+            this.panelSpriteEvent.Controls.Add(this.hexPrefixBox25);
+            this.panelSpriteEvent.Controls.Add(this.hexPrefixBox24);
+            this.panelSpriteEvent.Controls.Add(this.groupBox1);
             this.panelSpriteEvent.Controls.Add(this.hexPrefixBox23);
             this.panelSpriteEvent.Controls.Add(this.hexPrefixBox22);
             this.panelSpriteEvent.Controls.Add(this.hexPrefixBox21);
@@ -1051,40 +1614,127 @@ namespace PGMEWindowsUI
             this.panelSpriteEvent.Controls.Add(this.hexPrefixBox14);
             this.panelSpriteEvent.Controls.Add(this.hexPrefixBox13);
             this.panelSpriteEvent.Controls.Add(this.hexPrefixBox12);
-            this.panelSpriteEvent.Controls.Add(this.textBox19);
-            this.panelSpriteEvent.Controls.Add(this.label26);
-            this.panelSpriteEvent.Controls.Add(this.textBox11);
-            this.panelSpriteEvent.Controls.Add(this.label18);
-            this.panelSpriteEvent.Controls.Add(this.label17);
-            this.panelSpriteEvent.Controls.Add(this.textBox10);
-            this.panelSpriteEvent.Controls.Add(this.button2);
-            this.panelSpriteEvent.Controls.Add(this.button1);
-            this.panelSpriteEvent.Controls.Add(this.textBox9);
-            this.panelSpriteEvent.Controls.Add(this.label16);
-            this.panelSpriteEvent.Controls.Add(this.textBox8);
-            this.panelSpriteEvent.Controls.Add(this.label15);
-            this.panelSpriteEvent.Controls.Add(this.textBox2);
-            this.panelSpriteEvent.Controls.Add(this.label8);
-            this.panelSpriteEvent.Controls.Add(this.textBox7);
-            this.panelSpriteEvent.Controls.Add(this.label14);
-            this.panelSpriteEvent.Controls.Add(this.textBox6);
-            this.panelSpriteEvent.Controls.Add(this.label13);
-            this.panelSpriteEvent.Controls.Add(this.textBox5);
-            this.panelSpriteEvent.Controls.Add(this.label12);
-            this.panelSpriteEvent.Controls.Add(this.label11);
-            this.panelSpriteEvent.Controls.Add(this.comboBox3);
-            this.panelSpriteEvent.Controls.Add(this.comboBox2);
-            this.panelSpriteEvent.Controls.Add(this.label10);
-            this.panelSpriteEvent.Controls.Add(this.label9);
-            this.panelSpriteEvent.Controls.Add(this.textBox4);
-            this.panelSpriteEvent.Controls.Add(this.label7);
-            this.panelSpriteEvent.Controls.Add(this.label6);
-            this.panelSpriteEvent.Controls.Add(this.label5);
-            this.panelSpriteEvent.Controls.Add(this.textBox3);
-            this.panelSpriteEvent.Controls.Add(this.textBox1);
-            this.panelSpriteEvent.Controls.Add(this.numericUpDown7);
-            this.panelSpriteEvent.Controls.Add(this.numericUpDown6);
+            this.panelSpriteEvent.Controls.Add(this.hexNumberBoxNPCFiller3);
+            this.panelSpriteEvent.Controls.Add(this.labelNPCFiller3);
+            this.panelSpriteEvent.Controls.Add(this.hexNumberBoxNPCFiller2);
+            this.panelSpriteEvent.Controls.Add(this.labelNPCFiller2);
+            this.panelSpriteEvent.Controls.Add(this.labelNPCFiller1);
+            this.panelSpriteEvent.Controls.Add(this.hexNumberBoxNPCFiller1);
+            this.panelSpriteEvent.Controls.Add(this.btnDeleteNPC);
+            this.panelSpriteEvent.Controls.Add(this.btnNPCOpenScript);
+            this.panelSpriteEvent.Controls.Add(this.hexNumberBoxNPCFiller5);
+            this.panelSpriteEvent.Controls.Add(this.labelNPCFiller5);
+            this.panelSpriteEvent.Controls.Add(this.hexNumberBoxNPCVisibilityFlag);
+            this.panelSpriteEvent.Controls.Add(this.labelNPCVisibilityFlag);
+            this.panelSpriteEvent.Controls.Add(this.hexNumberBoxNPCScriptOffset);
+            this.panelSpriteEvent.Controls.Add(this.labelNPCScriptEditor);
+            this.panelSpriteEvent.Controls.Add(this.hexNumberBoxNPCFiller4);
+            this.panelSpriteEvent.Controls.Add(this.labelNPCViewRadius);
+            this.panelSpriteEvent.Controls.Add(this.hexNumberBoxNPCTrainer);
+            this.panelSpriteEvent.Controls.Add(this.labelNPCTrainer);
+            this.panelSpriteEvent.Controls.Add(this.hexNumberBoxNPCYBound);
+            this.panelSpriteEvent.Controls.Add(this.labelNPCMovementBoundaries);
+            this.panelSpriteEvent.Controls.Add(this.labelNPCIdleAnimation);
+            this.panelSpriteEvent.Controls.Add(this.cbNPCIdleAnim);
+            this.panelSpriteEvent.Controls.Add(this.cbNPCHeight);
+            this.panelSpriteEvent.Controls.Add(this.labelNPCHeight);
+            this.panelSpriteEvent.Controls.Add(this.labelNPCPosition);
+            this.panelSpriteEvent.Controls.Add(this.hexNumberBoxNPCYPos);
+            this.panelSpriteEvent.Controls.Add(this.labelNPCReplacement);
+            this.panelSpriteEvent.Controls.Add(this.labelNPCSpriteNumber);
+            this.panelSpriteEvent.Controls.Add(this.labelNPCNumber);
+            this.panelSpriteEvent.Controls.Add(this.hexNumberBoxNPCXPos);
+            this.panelSpriteEvent.Controls.Add(this.hexNumberBoxNPCReplacement);
+            this.panelSpriteEvent.Controls.Add(this.nudNPCSpriteNum);
+            this.panelSpriteEvent.Controls.Add(this.nudNPCNum);
             this.panelSpriteEvent.Name = "panelSpriteEvent";
+            // 
+            // hexPrefixBox27
+            // 
+            resources.ApplyResources(this.hexPrefixBox27, "hexPrefixBox27");
+            this.hexPrefixBox27.Name = "hexPrefixBox27";
+            this.hexPrefixBox27.ReadOnly = true;
+            this.hexPrefixBox27.TabStop = false;
+            // 
+            // hexNumberBoxNPCViewRadius
+            // 
+            resources.ApplyResources(this.hexNumberBoxNPCViewRadius, "hexNumberBoxNPCViewRadius");
+            this.hexNumberBoxNPCViewRadius.Name = "hexNumberBoxNPCViewRadius";
+            // 
+            // labelNPCFiller4
+            // 
+            resources.ApplyResources(this.labelNPCFiller4, "labelNPCFiller4");
+            this.labelNPCFiller4.Name = "labelNPCFiller4";
+            // 
+            // hexPrefixBox28
+            // 
+            resources.ApplyResources(this.hexPrefixBox28, "hexPrefixBox28");
+            this.hexPrefixBox28.Name = "hexPrefixBox28";
+            this.hexPrefixBox28.ReadOnly = true;
+            this.hexPrefixBox28.TabStop = false;
+            // 
+            // hexNumberBoxNPCFiller6
+            // 
+            resources.ApplyResources(this.hexNumberBoxNPCFiller6, "hexNumberBoxNPCFiller6");
+            this.hexNumberBoxNPCFiller6.Name = "hexNumberBoxNPCFiller6";
+            // 
+            // labelNPCFiller6
+            // 
+            resources.ApplyResources(this.labelNPCFiller6, "labelNPCFiller6");
+            this.labelNPCFiller6.Name = "labelNPCFiller6";
+            // 
+            // hexPrefixBox26
+            // 
+            resources.ApplyResources(this.hexPrefixBox26, "hexPrefixBox26");
+            this.hexPrefixBox26.Name = "hexPrefixBox26";
+            this.hexPrefixBox26.ReadOnly = true;
+            this.hexPrefixBox26.TabStop = false;
+            // 
+            // hexNumberBoxNPCXBound
+            // 
+            resources.ApplyResources(this.hexNumberBoxNPCXBound, "hexNumberBoxNPCXBound");
+            this.hexNumberBoxNPCXBound.Name = "hexNumberBoxNPCXBound";
+            // 
+            // hexPrefixBox25
+            // 
+            resources.ApplyResources(this.hexPrefixBox25, "hexPrefixBox25");
+            this.hexPrefixBox25.Name = "hexPrefixBox25";
+            this.hexPrefixBox25.ReadOnly = true;
+            this.hexPrefixBox25.TabStop = false;
+            // 
+            // hexPrefixBox24
+            // 
+            resources.ApplyResources(this.hexPrefixBox24, "hexPrefixBox24");
+            this.hexPrefixBox24.Name = "hexPrefixBox24";
+            this.hexPrefixBox24.ReadOnly = true;
+            this.hexPrefixBox24.TabStop = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.hexBox1);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.TabStop = false;
+            // 
+            // checkBox1
+            // 
+            resources.ApplyResources(this.checkBox1, "checkBox1");
+            this.checkBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = false;
+            // 
+            // hexBox1
+            // 
+            this.hexBox1.BytesPerLine = 8;
+            resources.ApplyResources(this.hexBox1, "hexBox1");
+            this.hexBox1.GroupSeparatorVisible = true;
+            this.hexBox1.Name = "hexBox1";
+            this.hexBox1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            this.hexBox1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.hexBox1.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hexBox1.TabStop = false;
+            this.hexBox1.UseFixedBytesPerLine = true;
             // 
             // hexPrefixBox23
             // 
@@ -1170,624 +1820,283 @@ namespace PGMEWindowsUI
             this.hexPrefixBox12.ReadOnly = true;
             this.hexPrefixBox12.TabStop = false;
             // 
-            // textBox19
+            // hexNumberBoxNPCFiller3
             // 
-            resources.ApplyResources(this.textBox19, "textBox19");
-            this.textBox19.Name = "textBox19";
+            resources.ApplyResources(this.hexNumberBoxNPCFiller3, "hexNumberBoxNPCFiller3");
+            this.hexNumberBoxNPCFiller3.Name = "hexNumberBoxNPCFiller3";
             // 
-            // label26
+            // labelNPCFiller3
             // 
-            resources.ApplyResources(this.label26, "label26");
-            this.label26.Name = "label26";
+            resources.ApplyResources(this.labelNPCFiller3, "labelNPCFiller3");
+            this.labelNPCFiller3.Name = "labelNPCFiller3";
             // 
-            // textBox11
+            // hexNumberBoxNPCFiller2
             // 
-            resources.ApplyResources(this.textBox11, "textBox11");
-            this.textBox11.Name = "textBox11";
+            resources.ApplyResources(this.hexNumberBoxNPCFiller2, "hexNumberBoxNPCFiller2");
+            this.hexNumberBoxNPCFiller2.Name = "hexNumberBoxNPCFiller2";
             // 
-            // label18
+            // labelNPCFiller2
             // 
-            resources.ApplyResources(this.label18, "label18");
-            this.label18.Name = "label18";
+            resources.ApplyResources(this.labelNPCFiller2, "labelNPCFiller2");
+            this.labelNPCFiller2.Name = "labelNPCFiller2";
             // 
-            // label17
+            // labelNPCFiller1
             // 
-            resources.ApplyResources(this.label17, "label17");
-            this.label17.Name = "label17";
+            resources.ApplyResources(this.labelNPCFiller1, "labelNPCFiller1");
+            this.labelNPCFiller1.Name = "labelNPCFiller1";
             // 
-            // textBox10
+            // hexNumberBoxNPCFiller1
             // 
-            resources.ApplyResources(this.textBox10, "textBox10");
-            this.textBox10.Name = "textBox10";
+            resources.ApplyResources(this.hexNumberBoxNPCFiller1, "hexNumberBoxNPCFiller1");
+            this.hexNumberBoxNPCFiller1.Name = "hexNumberBoxNPCFiller1";
             // 
-            // button2
+            // btnDeleteNPC
             // 
-            this.button2.ForeColor = System.Drawing.Color.Red;
-            resources.ApplyResources(this.button2, "button2");
-            this.button2.Name = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnDeleteNPC.ForeColor = System.Drawing.Color.Red;
+            resources.ApplyResources(this.btnDeleteNPC, "btnDeleteNPC");
+            this.btnDeleteNPC.Name = "btnDeleteNPC";
+            this.btnDeleteNPC.UseVisualStyleBackColor = true;
+            this.btnDeleteNPC.Click += new System.EventHandler(this.btnDeleteNPC_Click);
             // 
-            // button1
+            // btnNPCOpenScript
             // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.btnNPCOpenScript, "btnNPCOpenScript");
+            this.btnNPCOpenScript.Name = "btnNPCOpenScript";
+            this.btnNPCOpenScript.UseVisualStyleBackColor = true;
+            this.btnNPCOpenScript.Click += new System.EventHandler(this.btnNPCOpenScript_Click);
             // 
-            // textBox9
+            // hexNumberBoxNPCFiller5
             // 
-            resources.ApplyResources(this.textBox9, "textBox9");
-            this.textBox9.Name = "textBox9";
+            resources.ApplyResources(this.hexNumberBoxNPCFiller5, "hexNumberBoxNPCFiller5");
+            this.hexNumberBoxNPCFiller5.Name = "hexNumberBoxNPCFiller5";
             // 
-            // label16
+            // labelNPCFiller5
             // 
-            resources.ApplyResources(this.label16, "label16");
-            this.label16.Name = "label16";
+            resources.ApplyResources(this.labelNPCFiller5, "labelNPCFiller5");
+            this.labelNPCFiller5.Name = "labelNPCFiller5";
             // 
-            // textBox8
+            // hexNumberBoxNPCVisibilityFlag
             // 
-            resources.ApplyResources(this.textBox8, "textBox8");
-            this.textBox8.Name = "textBox8";
+            resources.ApplyResources(this.hexNumberBoxNPCVisibilityFlag, "hexNumberBoxNPCVisibilityFlag");
+            this.hexNumberBoxNPCVisibilityFlag.Name = "hexNumberBoxNPCVisibilityFlag";
             // 
-            // label15
+            // labelNPCVisibilityFlag
             // 
-            resources.ApplyResources(this.label15, "label15");
-            this.label15.Name = "label15";
+            resources.ApplyResources(this.labelNPCVisibilityFlag, "labelNPCVisibilityFlag");
+            this.labelNPCVisibilityFlag.Name = "labelNPCVisibilityFlag";
             // 
-            // textBox2
+            // hexNumberBoxNPCScriptOffset
             // 
-            resources.ApplyResources(this.textBox2, "textBox2");
-            this.textBox2.Name = "textBox2";
+            resources.ApplyResources(this.hexNumberBoxNPCScriptOffset, "hexNumberBoxNPCScriptOffset");
+            this.hexNumberBoxNPCScriptOffset.Name = "hexNumberBoxNPCScriptOffset";
             // 
-            // label8
+            // labelNPCScriptEditor
             // 
-            resources.ApplyResources(this.label8, "label8");
-            this.label8.Name = "label8";
-            // 
-            // textBox7
-            // 
-            resources.ApplyResources(this.textBox7, "textBox7");
-            this.textBox7.Name = "textBox7";
-            // 
-            // label14
-            // 
-            resources.ApplyResources(this.label14, "label14");
-            this.label14.Name = "label14";
-            // 
-            // textBox6
-            // 
-            resources.ApplyResources(this.textBox6, "textBox6");
-            this.textBox6.Name = "textBox6";
-            // 
-            // label13
-            // 
-            resources.ApplyResources(this.label13, "label13");
-            this.label13.Name = "label13";
-            // 
-            // textBox5
-            // 
-            resources.ApplyResources(this.textBox5, "textBox5");
-            this.textBox5.Name = "textBox5";
-            // 
-            // label12
-            // 
-            resources.ApplyResources(this.label12, "label12");
-            this.label12.Name = "label12";
-            // 
-            // label11
-            // 
-            resources.ApplyResources(this.label11, "label11");
-            this.label11.Name = "label11";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox3, "comboBox3");
-            this.comboBox3.Name = "comboBox3";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox2, "comboBox2");
-            this.comboBox2.Name = "comboBox2";
-            // 
-            // label10
-            // 
-            resources.ApplyResources(this.label10, "label10");
-            this.label10.Name = "label10";
-            // 
-            // label9
-            // 
-            resources.ApplyResources(this.label9, "label9");
-            this.label9.Name = "label9";
-            // 
-            // textBox4
-            // 
-            resources.ApplyResources(this.textBox4, "textBox4");
-            this.textBox4.Name = "textBox4";
-            // 
-            // label7
-            // 
-            resources.ApplyResources(this.label7, "label7");
-            this.label7.Name = "label7";
-            // 
-            // label6
-            // 
-            resources.ApplyResources(this.label6, "label6");
-            this.label6.Name = "label6";
-            // 
-            // label5
-            // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.Name = "label5";
-            // 
-            // textBox3
-            // 
-            resources.ApplyResources(this.textBox3, "textBox3");
-            this.textBox3.Name = "textBox3";
-            // 
-            // textBox1
-            // 
-            resources.ApplyResources(this.textBox1, "textBox1");
-            this.textBox1.Name = "textBox1";
-            // 
-            // numericUpDown7
-            // 
-            resources.ApplyResources(this.numericUpDown7, "numericUpDown7");
-            this.numericUpDown7.Name = "numericUpDown7";
-            // 
-            // numericUpDown6
-            // 
-            resources.ApplyResources(this.numericUpDown6, "numericUpDown6");
-            this.numericUpDown6.Name = "numericUpDown6";
-            // 
-            // panelSignEvent
-            // 
-            resources.ApplyResources(this.panelSignEvent, "panelSignEvent");
-            this.panelSignEvent.Controls.Add(this.textBox59);
-            this.panelSignEvent.Controls.Add(this.textBox58);
-            this.panelSignEvent.Controls.Add(this.textBox57);
-            this.panelSignEvent.Controls.Add(this.textBox56);
-            this.panelSignEvent.Controls.Add(this.button8);
-            this.panelSignEvent.Controls.Add(this.button9);
-            this.panelSignEvent.Controls.Add(this.textBox18);
-            this.panelSignEvent.Controls.Add(this.label23);
-            this.panelSignEvent.Controls.Add(this.textBox26);
-            this.panelSignEvent.Controls.Add(this.label33);
-            this.panelSignEvent.Controls.Add(this.label34);
-            this.panelSignEvent.Controls.Add(this.comboBox4);
-            this.panelSignEvent.Controls.Add(this.comboBox9);
-            this.panelSignEvent.Controls.Add(this.label35);
-            this.panelSignEvent.Controls.Add(this.label36);
-            this.panelSignEvent.Controls.Add(this.textBox27);
-            this.panelSignEvent.Controls.Add(this.textBox28);
-            this.panelSignEvent.Name = "panelSignEvent";
-            // 
-            // textBox59
-            // 
-            resources.ApplyResources(this.textBox59, "textBox59");
-            this.textBox59.Name = "textBox59";
-            this.textBox59.ReadOnly = true;
-            this.textBox59.TabStop = false;
-            // 
-            // textBox58
-            // 
-            resources.ApplyResources(this.textBox58, "textBox58");
-            this.textBox58.Name = "textBox58";
-            this.textBox58.ReadOnly = true;
-            this.textBox58.TabStop = false;
-            // 
-            // textBox57
-            // 
-            resources.ApplyResources(this.textBox57, "textBox57");
-            this.textBox57.Name = "textBox57";
-            this.textBox57.ReadOnly = true;
-            this.textBox57.TabStop = false;
-            // 
-            // textBox56
-            // 
-            resources.ApplyResources(this.textBox56, "textBox56");
-            this.textBox56.Name = "textBox56";
-            this.textBox56.ReadOnly = true;
-            this.textBox56.TabStop = false;
-            // 
-            // button8
-            // 
-            this.button8.ForeColor = System.Drawing.Color.Red;
-            resources.ApplyResources(this.button8, "button8");
-            this.button8.Name = "button8";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            resources.ApplyResources(this.button9, "button9");
-            this.button9.Name = "button9";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // textBox18
-            // 
-            resources.ApplyResources(this.textBox18, "textBox18");
-            this.textBox18.Name = "textBox18";
-            // 
-            // label23
-            // 
-            resources.ApplyResources(this.label23, "label23");
-            this.label23.Name = "label23";
-            // 
-            // textBox26
-            // 
-            resources.ApplyResources(this.textBox26, "textBox26");
-            this.textBox26.Name = "textBox26";
-            // 
-            // label33
-            // 
-            resources.ApplyResources(this.label33, "label33");
-            this.label33.Name = "label33";
-            // 
-            // label34
-            // 
-            resources.ApplyResources(this.label34, "label34");
-            this.label34.Name = "label34";
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox4, "comboBox4");
-            this.comboBox4.Name = "comboBox4";
-            // 
-            // comboBox9
-            // 
-            this.comboBox9.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox9, "comboBox9");
-            this.comboBox9.Name = "comboBox9";
-            // 
-            // label35
-            // 
-            resources.ApplyResources(this.label35, "label35");
-            this.label35.Name = "label35";
-            // 
-            // label36
-            // 
-            resources.ApplyResources(this.label36, "label36");
-            this.label36.Name = "label36";
-            // 
-            // textBox27
-            // 
-            resources.ApplyResources(this.textBox27, "textBox27");
-            this.textBox27.Name = "textBox27";
-            // 
-            // textBox28
-            // 
-            resources.ApplyResources(this.textBox28, "textBox28");
-            this.textBox28.Name = "textBox28";
-            // 
-            // panelScriptEvent
-            // 
-            resources.ApplyResources(this.panelScriptEvent, "panelScriptEvent");
-            this.panelScriptEvent.Controls.Add(this.textBox79);
-            this.panelScriptEvent.Controls.Add(this.textBox78);
-            this.panelScriptEvent.Controls.Add(this.textBox77);
-            this.panelScriptEvent.Controls.Add(this.textBox64);
-            this.panelScriptEvent.Controls.Add(this.textBox62);
-            this.panelScriptEvent.Controls.Add(this.textBox61);
-            this.panelScriptEvent.Controls.Add(this.label37);
-            this.panelScriptEvent.Controls.Add(this.textBox29);
-            this.panelScriptEvent.Controls.Add(this.label27);
-            this.panelScriptEvent.Controls.Add(this.textBox20);
-            this.panelScriptEvent.Controls.Add(this.label32);
-            this.panelScriptEvent.Controls.Add(this.groupBox3);
-            this.panelScriptEvent.Controls.Add(this.label19);
-            this.panelScriptEvent.Controls.Add(this.button6);
-            this.panelScriptEvent.Controls.Add(this.textBox12);
-            this.panelScriptEvent.Controls.Add(this.button7);
-            this.panelScriptEvent.Controls.Add(this.textBox23);
-            this.panelScriptEvent.Controls.Add(this.comboBox7);
-            this.panelScriptEvent.Controls.Add(this.label29);
-            this.panelScriptEvent.Controls.Add(this.label30);
-            this.panelScriptEvent.Controls.Add(this.textBox21);
-            this.panelScriptEvent.Controls.Add(this.textBox22);
-            this.panelScriptEvent.Name = "panelScriptEvent";
-            // 
-            // textBox79
-            // 
-            resources.ApplyResources(this.textBox79, "textBox79");
-            this.textBox79.Name = "textBox79";
-            this.textBox79.ReadOnly = true;
-            this.textBox79.TabStop = false;
-            // 
-            // textBox78
-            // 
-            resources.ApplyResources(this.textBox78, "textBox78");
-            this.textBox78.Name = "textBox78";
-            this.textBox78.ReadOnly = true;
-            this.textBox78.TabStop = false;
-            // 
-            // textBox77
-            // 
-            resources.ApplyResources(this.textBox77, "textBox77");
-            this.textBox77.Name = "textBox77";
-            this.textBox77.ReadOnly = true;
-            this.textBox77.TabStop = false;
-            // 
-            // textBox64
-            // 
-            resources.ApplyResources(this.textBox64, "textBox64");
-            this.textBox64.Name = "textBox64";
-            this.textBox64.ReadOnly = true;
-            this.textBox64.TabStop = false;
-            // 
-            // textBox62
-            // 
-            resources.ApplyResources(this.textBox62, "textBox62");
-            this.textBox62.Name = "textBox62";
-            this.textBox62.ReadOnly = true;
-            this.textBox62.TabStop = false;
-            // 
-            // textBox61
-            // 
-            resources.ApplyResources(this.textBox61, "textBox61");
-            this.textBox61.Name = "textBox61";
-            this.textBox61.ReadOnly = true;
-            this.textBox61.TabStop = false;
-            // 
-            // label37
-            // 
-            resources.ApplyResources(this.label37, "label37");
-            this.label37.Name = "label37";
-            // 
-            // textBox29
-            // 
-            resources.ApplyResources(this.textBox29, "textBox29");
-            this.textBox29.Name = "textBox29";
-            // 
-            // label27
-            // 
-            resources.ApplyResources(this.label27, "label27");
-            this.label27.Name = "label27";
-            // 
-            // textBox20
-            // 
-            resources.ApplyResources(this.textBox20, "textBox20");
-            this.textBox20.Name = "textBox20";
-            // 
-            // label32
-            // 
-            resources.ApplyResources(this.label32, "label32");
-            this.label32.Name = "label32";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.textBox75);
-            this.groupBox3.Controls.Add(this.textBox65);
-            this.groupBox3.Controls.Add(this.label28);
-            this.groupBox3.Controls.Add(this.label31);
-            this.groupBox3.Controls.Add(this.textBox24);
-            this.groupBox3.Controls.Add(this.textBox25);
-            resources.ApplyResources(this.groupBox3, "groupBox3");
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.TabStop = false;
-            // 
-            // textBox75
-            // 
-            resources.ApplyResources(this.textBox75, "textBox75");
-            this.textBox75.Name = "textBox75";
-            this.textBox75.ReadOnly = true;
-            this.textBox75.TabStop = false;
-            // 
-            // textBox65
-            // 
-            resources.ApplyResources(this.textBox65, "textBox65");
-            this.textBox65.Name = "textBox65";
-            this.textBox65.ReadOnly = true;
-            this.textBox65.TabStop = false;
-            // 
-            // label28
-            // 
-            resources.ApplyResources(this.label28, "label28");
-            this.label28.Name = "label28";
-            // 
-            // label31
-            // 
-            resources.ApplyResources(this.label31, "label31");
-            this.label31.Name = "label31";
-            // 
-            // textBox24
-            // 
-            resources.ApplyResources(this.textBox24, "textBox24");
-            this.textBox24.Name = "textBox24";
-            // 
-            // textBox25
-            // 
-            resources.ApplyResources(this.textBox25, "textBox25");
-            this.textBox25.Name = "textBox25";
-            // 
-            // label19
-            // 
-            resources.ApplyResources(this.label19, "label19");
-            this.label19.Name = "label19";
-            // 
-            // button6
-            // 
-            this.button6.ForeColor = System.Drawing.Color.Red;
-            resources.ApplyResources(this.button6, "button6");
-            this.button6.Name = "button6";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // textBox12
-            // 
-            resources.ApplyResources(this.textBox12, "textBox12");
-            this.textBox12.Name = "textBox12";
-            // 
-            // button7
-            // 
-            resources.ApplyResources(this.button7, "button7");
-            this.button7.Name = "button7";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // textBox23
-            // 
-            resources.ApplyResources(this.textBox23, "textBox23");
-            this.textBox23.Name = "textBox23";
-            // 
-            // comboBox7
-            // 
-            this.comboBox7.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox7, "comboBox7");
-            this.comboBox7.Name = "comboBox7";
-            // 
-            // label29
-            // 
-            resources.ApplyResources(this.label29, "label29");
-            this.label29.Name = "label29";
-            // 
-            // label30
-            // 
-            resources.ApplyResources(this.label30, "label30");
-            this.label30.Name = "label30";
-            // 
-            // textBox21
-            // 
-            resources.ApplyResources(this.textBox21, "textBox21");
-            this.textBox21.Name = "textBox21";
-            // 
-            // textBox22
-            // 
-            resources.ApplyResources(this.textBox22, "textBox22");
-            this.textBox22.Name = "textBox22";
-            // 
-            // panelWarpEvent
-            // 
-            resources.ApplyResources(this.panelWarpEvent, "panelWarpEvent");
-            this.panelWarpEvent.Controls.Add(this.textBox94);
-            this.panelWarpEvent.Controls.Add(this.textBox93);
-            this.panelWarpEvent.Controls.Add(this.groupBox2);
-            this.panelWarpEvent.Controls.Add(this.button4);
-            this.panelWarpEvent.Controls.Add(this.button5);
-            this.panelWarpEvent.Controls.Add(this.comboBox5);
-            this.panelWarpEvent.Controls.Add(this.label24);
-            this.panelWarpEvent.Controls.Add(this.label25);
-            this.panelWarpEvent.Controls.Add(this.textBox16);
-            this.panelWarpEvent.Controls.Add(this.textBox17);
-            this.panelWarpEvent.Name = "panelWarpEvent";
-            // 
-            // textBox94
-            // 
-            resources.ApplyResources(this.textBox94, "textBox94");
-            this.textBox94.Name = "textBox94";
-            this.textBox94.ReadOnly = true;
-            this.textBox94.TabStop = false;
-            // 
-            // textBox93
-            // 
-            resources.ApplyResources(this.textBox93, "textBox93");
-            this.textBox93.Name = "textBox93";
-            this.textBox93.ReadOnly = true;
-            this.textBox93.TabStop = false;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.textBox86);
-            this.groupBox2.Controls.Add(this.textBox81);
-            this.groupBox2.Controls.Add(this.textBox80);
-            this.groupBox2.Controls.Add(this.label22);
-            this.groupBox2.Controls.Add(this.label21);
-            this.groupBox2.Controls.Add(this.label20);
-            this.groupBox2.Controls.Add(this.textBox13);
-            this.groupBox2.Controls.Add(this.textBox15);
-            this.groupBox2.Controls.Add(this.textBox14);
-            resources.ApplyResources(this.groupBox2, "groupBox2");
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
-            // 
-            // textBox86
-            // 
-            resources.ApplyResources(this.textBox86, "textBox86");
-            this.textBox86.Name = "textBox86";
-            this.textBox86.ReadOnly = true;
-            this.textBox86.TabStop = false;
-            // 
-            // textBox81
-            // 
-            resources.ApplyResources(this.textBox81, "textBox81");
-            this.textBox81.Name = "textBox81";
-            this.textBox81.ReadOnly = true;
-            this.textBox81.TabStop = false;
-            // 
-            // textBox80
-            // 
-            resources.ApplyResources(this.textBox80, "textBox80");
-            this.textBox80.Name = "textBox80";
-            this.textBox80.ReadOnly = true;
-            this.textBox80.TabStop = false;
-            // 
-            // label22
-            // 
-            resources.ApplyResources(this.label22, "label22");
-            this.label22.Name = "label22";
-            // 
-            // label21
-            // 
-            resources.ApplyResources(this.label21, "label21");
-            this.label21.Name = "label21";
-            // 
-            // label20
-            // 
-            resources.ApplyResources(this.label20, "label20");
-            this.label20.Name = "label20";
-            // 
-            // textBox13
-            // 
-            resources.ApplyResources(this.textBox13, "textBox13");
-            this.textBox13.Name = "textBox13";
-            // 
-            // textBox15
-            // 
-            resources.ApplyResources(this.textBox15, "textBox15");
-            this.textBox15.Name = "textBox15";
-            // 
-            // textBox14
-            // 
-            resources.ApplyResources(this.textBox14, "textBox14");
-            this.textBox14.Name = "textBox14";
-            // 
-            // button4
-            // 
-            this.button4.ForeColor = System.Drawing.Color.Red;
-            resources.ApplyResources(this.button4, "button4");
-            this.button4.Name = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            resources.ApplyResources(this.button5, "button5");
-            this.button5.Name = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox5, "comboBox5");
-            this.comboBox5.Name = "comboBox5";
-            // 
-            // label24
-            // 
-            resources.ApplyResources(this.label24, "label24");
-            this.label24.Name = "label24";
-            // 
-            // label25
-            // 
-            resources.ApplyResources(this.label25, "label25");
-            this.label25.Name = "label25";
-            // 
-            // textBox16
-            // 
-            resources.ApplyResources(this.textBox16, "textBox16");
-            this.textBox16.Name = "textBox16";
-            // 
-            // textBox17
-            // 
-            resources.ApplyResources(this.textBox17, "textBox17");
-            this.textBox17.Name = "textBox17";
+            resources.ApplyResources(this.labelNPCScriptEditor, "labelNPCScriptEditor");
+            this.labelNPCScriptEditor.Name = "labelNPCScriptEditor";
+            // 
+            // hexNumberBoxNPCFiller4
+            // 
+            resources.ApplyResources(this.hexNumberBoxNPCFiller4, "hexNumberBoxNPCFiller4");
+            this.hexNumberBoxNPCFiller4.Name = "hexNumberBoxNPCFiller4";
+            // 
+            // labelNPCViewRadius
+            // 
+            resources.ApplyResources(this.labelNPCViewRadius, "labelNPCViewRadius");
+            this.labelNPCViewRadius.Name = "labelNPCViewRadius";
+            // 
+            // hexNumberBoxNPCTrainer
+            // 
+            resources.ApplyResources(this.hexNumberBoxNPCTrainer, "hexNumberBoxNPCTrainer");
+            this.hexNumberBoxNPCTrainer.Name = "hexNumberBoxNPCTrainer";
+            // 
+            // labelNPCTrainer
+            // 
+            resources.ApplyResources(this.labelNPCTrainer, "labelNPCTrainer");
+            this.labelNPCTrainer.Name = "labelNPCTrainer";
+            // 
+            // hexNumberBoxNPCYBound
+            // 
+            resources.ApplyResources(this.hexNumberBoxNPCYBound, "hexNumberBoxNPCYBound");
+            this.hexNumberBoxNPCYBound.Name = "hexNumberBoxNPCYBound";
+            // 
+            // labelNPCMovementBoundaries
+            // 
+            resources.ApplyResources(this.labelNPCMovementBoundaries, "labelNPCMovementBoundaries");
+            this.labelNPCMovementBoundaries.Name = "labelNPCMovementBoundaries";
+            // 
+            // labelNPCIdleAnimation
+            // 
+            resources.ApplyResources(this.labelNPCIdleAnimation, "labelNPCIdleAnimation");
+            this.labelNPCIdleAnimation.Name = "labelNPCIdleAnimation";
+            // 
+            // cbNPCIdleAnim
+            // 
+            this.cbNPCIdleAnim.FormattingEnabled = true;
+            this.cbNPCIdleAnim.Items.AddRange(new object[] {
+            resources.GetString("cbNPCIdleAnim.Items"),
+            resources.GetString("cbNPCIdleAnim.Items1"),
+            resources.GetString("cbNPCIdleAnim.Items2"),
+            resources.GetString("cbNPCIdleAnim.Items3"),
+            resources.GetString("cbNPCIdleAnim.Items4"),
+            resources.GetString("cbNPCIdleAnim.Items5"),
+            resources.GetString("cbNPCIdleAnim.Items6"),
+            resources.GetString("cbNPCIdleAnim.Items7"),
+            resources.GetString("cbNPCIdleAnim.Items8"),
+            resources.GetString("cbNPCIdleAnim.Items9"),
+            resources.GetString("cbNPCIdleAnim.Items10"),
+            resources.GetString("cbNPCIdleAnim.Items11"),
+            resources.GetString("cbNPCIdleAnim.Items12"),
+            resources.GetString("cbNPCIdleAnim.Items13"),
+            resources.GetString("cbNPCIdleAnim.Items14"),
+            resources.GetString("cbNPCIdleAnim.Items15"),
+            resources.GetString("cbNPCIdleAnim.Items16"),
+            resources.GetString("cbNPCIdleAnim.Items17"),
+            resources.GetString("cbNPCIdleAnim.Items18"),
+            resources.GetString("cbNPCIdleAnim.Items19"),
+            resources.GetString("cbNPCIdleAnim.Items20"),
+            resources.GetString("cbNPCIdleAnim.Items21"),
+            resources.GetString("cbNPCIdleAnim.Items22"),
+            resources.GetString("cbNPCIdleAnim.Items23"),
+            resources.GetString("cbNPCIdleAnim.Items24"),
+            resources.GetString("cbNPCIdleAnim.Items25"),
+            resources.GetString("cbNPCIdleAnim.Items26"),
+            resources.GetString("cbNPCIdleAnim.Items27"),
+            resources.GetString("cbNPCIdleAnim.Items28"),
+            resources.GetString("cbNPCIdleAnim.Items29"),
+            resources.GetString("cbNPCIdleAnim.Items30"),
+            resources.GetString("cbNPCIdleAnim.Items31"),
+            resources.GetString("cbNPCIdleAnim.Items32"),
+            resources.GetString("cbNPCIdleAnim.Items33"),
+            resources.GetString("cbNPCIdleAnim.Items34"),
+            resources.GetString("cbNPCIdleAnim.Items35"),
+            resources.GetString("cbNPCIdleAnim.Items36"),
+            resources.GetString("cbNPCIdleAnim.Items37"),
+            resources.GetString("cbNPCIdleAnim.Items38"),
+            resources.GetString("cbNPCIdleAnim.Items39"),
+            resources.GetString("cbNPCIdleAnim.Items40"),
+            resources.GetString("cbNPCIdleAnim.Items41"),
+            resources.GetString("cbNPCIdleAnim.Items42"),
+            resources.GetString("cbNPCIdleAnim.Items43"),
+            resources.GetString("cbNPCIdleAnim.Items44"),
+            resources.GetString("cbNPCIdleAnim.Items45"),
+            resources.GetString("cbNPCIdleAnim.Items46"),
+            resources.GetString("cbNPCIdleAnim.Items47"),
+            resources.GetString("cbNPCIdleAnim.Items48"),
+            resources.GetString("cbNPCIdleAnim.Items49"),
+            resources.GetString("cbNPCIdleAnim.Items50"),
+            resources.GetString("cbNPCIdleAnim.Items51"),
+            resources.GetString("cbNPCIdleAnim.Items52"),
+            resources.GetString("cbNPCIdleAnim.Items53"),
+            resources.GetString("cbNPCIdleAnim.Items54"),
+            resources.GetString("cbNPCIdleAnim.Items55"),
+            resources.GetString("cbNPCIdleAnim.Items56"),
+            resources.GetString("cbNPCIdleAnim.Items57"),
+            resources.GetString("cbNPCIdleAnim.Items58"),
+            resources.GetString("cbNPCIdleAnim.Items59"),
+            resources.GetString("cbNPCIdleAnim.Items60"),
+            resources.GetString("cbNPCIdleAnim.Items61"),
+            resources.GetString("cbNPCIdleAnim.Items62"),
+            resources.GetString("cbNPCIdleAnim.Items63"),
+            resources.GetString("cbNPCIdleAnim.Items64"),
+            resources.GetString("cbNPCIdleAnim.Items65"),
+            resources.GetString("cbNPCIdleAnim.Items66"),
+            resources.GetString("cbNPCIdleAnim.Items67"),
+            resources.GetString("cbNPCIdleAnim.Items68"),
+            resources.GetString("cbNPCIdleAnim.Items69"),
+            resources.GetString("cbNPCIdleAnim.Items70"),
+            resources.GetString("cbNPCIdleAnim.Items71"),
+            resources.GetString("cbNPCIdleAnim.Items72"),
+            resources.GetString("cbNPCIdleAnim.Items73"),
+            resources.GetString("cbNPCIdleAnim.Items74"),
+            resources.GetString("cbNPCIdleAnim.Items75"),
+            resources.GetString("cbNPCIdleAnim.Items76"),
+            resources.GetString("cbNPCIdleAnim.Items77"),
+            resources.GetString("cbNPCIdleAnim.Items78"),
+            resources.GetString("cbNPCIdleAnim.Items79"),
+            resources.GetString("cbNPCIdleAnim.Items80")});
+            resources.ApplyResources(this.cbNPCIdleAnim, "cbNPCIdleAnim");
+            this.cbNPCIdleAnim.Name = "cbNPCIdleAnim";
+            // 
+            // cbNPCHeight
+            // 
+            this.cbNPCHeight.FormattingEnabled = true;
+            this.cbNPCHeight.Items.AddRange(new object[] {
+            resources.GetString("cbNPCHeight.Items"),
+            resources.GetString("cbNPCHeight.Items1"),
+            resources.GetString("cbNPCHeight.Items2"),
+            resources.GetString("cbNPCHeight.Items3"),
+            resources.GetString("cbNPCHeight.Items4"),
+            resources.GetString("cbNPCHeight.Items5"),
+            resources.GetString("cbNPCHeight.Items6"),
+            resources.GetString("cbNPCHeight.Items7"),
+            resources.GetString("cbNPCHeight.Items8"),
+            resources.GetString("cbNPCHeight.Items9"),
+            resources.GetString("cbNPCHeight.Items10"),
+            resources.GetString("cbNPCHeight.Items11"),
+            resources.GetString("cbNPCHeight.Items12"),
+            resources.GetString("cbNPCHeight.Items13"),
+            resources.GetString("cbNPCHeight.Items14"),
+            resources.GetString("cbNPCHeight.Items15")});
+            resources.ApplyResources(this.cbNPCHeight, "cbNPCHeight");
+            this.cbNPCHeight.Name = "cbNPCHeight";
+            // 
+            // labelNPCHeight
+            // 
+            resources.ApplyResources(this.labelNPCHeight, "labelNPCHeight");
+            this.labelNPCHeight.Name = "labelNPCHeight";
+            // 
+            // labelNPCPosition
+            // 
+            resources.ApplyResources(this.labelNPCPosition, "labelNPCPosition");
+            this.labelNPCPosition.Name = "labelNPCPosition";
+            // 
+            // hexNumberBoxNPCYPos
+            // 
+            resources.ApplyResources(this.hexNumberBoxNPCYPos, "hexNumberBoxNPCYPos");
+            this.hexNumberBoxNPCYPos.Name = "hexNumberBoxNPCYPos";
+            // 
+            // labelNPCReplacement
+            // 
+            resources.ApplyResources(this.labelNPCReplacement, "labelNPCReplacement");
+            this.labelNPCReplacement.Name = "labelNPCReplacement";
+            // 
+            // labelNPCSpriteNumber
+            // 
+            resources.ApplyResources(this.labelNPCSpriteNumber, "labelNPCSpriteNumber");
+            this.labelNPCSpriteNumber.Name = "labelNPCSpriteNumber";
+            // 
+            // labelNPCNumber
+            // 
+            resources.ApplyResources(this.labelNPCNumber, "labelNPCNumber");
+            this.labelNPCNumber.Name = "labelNPCNumber";
+            // 
+            // hexNumberBoxNPCXPos
+            // 
+            resources.ApplyResources(this.hexNumberBoxNPCXPos, "hexNumberBoxNPCXPos");
+            this.hexNumberBoxNPCXPos.Name = "hexNumberBoxNPCXPos";
+            // 
+            // hexNumberBoxNPCReplacement
+            // 
+            resources.ApplyResources(this.hexNumberBoxNPCReplacement, "hexNumberBoxNPCReplacement");
+            this.hexNumberBoxNPCReplacement.Name = "hexNumberBoxNPCReplacement";
+            // 
+            // nudNPCSpriteNum
+            // 
+            resources.ApplyResources(this.nudNPCSpriteNum, "nudNPCSpriteNum");
+            this.nudNPCSpriteNum.Hexadecimal = true;
+            this.nudNPCSpriteNum.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.nudNPCSpriteNum.Name = "nudNPCSpriteNum";
+            // 
+            // nudNPCNum
+            // 
+            resources.ApplyResources(this.nudNPCNum, "nudNPCNum");
+            this.nudNPCNum.Hexadecimal = true;
+            this.nudNPCNum.Name = "nudNPCNum";
             // 
             // eventEditorPanel
             // 
@@ -1805,7 +2114,7 @@ namespace PGMEWindowsUI
             this.eventXPosLabel,
             this.eventYPosLabel,
             this.toolStripButton17,
-            this.toolStripDropDownButton1});
+            this.tsddbNPCDisplay});
             resources.ApplyResources(this.toolStrip3, "toolStrip3");
             this.toolStrip3.Name = "toolStrip3";
             // 
@@ -1848,36 +2157,40 @@ namespace PGMEWindowsUI
             resources.ApplyResources(this.toolStripButton17, "toolStripButton17");
             this.toolStripButton17.Name = "toolStripButton17";
             // 
-            // toolStripDropDownButton1
+            // tsddbNPCDisplay
             // 
-            this.toolStripDropDownButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsddbNPCDisplay.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsddbNPCDisplay.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsddbNPCDisplay.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.blocksToolStripMenuItem,
             this.belowTopToolStripMenuItem,
             this.translucentToolStripMenuItem,
             this.aboveTopToolStripMenuItem});
-            this.toolStripDropDownButton1.Image = global::PGMEWindowsUI.Properties.Resources.viewsprites_16x16;
-            resources.ApplyResources(this.toolStripDropDownButton1, "toolStripDropDownButton1");
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.tsddbNPCDisplay.Image = global::PGMEWindowsUI.Properties.Resources.NPCblock_16x16;
+            resources.ApplyResources(this.tsddbNPCDisplay, "tsddbNPCDisplay");
+            this.tsddbNPCDisplay.Name = "tsddbNPCDisplay";
             // 
             // blocksToolStripMenuItem
             // 
+            this.blocksToolStripMenuItem.Image = global::PGMEWindowsUI.Properties.Resources.NPCblock_16x16;
             this.blocksToolStripMenuItem.Name = "blocksToolStripMenuItem";
             resources.ApplyResources(this.blocksToolStripMenuItem, "blocksToolStripMenuItem");
             // 
             // belowTopToolStripMenuItem
             // 
+            this.belowTopToolStripMenuItem.Image = global::PGMEWindowsUI.Properties.Resources.NPCbelow_16x16;
             this.belowTopToolStripMenuItem.Name = "belowTopToolStripMenuItem";
             resources.ApplyResources(this.belowTopToolStripMenuItem, "belowTopToolStripMenuItem");
             // 
             // translucentToolStripMenuItem
             // 
+            this.translucentToolStripMenuItem.Image = global::PGMEWindowsUI.Properties.Resources.NPCtranslucent_16x16;
             this.translucentToolStripMenuItem.Name = "translucentToolStripMenuItem";
             resources.ApplyResources(this.translucentToolStripMenuItem, "translucentToolStripMenuItem");
             // 
             // aboveTopToolStripMenuItem
             // 
+            this.aboveTopToolStripMenuItem.Image = global::PGMEWindowsUI.Properties.Resources.NPCabove_16x16;
             this.aboveTopToolStripMenuItem.Name = "aboveTopToolStripMenuItem";
             resources.ApplyResources(this.aboveTopToolStripMenuItem, "aboveTopToolStripMenuItem");
             // 
@@ -4508,6 +4821,23 @@ namespace PGMEWindowsUI
             resources.ApplyResources(this.toolStripMenuItemSaveROMAs, "toolStripMenuItemSaveROMAs");
             this.toolStripMenuItemSaveROMAs.Name = "toolStripMenuItemSaveROMAs";
             // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            resources.ApplyResources(this.toolStripSeparator9, "toolStripSeparator9");
+            // 
+            // recentFilesToolStripMenuItem
+            // 
+            this.recentFilesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.emptyToolStripMenuItem});
+            this.recentFilesToolStripMenuItem.Name = "recentFilesToolStripMenuItem";
+            resources.ApplyResources(this.recentFilesToolStripMenuItem, "recentFilesToolStripMenuItem");
+            // 
+            // emptyToolStripMenuItem
+            // 
+            resources.ApplyResources(this.emptyToolStripMenuItem, "emptyToolStripMenuItem");
+            this.emptyToolStripMenuItem.Name = "emptyToolStripMenuItem";
+            // 
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
@@ -4765,17 +5095,15 @@ namespace PGMEWindowsUI
             this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
             resources.ApplyResources(this.toolStripStatusLabel4, "toolStripStatusLabel4");
             // 
-            // toolStripSeparator9
+            // labelEntityDataPanel
             // 
-            this.toolStripSeparator9.Name = "toolStripSeparator9";
-            resources.ApplyResources(this.toolStripSeparator9, "toolStripSeparator9");
+            resources.ApplyResources(this.labelEntityDataPanel, "labelEntityDataPanel");
+            this.labelEntityDataPanel.Name = "labelEntityDataPanel";
             // 
-            // recentFilesToolStripMenuItem
+            // hexNumberBoxSignYPos
             // 
-            this.recentFilesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.emptyToolStripMenuItem});
-            this.recentFilesToolStripMenuItem.Name = "recentFilesToolStripMenuItem";
-            resources.ApplyResources(this.recentFilesToolStripMenuItem, "recentFilesToolStripMenuItem");
+            resources.ApplyResources(this.hexNumberBoxSignYPos, "hexNumberBoxSignYPos");
+            this.hexNumberBoxSignYPos.Name = "hexNumberBoxSignYPos";
             // 
             // mapPaintPanel
             // 
@@ -4858,11 +5186,12 @@ namespace PGMEWindowsUI
             this.glControlEntityEditor.VSync = false;
             this.glControlEntityEditor.Load += new System.EventHandler(this.glControlEntityEditor_Load);
             this.glControlEntityEditor.Paint += new System.Windows.Forms.PaintEventHandler(this.glControlEntityEditor_Paint);
-            // 
-            // emptyToolStripMenuItem
-            // 
-            resources.ApplyResources(this.emptyToolStripMenuItem, "emptyToolStripMenuItem");
-            this.emptyToolStripMenuItem.Name = "emptyToolStripMenuItem";
+            this.glControlEntityEditor.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.glControlEntityEditor_MouseDoubleClick);
+            this.glControlEntityEditor.MouseDown += new System.Windows.Forms.MouseEventHandler(this.glControlEntityEditor_MouseDown);
+            this.glControlEntityEditor.MouseEnter += new System.EventHandler(this.glControlEntityEditor_MouseEnter);
+            this.glControlEntityEditor.MouseLeave += new System.EventHandler(this.glControlEntityEditor_MouseLeave);
+            this.glControlEntityEditor.MouseMove += new System.Windows.Forms.MouseEventHandler(this.glControlEntityEditor_MouseMove);
+            this.glControlEntityEditor.MouseUp += new System.Windows.Forms.MouseEventHandler(this.glControlEntityEditor_MouseUp);
             // 
             // MainWindow
             // 
@@ -4898,12 +5227,8 @@ namespace PGMEWindowsUI
             this.blocksTabPage.ResumeLayout(false);
             this.movementTabPage.ResumeLayout(false);
             this.entitiesTabPage.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).EndInit();
-            this.panelSpriteEvent.ResumeLayout(false);
-            this.panelSpriteEvent.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
+            this.panelEntityData.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudEntityNum)).EndInit();
             this.panelSignEvent.ResumeLayout(false);
             this.panelSignEvent.PerformLayout();
             this.panelScriptEvent.ResumeLayout(false);
@@ -4912,8 +5237,14 @@ namespace PGMEWindowsUI
             this.groupBox3.PerformLayout();
             this.panelWarpEvent.ResumeLayout(false);
             this.panelWarpEvent.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.gbWarpDestination.ResumeLayout(false);
+            this.gbWarpDestination.PerformLayout();
+            this.panelSpriteEvent.ResumeLayout(false);
+            this.panelSpriteEvent.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNPCSpriteNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNPCNum)).EndInit();
             this.eventEditorPanel.ResumeLayout(false);
             this.eventEditorPanel.PerformLayout();
             this.toolStrip3.ResumeLayout(false);
@@ -5155,10 +5486,10 @@ namespace PGMEWindowsUI
         private GLPanel movementPaintPanel;
         private OpenTK.GLControl glControlPermsChooser;
         private System.Windows.Forms.TabPage entitiesTabPage;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel panelEntityData;
+        private System.Windows.Forms.Button btnCreateNewEntity;
         private System.Windows.Forms.ComboBox cboEventTypes;
-        private System.Windows.Forms.NumericUpDown numericUpDown10;
+        private System.Windows.Forms.NumericUpDown nudEntityNum;
         private System.Windows.Forms.Panel panelSpriteEvent;
         private System.Windows.Forms.TextBox hexPrefixBox23;
         private System.Windows.Forms.TextBox hexPrefixBox22;
@@ -5172,57 +5503,56 @@ namespace PGMEWindowsUI
         private System.Windows.Forms.TextBox hexPrefixBox14;
         private System.Windows.Forms.TextBox hexPrefixBox13;
         private System.Windows.Forms.TextBox hexPrefixBox12;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown7;
-        private System.Windows.Forms.NumericUpDown numericUpDown6;
+        private System.Windows.Forms.TextBox hexNumberBoxNPCFiller3;
+        private System.Windows.Forms.Label labelNPCFiller3;
+        private System.Windows.Forms.TextBox hexNumberBoxNPCFiller2;
+        private System.Windows.Forms.Label labelNPCFiller2;
+        private System.Windows.Forms.Label labelNPCFiller1;
+        private System.Windows.Forms.TextBox hexNumberBoxNPCFiller1;
+        private System.Windows.Forms.Button btnDeleteNPC;
+        private System.Windows.Forms.Button btnNPCOpenScript;
+        private System.Windows.Forms.TextBox hexNumberBoxNPCFiller5;
+        private System.Windows.Forms.Label labelNPCFiller5;
+        private System.Windows.Forms.TextBox hexNumberBoxNPCVisibilityFlag;
+        private System.Windows.Forms.Label labelNPCVisibilityFlag;
+        private System.Windows.Forms.TextBox hexNumberBoxNPCScriptOffset;
+        private System.Windows.Forms.Label labelNPCScriptEditor;
+        private System.Windows.Forms.TextBox hexNumberBoxNPCFiller4;
+        private System.Windows.Forms.Label labelNPCViewRadius;
+        private System.Windows.Forms.TextBox hexNumberBoxNPCTrainer;
+        private System.Windows.Forms.Label labelNPCTrainer;
+        private System.Windows.Forms.TextBox hexNumberBoxNPCYBound;
+        private System.Windows.Forms.Label labelNPCMovementBoundaries;
+        private System.Windows.Forms.Label labelNPCIdleAnimation;
+        private System.Windows.Forms.ComboBox cbNPCIdleAnim;
+        private System.Windows.Forms.ComboBox cbNPCHeight;
+        private System.Windows.Forms.Label labelNPCHeight;
+        private System.Windows.Forms.Label labelNPCPosition;
+        private System.Windows.Forms.TextBox hexNumberBoxNPCYPos;
+        private System.Windows.Forms.Label labelNPCReplacement;
+        private System.Windows.Forms.Label labelNPCSpriteNumber;
+        private System.Windows.Forms.Label labelNPCNumber;
+        private System.Windows.Forms.TextBox hexNumberBoxNPCXPos;
+        private System.Windows.Forms.TextBox hexNumberBoxNPCReplacement;
+        private System.Windows.Forms.NumericUpDown nudNPCSpriteNum;
+        private System.Windows.Forms.NumericUpDown nudNPCNum;
         private System.Windows.Forms.Panel panelSignEvent;
         private System.Windows.Forms.TextBox textBox59;
         private System.Windows.Forms.TextBox textBox58;
         private System.Windows.Forms.TextBox textBox57;
         private System.Windows.Forms.TextBox textBox56;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.Button btnDeleteSign;
+        private System.Windows.Forms.Button btnSignOpenScript;
+        private System.Windows.Forms.TextBox hexNumberBoxSignScriptOffset;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBox26;
+        private System.Windows.Forms.TextBox hexNumberBoxSignFiller2;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox9;
+        private System.Windows.Forms.ComboBox cbSignType;
+        private System.Windows.Forms.ComboBox cbSignHeight;
         private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.TextBox textBox27;
-        private System.Windows.Forms.TextBox textBox28;
+        private System.Windows.Forms.Label labelSignPosition;
+        private System.Windows.Forms.TextBox hexNumberBoxSignXPos;
         private System.Windows.Forms.Panel panelScriptEvent;
         private System.Windows.Forms.TextBox textBox79;
         private System.Windows.Forms.TextBox textBox78;
@@ -5231,47 +5561,47 @@ namespace PGMEWindowsUI
         private System.Windows.Forms.TextBox textBox62;
         private System.Windows.Forms.TextBox textBox61;
         private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.TextBox textBox29;
+        private System.Windows.Forms.TextBox hexNumberBoxTriggerFiller2;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.TextBox hexNumberBoxTriggerFiller1;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox textBox75;
         private System.Windows.Forms.TextBox textBox65;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.TextBox textBox24;
-        private System.Windows.Forms.TextBox textBox25;
+        private System.Windows.Forms.TextBox hexNumberBoxTriggerVariable;
+        private System.Windows.Forms.TextBox hexNumberBoxTriggerValue;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TextBox textBox23;
-        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.Button btnDeleteTrigger;
+        private System.Windows.Forms.TextBox hexNumberBoxTriggerScriptOffset;
+        private System.Windows.Forms.Button btnTriggerOpenScript;
+        private System.Windows.Forms.TextBox hexNumberBoxTriggerFiller3;
+        private System.Windows.Forms.ComboBox cbTriggerHeight;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.TextBox textBox22;
+        private System.Windows.Forms.Label labelTriggerPosition;
+        private System.Windows.Forms.TextBox hexNumberBoxTriggerYPos;
+        private System.Windows.Forms.TextBox hexNumberBoxTriggerXPos;
         private System.Windows.Forms.Panel panelWarpEvent;
         private System.Windows.Forms.TextBox textBox94;
         private System.Windows.Forms.TextBox textBox93;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gbWarpDestination;
         private System.Windows.Forms.TextBox textBox86;
         private System.Windows.Forms.TextBox textBox81;
         private System.Windows.Forms.TextBox textBox80;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.Label labelWarpNumber;
+        private System.Windows.Forms.Label labelWarpBank;
+        private System.Windows.Forms.Label labelWarpMap;
+        private System.Windows.Forms.TextBox hexNumberBoxWarpMap;
+        private System.Windows.Forms.TextBox hexNumberBoxWarpNum;
+        private System.Windows.Forms.TextBox hexNumberBoxWarpBank;
+        private System.Windows.Forms.Button btnDeleteWarp;
+        private System.Windows.Forms.Button btnWarpTravelToDest;
+        private System.Windows.Forms.ComboBox cbWarpHeight;
+        private System.Windows.Forms.Label labelWarpHeight;
+        private System.Windows.Forms.Label labelWarpPosition;
+        private System.Windows.Forms.TextBox hexNumberBoxWarpYPos;
+        private System.Windows.Forms.TextBox hexNumberBoxWarpXPos;
         private System.Windows.Forms.Panel eventEditorPanel;
         private GLPanel eventPaintPanel;
         private OpenTK.GLControl glControlEntityEditor;
@@ -5281,7 +5611,7 @@ namespace PGMEWindowsUI
         private System.Windows.Forms.ToolStripLabel eventXPosLabel;
         private System.Windows.Forms.ToolStripLabel eventYPosLabel;
         private System.Windows.Forms.ToolStripButton toolStripButton17;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripDropDownButton tsddbNPCDisplay;
         private System.Windows.Forms.ToolStripMenuItem blocksToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem belowTopToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem translucentToolStripMenuItem;
@@ -5611,6 +5941,24 @@ namespace PGMEWindowsUI
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
         private System.Windows.Forms.ToolStripMenuItem recentFilesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem emptyToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private Be.Windows.Forms.HexBox hexBox1;
+        private System.Windows.Forms.TextBox hexPrefixBox25;
+        private System.Windows.Forms.TextBox hexPrefixBox24;
+        private System.Windows.Forms.TextBox hexPrefixBox26;
+        private System.Windows.Forms.TextBox hexNumberBoxNPCXBound;
+        private System.Windows.Forms.TextBox hexPrefixBox27;
+        private System.Windows.Forms.TextBox hexNumberBoxNPCViewRadius;
+        private System.Windows.Forms.Label labelNPCFiller4;
+        private System.Windows.Forms.TextBox hexPrefixBox28;
+        private System.Windows.Forms.TextBox hexNumberBoxNPCFiller6;
+        private System.Windows.Forms.Label labelNPCFiller6;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox hexNumberBoxSignFiller1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox hexNumberBoxSignYPos;
+        private System.Windows.Forms.Label labelEntityDataPanel;
     }
 }
 

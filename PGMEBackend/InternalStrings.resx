@@ -364,7 +364,25 @@ Save changes before exiting?</value>
     <value>Map Layout</value>
   </data>
   <data name="RecentFileNotFound" xml:space="preserve">
-    <value>{0} was not found.
-Remove from recent files list?</value>
+    <value>The file '{0}' cannot be opened. Do you want to remove the reference to it from the Recent Files list?</value>
+  </data>
+  <data name="DeleteEntity" xml:space="preserve">
+    <value>Are you sure you want to delete this entity?</value>
+  </data>
+  <data name="DeleteEntityTitle" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="MultipleEntitiesSelected" xml:space="preserve">
+    <value>Multiple entities selected.</value>
+  </data>
+  <data name="NoEntitiesOfThisType" xml:space="preserve">
+    <value>There are no entities of this type available on this map.</value>
+  </data>
+  <data name="NoScriptEditorSpecified" xml:space="preserve">
+    <value>You have not yet chosen a script editor.
+Would you like to go to the Settings dialog and choose an editor?</value>
+  </data>
+  <data name="NoScriptEditorSpecifiedTitle" xml:space="preserve">
+    <value>No Script Editor Chosen</value>
   </data>
 </root>

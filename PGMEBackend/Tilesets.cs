@@ -71,7 +71,7 @@ namespace PGMEBackend
             blockSet = new Blockset(blocksPointer, behaviorPointer, (isSecondary & 1) == 1, Program.ROM);
         }
 
-        public void Initialize()
+        public void Initialize(MapLayout mapLayout)
         {
             image = new Bitmap[16];
 
@@ -87,13 +87,13 @@ namespace PGMEBackend
             if ((isSecondary & 1) == 0)
                 height = Program.currentGame.LocalTSSize * 8;
 
-            if (Program.currentLayout.globalTileset != null)
+            if (mapLayout.globalTileset != null)
                 for (int i = 0; i < palSpace; i++)
-                    image[i] = Graphics.ImageManipulator.imageLoader(Program.ROM, imagePointer, Program.currentLayout.globalTileset.imagePalsPointer + i * 32, width, height, (isCompressed & 1) == 1, false, true);
+                    image[i] = Graphics.ImageManipulator.imageLoader(Program.ROM, imagePointer, mapLayout.globalTileset.imagePalsPointer + i * 32, width, height, (isCompressed & 1) == 1, false, true);
 
-            if (Program.currentLayout.localTileset != null)
+            if (mapLayout.localTileset != null)
                 for (int i = palSpace; i < 13; i++)
-                    image[i] = Graphics.ImageManipulator.imageLoader(Program.ROM, imagePointer, Program.currentLayout.localTileset.imagePalsPointer + i * 32, width, height, (isCompressed & 1) == 1, false, true);
+                    image[i] = Graphics.ImageManipulator.imageLoader(Program.ROM, imagePointer, mapLayout.localTileset.imagePalsPointer + i * 32, width, height, (isCompressed & 1) == 1, false, true);
 
             for (int i = 13; i < 16; i++)
                 image[i] = Graphics.ImageManipulator.imageLoader(Program.ROM, imagePointer, 0, width, height, (isCompressed & 1) == 1, false, true);

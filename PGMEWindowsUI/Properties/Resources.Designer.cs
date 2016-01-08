@@ -433,6 +433,46 @@ namespace PGMEWindowsUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap NPCabove_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("NPCabove_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NPCbelow_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("NPCbelow_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NPCblock_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("NPCblock_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NPCtranslucent_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("NPCtranslucent_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap page_16x16 {
             get {
                 object obj = ResourceManager.GetObject("page_16x16", resourceCulture);

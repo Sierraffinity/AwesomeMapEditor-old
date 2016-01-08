@@ -34,7 +34,7 @@ namespace PGMEBackend.GLControls
             GL.ClearColor(Color.Transparent);
             SetupViewport();
             rectColor = rectDefaultColor;
-            movementPerms = Spritesheet.Load(Properties.Resources.permissions, 16, 16);
+            movementPerms = Spritesheet.Load(Properties.Resources.Permissions_16x16, 16, 16);
         }
 
         public static implicit operator bool (GLMapEditor b)
@@ -95,8 +95,8 @@ namespace PGMEBackend.GLControls
             MapLayout layout = Program.currentLayout;
             if (layout != null)
             {
-                layout.Draw((Program.currentLayout.globalTileset != null) ? Program.currentLayout.globalTileset.tileSheets : null,
-                            (Program.currentLayout.localTileset != null) ? Program.currentLayout.localTileset.tileSheets : null, 0, 0, 1);
+                layout.Draw((layout.globalTileset != null) ? layout.globalTileset.tileSheets : null,
+                            (layout.localTileset != null) ? layout.localTileset.tileSheets : null, 0, 0, 1);
 
                 if(Config.settings.ShowGrid)
                 {
@@ -126,6 +126,8 @@ namespace PGMEBackend.GLControls
                 }
             }
         }
+
+        bool mouseMoved = false;
         
         public void MouseMove(int x, int y)
         {
@@ -145,7 +147,10 @@ namespace PGMEBackend.GLControls
             if (mouseY < 0)
                 mouseY = 0;
 
-            if (tool == MapEditorTools.Pencil && (mouseX != oldMouseX || mouseY != oldMouseY))
+            if (mouseX == oldMouseX && mouseY == oldMouseY)
+                return;
+            
+            if (tool == MapEditorTools.Pencil)
             {
                 if(Program.showingPerms)
                     PaintPermsToMap(Program.glPermsChooser.selectArray, mouseX, mouseY, Program.glPermsChooser.editorSelectWidth, Program.glPermsChooser.editorSelectHeight);
@@ -630,5 +635,14 @@ namespace PGMEBackend.GLControls
                 rectColor = rectDefaultColor;
             }
         }
+    }
+
+    public enum MapEditorTools
+    {
+        None,
+        Pencil,
+        Eyedropper,
+        Fill,
+        FillAll
     }
 }

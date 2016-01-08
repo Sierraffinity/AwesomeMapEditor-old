@@ -65,5 +65,14 @@ namespace PGMEBackend
         int PermTransPreviewValue();
 
         void AddRecentFile(string fname);
+
+        void LoadEntityView(Entities.Entity entity);
+        void LoadEntityView(int entityType, int entityNum);
+        void MultipleEntitiesSelected();
+
+        void FollowWarp(int mapBank, int mapNum, int warpNum);
+        void FollowWarp(Entities.Warp warp);
+
+        int LaunchScriptEditor(int scriptOffset);
     }
 }

@@ -65,6 +65,11 @@
   <ItemGroup>
     <Compile Include="Config.cs" />
     <Compile Include="DataBuffer.cs" />
+    <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Entities\NPC.cs" />
+    <Compile Include="Entities\Sign.cs" />
+    <Compile Include="Entities\Trigger.cs" />
+    <Compile Include="Entities\Warp.cs" />
     <Compile Include="GLControls\GLBorderBlocks.cs" />
     <Compile Include="GLControls\GLEntityEditor.cs" />
     <Compile Include="GLControls\GLPermsChooser.cs" />
@@ -120,6 +125,7 @@
     <None Include="AME.yaml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="InternalStrings.es.resx" />
     <EmbeddedResource Include="InternalStrings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>InternalStrings.Designer.cs</LastGenOutput>
@@ -144,7 +150,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\permissions.png" />
+    <None Include="Resources\Permissions_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Entities_16x16.png" />
+    <Content Include="Resources\Entities_64x64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
