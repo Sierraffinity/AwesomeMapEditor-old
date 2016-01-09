@@ -9,29 +9,27 @@ namespace PGMEBackend.Entities
     public class Sign : Entity
     {
         public static int currentSign = 0;
-
-        public byte[] rawDataOrig;
-        public byte[] rawData;
-        public int offset = 0;
         
         public byte type = 0;
         public byte filler1 = 0;
         public byte filler2 = 0;
 
-        public Sign()
+        public Sign() : base()
+        {
+
+        }
+        
+        public Sign(short xPos, short yPos) : base(xPos, yPos)
+        {
+
+        }
+        
+        public Sign(int offset, GBAROM ROM) : base(offset, ROM)
         {
 
         }
 
-        public Sign(int Offset, GBAROM ROM)
-        {
-            offset = Offset;
-            rawDataOrig = ROM.GetData(offset, 12);
-            rawData = (byte[])rawDataOrig.Clone();
-            LoadSignFromRaw();
-        }
-
-        public void LoadSignFromRaw()
+        public override void LoadDataFromRaw()
         {
             xPos = BitConverter.ToInt16(rawData, 0);
             yPos = BitConverter.ToInt16(rawData, 2);
@@ -42,7 +40,7 @@ namespace PGMEBackend.Entities
             scriptOffset = BitConverter.ToInt32(rawData, 8) - 0x8000000;
         }
 
-        public void LoadRawFromSign()
+        public override void LoadRawFromData()
         {
             Buffer.BlockCopy(BitConverter.GetBytes(xPos), 0, rawData, 0, 2);
             Buffer.BlockCopy(BitConverter.GetBytes(yPos), 0, rawData, 2, 2);
@@ -53,17 +51,26 @@ namespace PGMEBackend.Entities
             Buffer.BlockCopy(BitConverter.GetBytes(scriptOffset + 0x8000000), 0, rawData, 8, 4);
         }
 
-        static public void DeleteSign(int currentSign)
+        public static bool Delete()
         {
-            Sign[] newSigns = new Sign[Program.currentMap.Signs.Length - 1];
-            for (int i = 0; i < Program.currentMap.Signs.Length - 1; i++)
-            {
-                if (i < currentSign)
-                    newSigns[i] = Program.currentMap.Signs[i];
-                else
-                    newSigns[i] = Program.currentMap.Signs[i + 1];
-            }
-            Program.currentMap.Signs = newSigns;
+            return Delete(currentSign);
+        }
+
+        public static bool Delete(Sign sign)
+        {
+            if (!Program.currentMap.Signs.Remove(sign))
+                return false;
+            Program.isEdited = true;
+            return true;
+        }
+
+        public static bool Delete(int num)
+        {
+            if (num >= Program.currentMap.Signs.Count)
+                return false;
+            Program.currentMap.Signs.RemoveAt(num);
+            Program.isEdited = true;
+            return true;
         }
     }
 }

@@ -51,7 +51,6 @@ namespace PGMEBackend
         public static bool extraLayoutsLoaded;
         public static bool isEdited = false;
         public static int timeOfDay = 2;
-        public static int currentEntityType = 0;
 
         static string currentFilePath;
         static string currentFileName;

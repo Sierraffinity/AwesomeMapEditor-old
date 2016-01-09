@@ -17,6 +17,7 @@
 // You should have received a copy of the GNU General Public License
 // along with Awesome Map Editor. If not, see <http://www.gnu.org/licenses/>.
 
+using PGMEBackend.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -66,13 +67,17 @@ namespace PGMEBackend
 
         void AddRecentFile(string fname);
 
-        void LoadEntityView(Entities.Entity entity);
+        void LoadEntityView(Entity entity);
         void LoadEntityView(int entityType, int entityNum);
         void MultipleEntitiesSelected();
 
         void FollowWarp(int mapBank, int mapNum, int warpNum);
-        void FollowWarp(Entities.Warp warp);
+        void FollowWarp(Warp warp);
 
         int LaunchScriptEditor(int scriptOffset);
+        
+        Entity CreateNewEntity(int entityType, int x = 0, int y = 0);
+        void CreateNewEntity(Entity entity);
+        bool DeleteEntity(Entity entity);
     }
 }

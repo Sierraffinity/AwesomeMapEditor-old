@@ -10,10 +10,6 @@ namespace PGMEBackend.Entities
     {
         public static int currentNPC = 0;
 
-        public byte[] rawDataOrig;
-        public byte[] rawData;
-        public int offset = 0;
-
         public byte npcNumber = 0;
         public byte spriteNumber = 0;
         public byte replacement = 0;
@@ -30,25 +26,22 @@ namespace PGMEBackend.Entities
         public byte filler5 = 0;
         public byte filler6 = 0;
 
-        public bool edited
-        {
-            get { return !rawDataOrig.SequenceEqual(rawData); }
-        }
-
-        public NPC()
+        public NPC() : base()
         {
 
         }
-
-        public NPC(int Offset, GBAROM ROM)
+        
+        public NPC(short xPos, short yPos) : base(xPos, yPos)
         {
-            offset = Offset;
-            rawDataOrig = ROM.GetData(offset, 0x18);
-            rawData = (byte[])rawDataOrig.Clone();
-            LoadNPCFromRaw();
+
+        }
+        
+        public NPC(int offset, GBAROM ROM) : base(offset, ROM)
+        {
+
         }
 
-        public void LoadNPCFromRaw()
+        public override void LoadDataFromRaw()
         {
             npcNumber = rawData[0];
             spriteNumber = rawData[1];
@@ -71,7 +64,7 @@ namespace PGMEBackend.Entities
             filler6 = rawData[23];
         }
 
-        public void LoadRawFromNPC()
+        public override void LoadRawFromData()
         {
             rawData[0] = npcNumber;
             rawData[1] = spriteNumber;
@@ -93,18 +86,26 @@ namespace PGMEBackend.Entities
             rawData[23] = filler6;
         }
 
-        public static void DeleteNPC(int currentNPC)
+        public static bool Delete()
         {
-            NPC[] newNPCs = new NPC[Program.currentMap.NPCs.Length - 1];
-            for (int i = 0; i < Program.currentMap.NPCs.Length - 1; i++)
-            {
-                if (i < currentNPC)
-                    newNPCs[i] = Program.currentMap.NPCs[i];
-                else
-                    newNPCs[i] = Program.currentMap.NPCs[i + 1];
-            }
-            Program.currentMap.NPCs = newNPCs;
+            return Delete(currentNPC);
+        }
+
+        public static bool Delete(NPC npc)
+        {
+            if (!Program.currentMap.NPCs.Remove(npc))
+                return false;
             Program.isEdited = true;
+            return true;
+        }
+
+        public static bool Delete(int num)
+        {
+            if (num >= Program.currentMap.NPCs.Count)
+                return false;
+            Program.currentMap.NPCs.RemoveAt(num);
+            Program.isEdited = true;
+            return true;
         }
     }
 }

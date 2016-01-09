@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using PGMEBackend.Entities;
+using System.Collections;
 
 namespace PGMEBackend.GLControls
 {
@@ -30,6 +31,7 @@ namespace PGMEBackend.GLControls
         public Spritesheet entityTypes;
 
         public List<Entity> currentEntity;
+        public int currentEntityType = 0;
 
         public GLEntityEditor(int w, int h)
         {
@@ -140,7 +142,7 @@ namespace PGMEBackend.GLControls
 
                 if (currentEntity.Count == 1 && currentEntity[0] is NPC)
                     Surface.DrawOutlineRect((currentEntity[0].xPos - (currentEntity[0] as NPC).xBounds) * 16, (currentEntity[0].yPos - (currentEntity[0] as NPC).yBounds) * 16, (currentEntity[0] as NPC).xBounds * 32 + 16, (currentEntity[0] as NPC).yBounds * 32 + 16, npcBoundsColor);
-
+                
                 foreach (Entity ent in currentEntity)
                     Surface.DrawOutlineRect(ent.xPos * 16, ent.yPos * 16, 16, 16, rectPaintColor);
                 
@@ -187,7 +189,7 @@ namespace PGMEBackend.GLControls
             if (mouseX == oldMouseX && mouseY == oldMouseY)
                 return;
 
-            if ((tool == EntityEditorTools.Move || tool == EntityEditorTools.MultiSelect) && clickedOnEntity && currentEntity.Count != 0)
+            if ((tool == EntityEditorTools.SingleSelect || tool == EntityEditorTools.MultiSelect) && clickedOnEntity && currentEntity.Count != 0)
             {
                 foreach (Entity ent in currentEntity)
                 {
@@ -203,32 +205,14 @@ namespace PGMEBackend.GLControls
 
                 mouseMoved = true;
             }
-            else if (tool == EntityEditorTools.MultiSelect && !clickedOnEntity)
+            else if (tool == EntityEditorTools.CreateDelete)
+            {
                 rectColor = rectDefaultColor;
+            }
 
             if (tool == EntityEditorTools.RectSelect)
             {
-                List<Entity> newSelection = new List<Entity>();
-                foreach (NPC npc in Program.currentMap.NPCs)
-                {
-                    if(IsEntityWithinBounds(npc, mouseX, mouseY, endMouseX, endMouseY))
-                        newSelection.Add(npc);
-                }
-                foreach (Warp warp in Program.currentMap.Warps)
-                {
-                    if (IsEntityWithinBounds(warp, mouseX, mouseY, endMouseX, endMouseY))
-                        newSelection.Add(warp);
-                }
-                foreach (Trigger trigger in Program.currentMap.Triggers)
-                {
-                    if (IsEntityWithinBounds(trigger, mouseX, mouseY, endMouseX, endMouseY))
-                        newSelection.Add(trigger);
-                }
-                foreach (Sign sign in Program.currentMap.Signs)
-                {
-                    if (IsEntityWithinBounds(sign, mouseX, mouseY, endMouseX, endMouseY))
-                        newSelection.Add(sign);
-                }
+                List<Entity> newSelection = GetAllEntitiesWithinRect(mouseX, mouseY, endMouseX, endMouseY);
 
                 if (newSelection.Count > 0)
                     currentEntity = newSelection;
@@ -238,11 +222,38 @@ namespace PGMEBackend.GLControls
                 else if (currentEntity.Count > 1)
                     Program.mainGUI.MultipleEntitiesSelected();
             }
+            
             else
             {
                 endMouseX = mouseX;
                 endMouseY = mouseY;
             }
+        }
+
+        public List<Entity> GetAllEntitiesWithinRect(int startX, int startY, int endX, int endY)
+        {
+            List<Entity> entityList = new List<Entity>();
+            foreach (NPC npc in Program.currentMap.NPCs)
+            {
+                if (IsEntityWithinBounds(npc, startX, startY, endX, endY))
+                    entityList.Add(npc);
+            }
+            foreach (Warp warp in Program.currentMap.Warps)
+            {
+                if (IsEntityWithinBounds(warp, startX, startY, endX, endY))
+                    entityList.Add(warp);
+            }
+            foreach (Trigger trigger in Program.currentMap.Triggers)
+            {
+                if (IsEntityWithinBounds(trigger, startX, startY, endX, endY))
+                    entityList.Add(trigger);
+            }
+            foreach (Sign sign in Program.currentMap.Signs)
+            {
+                if (IsEntityWithinBounds(sign, startX, startY, endX, endY))
+                    entityList.Add(sign);
+            }
+            return entityList;
         }
 
         public bool IsEntityWithinBounds(Entity entity, int x1, int y1, int x2, int y2)
@@ -292,7 +303,7 @@ namespace PGMEBackend.GLControls
             if (tool == EntityEditorTools.None && Program.currentMap != null)
             {
                 tool = Tool;
-                if (tool == EntityEditorTools.Move)
+                if (tool == EntityEditorTools.SingleSelect)
                 {
                     Entity mouseOn = GetTopEntityFromPos(mouseX, mouseY);
                     if (mouseOn != null)
@@ -308,9 +319,18 @@ namespace PGMEBackend.GLControls
                 }
                 else if (tool == EntityEditorTools.RectSelect)
                 {
+                    rectColor = rectSelectColor;
                     endMouseX = mouseX;
                     endMouseY = mouseY;
-                    rectColor = rectSelectColor;
+                    List<Entity> newSelection = GetAllEntitiesWithinRect(mouseX, mouseY, endMouseX, endMouseY);
+
+                    if (newSelection.Count > 0)
+                        currentEntity = newSelection;
+
+                    if (currentEntity.Count == 1)
+                        Program.mainGUI.LoadEntityView(GetEntityType(currentEntity[0]), GetEntityNum(currentEntity[0]));
+                    else if (currentEntity.Count > 1)
+                        Program.mainGUI.MultipleEntitiesSelected();
                 }
                 else if (tool == EntityEditorTools.MultiSelect)
                 {
@@ -327,6 +347,17 @@ namespace PGMEBackend.GLControls
                         if (currentEntity.Count == 1)
                             Program.mainGUI.LoadEntityView(GetEntityType(currentEntity[0]), GetEntityNum(currentEntity[0]));
                     }
+                }
+                else if (tool == EntityEditorTools.CreateDelete)
+                {
+                    rectColor = rectPaintColor;
+                    Entity mouseOn = GetTopEntityFromPos(mouseX, mouseY);
+                    if (mouseOn != null)
+                    {
+                        Program.mainGUI.DeleteEntity(mouseOn);
+                    }
+                    else
+                        Program.mainGUI.CreateNewEntity(currentEntityType, mouseX, mouseY);
                 }
                 else
                     rectColor = rectDefaultColor;
@@ -346,6 +377,19 @@ namespace PGMEBackend.GLControls
             return -1;
         }
         
+        public static IList GetEntityList(Entity entity)
+        {
+            if (entity is NPC)
+                return Program.currentMap.NPCs;
+            else if (entity is Warp)
+                return Program.currentMap.Warps;
+            else if (entity is Trigger)
+                return Program.currentMap.Triggers;
+            else if (entity is Sign)
+                return Program.currentMap.Signs;
+            return null;
+        }
+
         public static int GetEntityNum(Entity entity)
         {
             if (entity is NPC)
@@ -395,7 +439,7 @@ namespace PGMEBackend.GLControls
         {
             if (tool == Tool)
             {
-                if (tool == EntityEditorTools.Move && !mouseMoved)
+                if (tool == EntityEditorTools.SingleSelect && !mouseMoved)
                 {
                     Entity mouseOn = GetTopEntityFromPos(mouseX, mouseY);
                     if (mouseOn != null)
@@ -440,8 +484,9 @@ namespace PGMEBackend.GLControls
     public enum EntityEditorTools
     {
         None,
-        Move,
+        SingleSelect,
+        MultiSelect,
         RectSelect,
-        MultiSelect
+        CreateDelete
     }
 }

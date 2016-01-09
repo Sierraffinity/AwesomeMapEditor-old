@@ -304,44 +304,47 @@ namespace PGMEWindowsUI
         private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
         {
             HideEventEditors();
-            PGMEBackend.Program.currentEntityType = cboEventTypes.SelectedIndex;
-
-            switch (PGMEBackend.Program.currentEntityType)
+            if (PGMEBackend.Program.glEntityEditor)
             {
-                default:
-                    panelSpriteEvent.Visible = true;
-                    nudEntityNum.Enabled = true;
-                    if(PGMEBackend.Program.currentMap != null && PGMEBackend.Program.currentMap.NPCs != null)
-                        SetEntityNumValues(NPC.currentNPC, PGMEBackend.Program.currentMap.NPCs.Length - 1);
-                    LoadNPCView(PGMEBackend.Program.currentMap, (int)nudEntityNum.Value);
-                    break;
-                case 1:
-                    panelWarpEvent.Visible = true;
-                    nudEntityNum.Enabled = true;
-                    if (PGMEBackend.Program.currentMap != null && PGMEBackend.Program.currentMap.Warps != null)
-                        SetEntityNumValues(Warp.currentWarp, PGMEBackend.Program.currentMap.Warps.Length - 1);
-                    LoadWarpView(PGMEBackend.Program.currentMap, (int)nudEntityNum.Value);
-                    break;
-                case 2:
-                    panelScriptEvent.Visible = true;
-                    nudEntityNum.Enabled = true;
-                    if (PGMEBackend.Program.currentMap != null && PGMEBackend.Program.currentMap.Triggers != null)
-                        SetEntityNumValues(Trigger.currentTrigger, PGMEBackend.Program.currentMap.Triggers.Length - 1);
-                    LoadTriggerView(PGMEBackend.Program.currentMap, (int)nudEntityNum.Value);
-                    break;
-                case 3:
-                    panelSignEvent.Visible = true;
-                    nudEntityNum.Enabled = true;
-                    if (PGMEBackend.Program.currentMap != null && PGMEBackend.Program.currentMap.Signs != null)
-                        SetEntityNumValues(Sign.currentSign, PGMEBackend.Program.currentMap.Signs.Length - 1);
-                    LoadSignView(PGMEBackend.Program.currentMap, (int)nudEntityNum.Value);
-                    break;
+                PGMEBackend.Program.glEntityEditor.currentEntityType = cboEventTypes.SelectedIndex;
+
+                switch (PGMEBackend.Program.glEntityEditor.currentEntityType)
+                {
+                    default:
+                        panelSpriteEvent.Visible = true;
+                        nudEntityNum.Enabled = true;
+                        if (PGMEBackend.Program.currentMap != null && PGMEBackend.Program.currentMap.NPCs != null)
+                            SetEntityNumValues(NPC.currentNPC, PGMEBackend.Program.currentMap.NPCs.Count - 1);
+                        LoadNPCView(PGMEBackend.Program.currentMap, (int)nudEntityNum.Value);
+                        break;
+                    case 1:
+                        panelWarpEvent.Visible = true;
+                        nudEntityNum.Enabled = true;
+                        if (PGMEBackend.Program.currentMap != null && PGMEBackend.Program.currentMap.Warps != null)
+                            SetEntityNumValues(Warp.currentWarp, PGMEBackend.Program.currentMap.Warps.Count - 1);
+                        LoadWarpView(PGMEBackend.Program.currentMap, (int)nudEntityNum.Value);
+                        break;
+                    case 2:
+                        panelScriptEvent.Visible = true;
+                        nudEntityNum.Enabled = true;
+                        if (PGMEBackend.Program.currentMap != null && PGMEBackend.Program.currentMap.Triggers != null)
+                            SetEntityNumValues(Trigger.currentTrigger, PGMEBackend.Program.currentMap.Triggers.Count - 1);
+                        LoadTriggerView(PGMEBackend.Program.currentMap, (int)nudEntityNum.Value);
+                        break;
+                    case 3:
+                        panelSignEvent.Visible = true;
+                        nudEntityNum.Enabled = true;
+                        if (PGMEBackend.Program.currentMap != null && PGMEBackend.Program.currentMap.Signs != null)
+                            SetEntityNumValues(Sign.currentSign, PGMEBackend.Program.currentMap.Signs.Count - 1);
+                        LoadSignView(PGMEBackend.Program.currentMap, (int)nudEntityNum.Value);
+                        break;
+                }
             }
         }
 
         private void nudEntityNum_ValueChanged(object sender, EventArgs e)
         {
-            switch (PGMEBackend.Program.currentEntityType)
+            switch (PGMEBackend.Program.glEntityEditor.currentEntityType)
             {
                 default:
                     NPC.currentNPC = (int)nudEntityNum.Value;
@@ -935,26 +938,26 @@ namespace PGMEWindowsUI
             if (map.layout.localTileset != null)
                 map.layout.localTileset.Initialize(map.layout);
             
-            cboEventTypes.SelectedIndex = PGMEBackend.Program.currentEntityType;
-            switch(PGMEBackend.Program.currentEntityType)
+            cboEventTypes.SelectedIndex = PGMEBackend.Program.glEntityEditor.currentEntityType;
+            switch(PGMEBackend.Program.glEntityEditor.currentEntityType)
             {
                 default:
-                    SetEntityNumValues(NPC.currentNPC, map.NPCs.Length - 1);
+                    SetEntityNumValues(NPC.currentNPC, map.NPCs.Count - 1);
                     LoadNPCView(map, NPC.currentNPC);
                     PGMEBackend.Program.glEntityEditor.currentEntity = new List<Entity> { map.NPCs[NPC.currentNPC] };
                     break;
                 case 1:
-                    SetEntityNumValues(Warp.currentWarp, map.Warps.Length - 1);
+                    SetEntityNumValues(Warp.currentWarp, map.Warps.Count - 1);
                     LoadWarpView(map, Warp.currentWarp);
                     PGMEBackend.Program.glEntityEditor.currentEntity = new List<Entity> { map.Warps[Warp.currentWarp] };
                     break;
                 case 2:
-                    SetEntityNumValues(Trigger.currentTrigger, map.Triggers.Length - 1);
+                    SetEntityNumValues(Trigger.currentTrigger, map.Triggers.Count - 1);
                     LoadTriggerView(map, Trigger.currentTrigger);
                     PGMEBackend.Program.glEntityEditor.currentEntity = new List<Entity> { map.Triggers[Trigger.currentTrigger] };
                     break;
                 case 3:
-                    SetEntityNumValues(Sign.currentSign, map.Signs.Length - 1);
+                    SetEntityNumValues(Sign.currentSign, map.Signs.Count - 1);
                     LoadSignView(map, Sign.currentSign);
                     PGMEBackend.Program.glEntityEditor.currentEntity = new List<Entity> { map.Signs[Sign.currentSign] };
                     break;
@@ -978,7 +981,7 @@ namespace PGMEWindowsUI
 
         public void LoadNPCView(Map map, int npcNum)
         {
-            if (map != null && map.NPCs != null && map.NPCs.Length > npcNum)
+            if (map != null && map.NPCs != null && map.NPCs.Count > npcNum)
                 LoadNPCView(map.NPCs[npcNum]);
             else
                 NoEntitiesOfType();
@@ -1013,7 +1016,7 @@ namespace PGMEWindowsUI
         
         public void LoadWarpView(Map map, int warpNum)
         {
-            if (map.Warps.Length > warpNum)
+            if (map != null && map.Warps != null && map.Warps.Count > warpNum)
                 LoadWarpView(map.Warps[warpNum]);
             else
                 NoEntitiesOfType();
@@ -1035,7 +1038,7 @@ namespace PGMEWindowsUI
         
         public void LoadSignView(Map map, int signNum)
         {
-            if (map != null && map.Signs != null && map.Signs.Length > signNum)
+            if (map != null && map.Signs != null && map.Signs.Count > signNum)
                 LoadSignView(map.Signs[signNum]);
             else
                 NoEntitiesOfType();
@@ -1058,7 +1061,7 @@ namespace PGMEWindowsUI
         
         public void LoadTriggerView(Map map, int triggerNum)
         {
-            if (map != null && map.Triggers != null && map.Triggers.Length > triggerNum)
+            if (map != null && map.Triggers != null && map.Triggers.Count > triggerNum)
                 LoadTriggerView(map.Triggers[triggerNum]);
             else
                 NoEntitiesOfType();
@@ -1685,8 +1688,10 @@ namespace PGMEWindowsUI
         {
             if ((tsbMapEditorMouse.Checked && b == MouseButtons.Left && isControlPressed) || tsbMapEditorFillAll.Checked)
                 return EntityEditorTools.MultiSelect;
+            else if ((tsbMapEditorMouse.Checked && b == MouseButtons.Middle) || tsbMapEditorFill.Checked)
+                return EntityEditorTools.CreateDelete;
             else if ((tsbMapEditorMouse.Checked && b == MouseButtons.Left) || tsbMapEditorPencil.Checked)
-                return EntityEditorTools.Move;
+                return EntityEditorTools.SingleSelect;
             else if ((tsbMapEditorMouse.Checked && b == MouseButtons.Right) || tsbMapEditorEyedropper.Checked)
                 return EntityEditorTools.RectSelect;
             else
@@ -2088,37 +2093,61 @@ namespace PGMEWindowsUI
         
         private void btnCreateNewEntity_Click(object sender, EventArgs e)
         {
-            switch(cboEventTypes.SelectedIndex)
+            CreateNewEntity(cboEventTypes.SelectedIndex);
+        }
+
+        public Entity CreateNewEntity(int entityType, int xPos = 0, int yPos = 0)
+        {
+            Entity entity;
+            switch (entityType)
             {
                 default:
-                    panelSpriteEvent.Visible = true;
-                    nudEntityNum.Enabled = true;
-                    Array.Resize(ref PGMEBackend.Program.currentMap.NPCs, PGMEBackend.Program.currentMap.NPCs.Length + 1);
-                    PGMEBackend.Program.currentMap.NPCs[PGMEBackend.Program.currentMap.NPCs.Length - 1] = new NPC();
-                    SetEntityNumValues(PGMEBackend.Program.currentMap.NPCs.Length - 1, PGMEBackend.Program.currentMap.NPCs.Length - 1);
+                    entity = new NPC((short)xPos, (short)yPos);
                     break;
                 case 1:
-                    panelWarpEvent.Visible = true;
-                    nudEntityNum.Enabled = true;
-                    Array.Resize(ref PGMEBackend.Program.currentMap.Warps, PGMEBackend.Program.currentMap.Warps.Length + 1);
-                    PGMEBackend.Program.currentMap.Warps[PGMEBackend.Program.currentMap.Warps.Length - 1] = new Warp();
-                    SetEntityNumValues(PGMEBackend.Program.currentMap.Warps.Length - 1, PGMEBackend.Program.currentMap.Warps.Length - 1);
+                    entity = new Warp((short)xPos, (short)yPos);
                     break;
                 case 2:
-                    panelScriptEvent.Visible = true;
-                    nudEntityNum.Enabled = true;
-                    Array.Resize(ref PGMEBackend.Program.currentMap.Triggers, PGMEBackend.Program.currentMap.Triggers.Length + 1);
-                    PGMEBackend.Program.currentMap.Triggers[PGMEBackend.Program.currentMap.Triggers.Length - 1] = new Trigger();
-                    SetEntityNumValues(PGMEBackend.Program.currentMap.Triggers.Length - 1, PGMEBackend.Program.currentMap.Triggers.Length - 1);
+                    entity = new Trigger((short)xPos, (short)yPos);
                     break;
                 case 3:
-                    panelSignEvent.Visible = true;
-                    nudEntityNum.Enabled = true;
-                    Array.Resize(ref PGMEBackend.Program.currentMap.Signs, PGMEBackend.Program.currentMap.Signs.Length + 1);
-                    PGMEBackend.Program.currentMap.Signs[PGMEBackend.Program.currentMap.Signs.Length - 1] = new Sign();
-                    SetEntityNumValues(PGMEBackend.Program.currentMap.Signs.Length - 1, PGMEBackend.Program.currentMap.Signs.Length - 1);
+                    entity = new Sign((short)xPos, (short)yPos);
                     break;
             }
+            CreateNewEntity(entity);
+            PGMEBackend.Program.glEntityEditor.currentEntity = new List<Entity> { entity };
+            return entity;
+        }
+
+        public void CreateNewEntity(Entity entity)
+        {
+            int count = 0;
+            if (entity is NPC)
+            {
+                panelSpriteEvent.Visible = true;
+                PGMEBackend.Program.currentMap.NPCs.Add(entity as NPC);
+                count = PGMEBackend.Program.currentMap.NPCs.Count - 1;
+            }
+            else if (entity is Warp)
+            {
+                panelWarpEvent.Visible = true;
+                PGMEBackend.Program.currentMap.Warps.Add(entity as Warp);
+                count = PGMEBackend.Program.currentMap.Warps.Count - 1;
+            }
+            else if(entity is Trigger)
+            {
+                panelScriptEvent.Visible = true;
+                PGMEBackend.Program.currentMap.Triggers.Add(entity as Trigger);
+                count = PGMEBackend.Program.currentMap.Triggers.Count - 1;
+            }
+            else if(entity is Sign)
+            {
+                panelSignEvent.Visible = true;
+                PGMEBackend.Program.currentMap.Signs.Add(entity as Sign);
+                count = PGMEBackend.Program.currentMap.Signs.Count - 1;
+            }
+            nudEntityNum.Enabled = true;
+            SetEntityNumValues(count, count);
         }
 
         public void LoadEntityView(int entityType, int entityNum)
@@ -2157,42 +2186,65 @@ namespace PGMEWindowsUI
 
         private void btnDeleteNPC_Click(object sender, EventArgs e)
         {
-            if(ShowMessageBox(PGMEBackend.Program.rmInternalStrings.GetString("DeleteEntity"), PGMEBackend.Program.rmInternalStrings.GetString("DeleteEntityTitle"), "YesNo", "Warning") == "Yes")
-            {
-                NPC.DeleteNPC(NPC.currentNPC);
-                SetEntityNumValues(NPC.currentNPC, PGMEBackend.Program.currentMap.NPCs.Length - 1);
-                LoadNPCView(PGMEBackend.Program.currentMap, NPC.currentNPC);
-            }
+            DeleteEntity(PGMEBackend.Program.glEntityEditor.currentEntity[0]);
         }
 
         private void btnDeleteWarp_Click(object sender, EventArgs e)
         {
-            if (ShowMessageBox(PGMEBackend.Program.rmInternalStrings.GetString("DeleteEntity"), PGMEBackend.Program.rmInternalStrings.GetString("DeleteEntityTitle"), "YesNo", "Warning") == "Yes")
-            {
-                Warp.DeleteWarp(Warp.currentWarp);
-                SetEntityNumValues(Warp.currentWarp, PGMEBackend.Program.currentMap.Warps.Length - 1);
-                LoadWarpView(PGMEBackend.Program.currentMap, Warp.currentWarp);
-            }
+            DeleteEntity(PGMEBackend.Program.glEntityEditor.currentEntity[0]);
         }
 
         private void btnDeleteTrigger_Click(object sender, EventArgs e)
         {
-            if (ShowMessageBox(PGMEBackend.Program.rmInternalStrings.GetString("DeleteEntity"), PGMEBackend.Program.rmInternalStrings.GetString("DeleteEntityTitle"), "YesNo", "Warning") == "Yes")
-            {
-                Trigger.DeleteTrigger(Trigger.currentTrigger);
-                SetEntityNumValues(Trigger.currentTrigger, PGMEBackend.Program.currentMap.Triggers.Length - 1);
-                LoadTriggerView(PGMEBackend.Program.currentMap, Trigger.currentTrigger);
-            }
+            DeleteEntity(PGMEBackend.Program.glEntityEditor.currentEntity[0]);
         }
 
         private void btnDeleteSign_Click(object sender, EventArgs e)
         {
-            if (ShowMessageBox(PGMEBackend.Program.rmInternalStrings.GetString("DeleteEntity"), PGMEBackend.Program.rmInternalStrings.GetString("DeleteEntityTitle"), "YesNo", "Warning") == "Yes")
+            DeleteEntity(PGMEBackend.Program.glEntityEditor.currentEntity[0]);
+        }
+
+        public bool DeleteEntity(Entity entity)
+        {
+            bool result = false;
+            if (entity is NPC)
             {
-                Sign.DeleteSign(Sign.currentSign);
-                SetEntityNumValues(Sign.currentSign, PGMEBackend.Program.currentMap.Signs.Length - 1);
-                LoadSignView(PGMEBackend.Program.currentMap, Sign.currentSign);
+                result = NPC.Delete(entity as NPC);
+                if (PGMEBackend.Program.glEntityEditor.currentEntityType == 0)
+                {
+                    SetEntityNumValues(NPC.currentNPC, PGMEBackend.Program.currentMap.NPCs.Count - 1);
+                    LoadNPCView(PGMEBackend.Program.currentMap, NPC.currentNPC);
+                }
             }
+            else if (entity is Warp)
+            {
+                result = Warp.Delete(entity as Warp);
+                if (PGMEBackend.Program.glEntityEditor.currentEntityType == 1)
+                {
+                    SetEntityNumValues(Warp.currentWarp, PGMEBackend.Program.currentMap.Warps.Count - 1);
+                    LoadWarpView(PGMEBackend.Program.currentMap, Warp.currentWarp);
+                }
+            }
+            else if (entity is Trigger)
+            {
+                result = Trigger.Delete(entity as Trigger);
+                if (PGMEBackend.Program.glEntityEditor.currentEntityType == 2)
+                {
+                    SetEntityNumValues(Trigger.currentTrigger, PGMEBackend.Program.currentMap.Triggers.Count - 1);
+                    LoadTriggerView(PGMEBackend.Program.currentMap, Trigger.currentTrigger);
+                }
+            }
+            else if(entity is Sign)
+            {
+                result = Sign.Delete(entity as Sign);
+                if (PGMEBackend.Program.glEntityEditor.currentEntityType == 3)
+                {
+                    SetEntityNumValues(Sign.currentSign, PGMEBackend.Program.currentMap.Signs.Count - 1);
+                    LoadSignView(PGMEBackend.Program.currentMap, Sign.currentSign);
+                }
+            }
+            PGMEBackend.Program.glEntityEditor.currentEntity.Remove(entity);
+            return result;
         }
         
         public void MultipleEntitiesSelected()

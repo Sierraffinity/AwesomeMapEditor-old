@@ -9,10 +9,6 @@ namespace PGMEBackend.Entities
     public class Trigger : Entity
     {
         public static int currentTrigger = 0;
-
-        public byte[] rawDataOrig;
-        public byte[] rawData;
-        public int offset = 0;
         
         public byte filler1 = 0;
         public short variable = 0;
@@ -20,20 +16,22 @@ namespace PGMEBackend.Entities
         public byte filler2 = 0;
         public byte filler3 = 0;
 
-        public Trigger()
+        public Trigger() : base()
+        {
+
+        }
+        
+        public Trigger(short xPos, short yPos) : base(xPos, yPos)
+        {
+
+        }
+        
+        public Trigger(int offset, GBAROM ROM) : base(offset, ROM)
         {
 
         }
 
-        public Trigger(int Offset, GBAROM ROM)
-        {
-            offset = Offset;
-            rawDataOrig = ROM.GetData(offset, 16);
-            rawData = (byte[])rawDataOrig.Clone();
-            LoadTriggerFromRaw();
-        }
-
-        public void LoadTriggerFromRaw()
+        public override void LoadDataFromRaw()
         {
             xPos = BitConverter.ToInt16(rawData, 0);
             yPos = BitConverter.ToInt16(rawData, 2);
@@ -46,7 +44,7 @@ namespace PGMEBackend.Entities
             scriptOffset = BitConverter.ToInt32(rawData, 12) - 0x8000000;
         }
 
-        public void LoadRawFromTrigger()
+        public override void LoadRawFromData()
         {
             Buffer.BlockCopy(BitConverter.GetBytes(xPos), 0, rawData, 0, 2);
             Buffer.BlockCopy(BitConverter.GetBytes(yPos), 0, rawData, 2, 2);
@@ -59,17 +57,26 @@ namespace PGMEBackend.Entities
             Buffer.BlockCopy(BitConverter.GetBytes(scriptOffset + 0x8000000), 0, rawData, 12, 4);
         }
 
-        static public void DeleteTrigger(int currentTrigger)
+        public static bool Delete()
         {
-            Trigger[] newTriggers = new Trigger[Program.currentMap.Triggers.Length - 1];
-            for (int i = 0; i < Program.currentMap.Triggers.Length - 1; i++)
-            {
-                if (i < currentTrigger)
-                    newTriggers[i] = Program.currentMap.Triggers[i];
-                else
-                    newTriggers[i] = Program.currentMap.Triggers[i + 1];
-            }
-            Program.currentMap.Triggers = newTriggers;
+            return Delete(currentTrigger);
+        }
+
+        public static bool Delete(Trigger trigger)
+        {
+            if (!Program.currentMap.Triggers.Remove(trigger))
+                return false;
+            Program.isEdited = true;
+            return true;
+        }
+
+        public static bool Delete(int num)
+        {
+            if (num >= Program.currentMap.Triggers.Count)
+                return false;
+            Program.currentMap.Triggers.RemoveAt(num);
+            Program.isEdited = true;
+            return true;
         }
     }
 }

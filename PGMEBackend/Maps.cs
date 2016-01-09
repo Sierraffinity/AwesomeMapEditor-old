@@ -60,10 +60,10 @@ namespace PGMEBackend
         public bool canRideBike;
         public bool canEscape;
 
-        public Entities.NPC[] NPCs;
-        public Entities.Warp[] Warps;
-        public Entities.Trigger[] Triggers;
-        public Entities.Sign[] Signs;
+        public List<Entities.NPC> NPCs;
+        public List<Entities.Warp> Warps;
+        public List<Entities.Trigger> Triggers;
+        public List<Entities.Sign> Signs;
 
         public MapLayout layout;
 
@@ -150,32 +150,32 @@ namespace PGMEBackend
         {
             byte[] entityRaws = ROM.GetData(eventDataPointer, 0x14);
 
-            NPCs = new Entities.NPC[entityRaws[0]];
+            NPCs = new List<Entities.NPC>();
             int npcOffset = BitConverter.ToInt32(entityRaws, 0x4) - 0x8000000;
-            for (int i = 0; i < NPCs.Length; i++)
+            for (int i = 0; i < entityRaws[0]; i++)
             {
-                NPCs[i] = new Entities.NPC(npcOffset + i * 0x18, ROM);
+                NPCs.Add(new Entities.NPC(npcOffset + i * 0x18, ROM));
             }
 
-            Warps = new Entities.Warp[entityRaws[1]];
+            Warps = new List<Entities.Warp>();
             int warpOffset = BitConverter.ToInt32(entityRaws, 0x8) - 0x8000000;
-            for (int i = 0; i < Warps.Length; i++)
+            for (int i = 0; i < entityRaws[1]; i++)
             {
-                Warps[i] = new Entities.Warp(warpOffset + i * 0x8, ROM);
+                Warps.Add(new Entities.Warp(warpOffset + i * 0x8, ROM));
             }
 
-            Triggers = new Entities.Trigger[entityRaws[2]];
+            Triggers = new List<Entities.Trigger>();
             int triggerOffset = BitConverter.ToInt32(entityRaws, 0xC) - 0x8000000;
-            for (int i = 0; i < Triggers.Length; i++)
+            for (int i = 0; i < entityRaws[2]; i++)
             {
-                Triggers[i] = new Entities.Trigger(triggerOffset + i * 0x10, ROM);
+                Triggers.Add(new Entities.Trigger(triggerOffset + i * 0x10, ROM));
             }
 
-            Signs = new Entities.Sign[entityRaws[3]];
+            Signs = new List<Entities.Sign>();
             int signOffset = BitConverter.ToInt32(entityRaws, 0x10) - 0x8000000;
-            for (int i = 0; i < Signs.Length; i++)
+            for (int i = 0; i < entityRaws[3]; i++)
             {
-                Signs[i] = new Entities.Sign(signOffset + i * 0xC, ROM);
+                Signs.Add(new Entities.Sign(signOffset + i * 0xC, ROM));
             }
         }
 

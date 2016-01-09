@@ -1091,6 +1091,7 @@ namespace PGMEWindowsUI
             // 
             // hexNumberBoxSignFiller1
             // 
+            this.hexNumberBoxSignFiller1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxSignFiller1, "hexNumberBoxSignFiller1");
             this.hexNumberBoxSignFiller1.Name = "hexNumberBoxSignFiller1";
             // 
@@ -1144,6 +1145,7 @@ namespace PGMEWindowsUI
             // 
             // hexNumberBoxSignScriptOffset
             // 
+            this.hexNumberBoxSignScriptOffset.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxSignScriptOffset, "hexNumberBoxSignScriptOffset");
             this.hexNumberBoxSignScriptOffset.Name = "hexNumberBoxSignScriptOffset";
             // 
@@ -1154,6 +1156,7 @@ namespace PGMEWindowsUI
             // 
             // hexNumberBoxSignFiller2
             // 
+            this.hexNumberBoxSignFiller2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxSignFiller2, "hexNumberBoxSignFiller2");
             this.hexNumberBoxSignFiller2.Name = "hexNumberBoxSignFiller2";
             // 
@@ -1218,6 +1221,7 @@ namespace PGMEWindowsUI
             // 
             // hexNumberBoxSignXPos
             // 
+            this.hexNumberBoxSignXPos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxSignXPos, "hexNumberBoxSignXPos");
             this.hexNumberBoxSignXPos.Name = "hexNumberBoxSignXPos";
             // 
@@ -1297,6 +1301,7 @@ namespace PGMEWindowsUI
             // 
             // hexNumberBoxTriggerFiller2
             // 
+            this.hexNumberBoxTriggerFiller2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxTriggerFiller2, "hexNumberBoxTriggerFiller2");
             this.hexNumberBoxTriggerFiller2.Name = "hexNumberBoxTriggerFiller2";
             // 
@@ -1307,6 +1312,7 @@ namespace PGMEWindowsUI
             // 
             // hexNumberBoxTriggerFiller1
             // 
+            this.hexNumberBoxTriggerFiller1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxTriggerFiller1, "hexNumberBoxTriggerFiller1");
             this.hexNumberBoxTriggerFiller1.Name = "hexNumberBoxTriggerFiller1";
             // 
@@ -1353,11 +1359,13 @@ namespace PGMEWindowsUI
             // 
             // hexNumberBoxTriggerVariable
             // 
+            this.hexNumberBoxTriggerVariable.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxTriggerVariable, "hexNumberBoxTriggerVariable");
             this.hexNumberBoxTriggerVariable.Name = "hexNumberBoxTriggerVariable";
             // 
             // hexNumberBoxTriggerValue
             // 
+            this.hexNumberBoxTriggerValue.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxTriggerValue, "hexNumberBoxTriggerValue");
             this.hexNumberBoxTriggerValue.Name = "hexNumberBoxTriggerValue";
             // 
@@ -1376,6 +1384,7 @@ namespace PGMEWindowsUI
             // 
             // hexNumberBoxTriggerScriptOffset
             // 
+            this.hexNumberBoxTriggerScriptOffset.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxTriggerScriptOffset, "hexNumberBoxTriggerScriptOffset");
             this.hexNumberBoxTriggerScriptOffset.Name = "hexNumberBoxTriggerScriptOffset";
             // 
@@ -1388,6 +1397,7 @@ namespace PGMEWindowsUI
             // 
             // hexNumberBoxTriggerFiller3
             // 
+            this.hexNumberBoxTriggerFiller3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxTriggerFiller3, "hexNumberBoxTriggerFiller3");
             this.hexNumberBoxTriggerFiller3.Name = "hexNumberBoxTriggerFiller3";
             // 
@@ -1426,11 +1436,13 @@ namespace PGMEWindowsUI
             // 
             // hexNumberBoxTriggerYPos
             // 
+            this.hexNumberBoxTriggerYPos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxTriggerYPos, "hexNumberBoxTriggerYPos");
             this.hexNumberBoxTriggerYPos.Name = "hexNumberBoxTriggerYPos";
             // 
             // hexNumberBoxTriggerXPos
             // 
+            this.hexNumberBoxTriggerXPos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxTriggerXPos, "hexNumberBoxTriggerXPos");
             this.hexNumberBoxTriggerXPos.Name = "hexNumberBoxTriggerXPos";
             // 
@@ -1517,16 +1529,19 @@ namespace PGMEWindowsUI
             // 
             // hexNumberBoxWarpMap
             // 
+            this.hexNumberBoxWarpMap.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxWarpMap, "hexNumberBoxWarpMap");
             this.hexNumberBoxWarpMap.Name = "hexNumberBoxWarpMap";
             // 
             // hexNumberBoxWarpNum
             // 
+            this.hexNumberBoxWarpNum.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxWarpNum, "hexNumberBoxWarpNum");
             this.hexNumberBoxWarpNum.Name = "hexNumberBoxWarpNum";
             // 
             // hexNumberBoxWarpBank
             // 
+            this.hexNumberBoxWarpBank.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxWarpBank, "hexNumberBoxWarpBank");
             this.hexNumberBoxWarpBank.Name = "hexNumberBoxWarpBank";
             // 
@@ -1580,11 +1595,13 @@ namespace PGMEWindowsUI
             // 
             // hexNumberBoxWarpYPos
             // 
+            this.hexNumberBoxWarpYPos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxWarpYPos, "hexNumberBoxWarpYPos");
             this.hexNumberBoxWarpYPos.Name = "hexNumberBoxWarpYPos";
             // 
             // hexNumberBoxWarpXPos
             // 
+            this.hexNumberBoxWarpXPos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxWarpXPos, "hexNumberBoxWarpXPos");
             this.hexNumberBoxWarpXPos.Name = "hexNumberBoxWarpXPos";
             // 
@@ -1658,6 +1675,7 @@ namespace PGMEWindowsUI
             // 
             // hexNumberBoxNPCViewRadius
             // 
+            this.hexNumberBoxNPCViewRadius.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxNPCViewRadius, "hexNumberBoxNPCViewRadius");
             this.hexNumberBoxNPCViewRadius.Name = "hexNumberBoxNPCViewRadius";
             // 
@@ -1675,6 +1693,7 @@ namespace PGMEWindowsUI
             // 
             // hexNumberBoxNPCFiller6
             // 
+            this.hexNumberBoxNPCFiller6.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxNPCFiller6, "hexNumberBoxNPCFiller6");
             this.hexNumberBoxNPCFiller6.Name = "hexNumberBoxNPCFiller6";
             // 
@@ -1692,6 +1711,7 @@ namespace PGMEWindowsUI
             // 
             // hexNumberBoxNPCXBound
             // 
+            this.hexNumberBoxNPCXBound.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxNPCXBound, "hexNumberBoxNPCXBound");
             this.hexNumberBoxNPCXBound.Name = "hexNumberBoxNPCXBound";
             // 
@@ -1822,6 +1842,7 @@ namespace PGMEWindowsUI
             // 
             // hexNumberBoxNPCFiller3
             // 
+            this.hexNumberBoxNPCFiller3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxNPCFiller3, "hexNumberBoxNPCFiller3");
             this.hexNumberBoxNPCFiller3.Name = "hexNumberBoxNPCFiller3";
             // 
@@ -1832,6 +1853,7 @@ namespace PGMEWindowsUI
             // 
             // hexNumberBoxNPCFiller2
             // 
+            this.hexNumberBoxNPCFiller2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxNPCFiller2, "hexNumberBoxNPCFiller2");
             this.hexNumberBoxNPCFiller2.Name = "hexNumberBoxNPCFiller2";
             // 
@@ -1847,6 +1869,7 @@ namespace PGMEWindowsUI
             // 
             // hexNumberBoxNPCFiller1
             // 
+            this.hexNumberBoxNPCFiller1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxNPCFiller1, "hexNumberBoxNPCFiller1");
             this.hexNumberBoxNPCFiller1.Name = "hexNumberBoxNPCFiller1";
             // 
@@ -1867,6 +1890,7 @@ namespace PGMEWindowsUI
             // 
             // hexNumberBoxNPCFiller5
             // 
+            this.hexNumberBoxNPCFiller5.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxNPCFiller5, "hexNumberBoxNPCFiller5");
             this.hexNumberBoxNPCFiller5.Name = "hexNumberBoxNPCFiller5";
             // 
@@ -1877,6 +1901,7 @@ namespace PGMEWindowsUI
             // 
             // hexNumberBoxNPCVisibilityFlag
             // 
+            this.hexNumberBoxNPCVisibilityFlag.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxNPCVisibilityFlag, "hexNumberBoxNPCVisibilityFlag");
             this.hexNumberBoxNPCVisibilityFlag.Name = "hexNumberBoxNPCVisibilityFlag";
             // 
@@ -1887,6 +1912,7 @@ namespace PGMEWindowsUI
             // 
             // hexNumberBoxNPCScriptOffset
             // 
+            this.hexNumberBoxNPCScriptOffset.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxNPCScriptOffset, "hexNumberBoxNPCScriptOffset");
             this.hexNumberBoxNPCScriptOffset.Name = "hexNumberBoxNPCScriptOffset";
             // 
@@ -1897,6 +1923,7 @@ namespace PGMEWindowsUI
             // 
             // hexNumberBoxNPCFiller4
             // 
+            this.hexNumberBoxNPCFiller4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxNPCFiller4, "hexNumberBoxNPCFiller4");
             this.hexNumberBoxNPCFiller4.Name = "hexNumberBoxNPCFiller4";
             // 
@@ -1907,6 +1934,7 @@ namespace PGMEWindowsUI
             // 
             // hexNumberBoxNPCTrainer
             // 
+            this.hexNumberBoxNPCTrainer.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxNPCTrainer, "hexNumberBoxNPCTrainer");
             this.hexNumberBoxNPCTrainer.Name = "hexNumberBoxNPCTrainer";
             // 
@@ -1917,6 +1945,7 @@ namespace PGMEWindowsUI
             // 
             // hexNumberBoxNPCYBound
             // 
+            this.hexNumberBoxNPCYBound.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxNPCYBound, "hexNumberBoxNPCYBound");
             this.hexNumberBoxNPCYBound.Name = "hexNumberBoxNPCYBound";
             // 
@@ -2053,6 +2082,7 @@ namespace PGMEWindowsUI
             // 
             // hexNumberBoxNPCYPos
             // 
+            this.hexNumberBoxNPCYPos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxNPCYPos, "hexNumberBoxNPCYPos");
             this.hexNumberBoxNPCYPos.Name = "hexNumberBoxNPCYPos";
             // 
@@ -2073,11 +2103,13 @@ namespace PGMEWindowsUI
             // 
             // hexNumberBoxNPCXPos
             // 
+            this.hexNumberBoxNPCXPos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxNPCXPos, "hexNumberBoxNPCXPos");
             this.hexNumberBoxNPCXPos.Name = "hexNumberBoxNPCXPos";
             // 
             // hexNumberBoxNPCReplacement
             // 
+            this.hexNumberBoxNPCReplacement.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxNPCReplacement, "hexNumberBoxNPCReplacement");
             this.hexNumberBoxNPCReplacement.Name = "hexNumberBoxNPCReplacement";
             // 
@@ -2096,6 +2128,11 @@ namespace PGMEWindowsUI
             // 
             resources.ApplyResources(this.nudNPCNum, "nudNPCNum");
             this.nudNPCNum.Hexadecimal = true;
+            this.nudNPCNum.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.nudNPCNum.Name = "nudNPCNum";
             // 
             // eventEditorPanel
@@ -5102,6 +5139,7 @@ namespace PGMEWindowsUI
             // 
             // hexNumberBoxSignYPos
             // 
+            this.hexNumberBoxSignYPos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxSignYPos, "hexNumberBoxSignYPos");
             this.hexNumberBoxSignYPos.Name = "hexNumberBoxSignYPos";
             // 

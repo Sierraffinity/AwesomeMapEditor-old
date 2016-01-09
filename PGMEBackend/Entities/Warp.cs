@@ -9,29 +9,27 @@ namespace PGMEBackend.Entities
     public class Warp : Entity
     {
         public static int currentWarp = 0;
-
-        public byte[] rawDataOrig;
-        public byte[] rawData;
-        public int offset = 0;
         
         public byte destWarpNum = 0;
         public byte destMapBank = 0;
         public byte destMapNum = 0;
 
-        public Warp()
+        public Warp() : base()
+        {
+            
+        }
+        
+        public Warp(short xPos, short yPos) : base(xPos, yPos)
+        {
+
+        }
+        
+        public Warp(int offset, GBAROM ROM) : base(offset, ROM)
         {
 
         }
 
-        public Warp(int Offset, GBAROM ROM)
-        {
-            offset = Offset;
-            rawDataOrig = ROM.GetData(offset, 0x8);
-            rawData = (byte[])rawDataOrig.Clone();
-            LoadWarpFromRaw();
-        }
-
-        public void LoadWarpFromRaw()
+        public override void LoadDataFromRaw()
         {
             xPos = BitConverter.ToInt16(rawData, 0);
             yPos = BitConverter.ToInt16(rawData, 2);
@@ -41,7 +39,7 @@ namespace PGMEBackend.Entities
             destMapBank = rawData[7];
         }
 
-        public void LoadRawFromWarp()
+        public override void LoadRawFromData()
         {
             Buffer.BlockCopy(BitConverter.GetBytes(xPos), 0, rawData, 0, 2);
             Buffer.BlockCopy(BitConverter.GetBytes(yPos), 0, rawData, 2, 2);
@@ -51,18 +49,26 @@ namespace PGMEBackend.Entities
             rawData[7] = destMapBank;
         }
 
-        public static void DeleteWarp(int currentWarp)
+        public static bool Delete()
         {
-            Warp[] newWarps = new Warp[Program.currentMap.Warps.Length - 1];
-            for (int i = 0; i < Program.currentMap.Warps.Length - 1; i++)
-            {
-                if (i < currentWarp)
-                    newWarps[i] = Program.currentMap.Warps[i];
-                else
-                    newWarps[i] = Program.currentMap.Warps[i + 1];
-            }
-            Program.currentMap.Warps = newWarps;
+            return Delete(currentWarp);
+        }
+
+        public static bool Delete(Warp warp)
+        {
+            if (!Program.currentMap.Warps.Remove(warp))
+                return false;
             Program.isEdited = true;
+            return true;
+        }
+
+        public static bool Delete(int num)
+        {
+            if (num >= Program.currentMap.Warps.Count)
+                return false;
+            Program.currentMap.Warps.RemoveAt(num);
+            Program.isEdited = true;
+            return true;
         }
     }
 }
