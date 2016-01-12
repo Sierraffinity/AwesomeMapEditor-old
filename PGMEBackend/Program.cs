@@ -138,9 +138,8 @@ namespace PGMEBackend
 
                 mainGUI.EnableControlsOnROMLoad();
                 mainGUI.LoadMapNodes();
-                mainGUI.LoadMapDropdowns();
                 currentGame.Songs = Config.musicLists.Songs[currentGame.RomType];
-                mainGUI.LoadMusicDropdowns();
+                mainGUI.LoadHeaderTabDropdowns();
 
                 //Stop timer
                 loadTime.Stop();
@@ -305,8 +304,8 @@ namespace PGMEBackend
                 else if (result == "No")
                 {
                     if(currentMap != null)
-                        currentMap.LoadMapHeaderFromRaw(ROM);
-                    currentLayout.LoadLayoutHeaderFromRaw(ROM);
+                        currentMap.Revert();
+                    currentLayout.Revert();
                 }
                 else if (result == "Cancel")
                     return 1;
@@ -349,7 +348,9 @@ namespace PGMEBackend
 
         public static void SaveMap()
         {
-            currentLayout.WriteLayoutToRaw();
+            if (currentMap != null)
+                currentMap.Save();
+            currentLayout.Save();
             isEdited = false;
         }
         

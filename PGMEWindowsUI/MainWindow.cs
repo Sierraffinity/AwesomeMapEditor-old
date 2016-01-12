@@ -306,9 +306,7 @@ namespace PGMEWindowsUI
             HideEventEditors();
             if (PGMEBackend.Program.glEntityEditor)
             {
-                PGMEBackend.Program.glEntityEditor.currentEntityType = cboEventTypes.SelectedIndex;
-
-                switch (PGMEBackend.Program.glEntityEditor.currentEntityType)
+                switch (cboEventTypes.SelectedIndex)
                 {
                     default:
                         panelSpriteEvent.Visible = true;
@@ -344,21 +342,21 @@ namespace PGMEWindowsUI
 
         private void nudEntityNum_ValueChanged(object sender, EventArgs e)
         {
-            switch (PGMEBackend.Program.glEntityEditor.currentEntityType)
+            switch (PGMEBackend.Program.glEntityEditor.currentEntities[0].GetEnum())
             {
                 default:
                     NPC.currentNPC = (int)nudEntityNum.Value;
                     LoadNPCView(PGMEBackend.Program.currentMap, NPC.currentNPC);
                     break;
-                case 1:
+                case Entity.EntityType.Warp:
                     Warp.currentWarp = (int)nudEntityNum.Value;
                     LoadWarpView(PGMEBackend.Program.currentMap, Warp.currentWarp);
                     break;
-                case 2:
+                case Entity.EntityType.Trigger:
                     Trigger.currentTrigger = (int)nudEntityNum.Value;
                     LoadTriggerView(PGMEBackend.Program.currentMap, Trigger.currentTrigger);
                     break;
-                case 3:
+                case Entity.EntityType.Sign:
                     Sign.currentSign = (int)nudEntityNum.Value;
                     LoadSignView(PGMEBackend.Program.currentMap, Sign.currentSign);
                     break;
@@ -561,7 +559,7 @@ namespace PGMEWindowsUI
                     mapTreeNodes.Add(0xFF, new TreeNode(PGMEBackend.Program.rmInternalStrings.GetString("InvalidMapNameIndex")));
                     foreach (KeyValuePair<int, MapName> mapName in PGMEBackend.Program.mapNames)
                     {
-                        var mapNameNode = new TreeNode("[" + mapName.Key.ToString("X2") + "] " + mapName.Value.Name);
+                        var mapNameNode = new TreeNode("[" + mapName.Key.ToString("X2") + "] " + mapName.Value.name);
                         mapNameNode.SelectedImageKey = "Folder Closed";
                         mapNameNode.ImageKey = "Folder Closed";
                         backupTree.Nodes.Add(mapNameNode);
@@ -744,23 +742,15 @@ namespace PGMEWindowsUI
             return shouldCreateParent;
         }
 
-        public void LoadMapDropdowns()
+        public void LoadHeaderTabDropdowns()
         {
-            cbHeaderTabMapNames.Items.Clear();
-            foreach (KeyValuePair<int, MapName> mapName in PGMEBackend.Program.mapNames)
-            {
-                cbHeaderTabMapNames.Items.Add(mapName.Value.Name);
-            }
-        }
+            cbHeaderTabMapNames.DataSource = new BindingSource(PGMEBackend.Program.mapNames, null);
+            cbHeaderTabMapNames.DisplayMember = "Value";
+            cbHeaderTabMapNames.ValueMember = "Key";
 
-        public void LoadMusicDropdowns()
-        {
-            cbHeaderTabMusic.Items.Clear();
-
-            for (int i = 0; i <= PGMEBackend.Program.currentGame.Songs.Keys.Last(); i++)
-            {
-                cbHeaderTabMusic.Items.Add((PGMEBackend.Program.currentGame.Songs.ContainsKey(i) ? PGMEBackend.Program.currentGame.Songs[i] : PGMEBackend.Program.rmInternalStrings.GetString("UnknownSong") + " " + i.ToString("X4")));
-            }
+            cbHeaderTabMusic.DataSource = new BindingSource(PGMEBackend.Program.currentGame.Songs, null);
+            cbHeaderTabMusic.DisplayMember = "Value";
+            cbHeaderTabMusic.ValueMember = "Key";
         }
 
         public string ShowFileOpenDialog(string title, string filter, bool multiselect)
@@ -937,29 +927,33 @@ namespace PGMEWindowsUI
                 map.layout.globalTileset.Initialize(map.layout);
             if (map.layout.localTileset != null)
                 map.layout.localTileset.Initialize(map.layout);
-            
-            cboEventTypes.SelectedIndex = PGMEBackend.Program.glEntityEditor.currentEntityType;
-            switch(PGMEBackend.Program.glEntityEditor.currentEntityType)
+
+            if (PGMEBackend.Program.glEntityEditor.currentEntities != null)
+                cboEventTypes.SelectedIndex = (int)PGMEBackend.Program.glEntityEditor.currentEntities[0].GetEnum();
+            else
+                cboEventTypes.SelectedIndex = 0;
+
+            switch ((Entity.EntityType)cboEventTypes.SelectedIndex)
             {
                 default:
                     SetEntityNumValues(NPC.currentNPC, map.NPCs.Count - 1);
                     LoadNPCView(map, NPC.currentNPC);
-                    PGMEBackend.Program.glEntityEditor.currentEntity = new List<Entity> { map.NPCs[NPC.currentNPC] };
+                    PGMEBackend.Program.glEntityEditor.currentEntities = new List<Entity> { map.NPCs[NPC.currentNPC] };
                     break;
-                case 1:
+                case Entity.EntityType.Warp:
                     SetEntityNumValues(Warp.currentWarp, map.Warps.Count - 1);
                     LoadWarpView(map, Warp.currentWarp);
-                    PGMEBackend.Program.glEntityEditor.currentEntity = new List<Entity> { map.Warps[Warp.currentWarp] };
+                    PGMEBackend.Program.glEntityEditor.currentEntities = new List<Entity> { map.Warps[Warp.currentWarp] };
                     break;
-                case 2:
+                case Entity.EntityType.Trigger:
                     SetEntityNumValues(Trigger.currentTrigger, map.Triggers.Count - 1);
                     LoadTriggerView(map, Trigger.currentTrigger);
-                    PGMEBackend.Program.glEntityEditor.currentEntity = new List<Entity> { map.Triggers[Trigger.currentTrigger] };
+                    PGMEBackend.Program.glEntityEditor.currentEntities = new List<Entity> { map.Triggers[Trigger.currentTrigger] };
                     break;
-                case 3:
+                case Entity.EntityType.Sign:
                     SetEntityNumValues(Sign.currentSign, map.Signs.Count - 1);
                     LoadSignView(map, Sign.currentSign);
-                    PGMEBackend.Program.glEntityEditor.currentEntity = new List<Entity> { map.Signs[Sign.currentSign] };
+                    PGMEBackend.Program.glEntityEditor.currentEntities = new List<Entity> { map.Signs[Sign.currentSign] };
                     break;
             }
 
@@ -987,8 +981,11 @@ namespace PGMEWindowsUI
                 NoEntitiesOfType();
         }
 
+        private bool loadingEntityView = false;
+
         public void LoadNPCView(NPC npc)
         {
+            loadingEntityView = true;
             panelSpriteEvent.Visible = true;
             nudEntityNum.Enabled = true;
             nudNPCNum.Value = npc.npcNumber;
@@ -997,7 +994,9 @@ namespace PGMEWindowsUI
             hexNumberBoxNPCFiller1.Text = npc.filler1.ToString("X2");
             hexNumberBoxNPCXPos.Text = npc.xPos.ToString("X4");
             hexNumberBoxNPCYPos.Text = npc.yPos.ToString("X4");
+            hexNumberBoxNPCHeight.Text = npc.height.ToString("X2");
             cbNPCHeight.SelectedIndex = npc.height;
+            hexNumberBoxNPCIdleAnim.Text = npc.idleAnimation.ToString("X2");
             cbNPCIdleAnim.SelectedIndex = npc.idleAnimation;
             hexNumberBoxNPCXBound.Text = npc.xBounds.ToString("X1");
             hexNumberBoxNPCYBound.Text = npc.yBounds.ToString("X1");
@@ -1010,7 +1009,10 @@ namespace PGMEWindowsUI
             hexNumberBoxNPCVisibilityFlag.Text = npc.visibilityFlag.ToString("X4");
             hexNumberBoxNPCFiller5.Text = npc.filler5.ToString("X2");
             hexNumberBoxNPCFiller6.Text = npc.filler6.ToString("X2");
-            PGMEBackend.Program.glEntityEditor.currentEntity = new List<Entity> { npc };
+            labelNPCOffset.Text = settings.HexPrefix + (npc.offset + 0x8000000).ToString("X8");
+            hexViewerRawNPC.ByteProvider = new DynamicByteProvider(npc.rawData, true, false, false);
+            PGMEBackend.Program.glEntityEditor.currentEntities = new List<Entity> { npc };
+            loadingEntityView = false;
             RefreshEntityEditorControl();
         }
         
@@ -1024,6 +1026,7 @@ namespace PGMEWindowsUI
 
         public void LoadWarpView(Warp warp)
         {
+            loadingEntityView = true;
             panelWarpEvent.Visible = true;
             nudEntityNum.Enabled = true;
             hexNumberBoxWarpXPos.Text = warp.xPos.ToString("X4");
@@ -1032,7 +1035,8 @@ namespace PGMEWindowsUI
             hexNumberBoxWarpNum.Text = warp.destWarpNum.ToString("X2");
             hexNumberBoxWarpBank.Text = warp.destMapBank.ToString("X2");
             hexNumberBoxWarpMap.Text = warp.destMapNum.ToString("X2");
-            PGMEBackend.Program.glEntityEditor.currentEntity = new List<Entity> { warp };
+            PGMEBackend.Program.glEntityEditor.currentEntities = new List<Entity> { warp };
+            loadingEntityView = false;
             RefreshEntityEditorControl();
         }
         
@@ -1046,6 +1050,7 @@ namespace PGMEWindowsUI
 
         public void LoadSignView(Sign sign)
         {
+            loadingEntityView = true;
             panelSignEvent.Visible = true;
             nudEntityNum.Enabled = true;
             hexNumberBoxSignXPos.Text = sign.xPos.ToString("X4");
@@ -1055,7 +1060,8 @@ namespace PGMEWindowsUI
             hexNumberBoxSignFiller1.Text = sign.filler1.ToString("X2");
             hexNumberBoxSignFiller2.Text = sign.filler2.ToString("X2");
             hexNumberBoxSignScriptOffset.Text = (sign.scriptOffset + 0x8000000).ToString("X8");
-            PGMEBackend.Program.glEntityEditor.currentEntity = new List<Entity> { sign };
+            PGMEBackend.Program.glEntityEditor.currentEntities = new List<Entity> { sign };
+            loadingEntityView = false;
             RefreshEntityEditorControl();
         }
         
@@ -1069,6 +1075,7 @@ namespace PGMEWindowsUI
 
         public void LoadTriggerView(Trigger trigger)
         {
+            loadingEntityView = true;
             panelScriptEvent.Visible = true;
             nudEntityNum.Enabled = true;
             hexNumberBoxTriggerXPos.Text = trigger.xPos.ToString("X4");
@@ -1080,7 +1087,8 @@ namespace PGMEWindowsUI
             hexNumberBoxTriggerFiller2.Text = trigger.filler2.ToString("X2");
             hexNumberBoxTriggerFiller3.Text = trigger.filler3.ToString("X2");
             hexNumberBoxTriggerScriptOffset.Text = (trigger.scriptOffset + 0x8000000).ToString("X8");
-            PGMEBackend.Program.glEntityEditor.currentEntity = new List<Entity> { trigger };
+            PGMEBackend.Program.glEntityEditor.currentEntities = new List<Entity> { trigger };
+            loadingEntityView = false;
             RefreshEntityEditorControl();
         }
         
@@ -1164,8 +1172,7 @@ namespace PGMEWindowsUI
 
         private void LoadHeaderTabMapHeader(Map map)
         {
-            hexViewerRawMapHeader.ByteProvider = new DynamicByteProvider(map.rawData, true, false, false);
-            hexBox1.ByteProvider = new DynamicByteProvider(map.rawData, true, false, false);
+            hexViewerRawMapHeader.ByteProvider = new DynamicByteProvider(map.rawHeader, true, false, false);
             hexNumberBoxHeaderTabLayoutHeaderPointer.Text = (map.mapDataPointer + 0x8000000).ToString("X8");
             hexNumberBoxHeaderTabEventDataPointer.Text = (map.eventDataPointer + 0x8000000).ToString("X8");
             hexNumberBoxHeaderTabLevelScriptPointer.Text = (map.mapScriptDataPointer + 0x8000000).ToString("X8");
@@ -1182,14 +1189,18 @@ namespace PGMEWindowsUI
             hexNumberBoxHeaderTabMusic.Text = ((short)map.musicNumber).ToString("X4");
 
             cbHeaderTabVisibility.SelectedIndex = ((cbHeaderTabVisibility.Items.Count > map.visibility) ? map.visibility : 0);
+            hexNumberBoxHeaderTabVisibility.Text = map.visibility.ToString("X2");
             cbHeaderTabWeather.SelectedIndex = ((cbHeaderTabWeather.Items.Count > map.weather) ? map.weather : 0);
+            hexNumberBoxHeaderTabWeather.Text = map.weather.ToString("X2");
             cbHeaderTabMapType.SelectedIndex = ((cbHeaderTabMapType.Items.Count > map.mapType) ? map.mapType : 0);
-            cbHeaderTabBattleTransition.SelectedIndex = ((cbHeaderTabBattleTransition.Items.Count > map.battleTransition) ? map.battleTransition : 0);
+            hexNumberBoxHeaderTabMapType.Text = map.mapType.ToString("X2");
+            cbHeaderTabBattleBackground.SelectedIndex = ((cbHeaderTabBattleBackground.Items.Count > map.battleBackground) ? map.battleBackground : 0);
+            hexNumberBoxHeaderTabBattleBackground.Text = map.battleBackground.ToString("X2");
         }
 
         private void LoadHeaderTabLayoutHeader(MapLayout mapLayout)
         {
-            hexViewerRawLayoutHeader.ByteProvider = new DynamicByteProvider(mapLayout.rawData, true, false, false);
+            hexViewerRawLayoutHeader.ByteProvider = new DynamicByteProvider(mapLayout.rawHeader, true, false, false);
             hexNumberBoxHeaderTabBorderPointer.Text = (mapLayout.borderBlocksPointer + 0x8000000).ToString("X8");
             hexNumberBoxHeaderTabMapPointer.Text = (mapLayout.mapDataPointer + 0x8000000).ToString("X8");
             hexNumberBoxHeaderTabGlobalTilesetPointer.Text = (mapLayout.globalTilesetPointer + 0x8000000).ToString("X8");
@@ -1219,9 +1230,8 @@ namespace PGMEWindowsUI
             int mapNameIndex;
             if (int.TryParse(hexNumberBoxHeaderTabMapNames.Text, NumberStyles.HexNumber, null, out mapNameIndex))
             {
-                if (mapNameIndex >= PGMEBackend.Program.currentGame.MapNameStart && mapNameIndex <= PGMEBackend.Program.currentGame.MapNameTotal)
-                    cbHeaderTabMapNames.SelectedIndex = mapNameIndex - PGMEBackend.Program.currentGame.MapNameStart;
-                else
+                cbHeaderTabMapNames.SelectedValue = mapNameIndex;
+                if (cbHeaderTabMapNames.SelectedItem == null)
                     cbHeaderTabMapNames.Text = PGMEBackend.Program.rmInternalStrings.GetString("UnknownIndex");
             }
         }
@@ -1232,11 +1242,6 @@ namespace PGMEWindowsUI
         }
 
         private void tbHeaderTabMapName_KeyDown(object sender, KeyEventArgs e)
-        {
-
-        }
-
-        private void cbHeaderTabBattleTransition_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -1254,7 +1259,10 @@ namespace PGMEWindowsUI
         private string SanitizeHex(string textString)
         {
             // Replace non-hex characters with empty strings.
-            return Regex.Replace(textString, @"[^0-9A-F]", "", RegexOptions.None);
+            string sanitized = Regex.Replace(textString, @"[^0-9A-F]", "", RegexOptions.None);
+            if (string.IsNullOrEmpty(sanitized))
+                return "0";
+            return sanitized;
         }
 
         private void hexNumberBoxHeaderTabMusic_TextChanged(object sender, EventArgs e)
@@ -1262,19 +1270,20 @@ namespace PGMEWindowsUI
             int musicIndex;
             if (int.TryParse(hexNumberBoxHeaderTabMusic.Text, NumberStyles.HexNumber, null, out musicIndex))
             {
-                if (musicIndex >= 0 && musicIndex <= PGMEBackend.Program.currentGame.Songs.Keys.Last())
-                    cbHeaderTabMusic.SelectedIndex = musicIndex;
+                cbHeaderTabMusic.SelectedValue = musicIndex;
+                if (cbHeaderTabMusic.SelectedItem == null)
+                    cbHeaderTabMusic.Text = PGMEBackend.Program.rmInternalStrings.GetString("UnknownSong");
             }
         }
 
         private void cbHeaderTabMapNames_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            hexNumberBoxHeaderTabMapNames.Text = (((ComboBox)sender).SelectedIndex + PGMEBackend.Program.currentGame.MapNameStart).ToString("X2");
+            hexNumberBoxHeaderTabMapNames.Text = ((int)cbHeaderTabMapNames.SelectedValue).ToString("X2");
         }
 
         private void cbHeaderTabMusic_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            hexNumberBoxHeaderTabMusic.Text = ((ComboBox)sender).SelectedIndex.ToString("X4");
+            hexNumberBoxHeaderTabMusic.Text = ((int)cbHeaderTabMusic.SelectedValue).ToString("X4");
         }
 
         private void tsmiReloadROM_Click(object sender, EventArgs e)
@@ -1317,181 +1326,255 @@ namespace PGMEWindowsUI
         private void hexViewerRawMapHeader_Validating(object sender, CancelEventArgs e)
         {
             Map currentMap = PGMEBackend.Program.currentMap;
-            currentMap.rawData = (hexViewerRawMapHeader.ByteProvider as DynamicByteProvider).Bytes.ToArray();
-            currentMap.LoadMapHeaderFromRaw(PGMEBackend.Program.ROM);
-            LoadHeaderTabMapHeader(currentMap);
+            byte[] oldValue = currentMap.rawHeader;
+            currentMap.rawHeader = (hexViewerRawMapHeader.ByteProvider as DynamicByteProvider).Bytes.ToArray();
+            if (!currentMap.rawHeader.SequenceEqual(oldValue))
+            {
+                PGMEBackend.Program.isEdited = true;
+                currentMap.LoadMapHeaderFromRaw();
+                LoadHeaderTabMapHeader(currentMap);
+            }
         }
 
         private void hexNumberBoxHeaderTabLayoutHeaderPointer_Validated(object sender, EventArgs e)
         {
             Map currentMap = PGMEBackend.Program.currentMap;
-            currentMap.mapDataPointer = int.Parse(((TextBox)sender).Text, NumberStyles.HexNumber);
-            currentMap.LoadRawFromMapHeader();
-            hexViewerRawMapHeader.ByteProvider = new DynamicByteProvider(currentMap.rawData, true, false, false);
+            int oldValue = currentMap.mapDataPointer;
+            currentMap.mapDataPointer = int.Parse(hexNumberBoxHeaderTabLayoutHeaderPointer.Text, NumberStyles.HexNumber) - 0x8000000;
+            if (currentMap.mapDataPointer != oldValue)
+            {
+                WriteMapData(currentMap);
+            }
         }
 
         private void hexNumberBoxHeaderTabEventDataPointer_Validated(object sender, EventArgs e)
         {
             Map currentMap = PGMEBackend.Program.currentMap;
-            currentMap.eventDataPointer = int.Parse(((TextBox)sender).Text, NumberStyles.HexNumber);
-            currentMap.LoadRawFromMapHeader();
-            hexViewerRawMapHeader.ByteProvider = new DynamicByteProvider(currentMap.rawData, true, false, false);
+            int oldValue = currentMap.eventDataPointer;
+            currentMap.eventDataPointer = int.Parse(hexNumberBoxHeaderTabEventDataPointer.Text, NumberStyles.HexNumber) - 0x8000000;
+            if (currentMap.eventDataPointer != oldValue)
+            {
+                WriteMapData(currentMap);
+            }
         }
 
         private void hexNumberBoxHeaderTabLevelScriptPointer_Validated(object sender, EventArgs e)
         {
             Map currentMap = PGMEBackend.Program.currentMap;
-            currentMap.mapScriptDataPointer = int.Parse(((TextBox)sender).Text, NumberStyles.HexNumber);
-            currentMap.LoadRawFromMapHeader();
-            hexViewerRawMapHeader.ByteProvider = new DynamicByteProvider(currentMap.rawData, true, false, false);
+            int oldValue = currentMap.mapScriptDataPointer;
+            currentMap.mapScriptDataPointer = int.Parse(hexNumberBoxHeaderTabLevelScriptPointer.Text, NumberStyles.HexNumber) - 0x8000000;
+            if (currentMap.mapScriptDataPointer != oldValue)
+            {
+                WriteMapData(currentMap);
+            }
         }
 
         private void hexNumberBoxHeaderTabConnectionDataPointer_Validated(object sender, EventArgs e)
         {
             Map currentMap = PGMEBackend.Program.currentMap;
-            currentMap.connectionsDataPointer = int.Parse(((TextBox)sender).Text, NumberStyles.HexNumber);
-            currentMap.LoadRawFromMapHeader();
-            hexViewerRawMapHeader.ByteProvider = new DynamicByteProvider(currentMap.rawData, true, false, false);
+            int oldValue = currentMap.connectionsDataPointer;
+            currentMap.connectionsDataPointer = int.Parse(hexNumberBoxHeaderTabConnectionDataPointer.Text, NumberStyles.HexNumber) - 0x8000000;
+            if (currentMap.connectionsDataPointer != oldValue)
+            {
+                WriteMapData(currentMap);
+            }
         }
 
         private void hexNumberBoxHeaderTabMapNames_Validated(object sender, EventArgs e)
         {
             Map currentMap = PGMEBackend.Program.currentMap;
-            currentMap.mapNameIndex = int.Parse(((TextBox)sender).Text, NumberStyles.HexNumber);
-            currentMap.LoadRawFromMapHeader();
-            hexViewerRawMapHeader.ByteProvider = new DynamicByteProvider(currentMap.rawData, true, false, false);
+            int oldValue = currentMap.mapNameIndex;
+            currentMap.mapNameIndex = byte.Parse(hexNumberBoxHeaderTabMapNames.Text, NumberStyles.HexNumber);
+            if (currentMap.mapNameIndex != oldValue)
+            {
+                WriteMapData(currentMap);
+            }
         }
 
         private void cbHeaderTabMapNames_Validated(object sender, EventArgs e)
         {
             Map currentMap = PGMEBackend.Program.currentMap;
-            currentMap.mapNameIndex = int.Parse(hexNumberBoxHeaderTabMapNames.Text, NumberStyles.HexNumber);
-            currentMap.LoadRawFromMapHeader();
-            hexViewerRawMapHeader.ByteProvider = new DynamicByteProvider(currentMap.rawData, true, false, false);
+            int oldValue = currentMap.mapNameIndex;
+            currentMap.mapNameIndex = byte.Parse(hexNumberBoxHeaderTabMapNames.Text, NumberStyles.HexNumber);
+            if (currentMap.mapNameIndex != oldValue)
+            {
+                WriteMapData(currentMap);
+            }
         }
 
         private void cbHeaderTabShowsName_CheckedChanged(object sender, EventArgs e)
         {
             Map currentMap = PGMEBackend.Program.currentMap;
+            bool oldValue = currentMap.showsName;
             currentMap.showsName = ((CheckBox)sender).Checked;
-            currentMap.LoadRawFromMapHeader();
-            hexViewerRawMapHeader.ByteProvider = new DynamicByteProvider(currentMap.rawData, true, false, false);
+            if (currentMap.showsName != oldValue)
+            {
+                WriteMapData(currentMap);
+            }
         }
 
         private void cbHeaderTabCanRun_CheckedChanged(object sender, EventArgs e)
         {
             Map currentMap = PGMEBackend.Program.currentMap;
+            bool oldValue = currentMap.canRun;
             currentMap.canRun = ((CheckBox)sender).Checked;
-            currentMap.LoadRawFromMapHeader();
-            hexViewerRawMapHeader.ByteProvider = new DynamicByteProvider(currentMap.rawData, true, false, false);
+            if (currentMap.canRun != oldValue)
+            {
+                WriteMapData(currentMap);
+            }
         }
 
         private void cbHeaderTabCanRideBike_CheckedChanged(object sender, EventArgs e)
         {
             Map currentMap = PGMEBackend.Program.currentMap;
+            bool oldValue = currentMap.canRideBike;
             currentMap.canRideBike = ((CheckBox)sender).Checked;
-            currentMap.LoadRawFromMapHeader();
-            hexViewerRawMapHeader.ByteProvider = new DynamicByteProvider(currentMap.rawData, true, false, false);
+            if (currentMap.canRideBike != oldValue)
+            {
+                WriteMapData(currentMap);
+            }
         }
 
         private void cbHeaderTabCanEscape_CheckedChanged(object sender, EventArgs e)
         {
             Map currentMap = PGMEBackend.Program.currentMap;
+            bool oldValue = currentMap.canEscape;
             currentMap.canEscape = ((CheckBox)sender).Checked;
-            currentMap.LoadRawFromMapHeader();
-            hexViewerRawMapHeader.ByteProvider = new DynamicByteProvider(currentMap.rawData, true, false, false);
+            if (currentMap.canEscape != oldValue)
+            {
+                WriteMapData(currentMap);
+            }
         }
 
         private void hexNumberBoxHeaderTabLayoutIndex_Validated(object sender, EventArgs e)
         {
             Map currentMap = PGMEBackend.Program.currentMap;
-            currentMap.mapLayoutIndex = int.Parse(hexNumberBoxHeaderTabLayoutIndex.Text, NumberStyles.HexNumber);
-            currentMap.LoadRawFromMapHeader();
-            hexViewerRawMapHeader.ByteProvider = new DynamicByteProvider(currentMap.rawData, true, false, false);
+            int oldValue = currentMap.mapLayoutIndex;
+            currentMap.mapLayoutIndex = byte.Parse(hexNumberBoxHeaderTabLayoutIndex.Text, NumberStyles.HexNumber);
+            if (currentMap.mapLayoutIndex != oldValue)
+            {
+                WriteMapData(currentMap);
+            }
         }
 
         private void hexViewerRawLayoutHeader_Validating(object sender, CancelEventArgs e)
         {
             MapLayout currentLayout = PGMEBackend.Program.currentLayout;
-            currentLayout.rawData = (hexViewerRawLayoutHeader.ByteProvider as DynamicByteProvider).Bytes.ToArray();
-            currentLayout.LoadLayoutHeaderFromRaw(PGMEBackend.Program.ROM);
-            LoadHeaderTabLayoutHeader(currentLayout);
+            byte[] oldValue = currentLayout.rawHeader;
+            currentLayout.rawHeader = (hexViewerRawLayoutHeader.ByteProvider as DynamicByteProvider).Bytes.ToArray();
+            if (!currentLayout.rawHeader.SequenceEqual(oldValue))
+            {
+                PGMEBackend.Program.isEdited = true;
+                currentLayout.LoadLayoutHeaderFromRaw();
+                LoadHeaderTabLayoutHeader(currentLayout);
+            }
+        }
+
+        private void WriteLayoutData(MapLayout layout)
+        {
+            PGMEBackend.Program.isEdited = true;
+            layout.WriteLayoutHeaderToRaw();
+            hexViewerRawLayoutHeader.ByteProvider = new DynamicByteProvider(layout.rawHeader, true, false, false);
         }
 
         private void hexNumberBoxHeaderTabBorderPointer_Validated(object sender, EventArgs e)
         {
             MapLayout currentLayout = PGMEBackend.Program.currentLayout;
-            currentLayout.borderBlocksPointer = int.Parse(hexNumberBoxHeaderTabBorderPointer.Text, NumberStyles.HexNumber);
-            currentLayout.LoadRawFromLayoutHeader();
-            hexViewerRawLayoutHeader.ByteProvider = new DynamicByteProvider(currentLayout.rawData, true, false, false);
+            int oldValue = currentLayout.borderBlocksPointer;
+            currentLayout.borderBlocksPointer = int.Parse(hexNumberBoxHeaderTabBorderPointer.Text, NumberStyles.HexNumber) - 0x8000000;
+            if (currentLayout.borderBlocksPointer != oldValue)
+            {
+                WriteLayoutData(currentLayout);
+            }
         }
 
         private void hexNumberBoxHeaderTabMapPointer_Validated(object sender, EventArgs e)
         {
             MapLayout currentLayout = PGMEBackend.Program.currentLayout;
-            currentLayout.mapDataPointer = int.Parse(hexNumberBoxHeaderTabMapPointer.Text, NumberStyles.HexNumber);
-            currentLayout.LoadRawFromLayoutHeader();
-            hexViewerRawLayoutHeader.ByteProvider = new DynamicByteProvider(currentLayout.rawData, true, false, false);
+            int oldValue = currentLayout.mapDataPointer;
+            currentLayout.mapDataPointer = int.Parse(hexNumberBoxHeaderTabMapPointer.Text, NumberStyles.HexNumber) - 0x8000000;
+            if (currentLayout.mapDataPointer != oldValue)
+            {
+                WriteLayoutData(currentLayout);
+            }
         }
 
         private void hexNumberBoxHeaderTabGlobalTilesetPointer_Validated(object sender, EventArgs e)
         {
             MapLayout currentLayout = PGMEBackend.Program.currentLayout;
-            currentLayout.globalTilesetPointer = int.Parse(hexNumberBoxHeaderTabGlobalTilesetPointer.Text, NumberStyles.HexNumber);
-            currentLayout.LoadRawFromLayoutHeader();
-            hexViewerRawLayoutHeader.ByteProvider = new DynamicByteProvider(currentLayout.rawData, true, false, false);
+            int oldValue = currentLayout.globalTilesetPointer;
+            currentLayout.globalTilesetPointer = int.Parse(hexNumberBoxHeaderTabGlobalTilesetPointer.Text, NumberStyles.HexNumber) - 0x8000000;
+            if (currentLayout.globalTilesetPointer != oldValue)
+            {
+                WriteLayoutData(currentLayout);
+            }
         }
 
         private void hexNumberBoxHeaderTabLocalTilesetPointer_Validated(object sender, EventArgs e)
         {
             MapLayout currentLayout = PGMEBackend.Program.currentLayout;
-            currentLayout.localTilesetPointer = int.Parse(hexNumberBoxHeaderTabLocalTilesetPointer.Text, NumberStyles.HexNumber);
-            currentLayout.LoadRawFromLayoutHeader();
-            hexViewerRawLayoutHeader.ByteProvider = new DynamicByteProvider(currentLayout.rawData, true, false, false);
+            int oldValue = currentLayout.localTilesetPointer;
+            currentLayout.localTilesetPointer = int.Parse(hexNumberBoxHeaderTabLocalTilesetPointer.Text, NumberStyles.HexNumber) - 0x8000000;
+            if (currentLayout.localTilesetPointer != oldValue)
+            {
+                WriteLayoutData(currentLayout);
+            }
         }
 
         private void tbHeaderTabMapWidth_Validated(object sender, EventArgs e)
         {
             MapLayout currentLayout = PGMEBackend.Program.currentLayout;
+            int oldValue = currentLayout.layoutWidth;
             currentLayout.layoutWidth = int.Parse(tbHeaderTabMapWidth.Text);
-            currentLayout.LoadRawFromLayoutHeader();
-            hexViewerRawLayoutHeader.ByteProvider = new DynamicByteProvider(currentLayout.rawData, true, false, false);
+            if (currentLayout.layoutWidth != oldValue)
+            {
+                WriteLayoutData(currentLayout);
+            }
         }
 
         private void tbHeaderTabMapHeight_Validated(object sender, EventArgs e)
         {
             MapLayout currentLayout = PGMEBackend.Program.currentLayout;
+            int oldValue = currentLayout.layoutHeight;
             currentLayout.layoutHeight = int.Parse(tbHeaderTabMapHeight.Text);
-            currentLayout.LoadRawFromLayoutHeader();
-            hexViewerRawLayoutHeader.ByteProvider = new DynamicByteProvider(currentLayout.rawData, true, false, false);
+            if (currentLayout.layoutHeight != oldValue)
+            {
+                WriteLayoutData(currentLayout);
+            }
         }
 
         private void tbHeaderTabBorderWidth_Validated(object sender, EventArgs e)
         {
             MapLayout currentLayout = PGMEBackend.Program.currentLayout;
-            currentLayout.borderWidth = int.Parse(tbHeaderTabBorderWidth.Text);
-            currentLayout.LoadRawFromLayoutHeader();
-            hexViewerRawLayoutHeader.ByteProvider = new DynamicByteProvider(currentLayout.rawData, true, false, false);
+            int oldValue = currentLayout.borderWidth;
+            currentLayout.borderWidth = byte.Parse(tbHeaderTabBorderWidth.Text);
+            if (currentLayout.borderWidth != oldValue)
+            {
+                WriteLayoutData(currentLayout);
+            }
         }
-
+        
         private void tbHeaderTabBorderHeight_Validated(object sender, EventArgs e)
         {
             MapLayout currentLayout = PGMEBackend.Program.currentLayout;
-            currentLayout.borderHeight = int.Parse(tbHeaderTabBorderHeight.Text);
-            currentLayout.LoadRawFromLayoutHeader();
-            hexViewerRawLayoutHeader.ByteProvider = new DynamicByteProvider(currentLayout.rawData, true, false, false);
+            int oldValue = currentLayout.borderHeight;
+            currentLayout.borderHeight = byte.Parse(tbHeaderTabBorderHeight.Text);
+            if (currentLayout.borderHeight != oldValue)
+            {
+                WriteLayoutData(currentLayout);
+            }
         }
 
         private void glControlMapEditor_Load(object sender, EventArgs e)
         {
             glControlMapEditor.MakeCurrent();
-            PGMEBackend.Program.glMapEditor = new PGMEBackend.GLControls.GLMapEditor(glControlMapEditor.Width, glControlMapEditor.Height);
+            PGMEBackend.Program.glMapEditor = new GLMapEditor(glControlMapEditor.Width, glControlMapEditor.Height);
         }
         
         private void glControlBlocks_Load(object sender, EventArgs e)
         {
             glControlBlocks.MakeCurrent();
-            PGMEBackend.Program.glBlockChooser = new PGMEBackend.GLControls.GLBlockChooser(glControlBlocks.Width, glControlBlocks.Height);
+            PGMEBackend.Program.glBlockChooser = new GLBlockChooser(glControlBlocks.Width, glControlBlocks.Height);
         }
 
         private void glControlMapEditor_Paint(object sender, PaintEventArgs e)
@@ -1894,7 +1977,7 @@ namespace PGMEWindowsUI
         private void glControlPermsChooser_Load(object sender, EventArgs e)
         {
             glControlPermsChooser.MakeCurrent();
-            PGMEBackend.Program.glPermsChooser = new PGMEBackend.GLControls.GLPermsChooser(glControlPermsChooser.Width, glControlPermsChooser.Height);
+            PGMEBackend.Program.glPermsChooser = new GLPermsChooser(glControlPermsChooser.Width, glControlPermsChooser.Height);
         }
 
         private void glControlPermsChooser_Paint(object sender, PaintEventArgs e)
@@ -1910,7 +1993,7 @@ namespace PGMEWindowsUI
         private void glControlBorderBlocks_Load(object sender, EventArgs e)
         {
             glControlBorderBlocks.MakeCurrent();
-            PGMEBackend.Program.glBorderBlocks = new PGMEBackend.GLControls.GLBorderBlocks(glControlBorderBlocks.Width, glControlBorderBlocks.Height);
+            PGMEBackend.Program.glBorderBlocks = new GLBorderBlocks(glControlBorderBlocks.Width, glControlBorderBlocks.Height);
         }
 
         private void glControlBorderBlocks_Paint(object sender, PaintEventArgs e)
@@ -1926,7 +2009,7 @@ namespace PGMEWindowsUI
         private void glControlEntityEditor_Load(object sender, EventArgs e)
         {
             glControlEntityEditor.MakeCurrent();
-            PGMEBackend.Program.glEntityEditor = new PGMEBackend.GLControls.GLEntityEditor(glControlEntityEditor.Width, glControlEntityEditor.Height);
+            PGMEBackend.Program.glEntityEditor = new GLEntityEditor(glControlEntityEditor.Width, glControlEntityEditor.Height);
         }
 
         private void glControlEntityEditor_Paint(object sender, PaintEventArgs e)
@@ -2093,10 +2176,15 @@ namespace PGMEWindowsUI
         
         private void btnCreateNewEntity_Click(object sender, EventArgs e)
         {
-            CreateNewEntity(cboEventTypes.SelectedIndex);
+            CreateNewEntity((Entity.EntityType)cboEventTypes.SelectedIndex);
         }
 
-        public Entity CreateNewEntity(int entityType, int xPos = 0, int yPos = 0)
+        public Entity CreateNewEntity(int xPos = 0, int yPos = 0)
+        {
+            return CreateNewEntity((Entity.EntityType)cboEventTypes.SelectedIndex, xPos, yPos);
+        }
+
+        public Entity CreateNewEntity(Entity.EntityType entityType, int xPos = 0, int yPos = 0)
         {
             Entity entity;
             switch (entityType)
@@ -2104,18 +2192,17 @@ namespace PGMEWindowsUI
                 default:
                     entity = new NPC((short)xPos, (short)yPos);
                     break;
-                case 1:
+                case Entity.EntityType.Warp:
                     entity = new Warp((short)xPos, (short)yPos);
                     break;
-                case 2:
+                case Entity.EntityType.Trigger:
                     entity = new Trigger((short)xPos, (short)yPos);
                     break;
-                case 3:
+                case Entity.EntityType.Sign:
                     entity = new Sign((short)xPos, (short)yPos);
                     break;
             }
             CreateNewEntity(entity);
-            PGMEBackend.Program.glEntityEditor.currentEntity = new List<Entity> { entity };
             return entity;
         }
 
@@ -2147,12 +2234,15 @@ namespace PGMEWindowsUI
                 count = PGMEBackend.Program.currentMap.Signs.Count - 1;
             }
             nudEntityNum.Enabled = true;
+            PGMEBackend.Program.glEntityEditor.currentEntities = new List<Entity> { entity };
             SetEntityNumValues(count, count);
+            LoadEntityView(PGMEBackend.Program.glEntityEditor.currentEntities[0]);
+            RefreshEntityEditorControl();
         }
 
-        public void LoadEntityView(int entityType, int entityNum)
+        public void LoadEntityView(Entity.EntityType entityType, int entityNum)
         {
-            cboEventTypes.SelectedIndex = entityType;
+            cboEventTypes.SelectedIndex = (int)entityType;
             nudEntityNum.Value = entityNum;
             nudEntityNum.Enabled = true;
             switch (entityType)
@@ -2160,13 +2250,13 @@ namespace PGMEWindowsUI
                 default:
                     panelSpriteEvent.Visible = true;
                     break;
-                case 1:
+                case Entity.EntityType.Warp:
                     panelWarpEvent.Visible = true;
                     break;
-                case 2:
+                case Entity.EntityType.Trigger:
                     panelScriptEvent.Visible = true;
                     break;
-                case 3:
+                case Entity.EntityType.Sign:
                     panelSignEvent.Visible = true;
                     break;
             }
@@ -2186,22 +2276,22 @@ namespace PGMEWindowsUI
 
         private void btnDeleteNPC_Click(object sender, EventArgs e)
         {
-            DeleteEntity(PGMEBackend.Program.glEntityEditor.currentEntity[0]);
+            DeleteEntity(PGMEBackend.Program.glEntityEditor.currentEntities[0]);
         }
 
         private void btnDeleteWarp_Click(object sender, EventArgs e)
         {
-            DeleteEntity(PGMEBackend.Program.glEntityEditor.currentEntity[0]);
+            DeleteEntity(PGMEBackend.Program.glEntityEditor.currentEntities[0]);
         }
 
         private void btnDeleteTrigger_Click(object sender, EventArgs e)
         {
-            DeleteEntity(PGMEBackend.Program.glEntityEditor.currentEntity[0]);
+            DeleteEntity(PGMEBackend.Program.glEntityEditor.currentEntities[0]);
         }
 
         private void btnDeleteSign_Click(object sender, EventArgs e)
         {
-            DeleteEntity(PGMEBackend.Program.glEntityEditor.currentEntity[0]);
+            DeleteEntity(PGMEBackend.Program.glEntityEditor.currentEntities[0]);
         }
 
         public bool DeleteEntity(Entity entity)
@@ -2210,7 +2300,7 @@ namespace PGMEWindowsUI
             if (entity is NPC)
             {
                 result = NPC.Delete(entity as NPC);
-                if (PGMEBackend.Program.glEntityEditor.currentEntityType == 0)
+                if (PGMEBackend.Program.glEntityEditor.currentEntities[0] is NPC)
                 {
                     SetEntityNumValues(NPC.currentNPC, PGMEBackend.Program.currentMap.NPCs.Count - 1);
                     LoadNPCView(PGMEBackend.Program.currentMap, NPC.currentNPC);
@@ -2219,7 +2309,7 @@ namespace PGMEWindowsUI
             else if (entity is Warp)
             {
                 result = Warp.Delete(entity as Warp);
-                if (PGMEBackend.Program.glEntityEditor.currentEntityType == 1)
+                if (PGMEBackend.Program.glEntityEditor.currentEntities[0] is Warp)
                 {
                     SetEntityNumValues(Warp.currentWarp, PGMEBackend.Program.currentMap.Warps.Count - 1);
                     LoadWarpView(PGMEBackend.Program.currentMap, Warp.currentWarp);
@@ -2228,7 +2318,7 @@ namespace PGMEWindowsUI
             else if (entity is Trigger)
             {
                 result = Trigger.Delete(entity as Trigger);
-                if (PGMEBackend.Program.glEntityEditor.currentEntityType == 2)
+                if (PGMEBackend.Program.glEntityEditor.currentEntities[0] is Trigger)
                 {
                     SetEntityNumValues(Trigger.currentTrigger, PGMEBackend.Program.currentMap.Triggers.Count - 1);
                     LoadTriggerView(PGMEBackend.Program.currentMap, Trigger.currentTrigger);
@@ -2237,13 +2327,13 @@ namespace PGMEWindowsUI
             else if(entity is Sign)
             {
                 result = Sign.Delete(entity as Sign);
-                if (PGMEBackend.Program.glEntityEditor.currentEntityType == 3)
+                if (PGMEBackend.Program.glEntityEditor.currentEntities[0] is Sign)
                 {
                     SetEntityNumValues(Sign.currentSign, PGMEBackend.Program.currentMap.Signs.Count - 1);
                     LoadSignView(PGMEBackend.Program.currentMap, Sign.currentSign);
                 }
             }
-            PGMEBackend.Program.glEntityEditor.currentEntity.Remove(entity);
+            PGMEBackend.Program.glEntityEditor.currentEntities.Remove(entity);
             return result;
         }
         
@@ -2296,7 +2386,7 @@ namespace PGMEWindowsUI
 
         private void btnTravelToWarpDest_Click(object sender, EventArgs e)
         {
-            FollowWarp(PGMEBackend.Program.glEntityEditor.currentEntity[0] as Warp);
+            FollowWarp(PGMEBackend.Program.glEntityEditor.currentEntities[0] as Warp);
         }
 
         public int LaunchScriptEditor(int scriptOffset)
@@ -2319,17 +2409,529 @@ namespace PGMEWindowsUI
 
         private void btnNPCOpenScript_Click(object sender, EventArgs e)
         {
-            LaunchScriptEditor(PGMEBackend.Program.glEntityEditor.currentEntity[0].scriptOffset);
+            LaunchScriptEditor(PGMEBackend.Program.glEntityEditor.currentEntities[0].scriptOffset);
         }
 
         private void btnSignOpenScript_Click(object sender, EventArgs e)
         {
-            LaunchScriptEditor(PGMEBackend.Program.glEntityEditor.currentEntity[0].scriptOffset);
+            LaunchScriptEditor(PGMEBackend.Program.glEntityEditor.currentEntities[0].scriptOffset);
         }
 
         private void btnTriggerOpenScript_Click(object sender, EventArgs e)
         {
-            LaunchScriptEditor(PGMEBackend.Program.glEntityEditor.currentEntity[0].scriptOffset);
+            LaunchScriptEditor(PGMEBackend.Program.glEntityEditor.currentEntities[0].scriptOffset);
+        }
+
+        private void cbHeaderTabVisibility_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Map currentMap = PGMEBackend.Program.currentMap;
+            int oldValue = currentMap.visibility;
+            currentMap.visibility = (byte)cbHeaderTabVisibility.SelectedIndex;
+            if (currentMap.visibility != oldValue)
+            {
+                WriteMapData(currentMap);
+            }
+        }
+
+        private void cbHeaderTabVisibility_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            hexNumberBoxHeaderTabVisibility.Text = cbHeaderTabVisibility.SelectedIndex.ToString("X2");
+        }
+
+        private void hexNumberBoxHeaderTabVisibility_TextChanged(object sender, EventArgs e)
+        {
+            int value;
+            if (int.TryParse(hexNumberBoxHeaderTabVisibility.Text, NumberStyles.HexNumber, null, out value))
+            {
+                if (value < cbHeaderTabVisibility.Items.Count)
+                    cbHeaderTabVisibility.SelectedIndex = value;
+                else
+                    cbHeaderTabVisibility.Text = PGMEBackend.Program.rmInternalStrings.GetString("UnknownIndex");
+            }
+        }
+
+        private void hexNumberBoxHeaderTabVisibility_Validated(object sender, EventArgs e)
+        {
+            Map currentMap = PGMEBackend.Program.currentMap;
+            int oldValue = currentMap.visibility;
+            currentMap.visibility = byte.Parse(hexNumberBoxHeaderTabVisibility.Text, NumberStyles.HexNumber);
+            if (currentMap.visibility != oldValue)
+            {
+                WriteMapData(currentMap);
+            }
+        }
+
+        private void cbHeaderTabWeather_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Map currentMap = PGMEBackend.Program.currentMap;
+            int oldValue = currentMap.weather;
+            currentMap.weather = (byte)cbHeaderTabWeather.SelectedIndex;
+            if (currentMap.weather != oldValue)
+            {
+                WriteMapData(currentMap);
+            }
+        }
+
+        private void cbHeaderTabWeather_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            hexNumberBoxHeaderTabWeather.Text = cbHeaderTabWeather.SelectedIndex.ToString("X2");
+        }
+
+        private void hexNumberBoxHeaderTabWeather_TextChanged(object sender, EventArgs e)
+        {
+            int value;
+            if (int.TryParse(hexNumberBoxHeaderTabWeather.Text, NumberStyles.HexNumber, null, out value))
+            {
+                if (value < cbHeaderTabWeather.Items.Count)
+                    cbHeaderTabWeather.SelectedIndex = value;
+                else
+                    cbHeaderTabWeather.Text = PGMEBackend.Program.rmInternalStrings.GetString("UnknownIndex");
+            }
+        }
+
+        private void hexNumberBoxHeaderTabWeather_Validated(object sender, EventArgs e)
+        {
+            Map currentMap = PGMEBackend.Program.currentMap;
+            int oldValue = currentMap.weather;
+            currentMap.weather = byte.Parse(hexNumberBoxHeaderTabWeather.Text, NumberStyles.HexNumber);
+            if (currentMap.weather != oldValue)
+            {
+                WriteMapData(currentMap);
+            }
+        }
+
+        private void cbHeaderTabMapType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Map currentMap = PGMEBackend.Program.currentMap;
+            int oldValue = currentMap.mapType;
+            currentMap.mapType = (byte)cbHeaderTabMapType.SelectedIndex;
+            if (currentMap.mapType != oldValue)
+            {
+                WriteMapData(currentMap);
+            }
+        }
+
+        private void cbHeaderTabMapType_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            hexNumberBoxHeaderTabMapType.Text = cbHeaderTabMapType.SelectedIndex.ToString("X2");
+        }
+
+        private void hexNumberBoxHeaderTabMapType_TextChanged(object sender, EventArgs e)
+        {
+            int value;
+            if (int.TryParse(hexNumberBoxHeaderTabMapType.Text, NumberStyles.HexNumber, null, out value))
+            {
+                if (value < cbHeaderTabMapType.Items.Count)
+                    cbHeaderTabMapType.SelectedIndex = value;
+                else
+                    cbHeaderTabMapType.Text = PGMEBackend.Program.rmInternalStrings.GetString("UnknownIndex");
+            }
+        }
+
+        private void hexNumberBoxHeaderTabMapType_Validated(object sender, EventArgs e)
+        {
+            Map currentMap = PGMEBackend.Program.currentMap;
+            int oldValue = currentMap.mapType;
+            currentMap.mapType = byte.Parse(hexNumberBoxHeaderTabMapType.Text, NumberStyles.HexNumber);
+            if (currentMap.mapType != oldValue)
+            {
+                WriteMapData(currentMap);
+            }
+        }
+
+        private void cbHeaderTabBattleTransition_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Map currentMap = PGMEBackend.Program.currentMap;
+            int oldValue = currentMap.battleBackground;
+            currentMap.battleBackground = (byte)cbHeaderTabBattleBackground.SelectedIndex;
+            if (currentMap.battleBackground != oldValue)
+            {
+                WriteMapData(currentMap);
+            }
+        }
+
+        private void cbHeaderTabBattleTransition_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            hexNumberBoxHeaderTabBattleBackground.Text = cbHeaderTabBattleBackground.SelectedIndex.ToString("X2");
+        }
+
+        private void hexNumberBoxHeaderTabBattleBackground_TextChanged(object sender, EventArgs e)
+        {
+            int value;
+            if (int.TryParse(hexNumberBoxHeaderTabBattleBackground.Text, NumberStyles.HexNumber, null, out value))
+            {
+                if (value < cbHeaderTabBattleBackground.Items.Count)
+                    cbHeaderTabBattleBackground.SelectedIndex = value;
+                else
+                    cbHeaderTabBattleBackground.Text = PGMEBackend.Program.rmInternalStrings.GetString("UnknownIndex");
+            }
+        }
+
+        private void hexNumberBoxHeaderTabBattleBackground_Validated(object sender, EventArgs e)
+        {
+            Map currentMap = PGMEBackend.Program.currentMap;
+            int oldValue = currentMap.battleBackground;
+            currentMap.battleBackground = byte.Parse(hexNumberBoxHeaderTabBattleBackground.Text, NumberStyles.HexNumber);
+            if (currentMap.battleBackground != oldValue)
+            {
+                WriteMapData(currentMap);
+            }
+        }
+
+        private void WriteMapData(Map map)
+        {
+            PGMEBackend.Program.isEdited = true;
+            map.WriteMapHeaderToRaw();
+            hexViewerRawMapHeader.ByteProvider = new DynamicByteProvider(map.rawHeader, true, false, false);
+        }
+
+        private void WriteNPCData(NPC npc)
+        {
+            PGMEBackend.Program.isEdited = true;
+            npc.WriteDataToRaw();
+            hexViewerRawNPC.ByteProvider = new DynamicByteProvider(npc.rawData, true, false, false);
+        }
+
+        private void nudNPCNum_ValueChanged(object sender, EventArgs e)
+        {
+            if (PGMEBackend.Program.glEntityEditor.currentEntities != null && PGMEBackend.Program.glEntityEditor.currentEntities[0] is NPC && !loadingEntityView)
+            {
+                NPC currentNPC = (NPC)PGMEBackend.Program.glEntityEditor.currentEntities[0];
+                int oldValue = currentNPC.npcNumber;
+                currentNPC.npcNumber = (byte)nudNPCNum.Value;
+                if (currentNPC.npcNumber != oldValue)
+                {
+                    WriteNPCData(currentNPC);
+                }
+            }
+        }
+
+        private void nudNPCSpriteNum_ValueChanged(object sender, EventArgs e)
+        {
+            if (PGMEBackend.Program.glEntityEditor.currentEntities != null && PGMEBackend.Program.glEntityEditor.currentEntities[0] is NPC && !loadingEntityView)
+            {
+                NPC currentNPC = (NPC)PGMEBackend.Program.glEntityEditor.currentEntities[0];
+                int oldValue = currentNPC.spriteNumber;
+                currentNPC.spriteNumber = (byte)nudNPCSpriteNum.Value;
+                if (currentNPC.spriteNumber != oldValue)
+                {
+                    WriteNPCData(currentNPC);
+                }
+            }
+        }
+
+        private void hexNumberBoxNPCReplacement_Validated(object sender, EventArgs e)
+        {
+            if (PGMEBackend.Program.glEntityEditor.currentEntities != null && PGMEBackend.Program.glEntityEditor.currentEntities[0] is NPC && !loadingEntityView)
+            {
+                NPC currentNPC = (NPC)PGMEBackend.Program.glEntityEditor.currentEntities[0];
+                int oldValue = currentNPC.replacement;
+                currentNPC.replacement = byte.Parse(hexNumberBoxNPCReplacement.Text, NumberStyles.HexNumber);
+                if (currentNPC.replacement != oldValue)
+                {
+                    WriteNPCData(currentNPC);
+                }
+            }
+        }
+
+        private void hexNumberBoxNPCFiller1_Validated(object sender, EventArgs e)
+        {
+            if (PGMEBackend.Program.glEntityEditor.currentEntities != null && PGMEBackend.Program.glEntityEditor.currentEntities[0] is NPC && !loadingEntityView)
+            {
+                NPC currentNPC = (NPC)PGMEBackend.Program.glEntityEditor.currentEntities[0];
+                int oldValue = currentNPC.filler1;
+                currentNPC.filler1 = byte.Parse(hexNumberBoxNPCFiller1.Text, NumberStyles.HexNumber);
+                if (currentNPC.filler1 != oldValue)
+                {
+                    WriteNPCData(currentNPC);
+                }
+            }
+        }
+
+        private void hexNumberBoxNPCXPos_Validated(object sender, EventArgs e)
+        {
+            if (PGMEBackend.Program.glEntityEditor.currentEntities != null && PGMEBackend.Program.glEntityEditor.currentEntities[0] is NPC && !loadingEntityView)
+            {
+                NPC currentNPC = (NPC)PGMEBackend.Program.glEntityEditor.currentEntities[0];
+                int oldValue = currentNPC.xPos;
+                currentNPC.xPos = short.Parse(hexNumberBoxNPCXPos.Text, NumberStyles.HexNumber);
+                if (currentNPC.xPos != oldValue)
+                {
+                    WriteNPCData(currentNPC);
+                }
+            }
+        }
+
+        private void hexNumberBoxNPCYPos_Validated(object sender, EventArgs e)
+        {
+            if (PGMEBackend.Program.glEntityEditor.currentEntities != null && PGMEBackend.Program.glEntityEditor.currentEntities[0] is NPC && !loadingEntityView)
+            {
+                NPC currentNPC = (NPC)PGMEBackend.Program.glEntityEditor.currentEntities[0];
+                int oldValue = currentNPC.yPos;
+                currentNPC.yPos = short.Parse(hexNumberBoxNPCYPos.Text, NumberStyles.HexNumber);
+                if (currentNPC.yPos != oldValue)
+                {
+                    WriteNPCData(currentNPC);
+                }
+            }
+        }
+
+        private void hexNumberBoxNPCHeight_TextChanged(object sender, EventArgs e)
+        {
+            if (PGMEBackend.Program.glEntityEditor.currentEntities != null && PGMEBackend.Program.glEntityEditor.currentEntities[0] is NPC && !loadingEntityView)
+            {
+                int value;
+                if (int.TryParse(hexNumberBoxNPCHeight.Text, NumberStyles.HexNumber, null, out value))
+                {
+                    if (value < cbNPCHeight.Items.Count)
+                    {
+                        cbNPCHeight.SelectedIndex = value;
+                        cbNPCHeight.Text = cbNPCHeight.Items[value].ToString();
+                    }
+                    else
+                        cbNPCHeight.Text = "[" + value.ToString("X2") + "]" + PGMEBackend.Program.rmInternalStrings.GetString("UnknownValue");
+                }
+            }
+        }
+
+        private void hexNumberBoxNPCHeight_Validated(object sender, EventArgs e)
+        {
+            if (PGMEBackend.Program.glEntityEditor.currentEntities != null && PGMEBackend.Program.glEntityEditor.currentEntities[0] is NPC && !loadingEntityView)
+            {
+                NPC currentNPC = (NPC)PGMEBackend.Program.glEntityEditor.currentEntities[0];
+                int oldValue = currentNPC.height;
+                currentNPC.height = byte.Parse(hexNumberBoxNPCHeight.Text, NumberStyles.HexNumber);
+                if (currentNPC.height != oldValue)
+                {
+                    WriteNPCData(currentNPC);
+                }
+            }
+        }
+
+        private void cbNPCHeight_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            hexNumberBoxNPCHeight.Text = cbNPCHeight.SelectedIndex.ToString("X2");
+        }
+
+        private void cbNPCHeight_Validated(object sender, EventArgs e)
+        {
+            if (PGMEBackend.Program.glEntityEditor.currentEntities != null && PGMEBackend.Program.glEntityEditor.currentEntities[0] is NPC && !loadingEntityView)
+            {
+                NPC currentNPC = (NPC)PGMEBackend.Program.glEntityEditor.currentEntities[0];
+                int oldValue = currentNPC.height;
+                currentNPC.height = byte.Parse(hexNumberBoxNPCHeight.Text, NumberStyles.HexNumber);
+                if (currentNPC.height != oldValue)
+                {
+                    WriteNPCData(currentNPC);
+                }
+            }
+        }
+
+        private void hexNumberBoxNPCIdleAnim_TextChanged(object sender, EventArgs e)
+        {
+            int value;
+            if (int.TryParse(hexNumberBoxNPCIdleAnim.Text, NumberStyles.HexNumber, null, out value))
+            {
+                if (value < cbNPCIdleAnim.Items.Count)
+                {
+                    cbNPCIdleAnim.SelectedIndex = value;
+                    cbNPCIdleAnim.Text = cbNPCIdleAnim.Items[value].ToString();
+                }
+                else
+                    cbNPCIdleAnim.Text = "[" + value.ToString("X2") + "]" + PGMEBackend.Program.rmInternalStrings.GetString("UnknownValue");
+            }
+        }
+
+        private void hexNumberBoxNPCIdleAnim_Validated(object sender, EventArgs e)
+        {
+            if (PGMEBackend.Program.glEntityEditor.currentEntities != null && PGMEBackend.Program.glEntityEditor.currentEntities[0] is NPC && !loadingEntityView)
+            {
+                NPC currentNPC = (NPC)PGMEBackend.Program.glEntityEditor.currentEntities[0];
+                int oldValue = currentNPC.idleAnimation;
+                currentNPC.idleAnimation = byte.Parse(hexNumberBoxNPCIdleAnim.Text, NumberStyles.HexNumber);
+                if (currentNPC.idleAnimation != oldValue)
+                {
+                    WriteNPCData(currentNPC);
+                }
+            }
+        }
+
+        private void cbNPCIdleAnim_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            hexNumberBoxNPCIdleAnim.Text = cbNPCIdleAnim.SelectedIndex.ToString("X2");
+        }
+
+        private void cbNPCIdleAnim_Validated(object sender, EventArgs e)
+        {
+            if (PGMEBackend.Program.glEntityEditor.currentEntities != null && PGMEBackend.Program.glEntityEditor.currentEntities[0] is NPC && !loadingEntityView)
+            {
+                NPC currentNPC = (NPC)PGMEBackend.Program.glEntityEditor.currentEntities[0];
+                int oldValue = currentNPC.idleAnimation;
+                currentNPC.idleAnimation = byte.Parse(hexNumberBoxNPCIdleAnim.Text, NumberStyles.HexNumber);
+                if (currentNPC.idleAnimation != oldValue)
+                {
+                    WriteNPCData(currentNPC);
+                }
+            }
+        }
+
+        private void hexNumberBoxNPCXBound_Validated(object sender, EventArgs e)
+        {
+            if (PGMEBackend.Program.glEntityEditor.currentEntities != null && PGMEBackend.Program.glEntityEditor.currentEntities[0] is NPC && !loadingEntityView)
+            {
+                NPC currentNPC = (NPC)PGMEBackend.Program.glEntityEditor.currentEntities[0];
+                int oldValue = currentNPC.xBounds;
+                currentNPC.xBounds = byte.Parse(hexNumberBoxNPCXBound.Text, NumberStyles.HexNumber);
+                if (currentNPC.xBounds != oldValue)
+                {
+                    WriteNPCData(currentNPC);
+                }
+            }
+        }
+
+        private void hexNumberBoxNPCYBound_Validated(object sender, EventArgs e)
+        {
+            if (PGMEBackend.Program.glEntityEditor.currentEntities != null && PGMEBackend.Program.glEntityEditor.currentEntities[0] is NPC && !loadingEntityView)
+            {
+                NPC currentNPC = (NPC)PGMEBackend.Program.glEntityEditor.currentEntities[0];
+                int oldValue = currentNPC.yBounds;
+                currentNPC.yBounds = byte.Parse(hexNumberBoxNPCYBound.Text, NumberStyles.HexNumber);
+                if (currentNPC.yBounds != oldValue)
+                {
+                    WriteNPCData(currentNPC);
+                }
+            }
+        }
+
+        private void hexNumberBoxNPCFiller2_Validated(object sender, EventArgs e)
+        {
+            if (PGMEBackend.Program.glEntityEditor.currentEntities != null && PGMEBackend.Program.glEntityEditor.currentEntities[0] is NPC && !loadingEntityView)
+            {
+                NPC currentNPC = (NPC)PGMEBackend.Program.glEntityEditor.currentEntities[0];
+                int oldValue = currentNPC.filler2;
+                currentNPC.filler2 = byte.Parse(hexNumberBoxNPCFiller2.Text, NumberStyles.HexNumber);
+                if (currentNPC.filler2 != oldValue)
+                {
+                    WriteNPCData(currentNPC);
+                }
+            }
+        }
+
+        private void hexNumberBoxNPCTrainer_Validated(object sender, EventArgs e)
+        {
+            if (PGMEBackend.Program.glEntityEditor.currentEntities != null && PGMEBackend.Program.glEntityEditor.currentEntities[0] is NPC && !loadingEntityView)
+            {
+                NPC currentNPC = (NPC)PGMEBackend.Program.glEntityEditor.currentEntities[0];
+                int oldValue = currentNPC.trainer;
+                currentNPC.trainer = byte.Parse(hexNumberBoxNPCTrainer.Text, NumberStyles.HexNumber);
+                if (currentNPC.trainer != oldValue)
+                {
+                    WriteNPCData(currentNPC);
+                }
+            }
+        }
+
+        private void hexNumberBoxNPCFiller3_Validated(object sender, EventArgs e)
+        {
+            if (PGMEBackend.Program.glEntityEditor.currentEntities != null && PGMEBackend.Program.glEntityEditor.currentEntities[0] is NPC && !loadingEntityView)
+            {
+                NPC currentNPC = (NPC)PGMEBackend.Program.glEntityEditor.currentEntities[0];
+                int oldValue = currentNPC.filler3;
+                currentNPC.filler3 = byte.Parse(hexNumberBoxNPCFiller3.Text, NumberStyles.HexNumber);
+                if (currentNPC.filler3 != oldValue)
+                {
+                    WriteNPCData(currentNPC);
+                }
+            }
+        }
+
+        private void hexNumberBoxNPCViewRadius_Validated(object sender, EventArgs e)
+        {
+            if (PGMEBackend.Program.glEntityEditor.currentEntities != null && PGMEBackend.Program.glEntityEditor.currentEntities[0] is NPC && !loadingEntityView)
+            {
+                NPC currentNPC = (NPC)PGMEBackend.Program.glEntityEditor.currentEntities[0];
+                int oldValue = currentNPC.viewRadius;
+                currentNPC.viewRadius = byte.Parse(hexNumberBoxNPCViewRadius.Text, NumberStyles.HexNumber);
+                if (currentNPC.viewRadius != oldValue)
+                {
+                    WriteNPCData(currentNPC);
+                }
+            }
+        }
+
+        private void hexNumberBoxNPCFiller4_Validated(object sender, EventArgs e)
+        {
+            if (PGMEBackend.Program.glEntityEditor.currentEntities != null && PGMEBackend.Program.glEntityEditor.currentEntities[0] is NPC && !loadingEntityView)
+            {
+                NPC currentNPC = (NPC)PGMEBackend.Program.glEntityEditor.currentEntities[0];
+                int oldValue = currentNPC.filler4;
+                currentNPC.filler4 = byte.Parse(hexNumberBoxNPCFiller4.Text, NumberStyles.HexNumber);
+                if (currentNPC.filler4 != oldValue)
+                {
+                    WriteNPCData(currentNPC);
+                }
+            }
+        }
+
+        private void hexNumberBoxNPCScriptOffset_Validated(object sender, EventArgs e)
+        {
+            if (PGMEBackend.Program.glEntityEditor.currentEntities != null && PGMEBackend.Program.glEntityEditor.currentEntities[0] is NPC && !loadingEntityView)
+            {
+                NPC currentNPC = (NPC)PGMEBackend.Program.glEntityEditor.currentEntities[0];
+                int oldValue = currentNPC.scriptOffset;
+                currentNPC.scriptOffset = byte.Parse(hexNumberBoxNPCScriptOffset.Text, NumberStyles.HexNumber);
+                if (currentNPC.scriptOffset != oldValue)
+                {
+                    WriteNPCData(currentNPC);
+                }
+            }
+        }
+
+        private void hexNumberBoxNPCVisibilityFlag_Validated(object sender, EventArgs e)
+        {
+            if (PGMEBackend.Program.glEntityEditor.currentEntities != null && PGMEBackend.Program.glEntityEditor.currentEntities[0] is NPC && !loadingEntityView)
+            {
+                NPC currentNPC = (NPC)PGMEBackend.Program.glEntityEditor.currentEntities[0];
+                int oldValue = currentNPC.visibilityFlag;
+                currentNPC.visibilityFlag = byte.Parse(hexNumberBoxNPCVisibilityFlag.Text, NumberStyles.HexNumber);
+                if (currentNPC.visibilityFlag != oldValue)
+                {
+                    WriteNPCData(currentNPC);
+                }
+            }
+        }
+
+        private void hexNumberBoxNPCFiller5_Validated(object sender, EventArgs e)
+        {
+            if (PGMEBackend.Program.glEntityEditor.currentEntities != null && PGMEBackend.Program.glEntityEditor.currentEntities[0] is NPC && !loadingEntityView)
+            {
+                NPC currentNPC = (NPC)PGMEBackend.Program.glEntityEditor.currentEntities[0];
+                int oldValue = currentNPC.filler5;
+                currentNPC.filler5 = byte.Parse(hexNumberBoxNPCFiller5.Text, NumberStyles.HexNumber);
+                if (currentNPC.filler5 != oldValue)
+                {
+                    WriteNPCData(currentNPC);
+                }
+            }
+        }
+
+        private void hexNumberBoxNPCFiller6_Validated(object sender, EventArgs e)
+        {
+            if (PGMEBackend.Program.glEntityEditor.currentEntities != null && PGMEBackend.Program.glEntityEditor.currentEntities[0] is NPC && !loadingEntityView)
+            {
+                NPC currentNPC = (NPC)PGMEBackend.Program.glEntityEditor.currentEntities[0];
+                int oldValue = currentNPC.filler6;
+                currentNPC.filler6 = byte.Parse(hexNumberBoxNPCFiller6.Text, NumberStyles.HexNumber);
+                if (currentNPC.filler6 != oldValue)
+                {
+                    WriteNPCData(currentNPC);
+                }
+            }
+        }
+
+        private void labelNPCOffset_SizeChanged(object sender, EventArgs e)
+        {
+            labelNPCOffset.Location = new Point(190 - labelNPCOffset.Width, labelNPCOffset.Location.Y);
         }
 
         /*
@@ -2361,6 +2963,23 @@ namespace PGMEWindowsUI
                 return this.AutoScrollPosition;
             else
                 return base.ScrollToControl(activeControl);
+        }
+    }
+
+    class HexNumericUpDown : NumericUpDown
+    {
+        protected override void OnTextBoxTextChanged(object source, EventArgs e)
+        {
+            TextBox tb = source as TextBox;
+            int val = 0;
+            if (int.TryParse(tb.Text, out val))
+            {
+                tb.Text = val.ToString("X2");
+            }
+            else
+            {
+                base.OnTextBoxTextChanged(source, e);
+            }
         }
     }
 }

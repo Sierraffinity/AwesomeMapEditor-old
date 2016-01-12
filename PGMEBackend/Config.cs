@@ -176,23 +176,23 @@ namespace PGMEBackend
 
         public class BehaviorLists
         {
-            public IDictionary<string, SortedDictionary<int, string>> Behaviors { get; set; }
+            public Dictionary<string, SortedDictionary<int, string>> Behaviors { get; set; }
         }
 
         public class MusicLists
         {
-            public IDictionary<string, SortedDictionary<int, string>> Songs { get; set; }
+            public Dictionary<string, SortedDictionary<int, string>> Songs { get; set; }
         }
 
         public class GameList
         {
-            public IDictionary<string, Game> Games { get; set; }
+            public Dictionary<string, Game> Games { get; set; }
         }
 
 
         public class CharTable
         {
-            public IDictionary<int, string> Table { get; set; }
+            public Dictionary<int, string> Table { get; set; }
         }
 
         public class Game

@@ -925,6 +925,150 @@
   <data name="panelSpriteEvent.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="labelNPCOffset.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelNPCOffset.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelNPCOffset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>124, 534</value>
+  </data>
+  <data name="labelNPCOffset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 13</value>
+  </data>
+  <data name="labelNPCOffset.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="labelNPCOffset.Text" xml:space="preserve">
+    <value>0x00000000</value>
+  </data>
+  <data name="&gt;&gt;labelNPCOffset.Name" xml:space="preserve">
+    <value>labelNPCOffset</value>
+  </data>
+  <data name="&gt;&gt;labelNPCOffset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelNPCOffset.Parent" xml:space="preserve">
+    <value>panelSpriteEvent</value>
+  </data>
+  <data name="&gt;&gt;labelNPCOffset.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="hexPrefixBox34.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 192</value>
+  </data>
+  <data name="hexPrefixBox34.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 20</value>
+  </data>
+  <data name="hexPrefixBox34.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="hexPrefixBox34.Text" xml:space="preserve">
+    <value>0x</value>
+  </data>
+  <data name="hexPrefixBox34.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;hexPrefixBox34.Name" xml:space="preserve">
+    <value>hexPrefixBox34</value>
+  </data>
+  <data name="&gt;&gt;hexPrefixBox34.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hexPrefixBox34.Parent" xml:space="preserve">
+    <value>panelSpriteEvent</value>
+  </data>
+  <data name="&gt;&gt;hexPrefixBox34.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="hexNumberBoxNPCIdleAnim.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Courier New, 8.25pt</value>
+  </data>
+  <data name="hexNumberBoxNPCIdleAnim.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 192</value>
+  </data>
+  <data name="hexNumberBoxNPCIdleAnim.MaxLength" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="hexNumberBoxNPCIdleAnim.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 20</value>
+  </data>
+  <data name="hexNumberBoxNPCIdleAnim.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="hexNumberBoxNPCIdleAnim.Text" xml:space="preserve">
+    <value>00</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxNPCIdleAnim.Name" xml:space="preserve">
+    <value>hexNumberBoxNPCIdleAnim</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxNPCIdleAnim.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxNPCIdleAnim.Parent" xml:space="preserve">
+    <value>panelSpriteEvent</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxNPCIdleAnim.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="hexPrefixBox33.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 152</value>
+  </data>
+  <data name="hexPrefixBox33.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 20</value>
+  </data>
+  <data name="hexPrefixBox33.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="hexPrefixBox33.Text" xml:space="preserve">
+    <value>0x</value>
+  </data>
+  <data name="hexPrefixBox33.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;hexPrefixBox33.Name" xml:space="preserve">
+    <value>hexPrefixBox33</value>
+  </data>
+  <data name="&gt;&gt;hexPrefixBox33.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hexPrefixBox33.Parent" xml:space="preserve">
+    <value>panelSpriteEvent</value>
+  </data>
+  <data name="&gt;&gt;hexPrefixBox33.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="hexNumberBoxNPCHeight.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Courier New, 8.25pt</value>
+  </data>
+  <data name="hexNumberBoxNPCHeight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 152</value>
+  </data>
+  <data name="hexNumberBoxNPCHeight.MaxLength" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="hexNumberBoxNPCHeight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 20</value>
+  </data>
+  <data name="hexNumberBoxNPCHeight.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="hexNumberBoxNPCHeight.Text" xml:space="preserve">
+    <value>00</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxNPCHeight.Name" xml:space="preserve">
+    <value>hexNumberBoxNPCHeight</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxNPCHeight.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxNPCHeight.Parent" xml:space="preserve">
+    <value>panelSpriteEvent</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxNPCHeight.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="hexPrefixBox27.Location" type="System.Drawing.Point, System.Drawing">
     <value>159, 323</value>
   </data>
@@ -932,7 +1076,7 @@
     <value>16, 20</value>
   </data>
   <data name="hexPrefixBox27.TabIndex" type="System.Int32, mscorlib">
-    <value>60</value>
+    <value>34</value>
   </data>
   <data name="hexPrefixBox27.Text" xml:space="preserve">
     <value>0x</value>
@@ -950,7 +1094,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;hexPrefixBox27.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>5</value>
   </data>
   <data name="hexNumberBoxNPCViewRadius.Font" type="System.Drawing.Font, System.Drawing">
     <value>Courier New, 8.25pt</value>
@@ -965,7 +1109,7 @@
     <value>22, 20</value>
   </data>
   <data name="hexNumberBoxNPCViewRadius.TabIndex" type="System.Int32, mscorlib">
-    <value>59</value>
+    <value>35</value>
   </data>
   <data name="hexNumberBoxNPCViewRadius.Text" xml:space="preserve">
     <value>00</value>
@@ -980,7 +1124,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;hexNumberBoxNPCViewRadius.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>6</value>
   </data>
   <data name="labelNPCFiller4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -995,7 +1139,7 @@
     <value>31, 13</value>
   </data>
   <data name="labelNPCFiller4.TabIndex" type="System.Int32, mscorlib">
-    <value>58</value>
+    <value>36</value>
   </data>
   <data name="labelNPCFiller4.Text" xml:space="preserve">
     <value>Filler:</value>
@@ -1010,7 +1154,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;labelNPCFiller4.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>7</value>
   </data>
   <data name="hexPrefixBox28.Location" type="System.Drawing.Point, System.Drawing">
     <value>159, 453</value>
@@ -1019,7 +1163,7 @@
     <value>16, 20</value>
   </data>
   <data name="hexPrefixBox28.TabIndex" type="System.Int32, mscorlib">
-    <value>57</value>
+    <value>49</value>
   </data>
   <data name="hexPrefixBox28.Text" xml:space="preserve">
     <value>0x</value>
@@ -1037,7 +1181,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;hexPrefixBox28.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>8</value>
   </data>
   <data name="hexNumberBoxNPCFiller6.Font" type="System.Drawing.Font, System.Drawing">
     <value>Courier New, 8.25pt</value>
@@ -1052,7 +1196,7 @@
     <value>22, 20</value>
   </data>
   <data name="hexNumberBoxNPCFiller6.TabIndex" type="System.Int32, mscorlib">
-    <value>56</value>
+    <value>50</value>
   </data>
   <data name="hexNumberBoxNPCFiller6.Text" xml:space="preserve">
     <value>00</value>
@@ -1067,7 +1211,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;hexNumberBoxNPCFiller6.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>9</value>
   </data>
   <data name="labelNPCFiller6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1082,7 +1226,7 @@
     <value>31, 13</value>
   </data>
   <data name="labelNPCFiller6.TabIndex" type="System.Int32, mscorlib">
-    <value>55</value>
+    <value>48</value>
   </data>
   <data name="labelNPCFiller6.Text" xml:space="preserve">
     <value>Filler:</value>
@@ -1097,7 +1241,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;labelNPCFiller6.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>10</value>
   </data>
   <data name="hexPrefixBox26.Location" type="System.Drawing.Point, System.Drawing">
     <value>128, 219</value>
@@ -1106,7 +1250,7 @@
     <value>16, 20</value>
   </data>
   <data name="hexPrefixBox26.TabIndex" type="System.Int32, mscorlib">
-    <value>54</value>
+    <value>20</value>
   </data>
   <data name="hexPrefixBox26.Text" xml:space="preserve">
     <value>0x</value>
@@ -1124,7 +1268,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;hexPrefixBox26.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>11</value>
   </data>
   <data name="hexNumberBoxNPCXBound.Font" type="System.Drawing.Font, System.Drawing">
     <value>Courier New, 8.25pt</value>
@@ -1139,7 +1283,7 @@
     <value>16, 20</value>
   </data>
   <data name="hexNumberBoxNPCXBound.TabIndex" type="System.Int32, mscorlib">
-    <value>53</value>
+    <value>21</value>
   </data>
   <data name="hexNumberBoxNPCXBound.Text" xml:space="preserve">
     <value>0</value>
@@ -1154,7 +1298,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;hexNumberBoxNPCXBound.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>12</value>
   </data>
   <data name="hexPrefixBox25.Location" type="System.Drawing.Point, System.Drawing">
     <value>144, 29</value>
@@ -1181,7 +1325,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;hexPrefixBox25.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>13</value>
   </data>
   <data name="hexPrefixBox24.Location" type="System.Drawing.Point, System.Drawing">
     <value>144, 3</value>
@@ -1208,64 +1352,31 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;hexPrefixBox24.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>14</value>
   </data>
-  <data name="checkBox1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>103, 0</value>
-  </data>
-  <data name="checkBox1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 0, 0, 0</value>
-  </data>
-  <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 17</value>
-  </data>
-  <data name="checkBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="checkBox1.Text" xml:space="preserve">
-    <value>Show Raw</value>
-  </data>
-  <data name="&gt;&gt;checkBox1.Name" xml:space="preserve">
-    <value>checkBox1</value>
-  </data>
-  <data name="&gt;&gt;checkBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox1.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;checkBox1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="hexBox1.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="hexViewerRawNPC.Font" type="System.Drawing.Font, System.Drawing">
     <value>Consolas, 9pt</value>
   </data>
-  <data name="hexBox1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="hexViewerRawNPC.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 19</value>
   </data>
-  <data name="hexBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 34</value>
+  <data name="hexViewerRawNPC.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 48</value>
   </data>
-  <data name="hexBox1.TabIndex" type="System.Int32, mscorlib">
+  <data name="hexViewerRawNPC.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;hexBox1.Name" xml:space="preserve">
-    <value>hexBox1</value>
+  <data name="&gt;&gt;hexViewerRawNPC.Name" xml:space="preserve">
+    <value>hexViewerRawNPC</value>
   </data>
-  <data name="&gt;&gt;hexBox1.Type" xml:space="preserve">
+  <data name="&gt;&gt;hexViewerRawNPC.Type" xml:space="preserve">
     <value>Be.Windows.Forms.HexBox, Be.Windows.Forms.HexBox, Version=1.6.0.9326, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;hexBox1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;hexViewerRawNPC.Parent" xml:space="preserve">
     <value>groupBox1</value>
   </data>
-  <data name="&gt;&gt;hexBox1.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;hexViewerRawNPC.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 534</value>
@@ -1274,10 +1385,10 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 64</value>
+    <value>190, 73</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>53</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Raw NPC Data</value>
@@ -1292,7 +1403,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>15</value>
   </data>
   <data name="hexPrefixBox23.Location" type="System.Drawing.Point, System.Drawing">
     <value>159, 427</value>
@@ -1301,7 +1412,7 @@
     <value>16, 20</value>
   </data>
   <data name="hexPrefixBox23.TabIndex" type="System.Int32, mscorlib">
-    <value>49</value>
+    <value>46</value>
   </data>
   <data name="hexPrefixBox23.Text" xml:space="preserve">
     <value>0x</value>
@@ -1319,7 +1430,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;hexPrefixBox23.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>16</value>
   </data>
   <data name="hexPrefixBox22.Location" type="System.Drawing.Point, System.Drawing">
     <value>144, 401</value>
@@ -1328,7 +1439,7 @@
     <value>16, 20</value>
   </data>
   <data name="hexPrefixBox22.TabIndex" type="System.Int32, mscorlib">
-    <value>48</value>
+    <value>43</value>
   </data>
   <data name="hexPrefixBox22.Text" xml:space="preserve">
     <value>0x</value>
@@ -1346,7 +1457,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;hexPrefixBox22.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>17</value>
   </data>
   <data name="hexPrefixBox21.Location" type="System.Drawing.Point, System.Drawing">
     <value>116, 375</value>
@@ -1355,7 +1466,7 @@
     <value>16, 20</value>
   </data>
   <data name="hexPrefixBox21.TabIndex" type="System.Int32, mscorlib">
-    <value>47</value>
+    <value>40</value>
   </data>
   <data name="hexPrefixBox21.Text" xml:space="preserve">
     <value>0x</value>
@@ -1373,7 +1484,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;hexPrefixBox21.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>18</value>
   </data>
   <data name="hexPrefixBox20.Location" type="System.Drawing.Point, System.Drawing">
     <value>159, 349</value>
@@ -1382,7 +1493,7 @@
     <value>16, 20</value>
   </data>
   <data name="hexPrefixBox20.TabIndex" type="System.Int32, mscorlib">
-    <value>46</value>
+    <value>37</value>
   </data>
   <data name="hexPrefixBox20.Text" xml:space="preserve">
     <value>0x</value>
@@ -1400,7 +1511,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;hexPrefixBox20.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>19</value>
   </data>
   <data name="hexPrefixBox19.Location" type="System.Drawing.Point, System.Drawing">
     <value>159, 297</value>
@@ -1409,7 +1520,7 @@
     <value>16, 20</value>
   </data>
   <data name="hexPrefixBox19.TabIndex" type="System.Int32, mscorlib">
-    <value>45</value>
+    <value>31</value>
   </data>
   <data name="hexPrefixBox19.Text" xml:space="preserve">
     <value>0x</value>
@@ -1427,7 +1538,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;hexPrefixBox19.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>20</value>
   </data>
   <data name="hexPrefixBox18.Location" type="System.Drawing.Point, System.Drawing">
     <value>159, 271</value>
@@ -1436,7 +1547,7 @@
     <value>16, 20</value>
   </data>
   <data name="hexPrefixBox18.TabIndex" type="System.Int32, mscorlib">
-    <value>44</value>
+    <value>28</value>
   </data>
   <data name="hexPrefixBox18.Text" xml:space="preserve">
     <value>0x</value>
@@ -1454,7 +1565,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;hexPrefixBox18.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>21</value>
   </data>
   <data name="hexPrefixBox17.Location" type="System.Drawing.Point, System.Drawing">
     <value>159, 245</value>
@@ -1463,7 +1574,7 @@
     <value>16, 20</value>
   </data>
   <data name="hexPrefixBox17.TabIndex" type="System.Int32, mscorlib">
-    <value>43</value>
+    <value>25</value>
   </data>
   <data name="hexPrefixBox17.Text" xml:space="preserve">
     <value>0x</value>
@@ -1481,7 +1592,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;hexPrefixBox17.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>22</value>
   </data>
   <data name="hexPrefixBox16.Location" type="System.Drawing.Point, System.Drawing">
     <value>165, 219</value>
@@ -1490,7 +1601,7 @@
     <value>16, 20</value>
   </data>
   <data name="hexPrefixBox16.TabIndex" type="System.Int32, mscorlib">
-    <value>42</value>
+    <value>22</value>
   </data>
   <data name="hexPrefixBox16.Text" xml:space="preserve">
     <value>0x</value>
@@ -1508,7 +1619,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;hexPrefixBox16.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>23</value>
   </data>
   <data name="hexPrefixBox15.Location" type="System.Drawing.Point, System.Drawing">
     <value>144, 108</value>
@@ -1517,7 +1628,7 @@
     <value>16, 20</value>
   </data>
   <data name="hexPrefixBox15.TabIndex" type="System.Int32, mscorlib">
-    <value>41</value>
+    <value>9</value>
   </data>
   <data name="hexPrefixBox15.Text" xml:space="preserve">
     <value>0x</value>
@@ -1535,7 +1646,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;hexPrefixBox15.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>24</value>
   </data>
   <data name="hexPrefixBox14.Location" type="System.Drawing.Point, System.Drawing">
     <value>87, 108</value>
@@ -1544,7 +1655,7 @@
     <value>16, 20</value>
   </data>
   <data name="hexPrefixBox14.TabIndex" type="System.Int32, mscorlib">
-    <value>40</value>
+    <value>7</value>
   </data>
   <data name="hexPrefixBox14.Text" xml:space="preserve">
     <value>0x</value>
@@ -1562,7 +1673,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;hexPrefixBox14.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>25</value>
   </data>
   <data name="hexPrefixBox13.Location" type="System.Drawing.Point, System.Drawing">
     <value>159, 82</value>
@@ -1571,7 +1682,7 @@
     <value>16, 20</value>
   </data>
   <data name="hexPrefixBox13.TabIndex" type="System.Int32, mscorlib">
-    <value>39</value>
+    <value>4</value>
   </data>
   <data name="hexPrefixBox13.Text" xml:space="preserve">
     <value>0x</value>
@@ -1589,7 +1700,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;hexPrefixBox13.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>26</value>
   </data>
   <data name="hexPrefixBox12.Location" type="System.Drawing.Point, System.Drawing">
     <value>159, 56</value>
@@ -1598,7 +1709,7 @@
     <value>16, 20</value>
   </data>
   <data name="hexPrefixBox12.TabIndex" type="System.Int32, mscorlib">
-    <value>38</value>
+    <value>1</value>
   </data>
   <data name="hexPrefixBox12.Text" xml:space="preserve">
     <value>0x</value>
@@ -1616,7 +1727,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;hexPrefixBox12.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>27</value>
   </data>
   <data name="hexNumberBoxNPCFiller3.Font" type="System.Drawing.Font, System.Drawing">
     <value>Courier New, 8.25pt</value>
@@ -1631,7 +1742,7 @@
     <value>22, 20</value>
   </data>
   <data name="hexNumberBoxNPCFiller3.TabIndex" type="System.Int32, mscorlib">
-    <value>37</value>
+    <value>32</value>
   </data>
   <data name="hexNumberBoxNPCFiller3.Text" xml:space="preserve">
     <value>00</value>
@@ -1646,7 +1757,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;hexNumberBoxNPCFiller3.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>28</value>
   </data>
   <data name="labelNPCFiller3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1661,7 +1772,7 @@
     <value>31, 13</value>
   </data>
   <data name="labelNPCFiller3.TabIndex" type="System.Int32, mscorlib">
-    <value>36</value>
+    <value>30</value>
   </data>
   <data name="labelNPCFiller3.Text" xml:space="preserve">
     <value>Filler:</value>
@@ -1676,7 +1787,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;labelNPCFiller3.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>29</value>
   </data>
   <data name="hexNumberBoxNPCFiller2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Courier New, 8.25pt</value>
@@ -1691,7 +1802,7 @@
     <value>22, 20</value>
   </data>
   <data name="hexNumberBoxNPCFiller2.TabIndex" type="System.Int32, mscorlib">
-    <value>35</value>
+    <value>26</value>
   </data>
   <data name="hexNumberBoxNPCFiller2.Text" xml:space="preserve">
     <value>00</value>
@@ -1706,7 +1817,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;hexNumberBoxNPCFiller2.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>30</value>
   </data>
   <data name="labelNPCFiller2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1721,7 +1832,7 @@
     <value>31, 13</value>
   </data>
   <data name="labelNPCFiller2.TabIndex" type="System.Int32, mscorlib">
-    <value>34</value>
+    <value>24</value>
   </data>
   <data name="labelNPCFiller2.Text" xml:space="preserve">
     <value>Filler:</value>
@@ -1736,7 +1847,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;labelNPCFiller2.ZOrder" xml:space="preserve">
-    <value>26</value>
+    <value>31</value>
   </data>
   <data name="labelNPCFiller1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1751,7 +1862,7 @@
     <value>31, 13</value>
   </data>
   <data name="labelNPCFiller1.TabIndex" type="System.Int32, mscorlib">
-    <value>33</value>
+    <value>3</value>
   </data>
   <data name="labelNPCFiller1.Text" xml:space="preserve">
     <value>Filler:</value>
@@ -1766,7 +1877,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;labelNPCFiller1.ZOrder" xml:space="preserve">
-    <value>27</value>
+    <value>32</value>
   </data>
   <data name="hexNumberBoxNPCFiller1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Courier New, 8.25pt</value>
@@ -1781,7 +1892,7 @@
     <value>22, 20</value>
   </data>
   <data name="hexNumberBoxNPCFiller1.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
+    <value>5</value>
   </data>
   <data name="hexNumberBoxNPCFiller1.Text" xml:space="preserve">
     <value>00</value>
@@ -1796,7 +1907,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;hexNumberBoxNPCFiller1.ZOrder" xml:space="preserve">
-    <value>28</value>
+    <value>33</value>
   </data>
   <data name="btnDeleteNPC.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1826,7 +1937,7 @@
     <value>190, 23</value>
   </data>
   <data name="btnDeleteNPC.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
+    <value>52</value>
   </data>
   <data name="btnDeleteNPC.Text" xml:space="preserve">
     <value>Delete Entity</value>
@@ -1844,7 +1955,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;btnDeleteNPC.ZOrder" xml:space="preserve">
-    <value>29</value>
+    <value>34</value>
   </data>
   <data name="btnNPCOpenScript.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1877,7 +1988,7 @@
     <value>190, 23</value>
   </data>
   <data name="btnNPCOpenScript.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
+    <value>51</value>
   </data>
   <data name="btnNPCOpenScript.Text" xml:space="preserve">
     <value>Open Script in Editor</value>
@@ -1895,7 +2006,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;btnNPCOpenScript.ZOrder" xml:space="preserve">
-    <value>30</value>
+    <value>35</value>
   </data>
   <data name="hexNumberBoxNPCFiller5.Font" type="System.Drawing.Font, System.Drawing">
     <value>Courier New, 8.25pt</value>
@@ -1910,7 +2021,7 @@
     <value>22, 20</value>
   </data>
   <data name="hexNumberBoxNPCFiller5.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
+    <value>47</value>
   </data>
   <data name="hexNumberBoxNPCFiller5.Text" xml:space="preserve">
     <value>00</value>
@@ -1925,7 +2036,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;hexNumberBoxNPCFiller5.ZOrder" xml:space="preserve">
-    <value>31</value>
+    <value>36</value>
   </data>
   <data name="labelNPCFiller5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1940,7 +2051,7 @@
     <value>31, 13</value>
   </data>
   <data name="labelNPCFiller5.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
+    <value>45</value>
   </data>
   <data name="labelNPCFiller5.Text" xml:space="preserve">
     <value>Filler:</value>
@@ -1955,7 +2066,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;labelNPCFiller5.ZOrder" xml:space="preserve">
-    <value>32</value>
+    <value>37</value>
   </data>
   <data name="hexNumberBoxNPCVisibilityFlag.Font" type="System.Drawing.Font, System.Drawing">
     <value>Courier New, 8.25pt</value>
@@ -1970,7 +2081,7 @@
     <value>37, 20</value>
   </data>
   <data name="hexNumberBoxNPCVisibilityFlag.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
+    <value>44</value>
   </data>
   <data name="hexNumberBoxNPCVisibilityFlag.Text" xml:space="preserve">
     <value>0000</value>
@@ -1985,7 +2096,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;hexNumberBoxNPCVisibilityFlag.ZOrder" xml:space="preserve">
-    <value>33</value>
+    <value>38</value>
   </data>
   <data name="labelNPCVisibilityFlag.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2000,7 +2111,7 @@
     <value>69, 13</value>
   </data>
   <data name="labelNPCVisibilityFlag.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
+    <value>42</value>
   </data>
   <data name="labelNPCVisibilityFlag.Text" xml:space="preserve">
     <value>Visibility Flag:</value>
@@ -2015,7 +2126,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;labelNPCVisibilityFlag.ZOrder" xml:space="preserve">
-    <value>34</value>
+    <value>39</value>
   </data>
   <data name="hexNumberBoxNPCScriptOffset.Font" type="System.Drawing.Font, System.Drawing">
     <value>Courier New, 8.25pt</value>
@@ -2030,7 +2141,7 @@
     <value>65, 20</value>
   </data>
   <data name="hexNumberBoxNPCScriptOffset.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
+    <value>41</value>
   </data>
   <data name="hexNumberBoxNPCScriptOffset.Text" xml:space="preserve">
     <value>00000000</value>
@@ -2045,7 +2156,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;hexNumberBoxNPCScriptOffset.ZOrder" xml:space="preserve">
-    <value>35</value>
+    <value>40</value>
   </data>
   <data name="labelNPCScriptEditor.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2060,7 +2171,7 @@
     <value>68, 13</value>
   </data>
   <data name="labelNPCScriptEditor.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+    <value>39</value>
   </data>
   <data name="labelNPCScriptEditor.Text" xml:space="preserve">
     <value>Script Offset:</value>
@@ -2075,7 +2186,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;labelNPCScriptEditor.ZOrder" xml:space="preserve">
-    <value>36</value>
+    <value>41</value>
   </data>
   <data name="hexNumberBoxNPCFiller4.Font" type="System.Drawing.Font, System.Drawing">
     <value>Courier New, 8.25pt</value>
@@ -2090,7 +2201,7 @@
     <value>22, 20</value>
   </data>
   <data name="hexNumberBoxNPCFiller4.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
+    <value>38</value>
   </data>
   <data name="hexNumberBoxNPCFiller4.Text" xml:space="preserve">
     <value>00</value>
@@ -2105,7 +2216,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;hexNumberBoxNPCFiller4.ZOrder" xml:space="preserve">
-    <value>37</value>
+    <value>42</value>
   </data>
   <data name="labelNPCViewRadius.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2120,7 +2231,7 @@
     <value>69, 13</value>
   </data>
   <data name="labelNPCViewRadius.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
+    <value>33</value>
   </data>
   <data name="labelNPCViewRadius.Text" xml:space="preserve">
     <value>View Radius:</value>
@@ -2135,7 +2246,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;labelNPCViewRadius.ZOrder" xml:space="preserve">
-    <value>38</value>
+    <value>43</value>
   </data>
   <data name="hexNumberBoxNPCTrainer.Font" type="System.Drawing.Font, System.Drawing">
     <value>Courier New, 8.25pt</value>
@@ -2150,7 +2261,7 @@
     <value>22, 20</value>
   </data>
   <data name="hexNumberBoxNPCTrainer.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
+    <value>29</value>
   </data>
   <data name="hexNumberBoxNPCTrainer.Text" xml:space="preserve">
     <value>00</value>
@@ -2165,7 +2276,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;hexNumberBoxNPCTrainer.ZOrder" xml:space="preserve">
-    <value>39</value>
+    <value>44</value>
   </data>
   <data name="labelNPCTrainer.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2180,7 +2291,7 @@
     <value>43, 13</value>
   </data>
   <data name="labelNPCTrainer.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
+    <value>27</value>
   </data>
   <data name="labelNPCTrainer.Text" xml:space="preserve">
     <value>Trainer:</value>
@@ -2195,7 +2306,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;labelNPCTrainer.ZOrder" xml:space="preserve">
-    <value>40</value>
+    <value>45</value>
   </data>
   <data name="hexNumberBoxNPCYBound.Font" type="System.Drawing.Font, System.Drawing">
     <value>Courier New, 8.25pt</value>
@@ -2210,7 +2321,7 @@
     <value>16, 20</value>
   </data>
   <data name="hexNumberBoxNPCYBound.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
+    <value>23</value>
   </data>
   <data name="hexNumberBoxNPCYBound.Text" xml:space="preserve">
     <value>0</value>
@@ -2225,7 +2336,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;hexNumberBoxNPCYBound.ZOrder" xml:space="preserve">
-    <value>41</value>
+    <value>46</value>
   </data>
   <data name="labelNPCMovementBoundaries.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2240,7 +2351,7 @@
     <value>116, 13</value>
   </data>
   <data name="labelNPCMovementBoundaries.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="labelNPCMovementBoundaries.Text" xml:space="preserve">
     <value>Movement Boundaries:</value>
@@ -2255,7 +2366,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;labelNPCMovementBoundaries.ZOrder" xml:space="preserve">
-    <value>42</value>
+    <value>47</value>
   </data>
   <data name="labelNPCIdleAnimation.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2270,7 +2381,7 @@
     <value>76, 13</value>
   </data>
   <data name="labelNPCIdleAnimation.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
+    <value>15</value>
   </data>
   <data name="labelNPCIdleAnimation.Text" xml:space="preserve">
     <value>Idle Animation:</value>
@@ -2285,259 +2396,259 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;labelNPCIdleAnimation.ZOrder" xml:space="preserve">
-    <value>43</value>
+    <value>48</value>
   </data>
   <data name="cbNPCIdleAnim.Items" xml:space="preserve">
-    <value>[00] None</value>
+    <value>None</value>
   </data>
   <data name="cbNPCIdleAnim.Items1" xml:space="preserve">
-    <value>[01] Look around</value>
+    <value>Look around</value>
   </data>
   <data name="cbNPCIdleAnim.Items2" xml:space="preserve">
-    <value>[02] Walk around</value>
+    <value>Walk around</value>
   </data>
   <data name="cbNPCIdleAnim.Items3" xml:space="preserve">
-    <value>[03] Walk up and down</value>
+    <value>Walk up and down</value>
   </data>
   <data name="cbNPCIdleAnim.Items4" xml:space="preserve">
-    <value>[04] Walk up and down</value>
+    <value>Walk up and down</value>
   </data>
   <data name="cbNPCIdleAnim.Items5" xml:space="preserve">
-    <value>[05] Walk left and right</value>
+    <value>Walk left and right</value>
   </data>
   <data name="cbNPCIdleAnim.Items6" xml:space="preserve">
-    <value>[06] Walk left and right</value>
+    <value>Walk left and right</value>
   </data>
   <data name="cbNPCIdleAnim.Items7" xml:space="preserve">
-    <value>[07] Look up</value>
+    <value>Look up</value>
   </data>
   <data name="cbNPCIdleAnim.Items8" xml:space="preserve">
-    <value>[08] Look down</value>
+    <value>Look down</value>
   </data>
   <data name="cbNPCIdleAnim.Items9" xml:space="preserve">
-    <value>[09] Look left</value>
+    <value>Look left</value>
   </data>
   <data name="cbNPCIdleAnim.Items10" xml:space="preserve">
-    <value>[0A] Look right</value>
+    <value>Look right</value>
   </data>
   <data name="cbNPCIdleAnim.Items11" xml:space="preserve">
-    <value>[0B] Error: you will be this people after battle</value>
+    <value>Error: you will be this people after battle</value>
   </data>
   <data name="cbNPCIdleAnim.Items12" xml:space="preserve">
-    <value>[0C] Hidden</value>
+    <value>Hidden</value>
   </data>
   <data name="cbNPCIdleAnim.Items13" xml:space="preserve">
-    <value>[0D] Look up and down</value>
+    <value>Look up and down</value>
   </data>
   <data name="cbNPCIdleAnim.Items14" xml:space="preserve">
-    <value>[0E] Look left and right</value>
+    <value>Look left and right</value>
   </data>
   <data name="cbNPCIdleAnim.Items15" xml:space="preserve">
-    <value>[0F] Look up and left</value>
+    <value>Look up and left</value>
   </data>
   <data name="cbNPCIdleAnim.Items16" xml:space="preserve">
-    <value>[10] Look up and right</value>
+    <value>Look up and right</value>
   </data>
   <data name="cbNPCIdleAnim.Items17" xml:space="preserve">
-    <value>[11] Look down and left</value>
+    <value>Look down and left</value>
   </data>
   <data name="cbNPCIdleAnim.Items18" xml:space="preserve">
-    <value>[12] Look down and right</value>
+    <value>Look down and right</value>
   </data>
   <data name="cbNPCIdleAnim.Items19" xml:space="preserve">
-    <value>[13] Look up, down and left</value>
+    <value>Look up, down and left</value>
   </data>
   <data name="cbNPCIdleAnim.Items20" xml:space="preserve">
-    <value>[14] Look up, down and right</value>
+    <value>Look up, down and right</value>
   </data>
   <data name="cbNPCIdleAnim.Items21" xml:space="preserve">
-    <value>[15] Look up, left and right</value>
+    <value>Look up, left and right</value>
   </data>
   <data name="cbNPCIdleAnim.Items22" xml:space="preserve">
-    <value>[16] Look down, left and right</value>
+    <value>Look down, left and right</value>
   </data>
   <data name="cbNPCIdleAnim.Items23" xml:space="preserve">
-    <value>[17] Look around counterclockwise</value>
+    <value>Look around counterclockwise</value>
   </data>
   <data name="cbNPCIdleAnim.Items24" xml:space="preserve">
-    <value>[18] Look around clockwise</value>
+    <value>Look around clockwise</value>
   </data>
   <data name="cbNPCIdleAnim.Items25" xml:space="preserve">
-    <value>[19] Run up and down</value>
+    <value>Run up and down</value>
   </data>
   <data name="cbNPCIdleAnim.Items26" xml:space="preserve">
-    <value>[1A] Run up and down</value>
+    <value>Run up and down</value>
   </data>
   <data name="cbNPCIdleAnim.Items27" xml:space="preserve">
-    <value>[1B] Run left and right</value>
+    <value>Run left and right</value>
   </data>
   <data name="cbNPCIdleAnim.Items28" xml:space="preserve">
-    <value>[1C] Run left and right</value>
+    <value>Run left and right</value>
   </data>
   <data name="cbNPCIdleAnim.Items29" xml:space="preserve">
-    <value>[1D] Run up, right, left and down</value>
+    <value>Run up, right, left and down</value>
   </data>
   <data name="cbNPCIdleAnim.Items30" xml:space="preserve">
-    <value>[1E] Run right, left, down and up</value>
+    <value>Run right, left, down and up</value>
   </data>
   <data name="cbNPCIdleAnim.Items31" xml:space="preserve">
-    <value>[1F] Run down, up, right and left</value>
+    <value>Run down, up, right and left</value>
   </data>
   <data name="cbNPCIdleAnim.Items32" xml:space="preserve">
-    <value>[20] Run left, down, up and right</value>
+    <value>Run left, down, up and right</value>
   </data>
   <data name="cbNPCIdleAnim.Items33" xml:space="preserve">
-    <value>[21] Run up, left, right and down</value>
+    <value>Run up, left, right and down</value>
   </data>
   <data name="cbNPCIdleAnim.Items34" xml:space="preserve">
-    <value>[22] Run left, right, down and up</value>
+    <value>Run left, right, down and up</value>
   </data>
   <data name="cbNPCIdleAnim.Items35" xml:space="preserve">
-    <value>[23] Run down, up, left and right</value>
+    <value>Run down, up, left and right</value>
   </data>
   <data name="cbNPCIdleAnim.Items36" xml:space="preserve">
-    <value>[24] Run right, down, up and left</value>
+    <value>Run right, down, up and left</value>
   </data>
   <data name="cbNPCIdleAnim.Items37" xml:space="preserve">
-    <value>[25] Run left, up, down and right</value>
+    <value>Run left, up, down and right</value>
   </data>
   <data name="cbNPCIdleAnim.Items38" xml:space="preserve">
-    <value>[26] Run up, down, right and left</value>
+    <value>Run up, down, right and left</value>
   </data>
   <data name="cbNPCIdleAnim.Items39" xml:space="preserve">
-    <value>[27] Run right, left, up and down</value>
+    <value>Run right, left, up and down</value>
   </data>
   <data name="cbNPCIdleAnim.Items40" xml:space="preserve">
-    <value>[28] Run down, right, left and up</value>
+    <value>Run down, right, left and up</value>
   </data>
   <data name="cbNPCIdleAnim.Items41" xml:space="preserve">
-    <value>[29] Run right, up, down and left</value>
+    <value>Run right, up, down and left</value>
   </data>
   <data name="cbNPCIdleAnim.Items42" xml:space="preserve">
-    <value>[2A] Run up, down, left and right</value>
+    <value>Run up, down, left and right</value>
   </data>
   <data name="cbNPCIdleAnim.Items43" xml:space="preserve">
-    <value>[2B] Run left, right, up and down</value>
+    <value>Run left, right, up and down</value>
   </data>
   <data name="cbNPCIdleAnim.Items44" xml:space="preserve">
-    <value>[2C] Run down, left, right and up</value>
+    <value>Run down, left, right and up</value>
   </data>
   <data name="cbNPCIdleAnim.Items45" xml:space="preserve">
-    <value>[2D] Run around counterclockwise</value>
+    <value>Run around counterclockwise</value>
   </data>
   <data name="cbNPCIdleAnim.Items46" xml:space="preserve">
-    <value>[2E] Run around counterclockwise</value>
+    <value>Run around counterclockwise</value>
   </data>
   <data name="cbNPCIdleAnim.Items47" xml:space="preserve">
-    <value>[2F] Run around counterclockwise</value>
+    <value>Run around counterclockwise</value>
   </data>
   <data name="cbNPCIdleAnim.Items48" xml:space="preserve">
-    <value>[30] Run around counterclockwise</value>
+    <value>Run around counterclockwise</value>
   </data>
   <data name="cbNPCIdleAnim.Items49" xml:space="preserve">
-    <value>[31] Run around counterclockwise</value>
+    <value>Run around counterclockwise</value>
   </data>
   <data name="cbNPCIdleAnim.Items50" xml:space="preserve">
-    <value>[32] Run around clockwise</value>
+    <value>Run around clockwise</value>
   </data>
   <data name="cbNPCIdleAnim.Items51" xml:space="preserve">
-    <value>[33] Run around clockwise</value>
+    <value>Run around clockwise</value>
   </data>
   <data name="cbNPCIdleAnim.Items52" xml:space="preserve">
-    <value>[34] Run around clockwise</value>
+    <value>Run around clockwise</value>
   </data>
   <data name="cbNPCIdleAnim.Items53" xml:space="preserve">
-    <value>[35] Copy Player</value>
+    <value>Copy Player</value>
   </data>
   <data name="cbNPCIdleAnim.Items54" xml:space="preserve">
-    <value>[36] Mirror Player</value>
+    <value>Mirror Player</value>
   </data>
   <data name="cbNPCIdleAnim.Items55" xml:space="preserve">
-    <value>[37] Mirror Player</value>
+    <value>Mirror Player</value>
   </data>
   <data name="cbNPCIdleAnim.Items56" xml:space="preserve">
-    <value>[38] Mirror Player</value>
+    <value>Mirror Player</value>
   </data>
   <data name="cbNPCIdleAnim.Items57" xml:space="preserve">
-    <value>[39] Tree wall disguise</value>
+    <value>Tree wall disguise</value>
   </data>
   <data name="cbNPCIdleAnim.Items58" xml:space="preserve">
-    <value>[3A] Rock wall disguise</value>
+    <value>Rock wall disguise</value>
   </data>
   <data name="cbNPCIdleAnim.Items59" xml:space="preserve">
-    <value>[3B] Mirror player (standing)</value>
+    <value>Mirror player (standing)</value>
   </data>
   <data name="cbNPCIdleAnim.Items60" xml:space="preserve">
-    <value>[3C] Copy player (standing)</value>
+    <value>Copy player (standing)</value>
   </data>
   <data name="cbNPCIdleAnim.Items61" xml:space="preserve">
-    <value>[3D] Mirror player (standing)</value>
+    <value>Mirror player (standing)</value>
   </data>
   <data name="cbNPCIdleAnim.Items62" xml:space="preserve">
-    <value>[3E] Mirror player (standing)</value>
+    <value>Mirror player (standing)</value>
   </data>
   <data name="cbNPCIdleAnim.Items63" xml:space="preserve">
-    <value>[3F] Hidden</value>
+    <value>Hidden</value>
   </data>
   <data name="cbNPCIdleAnim.Items64" xml:space="preserve">
-    <value>[40] Walk on the spot (Down)</value>
+    <value>Walk on the spot (Down)</value>
   </data>
   <data name="cbNPCIdleAnim.Items65" xml:space="preserve">
-    <value>[41] Walk on the spot (Up)</value>
+    <value>Walk on the spot (Up)</value>
   </data>
   <data name="cbNPCIdleAnim.Items66" xml:space="preserve">
-    <value>[42] Walk on the spot (Left)</value>
+    <value>Walk on the spot (Left)</value>
   </data>
   <data name="cbNPCIdleAnim.Items67" xml:space="preserve">
-    <value>[43] Walk on the spot (Right)</value>
+    <value>Walk on the spot (Right)</value>
   </data>
   <data name="cbNPCIdleAnim.Items68" xml:space="preserve">
-    <value>[44] Jog on the spot (Down)</value>
+    <value>Jog on the spot (Down)</value>
   </data>
   <data name="cbNPCIdleAnim.Items69" xml:space="preserve">
-    <value>[45] Jog on the spot (Up)</value>
+    <value>Jog on the spot (Up)</value>
   </data>
   <data name="cbNPCIdleAnim.Items70" xml:space="preserve">
-    <value>[46] Jog on the spot (Left)</value>
+    <value>Jog on the spot (Left)</value>
   </data>
   <data name="cbNPCIdleAnim.Items71" xml:space="preserve">
-    <value>[47] Jog on the spot (Right)</value>
+    <value>Jog on the spot (Right)</value>
   </data>
   <data name="cbNPCIdleAnim.Items72" xml:space="preserve">
-    <value>[48] Run on the spot (Down)</value>
+    <value>Run on the spot (Down)</value>
   </data>
   <data name="cbNPCIdleAnim.Items73" xml:space="preserve">
-    <value>[49] Run on the spot (Up)</value>
+    <value>Run on the spot (Up)</value>
   </data>
   <data name="cbNPCIdleAnim.Items74" xml:space="preserve">
-    <value>[4A] Run on the spot (Left)</value>
+    <value>Run on the spot (Left)</value>
   </data>
   <data name="cbNPCIdleAnim.Items75" xml:space="preserve">
-    <value>[4B] Run on the spot (Right)</value>
+    <value>Run on the spot (Right)</value>
   </data>
   <data name="cbNPCIdleAnim.Items76" xml:space="preserve">
-    <value>[4C] Hidden</value>
+    <value>Hidden</value>
   </data>
   <data name="cbNPCIdleAnim.Items77" xml:space="preserve">
-    <value>[4D] Walk on the spot (Down)</value>
+    <value>Walk on the spot (Down)</value>
   </data>
   <data name="cbNPCIdleAnim.Items78" xml:space="preserve">
-    <value>[4E] Walk on the spot (Up)</value>
+    <value>Walk on the spot (Up)</value>
   </data>
   <data name="cbNPCIdleAnim.Items79" xml:space="preserve">
-    <value>[4F] Walk on the spot (Left)</value>
+    <value>Walk on the spot (Left)</value>
   </data>
   <data name="cbNPCIdleAnim.Items80" xml:space="preserve">
-    <value>[50] Walk on the spot (Right)</value>
+    <value>Walk on the spot (Right)</value>
   </data>
   <data name="cbNPCIdleAnim.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 192</value>
+    <value>49, 192</value>
   </data>
   <data name="cbNPCIdleAnim.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 21</value>
+    <value>147, 21</value>
   </data>
   <data name="cbNPCIdleAnim.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>18</value>
   </data>
   <data name="&gt;&gt;cbNPCIdleAnim.Name" xml:space="preserve">
     <value>cbNPCIdleAnim</value>
@@ -2549,64 +2660,64 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;cbNPCIdleAnim.ZOrder" xml:space="preserve">
-    <value>44</value>
+    <value>49</value>
   </data>
   <data name="cbNPCHeight.Items" xml:space="preserve">
-    <value>[00] All heights</value>
+    <value>All heights</value>
   </data>
   <data name="cbNPCHeight.Items1" xml:space="preserve">
-    <value>[01] Height 0 (Surf)</value>
+    <value>Height 0 (Surf)</value>
   </data>
   <data name="cbNPCHeight.Items2" xml:space="preserve">
-    <value>[02] Height 1</value>
+    <value>Height 1</value>
   </data>
   <data name="cbNPCHeight.Items3" xml:space="preserve">
-    <value>[03] Height 2 (Normal)</value>
+    <value>Height 2 (Normal)</value>
   </data>
   <data name="cbNPCHeight.Items4" xml:space="preserve">
-    <value>[04] Height 3</value>
+    <value>Height 3</value>
   </data>
   <data name="cbNPCHeight.Items5" xml:space="preserve">
-    <value>[05] Height 4</value>
+    <value>Height 4</value>
   </data>
   <data name="cbNPCHeight.Items6" xml:space="preserve">
-    <value>[06] Height 5</value>
+    <value>Height 5</value>
   </data>
   <data name="cbNPCHeight.Items7" xml:space="preserve">
-    <value>[07] Height 6</value>
+    <value>Height 6</value>
   </data>
   <data name="cbNPCHeight.Items8" xml:space="preserve">
-    <value>[08] Height 7</value>
+    <value>Height 7</value>
   </data>
   <data name="cbNPCHeight.Items9" xml:space="preserve">
-    <value>[09] Height 8</value>
+    <value>Height 8</value>
   </data>
   <data name="cbNPCHeight.Items10" xml:space="preserve">
-    <value>[0A] Height 9</value>
+    <value>Height 9</value>
   </data>
   <data name="cbNPCHeight.Items11" xml:space="preserve">
-    <value>[0B] Height 10</value>
+    <value>Height 10</value>
   </data>
   <data name="cbNPCHeight.Items12" xml:space="preserve">
-    <value>[0C] Height 11</value>
+    <value>Height 11</value>
   </data>
   <data name="cbNPCHeight.Items13" xml:space="preserve">
-    <value>[0D] Height 12</value>
+    <value>Height 12</value>
   </data>
   <data name="cbNPCHeight.Items14" xml:space="preserve">
-    <value>[0E] Height 13</value>
+    <value>Height 13</value>
   </data>
   <data name="cbNPCHeight.Items15" xml:space="preserve">
-    <value>[0F] Height 14</value>
+    <value>Height 14</value>
   </data>
   <data name="cbNPCHeight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 152</value>
+    <value>49, 152</value>
   </data>
   <data name="cbNPCHeight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 21</value>
+    <value>147, 21</value>
   </data>
   <data name="cbNPCHeight.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+    <value>14</value>
   </data>
   <data name="&gt;&gt;cbNPCHeight.Name" xml:space="preserve">
     <value>cbNPCHeight</value>
@@ -2618,7 +2729,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;cbNPCHeight.ZOrder" xml:space="preserve">
-    <value>45</value>
+    <value>50</value>
   </data>
   <data name="labelNPCHeight.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2633,7 +2744,7 @@
     <value>41, 13</value>
   </data>
   <data name="labelNPCHeight.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>11</value>
   </data>
   <data name="labelNPCHeight.Text" xml:space="preserve">
     <value>Height:</value>
@@ -2648,7 +2759,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;labelNPCHeight.ZOrder" xml:space="preserve">
-    <value>46</value>
+    <value>51</value>
   </data>
   <data name="labelNPCPosition.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2663,7 +2774,7 @@
     <value>47, 13</value>
   </data>
   <data name="labelNPCPosition.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>6</value>
   </data>
   <data name="labelNPCPosition.Text" xml:space="preserve">
     <value>Position:</value>
@@ -2678,7 +2789,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;labelNPCPosition.ZOrder" xml:space="preserve">
-    <value>47</value>
+    <value>52</value>
   </data>
   <data name="hexNumberBoxNPCYPos.Font" type="System.Drawing.Font, System.Drawing">
     <value>Courier New, 8.25pt</value>
@@ -2693,7 +2804,7 @@
     <value>37, 20</value>
   </data>
   <data name="hexNumberBoxNPCYPos.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="hexNumberBoxNPCYPos.Text" xml:space="preserve">
     <value>0000</value>
@@ -2708,7 +2819,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;hexNumberBoxNPCYPos.ZOrder" xml:space="preserve">
-    <value>48</value>
+    <value>53</value>
   </data>
   <data name="labelNPCReplacement.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2723,7 +2834,7 @@
     <value>73, 13</value>
   </data>
   <data name="labelNPCReplacement.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>0</value>
   </data>
   <data name="labelNPCReplacement.Text" xml:space="preserve">
     <value>Replacement:</value>
@@ -2738,7 +2849,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;labelNPCReplacement.ZOrder" xml:space="preserve">
-    <value>49</value>
+    <value>54</value>
   </data>
   <data name="labelNPCSpriteNumber.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2768,7 +2879,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;labelNPCSpriteNumber.ZOrder" xml:space="preserve">
-    <value>50</value>
+    <value>55</value>
   </data>
   <data name="labelNPCNumber.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2798,7 +2909,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;labelNPCNumber.ZOrder" xml:space="preserve">
-    <value>51</value>
+    <value>56</value>
   </data>
   <data name="hexNumberBoxNPCXPos.Font" type="System.Drawing.Font, System.Drawing">
     <value>Courier New, 8.25pt</value>
@@ -2813,7 +2924,7 @@
     <value>37, 20</value>
   </data>
   <data name="hexNumberBoxNPCXPos.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="hexNumberBoxNPCXPos.Text" xml:space="preserve">
     <value>0000</value>
@@ -2828,7 +2939,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;hexNumberBoxNPCXPos.ZOrder" xml:space="preserve">
-    <value>52</value>
+    <value>57</value>
   </data>
   <data name="hexNumberBoxNPCReplacement.Font" type="System.Drawing.Font, System.Drawing">
     <value>Courier New, 8.25pt</value>
@@ -2843,7 +2954,7 @@
     <value>22, 20</value>
   </data>
   <data name="hexNumberBoxNPCReplacement.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="hexNumberBoxNPCReplacement.Text" xml:space="preserve">
     <value>00</value>
@@ -2858,7 +2969,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;hexNumberBoxNPCReplacement.ZOrder" xml:space="preserve">
-    <value>53</value>
+    <value>58</value>
   </data>
   <data name="nudNPCSpriteNum.Font" type="System.Drawing.Font, System.Drawing">
     <value>Courier New, 8.25pt</value>
@@ -2882,7 +2993,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;nudNPCSpriteNum.ZOrder" xml:space="preserve">
-    <value>54</value>
+    <value>59</value>
   </data>
   <data name="nudNPCNum.Font" type="System.Drawing.Font, System.Drawing">
     <value>Courier New, 8.25pt</value>
@@ -2906,7 +3017,7 @@
     <value>panelSpriteEvent</value>
   </data>
   <data name="&gt;&gt;nudNPCNum.ZOrder" xml:space="preserve">
-    <value>55</value>
+    <value>60</value>
   </data>
   <data name="panelSpriteEvent.Location" type="System.Drawing.Point, System.Drawing">
     <value>1, 31</value>
@@ -11297,6 +11408,234 @@
   <data name="&gt;&gt;gbHeaderTabRawMapHeader.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="hexPrefixBox30.Location" type="System.Drawing.Point, System.Drawing">
+    <value>214, 182</value>
+  </data>
+  <data name="hexPrefixBox30.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 20</value>
+  </data>
+  <data name="hexPrefixBox30.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="hexPrefixBox30.Text" xml:space="preserve">
+    <value>0x</value>
+  </data>
+  <data name="hexPrefixBox30.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;hexPrefixBox30.Name" xml:space="preserve">
+    <value>hexPrefixBox30</value>
+  </data>
+  <data name="&gt;&gt;hexPrefixBox30.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hexPrefixBox30.Parent" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;hexPrefixBox30.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="hexNumberBoxHeaderTabWeather.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Courier New, 8.25pt</value>
+  </data>
+  <data name="hexNumberBoxHeaderTabWeather.Location" type="System.Drawing.Point, System.Drawing">
+    <value>229, 182</value>
+  </data>
+  <data name="hexNumberBoxHeaderTabWeather.MaxLength" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="hexNumberBoxHeaderTabWeather.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 20</value>
+  </data>
+  <data name="hexNumberBoxHeaderTabWeather.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="hexNumberBoxHeaderTabWeather.Text" xml:space="preserve">
+    <value>00</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxHeaderTabWeather.Name" xml:space="preserve">
+    <value>hexNumberBoxHeaderTabWeather</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxHeaderTabWeather.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxHeaderTabWeather.Parent" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxHeaderTabWeather.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="hexPrefixBox32.Location" type="System.Drawing.Point, System.Drawing">
+    <value>214, 222</value>
+  </data>
+  <data name="hexPrefixBox32.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 20</value>
+  </data>
+  <data name="hexPrefixBox32.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="hexPrefixBox32.Text" xml:space="preserve">
+    <value>0x</value>
+  </data>
+  <data name="hexPrefixBox32.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;hexPrefixBox32.Name" xml:space="preserve">
+    <value>hexPrefixBox32</value>
+  </data>
+  <data name="&gt;&gt;hexPrefixBox32.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hexPrefixBox32.Parent" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;hexPrefixBox32.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="hexNumberBoxHeaderTabBattleBackground.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Courier New, 8.25pt</value>
+  </data>
+  <data name="hexNumberBoxHeaderTabBattleBackground.Location" type="System.Drawing.Point, System.Drawing">
+    <value>229, 222</value>
+  </data>
+  <data name="hexNumberBoxHeaderTabBattleBackground.MaxLength" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="hexNumberBoxHeaderTabBattleBackground.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 20</value>
+  </data>
+  <data name="hexNumberBoxHeaderTabBattleBackground.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="hexNumberBoxHeaderTabBattleBackground.Text" xml:space="preserve">
+    <value>00</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxHeaderTabBattleBackground.Name" xml:space="preserve">
+    <value>hexNumberBoxHeaderTabBattleBackground</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxHeaderTabBattleBackground.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxHeaderTabBattleBackground.Parent" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxHeaderTabBattleBackground.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="hexPrefixBox31.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 222</value>
+  </data>
+  <data name="hexPrefixBox31.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 20</value>
+  </data>
+  <data name="hexPrefixBox31.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="hexPrefixBox31.Text" xml:space="preserve">
+    <value>0x</value>
+  </data>
+  <data name="hexPrefixBox31.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;hexPrefixBox31.Name" xml:space="preserve">
+    <value>hexPrefixBox31</value>
+  </data>
+  <data name="&gt;&gt;hexPrefixBox31.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hexPrefixBox31.Parent" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;hexPrefixBox31.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="hexNumberBoxHeaderTabMapType.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Courier New, 8.25pt</value>
+  </data>
+  <data name="hexNumberBoxHeaderTabMapType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 222</value>
+  </data>
+  <data name="hexNumberBoxHeaderTabMapType.MaxLength" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="hexNumberBoxHeaderTabMapType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 20</value>
+  </data>
+  <data name="hexNumberBoxHeaderTabMapType.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="hexNumberBoxHeaderTabMapType.Text" xml:space="preserve">
+    <value>00</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxHeaderTabMapType.Name" xml:space="preserve">
+    <value>hexNumberBoxHeaderTabMapType</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxHeaderTabMapType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxHeaderTabMapType.Parent" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxHeaderTabMapType.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="hexPrefixBox29.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 182</value>
+  </data>
+  <data name="hexPrefixBox29.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 20</value>
+  </data>
+  <data name="hexPrefixBox29.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="hexPrefixBox29.Text" xml:space="preserve">
+    <value>0x</value>
+  </data>
+  <data name="hexPrefixBox29.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;hexPrefixBox29.Name" xml:space="preserve">
+    <value>hexPrefixBox29</value>
+  </data>
+  <data name="&gt;&gt;hexPrefixBox29.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hexPrefixBox29.Parent" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;hexPrefixBox29.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="hexNumberBoxHeaderTabVisibility.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Courier New, 8.25pt</value>
+  </data>
+  <data name="hexNumberBoxHeaderTabVisibility.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 182</value>
+  </data>
+  <data name="hexNumberBoxHeaderTabVisibility.MaxLength" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="hexNumberBoxHeaderTabVisibility.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 20</value>
+  </data>
+  <data name="hexNumberBoxHeaderTabVisibility.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="hexNumberBoxHeaderTabVisibility.Text" xml:space="preserve">
+    <value>00</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxHeaderTabVisibility.Name" xml:space="preserve">
+    <value>hexNumberBoxHeaderTabVisibility</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxHeaderTabVisibility.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxHeaderTabVisibility.Parent" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxHeaderTabVisibility.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
   <data name="hexPrefixBox7.Location" type="System.Drawing.Point, System.Drawing">
     <value>41, 139</value>
   </data>
@@ -11322,7 +11661,7 @@
     <value>panel5</value>
   </data>
   <data name="&gt;&gt;hexPrefixBox7.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>8</value>
   </data>
   <data name="hexNumberBoxHeaderTabLayoutHeaderPointer.Font" type="System.Drawing.Font, System.Drawing">
     <value>Courier New, 8.25pt</value>
@@ -11339,6 +11678,9 @@
   <data name="hexNumberBoxHeaderTabLayoutHeaderPointer.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
+  <data name="hexNumberBoxHeaderTabLayoutHeaderPointer.Text" xml:space="preserve">
+    <value>00000000</value>
+  </data>
   <data name="&gt;&gt;hexNumberBoxHeaderTabLayoutHeaderPointer.Name" xml:space="preserve">
     <value>hexNumberBoxHeaderTabLayoutHeaderPointer</value>
   </data>
@@ -11349,7 +11691,7 @@
     <value>panel5</value>
   </data>
   <data name="&gt;&gt;hexNumberBoxHeaderTabLayoutHeaderPointer.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>9</value>
   </data>
   <data name="hexPrefixBox4.Location" type="System.Drawing.Point, System.Drawing">
     <value>336, 29</value>
@@ -11376,7 +11718,7 @@
     <value>panel5</value>
   </data>
   <data name="&gt;&gt;hexPrefixBox4.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>10</value>
   </data>
   <data name="hexPrefixBox5.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 20</value>
@@ -11419,6 +11761,9 @@
   </data>
   <data name="hexNumberBoxHeaderTabMapNames.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="hexNumberBoxHeaderTabMapNames.Text" xml:space="preserve">
+    <value>00</value>
   </data>
   <data name="&gt;&gt;hexNumberBoxHeaderTabMapNames.Name" xml:space="preserve">
     <value>hexNumberBoxHeaderTabMapNames</value>
@@ -11502,7 +11847,7 @@
     <value>panel5</value>
   </data>
   <data name="&gt;&gt;groupBox5.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>11</value>
   </data>
   <data name="hexPrefixBox2.Location" type="System.Drawing.Point, System.Drawing">
     <value>336, 3</value>
@@ -11529,7 +11874,7 @@
     <value>panel5</value>
   </data>
   <data name="&gt;&gt;hexPrefixBox2.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>12</value>
   </data>
   <data name="cbHeaderTabMusic.Location" type="System.Drawing.Point, System.Drawing">
     <value>99, 139</value>
@@ -11550,7 +11895,7 @@
     <value>panel5</value>
   </data>
   <data name="&gt;&gt;cbHeaderTabMusic.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>13</value>
   </data>
   <data name="hexPrefixBox3.Location" type="System.Drawing.Point, System.Drawing">
     <value>122, 29</value>
@@ -11577,7 +11922,7 @@
     <value>panel5</value>
   </data>
   <data name="&gt;&gt;hexPrefixBox3.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>14</value>
   </data>
   <data name="hexNumberBoxHeaderTabMusic.Font" type="System.Drawing.Font, System.Drawing">
     <value>Courier New, 8.25pt</value>
@@ -11594,6 +11939,9 @@
   <data name="hexNumberBoxHeaderTabMusic.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
   </data>
+  <data name="hexNumberBoxHeaderTabMusic.Text" xml:space="preserve">
+    <value>0000</value>
+  </data>
   <data name="&gt;&gt;hexNumberBoxHeaderTabMusic.Name" xml:space="preserve">
     <value>hexNumberBoxHeaderTabMusic</value>
   </data>
@@ -11604,7 +11952,7 @@
     <value>panel5</value>
   </data>
   <data name="&gt;&gt;hexNumberBoxHeaderTabMusic.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>15</value>
   </data>
   <data name="hexPrefixBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>122, 3</value>
@@ -11631,7 +11979,7 @@
     <value>panel5</value>
   </data>
   <data name="&gt;&gt;hexPrefixBox1.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>16</value>
   </data>
   <data name="label64.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -11661,7 +12009,7 @@
     <value>panel5</value>
   </data>
   <data name="&gt;&gt;label64.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>17</value>
   </data>
   <data name="cbHeaderTabCanEscape.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -11691,25 +12039,25 @@
     <value>panel5</value>
   </data>
   <data name="&gt;&gt;cbHeaderTabCanEscape.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>18</value>
   </data>
   <data name="cbHeaderTabVisibility.Items" xml:space="preserve">
-    <value>[00] Normal</value>
+    <value>Normal</value>
   </data>
   <data name="cbHeaderTabVisibility.Items1" xml:space="preserve">
-    <value>[01] Dark, Flash usable</value>
+    <value>Dark, Flash usable</value>
   </data>
   <data name="cbHeaderTabVisibility.Items2" xml:space="preserve">
-    <value>[02] Dark, Flash unusable</value>
+    <value>Dark, Flash unusable</value>
   </data>
   <data name="cbHeaderTabVisibility.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 182</value>
+    <value>44, 182</value>
   </data>
   <data name="cbHeaderTabVisibility.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 21</value>
+    <value>158, 21</value>
   </data>
   <data name="cbHeaderTabVisibility.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
+    <value>24</value>
   </data>
   <data name="&gt;&gt;cbHeaderTabVisibility.Name" xml:space="preserve">
     <value>cbHeaderTabVisibility</value>
@@ -11721,7 +12069,7 @@
     <value>panel5</value>
   </data>
   <data name="&gt;&gt;cbHeaderTabVisibility.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>19</value>
   </data>
   <data name="cbHeaderTabCanRideBike.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -11751,64 +12099,64 @@
     <value>panel5</value>
   </data>
   <data name="&gt;&gt;cbHeaderTabCanRideBike.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>20</value>
   </data>
   <data name="cbHeaderTabWeather.Items" xml:space="preserve">
-    <value>[00] None (indoors)</value>
+    <value>None (indoors)</value>
   </data>
   <data name="cbHeaderTabWeather.Items1" xml:space="preserve">
-    <value>[01] Sunny with clouds</value>
+    <value>Sunny with clouds</value>
   </data>
   <data name="cbHeaderTabWeather.Items2" xml:space="preserve">
-    <value>[02] None (outdoors)</value>
+    <value>None (outdoors)</value>
   </data>
   <data name="cbHeaderTabWeather.Items3" xml:space="preserve">
-    <value>[03] Rain</value>
+    <value>Rain</value>
   </data>
   <data name="cbHeaderTabWeather.Items4" xml:space="preserve">
-    <value>[04] Snow (ending)</value>
+    <value>Snow (ending)</value>
   </data>
   <data name="cbHeaderTabWeather.Items5" xml:space="preserve">
-    <value>[05] Thunderstorm</value>
+    <value>Thunderstorm</value>
   </data>
   <data name="cbHeaderTabWeather.Items6" xml:space="preserve">
-    <value>[06] Mist (moving left)</value>
+    <value>Mist (moving left)</value>
   </data>
   <data name="cbHeaderTabWeather.Items7" xml:space="preserve">
-    <value>[07] Ash falling</value>
+    <value>Ash falling</value>
   </data>
   <data name="cbHeaderTabWeather.Items8" xml:space="preserve">
-    <value>[08] Sandstorm</value>
+    <value>Sandstorm</value>
   </data>
   <data name="cbHeaderTabWeather.Items9" xml:space="preserve">
-    <value>[09] Mist (moving down &amp; left)</value>
+    <value>Mist (moving down &amp; left)</value>
   </data>
   <data name="cbHeaderTabWeather.Items10" xml:space="preserve">
-    <value>[0A] Mist (bright)</value>
+    <value>Mist (bright)</value>
   </data>
   <data name="cbHeaderTabWeather.Items11" xml:space="preserve">
-    <value>[0B] Dark</value>
+    <value>Dark</value>
   </data>
   <data name="cbHeaderTabWeather.Items12" xml:space="preserve">
-    <value>[0C] Heat wave (R/S/E)</value>
+    <value>Heat wave (R/S/E)</value>
   </data>
   <data name="cbHeaderTabWeather.Items13" xml:space="preserve">
-    <value>[0D] Heavy thunderstorm</value>
+    <value>Heavy thunderstorm</value>
   </data>
   <data name="cbHeaderTabWeather.Items14" xml:space="preserve">
-    <value>[0E] Mist (underwater)</value>
+    <value>Mist (underwater)</value>
   </data>
   <data name="cbHeaderTabWeather.Items15" xml:space="preserve">
-    <value>[0F] Unknown</value>
+    <value>Unknown</value>
   </data>
   <data name="cbHeaderTabWeather.Location" type="System.Drawing.Point, System.Drawing">
-    <value>214, 182</value>
+    <value>258, 182</value>
   </data>
   <data name="cbHeaderTabWeather.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 21</value>
+    <value>158, 21</value>
   </data>
   <data name="cbHeaderTabWeather.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+    <value>28</value>
   </data>
   <data name="&gt;&gt;cbHeaderTabWeather.Name" xml:space="preserve">
     <value>cbHeaderTabWeather</value>
@@ -11820,7 +12168,7 @@
     <value>panel5</value>
   </data>
   <data name="&gt;&gt;cbHeaderTabWeather.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>21</value>
   </data>
   <data name="cbHeaderTabCanRun.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -11850,7 +12198,7 @@
     <value>panel5</value>
   </data>
   <data name="&gt;&gt;cbHeaderTabCanRun.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>22</value>
   </data>
   <data name="label65.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -11880,7 +12228,7 @@
     <value>panel5</value>
   </data>
   <data name="&gt;&gt;label65.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>23</value>
   </data>
   <data name="cbHeaderTabShowsName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -11910,7 +12258,7 @@
     <value>panel5</value>
   </data>
   <data name="&gt;&gt;cbHeaderTabShowsName.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>24</value>
   </data>
   <data name="label66.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -11925,7 +12273,7 @@
     <value>51, 13</value>
   </data>
   <data name="label66.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
+    <value>25</value>
   </data>
   <data name="label66.Text" xml:space="preserve">
     <value>Weather:</value>
@@ -11940,7 +12288,7 @@
     <value>panel5</value>
   </data>
   <data name="&gt;&gt;label66.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>25</value>
   </data>
   <data name="hexPrefixBox6.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 20</value>
@@ -12011,6 +12359,9 @@
   <data name="hexNumberBoxHeaderTabLayoutIndex.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="hexNumberBoxHeaderTabLayoutIndex.Text" xml:space="preserve">
+    <value>0000</value>
+  </data>
   <data name="&gt;&gt;hexNumberBoxHeaderTabLayoutIndex.Name" xml:space="preserve">
     <value>hexNumberBoxHeaderTabLayoutIndex</value>
   </data>
@@ -12045,46 +12396,46 @@
     <value>panel5</value>
   </data>
   <data name="&gt;&gt;groupBox10.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>26</value>
   </data>
   <data name="cbHeaderTabMapType.Items" xml:space="preserve">
-    <value>[00] Unknown</value>
+    <value>Unknown</value>
   </data>
   <data name="cbHeaderTabMapType.Items1" xml:space="preserve">
-    <value>[01] Village</value>
+    <value>Village</value>
   </data>
   <data name="cbHeaderTabMapType.Items2" xml:space="preserve">
-    <value>[02] City</value>
+    <value>City</value>
   </data>
   <data name="cbHeaderTabMapType.Items3" xml:space="preserve">
-    <value>[03] Route</value>
+    <value>Route</value>
   </data>
   <data name="cbHeaderTabMapType.Items4" xml:space="preserve">
-    <value>[04] Underground</value>
+    <value>Underground</value>
   </data>
   <data name="cbHeaderTabMapType.Items5" xml:space="preserve">
-    <value>[05] Underwater</value>
+    <value>Underwater</value>
   </data>
   <data name="cbHeaderTabMapType.Items6" xml:space="preserve">
-    <value>[06] Unknown</value>
+    <value>Unknown</value>
   </data>
   <data name="cbHeaderTabMapType.Items7" xml:space="preserve">
-    <value>[07] Unknown</value>
+    <value>Unknown</value>
   </data>
   <data name="cbHeaderTabMapType.Items8" xml:space="preserve">
-    <value>[08] Indoors</value>
+    <value>Indoors</value>
   </data>
   <data name="cbHeaderTabMapType.Items9" xml:space="preserve">
-    <value>[09] Secret Base</value>
+    <value>Secret Base</value>
   </data>
   <data name="cbHeaderTabMapType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 222</value>
+    <value>44, 222</value>
   </data>
   <data name="cbHeaderTabMapType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 21</value>
+    <value>158, 21</value>
   </data>
   <data name="cbHeaderTabMapType.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
+    <value>32</value>
   </data>
   <data name="&gt;&gt;cbHeaderTabMapType.Name" xml:space="preserve">
     <value>cbHeaderTabMapType</value>
@@ -12096,7 +12447,7 @@
     <value>panel5</value>
   </data>
   <data name="&gt;&gt;cbHeaderTabMapType.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>27</value>
   </data>
   <data name="hexNumberBoxHeaderTabConnectionDataPointer.Font" type="System.Drawing.Font, System.Drawing">
     <value>Courier New, 8.25pt</value>
@@ -12113,6 +12464,9 @@
   <data name="hexNumberBoxHeaderTabConnectionDataPointer.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
+  <data name="hexNumberBoxHeaderTabConnectionDataPointer.Text" xml:space="preserve">
+    <value>00000000</value>
+  </data>
   <data name="&gt;&gt;hexNumberBoxHeaderTabConnectionDataPointer.Name" xml:space="preserve">
     <value>hexNumberBoxHeaderTabConnectionDataPointer</value>
   </data>
@@ -12123,55 +12477,55 @@
     <value>panel5</value>
   </data>
   <data name="&gt;&gt;hexNumberBoxHeaderTabConnectionDataPointer.ZOrder" xml:space="preserve">
-    <value>20</value>
-  </data>
-  <data name="cbHeaderTabBattleTransition.Items" xml:space="preserve">
-    <value>[00] Normal</value>
-  </data>
-  <data name="cbHeaderTabBattleTransition.Items1" xml:space="preserve">
-    <value>[01] Gym</value>
-  </data>
-  <data name="cbHeaderTabBattleTransition.Items2" xml:space="preserve">
-    <value>[02] Team Rocket</value>
-  </data>
-  <data name="cbHeaderTabBattleTransition.Items3" xml:space="preserve">
-    <value>[03] Unknown</value>
-  </data>
-  <data name="cbHeaderTabBattleTransition.Items4" xml:space="preserve">
-    <value>[04] Elite Four #1</value>
-  </data>
-  <data name="cbHeaderTabBattleTransition.Items5" xml:space="preserve">
-    <value>[05] Elite Four #2</value>
-  </data>
-  <data name="cbHeaderTabBattleTransition.Items6" xml:space="preserve">
-    <value>[06] Elite Four #3</value>
-  </data>
-  <data name="cbHeaderTabBattleTransition.Items7" xml:space="preserve">
-    <value>[07] Elite Four #4</value>
-  </data>
-  <data name="cbHeaderTabBattleTransition.Items8" xml:space="preserve">
-    <value>[08] Big Red Poké Ball</value>
-  </data>
-  <data name="cbHeaderTabBattleTransition.Location" type="System.Drawing.Point, System.Drawing">
-    <value>214, 222</value>
-  </data>
-  <data name="cbHeaderTabBattleTransition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 21</value>
-  </data>
-  <data name="cbHeaderTabBattleTransition.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
   </data>
-  <data name="&gt;&gt;cbHeaderTabBattleTransition.Name" xml:space="preserve">
-    <value>cbHeaderTabBattleTransition</value>
+  <data name="cbHeaderTabBattleBackground.Items" xml:space="preserve">
+    <value>Normal</value>
   </data>
-  <data name="&gt;&gt;cbHeaderTabBattleTransition.Type" xml:space="preserve">
+  <data name="cbHeaderTabBattleBackground.Items1" xml:space="preserve">
+    <value>Gym</value>
+  </data>
+  <data name="cbHeaderTabBattleBackground.Items2" xml:space="preserve">
+    <value>Team Rocket</value>
+  </data>
+  <data name="cbHeaderTabBattleBackground.Items3" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="cbHeaderTabBattleBackground.Items4" xml:space="preserve">
+    <value>Elite Four #1</value>
+  </data>
+  <data name="cbHeaderTabBattleBackground.Items5" xml:space="preserve">
+    <value>Elite Four #2</value>
+  </data>
+  <data name="cbHeaderTabBattleBackground.Items6" xml:space="preserve">
+    <value>Elite Four #3</value>
+  </data>
+  <data name="cbHeaderTabBattleBackground.Items7" xml:space="preserve">
+    <value>Elite Four #4</value>
+  </data>
+  <data name="cbHeaderTabBattleBackground.Items8" xml:space="preserve">
+    <value>Big Red Poké Ball</value>
+  </data>
+  <data name="cbHeaderTabBattleBackground.Location" type="System.Drawing.Point, System.Drawing">
+    <value>258, 222</value>
+  </data>
+  <data name="cbHeaderTabBattleBackground.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 21</value>
+  </data>
+  <data name="cbHeaderTabBattleBackground.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="&gt;&gt;cbHeaderTabBattleBackground.Name" xml:space="preserve">
+    <value>cbHeaderTabBattleBackground</value>
+  </data>
+  <data name="&gt;&gt;cbHeaderTabBattleBackground.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cbHeaderTabBattleTransition.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cbHeaderTabBattleBackground.Parent" xml:space="preserve">
     <value>panel5</value>
   </data>
-  <data name="&gt;&gt;cbHeaderTabBattleTransition.ZOrder" xml:space="preserve">
-    <value>21</value>
+  <data name="&gt;&gt;cbHeaderTabBattleBackground.ZOrder" xml:space="preserve">
+    <value>29</value>
   </data>
   <data name="label72.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -12201,7 +12555,7 @@
     <value>panel5</value>
   </data>
   <data name="&gt;&gt;label72.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>30</value>
   </data>
   <data name="label68.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -12216,7 +12570,7 @@
     <value>58, 13</value>
   </data>
   <data name="label68.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
+    <value>29</value>
   </data>
   <data name="label68.Text" xml:space="preserve">
     <value>Map Type:</value>
@@ -12231,7 +12585,7 @@
     <value>panel5</value>
   </data>
   <data name="&gt;&gt;label68.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>31</value>
   </data>
   <data name="hexNumberBoxHeaderTabEventDataPointer.Font" type="System.Drawing.Font, System.Drawing">
     <value>Courier New, 8.25pt</value>
@@ -12248,6 +12602,9 @@
   <data name="hexNumberBoxHeaderTabEventDataPointer.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
+  <data name="hexNumberBoxHeaderTabEventDataPointer.Text" xml:space="preserve">
+    <value>00000000</value>
+  </data>
   <data name="&gt;&gt;hexNumberBoxHeaderTabEventDataPointer.Name" xml:space="preserve">
     <value>hexNumberBoxHeaderTabEventDataPointer</value>
   </data>
@@ -12258,7 +12615,7 @@
     <value>panel5</value>
   </data>
   <data name="&gt;&gt;hexNumberBoxHeaderTabEventDataPointer.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>32</value>
   </data>
   <data name="label67.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -12273,7 +12630,7 @@
     <value>98, 13</value>
   </data>
   <data name="label67.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
+    <value>33</value>
   </data>
   <data name="label67.Text" xml:space="preserve">
     <value>Battle Background:</value>
@@ -12288,7 +12645,7 @@
     <value>panel5</value>
   </data>
   <data name="&gt;&gt;label67.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>33</value>
   </data>
   <data name="label71.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -12318,7 +12675,7 @@
     <value>panel5</value>
   </data>
   <data name="&gt;&gt;label71.ZOrder" xml:space="preserve">
-    <value>26</value>
+    <value>34</value>
   </data>
   <data name="label69.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -12348,7 +12705,7 @@
     <value>panel5</value>
   </data>
   <data name="&gt;&gt;label69.ZOrder" xml:space="preserve">
-    <value>27</value>
+    <value>35</value>
   </data>
   <data name="hexNumberBoxHeaderTabLevelScriptPointer.Font" type="System.Drawing.Font, System.Drawing">
     <value>Courier New, 8.25pt</value>
@@ -12365,6 +12722,9 @@
   <data name="hexNumberBoxHeaderTabLevelScriptPointer.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
+  <data name="hexNumberBoxHeaderTabLevelScriptPointer.Text" xml:space="preserve">
+    <value>00000000</value>
+  </data>
   <data name="&gt;&gt;hexNumberBoxHeaderTabLevelScriptPointer.Name" xml:space="preserve">
     <value>hexNumberBoxHeaderTabLevelScriptPointer</value>
   </data>
@@ -12375,7 +12735,7 @@
     <value>panel5</value>
   </data>
   <data name="&gt;&gt;hexNumberBoxHeaderTabLevelScriptPointer.ZOrder" xml:space="preserve">
-    <value>28</value>
+    <value>36</value>
   </data>
   <data name="label70.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -12405,7 +12765,7 @@
     <value>panel5</value>
   </data>
   <data name="&gt;&gt;label70.ZOrder" xml:space="preserve">
-    <value>29</value>
+    <value>37</value>
   </data>
   <data name="panel5.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 64</value>
@@ -12683,6 +13043,9 @@
   <data name="tbHeaderTabMapWidth.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="tbHeaderTabMapWidth.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;tbHeaderTabMapWidth.Name" xml:space="preserve">
     <value>tbHeaderTabMapWidth</value>
   </data>
@@ -12706,6 +13069,9 @@
   </data>
   <data name="tbHeaderTabMapHeight.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
+  </data>
+  <data name="tbHeaderTabMapHeight.Text" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;tbHeaderTabMapHeight.Name" xml:space="preserve">
     <value>tbHeaderTabMapHeight</value>
@@ -12872,6 +13238,9 @@
   <data name="hexNumberBoxHeaderTabBorderPointer.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
+  <data name="hexNumberBoxHeaderTabBorderPointer.Text" xml:space="preserve">
+    <value>00000000</value>
+  </data>
   <data name="&gt;&gt;hexNumberBoxHeaderTabBorderPointer.Name" xml:space="preserve">
     <value>hexNumberBoxHeaderTabBorderPointer</value>
   </data>
@@ -12983,6 +13352,9 @@
   <data name="tbHeaderTabBorderWidth.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="tbHeaderTabBorderWidth.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;tbHeaderTabBorderWidth.Name" xml:space="preserve">
     <value>tbHeaderTabBorderWidth</value>
   </data>
@@ -13006,6 +13378,9 @@
   </data>
   <data name="tbHeaderTabBorderHeight.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
+  </data>
+  <data name="tbHeaderTabBorderHeight.Text" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;tbHeaderTabBorderHeight.Name" xml:space="preserve">
     <value>tbHeaderTabBorderHeight</value>
@@ -13088,6 +13463,9 @@
   <data name="hexNumberBoxHeaderTabGlobalTilesetPointer.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
+  <data name="hexNumberBoxHeaderTabGlobalTilesetPointer.Text" xml:space="preserve">
+    <value>00000000</value>
+  </data>
   <data name="&gt;&gt;hexNumberBoxHeaderTabGlobalTilesetPointer.Name" xml:space="preserve">
     <value>hexNumberBoxHeaderTabGlobalTilesetPointer</value>
   </data>
@@ -13145,6 +13523,9 @@
   <data name="hexNumberBoxHeaderTabLocalTilesetPointer.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
+  <data name="hexNumberBoxHeaderTabLocalTilesetPointer.Text" xml:space="preserve">
+    <value>00000000</value>
+  </data>
   <data name="&gt;&gt;hexNumberBoxHeaderTabLocalTilesetPointer.Name" xml:space="preserve">
     <value>hexNumberBoxHeaderTabLocalTilesetPointer</value>
   </data>
@@ -13171,6 +13552,9 @@
   </data>
   <data name="hexNumberBoxHeaderTabMapPointer.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
+  </data>
+  <data name="hexNumberBoxHeaderTabMapPointer.Text" xml:space="preserve">
+    <value>00000000</value>
   </data>
   <data name="&gt;&gt;hexNumberBoxHeaderTabMapPointer.Name" xml:space="preserve">
     <value>hexNumberBoxHeaderTabMapPointer</value>
@@ -14273,9 +14657,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1008, 697</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>640, 480</value>

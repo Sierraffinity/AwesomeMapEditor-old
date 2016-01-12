@@ -16,17 +16,23 @@ namespace PGMEBackend.Entities
 
         public Sign() : base()
         {
-
+            rawDataOrig = new byte[0xC];
+            rawData = new byte[0xC];
         }
         
         public Sign(short xPos, short yPos) : base(xPos, yPos)
         {
-
+            rawDataOrig = new byte[0xC];
+            rawData = new byte[0xC];
+            Buffer.BlockCopy(BitConverter.GetBytes(xPos), 0, rawData, 0, 2);
+            Buffer.BlockCopy(BitConverter.GetBytes(yPos), 0, rawData, 2, 2);
         }
         
         public Sign(int offset, GBAROM ROM) : base(offset, ROM)
         {
-
+            rawDataOrig = originROM.GetData(offset, 0xC);
+            rawData = (byte[])rawDataOrig.Clone();
+            LoadDataFromRaw();
         }
 
         public override void LoadDataFromRaw()
@@ -40,7 +46,7 @@ namespace PGMEBackend.Entities
             scriptOffset = BitConverter.ToInt32(rawData, 8) - 0x8000000;
         }
 
-        public override void LoadRawFromData()
+        public override void WriteDataToRaw()
         {
             Buffer.BlockCopy(BitConverter.GetBytes(xPos), 0, rawData, 0, 2);
             Buffer.BlockCopy(BitConverter.GetBytes(yPos), 0, rawData, 2, 2);
@@ -71,6 +77,11 @@ namespace PGMEBackend.Entities
             Program.currentMap.Signs.RemoveAt(num);
             Program.isEdited = true;
             return true;
+        }
+
+        public override EntityType GetEnum()
+        {
+            return EntityType.Sign;
         }
     }
 }

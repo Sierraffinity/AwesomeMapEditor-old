@@ -18,17 +18,23 @@ namespace PGMEBackend.Entities
 
         public Trigger() : base()
         {
-
+            rawDataOrig = new byte[0x10];
+            rawData = new byte[0x10];
         }
         
         public Trigger(short xPos, short yPos) : base(xPos, yPos)
         {
-
+            rawDataOrig = new byte[0x10];
+            rawData = new byte[0x10];
+            Buffer.BlockCopy(BitConverter.GetBytes(xPos), 0, rawData, 0, 2);
+            Buffer.BlockCopy(BitConverter.GetBytes(yPos), 0, rawData, 2, 2);
         }
         
         public Trigger(int offset, GBAROM ROM) : base(offset, ROM)
         {
-
+            rawDataOrig = originROM.GetData(offset, 0x10);
+            rawData = (byte[])rawDataOrig.Clone();
+            LoadDataFromRaw();
         }
 
         public override void LoadDataFromRaw()
@@ -44,7 +50,7 @@ namespace PGMEBackend.Entities
             scriptOffset = BitConverter.ToInt32(rawData, 12) - 0x8000000;
         }
 
-        public override void LoadRawFromData()
+        public override void WriteDataToRaw()
         {
             Buffer.BlockCopy(BitConverter.GetBytes(xPos), 0, rawData, 0, 2);
             Buffer.BlockCopy(BitConverter.GetBytes(yPos), 0, rawData, 2, 2);
@@ -77,6 +83,10 @@ namespace PGMEBackend.Entities
             Program.currentMap.Triggers.RemoveAt(num);
             Program.isEdited = true;
             return true;
+        }
+        public override EntityType GetEnum()
+        {
+            return EntityType.Trigger;
         }
     }
 }

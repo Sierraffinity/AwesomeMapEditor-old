@@ -43,8 +43,7 @@ namespace PGMEBackend
         void LoadMapNodes();
         void ClearMapNodes();
 
-        void LoadMapDropdowns();
-        void LoadMusicDropdowns();
+        void LoadHeaderTabDropdowns();
 
         void QuitApplication(int code);
 
@@ -68,7 +67,7 @@ namespace PGMEBackend
         void AddRecentFile(string fname);
 
         void LoadEntityView(Entity entity);
-        void LoadEntityView(int entityType, int entityNum);
+        void LoadEntityView(Entity.EntityType entityType, int entityNum);
         void MultipleEntitiesSelected();
 
         void FollowWarp(int mapBank, int mapNum, int warpNum);
@@ -76,7 +75,8 @@ namespace PGMEBackend
 
         int LaunchScriptEditor(int scriptOffset);
         
-        Entity CreateNewEntity(int entityType, int x = 0, int y = 0);
+        Entity CreateNewEntity(Entity.EntityType entityType, int x = 0, int y = 0);
+        Entity CreateNewEntity(int x = 0, int y = 0);
         void CreateNewEntity(Entity entity);
         bool DeleteEntity(Entity entity);
     }

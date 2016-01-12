@@ -126,8 +126,6 @@ namespace PGMEBackend.GLControls
                 }
             }
         }
-
-        bool mouseMoved = false;
         
         public void MouseMove(int x, int y)
         {

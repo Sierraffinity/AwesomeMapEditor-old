@@ -31,6 +31,8 @@ namespace PGMEBackend
 {
     public class MapTileset
     {
+        public int offset;
+
         public int isCompressed;
         public int isSecondary;
         public int buffer1;
@@ -47,28 +49,33 @@ namespace PGMEBackend
         
         public Blockset blockSet;
 
-        public MapTileset(int pointer, GBAROM ROM)
+        public GBAROM originROM;
+
+        public MapTileset(int Offset, GBAROM ROM)
         {
-            byte[] temp = ROM.GetData(pointer, 0x4);
+            offset = Offset;
+            originROM = ROM;
+            byte[] temp = originROM.GetData(offset, 0x4);
             isCompressed = temp[0];
             isSecondary = temp[1];
             buffer1 = temp[2];
             buffer2 = temp[3];
-            imagePointer = ROM.ReadPointer(pointer + 0x4);
-            imagePalsPointer = ROM.ReadPointer(pointer + 0x8);
-            blocksPointer = ROM.ReadPointer(pointer + 0xC);
+            imagePointer = originROM.ReadPointer(offset + 0x4);
+            imagePalsPointer = originROM.ReadPointer(offset + 0x8);
+            blocksPointer = originROM.ReadPointer(offset + 0xC);
+
             if (Program.currentGame.RomType == "FRLG")
             {
-                animationPointer = ROM.ReadPointer(pointer + 0x10);
-                behaviorPointer = ROM.ReadPointer(pointer + 0x14);
+                animationPointer = originROM.ReadPointer(offset + 0x10);
+                behaviorPointer = originROM.ReadPointer(offset + 0x14);
             }
             else if (Program.currentGame.RomType == "E")
             {
-                behaviorPointer = ROM.ReadPointer(pointer + 0x10);
-                animationPointer = ROM.ReadPointer(pointer + 0x14);
+                behaviorPointer = originROM.ReadPointer(offset + 0x10);
+                animationPointer = originROM.ReadPointer(offset + 0x14);
             }
 
-            blockSet = new Blockset(blocksPointer, behaviorPointer, (isSecondary & 1) == 1, Program.ROM);
+            blockSet = new Blockset(blocksPointer, behaviorPointer, (isSecondary & 1) == 1, originROM);
         }
 
         public void Initialize(MapLayout mapLayout)
@@ -108,9 +115,12 @@ namespace PGMEBackend
     public class Blockset
     {
         public Block[] blocks;
+        public GBAROM originROM;
 
         public Blockset(int blocksPointer, int behaviorsPointer,  bool isSecondary, GBAROM ROM)
         {
+            originROM = ROM;
+
             if(!isSecondary)
                 blocks = new Block[Program.currentGame.MainTSBlocks];
             else
@@ -121,9 +131,9 @@ namespace PGMEBackend
                 byte[] rawBehaviorData = null;
                 int isTriple = 0;
                 if (Program.currentGame.RomType == "FRLG")
-                    rawBehaviorData = ROM.GetData(behaviorsPointer + (i * 4), 4);
+                    rawBehaviorData = originROM.GetData(behaviorsPointer + (i * 4), 4);
                 else if (Program.currentGame.RomType == "E")
-                    rawBehaviorData = ROM.GetData(behaviorsPointer + (i * 2), 2);
+                    rawBehaviorData = originROM.GetData(behaviorsPointer + (i * 2), 2);
 
                 Behavior behavior = new Behavior(rawBehaviorData);
                 if (behavior.GetBackground() == 3)
@@ -131,7 +141,7 @@ namespace PGMEBackend
                 else if (behavior.GetBackground() == 4)
                     isTriple = 2;
 
-                byte[] rawTileData = ROM.GetData(blocksPointer + (i * 16) + ((isTriple == 2) ? 8 : 0), ((isTriple == 0) ? 16 : 24));
+                byte[] rawTileData = originROM.GetData(blocksPointer + (i * 16) + ((isTriple == 2) ? 8 : 0), ((isTriple == 0) ? 16 : 24));
 
                 short[] tileData = new short[(int)Math.Ceiling((double)(rawTileData.Length / 2))];
                 Buffer.BlockCopy(rawTileData, 0, tileData, 0, rawTileData.Length);

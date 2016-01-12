@@ -120,7 +120,9 @@ namespace Nintenlord.ROMHacking
 
         public byte[] GetData(int offset, int length)
         {
-            if (length == 0 || offset + length > ROMdata.Length)
+            if (length == 0)
+                return new byte[0];
+            else if (offset + length > ROMdata.Length)
                 length = ROMdata.Length - offset;
             byte[] data = new byte[length];
             Array.Copy(ROMdata, offset, data, 0, length);

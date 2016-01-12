@@ -28,17 +28,23 @@ namespace PGMEBackend.Entities
 
         public NPC() : base()
         {
-
+            rawDataOrig = new byte[0x18];
+            rawData = new byte[0x18];
         }
         
         public NPC(short xPos, short yPos) : base(xPos, yPos)
         {
-
+            rawDataOrig = new byte[0x18];
+            rawData = new byte[0x18];
+            Buffer.BlockCopy(BitConverter.GetBytes(xPos), 0, rawData, 4, 2);
+            Buffer.BlockCopy(BitConverter.GetBytes(yPos), 0, rawData, 6, 2);
         }
         
         public NPC(int offset, GBAROM ROM) : base(offset, ROM)
         {
-
+            rawDataOrig = originROM.GetData(offset, 0x18);
+            rawData = (byte[])rawDataOrig.Clone();
+            LoadDataFromRaw();
         }
 
         public override void LoadDataFromRaw()
@@ -64,7 +70,7 @@ namespace PGMEBackend.Entities
             filler6 = rawData[23];
         }
 
-        public override void LoadRawFromData()
+        public override void WriteDataToRaw()
         {
             rawData[0] = npcNumber;
             rawData[1] = spriteNumber;
@@ -106,6 +112,11 @@ namespace PGMEBackend.Entities
             Program.currentMap.NPCs.RemoveAt(num);
             Program.isEdited = true;
             return true;
+        }
+
+        public override EntityType GetEnum()
+        {
+            return EntityType.NPC;
         }
     }
 }

@@ -385,4 +385,7 @@ Would you like to go to the Settings dialog and choose an editor?</value>
   <data name="NoScriptEditorSpecifiedTitle" xml:space="preserve">
     <value>No Script Editor Chosen</value>
   </data>
+  <data name="UnknownValue" xml:space="preserve">
+    <value>Unknown Value</value>
+  </data>
 </root>

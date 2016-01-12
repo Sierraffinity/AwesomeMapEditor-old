@@ -19,6 +19,7 @@
 
 using Nintenlord.ROMHacking.GBA;
 using OpenTK.Graphics.OpenGL;
+using PGMEBackend.Entities;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -32,44 +33,51 @@ namespace PGMEBackend
 {
     public class Map
     {
-        public string name;
+        public string name
+        {
+            get { return "[" + currentBank.ToString("X2") + ", " + currentMap.ToString("X2") + "] " + Program.mapNames[mapNameIndex].name; }
+        }
 
-        public byte[] rawDataOrig;
-        public byte[] rawData;
+        public byte[] rawHeaderOrig;
+        public byte[] rawHeader;
+        public byte[] rawEntityHeader;
+
         public int offset;
-        public int currentBank;
-        public int currentMap;
+        public byte currentBank;
+        public byte currentMap;
 
         public int mapDataPointer;
         public int eventDataPointer;
         public int mapScriptDataPointer;
         public int connectionsDataPointer;
-        public int musicNumber;
-        public int mapLayoutIndex;
-        public int mapNameIndex;
-        public int visibility;
-        public int weather;
-        public int mapType;
-        public int optionsByte1;
-        public int optionsByte2;
-        public int optionsByte3;
-        public int battleTransition;
+        public short musicNumber;
+        public short mapLayoutIndex;
+        public byte mapNameIndex;
+        public byte visibility;
+        public byte weather;
+        public byte mapType;
+        public byte optionsByte1;
+        public byte optionsByte2;
+        public byte optionsByte3;
+        public byte battleBackground;
 
         public bool showsName;
         public bool canRun;
         public bool canRideBike;
         public bool canEscape;
 
-        public List<Entities.NPC> NPCs;
-        public List<Entities.Warp> Warps;
-        public List<Entities.Trigger> Triggers;
-        public List<Entities.Sign> Signs;
+        public List<NPC> NPCs;
+        public List<Warp> Warps;
+        public List<Trigger> Triggers;
+        public List<Sign> Signs;
 
         public MapLayout layout;
 
+        public GBAROM originROM;
+
         public bool edited
         {
-            get { return !rawDataOrig.SequenceEqual(rawData); }
+            get { return !rawHeaderOrig.SequenceEqual(rawHeader); }
         }
 
         public Map()
@@ -80,13 +88,13 @@ namespace PGMEBackend
         public Map(int Offset, GBAROM ROM, int CurrentBank, int CurrentMap)
         {
             offset = Offset;
-            currentBank = CurrentBank;
-            currentMap = CurrentMap;
-            rawDataOrig = ROM.GetData(offset, 0x1C);
-            rawData = (byte[])rawDataOrig.Clone();
+            originROM = ROM;
+            currentBank = (byte)CurrentBank;
+            currentMap = (byte)CurrentMap;
+            rawHeaderOrig = originROM.GetData(offset, 0x1C);
+            rawHeader = (byte[])rawHeaderOrig.Clone();
 
-            LoadMapHeaderFromRaw(ROM);
-            name = "[" + currentBank.ToString("X2") + ", " + currentMap.ToString("X2") + "] " + Program.mapNames[mapNameIndex].Name;
+            LoadMapHeaderFromRaw();
 
             if (Program.mapLayouts.ContainsKey(mapLayoutIndex))
                 layout = Program.mapLayouts[mapLayoutIndex];
@@ -98,6 +106,20 @@ namespace PGMEBackend
                     Program.maxLayout = mapLayoutIndex;
                 }
             }
+        }
+
+        public void Revert()
+        {
+            rawHeader = (byte[])rawHeaderOrig.Clone();
+            LoadMapHeaderFromRaw();
+            LoadEntitiesFromRaw();
+        }
+
+        public void Save()
+        {
+            WriteMapHeaderToRaw();
+            WriteEntitiesToRaw();
+            rawHeaderOrig = (byte[])rawHeader.Clone();
         }
 
         [Flags]
@@ -112,22 +134,22 @@ namespace PGMEBackend
             None = 0x0000, CanRideBike = 0x0001, CanEscape = 0x0002, CanRun = 0x0004, ShowsName = 0x0008
         }
 
-        public void LoadMapHeaderFromRaw(GBAROM ROM)
+        public void LoadMapHeaderFromRaw()
         {
-            mapDataPointer = BitConverter.ToInt32(rawData, 0x0) - 0x8000000;
-            eventDataPointer = BitConverter.ToInt32(rawData, 0x4) - 0x8000000;
-            mapScriptDataPointer = BitConverter.ToInt32(rawData, 0x8) - 0x8000000;
-            connectionsDataPointer = BitConverter.ToInt32(rawData, 0xC) - 0x8000000;
-            musicNumber = BitConverter.ToInt16(rawData, 0x10);
-            mapLayoutIndex = BitConverter.ToInt16(rawData, 0x12);
-            mapNameIndex = rawData[0x14];
-            visibility = rawData[0x15];
-            weather = rawData[0x16];
-            mapType = rawData[0x17];
-            optionsByte1 = rawData[0x18];
-            optionsByte2 = rawData[0x19];
-            optionsByte3 = rawData[0x1A];
-            battleTransition = rawData[0x1B];
+            mapDataPointer = BitConverter.ToInt32(rawHeader, 0x0) - 0x8000000;
+            eventDataPointer = BitConverter.ToInt32(rawHeader, 0x4) - 0x8000000;
+            mapScriptDataPointer = BitConverter.ToInt32(rawHeader, 0x8) - 0x8000000;
+            connectionsDataPointer = BitConverter.ToInt32(rawHeader, 0xC) - 0x8000000;
+            musicNumber = BitConverter.ToInt16(rawHeader, 0x10);
+            mapLayoutIndex = BitConverter.ToInt16(rawHeader, 0x12);
+            mapNameIndex = rawHeader[0x14];
+            visibility = rawHeader[0x15];
+            weather = rawHeader[0x16];
+            mapType = rawHeader[0x17];
+            optionsByte1 = rawHeader[0x18];
+            optionsByte2 = rawHeader[0x19];
+            optionsByte3 = rawHeader[0x1A];
+            battleBackground = rawHeader[0x1B];
             if (Program.currentGame.RomType == "FRLG")
             {
                 showsName = (optionsByte2 & (int)FRLGOptions.ShowsName) == (int)FRLGOptions.ShowsName;
@@ -143,69 +165,96 @@ namespace PGMEBackend
                 canEscape = (optionsByte3 & (int)EOptions.CanEscape) == (int)EOptions.CanEscape;
             }
 
-            LoadEntitiesFromRaw(ROM);
+            LoadEntitiesFromRaw();
         }
 
-        void LoadEntitiesFromRaw(GBAROM ROM)
+        public void LoadEntitiesFromRaw()
         {
-            byte[] entityRaws = ROM.GetData(eventDataPointer, 0x14);
+            rawEntityHeader = originROM.GetData(eventDataPointer, 0x14);
 
-            NPCs = new List<Entities.NPC>();
-            int npcOffset = BitConverter.ToInt32(entityRaws, 0x4) - 0x8000000;
-            for (int i = 0; i < entityRaws[0]; i++)
+            NPCs = new List<NPC>();
+            int npcOffset = BitConverter.ToInt32(rawEntityHeader, 0x4) - 0x8000000;
+            for (int i = 0; i < rawEntityHeader[0]; i++)
             {
-                NPCs.Add(new Entities.NPC(npcOffset + i * 0x18, ROM));
+                NPCs.Add(new NPC(npcOffset + i * 0x18, originROM));
             }
 
-            Warps = new List<Entities.Warp>();
-            int warpOffset = BitConverter.ToInt32(entityRaws, 0x8) - 0x8000000;
-            for (int i = 0; i < entityRaws[1]; i++)
+            Warps = new List<Warp>();
+            int warpOffset = BitConverter.ToInt32(rawEntityHeader, 0x8) - 0x8000000;
+            for (int i = 0; i < rawEntityHeader[1]; i++)
             {
-                Warps.Add(new Entities.Warp(warpOffset + i * 0x8, ROM));
+                Warps.Add(new Warp(warpOffset + i * 0x8, originROM));
             }
 
-            Triggers = new List<Entities.Trigger>();
-            int triggerOffset = BitConverter.ToInt32(entityRaws, 0xC) - 0x8000000;
-            for (int i = 0; i < entityRaws[2]; i++)
+            Triggers = new List<Trigger>();
+            int triggerOffset = BitConverter.ToInt32(rawEntityHeader, 0xC) - 0x8000000;
+            for (int i = 0; i < rawEntityHeader[2]; i++)
             {
-                Triggers.Add(new Entities.Trigger(triggerOffset + i * 0x10, ROM));
+                Triggers.Add(new Trigger(triggerOffset + i * 0x10, originROM));
             }
 
-            Signs = new List<Entities.Sign>();
-            int signOffset = BitConverter.ToInt32(entityRaws, 0x10) - 0x8000000;
-            for (int i = 0; i < entityRaws[3]; i++)
+            Signs = new List<Sign>();
+            int signOffset = BitConverter.ToInt32(rawEntityHeader, 0x10) - 0x8000000;
+            for (int i = 0; i < rawEntityHeader[3]; i++)
             {
-                Signs.Add(new Entities.Sign(signOffset + i * 0xC, ROM));
+                Signs.Add(new Sign(signOffset + i * 0xC, originROM));
             }
         }
 
-        public void LoadRawFromMapHeader()
+        public void WriteMapHeaderToRaw()
         {
-            Buffer.BlockCopy(BitConverter.GetBytes(mapDataPointer + 0x8000000), 0, rawData, 0x0, 4);
-            Buffer.BlockCopy(BitConverter.GetBytes(eventDataPointer + 0x8000000), 0, rawData, 0x4, 4);
-            Buffer.BlockCopy(BitConverter.GetBytes(mapScriptDataPointer + 0x8000000), 0, rawData, 0x8, 4);
-            Buffer.BlockCopy(BitConverter.GetBytes(connectionsDataPointer + 0x8000000), 0, rawData, 0xC, 4);
-            Buffer.BlockCopy(BitConverter.GetBytes(musicNumber), 0, rawData, 0x10, 2);
-            Buffer.BlockCopy(BitConverter.GetBytes(mapLayoutIndex), 0, rawData, 0x12, 2);
-            rawData[0x14] = (byte)mapNameIndex;
-            rawData[0x15] = (byte)visibility;
-            rawData[0x16] = (byte)weather;
-            rawData[0x17] = (byte)mapType;
+            Buffer.BlockCopy(BitConverter.GetBytes(mapDataPointer + 0x8000000), 0, rawHeader, 0x0, 4);
+            Buffer.BlockCopy(BitConverter.GetBytes(eventDataPointer + 0x8000000), 0, rawHeader, 0x4, 4);
+            Buffer.BlockCopy(BitConverter.GetBytes(mapScriptDataPointer + 0x8000000), 0, rawHeader, 0x8, 4);
+            Buffer.BlockCopy(BitConverter.GetBytes(connectionsDataPointer + 0x8000000), 0, rawHeader, 0xC, 4);
+            Buffer.BlockCopy(BitConverter.GetBytes(musicNumber), 0, rawHeader, 0x10, 2);
+            Buffer.BlockCopy(BitConverter.GetBytes(mapLayoutIndex), 0, rawHeader, 0x12, 2);
+            rawHeader[0x14] = mapNameIndex;
+            rawHeader[0x15] = visibility;
+            rawHeader[0x16] = weather;
+            rawHeader[0x17] = mapType;
             if (Program.currentGame.RomType == "FRLG")
             {
-                optionsByte1 = (int)(canRideBike ? FRLGOptions.CanRideBike : FRLGOptions.None) | (optionsByte1 & ~((int)FRLGOptions.CanRideBike));
-                optionsByte2 = (int)((showsName ? FRLGOptions.ShowsName : FRLGOptions.None) | (canRun ? FRLGOptions.CanRun : FRLGOptions.None) | (canEscape ? FRLGOptions.CanEscape : FRLGOptions.None)) | (optionsByte2 & ~(int)(FRLGOptions.ShowsName | FRLGOptions.CanRun | FRLGOptions.CanEscape));
+                optionsByte1 = (byte)((int)(canRideBike ? FRLGOptions.CanRideBike : FRLGOptions.None) | (optionsByte1 & ~((int)FRLGOptions.CanRideBike)));
+                optionsByte2 = (byte)((int)((showsName ? FRLGOptions.ShowsName : FRLGOptions.None) | (canRun ? FRLGOptions.CanRun : FRLGOptions.None) | (canEscape ? FRLGOptions.CanEscape : FRLGOptions.None)) | (optionsByte2 & ~(int)(FRLGOptions.ShowsName | FRLGOptions.CanRun | FRLGOptions.CanEscape)));
             }
             else if (Program.currentGame.RomType == "E")
             {
-                optionsByte3 = (int)((canRideBike ? EOptions.CanRideBike : EOptions.None) | (showsName ? EOptions.ShowsName : EOptions.None) | (canRun ? EOptions.CanRun : EOptions.None) | (canEscape ? EOptions.CanEscape : EOptions.None)) | (optionsByte3 & ~(int)(EOptions.CanRideBike | EOptions.ShowsName | EOptions.CanRun | EOptions.CanEscape));
+                optionsByte3 = (byte)((int)((canRideBike ? EOptions.CanRideBike : EOptions.None) | (showsName ? EOptions.ShowsName : EOptions.None) | (canRun ? EOptions.CanRun : EOptions.None) | (canEscape ? EOptions.CanEscape : EOptions.None)) | (optionsByte3 & ~(int)(EOptions.CanRideBike | EOptions.ShowsName | EOptions.CanRun | EOptions.CanEscape)));
             }
-            rawData[0x18] = (byte)optionsByte1;
-            rawData[0x19] = (byte)optionsByte2;
-            rawData[0x1A] = (byte)optionsByte3;
-            rawData[0x1B] = (byte)battleTransition;
+            rawHeader[0x18] = optionsByte1;
+            rawHeader[0x19] = optionsByte2;
+            rawHeader[0x1A] = optionsByte3;
+            rawHeader[0x1B] = battleBackground;
         }
 
+        public void WriteEntitiesToRaw()
+        {
+            rawEntityHeader[0] = (byte)NPCs.Count;
+            rawEntityHeader[1] = (byte)Warps.Count;
+            rawEntityHeader[2] = (byte)Triggers.Count;
+            rawEntityHeader[3] = (byte)Signs.Count;
+
+            foreach (NPC npc in NPCs)
+            {
+               npc.WriteDataToRaw();
+            }
+
+            foreach (Warp warp in Warps)
+            {
+                warp.WriteDataToRaw();
+            }
+
+            foreach (Trigger trigger in Triggers)
+            {
+                trigger.WriteDataToRaw();
+            }
+
+            foreach (Sign sign in Signs)
+            {
+                sign.WriteDataToRaw();
+            }
+        }
     }
 
     class MapBank
@@ -229,20 +278,29 @@ namespace PGMEBackend
 
     class MapName
     {
-        public string Name;
+        public string name;
         public MapName(string mapName)
         {
-            Name = mapName;
+            name = mapName;
+        }
+
+        public override string ToString()
+        {
+            return name;
         }
     }
 
     public class MapLayout
     {
-        public byte[] rawDataOrig;
-        public byte[] rawData;
+        public byte[] rawHeaderOrig;
+        public byte[] rawHeader;
 
-        public string name;
-        public int layoutIndex;
+        public string name
+        {
+            get { return "[" + layoutIndex.ToString("X4") + "] " + Program.rmInternalStrings.GetString("Layout"); }
+        }
+
+        public short layoutIndex;
 
         public int layoutWidth;
         public int layoutHeight;
@@ -252,24 +310,28 @@ namespace PGMEBackend
         public int globalTilesetPointer;
         public int localTilesetPointer;
 
-        public int borderWidth;
-        public int borderHeight;
+        public byte borderWidth;
+        public byte borderHeight;
 
-        public int buffer1;
-        public int buffer2;
+        public byte buffer1;
+        public byte buffer2;
 
         public MapTileset globalTileset;
         public MapTileset localTileset;
 
+        public byte[] rawLayoutOrig;
         public byte[] rawLayout;
         public short[] layout;
 
+        public byte[] rawBorderOrig;
         public byte[] rawBorder;
         public short[] border;
 
+        public GBAROM originROM;
+
         public bool edited
         {
-            get { return !rawDataOrig.SequenceEqual(rawData); }
+            get { return !rawHeaderOrig.SequenceEqual(rawHeader) || !rawLayoutOrig.SequenceEqual(rawLayout) || !rawBorderOrig.SequenceEqual(rawBorder); }
         }
 
         public MapLayout()
@@ -279,33 +341,71 @@ namespace PGMEBackend
 
         public MapLayout(int index, int offset, GBAROM ROM)
         {
-            layoutIndex = index;
-            name = "[" + layoutIndex.ToString("X4") + "] " + Program.rmInternalStrings.GetString("Layout");
+            layoutIndex = (byte)index;
+            originROM = ROM;
             if (Program.currentGame.RomType == "FRLG")
-                rawDataOrig = ROM.GetData(offset, 0x1C);
+                rawHeaderOrig = originROM.GetData(offset, 0x1C);
             else
-                rawDataOrig = ROM.GetData(offset, 0x18);
-            rawData = (byte[])rawDataOrig.Clone();
-            LoadLayoutHeaderFromRaw(ROM);
+                rawHeaderOrig = originROM.GetData(offset, 0x18);
+            rawHeader = (byte[])rawHeaderOrig.Clone();
+            LoadLayoutHeaderFromRaw();
+
+            if (borderBlocksPointer > 0 && borderBlocksPointer < Program.ROM.Length)
+            {
+                rawBorderOrig = originROM.GetData(borderBlocksPointer, borderWidth * borderHeight * 4);
+                rawBorder = (byte[])rawBorderOrig.Clone();
+                LoadBorderFromRaw();
+            }
+
+            if (mapDataPointer > 0 && mapDataPointer < Program.ROM.Length)
+            {
+                rawLayoutOrig = originROM.GetData(mapDataPointer, layoutWidth * layoutHeight * 4);
+                rawLayout = (byte[])rawLayoutOrig.Clone();
+                LoadLayoutFromRaw();
+            }
+        }
+
+        public void Revert()
+        {
+            rawHeader = (byte[])rawHeaderOrig.Clone();
+            rawBorder = (byte[])rawBorderOrig.Clone();
+            rawLayout = (byte[])rawLayoutOrig.Clone();
+            LoadLayoutHeaderFromRaw();
+            LoadLayoutFromRaw();
+            LoadBorderFromRaw();
+        }
+
+        public void Save()
+        {
+            WriteLayoutHeaderToRaw();
+            WriteLayoutToRaw();
+            WriteBorderToRaw();
+            rawHeaderOrig = (byte[])rawHeader.Clone();
+            rawBorderOrig = (byte[])rawBorder.Clone();
+            rawLayoutOrig = (byte[])rawLayout.Clone();
         }
 
         public void LoadLayoutFromRaw()
         {
+            layout = new short[rawLayout.Length / 2];
             Buffer.BlockCopy(rawLayout, 0, layout, 0, rawLayout.Length);
         }
 
         public void WriteLayoutToRaw()
         {
+            rawLayout = new byte[layout.Length * 2];
             Buffer.BlockCopy(layout, 0, rawLayout, 0, rawLayout.Length);
         }
 
         public void LoadBorderFromRaw()
         {
+            border = new short[rawBorder.Length / 2];
             Buffer.BlockCopy(rawBorder, 0, border, 0, rawBorder.Length);
         }
 
         public void WriteBorderToRaw()
         {
+            rawBorder = new byte[border.Length * 2];
             Buffer.BlockCopy(border, 0, rawBorder, 0, rawBorder.Length);
         }
 
@@ -322,20 +422,20 @@ namespace PGMEBackend
             }
         }
 
-        public void LoadLayoutHeaderFromRaw(GBAROM ROM)
+        public void LoadLayoutHeaderFromRaw()
         {
-            layoutWidth = BitConverter.ToInt32(rawData, 0);
-            layoutHeight = BitConverter.ToInt32(rawData, 4);
-            borderBlocksPointer = BitConverter.ToInt32(rawData, 0x8) - 0x8000000;
-            mapDataPointer = BitConverter.ToInt32(rawData, 0xC) - 0x8000000;
-            globalTilesetPointer = BitConverter.ToInt32(rawData, 0x10) - 0x8000000;
-            localTilesetPointer = BitConverter.ToInt32(rawData, 0x14) - 0x8000000;
+            layoutWidth = BitConverter.ToInt32(rawHeader, 0);
+            layoutHeight = BitConverter.ToInt32(rawHeader, 4);
+            borderBlocksPointer = BitConverter.ToInt32(rawHeader, 0x8) - 0x8000000;
+            mapDataPointer = BitConverter.ToInt32(rawHeader, 0xC) - 0x8000000;
+            globalTilesetPointer = BitConverter.ToInt32(rawHeader, 0x10) - 0x8000000;
+            localTilesetPointer = BitConverter.ToInt32(rawHeader, 0x14) - 0x8000000;
             if (Program.currentGame.RomType == "FRLG")
             {
-                borderWidth = (rawData[0x18] <= 8) ? rawData[0x18] : 8;
-                borderHeight = (rawData[0x19] <= 8) ? rawData[0x19] : 8;
-                buffer1 = rawData[0x1A];
-                buffer2 = rawData[0x1B];
+                borderWidth = (byte)((rawHeader[0x18] <= 8) ? rawHeader[0x18] : 8);
+                borderHeight = (byte)((rawHeader[0x19] <= 8) ? rawHeader[0x19] : 8);
+                buffer1 = rawHeader[0x1A];
+                buffer2 = rawHeader[0x1B];
             }
             else
             {
@@ -345,26 +445,12 @@ namespace PGMEBackend
                 buffer2 = 0;
             }
 
-            if (borderBlocksPointer > 0 && borderBlocksPointer < Program.ROM.Length)
-            {
-                rawBorder = ROM.GetData(borderBlocksPointer, borderWidth * borderHeight * 4);
-                border = new short[rawBorder.Length / 2];
-                LoadBorderFromRaw();
-            }
-
-            if (mapDataPointer > 0 && mapDataPointer < Program.ROM.Length)
-            {
-                rawLayout = ROM.GetData(mapDataPointer, layoutWidth * layoutHeight * 4);
-                layout = new short[rawLayout.Length / 2];
-                LoadLayoutFromRaw();
-            }
-
             try
             {
                 if (globalTilesetPointer != -0x8000000)
                 {
                     if (!Program.mapTilesets.ContainsKey(globalTilesetPointer))
-                        Program.mapTilesets.Add(globalTilesetPointer, new MapTileset(globalTilesetPointer, ROM));
+                        Program.mapTilesets.Add(globalTilesetPointer, new MapTileset(globalTilesetPointer, originROM));
                     globalTileset = Program.mapTilesets[globalTilesetPointer];
                 }
             }
@@ -377,7 +463,7 @@ namespace PGMEBackend
                 if (localTilesetPointer != -0x8000000)
                 {
                     if (!Program.mapTilesets.ContainsKey(localTilesetPointer))
-                        Program.mapTilesets.Add(localTilesetPointer, new MapTileset(localTilesetPointer, ROM));
+                        Program.mapTilesets.Add(localTilesetPointer, new MapTileset(localTilesetPointer, originROM));
                     localTileset = Program.mapTilesets[localTilesetPointer];
                 }
             }
@@ -387,21 +473,42 @@ namespace PGMEBackend
             }
         }
 
-        public void LoadRawFromLayoutHeader()
+        public void WriteLayoutHeaderToRaw()
         {
-            Buffer.BlockCopy(BitConverter.GetBytes(layoutWidth), 0, rawData, 0x0, 4);
-            Buffer.BlockCopy(BitConverter.GetBytes(layoutHeight), 0, rawData, 0x4, 4);
-            Buffer.BlockCopy(BitConverter.GetBytes(borderBlocksPointer + 0x8000000), 0, rawData, 0x8, 4);
-            Buffer.BlockCopy(BitConverter.GetBytes(mapDataPointer + 0x8000000), 0, rawData, 0xC, 4);
-            Buffer.BlockCopy(BitConverter.GetBytes(globalTilesetPointer + 0x8000000), 0, rawData, 0x10, 4);
-            Buffer.BlockCopy(BitConverter.GetBytes(localTilesetPointer + 0x8000000), 0, rawData, 0x14, 4);
+            if (layoutWidth != BitConverter.ToInt32(rawHeader, 0) || layoutHeight != BitConverter.ToInt32(rawHeader, 4))
+                ResizeLayout(layoutWidth, layoutHeight);
+            Buffer.BlockCopy(BitConverter.GetBytes(layoutWidth), 0, rawHeader, 0x0, 4);
+            Buffer.BlockCopy(BitConverter.GetBytes(layoutHeight), 0, rawHeader, 0x4, 4);
+            Buffer.BlockCopy(BitConverter.GetBytes(borderBlocksPointer + 0x8000000), 0, rawHeader, 0x8, 4);
+            Buffer.BlockCopy(BitConverter.GetBytes(mapDataPointer + 0x8000000), 0, rawHeader, 0xC, 4);
+            Buffer.BlockCopy(BitConverter.GetBytes(globalTilesetPointer + 0x8000000), 0, rawHeader, 0x10, 4);
+            Buffer.BlockCopy(BitConverter.GetBytes(localTilesetPointer + 0x8000000), 0, rawHeader, 0x14, 4);
             if (Program.currentGame.RomType == "FRLG")
             {
-                rawData[0x18] = (byte)borderWidth;
-                rawData[0x19] = (byte)borderHeight;
-                rawData[0x1A] = (byte)buffer1;
-                rawData[0x1B] = (byte)buffer2;
+                rawHeader[0x18] = borderWidth;
+                rawHeader[0x19] = borderHeight;
+                rawHeader[0x1A] = buffer1;
+                rawHeader[0x1B] = buffer2;
             }
+        }
+
+        public void ResizeLayout(int newWidth, int newHeight)
+        {
+            short[] newLayout = new short[newWidth * newHeight];
+            for(int i = 0; i < (newHeight < BitConverter.ToInt32(rawHeader, 4) ? newHeight : BitConverter.ToInt32(rawHeader, 4)); i++)
+            {
+                for (int j = 0; j < (newWidth < BitConverter.ToInt32(rawHeader, 0) ? newWidth : BitConverter.ToInt32(rawHeader, 0)); j++)
+                {
+                    newLayout[j + (i * newWidth)] = layout[j + (i * BitConverter.ToInt32(rawHeader, 0))];
+                }
+            }
+
+            layout = newLayout;
+            WriteLayoutToRaw();
+            Program.mainGUI.SetGLMapEditorSize(newWidth * 16, newHeight * 16);
+            Program.mainGUI.SetGLEntityEditorSize(newWidth * 16, newHeight * 16);
+            Program.isEdited = true;
+            drawTiles = null;
         }
 
         public class VisualMapTile {
