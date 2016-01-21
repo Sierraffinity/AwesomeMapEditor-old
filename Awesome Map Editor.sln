@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGMEWindowsUI", "PGMEWindowsUI\PGMEWindowsUI.csproj", "{D2052647-5C6A-44CF-A54B-BFB9A83CA6A0}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -36,6 +36,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Be.Windows.Forms.HexBox", "Dependencies\Be.HexEditor-1.6.0\sources\Be.Windows.Forms.HexBox\Be.Windows.Forms.HexBox.csproj", "{26C5F25F-B450-4CAF-AD8B-B8D11AE73457}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SplitButton", "Dependencies\SplitButton\SplitButton.csproj", "{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphicsTest", "GraphicsTest\GraphicsTest.csproj", "{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -421,6 +423,46 @@ Global
 		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Release-Unsigned|Any CPU.Build.0 = Release|Any CPU
 		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Release-Unsigned|x86.ActiveCfg = Release|Any CPU
 		{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}.Release-Unsigned|x86.Build.0 = Release|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Debug|x86.Build.0 = Debug|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Debug-UnitySubset-v35|Any CPU.ActiveCfg = Debug|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Debug-UnitySubset-v35|Any CPU.Build.0 = Debug|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Debug-UnitySubset-v35|x86.ActiveCfg = Debug|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Debug-UnitySubset-v35|x86.Build.0 = Debug|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Documentation|Any CPU.ActiveCfg = Debug|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Documentation|Any CPU.Build.0 = Debug|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Documentation|x86.ActiveCfg = Debug|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Documentation|x86.Build.0 = Debug|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Nsis|Any CPU.ActiveCfg = Release|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Nsis|Any CPU.Build.0 = Release|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Nsis|x86.ActiveCfg = Release|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Nsis|x86.Build.0 = Release|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Release|x86.ActiveCfg = Release|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Release|x86.Build.0 = Release|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Release-Portable-Signed|Any CPU.ActiveCfg = Release|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Release-Portable-Signed|Any CPU.Build.0 = Release|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Release-Portable-Signed|x86.ActiveCfg = Release|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Release-Portable-Signed|x86.Build.0 = Release|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Release-Portable-Unsigned|Any CPU.ActiveCfg = Release|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Release-Portable-Unsigned|Any CPU.Build.0 = Release|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Release-Portable-Unsigned|x86.ActiveCfg = Release|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Release-Portable-Unsigned|x86.Build.0 = Release|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Release-Signed|Any CPU.ActiveCfg = Release|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Release-Signed|Any CPU.Build.0 = Release|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Release-Signed|x86.ActiveCfg = Release|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Release-Signed|x86.Build.0 = Release|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Release-UnitySubset-v35|Any CPU.ActiveCfg = Release|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Release-UnitySubset-v35|Any CPU.Build.0 = Release|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Release-UnitySubset-v35|x86.ActiveCfg = Release|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Release-UnitySubset-v35|x86.Build.0 = Release|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Release-Unsigned|Any CPU.ActiveCfg = Release|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Release-Unsigned|Any CPU.Build.0 = Release|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Release-Unsigned|x86.ActiveCfg = Release|Any CPU
+		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Release-Unsigned|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

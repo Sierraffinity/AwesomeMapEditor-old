@@ -52,6 +52,55 @@ namespace PGMEBackend
             }
         }
 
+        public void SetTexture(Texture2D tex)
+        {
+            tex.Width = Width;
+            tex.Height = Height;
+            _colTex = null;
+
+            GL.Ext.BindFramebuffer(FramebufferTarget.FramebufferExt, FBOHandle);
+            GL.Ext.FramebufferTexture2D(FramebufferTarget.FramebufferExt, FramebufferAttachment.ColorAttachment0Ext, TextureTarget.Texture2D, tex, 0);
+            GL.Ext.BindFramebuffer(FramebufferTarget.FramebufferExt, 0);
+            //*/
+            _colTex = null;
+            ColorTexture.Equals(null);
+        }
+
+        public Texture2D ReleaseTexture()
+        {
+            var old = ColorTexture;
+            //*
+            int _colTexID;
+
+            GL.GenTextures(1, out _colTexID);
+
+            if (_colTexID == 0)
+                throw new Exception("ERROR");
+
+            GL.BindTexture(TextureTarget.Texture2D, _colTexID);
+            GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)TextureMinFilter.Nearest);
+            GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)TextureMagFilter.Nearest);
+            GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapS, (int)TextureWrapMode.Clamp);
+            GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapT, (int)TextureWrapMode.Clamp);
+            GL.TexImage2D(TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba8, Width, Height, 0, PixelFormat.Rgba, PixelType.UnsignedByte, IntPtr.Zero);
+
+            ColorTextureID = _colTexID;
+
+            var err = GL.GetError();
+            if (err != ErrorCode.NoError)
+            {
+                System.Windows.Forms.MessageBox.Show(err.ToString());
+            }
+
+            GL.Ext.BindFramebuffer(FramebufferTarget.FramebufferExt, FBOHandle);
+            GL.Ext.FramebufferTexture2D(FramebufferTarget.FramebufferExt, FramebufferAttachment.ColorAttachment0Ext, TextureTarget.Texture2D, _colTexID, 0);
+            GL.Ext.BindFramebuffer(FramebufferTarget.FramebufferExt, 0);
+            //*/
+            _colTex = null;
+            ColorTexture.Equals(null);
+            return old;
+        }
+
         private int _width = 2;
         private int _height = 2;
         public int Width {

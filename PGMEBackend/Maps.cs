@@ -532,6 +532,7 @@ namespace PGMEBackend
 
         public List<VisualMapTile> drawTiles;
 
+        // TODO: Refactor to utilize FBO thing
         public void RefreshChunks(Spritesheet[] globalSheets, Spritesheet[] localSheets, int xPos, int yPos, double scale)
         {
             if (drawTiles == null || drawTiles.Count == 0)
