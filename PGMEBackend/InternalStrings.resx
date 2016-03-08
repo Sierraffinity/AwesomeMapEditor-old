@@ -388,4 +388,22 @@ Would you like to go to the Settings dialog and choose an editor?</value>
   <data name="UnknownValue" xml:space="preserve">
     <value>Unknown Value</value>
   </data>
+  <data name="NPCHeight" xml:space="preserve">
+    <value>Height:</value>
+  </data>
+  <data name="NPCTrainer" xml:space="preserve">
+    <value>Trainer:</value>
+  </data>
+  <data name="NPCViewRadius" xml:space="preserve">
+    <value>View Radius:</value>
+  </data>
+  <data name="ReplacementNPCMap" xml:space="preserve">
+    <value>Replacement NPC Map:</value>
+  </data>
+  <data name="ReplacementNPCMapBank" xml:space="preserve">
+    <value>Replacement NPC Map Bank:</value>
+  </data>
+  <data name="ReplacementNPCNumber" xml:space="preserve">
+    <value>Replacement NPC Number:</value>
+  </data>
 </root>

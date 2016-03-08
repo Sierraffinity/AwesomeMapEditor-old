@@ -118,6 +118,8 @@ namespace PGMEBackend
 
             if (OpenROM(filename) == 0)
             {
+                isEdited = false;
+
                 mainGUI.AddRecentFile(filename);
                 currentFilePath = filename;
                 currentFileName = Path.GetFileName(filename);
@@ -145,7 +147,7 @@ namespace PGMEBackend
                 loadTime.Stop();
 
                 TimeSpan ts = loadTime.Elapsed;
-                string elapsedTime = ts.Seconds + "." + (ts.Milliseconds / 10);
+                string elapsedTime = ts.Seconds + "." + ts.Milliseconds;
 
                 mainGUI.SetTitleText(programTitle + " | " + currentFileName);
                 mainGUI.SetLoadingStatus(string.Format(rmInternalStrings.GetString("ROMLoadedStatus"), currentFileName, elapsedTime));
@@ -268,7 +270,7 @@ namespace PGMEBackend
             {
                 int pointer = ROM.ReadPointer(layouts);
                 byte[] sequence = ROM.GetData(layouts, 0x4);
-                if (pointer != 0 && pointer < 0x200000 && pointer > 0x2000000)
+                if (pointer != 0 && (pointer < 0x200000 || pointer > 0x2000000))
                     break;
                 if (sequence.SequenceEqual(new byte[] { 0xFF, 0xFF, 0xFF, 0xFF }))
                     break;

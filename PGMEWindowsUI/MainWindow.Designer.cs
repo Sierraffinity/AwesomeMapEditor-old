@@ -63,8 +63,6 @@ namespace PGMEWindowsUI
             this.borderBlocksBox = new System.Windows.Forms.GroupBox();
             this.glControlBorderBlocks = new OpenTK.GLControl();
             this.mapEditorPanel = new System.Windows.Forms.Panel();
-            this.mapPaintPanel = new PGMEWindowsUI.GLPanel();
-            this.glControlMapEditor = new OpenTK.GLControl();
             this.tsMapEditorTab = new System.Windows.Forms.ToolStrip();
             this.cboTimeofDayMap = new System.Windows.Forms.ToolStripComboBox();
             this.mapXPosLabel = new System.Windows.Forms.ToolStripLabel();
@@ -77,16 +75,93 @@ namespace PGMEWindowsUI
             this.toolStripShowGrid = new System.Windows.Forms.ToolStripButton();
             this.paintTabControl = new System.Windows.Forms.TabControl();
             this.blocksTabPage = new System.Windows.Forms.TabPage();
-            this.blockPaintPanel = new PGMEWindowsUI.GLPanel();
-            this.glControlBlocks = new OpenTK.GLControl();
             this.movementTabPage = new System.Windows.Forms.TabPage();
-            this.movementPaintPanel = new PGMEWindowsUI.GLPanel();
-            this.glControlPermsChooser = new OpenTK.GLControl();
             this.entitiesTabPage = new System.Windows.Forms.TabPage();
             this.panelEntityData = new System.Windows.Forms.Panel();
             this.btnCreateNewEntity = new System.Windows.Forms.Button();
             this.cboEventTypes = new System.Windows.Forms.ComboBox();
             this.nudEntityNum = new System.Windows.Forms.NumericUpDown();
+            this.panelSignEvent = new System.Windows.Forms.Panel();
+            this.labelSignOffset = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.hexViewerRawSign = new Be.Windows.Forms.HexBox();
+            this.hexPrefixBox38 = new System.Windows.Forms.TextBox();
+            this.hexNumberBoxSignType = new System.Windows.Forms.TextBox();
+            this.hexPrefixBox37 = new System.Windows.Forms.TextBox();
+            this.hexNumberBoxSignHeight = new System.Windows.Forms.TextBox();
+            this.hexPrefixBox39 = new System.Windows.Forms.TextBox();
+            this.hexNumberBoxSignFiller1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.hexPrefixBox40 = new System.Windows.Forms.TextBox();
+            this.hexPrefixBox35 = new System.Windows.Forms.TextBox();
+            this.hexPrefixBox41 = new System.Windows.Forms.TextBox();
+            this.hexPrefixBox36 = new System.Windows.Forms.TextBox();
+            this.btnDeleteSign = new System.Windows.Forms.Button();
+            this.btnSignOpenScript = new System.Windows.Forms.Button();
+            this.hexNumberBoxSignScriptOffset = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.hexNumberBoxSignFiller2 = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.cbSignType = new System.Windows.Forms.ComboBox();
+            this.cbSignHeight = new System.Windows.Forms.ComboBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.labelSignPosition = new System.Windows.Forms.Label();
+            this.hexNumberBoxSignYPos = new System.Windows.Forms.TextBox();
+            this.hexNumberBoxSignXPos = new System.Windows.Forms.TextBox();
+            this.panelScriptEvent = new System.Windows.Forms.Panel();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.hexNumberBoxTriggerHeight = new System.Windows.Forms.TextBox();
+            this.textBox79 = new System.Windows.Forms.TextBox();
+            this.textBox78 = new System.Windows.Forms.TextBox();
+            this.textBox77 = new System.Windows.Forms.TextBox();
+            this.textBox64 = new System.Windows.Forms.TextBox();
+            this.textBox62 = new System.Windows.Forms.TextBox();
+            this.textBox61 = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.hexNumberBoxTriggerFiller2 = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.hexNumberBoxTriggerFiller1 = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox75 = new System.Windows.Forms.TextBox();
+            this.textBox65 = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.hexNumberBoxTriggerVariable = new System.Windows.Forms.TextBox();
+            this.hexNumberBoxTriggerValue = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.btnDeleteTrigger = new System.Windows.Forms.Button();
+            this.hexNumberBoxTriggerScriptOffset = new System.Windows.Forms.TextBox();
+            this.btnTriggerOpenScript = new System.Windows.Forms.Button();
+            this.hexNumberBoxTriggerFiller3 = new System.Windows.Forms.TextBox();
+            this.cbTriggerHeight = new System.Windows.Forms.ComboBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.labelTriggerPosition = new System.Windows.Forms.Label();
+            this.hexNumberBoxTriggerYPos = new System.Windows.Forms.TextBox();
+            this.hexNumberBoxTriggerXPos = new System.Windows.Forms.TextBox();
+            this.panelWarpEvent = new System.Windows.Forms.Panel();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.hexNumberBoxWarpHeight = new System.Windows.Forms.TextBox();
+            this.textBox94 = new System.Windows.Forms.TextBox();
+            this.textBox93 = new System.Windows.Forms.TextBox();
+            this.gbWarpDestination = new System.Windows.Forms.GroupBox();
+            this.textBox86 = new System.Windows.Forms.TextBox();
+            this.textBox81 = new System.Windows.Forms.TextBox();
+            this.textBox80 = new System.Windows.Forms.TextBox();
+            this.labelWarpNumber = new System.Windows.Forms.Label();
+            this.labelWarpBank = new System.Windows.Forms.Label();
+            this.labelWarpMap = new System.Windows.Forms.Label();
+            this.hexNumberBoxWarpMap = new System.Windows.Forms.TextBox();
+            this.hexNumberBoxWarpNum = new System.Windows.Forms.TextBox();
+            this.hexNumberBoxWarpBank = new System.Windows.Forms.TextBox();
+            this.btnDeleteWarp = new System.Windows.Forms.Button();
+            this.btnWarpTravelToDest = new System.Windows.Forms.Button();
+            this.cbWarpHeight = new System.Windows.Forms.ComboBox();
+            this.labelWarpHeight = new System.Windows.Forms.Label();
+            this.labelWarpPosition = new System.Windows.Forms.Label();
+            this.hexNumberBoxWarpYPos = new System.Windows.Forms.TextBox();
+            this.hexNumberBoxWarpXPos = new System.Windows.Forms.TextBox();
             this.panelSpriteEvent = new System.Windows.Forms.Panel();
             this.labelNPCOffset = new System.Windows.Forms.Label();
             this.hexPrefixBox34 = new System.Windows.Forms.TextBox();
@@ -148,82 +223,8 @@ namespace PGMEWindowsUI
             this.labelNPCNumber = new System.Windows.Forms.Label();
             this.hexNumberBoxNPCXPos = new System.Windows.Forms.TextBox();
             this.hexNumberBoxNPCReplacement = new System.Windows.Forms.TextBox();
-            this.nudNPCSpriteNum = new HexNumericUpDown();
-            this.nudNPCNum = new HexNumericUpDown();
-            this.panelSignEvent = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.hexNumberBoxSignFiller1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox59 = new System.Windows.Forms.TextBox();
-            this.textBox58 = new System.Windows.Forms.TextBox();
-            this.textBox57 = new System.Windows.Forms.TextBox();
-            this.textBox56 = new System.Windows.Forms.TextBox();
-            this.btnDeleteSign = new System.Windows.Forms.Button();
-            this.btnSignOpenScript = new System.Windows.Forms.Button();
-            this.hexNumberBoxSignScriptOffset = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.hexNumberBoxSignFiller2 = new System.Windows.Forms.TextBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.cbSignType = new System.Windows.Forms.ComboBox();
-            this.cbSignHeight = new System.Windows.Forms.ComboBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.labelSignPosition = new System.Windows.Forms.Label();
-            this.hexNumberBoxSignYPos = new System.Windows.Forms.TextBox();
-            this.hexNumberBoxSignXPos = new System.Windows.Forms.TextBox();
-            this.panelScriptEvent = new System.Windows.Forms.Panel();
-            this.textBox79 = new System.Windows.Forms.TextBox();
-            this.textBox78 = new System.Windows.Forms.TextBox();
-            this.textBox77 = new System.Windows.Forms.TextBox();
-            this.textBox64 = new System.Windows.Forms.TextBox();
-            this.textBox62 = new System.Windows.Forms.TextBox();
-            this.textBox61 = new System.Windows.Forms.TextBox();
-            this.label37 = new System.Windows.Forms.Label();
-            this.hexNumberBoxTriggerFiller2 = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.hexNumberBoxTriggerFiller1 = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox75 = new System.Windows.Forms.TextBox();
-            this.textBox65 = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.hexNumberBoxTriggerVariable = new System.Windows.Forms.TextBox();
-            this.hexNumberBoxTriggerValue = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.btnDeleteTrigger = new System.Windows.Forms.Button();
-            this.hexNumberBoxTriggerScriptOffset = new System.Windows.Forms.TextBox();
-            this.btnTriggerOpenScript = new System.Windows.Forms.Button();
-            this.hexNumberBoxTriggerFiller3 = new System.Windows.Forms.TextBox();
-            this.cbTriggerHeight = new System.Windows.Forms.ComboBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.labelTriggerPosition = new System.Windows.Forms.Label();
-            this.hexNumberBoxTriggerYPos = new System.Windows.Forms.TextBox();
-            this.hexNumberBoxTriggerXPos = new System.Windows.Forms.TextBox();
-            this.panelWarpEvent = new System.Windows.Forms.Panel();
-            this.textBox94 = new System.Windows.Forms.TextBox();
-            this.textBox93 = new System.Windows.Forms.TextBox();
-            this.gbWarpDestination = new System.Windows.Forms.GroupBox();
-            this.textBox86 = new System.Windows.Forms.TextBox();
-            this.textBox81 = new System.Windows.Forms.TextBox();
-            this.textBox80 = new System.Windows.Forms.TextBox();
-            this.labelWarpNumber = new System.Windows.Forms.Label();
-            this.labelWarpBank = new System.Windows.Forms.Label();
-            this.labelWarpMap = new System.Windows.Forms.Label();
-            this.hexNumberBoxWarpMap = new System.Windows.Forms.TextBox();
-            this.hexNumberBoxWarpNum = new System.Windows.Forms.TextBox();
-            this.hexNumberBoxWarpBank = new System.Windows.Forms.TextBox();
-            this.btnDeleteWarp = new System.Windows.Forms.Button();
-            this.btnWarpTravelToDest = new System.Windows.Forms.Button();
-            this.cbWarpHeight = new System.Windows.Forms.ComboBox();
-            this.labelWarpHeight = new System.Windows.Forms.Label();
-            this.labelWarpPosition = new System.Windows.Forms.Label();
-            this.hexNumberBoxWarpYPos = new System.Windows.Forms.TextBox();
-            this.hexNumberBoxWarpXPos = new System.Windows.Forms.TextBox();
             this.labelEntityDataPanel = new System.Windows.Forms.Label();
             this.eventEditorPanel = new System.Windows.Forms.Panel();
-            this.eventPaintPanel = new PGMEWindowsUI.GLPanel();
-            this.glControlEntityEditor = new OpenTK.GLControl();
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
             this.cboTimeofDayEvents = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripEventsShowGrid = new System.Windows.Forms.ToolStripButton();
@@ -605,6 +606,16 @@ namespace PGMEWindowsUI
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.mapPaintPanel = new PGMEWindowsUI.GLPanel();
+            this.glControlMapEditor = new OpenTK.GLControl();
+            this.blockPaintPanel = new PGMEWindowsUI.GLPanel();
+            this.glControlBlocks = new OpenTK.GLControl();
+            this.movementPaintPanel = new PGMEWindowsUI.GLPanel();
+            this.glControlPermsChooser = new OpenTK.GLControl();
+            this.nudNPCSpriteNum = new PGMEWindowsUI.HexNumericUpDown();
+            this.nudNPCNum = new PGMEWindowsUI.HexNumericUpDown();
+            this.eventPaintPanel = new PGMEWindowsUI.GLPanel();
+            this.glControlEntityEditor = new OpenTK.GLControl();
             ((System.ComponentModel.ISupportInitialize)(this.splitMapListAndPaint)).BeginInit();
             this.splitMapListAndPaint.Panel1.SuspendLayout();
             this.splitMapListAndPaint.Panel2.SuspendLayout();
@@ -615,27 +626,22 @@ namespace PGMEWindowsUI
             this.panel2.SuspendLayout();
             this.borderBlocksBox.SuspendLayout();
             this.mapEditorPanel.SuspendLayout();
-            this.mapPaintPanel.SuspendLayout();
             this.tsMapEditorTab.SuspendLayout();
             this.paintTabControl.SuspendLayout();
             this.blocksTabPage.SuspendLayout();
-            this.blockPaintPanel.SuspendLayout();
             this.movementTabPage.SuspendLayout();
-            this.movementPaintPanel.SuspendLayout();
             this.entitiesTabPage.SuspendLayout();
             this.panelEntityData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEntityNum)).BeginInit();
-            this.panelSpriteEvent.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudNPCSpriteNum)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudNPCNum)).BeginInit();
             this.panelSignEvent.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.panelScriptEvent.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panelWarpEvent.SuspendLayout();
             this.gbWarpDestination.SuspendLayout();
+            this.panelSpriteEvent.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.eventEditorPanel.SuspendLayout();
-            this.eventPaintPanel.SuspendLayout();
             this.toolStrip3.SuspendLayout();
             this.wildTabPage.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -767,6 +773,12 @@ namespace PGMEWindowsUI
             this.mainMenuStrip.SuspendLayout();
             this.mainToolStrip.SuspendLayout();
             this.mainStatusStrip.SuspendLayout();
+            this.mapPaintPanel.SuspendLayout();
+            this.blockPaintPanel.SuspendLayout();
+            this.movementPaintPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNPCSpriteNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNPCNum)).BeginInit();
+            this.eventPaintPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitMapListAndPaint
@@ -841,8 +853,8 @@ namespace PGMEWindowsUI
             // tsMapFilter
             // 
             this.tsMapFilter.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.tsMapFilter.Name = "tsMapFilter";
             resources.ApplyResources(this.tsMapFilter, "tsMapFilter");
+            this.tsMapFilter.Name = "tsMapFilter";
             this.tsMapFilter.TextChanged += new System.EventHandler(this.tsMapFilter_TextChanged);
             // 
             // mapListTreeView
@@ -909,29 +921,6 @@ namespace PGMEWindowsUI
             this.mapEditorPanel.Controls.Add(this.mapPaintPanel);
             this.mapEditorPanel.Controls.Add(this.tsMapEditorTab);
             this.mapEditorPanel.Name = "mapEditorPanel";
-            // 
-            // mapPaintPanel
-            // 
-            resources.ApplyResources(this.mapPaintPanel, "mapPaintPanel");
-            this.mapPaintPanel.BackColor = System.Drawing.Color.Transparent;
-            this.mapPaintPanel.Controls.Add(this.glControlMapEditor);
-            this.mapPaintPanel.Name = "mapPaintPanel";
-            this.mapPaintPanel.Scroll += new System.Windows.Forms.ScrollEventHandler(this.panel8_Scroll);
-            // 
-            // glControlMapEditor
-            // 
-            this.glControlMapEditor.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.glControlMapEditor.BackColor = System.Drawing.Color.Black;
-            resources.ApplyResources(this.glControlMapEditor, "glControlMapEditor");
-            this.glControlMapEditor.Name = "glControlMapEditor";
-            this.glControlMapEditor.VSync = false;
-            this.glControlMapEditor.Load += new System.EventHandler(this.glControlMapEditor_Load);
-            this.glControlMapEditor.Paint += new System.Windows.Forms.PaintEventHandler(this.glControlMapEditor_Paint);
-            this.glControlMapEditor.MouseDown += new System.Windows.Forms.MouseEventHandler(this.glControlMapEditor_MouseDown);
-            this.glControlMapEditor.MouseEnter += new System.EventHandler(this.glControlMapEditor_MouseEnter);
-            this.glControlMapEditor.MouseLeave += new System.EventHandler(this.glControlMapEditor_MouseLeave);
-            this.glControlMapEditor.MouseMove += new System.Windows.Forms.MouseEventHandler(this.glControlMapEditor_MouseMove);
-            this.glControlMapEditor.MouseUp += new System.Windows.Forms.MouseEventHandler(this.glControlMapEditor_MouseUp);
             // 
             // tsMapEditorTab
             // 
@@ -1036,54 +1025,12 @@ namespace PGMEWindowsUI
             this.blocksTabPage.Name = "blocksTabPage";
             this.blocksTabPage.UseVisualStyleBackColor = true;
             // 
-            // blockPaintPanel
-            // 
-            resources.ApplyResources(this.blockPaintPanel, "blockPaintPanel");
-            this.blockPaintPanel.BackColor = System.Drawing.Color.Transparent;
-            this.blockPaintPanel.Controls.Add(this.glControlBlocks);
-            this.blockPaintPanel.Name = "blockPaintPanel";
-            this.blockPaintPanel.Scroll += new System.Windows.Forms.ScrollEventHandler(this.blockPaintPanel_Scroll);
-            // 
-            // glControlBlocks
-            // 
-            this.glControlBlocks.BackColor = System.Drawing.Color.Black;
-            resources.ApplyResources(this.glControlBlocks, "glControlBlocks");
-            this.glControlBlocks.Name = "glControlBlocks";
-            this.glControlBlocks.VSync = false;
-            this.glControlBlocks.Load += new System.EventHandler(this.glControlBlocks_Load);
-            this.glControlBlocks.Paint += new System.Windows.Forms.PaintEventHandler(this.glControlBlocks_Paint);
-            this.glControlBlocks.MouseDown += new System.Windows.Forms.MouseEventHandler(this.glControlBlocks_MouseDown);
-            this.glControlBlocks.MouseEnter += new System.EventHandler(this.glControlBlocks_MouseEnter);
-            this.glControlBlocks.MouseLeave += new System.EventHandler(this.glControlBlocks_MouseLeave);
-            this.glControlBlocks.MouseMove += new System.Windows.Forms.MouseEventHandler(this.glControlBlocks_MouseMove);
-            this.glControlBlocks.MouseUp += new System.Windows.Forms.MouseEventHandler(this.glControlBlocks_MouseUp);
-            // 
             // movementTabPage
             // 
             this.movementTabPage.Controls.Add(this.movementPaintPanel);
             resources.ApplyResources(this.movementTabPage, "movementTabPage");
             this.movementTabPage.Name = "movementTabPage";
             this.movementTabPage.UseVisualStyleBackColor = true;
-            // 
-            // movementPaintPanel
-            // 
-            resources.ApplyResources(this.movementPaintPanel, "movementPaintPanel");
-            this.movementPaintPanel.Controls.Add(this.glControlPermsChooser);
-            this.movementPaintPanel.Name = "movementPaintPanel";
-            // 
-            // glControlPermsChooser
-            // 
-            this.glControlPermsChooser.BackColor = System.Drawing.Color.Black;
-            resources.ApplyResources(this.glControlPermsChooser, "glControlPermsChooser");
-            this.glControlPermsChooser.Name = "glControlPermsChooser";
-            this.glControlPermsChooser.VSync = false;
-            this.glControlPermsChooser.Load += new System.EventHandler(this.glControlPermsChooser_Load);
-            this.glControlPermsChooser.Paint += new System.Windows.Forms.PaintEventHandler(this.glControlPermsChooser_Paint);
-            this.glControlPermsChooser.MouseDown += new System.Windows.Forms.MouseEventHandler(this.glControlPermsChooser_MouseDown);
-            this.glControlPermsChooser.MouseEnter += new System.EventHandler(this.glControlPermsChooser_MouseEnter);
-            this.glControlPermsChooser.MouseLeave += new System.EventHandler(this.glControlPermsChooser_MouseLeave);
-            this.glControlPermsChooser.MouseMove += new System.Windows.Forms.MouseEventHandler(this.glControlPermsChooser_MouseMove);
-            this.glControlPermsChooser.MouseUp += new System.Windows.Forms.MouseEventHandler(this.glControlPermsChooser_MouseUp);
             // 
             // entitiesTabPage
             // 
@@ -1099,10 +1046,10 @@ namespace PGMEWindowsUI
             this.panelEntityData.Controls.Add(this.btnCreateNewEntity);
             this.panelEntityData.Controls.Add(this.cboEventTypes);
             this.panelEntityData.Controls.Add(this.nudEntityNum);
-            this.panelEntityData.Controls.Add(this.panelSpriteEvent);
             this.panelEntityData.Controls.Add(this.panelSignEvent);
             this.panelEntityData.Controls.Add(this.panelScriptEvent);
             this.panelEntityData.Controls.Add(this.panelWarpEvent);
+            this.panelEntityData.Controls.Add(this.panelSpriteEvent);
             this.panelEntityData.Controls.Add(this.labelEntityDataPanel);
             this.panelEntityData.Name = "panelEntityData";
             // 
@@ -1133,6 +1080,656 @@ namespace PGMEWindowsUI
             resources.ApplyResources(this.nudEntityNum, "nudEntityNum");
             this.nudEntityNum.Name = "nudEntityNum";
             this.nudEntityNum.ValueChanged += new System.EventHandler(this.nudEntityNum_ValueChanged);
+            // 
+            // panelSignEvent
+            // 
+            resources.ApplyResources(this.panelSignEvent, "panelSignEvent");
+            this.panelSignEvent.Controls.Add(this.labelSignOffset);
+            this.panelSignEvent.Controls.Add(this.groupBox2);
+            this.panelSignEvent.Controls.Add(this.hexPrefixBox38);
+            this.panelSignEvent.Controls.Add(this.hexNumberBoxSignType);
+            this.panelSignEvent.Controls.Add(this.hexPrefixBox37);
+            this.panelSignEvent.Controls.Add(this.hexNumberBoxSignHeight);
+            this.panelSignEvent.Controls.Add(this.hexPrefixBox39);
+            this.panelSignEvent.Controls.Add(this.hexNumberBoxSignFiller1);
+            this.panelSignEvent.Controls.Add(this.label1);
+            this.panelSignEvent.Controls.Add(this.hexPrefixBox40);
+            this.panelSignEvent.Controls.Add(this.hexPrefixBox35);
+            this.panelSignEvent.Controls.Add(this.hexPrefixBox41);
+            this.panelSignEvent.Controls.Add(this.hexPrefixBox36);
+            this.panelSignEvent.Controls.Add(this.btnDeleteSign);
+            this.panelSignEvent.Controls.Add(this.btnSignOpenScript);
+            this.panelSignEvent.Controls.Add(this.hexNumberBoxSignScriptOffset);
+            this.panelSignEvent.Controls.Add(this.label23);
+            this.panelSignEvent.Controls.Add(this.hexNumberBoxSignFiller2);
+            this.panelSignEvent.Controls.Add(this.label33);
+            this.panelSignEvent.Controls.Add(this.label34);
+            this.panelSignEvent.Controls.Add(this.cbSignType);
+            this.panelSignEvent.Controls.Add(this.cbSignHeight);
+            this.panelSignEvent.Controls.Add(this.label35);
+            this.panelSignEvent.Controls.Add(this.labelSignPosition);
+            this.panelSignEvent.Controls.Add(this.hexNumberBoxSignYPos);
+            this.panelSignEvent.Controls.Add(this.hexNumberBoxSignXPos);
+            this.panelSignEvent.Name = "panelSignEvent";
+            // 
+            // labelSignOffset
+            // 
+            resources.ApplyResources(this.labelSignOffset, "labelSignOffset");
+            this.labelSignOffset.Name = "labelSignOffset";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.hexViewerRawSign);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.TabStop = false;
+            // 
+            // hexViewerRawSign
+            // 
+            this.hexViewerRawSign.BytesPerLine = 8;
+            resources.ApplyResources(this.hexViewerRawSign, "hexViewerRawSign");
+            this.hexViewerRawSign.GroupSeparatorVisible = true;
+            this.hexViewerRawSign.Name = "hexViewerRawSign";
+            this.hexViewerRawSign.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            this.hexViewerRawSign.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.hexViewerRawSign.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hexViewerRawSign.TabStop = false;
+            this.hexViewerRawSign.UseFixedBytesPerLine = true;
+            // 
+            // hexPrefixBox38
+            // 
+            resources.ApplyResources(this.hexPrefixBox38, "hexPrefixBox38");
+            this.hexPrefixBox38.Name = "hexPrefixBox38";
+            this.hexPrefixBox38.ReadOnly = true;
+            this.hexPrefixBox38.TabStop = false;
+            // 
+            // hexNumberBoxSignType
+            // 
+            this.hexNumberBoxSignType.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            resources.ApplyResources(this.hexNumberBoxSignType, "hexNumberBoxSignType");
+            this.hexNumberBoxSignType.Name = "hexNumberBoxSignType";
+            this.hexNumberBoxSignType.TextChanged += new System.EventHandler(this.hexNumberBoxSignType_TextChanged);
+            this.hexNumberBoxSignType.Validated += new System.EventHandler(this.hexNumberBoxSignType_Validated);
+            // 
+            // hexPrefixBox37
+            // 
+            resources.ApplyResources(this.hexPrefixBox37, "hexPrefixBox37");
+            this.hexPrefixBox37.Name = "hexPrefixBox37";
+            this.hexPrefixBox37.ReadOnly = true;
+            this.hexPrefixBox37.TabStop = false;
+            // 
+            // hexNumberBoxSignHeight
+            // 
+            this.hexNumberBoxSignHeight.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            resources.ApplyResources(this.hexNumberBoxSignHeight, "hexNumberBoxSignHeight");
+            this.hexNumberBoxSignHeight.Name = "hexNumberBoxSignHeight";
+            this.hexNumberBoxSignHeight.TextChanged += new System.EventHandler(this.hexNumberBoxSignHeight_TextChanged);
+            this.hexNumberBoxSignHeight.Validated += new System.EventHandler(this.hexNumberBoxSignHeight_Validated);
+            // 
+            // hexPrefixBox39
+            // 
+            resources.ApplyResources(this.hexPrefixBox39, "hexPrefixBox39");
+            this.hexPrefixBox39.Name = "hexPrefixBox39";
+            this.hexPrefixBox39.ReadOnly = true;
+            this.hexPrefixBox39.TabStop = false;
+            // 
+            // hexNumberBoxSignFiller1
+            // 
+            this.hexNumberBoxSignFiller1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            resources.ApplyResources(this.hexNumberBoxSignFiller1, "hexNumberBoxSignFiller1");
+            this.hexNumberBoxSignFiller1.Name = "hexNumberBoxSignFiller1";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
+            // hexPrefixBox40
+            // 
+            resources.ApplyResources(this.hexPrefixBox40, "hexPrefixBox40");
+            this.hexPrefixBox40.Name = "hexPrefixBox40";
+            this.hexPrefixBox40.ReadOnly = true;
+            this.hexPrefixBox40.TabStop = false;
+            // 
+            // hexPrefixBox35
+            // 
+            resources.ApplyResources(this.hexPrefixBox35, "hexPrefixBox35");
+            this.hexPrefixBox35.Name = "hexPrefixBox35";
+            this.hexPrefixBox35.ReadOnly = true;
+            this.hexPrefixBox35.TabStop = false;
+            // 
+            // hexPrefixBox41
+            // 
+            resources.ApplyResources(this.hexPrefixBox41, "hexPrefixBox41");
+            this.hexPrefixBox41.Name = "hexPrefixBox41";
+            this.hexPrefixBox41.ReadOnly = true;
+            this.hexPrefixBox41.TabStop = false;
+            // 
+            // hexPrefixBox36
+            // 
+            resources.ApplyResources(this.hexPrefixBox36, "hexPrefixBox36");
+            this.hexPrefixBox36.Name = "hexPrefixBox36";
+            this.hexPrefixBox36.ReadOnly = true;
+            this.hexPrefixBox36.TabStop = false;
+            // 
+            // btnDeleteSign
+            // 
+            this.btnDeleteSign.ForeColor = System.Drawing.Color.Red;
+            resources.ApplyResources(this.btnDeleteSign, "btnDeleteSign");
+            this.btnDeleteSign.Name = "btnDeleteSign";
+            this.btnDeleteSign.UseVisualStyleBackColor = true;
+            this.btnDeleteSign.Click += new System.EventHandler(this.btnDeleteSign_Click);
+            // 
+            // btnSignOpenScript
+            // 
+            resources.ApplyResources(this.btnSignOpenScript, "btnSignOpenScript");
+            this.btnSignOpenScript.Name = "btnSignOpenScript";
+            this.btnSignOpenScript.UseVisualStyleBackColor = true;
+            this.btnSignOpenScript.Click += new System.EventHandler(this.btnSignOpenScript_Click);
+            // 
+            // hexNumberBoxSignScriptOffset
+            // 
+            this.hexNumberBoxSignScriptOffset.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            resources.ApplyResources(this.hexNumberBoxSignScriptOffset, "hexNumberBoxSignScriptOffset");
+            this.hexNumberBoxSignScriptOffset.Name = "hexNumberBoxSignScriptOffset";
+            // 
+            // label23
+            // 
+            resources.ApplyResources(this.label23, "label23");
+            this.label23.Name = "label23";
+            // 
+            // hexNumberBoxSignFiller2
+            // 
+            this.hexNumberBoxSignFiller2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            resources.ApplyResources(this.hexNumberBoxSignFiller2, "hexNumberBoxSignFiller2");
+            this.hexNumberBoxSignFiller2.Name = "hexNumberBoxSignFiller2";
+            // 
+            // label33
+            // 
+            resources.ApplyResources(this.label33, "label33");
+            this.label33.Name = "label33";
+            // 
+            // label34
+            // 
+            resources.ApplyResources(this.label34, "label34");
+            this.label34.Name = "label34";
+            // 
+            // cbSignType
+            // 
+            this.cbSignType.FormattingEnabled = true;
+            this.cbSignType.Items.AddRange(new object[] {
+            resources.GetString("cbSignType.Items"),
+            resources.GetString("cbSignType.Items1"),
+            resources.GetString("cbSignType.Items2"),
+            resources.GetString("cbSignType.Items3"),
+            resources.GetString("cbSignType.Items4"),
+            resources.GetString("cbSignType.Items5"),
+            resources.GetString("cbSignType.Items6"),
+            resources.GetString("cbSignType.Items7"),
+            resources.GetString("cbSignType.Items8")});
+            resources.ApplyResources(this.cbSignType, "cbSignType");
+            this.cbSignType.Name = "cbSignType";
+            this.cbSignType.SelectionChangeCommitted += new System.EventHandler(this.cbSignType_SelectionChangeCommitted);
+            this.cbSignType.Validated += new System.EventHandler(this.cbSignType_Validated);
+            // 
+            // cbSignHeight
+            // 
+            this.cbSignHeight.FormattingEnabled = true;
+            this.cbSignHeight.Items.AddRange(new object[] {
+            resources.GetString("cbSignHeight.Items"),
+            resources.GetString("cbSignHeight.Items1"),
+            resources.GetString("cbSignHeight.Items2"),
+            resources.GetString("cbSignHeight.Items3"),
+            resources.GetString("cbSignHeight.Items4"),
+            resources.GetString("cbSignHeight.Items5"),
+            resources.GetString("cbSignHeight.Items6"),
+            resources.GetString("cbSignHeight.Items7"),
+            resources.GetString("cbSignHeight.Items8"),
+            resources.GetString("cbSignHeight.Items9"),
+            resources.GetString("cbSignHeight.Items10"),
+            resources.GetString("cbSignHeight.Items11"),
+            resources.GetString("cbSignHeight.Items12"),
+            resources.GetString("cbSignHeight.Items13"),
+            resources.GetString("cbSignHeight.Items14"),
+            resources.GetString("cbSignHeight.Items15")});
+            resources.ApplyResources(this.cbSignHeight, "cbSignHeight");
+            this.cbSignHeight.Name = "cbSignHeight";
+            this.cbSignHeight.SelectionChangeCommitted += new System.EventHandler(this.cbSignHeight_SelectionChangeCommitted);
+            this.cbSignHeight.Validated += new System.EventHandler(this.cbSignHeight_Validated);
+            // 
+            // label35
+            // 
+            resources.ApplyResources(this.label35, "label35");
+            this.label35.Name = "label35";
+            // 
+            // labelSignPosition
+            // 
+            resources.ApplyResources(this.labelSignPosition, "labelSignPosition");
+            this.labelSignPosition.Name = "labelSignPosition";
+            // 
+            // hexNumberBoxSignYPos
+            // 
+            this.hexNumberBoxSignYPos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            resources.ApplyResources(this.hexNumberBoxSignYPos, "hexNumberBoxSignYPos");
+            this.hexNumberBoxSignYPos.Name = "hexNumberBoxSignYPos";
+            this.hexNumberBoxSignYPos.Validated += new System.EventHandler(this.hexNumberBoxSignYPos_Validated);
+            // 
+            // hexNumberBoxSignXPos
+            // 
+            this.hexNumberBoxSignXPos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            resources.ApplyResources(this.hexNumberBoxSignXPos, "hexNumberBoxSignXPos");
+            this.hexNumberBoxSignXPos.Name = "hexNumberBoxSignXPos";
+            this.hexNumberBoxSignXPos.Validated += new System.EventHandler(this.hexNumberBoxSignXPos_Validated);
+            // 
+            // panelScriptEvent
+            // 
+            resources.ApplyResources(this.panelScriptEvent, "panelScriptEvent");
+            this.panelScriptEvent.Controls.Add(this.textBox6);
+            this.panelScriptEvent.Controls.Add(this.hexNumberBoxTriggerHeight);
+            this.panelScriptEvent.Controls.Add(this.textBox79);
+            this.panelScriptEvent.Controls.Add(this.textBox78);
+            this.panelScriptEvent.Controls.Add(this.textBox77);
+            this.panelScriptEvent.Controls.Add(this.textBox64);
+            this.panelScriptEvent.Controls.Add(this.textBox62);
+            this.panelScriptEvent.Controls.Add(this.textBox61);
+            this.panelScriptEvent.Controls.Add(this.label37);
+            this.panelScriptEvent.Controls.Add(this.hexNumberBoxTriggerFiller2);
+            this.panelScriptEvent.Controls.Add(this.label27);
+            this.panelScriptEvent.Controls.Add(this.hexNumberBoxTriggerFiller1);
+            this.panelScriptEvent.Controls.Add(this.label32);
+            this.panelScriptEvent.Controls.Add(this.groupBox3);
+            this.panelScriptEvent.Controls.Add(this.label19);
+            this.panelScriptEvent.Controls.Add(this.btnDeleteTrigger);
+            this.panelScriptEvent.Controls.Add(this.hexNumberBoxTriggerScriptOffset);
+            this.panelScriptEvent.Controls.Add(this.btnTriggerOpenScript);
+            this.panelScriptEvent.Controls.Add(this.hexNumberBoxTriggerFiller3);
+            this.panelScriptEvent.Controls.Add(this.cbTriggerHeight);
+            this.panelScriptEvent.Controls.Add(this.label29);
+            this.panelScriptEvent.Controls.Add(this.labelTriggerPosition);
+            this.panelScriptEvent.Controls.Add(this.hexNumberBoxTriggerYPos);
+            this.panelScriptEvent.Controls.Add(this.hexNumberBoxTriggerXPos);
+            this.panelScriptEvent.Name = "panelScriptEvent";
+            // 
+            // textBox6
+            // 
+            resources.ApplyResources(this.textBox6, "textBox6");
+            this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
+            this.textBox6.TabStop = false;
+            // 
+            // hexNumberBoxTriggerHeight
+            // 
+            this.hexNumberBoxTriggerHeight.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            resources.ApplyResources(this.hexNumberBoxTriggerHeight, "hexNumberBoxTriggerHeight");
+            this.hexNumberBoxTriggerHeight.Name = "hexNumberBoxTriggerHeight";
+            // 
+            // textBox79
+            // 
+            resources.ApplyResources(this.textBox79, "textBox79");
+            this.textBox79.Name = "textBox79";
+            this.textBox79.ReadOnly = true;
+            this.textBox79.TabStop = false;
+            // 
+            // textBox78
+            // 
+            resources.ApplyResources(this.textBox78, "textBox78");
+            this.textBox78.Name = "textBox78";
+            this.textBox78.ReadOnly = true;
+            this.textBox78.TabStop = false;
+            // 
+            // textBox77
+            // 
+            resources.ApplyResources(this.textBox77, "textBox77");
+            this.textBox77.Name = "textBox77";
+            this.textBox77.ReadOnly = true;
+            this.textBox77.TabStop = false;
+            // 
+            // textBox64
+            // 
+            resources.ApplyResources(this.textBox64, "textBox64");
+            this.textBox64.Name = "textBox64";
+            this.textBox64.ReadOnly = true;
+            this.textBox64.TabStop = false;
+            // 
+            // textBox62
+            // 
+            resources.ApplyResources(this.textBox62, "textBox62");
+            this.textBox62.Name = "textBox62";
+            this.textBox62.ReadOnly = true;
+            this.textBox62.TabStop = false;
+            // 
+            // textBox61
+            // 
+            resources.ApplyResources(this.textBox61, "textBox61");
+            this.textBox61.Name = "textBox61";
+            this.textBox61.ReadOnly = true;
+            this.textBox61.TabStop = false;
+            // 
+            // label37
+            // 
+            resources.ApplyResources(this.label37, "label37");
+            this.label37.Name = "label37";
+            // 
+            // hexNumberBoxTriggerFiller2
+            // 
+            this.hexNumberBoxTriggerFiller2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            resources.ApplyResources(this.hexNumberBoxTriggerFiller2, "hexNumberBoxTriggerFiller2");
+            this.hexNumberBoxTriggerFiller2.Name = "hexNumberBoxTriggerFiller2";
+            // 
+            // label27
+            // 
+            resources.ApplyResources(this.label27, "label27");
+            this.label27.Name = "label27";
+            // 
+            // hexNumberBoxTriggerFiller1
+            // 
+            this.hexNumberBoxTriggerFiller1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            resources.ApplyResources(this.hexNumberBoxTriggerFiller1, "hexNumberBoxTriggerFiller1");
+            this.hexNumberBoxTriggerFiller1.Name = "hexNumberBoxTriggerFiller1";
+            // 
+            // label32
+            // 
+            resources.ApplyResources(this.label32, "label32");
+            this.label32.Name = "label32";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.textBox75);
+            this.groupBox3.Controls.Add(this.textBox65);
+            this.groupBox3.Controls.Add(this.label28);
+            this.groupBox3.Controls.Add(this.label31);
+            this.groupBox3.Controls.Add(this.hexNumberBoxTriggerVariable);
+            this.groupBox3.Controls.Add(this.hexNumberBoxTriggerValue);
+            resources.ApplyResources(this.groupBox3, "groupBox3");
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.TabStop = false;
+            // 
+            // textBox75
+            // 
+            resources.ApplyResources(this.textBox75, "textBox75");
+            this.textBox75.Name = "textBox75";
+            this.textBox75.ReadOnly = true;
+            this.textBox75.TabStop = false;
+            // 
+            // textBox65
+            // 
+            resources.ApplyResources(this.textBox65, "textBox65");
+            this.textBox65.Name = "textBox65";
+            this.textBox65.ReadOnly = true;
+            this.textBox65.TabStop = false;
+            // 
+            // label28
+            // 
+            resources.ApplyResources(this.label28, "label28");
+            this.label28.Name = "label28";
+            // 
+            // label31
+            // 
+            resources.ApplyResources(this.label31, "label31");
+            this.label31.Name = "label31";
+            // 
+            // hexNumberBoxTriggerVariable
+            // 
+            this.hexNumberBoxTriggerVariable.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            resources.ApplyResources(this.hexNumberBoxTriggerVariable, "hexNumberBoxTriggerVariable");
+            this.hexNumberBoxTriggerVariable.Name = "hexNumberBoxTriggerVariable";
+            // 
+            // hexNumberBoxTriggerValue
+            // 
+            this.hexNumberBoxTriggerValue.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            resources.ApplyResources(this.hexNumberBoxTriggerValue, "hexNumberBoxTriggerValue");
+            this.hexNumberBoxTriggerValue.Name = "hexNumberBoxTriggerValue";
+            // 
+            // label19
+            // 
+            resources.ApplyResources(this.label19, "label19");
+            this.label19.Name = "label19";
+            // 
+            // btnDeleteTrigger
+            // 
+            this.btnDeleteTrigger.ForeColor = System.Drawing.Color.Red;
+            resources.ApplyResources(this.btnDeleteTrigger, "btnDeleteTrigger");
+            this.btnDeleteTrigger.Name = "btnDeleteTrigger";
+            this.btnDeleteTrigger.UseVisualStyleBackColor = true;
+            this.btnDeleteTrigger.Click += new System.EventHandler(this.btnDeleteTrigger_Click);
+            // 
+            // hexNumberBoxTriggerScriptOffset
+            // 
+            this.hexNumberBoxTriggerScriptOffset.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            resources.ApplyResources(this.hexNumberBoxTriggerScriptOffset, "hexNumberBoxTriggerScriptOffset");
+            this.hexNumberBoxTriggerScriptOffset.Name = "hexNumberBoxTriggerScriptOffset";
+            // 
+            // btnTriggerOpenScript
+            // 
+            resources.ApplyResources(this.btnTriggerOpenScript, "btnTriggerOpenScript");
+            this.btnTriggerOpenScript.Name = "btnTriggerOpenScript";
+            this.btnTriggerOpenScript.UseVisualStyleBackColor = true;
+            this.btnTriggerOpenScript.Click += new System.EventHandler(this.btnTriggerOpenScript_Click);
+            // 
+            // hexNumberBoxTriggerFiller3
+            // 
+            this.hexNumberBoxTriggerFiller3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            resources.ApplyResources(this.hexNumberBoxTriggerFiller3, "hexNumberBoxTriggerFiller3");
+            this.hexNumberBoxTriggerFiller3.Name = "hexNumberBoxTriggerFiller3";
+            // 
+            // cbTriggerHeight
+            // 
+            this.cbTriggerHeight.FormattingEnabled = true;
+            this.cbTriggerHeight.Items.AddRange(new object[] {
+            resources.GetString("cbTriggerHeight.Items"),
+            resources.GetString("cbTriggerHeight.Items1"),
+            resources.GetString("cbTriggerHeight.Items2"),
+            resources.GetString("cbTriggerHeight.Items3"),
+            resources.GetString("cbTriggerHeight.Items4"),
+            resources.GetString("cbTriggerHeight.Items5"),
+            resources.GetString("cbTriggerHeight.Items6"),
+            resources.GetString("cbTriggerHeight.Items7"),
+            resources.GetString("cbTriggerHeight.Items8"),
+            resources.GetString("cbTriggerHeight.Items9"),
+            resources.GetString("cbTriggerHeight.Items10"),
+            resources.GetString("cbTriggerHeight.Items11"),
+            resources.GetString("cbTriggerHeight.Items12"),
+            resources.GetString("cbTriggerHeight.Items13"),
+            resources.GetString("cbTriggerHeight.Items14"),
+            resources.GetString("cbTriggerHeight.Items15")});
+            resources.ApplyResources(this.cbTriggerHeight, "cbTriggerHeight");
+            this.cbTriggerHeight.Name = "cbTriggerHeight";
+            // 
+            // label29
+            // 
+            resources.ApplyResources(this.label29, "label29");
+            this.label29.Name = "label29";
+            // 
+            // labelTriggerPosition
+            // 
+            resources.ApplyResources(this.labelTriggerPosition, "labelTriggerPosition");
+            this.labelTriggerPosition.Name = "labelTriggerPosition";
+            // 
+            // hexNumberBoxTriggerYPos
+            // 
+            this.hexNumberBoxTriggerYPos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            resources.ApplyResources(this.hexNumberBoxTriggerYPos, "hexNumberBoxTriggerYPos");
+            this.hexNumberBoxTriggerYPos.Name = "hexNumberBoxTriggerYPos";
+            // 
+            // hexNumberBoxTriggerXPos
+            // 
+            this.hexNumberBoxTriggerXPos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            resources.ApplyResources(this.hexNumberBoxTriggerXPos, "hexNumberBoxTriggerXPos");
+            this.hexNumberBoxTriggerXPos.Name = "hexNumberBoxTriggerXPos";
+            // 
+            // panelWarpEvent
+            // 
+            resources.ApplyResources(this.panelWarpEvent, "panelWarpEvent");
+            this.panelWarpEvent.Controls.Add(this.textBox8);
+            this.panelWarpEvent.Controls.Add(this.hexNumberBoxWarpHeight);
+            this.panelWarpEvent.Controls.Add(this.textBox94);
+            this.panelWarpEvent.Controls.Add(this.textBox93);
+            this.panelWarpEvent.Controls.Add(this.gbWarpDestination);
+            this.panelWarpEvent.Controls.Add(this.btnDeleteWarp);
+            this.panelWarpEvent.Controls.Add(this.btnWarpTravelToDest);
+            this.panelWarpEvent.Controls.Add(this.cbWarpHeight);
+            this.panelWarpEvent.Controls.Add(this.labelWarpHeight);
+            this.panelWarpEvent.Controls.Add(this.labelWarpPosition);
+            this.panelWarpEvent.Controls.Add(this.hexNumberBoxWarpYPos);
+            this.panelWarpEvent.Controls.Add(this.hexNumberBoxWarpXPos);
+            this.panelWarpEvent.Name = "panelWarpEvent";
+            // 
+            // textBox8
+            // 
+            resources.ApplyResources(this.textBox8, "textBox8");
+            this.textBox8.Name = "textBox8";
+            this.textBox8.ReadOnly = true;
+            this.textBox8.TabStop = false;
+            // 
+            // hexNumberBoxWarpHeight
+            // 
+            this.hexNumberBoxWarpHeight.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            resources.ApplyResources(this.hexNumberBoxWarpHeight, "hexNumberBoxWarpHeight");
+            this.hexNumberBoxWarpHeight.Name = "hexNumberBoxWarpHeight";
+            // 
+            // textBox94
+            // 
+            resources.ApplyResources(this.textBox94, "textBox94");
+            this.textBox94.Name = "textBox94";
+            this.textBox94.ReadOnly = true;
+            this.textBox94.TabStop = false;
+            // 
+            // textBox93
+            // 
+            resources.ApplyResources(this.textBox93, "textBox93");
+            this.textBox93.Name = "textBox93";
+            this.textBox93.ReadOnly = true;
+            this.textBox93.TabStop = false;
+            // 
+            // gbWarpDestination
+            // 
+            this.gbWarpDestination.Controls.Add(this.textBox86);
+            this.gbWarpDestination.Controls.Add(this.textBox81);
+            this.gbWarpDestination.Controls.Add(this.textBox80);
+            this.gbWarpDestination.Controls.Add(this.labelWarpNumber);
+            this.gbWarpDestination.Controls.Add(this.labelWarpBank);
+            this.gbWarpDestination.Controls.Add(this.labelWarpMap);
+            this.gbWarpDestination.Controls.Add(this.hexNumberBoxWarpMap);
+            this.gbWarpDestination.Controls.Add(this.hexNumberBoxWarpNum);
+            this.gbWarpDestination.Controls.Add(this.hexNumberBoxWarpBank);
+            resources.ApplyResources(this.gbWarpDestination, "gbWarpDestination");
+            this.gbWarpDestination.Name = "gbWarpDestination";
+            this.gbWarpDestination.TabStop = false;
+            this.gbWarpDestination.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // textBox86
+            // 
+            resources.ApplyResources(this.textBox86, "textBox86");
+            this.textBox86.Name = "textBox86";
+            this.textBox86.ReadOnly = true;
+            this.textBox86.TabStop = false;
+            // 
+            // textBox81
+            // 
+            resources.ApplyResources(this.textBox81, "textBox81");
+            this.textBox81.Name = "textBox81";
+            this.textBox81.ReadOnly = true;
+            this.textBox81.TabStop = false;
+            // 
+            // textBox80
+            // 
+            resources.ApplyResources(this.textBox80, "textBox80");
+            this.textBox80.Name = "textBox80";
+            this.textBox80.ReadOnly = true;
+            this.textBox80.TabStop = false;
+            // 
+            // labelWarpNumber
+            // 
+            resources.ApplyResources(this.labelWarpNumber, "labelWarpNumber");
+            this.labelWarpNumber.Name = "labelWarpNumber";
+            // 
+            // labelWarpBank
+            // 
+            resources.ApplyResources(this.labelWarpBank, "labelWarpBank");
+            this.labelWarpBank.Name = "labelWarpBank";
+            // 
+            // labelWarpMap
+            // 
+            resources.ApplyResources(this.labelWarpMap, "labelWarpMap");
+            this.labelWarpMap.Name = "labelWarpMap";
+            // 
+            // hexNumberBoxWarpMap
+            // 
+            this.hexNumberBoxWarpMap.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            resources.ApplyResources(this.hexNumberBoxWarpMap, "hexNumberBoxWarpMap");
+            this.hexNumberBoxWarpMap.Name = "hexNumberBoxWarpMap";
+            // 
+            // hexNumberBoxWarpNum
+            // 
+            this.hexNumberBoxWarpNum.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            resources.ApplyResources(this.hexNumberBoxWarpNum, "hexNumberBoxWarpNum");
+            this.hexNumberBoxWarpNum.Name = "hexNumberBoxWarpNum";
+            // 
+            // hexNumberBoxWarpBank
+            // 
+            this.hexNumberBoxWarpBank.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            resources.ApplyResources(this.hexNumberBoxWarpBank, "hexNumberBoxWarpBank");
+            this.hexNumberBoxWarpBank.Name = "hexNumberBoxWarpBank";
+            // 
+            // btnDeleteWarp
+            // 
+            this.btnDeleteWarp.ForeColor = System.Drawing.Color.Red;
+            resources.ApplyResources(this.btnDeleteWarp, "btnDeleteWarp");
+            this.btnDeleteWarp.Name = "btnDeleteWarp";
+            this.btnDeleteWarp.UseVisualStyleBackColor = true;
+            this.btnDeleteWarp.Click += new System.EventHandler(this.btnDeleteWarp_Click);
+            // 
+            // btnWarpTravelToDest
+            // 
+            resources.ApplyResources(this.btnWarpTravelToDest, "btnWarpTravelToDest");
+            this.btnWarpTravelToDest.Name = "btnWarpTravelToDest";
+            this.btnWarpTravelToDest.UseVisualStyleBackColor = true;
+            this.btnWarpTravelToDest.Click += new System.EventHandler(this.btnTravelToWarpDest_Click);
+            // 
+            // cbWarpHeight
+            // 
+            this.cbWarpHeight.FormattingEnabled = true;
+            this.cbWarpHeight.Items.AddRange(new object[] {
+            resources.GetString("cbWarpHeight.Items"),
+            resources.GetString("cbWarpHeight.Items1"),
+            resources.GetString("cbWarpHeight.Items2"),
+            resources.GetString("cbWarpHeight.Items3"),
+            resources.GetString("cbWarpHeight.Items4"),
+            resources.GetString("cbWarpHeight.Items5"),
+            resources.GetString("cbWarpHeight.Items6"),
+            resources.GetString("cbWarpHeight.Items7"),
+            resources.GetString("cbWarpHeight.Items8"),
+            resources.GetString("cbWarpHeight.Items9"),
+            resources.GetString("cbWarpHeight.Items10"),
+            resources.GetString("cbWarpHeight.Items11"),
+            resources.GetString("cbWarpHeight.Items12"),
+            resources.GetString("cbWarpHeight.Items13"),
+            resources.GetString("cbWarpHeight.Items14"),
+            resources.GetString("cbWarpHeight.Items15")});
+            resources.ApplyResources(this.cbWarpHeight, "cbWarpHeight");
+            this.cbWarpHeight.Name = "cbWarpHeight";
+            // 
+            // labelWarpHeight
+            // 
+            resources.ApplyResources(this.labelWarpHeight, "labelWarpHeight");
+            this.labelWarpHeight.Name = "labelWarpHeight";
+            // 
+            // labelWarpPosition
+            // 
+            resources.ApplyResources(this.labelWarpPosition, "labelWarpPosition");
+            this.labelWarpPosition.Name = "labelWarpPosition";
+            // 
+            // hexNumberBoxWarpYPos
+            // 
+            this.hexNumberBoxWarpYPos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            resources.ApplyResources(this.hexNumberBoxWarpYPos, "hexNumberBoxWarpYPos");
+            this.hexNumberBoxWarpYPos.Name = "hexNumberBoxWarpYPos";
+            // 
+            // hexNumberBoxWarpXPos
+            // 
+            this.hexNumberBoxWarpXPos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            resources.ApplyResources(this.hexNumberBoxWarpXPos, "hexNumberBoxWarpXPos");
+            this.hexNumberBoxWarpXPos.Name = "hexNumberBoxWarpXPos";
             // 
             // panelSpriteEvent
             // 
@@ -1694,584 +2291,6 @@ namespace PGMEWindowsUI
             this.hexNumberBoxNPCReplacement.Name = "hexNumberBoxNPCReplacement";
             this.hexNumberBoxNPCReplacement.Validated += new System.EventHandler(this.hexNumberBoxNPCReplacement_Validated);
             // 
-            // nudNPCSpriteNum
-            // 
-            resources.ApplyResources(this.nudNPCSpriteNum, "nudNPCSpriteNum");
-            this.nudNPCSpriteNum.Hexadecimal = true;
-            this.nudNPCSpriteNum.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.nudNPCSpriteNum.Name = "nudNPCSpriteNum";
-            this.nudNPCSpriteNum.ValueChanged += new System.EventHandler(this.nudNPCSpriteNum_ValueChanged);
-            // 
-            // nudNPCNum
-            // 
-            resources.ApplyResources(this.nudNPCNum, "nudNPCNum");
-            this.nudNPCNum.Hexadecimal = true;
-            this.nudNPCNum.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.nudNPCNum.Name = "nudNPCNum";
-            this.nudNPCNum.ValueChanged += new System.EventHandler(this.nudNPCNum_ValueChanged);
-            // 
-            // panelSignEvent
-            // 
-            resources.ApplyResources(this.panelSignEvent, "panelSignEvent");
-            this.panelSignEvent.Controls.Add(this.textBox1);
-            this.panelSignEvent.Controls.Add(this.hexNumberBoxSignFiller1);
-            this.panelSignEvent.Controls.Add(this.label1);
-            this.panelSignEvent.Controls.Add(this.textBox59);
-            this.panelSignEvent.Controls.Add(this.textBox58);
-            this.panelSignEvent.Controls.Add(this.textBox57);
-            this.panelSignEvent.Controls.Add(this.textBox56);
-            this.panelSignEvent.Controls.Add(this.btnDeleteSign);
-            this.panelSignEvent.Controls.Add(this.btnSignOpenScript);
-            this.panelSignEvent.Controls.Add(this.hexNumberBoxSignScriptOffset);
-            this.panelSignEvent.Controls.Add(this.label23);
-            this.panelSignEvent.Controls.Add(this.hexNumberBoxSignFiller2);
-            this.panelSignEvent.Controls.Add(this.label33);
-            this.panelSignEvent.Controls.Add(this.label34);
-            this.panelSignEvent.Controls.Add(this.cbSignType);
-            this.panelSignEvent.Controls.Add(this.cbSignHeight);
-            this.panelSignEvent.Controls.Add(this.label35);
-            this.panelSignEvent.Controls.Add(this.labelSignPosition);
-            this.panelSignEvent.Controls.Add(this.hexNumberBoxSignYPos);
-            this.panelSignEvent.Controls.Add(this.hexNumberBoxSignXPos);
-            this.panelSignEvent.Name = "panelSignEvent";
-            // 
-            // textBox1
-            // 
-            resources.ApplyResources(this.textBox1, "textBox1");
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.TabStop = false;
-            // 
-            // hexNumberBoxSignFiller1
-            // 
-            this.hexNumberBoxSignFiller1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            resources.ApplyResources(this.hexNumberBoxSignFiller1, "hexNumberBoxSignFiller1");
-            this.hexNumberBoxSignFiller1.Name = "hexNumberBoxSignFiller1";
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
-            // 
-            // textBox59
-            // 
-            resources.ApplyResources(this.textBox59, "textBox59");
-            this.textBox59.Name = "textBox59";
-            this.textBox59.ReadOnly = true;
-            this.textBox59.TabStop = false;
-            // 
-            // textBox58
-            // 
-            resources.ApplyResources(this.textBox58, "textBox58");
-            this.textBox58.Name = "textBox58";
-            this.textBox58.ReadOnly = true;
-            this.textBox58.TabStop = false;
-            // 
-            // textBox57
-            // 
-            resources.ApplyResources(this.textBox57, "textBox57");
-            this.textBox57.Name = "textBox57";
-            this.textBox57.ReadOnly = true;
-            this.textBox57.TabStop = false;
-            // 
-            // textBox56
-            // 
-            resources.ApplyResources(this.textBox56, "textBox56");
-            this.textBox56.Name = "textBox56";
-            this.textBox56.ReadOnly = true;
-            this.textBox56.TabStop = false;
-            // 
-            // btnDeleteSign
-            // 
-            this.btnDeleteSign.ForeColor = System.Drawing.Color.Red;
-            resources.ApplyResources(this.btnDeleteSign, "btnDeleteSign");
-            this.btnDeleteSign.Name = "btnDeleteSign";
-            this.btnDeleteSign.UseVisualStyleBackColor = true;
-            this.btnDeleteSign.Click += new System.EventHandler(this.btnDeleteSign_Click);
-            // 
-            // btnSignOpenScript
-            // 
-            resources.ApplyResources(this.btnSignOpenScript, "btnSignOpenScript");
-            this.btnSignOpenScript.Name = "btnSignOpenScript";
-            this.btnSignOpenScript.UseVisualStyleBackColor = true;
-            this.btnSignOpenScript.Click += new System.EventHandler(this.btnSignOpenScript_Click);
-            // 
-            // hexNumberBoxSignScriptOffset
-            // 
-            this.hexNumberBoxSignScriptOffset.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            resources.ApplyResources(this.hexNumberBoxSignScriptOffset, "hexNumberBoxSignScriptOffset");
-            this.hexNumberBoxSignScriptOffset.Name = "hexNumberBoxSignScriptOffset";
-            // 
-            // label23
-            // 
-            resources.ApplyResources(this.label23, "label23");
-            this.label23.Name = "label23";
-            // 
-            // hexNumberBoxSignFiller2
-            // 
-            this.hexNumberBoxSignFiller2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            resources.ApplyResources(this.hexNumberBoxSignFiller2, "hexNumberBoxSignFiller2");
-            this.hexNumberBoxSignFiller2.Name = "hexNumberBoxSignFiller2";
-            // 
-            // label33
-            // 
-            resources.ApplyResources(this.label33, "label33");
-            this.label33.Name = "label33";
-            // 
-            // label34
-            // 
-            resources.ApplyResources(this.label34, "label34");
-            this.label34.Name = "label34";
-            // 
-            // cbSignType
-            // 
-            this.cbSignType.FormattingEnabled = true;
-            this.cbSignType.Items.AddRange(new object[] {
-            resources.GetString("cbSignType.Items"),
-            resources.GetString("cbSignType.Items1"),
-            resources.GetString("cbSignType.Items2"),
-            resources.GetString("cbSignType.Items3"),
-            resources.GetString("cbSignType.Items4"),
-            resources.GetString("cbSignType.Items5"),
-            resources.GetString("cbSignType.Items6"),
-            resources.GetString("cbSignType.Items7"),
-            resources.GetString("cbSignType.Items8")});
-            resources.ApplyResources(this.cbSignType, "cbSignType");
-            this.cbSignType.Name = "cbSignType";
-            // 
-            // cbSignHeight
-            // 
-            this.cbSignHeight.FormattingEnabled = true;
-            this.cbSignHeight.Items.AddRange(new object[] {
-            resources.GetString("cbSignHeight.Items"),
-            resources.GetString("cbSignHeight.Items1"),
-            resources.GetString("cbSignHeight.Items2"),
-            resources.GetString("cbSignHeight.Items3"),
-            resources.GetString("cbSignHeight.Items4"),
-            resources.GetString("cbSignHeight.Items5"),
-            resources.GetString("cbSignHeight.Items6"),
-            resources.GetString("cbSignHeight.Items7"),
-            resources.GetString("cbSignHeight.Items8"),
-            resources.GetString("cbSignHeight.Items9"),
-            resources.GetString("cbSignHeight.Items10"),
-            resources.GetString("cbSignHeight.Items11"),
-            resources.GetString("cbSignHeight.Items12"),
-            resources.GetString("cbSignHeight.Items13"),
-            resources.GetString("cbSignHeight.Items14"),
-            resources.GetString("cbSignHeight.Items15")});
-            resources.ApplyResources(this.cbSignHeight, "cbSignHeight");
-            this.cbSignHeight.Name = "cbSignHeight";
-            // 
-            // label35
-            // 
-            resources.ApplyResources(this.label35, "label35");
-            this.label35.Name = "label35";
-            // 
-            // labelSignPosition
-            // 
-            resources.ApplyResources(this.labelSignPosition, "labelSignPosition");
-            this.labelSignPosition.Name = "labelSignPosition";
-            // 
-            // hexNumberBoxSignYPos
-            // 
-            this.hexNumberBoxSignYPos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            resources.ApplyResources(this.hexNumberBoxSignYPos, "hexNumberBoxSignYPos");
-            this.hexNumberBoxSignYPos.Name = "hexNumberBoxSignYPos";
-            // 
-            // hexNumberBoxSignXPos
-            // 
-            this.hexNumberBoxSignXPos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            resources.ApplyResources(this.hexNumberBoxSignXPos, "hexNumberBoxSignXPos");
-            this.hexNumberBoxSignXPos.Name = "hexNumberBoxSignXPos";
-            // 
-            // panelScriptEvent
-            // 
-            resources.ApplyResources(this.panelScriptEvent, "panelScriptEvent");
-            this.panelScriptEvent.Controls.Add(this.textBox79);
-            this.panelScriptEvent.Controls.Add(this.textBox78);
-            this.panelScriptEvent.Controls.Add(this.textBox77);
-            this.panelScriptEvent.Controls.Add(this.textBox64);
-            this.panelScriptEvent.Controls.Add(this.textBox62);
-            this.panelScriptEvent.Controls.Add(this.textBox61);
-            this.panelScriptEvent.Controls.Add(this.label37);
-            this.panelScriptEvent.Controls.Add(this.hexNumberBoxTriggerFiller2);
-            this.panelScriptEvent.Controls.Add(this.label27);
-            this.panelScriptEvent.Controls.Add(this.hexNumberBoxTriggerFiller1);
-            this.panelScriptEvent.Controls.Add(this.label32);
-            this.panelScriptEvent.Controls.Add(this.groupBox3);
-            this.panelScriptEvent.Controls.Add(this.label19);
-            this.panelScriptEvent.Controls.Add(this.btnDeleteTrigger);
-            this.panelScriptEvent.Controls.Add(this.hexNumberBoxTriggerScriptOffset);
-            this.panelScriptEvent.Controls.Add(this.btnTriggerOpenScript);
-            this.panelScriptEvent.Controls.Add(this.hexNumberBoxTriggerFiller3);
-            this.panelScriptEvent.Controls.Add(this.cbTriggerHeight);
-            this.panelScriptEvent.Controls.Add(this.label29);
-            this.panelScriptEvent.Controls.Add(this.labelTriggerPosition);
-            this.panelScriptEvent.Controls.Add(this.hexNumberBoxTriggerYPos);
-            this.panelScriptEvent.Controls.Add(this.hexNumberBoxTriggerXPos);
-            this.panelScriptEvent.Name = "panelScriptEvent";
-            // 
-            // textBox79
-            // 
-            resources.ApplyResources(this.textBox79, "textBox79");
-            this.textBox79.Name = "textBox79";
-            this.textBox79.ReadOnly = true;
-            this.textBox79.TabStop = false;
-            // 
-            // textBox78
-            // 
-            resources.ApplyResources(this.textBox78, "textBox78");
-            this.textBox78.Name = "textBox78";
-            this.textBox78.ReadOnly = true;
-            this.textBox78.TabStop = false;
-            // 
-            // textBox77
-            // 
-            resources.ApplyResources(this.textBox77, "textBox77");
-            this.textBox77.Name = "textBox77";
-            this.textBox77.ReadOnly = true;
-            this.textBox77.TabStop = false;
-            // 
-            // textBox64
-            // 
-            resources.ApplyResources(this.textBox64, "textBox64");
-            this.textBox64.Name = "textBox64";
-            this.textBox64.ReadOnly = true;
-            this.textBox64.TabStop = false;
-            // 
-            // textBox62
-            // 
-            resources.ApplyResources(this.textBox62, "textBox62");
-            this.textBox62.Name = "textBox62";
-            this.textBox62.ReadOnly = true;
-            this.textBox62.TabStop = false;
-            // 
-            // textBox61
-            // 
-            resources.ApplyResources(this.textBox61, "textBox61");
-            this.textBox61.Name = "textBox61";
-            this.textBox61.ReadOnly = true;
-            this.textBox61.TabStop = false;
-            // 
-            // label37
-            // 
-            resources.ApplyResources(this.label37, "label37");
-            this.label37.Name = "label37";
-            // 
-            // hexNumberBoxTriggerFiller2
-            // 
-            this.hexNumberBoxTriggerFiller2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            resources.ApplyResources(this.hexNumberBoxTriggerFiller2, "hexNumberBoxTriggerFiller2");
-            this.hexNumberBoxTriggerFiller2.Name = "hexNumberBoxTriggerFiller2";
-            // 
-            // label27
-            // 
-            resources.ApplyResources(this.label27, "label27");
-            this.label27.Name = "label27";
-            // 
-            // hexNumberBoxTriggerFiller1
-            // 
-            this.hexNumberBoxTriggerFiller1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            resources.ApplyResources(this.hexNumberBoxTriggerFiller1, "hexNumberBoxTriggerFiller1");
-            this.hexNumberBoxTriggerFiller1.Name = "hexNumberBoxTriggerFiller1";
-            // 
-            // label32
-            // 
-            resources.ApplyResources(this.label32, "label32");
-            this.label32.Name = "label32";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.textBox75);
-            this.groupBox3.Controls.Add(this.textBox65);
-            this.groupBox3.Controls.Add(this.label28);
-            this.groupBox3.Controls.Add(this.label31);
-            this.groupBox3.Controls.Add(this.hexNumberBoxTriggerVariable);
-            this.groupBox3.Controls.Add(this.hexNumberBoxTriggerValue);
-            resources.ApplyResources(this.groupBox3, "groupBox3");
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.TabStop = false;
-            // 
-            // textBox75
-            // 
-            resources.ApplyResources(this.textBox75, "textBox75");
-            this.textBox75.Name = "textBox75";
-            this.textBox75.ReadOnly = true;
-            this.textBox75.TabStop = false;
-            // 
-            // textBox65
-            // 
-            resources.ApplyResources(this.textBox65, "textBox65");
-            this.textBox65.Name = "textBox65";
-            this.textBox65.ReadOnly = true;
-            this.textBox65.TabStop = false;
-            // 
-            // label28
-            // 
-            resources.ApplyResources(this.label28, "label28");
-            this.label28.Name = "label28";
-            // 
-            // label31
-            // 
-            resources.ApplyResources(this.label31, "label31");
-            this.label31.Name = "label31";
-            // 
-            // hexNumberBoxTriggerVariable
-            // 
-            this.hexNumberBoxTriggerVariable.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            resources.ApplyResources(this.hexNumberBoxTriggerVariable, "hexNumberBoxTriggerVariable");
-            this.hexNumberBoxTriggerVariable.Name = "hexNumberBoxTriggerVariable";
-            // 
-            // hexNumberBoxTriggerValue
-            // 
-            this.hexNumberBoxTriggerValue.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            resources.ApplyResources(this.hexNumberBoxTriggerValue, "hexNumberBoxTriggerValue");
-            this.hexNumberBoxTriggerValue.Name = "hexNumberBoxTriggerValue";
-            // 
-            // label19
-            // 
-            resources.ApplyResources(this.label19, "label19");
-            this.label19.Name = "label19";
-            // 
-            // btnDeleteTrigger
-            // 
-            this.btnDeleteTrigger.ForeColor = System.Drawing.Color.Red;
-            resources.ApplyResources(this.btnDeleteTrigger, "btnDeleteTrigger");
-            this.btnDeleteTrigger.Name = "btnDeleteTrigger";
-            this.btnDeleteTrigger.UseVisualStyleBackColor = true;
-            this.btnDeleteTrigger.Click += new System.EventHandler(this.btnDeleteTrigger_Click);
-            // 
-            // hexNumberBoxTriggerScriptOffset
-            // 
-            this.hexNumberBoxTriggerScriptOffset.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            resources.ApplyResources(this.hexNumberBoxTriggerScriptOffset, "hexNumberBoxTriggerScriptOffset");
-            this.hexNumberBoxTriggerScriptOffset.Name = "hexNumberBoxTriggerScriptOffset";
-            // 
-            // btnTriggerOpenScript
-            // 
-            resources.ApplyResources(this.btnTriggerOpenScript, "btnTriggerOpenScript");
-            this.btnTriggerOpenScript.Name = "btnTriggerOpenScript";
-            this.btnTriggerOpenScript.UseVisualStyleBackColor = true;
-            this.btnTriggerOpenScript.Click += new System.EventHandler(this.btnTriggerOpenScript_Click);
-            // 
-            // hexNumberBoxTriggerFiller3
-            // 
-            this.hexNumberBoxTriggerFiller3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            resources.ApplyResources(this.hexNumberBoxTriggerFiller3, "hexNumberBoxTriggerFiller3");
-            this.hexNumberBoxTriggerFiller3.Name = "hexNumberBoxTriggerFiller3";
-            // 
-            // cbTriggerHeight
-            // 
-            this.cbTriggerHeight.FormattingEnabled = true;
-            this.cbTriggerHeight.Items.AddRange(new object[] {
-            resources.GetString("cbTriggerHeight.Items"),
-            resources.GetString("cbTriggerHeight.Items1"),
-            resources.GetString("cbTriggerHeight.Items2"),
-            resources.GetString("cbTriggerHeight.Items3"),
-            resources.GetString("cbTriggerHeight.Items4"),
-            resources.GetString("cbTriggerHeight.Items5"),
-            resources.GetString("cbTriggerHeight.Items6"),
-            resources.GetString("cbTriggerHeight.Items7"),
-            resources.GetString("cbTriggerHeight.Items8"),
-            resources.GetString("cbTriggerHeight.Items9"),
-            resources.GetString("cbTriggerHeight.Items10"),
-            resources.GetString("cbTriggerHeight.Items11"),
-            resources.GetString("cbTriggerHeight.Items12"),
-            resources.GetString("cbTriggerHeight.Items13"),
-            resources.GetString("cbTriggerHeight.Items14"),
-            resources.GetString("cbTriggerHeight.Items15")});
-            resources.ApplyResources(this.cbTriggerHeight, "cbTriggerHeight");
-            this.cbTriggerHeight.Name = "cbTriggerHeight";
-            // 
-            // label29
-            // 
-            resources.ApplyResources(this.label29, "label29");
-            this.label29.Name = "label29";
-            // 
-            // labelTriggerPosition
-            // 
-            resources.ApplyResources(this.labelTriggerPosition, "labelTriggerPosition");
-            this.labelTriggerPosition.Name = "labelTriggerPosition";
-            // 
-            // hexNumberBoxTriggerYPos
-            // 
-            this.hexNumberBoxTriggerYPos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            resources.ApplyResources(this.hexNumberBoxTriggerYPos, "hexNumberBoxTriggerYPos");
-            this.hexNumberBoxTriggerYPos.Name = "hexNumberBoxTriggerYPos";
-            // 
-            // hexNumberBoxTriggerXPos
-            // 
-            this.hexNumberBoxTriggerXPos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            resources.ApplyResources(this.hexNumberBoxTriggerXPos, "hexNumberBoxTriggerXPos");
-            this.hexNumberBoxTriggerXPos.Name = "hexNumberBoxTriggerXPos";
-            // 
-            // panelWarpEvent
-            // 
-            resources.ApplyResources(this.panelWarpEvent, "panelWarpEvent");
-            this.panelWarpEvent.Controls.Add(this.textBox94);
-            this.panelWarpEvent.Controls.Add(this.textBox93);
-            this.panelWarpEvent.Controls.Add(this.gbWarpDestination);
-            this.panelWarpEvent.Controls.Add(this.btnDeleteWarp);
-            this.panelWarpEvent.Controls.Add(this.btnWarpTravelToDest);
-            this.panelWarpEvent.Controls.Add(this.cbWarpHeight);
-            this.panelWarpEvent.Controls.Add(this.labelWarpHeight);
-            this.panelWarpEvent.Controls.Add(this.labelWarpPosition);
-            this.panelWarpEvent.Controls.Add(this.hexNumberBoxWarpYPos);
-            this.panelWarpEvent.Controls.Add(this.hexNumberBoxWarpXPos);
-            this.panelWarpEvent.Name = "panelWarpEvent";
-            // 
-            // textBox94
-            // 
-            resources.ApplyResources(this.textBox94, "textBox94");
-            this.textBox94.Name = "textBox94";
-            this.textBox94.ReadOnly = true;
-            this.textBox94.TabStop = false;
-            // 
-            // textBox93
-            // 
-            resources.ApplyResources(this.textBox93, "textBox93");
-            this.textBox93.Name = "textBox93";
-            this.textBox93.ReadOnly = true;
-            this.textBox93.TabStop = false;
-            // 
-            // gbWarpDestination
-            // 
-            this.gbWarpDestination.Controls.Add(this.textBox86);
-            this.gbWarpDestination.Controls.Add(this.textBox81);
-            this.gbWarpDestination.Controls.Add(this.textBox80);
-            this.gbWarpDestination.Controls.Add(this.labelWarpNumber);
-            this.gbWarpDestination.Controls.Add(this.labelWarpBank);
-            this.gbWarpDestination.Controls.Add(this.labelWarpMap);
-            this.gbWarpDestination.Controls.Add(this.hexNumberBoxWarpMap);
-            this.gbWarpDestination.Controls.Add(this.hexNumberBoxWarpNum);
-            this.gbWarpDestination.Controls.Add(this.hexNumberBoxWarpBank);
-            resources.ApplyResources(this.gbWarpDestination, "gbWarpDestination");
-            this.gbWarpDestination.Name = "gbWarpDestination";
-            this.gbWarpDestination.TabStop = false;
-            this.gbWarpDestination.Enter += new System.EventHandler(this.groupBox2_Enter);
-            // 
-            // textBox86
-            // 
-            resources.ApplyResources(this.textBox86, "textBox86");
-            this.textBox86.Name = "textBox86";
-            this.textBox86.ReadOnly = true;
-            this.textBox86.TabStop = false;
-            // 
-            // textBox81
-            // 
-            resources.ApplyResources(this.textBox81, "textBox81");
-            this.textBox81.Name = "textBox81";
-            this.textBox81.ReadOnly = true;
-            this.textBox81.TabStop = false;
-            // 
-            // textBox80
-            // 
-            resources.ApplyResources(this.textBox80, "textBox80");
-            this.textBox80.Name = "textBox80";
-            this.textBox80.ReadOnly = true;
-            this.textBox80.TabStop = false;
-            // 
-            // labelWarpNumber
-            // 
-            resources.ApplyResources(this.labelWarpNumber, "labelWarpNumber");
-            this.labelWarpNumber.Name = "labelWarpNumber";
-            // 
-            // labelWarpBank
-            // 
-            resources.ApplyResources(this.labelWarpBank, "labelWarpBank");
-            this.labelWarpBank.Name = "labelWarpBank";
-            // 
-            // labelWarpMap
-            // 
-            resources.ApplyResources(this.labelWarpMap, "labelWarpMap");
-            this.labelWarpMap.Name = "labelWarpMap";
-            // 
-            // hexNumberBoxWarpMap
-            // 
-            this.hexNumberBoxWarpMap.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            resources.ApplyResources(this.hexNumberBoxWarpMap, "hexNumberBoxWarpMap");
-            this.hexNumberBoxWarpMap.Name = "hexNumberBoxWarpMap";
-            // 
-            // hexNumberBoxWarpNum
-            // 
-            this.hexNumberBoxWarpNum.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            resources.ApplyResources(this.hexNumberBoxWarpNum, "hexNumberBoxWarpNum");
-            this.hexNumberBoxWarpNum.Name = "hexNumberBoxWarpNum";
-            // 
-            // hexNumberBoxWarpBank
-            // 
-            this.hexNumberBoxWarpBank.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            resources.ApplyResources(this.hexNumberBoxWarpBank, "hexNumberBoxWarpBank");
-            this.hexNumberBoxWarpBank.Name = "hexNumberBoxWarpBank";
-            // 
-            // btnDeleteWarp
-            // 
-            this.btnDeleteWarp.ForeColor = System.Drawing.Color.Red;
-            resources.ApplyResources(this.btnDeleteWarp, "btnDeleteWarp");
-            this.btnDeleteWarp.Name = "btnDeleteWarp";
-            this.btnDeleteWarp.UseVisualStyleBackColor = true;
-            this.btnDeleteWarp.Click += new System.EventHandler(this.btnDeleteWarp_Click);
-            // 
-            // btnWarpTravelToDest
-            // 
-            resources.ApplyResources(this.btnWarpTravelToDest, "btnWarpTravelToDest");
-            this.btnWarpTravelToDest.Name = "btnWarpTravelToDest";
-            this.btnWarpTravelToDest.UseVisualStyleBackColor = true;
-            this.btnWarpTravelToDest.Click += new System.EventHandler(this.btnTravelToWarpDest_Click);
-            // 
-            // cbWarpHeight
-            // 
-            this.cbWarpHeight.FormattingEnabled = true;
-            this.cbWarpHeight.Items.AddRange(new object[] {
-            resources.GetString("cbWarpHeight.Items"),
-            resources.GetString("cbWarpHeight.Items1"),
-            resources.GetString("cbWarpHeight.Items2"),
-            resources.GetString("cbWarpHeight.Items3"),
-            resources.GetString("cbWarpHeight.Items4"),
-            resources.GetString("cbWarpHeight.Items5"),
-            resources.GetString("cbWarpHeight.Items6"),
-            resources.GetString("cbWarpHeight.Items7"),
-            resources.GetString("cbWarpHeight.Items8"),
-            resources.GetString("cbWarpHeight.Items9"),
-            resources.GetString("cbWarpHeight.Items10"),
-            resources.GetString("cbWarpHeight.Items11"),
-            resources.GetString("cbWarpHeight.Items12"),
-            resources.GetString("cbWarpHeight.Items13"),
-            resources.GetString("cbWarpHeight.Items14"),
-            resources.GetString("cbWarpHeight.Items15")});
-            resources.ApplyResources(this.cbWarpHeight, "cbWarpHeight");
-            this.cbWarpHeight.Name = "cbWarpHeight";
-            // 
-            // labelWarpHeight
-            // 
-            resources.ApplyResources(this.labelWarpHeight, "labelWarpHeight");
-            this.labelWarpHeight.Name = "labelWarpHeight";
-            // 
-            // labelWarpPosition
-            // 
-            resources.ApplyResources(this.labelWarpPosition, "labelWarpPosition");
-            this.labelWarpPosition.Name = "labelWarpPosition";
-            // 
-            // hexNumberBoxWarpYPos
-            // 
-            this.hexNumberBoxWarpYPos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            resources.ApplyResources(this.hexNumberBoxWarpYPos, "hexNumberBoxWarpYPos");
-            this.hexNumberBoxWarpYPos.Name = "hexNumberBoxWarpYPos";
-            // 
-            // hexNumberBoxWarpXPos
-            // 
-            this.hexNumberBoxWarpXPos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            resources.ApplyResources(this.hexNumberBoxWarpXPos, "hexNumberBoxWarpXPos");
-            this.hexNumberBoxWarpXPos.Name = "hexNumberBoxWarpXPos";
-            // 
             // labelEntityDataPanel
             // 
             resources.ApplyResources(this.labelEntityDataPanel, "labelEntityDataPanel");
@@ -2283,29 +2302,6 @@ namespace PGMEWindowsUI
             this.eventEditorPanel.Controls.Add(this.eventPaintPanel);
             this.eventEditorPanel.Controls.Add(this.toolStrip3);
             this.eventEditorPanel.Name = "eventEditorPanel";
-            // 
-            // eventPaintPanel
-            // 
-            resources.ApplyResources(this.eventPaintPanel, "eventPaintPanel");
-            this.eventPaintPanel.BackColor = System.Drawing.Color.Transparent;
-            this.eventPaintPanel.Controls.Add(this.glControlEntityEditor);
-            this.eventPaintPanel.Name = "eventPaintPanel";
-            // 
-            // glControlEntityEditor
-            // 
-            this.glControlEntityEditor.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.glControlEntityEditor.BackColor = System.Drawing.Color.Black;
-            resources.ApplyResources(this.glControlEntityEditor, "glControlEntityEditor");
-            this.glControlEntityEditor.Name = "glControlEntityEditor";
-            this.glControlEntityEditor.VSync = false;
-            this.glControlEntityEditor.Load += new System.EventHandler(this.glControlEntityEditor_Load);
-            this.glControlEntityEditor.Paint += new System.Windows.Forms.PaintEventHandler(this.glControlEntityEditor_Paint);
-            this.glControlEntityEditor.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.glControlEntityEditor_MouseDoubleClick);
-            this.glControlEntityEditor.MouseDown += new System.Windows.Forms.MouseEventHandler(this.glControlEntityEditor_MouseDown);
-            this.glControlEntityEditor.MouseEnter += new System.EventHandler(this.glControlEntityEditor_MouseEnter);
-            this.glControlEntityEditor.MouseLeave += new System.EventHandler(this.glControlEntityEditor_MouseLeave);
-            this.glControlEntityEditor.MouseMove += new System.Windows.Forms.MouseEventHandler(this.glControlEntityEditor_MouseMove);
-            this.glControlEntityEditor.MouseUp += new System.Windows.Forms.MouseEventHandler(this.glControlEntityEditor_MouseUp);
             // 
             // toolStrip3
             // 
@@ -5368,6 +5364,118 @@ namespace PGMEWindowsUI
             this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
             resources.ApplyResources(this.toolStripStatusLabel4, "toolStripStatusLabel4");
             // 
+            // mapPaintPanel
+            // 
+            resources.ApplyResources(this.mapPaintPanel, "mapPaintPanel");
+            this.mapPaintPanel.BackColor = System.Drawing.Color.Transparent;
+            this.mapPaintPanel.Controls.Add(this.glControlMapEditor);
+            this.mapPaintPanel.Name = "mapPaintPanel";
+            this.mapPaintPanel.Scroll += new System.Windows.Forms.ScrollEventHandler(this.panel8_Scroll);
+            // 
+            // glControlMapEditor
+            // 
+            this.glControlMapEditor.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.glControlMapEditor.BackColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.glControlMapEditor, "glControlMapEditor");
+            this.glControlMapEditor.Name = "glControlMapEditor";
+            this.glControlMapEditor.VSync = false;
+            this.glControlMapEditor.Load += new System.EventHandler(this.glControlMapEditor_Load);
+            this.glControlMapEditor.Paint += new System.Windows.Forms.PaintEventHandler(this.glControlMapEditor_Paint);
+            this.glControlMapEditor.MouseDown += new System.Windows.Forms.MouseEventHandler(this.glControlMapEditor_MouseDown);
+            this.glControlMapEditor.MouseEnter += new System.EventHandler(this.glControlMapEditor_MouseEnter);
+            this.glControlMapEditor.MouseLeave += new System.EventHandler(this.glControlMapEditor_MouseLeave);
+            this.glControlMapEditor.MouseMove += new System.Windows.Forms.MouseEventHandler(this.glControlMapEditor_MouseMove);
+            this.glControlMapEditor.MouseUp += new System.Windows.Forms.MouseEventHandler(this.glControlMapEditor_MouseUp);
+            // 
+            // blockPaintPanel
+            // 
+            resources.ApplyResources(this.blockPaintPanel, "blockPaintPanel");
+            this.blockPaintPanel.BackColor = System.Drawing.Color.Transparent;
+            this.blockPaintPanel.Controls.Add(this.glControlBlocks);
+            this.blockPaintPanel.Name = "blockPaintPanel";
+            this.blockPaintPanel.Scroll += new System.Windows.Forms.ScrollEventHandler(this.blockPaintPanel_Scroll);
+            // 
+            // glControlBlocks
+            // 
+            this.glControlBlocks.BackColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.glControlBlocks, "glControlBlocks");
+            this.glControlBlocks.Name = "glControlBlocks";
+            this.glControlBlocks.VSync = false;
+            this.glControlBlocks.Load += new System.EventHandler(this.glControlBlocks_Load);
+            this.glControlBlocks.Paint += new System.Windows.Forms.PaintEventHandler(this.glControlBlocks_Paint);
+            this.glControlBlocks.MouseDown += new System.Windows.Forms.MouseEventHandler(this.glControlBlocks_MouseDown);
+            this.glControlBlocks.MouseEnter += new System.EventHandler(this.glControlBlocks_MouseEnter);
+            this.glControlBlocks.MouseLeave += new System.EventHandler(this.glControlBlocks_MouseLeave);
+            this.glControlBlocks.MouseMove += new System.Windows.Forms.MouseEventHandler(this.glControlBlocks_MouseMove);
+            this.glControlBlocks.MouseUp += new System.Windows.Forms.MouseEventHandler(this.glControlBlocks_MouseUp);
+            // 
+            // movementPaintPanel
+            // 
+            resources.ApplyResources(this.movementPaintPanel, "movementPaintPanel");
+            this.movementPaintPanel.Controls.Add(this.glControlPermsChooser);
+            this.movementPaintPanel.Name = "movementPaintPanel";
+            // 
+            // glControlPermsChooser
+            // 
+            this.glControlPermsChooser.BackColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.glControlPermsChooser, "glControlPermsChooser");
+            this.glControlPermsChooser.Name = "glControlPermsChooser";
+            this.glControlPermsChooser.VSync = false;
+            this.glControlPermsChooser.Load += new System.EventHandler(this.glControlPermsChooser_Load);
+            this.glControlPermsChooser.Paint += new System.Windows.Forms.PaintEventHandler(this.glControlPermsChooser_Paint);
+            this.glControlPermsChooser.MouseDown += new System.Windows.Forms.MouseEventHandler(this.glControlPermsChooser_MouseDown);
+            this.glControlPermsChooser.MouseEnter += new System.EventHandler(this.glControlPermsChooser_MouseEnter);
+            this.glControlPermsChooser.MouseLeave += new System.EventHandler(this.glControlPermsChooser_MouseLeave);
+            this.glControlPermsChooser.MouseMove += new System.Windows.Forms.MouseEventHandler(this.glControlPermsChooser_MouseMove);
+            this.glControlPermsChooser.MouseUp += new System.Windows.Forms.MouseEventHandler(this.glControlPermsChooser_MouseUp);
+            // 
+            // nudNPCSpriteNum
+            // 
+            resources.ApplyResources(this.nudNPCSpriteNum, "nudNPCSpriteNum");
+            this.nudNPCSpriteNum.Hexadecimal = true;
+            this.nudNPCSpriteNum.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.nudNPCSpriteNum.Name = "nudNPCSpriteNum";
+            this.nudNPCSpriteNum.ValueChanged += new System.EventHandler(this.nudNPCSpriteNum_ValueChanged);
+            // 
+            // nudNPCNum
+            // 
+            resources.ApplyResources(this.nudNPCNum, "nudNPCNum");
+            this.nudNPCNum.Hexadecimal = true;
+            this.nudNPCNum.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.nudNPCNum.Name = "nudNPCNum";
+            this.nudNPCNum.ValueChanged += new System.EventHandler(this.nudNPCNum_ValueChanged);
+            // 
+            // eventPaintPanel
+            // 
+            resources.ApplyResources(this.eventPaintPanel, "eventPaintPanel");
+            this.eventPaintPanel.BackColor = System.Drawing.Color.Transparent;
+            this.eventPaintPanel.Controls.Add(this.glControlEntityEditor);
+            this.eventPaintPanel.Name = "eventPaintPanel";
+            // 
+            // glControlEntityEditor
+            // 
+            this.glControlEntityEditor.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.glControlEntityEditor.BackColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.glControlEntityEditor, "glControlEntityEditor");
+            this.glControlEntityEditor.Name = "glControlEntityEditor";
+            this.glControlEntityEditor.VSync = false;
+            this.glControlEntityEditor.Load += new System.EventHandler(this.glControlEntityEditor_Load);
+            this.glControlEntityEditor.Paint += new System.Windows.Forms.PaintEventHandler(this.glControlEntityEditor_Paint);
+            this.glControlEntityEditor.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.glControlEntityEditor_MouseDoubleClick);
+            this.glControlEntityEditor.MouseDown += new System.Windows.Forms.MouseEventHandler(this.glControlEntityEditor_MouseDown);
+            this.glControlEntityEditor.MouseEnter += new System.EventHandler(this.glControlEntityEditor_MouseEnter);
+            this.glControlEntityEditor.MouseLeave += new System.EventHandler(this.glControlEntityEditor_MouseLeave);
+            this.glControlEntityEditor.MouseMove += new System.Windows.Forms.MouseEventHandler(this.glControlEntityEditor_MouseMove);
+            this.glControlEntityEditor.MouseUp += new System.Windows.Forms.MouseEventHandler(this.glControlEntityEditor_MouseUp);
+            // 
             // MainWindow
             // 
             resources.ApplyResources(this, "$this");
@@ -5396,24 +5504,17 @@ namespace PGMEWindowsUI
             this.borderBlocksBox.ResumeLayout(false);
             this.mapEditorPanel.ResumeLayout(false);
             this.mapEditorPanel.PerformLayout();
-            this.mapPaintPanel.ResumeLayout(false);
             this.tsMapEditorTab.ResumeLayout(false);
             this.tsMapEditorTab.PerformLayout();
             this.paintTabControl.ResumeLayout(false);
             this.blocksTabPage.ResumeLayout(false);
-            this.blockPaintPanel.ResumeLayout(false);
             this.movementTabPage.ResumeLayout(false);
-            this.movementPaintPanel.ResumeLayout(false);
             this.entitiesTabPage.ResumeLayout(false);
             this.panelEntityData.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nudEntityNum)).EndInit();
-            this.panelSpriteEvent.ResumeLayout(false);
-            this.panelSpriteEvent.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nudNPCSpriteNum)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudNPCNum)).EndInit();
             this.panelSignEvent.ResumeLayout(false);
             this.panelSignEvent.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.panelScriptEvent.ResumeLayout(false);
             this.panelScriptEvent.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -5422,9 +5523,11 @@ namespace PGMEWindowsUI
             this.panelWarpEvent.PerformLayout();
             this.gbWarpDestination.ResumeLayout(false);
             this.gbWarpDestination.PerformLayout();
+            this.panelSpriteEvent.ResumeLayout(false);
+            this.panelSpriteEvent.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.eventEditorPanel.ResumeLayout(false);
             this.eventEditorPanel.PerformLayout();
-            this.eventPaintPanel.ResumeLayout(false);
             this.toolStrip3.ResumeLayout(false);
             this.toolStrip3.PerformLayout();
             this.wildTabPage.ResumeLayout(false);
@@ -5581,6 +5684,12 @@ namespace PGMEWindowsUI
             this.mainToolStrip.PerformLayout();
             this.mainStatusStrip.ResumeLayout(false);
             this.mainStatusStrip.PerformLayout();
+            this.mapPaintPanel.ResumeLayout(false);
+            this.blockPaintPanel.ResumeLayout(false);
+            this.movementPaintPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudNPCSpriteNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNPCNum)).EndInit();
+            this.eventPaintPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -5708,13 +5817,11 @@ namespace PGMEWindowsUI
         private System.Windows.Forms.Label labelNPCNumber;
         private System.Windows.Forms.TextBox hexNumberBoxNPCXPos;
         private System.Windows.Forms.TextBox hexNumberBoxNPCReplacement;
-        private System.Windows.Forms.NumericUpDown nudNPCSpriteNum;
-        private System.Windows.Forms.NumericUpDown nudNPCNum;
         private System.Windows.Forms.Panel panelSignEvent;
-        private System.Windows.Forms.TextBox textBox59;
-        private System.Windows.Forms.TextBox textBox58;
-        private System.Windows.Forms.TextBox textBox57;
-        private System.Windows.Forms.TextBox textBox56;
+        private System.Windows.Forms.TextBox hexPrefixBox40;
+        private System.Windows.Forms.TextBox hexPrefixBox35;
+        private System.Windows.Forms.TextBox hexPrefixBox41;
+        private System.Windows.Forms.TextBox hexPrefixBox36;
         private System.Windows.Forms.Button btnDeleteSign;
         private System.Windows.Forms.Button btnSignOpenScript;
         private System.Windows.Forms.TextBox hexNumberBoxSignScriptOffset;
@@ -6127,7 +6234,7 @@ namespace PGMEWindowsUI
         private System.Windows.Forms.TextBox hexPrefixBox28;
         private System.Windows.Forms.TextBox hexNumberBoxNPCFiller6;
         private System.Windows.Forms.Label labelNPCFiller6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox hexPrefixBox39;
         private System.Windows.Forms.TextBox hexNumberBoxSignFiller1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox hexNumberBoxSignYPos;
@@ -6145,6 +6252,19 @@ namespace PGMEWindowsUI
         private System.Windows.Forms.TextBox hexPrefixBox33;
         private System.Windows.Forms.TextBox hexNumberBoxNPCHeight;
         private System.Windows.Forms.Label labelNPCOffset;
+        private System.Windows.Forms.TextBox hexPrefixBox38;
+        private System.Windows.Forms.TextBox hexNumberBoxSignType;
+        private System.Windows.Forms.TextBox hexPrefixBox37;
+        private System.Windows.Forms.TextBox hexNumberBoxSignHeight;
+        private HexNumericUpDown nudNPCSpriteNum;
+        private HexNumericUpDown nudNPCNum;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox hexNumberBoxTriggerHeight;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox hexNumberBoxWarpHeight;
+        private System.Windows.Forms.Label labelSignOffset;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private Be.Windows.Forms.HexBox hexViewerRawSign;
     }
 }
 

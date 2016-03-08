@@ -58,8 +58,8 @@
   </Target>
   <Target Name="AfterBuild">
   </Target>
-  -->
   <PropertyGroup>
     <PostBuildEvent>"$(SolutionDir)..\..\Signing\SignMe.exe" "$(TargetPath)"</PostBuildEvent>
   </PropertyGroup>
+  -->
 </Project>

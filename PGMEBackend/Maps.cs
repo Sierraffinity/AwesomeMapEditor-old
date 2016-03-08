@@ -165,7 +165,8 @@ namespace PGMEBackend
                 canEscape = (optionsByte3 & (int)EOptions.CanEscape) == (int)EOptions.CanEscape;
             }
 
-            LoadEntitiesFromRaw();
+            if(eventDataPointer > 0 && eventDataPointer < 0x2000000)
+                LoadEntitiesFromRaw();
         }
 
         public void LoadEntitiesFromRaw()
@@ -174,31 +175,28 @@ namespace PGMEBackend
 
             NPCs = new List<NPC>();
             int npcOffset = BitConverter.ToInt32(rawEntityHeader, 0x4) - 0x8000000;
-            for (int i = 0; i < rawEntityHeader[0]; i++)
-            {
-                NPCs.Add(new NPC(npcOffset + i * 0x18, originROM));
-            }
+
+            if (npcOffset > 0 && npcOffset < 0x2000000)
+                for (int i = 0; i < rawEntityHeader[0]; i++)
+                    NPCs.Add(new NPC(npcOffset + i * 0x18, originROM));
 
             Warps = new List<Warp>();
             int warpOffset = BitConverter.ToInt32(rawEntityHeader, 0x8) - 0x8000000;
-            for (int i = 0; i < rawEntityHeader[1]; i++)
-            {
+            if (warpOffset > 0 && warpOffset < 0x2000000)
+                for (int i = 0; i < rawEntityHeader[1]; i++)
                 Warps.Add(new Warp(warpOffset + i * 0x8, originROM));
-            }
 
             Triggers = new List<Trigger>();
             int triggerOffset = BitConverter.ToInt32(rawEntityHeader, 0xC) - 0x8000000;
-            for (int i = 0; i < rawEntityHeader[2]; i++)
-            {
-                Triggers.Add(new Trigger(triggerOffset + i * 0x10, originROM));
-            }
+            if (triggerOffset > 0 && triggerOffset < 0x2000000)
+                for (int i = 0; i < rawEntityHeader[2]; i++)
+                    Triggers.Add(new Trigger(triggerOffset + i * 0x10, originROM));
 
             Signs = new List<Sign>();
             int signOffset = BitConverter.ToInt32(rawEntityHeader, 0x10) - 0x8000000;
-            for (int i = 0; i < rawEntityHeader[3]; i++)
-            {
-                Signs.Add(new Sign(signOffset + i * 0xC, originROM));
-            }
+            if (signOffset > 0 && signOffset < 0x2000000)
+                for (int i = 0; i < rawEntityHeader[3]; i++)
+                    Signs.Add(new Sign(signOffset + i * 0xC, originROM));
         }
 
         public void WriteMapHeaderToRaw()

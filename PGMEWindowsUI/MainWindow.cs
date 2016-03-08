@@ -938,22 +938,34 @@ namespace PGMEWindowsUI
                 default:
                     SetEntityNumValues(NPC.currentNPC, map.NPCs.Count - 1);
                     LoadNPCView(map, NPC.currentNPC);
-                    PGMEBackend.Program.glEntityEditor.currentEntities = new List<Entity> { map.NPCs[NPC.currentNPC] };
+                    if (map.NPCs != null && map.NPCs.Count != 0)
+                        PGMEBackend.Program.glEntityEditor.currentEntities = new List<Entity> { map.NPCs[NPC.currentNPC] };
+                    else
+                        PGMEBackend.Program.glEntityEditor.currentEntities = null;
                     break;
                 case Entity.EntityType.Warp:
                     SetEntityNumValues(Warp.currentWarp, map.Warps.Count - 1);
                     LoadWarpView(map, Warp.currentWarp);
-                    PGMEBackend.Program.glEntityEditor.currentEntities = new List<Entity> { map.Warps[Warp.currentWarp] };
+                    if (map.Warps != null && map.Warps.Count != 0)
+                        PGMEBackend.Program.glEntityEditor.currentEntities = new List<Entity> { map.Warps[Warp.currentWarp] };
+                    else
+                        PGMEBackend.Program.glEntityEditor.currentEntities = null;
                     break;
                 case Entity.EntityType.Trigger:
                     SetEntityNumValues(Trigger.currentTrigger, map.Triggers.Count - 1);
                     LoadTriggerView(map, Trigger.currentTrigger);
-                    PGMEBackend.Program.glEntityEditor.currentEntities = new List<Entity> { map.Triggers[Trigger.currentTrigger] };
+                    if (map.Triggers != null && map.Triggers.Count != 0)
+                        PGMEBackend.Program.glEntityEditor.currentEntities = new List<Entity> { map.Triggers[Trigger.currentTrigger] };
+                    else
+                        PGMEBackend.Program.glEntityEditor.currentEntities = null;
                     break;
                 case Entity.EntityType.Sign:
                     SetEntityNumValues(Sign.currentSign, map.Signs.Count - 1);
                     LoadSignView(map, Sign.currentSign);
-                    PGMEBackend.Program.glEntityEditor.currentEntities = new List<Entity> { map.Signs[Sign.currentSign] };
+                    if (map.Triggers != null && map.Triggers.Count != 0)
+                        PGMEBackend.Program.glEntityEditor.currentEntities = new List<Entity> { map.Signs[Sign.currentSign] };
+                    else
+                        PGMEBackend.Program.glEntityEditor.currentEntities = null;
                     break;
             }
 
@@ -995,7 +1007,7 @@ namespace PGMEWindowsUI
             hexNumberBoxNPCXPos.Text = npc.xPos.ToString("X4");
             hexNumberBoxNPCYPos.Text = npc.yPos.ToString("X4");
             hexNumberBoxNPCHeight.Text = npc.height.ToString("X2");
-            cbNPCHeight.SelectedIndex = npc.height;
+            SetupNPCReplacement(npc);
             hexNumberBoxNPCIdleAnim.Text = npc.idleAnimation.ToString("X2");
             cbNPCIdleAnim.SelectedIndex = npc.idleAnimation;
             hexNumberBoxNPCXBound.Text = npc.xBounds.ToString("X1");
@@ -1031,6 +1043,7 @@ namespace PGMEWindowsUI
             nudEntityNum.Enabled = true;
             hexNumberBoxWarpXPos.Text = warp.xPos.ToString("X4");
             hexNumberBoxWarpYPos.Text = warp.yPos.ToString("X4");
+            hexNumberBoxWarpHeight.Text = warp.height.ToString("X2");
             cbWarpHeight.SelectedIndex = warp.height;
             hexNumberBoxWarpNum.Text = warp.destWarpNum.ToString("X2");
             hexNumberBoxWarpBank.Text = warp.destMapBank.ToString("X2");
@@ -1055,7 +1068,9 @@ namespace PGMEWindowsUI
             nudEntityNum.Enabled = true;
             hexNumberBoxSignXPos.Text = sign.xPos.ToString("X4");
             hexNumberBoxSignYPos.Text = sign.yPos.ToString("X4");
+            hexNumberBoxSignHeight.Text = sign.height.ToString("X2");
             cbSignHeight.SelectedIndex = sign.height;
+            hexNumberBoxSignType.Text = sign.type.ToString("X2");
             cbSignType.SelectedIndex = sign.type;
             hexNumberBoxSignFiller1.Text = sign.filler1.ToString("X2");
             hexNumberBoxSignFiller2.Text = sign.filler2.ToString("X2");
@@ -1080,6 +1095,7 @@ namespace PGMEWindowsUI
             nudEntityNum.Enabled = true;
             hexNumberBoxTriggerXPos.Text = trigger.xPos.ToString("X4");
             hexNumberBoxTriggerXPos.Text = trigger.yPos.ToString("X4");
+            hexNumberBoxTriggerHeight.Text = trigger.height.ToString("X2");
             cbTriggerHeight.SelectedIndex = trigger.height;
             hexNumberBoxTriggerFiller1.Text = trigger.filler1.ToString("X2");
             hexNumberBoxTriggerVariable.Text = trigger.variable.ToString("X4");
@@ -2346,6 +2362,8 @@ namespace PGMEWindowsUI
         public void NoEntitiesOfType()
         {
             labelEntityDataPanel.Text = PGMEBackend.Program.rmInternalStrings.GetString("NoEntitiesOfThisType");
+            PGMEBackend.Program.glEntityEditor.currentEntities = null;
+            RefreshEntityEditorControl();
             HideEventEditors();
         }
 
@@ -2592,6 +2610,13 @@ namespace PGMEWindowsUI
             hexViewerRawNPC.ByteProvider = new DynamicByteProvider(npc.rawData, true, false, false);
         }
 
+        private void WriteSignData(Sign sign)
+        {
+            PGMEBackend.Program.isEdited = true;
+            sign.WriteDataToRaw();
+            hexViewerRawSign.ByteProvider = new DynamicByteProvider(sign.rawData, true, false, false);
+        }
+
         private void nudNPCNum_ValueChanged(object sender, EventArgs e)
         {
             if (PGMEBackend.Program.glEntityEditor.currentEntities != null && PGMEBackend.Program.glEntityEditor.currentEntities[0] is NPC && !loadingEntityView)
@@ -2631,6 +2656,28 @@ namespace PGMEWindowsUI
                 {
                     WriteNPCData(currentNPC);
                 }
+            }
+            SetupNPCReplacement((NPC)PGMEBackend.Program.glEntityEditor.currentEntities[0]);
+        }
+
+        public void SetupNPCReplacement(NPC npc)
+        {
+            if (npc.replacement == 0xFF)
+            {
+                cbNPCHeight.Enabled = false;
+                cbNPCHeight.Text = string.Empty;
+                labelNPCHeight.Text = PGMEBackend.Program.rmInternalStrings.GetString("ReplacementNPCNumber");
+                labelNPCTrainer.Text = PGMEBackend.Program.rmInternalStrings.GetString("ReplacementNPCMap");
+                labelNPCViewRadius.Text = PGMEBackend.Program.rmInternalStrings.GetString("ReplacementNPCMapBank");
+            }
+            else
+            {
+                cbNPCHeight.Enabled = true;
+                cbNPCHeight.SelectedIndex = npc.height;
+                cbNPCHeight.Text = cbNPCHeight.GetItemText(cbNPCHeight.SelectedItem);
+                labelNPCHeight.Text = PGMEBackend.Program.rmInternalStrings.GetString("NPCHeight");
+                labelNPCTrainer.Text = PGMEBackend.Program.rmInternalStrings.GetString("NPCTrainer");
+                labelNPCViewRadius.Text = PGMEBackend.Program.rmInternalStrings.GetString("NPCViewRadius");
             }
         }
 
@@ -2683,13 +2730,16 @@ namespace PGMEWindowsUI
                 int value;
                 if (int.TryParse(hexNumberBoxNPCHeight.Text, NumberStyles.HexNumber, null, out value))
                 {
-                    if (value < cbNPCHeight.Items.Count)
+                    if (((NPC)PGMEBackend.Program.glEntityEditor.currentEntities[0]).replacement != 0xFF)
                     {
-                        cbNPCHeight.SelectedIndex = value;
-                        cbNPCHeight.Text = cbNPCHeight.Items[value].ToString();
+                        if (value < cbNPCHeight.Items.Count)
+                        {
+                            cbNPCHeight.SelectedIndex = value;
+                            cbNPCHeight.Text = cbNPCHeight.Items[value].ToString();
+                        }
+                        else
+                            cbNPCHeight.Text = PGMEBackend.Program.rmInternalStrings.GetString("UnknownValue");
                     }
-                    else
-                        cbNPCHeight.Text = "[" + value.ToString("X2") + "]" + PGMEBackend.Program.rmInternalStrings.GetString("UnknownValue");
                 }
             }
         }
@@ -2738,7 +2788,7 @@ namespace PGMEWindowsUI
                     cbNPCIdleAnim.Text = cbNPCIdleAnim.Items[value].ToString();
                 }
                 else
-                    cbNPCIdleAnim.Text = "[" + value.ToString("X2") + "]" + PGMEBackend.Program.rmInternalStrings.GetString("UnknownValue");
+                    cbNPCIdleAnim.Text = PGMEBackend.Program.rmInternalStrings.GetString("UnknownValue");
             }
         }
 
@@ -2879,7 +2929,7 @@ namespace PGMEWindowsUI
             {
                 NPC currentNPC = (NPC)PGMEBackend.Program.glEntityEditor.currentEntities[0];
                 int oldValue = currentNPC.scriptOffset;
-                currentNPC.scriptOffset = byte.Parse(hexNumberBoxNPCScriptOffset.Text, NumberStyles.HexNumber);
+                currentNPC.scriptOffset = int.Parse(hexNumberBoxNPCScriptOffset.Text, NumberStyles.HexNumber) - 0x8000000;
                 if (currentNPC.scriptOffset != oldValue)
                 {
                     WriteNPCData(currentNPC);
@@ -2893,7 +2943,7 @@ namespace PGMEWindowsUI
             {
                 NPC currentNPC = (NPC)PGMEBackend.Program.glEntityEditor.currentEntities[0];
                 int oldValue = currentNPC.visibilityFlag;
-                currentNPC.visibilityFlag = byte.Parse(hexNumberBoxNPCVisibilityFlag.Text, NumberStyles.HexNumber);
+                currentNPC.visibilityFlag = short.Parse(hexNumberBoxNPCVisibilityFlag.Text, NumberStyles.HexNumber);
                 if (currentNPC.visibilityFlag != oldValue)
                 {
                     WriteNPCData(currentNPC);
@@ -2934,6 +2984,136 @@ namespace PGMEWindowsUI
             labelNPCOffset.Location = new Point(190 - labelNPCOffset.Width, labelNPCOffset.Location.Y);
         }
 
+        private void hexNumberBoxSignXPos_Validated(object sender, EventArgs e)
+        {
+            if (PGMEBackend.Program.glEntityEditor.currentEntities != null && PGMEBackend.Program.glEntityEditor.currentEntities[0] is Sign && !loadingEntityView)
+            {
+                Sign currentSign = (Sign)PGMEBackend.Program.glEntityEditor.currentEntities[0];
+                int oldValue = currentSign.xPos;
+                currentSign.xPos = short.Parse(hexNumberBoxSignXPos.Text, NumberStyles.HexNumber);
+                if (currentSign.xPos != oldValue)
+                {
+                    WriteSignData(currentSign);
+                }
+            }
+        }
+
+        private void hexNumberBoxSignYPos_Validated(object sender, EventArgs e)
+        {
+            if (PGMEBackend.Program.glEntityEditor.currentEntities != null && PGMEBackend.Program.glEntityEditor.currentEntities[0] is Sign && !loadingEntityView)
+            {
+                Sign currentSign = (Sign)PGMEBackend.Program.glEntityEditor.currentEntities[0];
+                int oldValue = currentSign.yPos;
+                currentSign.yPos = short.Parse(hexNumberBoxSignXPos.Text, NumberStyles.HexNumber);
+                if (currentSign.yPos != oldValue)
+                {
+                    WriteSignData(currentSign);
+                }
+            }
+        }
+
+        private void hexNumberBoxSignHeight_TextChanged(object sender, EventArgs e)
+        {
+            if (PGMEBackend.Program.glEntityEditor.currentEntities != null && PGMEBackend.Program.glEntityEditor.currentEntities[0] is Sign && !loadingEntityView)
+            {
+                byte value;
+                if (byte.TryParse(hexNumberBoxSignHeight.Text, NumberStyles.HexNumber, null, out value))
+                {
+                    if (value < cbSignHeight.Items.Count)
+                    {
+                        cbSignHeight.SelectedIndex = value;
+                        cbSignHeight.Text = cbSignHeight.Items[value].ToString();
+                    }
+                    else
+                        cbSignHeight.Text = PGMEBackend.Program.rmInternalStrings.GetString("UnknownValue");
+                }
+            }
+        }
+
+        private void hexNumberBoxSignHeight_Validated(object sender, EventArgs e)
+        {
+            if (PGMEBackend.Program.glEntityEditor.currentEntities != null && PGMEBackend.Program.glEntityEditor.currentEntities[0] is Sign && !loadingEntityView)
+            {
+                Sign currentSign = (Sign)PGMEBackend.Program.glEntityEditor.currentEntities[0];
+                byte oldValue = currentSign.height;
+                currentSign.height = byte.Parse(hexNumberBoxSignHeight.Text, NumberStyles.HexNumber);
+                if (currentSign.height != oldValue)
+                {
+                    WriteSignData(currentSign);
+                }
+            }
+        }
+
+        private void cbSignHeight_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            hexNumberBoxSignHeight.Text = cbSignHeight.SelectedIndex.ToString("X2");
+        }
+
+        private void cbSignHeight_Validated(object sender, EventArgs e)
+        {
+            if (PGMEBackend.Program.glEntityEditor.currentEntities != null && PGMEBackend.Program.glEntityEditor.currentEntities[0] is Sign && !loadingEntityView)
+            {
+                Sign currentSign = (Sign)PGMEBackend.Program.glEntityEditor.currentEntities[0];
+                byte oldValue = currentSign.height;
+                currentSign.height = byte.Parse(hexNumberBoxSignHeight.Text, NumberStyles.HexNumber);
+                if (currentSign.height != oldValue)
+                {
+                    WriteSignData(currentSign);
+                }
+            }
+        }
+
+        private void hexNumberBoxSignType_TextChanged(object sender, EventArgs e)
+        {
+            if (PGMEBackend.Program.glEntityEditor.currentEntities != null && PGMEBackend.Program.glEntityEditor.currentEntities[0] is Sign && !loadingEntityView)
+            {
+                byte value;
+                if (byte.TryParse(hexNumberBoxSignType.Text, NumberStyles.HexNumber, null, out value))
+                {
+                    if (value < cbSignType.Items.Count)
+                    {
+                        cbSignType.SelectedIndex = value;
+                        cbSignType.Text = cbSignType.Items[value].ToString();
+                    }
+                    else
+                        cbSignType.Text = PGMEBackend.Program.rmInternalStrings.GetString("UnknownValue");
+                }
+            }
+        }
+
+        private void hexNumberBoxSignType_Validated(object sender, EventArgs e)
+        {
+            if (PGMEBackend.Program.glEntityEditor.currentEntities != null && PGMEBackend.Program.glEntityEditor.currentEntities[0] is Sign && !loadingEntityView)
+            {
+                Sign currentSign = (Sign)PGMEBackend.Program.glEntityEditor.currentEntities[0];
+                byte oldValue = currentSign.type;
+                currentSign.type = byte.Parse(hexNumberBoxSignType.Text, NumberStyles.HexNumber);
+                if (currentSign.type != oldValue)
+                {
+                    WriteSignData(currentSign);
+                }
+            }
+        }
+
+        private void cbSignType_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            hexNumberBoxSignType.Text = cbSignType.SelectedIndex.ToString("X2");
+        }
+
+        private void cbSignType_Validated(object sender, EventArgs e)
+        {
+            if (PGMEBackend.Program.glEntityEditor.currentEntities != null && PGMEBackend.Program.glEntityEditor.currentEntities[0] is Sign && !loadingEntityView)
+            {
+                Sign currentSign = (Sign)PGMEBackend.Program.glEntityEditor.currentEntities[0];
+                byte oldValue = currentSign.type;
+                currentSign.type = byte.Parse(hexNumberBoxSignType.Text, NumberStyles.HexNumber);
+                if (currentSign.type != oldValue)
+                {
+                    WriteSignData(currentSign);
+                }
+            }
+        }
+
         /*
         // Undo example usage
         // Note that the redo gets called automatically
@@ -2972,7 +3152,7 @@ namespace PGMEWindowsUI
         {
             TextBox tb = source as TextBox;
             int val = 0;
-            if (int.TryParse(tb.Text, out val))
+            if (int.TryParse(tb.Text, NumberStyles.HexNumber, null, out val))
             {
                 tb.Text = val.ToString("X2");
             }

@@ -11,8 +11,8 @@ namespace PGMEBackend.Entities
         public static int currentWarp = 0;
         
         public byte destWarpNum = 0;
-        public byte destMapBank = 0;
         public byte destMapNum = 0;
+        public byte destMapBank = 0;
 
         public Warp() : base()
         {

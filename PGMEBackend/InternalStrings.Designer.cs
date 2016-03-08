@@ -738,11 +738,65 @@ namespace PGMEBackend {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Height:.
+        /// </summary>
+        internal static string NPCHeight {
+            get {
+                return ResourceManager.GetString("NPCHeight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trainer:.
+        /// </summary>
+        internal static string NPCTrainer {
+            get {
+                return ResourceManager.GetString("NPCTrainer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Radius:.
+        /// </summary>
+        internal static string NPCViewRadius {
+            get {
+                return ResourceManager.GetString("NPCViewRadius", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The file &apos;{0}&apos; cannot be opened. Do you want to remove the reference to it from the Recent Files list?.
         /// </summary>
         internal static string RecentFileNotFound {
             get {
                 return ResourceManager.GetString("RecentFileNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Replacement NPC Map:.
+        /// </summary>
+        internal static string ReplacementNPCMap {
+            get {
+                return ResourceManager.GetString("ReplacementNPCMap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Replacement NPC Map Bank:.
+        /// </summary>
+        internal static string ReplacementNPCMapBank {
+            get {
+                return ResourceManager.GetString("ReplacementNPCMapBank", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Replacement NPC Number:.
+        /// </summary>
+        internal static string ReplacementNPCNumber {
+            get {
+                return ResourceManager.GetString("ReplacementNPCNumber", resourceCulture);
             }
         }
         

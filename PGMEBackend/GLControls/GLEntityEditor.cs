@@ -139,12 +139,15 @@ namespace PGMEBackend.GLControls
                     }
                 }
 
-                if (currentEntities.Count == 1 && currentEntities[0] is NPC)
-                    Surface.DrawOutlineRect((currentEntities[0].xPos - (currentEntities[0] as NPC).xBounds) * 16, (currentEntities[0].yPos - (currentEntities[0] as NPC).yBounds) * 16, (currentEntities[0] as NPC).xBounds * 32 + 16, (currentEntities[0] as NPC).yBounds * 32 + 16, npcBoundsColor);
-                
-                foreach (Entity ent in currentEntities)
-                    Surface.DrawOutlineRect(ent.xPos * 16, ent.yPos * 16, 16, 16, rectPaintColor);
-                
+                if (currentEntities != null)
+                {
+                    if (currentEntities.Count == 1 && currentEntities[0] is NPC)
+                        Surface.DrawOutlineRect((currentEntities[0].xPos - (currentEntities[0] as NPC).xBounds) * 16, (currentEntities[0].yPos - (currentEntities[0] as NPC).yBounds) * 16, (currentEntities[0] as NPC).xBounds * 32 + 16, (currentEntities[0] as NPC).yBounds * 32 + 16, npcBoundsColor);
+
+                    foreach (Entity ent in currentEntities)
+                        Surface.DrawOutlineRect(ent.xPos * 16, ent.yPos * 16, 16, 16, rectPaintColor);
+                }
+
                 if (tool == EntityEditorTools.RectSelect || (mouseX >= 0 && mouseY >= 0 && mouseX < layout.layoutWidth && mouseY < layout.layoutHeight))
                 {
                     int x = mouseX * 16;
