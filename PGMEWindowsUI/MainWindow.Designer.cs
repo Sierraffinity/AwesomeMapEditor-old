@@ -1120,10 +1120,10 @@ namespace PGMEWindowsUI
             this.panelEntityData.Controls.Add(this.cboEventTypes);
             this.panelEntityData.Controls.Add(this.nudEntityNum);
             this.panelEntityData.Controls.Add(this.panelScriptEvent);
-            this.panelEntityData.Controls.Add(this.labelEntityDataPanel);
             this.panelEntityData.Controls.Add(this.panelWarpEvent);
             this.panelEntityData.Controls.Add(this.panelSpriteEvent);
             this.panelEntityData.Controls.Add(this.panelSignEvent);
+            this.panelEntityData.Controls.Add(this.labelEntityDataPanel);
             this.panelEntityData.Name = "panelEntityData";
             // 
             // btnCreateNewEntity
