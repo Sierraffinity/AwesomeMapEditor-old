@@ -3125,6 +3125,131 @@ namespace PGMEWindowsUI
             }
         }
 
+        private void hexNumberBoxWarpXPos_Validated(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hexNumberBoxWarpYPos_Validated(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hexNumberBoxWarpNum_Validated(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hexNumberBoxWarpMap_Validated(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hexNumberBoxWarpBank_Validated(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hexNumberBoxWarpHeight_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hexNumberBoxWarpHeight_Validated(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbWarpHeight_Validated(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbWarpHeight_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hexViewerRawNPC_Validating(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void hexViewerRawSign_Validating(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void hexViewerRawTrigger_Validating(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void hexViewerRawWarp_Validating(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void hexNumberBoxTriggerHeight_Validated(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hexNumberBoxTriggerHeight_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbTriggerHeight_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbTriggerHeight_Validated(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hexNumberBoxTriggerXPos_Validated(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hexNumberBoxTriggerYPos_Validated(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hexNumberBoxTriggerFiller1_Validated(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hexNumberBoxTriggerVariable_Validated(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hexNumberBoxTriggerValue_Validated(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hexNumberBoxTriggerFiller2_Validated(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hexNumberBoxTriggerFiller3_Validated(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hexNumberBoxTriggerScriptOffset_Validated(object sender, EventArgs e)
+        {
+
+        }
+
         /*
         // Undo example usage
         // Note that the redo gets called automatically

@@ -63,6 +63,8 @@ namespace PGMEWindowsUI
             this.borderBlocksBox = new System.Windows.Forms.GroupBox();
             this.glControlBorderBlocks = new OpenTK.GLControl();
             this.mapEditorPanel = new System.Windows.Forms.Panel();
+            this.mapPaintPanel = new PGMEWindowsUI.GLPanel();
+            this.glControlMapEditor = new OpenTK.GLControl();
             this.tsMapEditorTab = new System.Windows.Forms.ToolStrip();
             this.cboTimeofDayMap = new System.Windows.Forms.ToolStripComboBox();
             this.mapXPosLabel = new System.Windows.Forms.ToolStripLabel();
@@ -75,7 +77,11 @@ namespace PGMEWindowsUI
             this.toolStripShowGrid = new System.Windows.Forms.ToolStripButton();
             this.paintTabControl = new System.Windows.Forms.TabControl();
             this.blocksTabPage = new System.Windows.Forms.TabPage();
+            this.blockPaintPanel = new PGMEWindowsUI.GLPanel();
+            this.glControlBlocks = new OpenTK.GLControl();
             this.movementTabPage = new System.Windows.Forms.TabPage();
+            this.movementPaintPanel = new PGMEWindowsUI.GLPanel();
+            this.glControlPermsChooser = new OpenTK.GLControl();
             this.entitiesTabPage = new System.Windows.Forms.TabPage();
             this.panelEntityData = new System.Windows.Forms.Panel();
             this.btnCreateNewEntity = new System.Windows.Forms.Button();
@@ -223,8 +229,12 @@ namespace PGMEWindowsUI
             this.labelNPCNumber = new System.Windows.Forms.Label();
             this.hexNumberBoxNPCXPos = new System.Windows.Forms.TextBox();
             this.hexNumberBoxNPCReplacement = new System.Windows.Forms.TextBox();
+            this.nudNPCSpriteNum = new PGMEWindowsUI.HexNumericUpDown();
+            this.nudNPCNum = new PGMEWindowsUI.HexNumericUpDown();
             this.labelEntityDataPanel = new System.Windows.Forms.Label();
             this.eventEditorPanel = new System.Windows.Forms.Panel();
+            this.eventPaintPanel = new PGMEWindowsUI.GLPanel();
+            this.glControlEntityEditor = new OpenTK.GLControl();
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
             this.cboTimeofDayEvents = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripEventsShowGrid = new System.Windows.Forms.ToolStripButton();
@@ -606,16 +616,12 @@ namespace PGMEWindowsUI
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.mapPaintPanel = new PGMEWindowsUI.GLPanel();
-            this.glControlMapEditor = new OpenTK.GLControl();
-            this.blockPaintPanel = new PGMEWindowsUI.GLPanel();
-            this.glControlBlocks = new OpenTK.GLControl();
-            this.movementPaintPanel = new PGMEWindowsUI.GLPanel();
-            this.glControlPermsChooser = new OpenTK.GLControl();
-            this.nudNPCSpriteNum = new PGMEWindowsUI.HexNumericUpDown();
-            this.nudNPCNum = new PGMEWindowsUI.HexNumericUpDown();
-            this.eventPaintPanel = new PGMEWindowsUI.GLPanel();
-            this.glControlEntityEditor = new OpenTK.GLControl();
+            this.hexViewerRawTrigger = new Be.Windows.Forms.HexBox();
+            this.labelTriggerOffset = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.hexViewerRawWarp = new Be.Windows.Forms.HexBox();
+            this.labelWarpOffset = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitMapListAndPaint)).BeginInit();
             this.splitMapListAndPaint.Panel1.SuspendLayout();
             this.splitMapListAndPaint.Panel2.SuspendLayout();
@@ -626,10 +632,13 @@ namespace PGMEWindowsUI
             this.panel2.SuspendLayout();
             this.borderBlocksBox.SuspendLayout();
             this.mapEditorPanel.SuspendLayout();
+            this.mapPaintPanel.SuspendLayout();
             this.tsMapEditorTab.SuspendLayout();
             this.paintTabControl.SuspendLayout();
             this.blocksTabPage.SuspendLayout();
+            this.blockPaintPanel.SuspendLayout();
             this.movementTabPage.SuspendLayout();
+            this.movementPaintPanel.SuspendLayout();
             this.entitiesTabPage.SuspendLayout();
             this.panelEntityData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEntityNum)).BeginInit();
@@ -641,7 +650,10 @@ namespace PGMEWindowsUI
             this.gbWarpDestination.SuspendLayout();
             this.panelSpriteEvent.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNPCSpriteNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNPCNum)).BeginInit();
             this.eventEditorPanel.SuspendLayout();
+            this.eventPaintPanel.SuspendLayout();
             this.toolStrip3.SuspendLayout();
             this.wildTabPage.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -773,12 +785,8 @@ namespace PGMEWindowsUI
             this.mainMenuStrip.SuspendLayout();
             this.mainToolStrip.SuspendLayout();
             this.mainStatusStrip.SuspendLayout();
-            this.mapPaintPanel.SuspendLayout();
-            this.blockPaintPanel.SuspendLayout();
-            this.movementPaintPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudNPCSpriteNum)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudNPCNum)).BeginInit();
-            this.eventPaintPanel.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitMapListAndPaint
@@ -853,8 +861,8 @@ namespace PGMEWindowsUI
             // tsMapFilter
             // 
             this.tsMapFilter.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            resources.ApplyResources(this.tsMapFilter, "tsMapFilter");
             this.tsMapFilter.Name = "tsMapFilter";
+            resources.ApplyResources(this.tsMapFilter, "tsMapFilter");
             this.tsMapFilter.TextChanged += new System.EventHandler(this.tsMapFilter_TextChanged);
             // 
             // mapListTreeView
@@ -921,6 +929,29 @@ namespace PGMEWindowsUI
             this.mapEditorPanel.Controls.Add(this.mapPaintPanel);
             this.mapEditorPanel.Controls.Add(this.tsMapEditorTab);
             this.mapEditorPanel.Name = "mapEditorPanel";
+            // 
+            // mapPaintPanel
+            // 
+            resources.ApplyResources(this.mapPaintPanel, "mapPaintPanel");
+            this.mapPaintPanel.BackColor = System.Drawing.Color.Transparent;
+            this.mapPaintPanel.Controls.Add(this.glControlMapEditor);
+            this.mapPaintPanel.Name = "mapPaintPanel";
+            this.mapPaintPanel.Scroll += new System.Windows.Forms.ScrollEventHandler(this.panel8_Scroll);
+            // 
+            // glControlMapEditor
+            // 
+            this.glControlMapEditor.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.glControlMapEditor.BackColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.glControlMapEditor, "glControlMapEditor");
+            this.glControlMapEditor.Name = "glControlMapEditor";
+            this.glControlMapEditor.VSync = false;
+            this.glControlMapEditor.Load += new System.EventHandler(this.glControlMapEditor_Load);
+            this.glControlMapEditor.Paint += new System.Windows.Forms.PaintEventHandler(this.glControlMapEditor_Paint);
+            this.glControlMapEditor.MouseDown += new System.Windows.Forms.MouseEventHandler(this.glControlMapEditor_MouseDown);
+            this.glControlMapEditor.MouseEnter += new System.EventHandler(this.glControlMapEditor_MouseEnter);
+            this.glControlMapEditor.MouseLeave += new System.EventHandler(this.glControlMapEditor_MouseLeave);
+            this.glControlMapEditor.MouseMove += new System.Windows.Forms.MouseEventHandler(this.glControlMapEditor_MouseMove);
+            this.glControlMapEditor.MouseUp += new System.Windows.Forms.MouseEventHandler(this.glControlMapEditor_MouseUp);
             // 
             // tsMapEditorTab
             // 
@@ -1025,12 +1056,54 @@ namespace PGMEWindowsUI
             this.blocksTabPage.Name = "blocksTabPage";
             this.blocksTabPage.UseVisualStyleBackColor = true;
             // 
+            // blockPaintPanel
+            // 
+            resources.ApplyResources(this.blockPaintPanel, "blockPaintPanel");
+            this.blockPaintPanel.BackColor = System.Drawing.Color.Transparent;
+            this.blockPaintPanel.Controls.Add(this.glControlBlocks);
+            this.blockPaintPanel.Name = "blockPaintPanel";
+            this.blockPaintPanel.Scroll += new System.Windows.Forms.ScrollEventHandler(this.blockPaintPanel_Scroll);
+            // 
+            // glControlBlocks
+            // 
+            this.glControlBlocks.BackColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.glControlBlocks, "glControlBlocks");
+            this.glControlBlocks.Name = "glControlBlocks";
+            this.glControlBlocks.VSync = false;
+            this.glControlBlocks.Load += new System.EventHandler(this.glControlBlocks_Load);
+            this.glControlBlocks.Paint += new System.Windows.Forms.PaintEventHandler(this.glControlBlocks_Paint);
+            this.glControlBlocks.MouseDown += new System.Windows.Forms.MouseEventHandler(this.glControlBlocks_MouseDown);
+            this.glControlBlocks.MouseEnter += new System.EventHandler(this.glControlBlocks_MouseEnter);
+            this.glControlBlocks.MouseLeave += new System.EventHandler(this.glControlBlocks_MouseLeave);
+            this.glControlBlocks.MouseMove += new System.Windows.Forms.MouseEventHandler(this.glControlBlocks_MouseMove);
+            this.glControlBlocks.MouseUp += new System.Windows.Forms.MouseEventHandler(this.glControlBlocks_MouseUp);
+            // 
             // movementTabPage
             // 
             this.movementTabPage.Controls.Add(this.movementPaintPanel);
             resources.ApplyResources(this.movementTabPage, "movementTabPage");
             this.movementTabPage.Name = "movementTabPage";
             this.movementTabPage.UseVisualStyleBackColor = true;
+            // 
+            // movementPaintPanel
+            // 
+            resources.ApplyResources(this.movementPaintPanel, "movementPaintPanel");
+            this.movementPaintPanel.Controls.Add(this.glControlPermsChooser);
+            this.movementPaintPanel.Name = "movementPaintPanel";
+            // 
+            // glControlPermsChooser
+            // 
+            this.glControlPermsChooser.BackColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.glControlPermsChooser, "glControlPermsChooser");
+            this.glControlPermsChooser.Name = "glControlPermsChooser";
+            this.glControlPermsChooser.VSync = false;
+            this.glControlPermsChooser.Load += new System.EventHandler(this.glControlPermsChooser_Load);
+            this.glControlPermsChooser.Paint += new System.Windows.Forms.PaintEventHandler(this.glControlPermsChooser_Paint);
+            this.glControlPermsChooser.MouseDown += new System.Windows.Forms.MouseEventHandler(this.glControlPermsChooser_MouseDown);
+            this.glControlPermsChooser.MouseEnter += new System.EventHandler(this.glControlPermsChooser_MouseEnter);
+            this.glControlPermsChooser.MouseLeave += new System.EventHandler(this.glControlPermsChooser_MouseLeave);
+            this.glControlPermsChooser.MouseMove += new System.Windows.Forms.MouseEventHandler(this.glControlPermsChooser_MouseMove);
+            this.glControlPermsChooser.MouseUp += new System.Windows.Forms.MouseEventHandler(this.glControlPermsChooser_MouseUp);
             // 
             // entitiesTabPage
             // 
@@ -1046,11 +1119,11 @@ namespace PGMEWindowsUI
             this.panelEntityData.Controls.Add(this.btnCreateNewEntity);
             this.panelEntityData.Controls.Add(this.cboEventTypes);
             this.panelEntityData.Controls.Add(this.nudEntityNum);
-            this.panelEntityData.Controls.Add(this.panelSignEvent);
             this.panelEntityData.Controls.Add(this.panelScriptEvent);
+            this.panelEntityData.Controls.Add(this.labelEntityDataPanel);
             this.panelEntityData.Controls.Add(this.panelWarpEvent);
             this.panelEntityData.Controls.Add(this.panelSpriteEvent);
-            this.panelEntityData.Controls.Add(this.labelEntityDataPanel);
+            this.panelEntityData.Controls.Add(this.panelSignEvent);
             this.panelEntityData.Name = "panelEntityData";
             // 
             // btnCreateNewEntity
@@ -1135,6 +1208,7 @@ namespace PGMEWindowsUI
             this.hexViewerRawSign.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
             this.hexViewerRawSign.TabStop = false;
             this.hexViewerRawSign.UseFixedBytesPerLine = true;
+            this.hexViewerRawSign.Validating += new System.ComponentModel.CancelEventHandler(this.hexViewerRawSign_Validating);
             // 
             // hexPrefixBox38
             // 
@@ -1324,6 +1398,8 @@ namespace PGMEWindowsUI
             // panelScriptEvent
             // 
             resources.ApplyResources(this.panelScriptEvent, "panelScriptEvent");
+            this.panelScriptEvent.Controls.Add(this.labelTriggerOffset);
+            this.panelScriptEvent.Controls.Add(this.groupBox6);
             this.panelScriptEvent.Controls.Add(this.textBox6);
             this.panelScriptEvent.Controls.Add(this.hexNumberBoxTriggerHeight);
             this.panelScriptEvent.Controls.Add(this.textBox79);
@@ -1362,6 +1438,8 @@ namespace PGMEWindowsUI
             this.hexNumberBoxTriggerHeight.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxTriggerHeight, "hexNumberBoxTriggerHeight");
             this.hexNumberBoxTriggerHeight.Name = "hexNumberBoxTriggerHeight";
+            this.hexNumberBoxTriggerHeight.TextChanged += new System.EventHandler(this.hexNumberBoxTriggerHeight_TextChanged);
+            this.hexNumberBoxTriggerHeight.Validated += new System.EventHandler(this.hexNumberBoxTriggerHeight_Validated);
             // 
             // textBox79
             // 
@@ -1415,6 +1493,7 @@ namespace PGMEWindowsUI
             this.hexNumberBoxTriggerFiller2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxTriggerFiller2, "hexNumberBoxTriggerFiller2");
             this.hexNumberBoxTriggerFiller2.Name = "hexNumberBoxTriggerFiller2";
+            this.hexNumberBoxTriggerFiller2.Validated += new System.EventHandler(this.hexNumberBoxTriggerFiller2_Validated);
             // 
             // label27
             // 
@@ -1426,6 +1505,7 @@ namespace PGMEWindowsUI
             this.hexNumberBoxTriggerFiller1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxTriggerFiller1, "hexNumberBoxTriggerFiller1");
             this.hexNumberBoxTriggerFiller1.Name = "hexNumberBoxTriggerFiller1";
+            this.hexNumberBoxTriggerFiller1.Validated += new System.EventHandler(this.hexNumberBoxTriggerFiller1_Validated);
             // 
             // label32
             // 
@@ -1473,12 +1553,14 @@ namespace PGMEWindowsUI
             this.hexNumberBoxTriggerVariable.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxTriggerVariable, "hexNumberBoxTriggerVariable");
             this.hexNumberBoxTriggerVariable.Name = "hexNumberBoxTriggerVariable";
+            this.hexNumberBoxTriggerVariable.Validated += new System.EventHandler(this.hexNumberBoxTriggerVariable_Validated);
             // 
             // hexNumberBoxTriggerValue
             // 
             this.hexNumberBoxTriggerValue.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxTriggerValue, "hexNumberBoxTriggerValue");
             this.hexNumberBoxTriggerValue.Name = "hexNumberBoxTriggerValue";
+            this.hexNumberBoxTriggerValue.Validated += new System.EventHandler(this.hexNumberBoxTriggerValue_Validated);
             // 
             // label19
             // 
@@ -1498,6 +1580,7 @@ namespace PGMEWindowsUI
             this.hexNumberBoxTriggerScriptOffset.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxTriggerScriptOffset, "hexNumberBoxTriggerScriptOffset");
             this.hexNumberBoxTriggerScriptOffset.Name = "hexNumberBoxTriggerScriptOffset";
+            this.hexNumberBoxTriggerScriptOffset.Validated += new System.EventHandler(this.hexNumberBoxTriggerScriptOffset_Validated);
             // 
             // btnTriggerOpenScript
             // 
@@ -1511,6 +1594,7 @@ namespace PGMEWindowsUI
             this.hexNumberBoxTriggerFiller3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxTriggerFiller3, "hexNumberBoxTriggerFiller3");
             this.hexNumberBoxTriggerFiller3.Name = "hexNumberBoxTriggerFiller3";
+            this.hexNumberBoxTriggerFiller3.Validated += new System.EventHandler(this.hexNumberBoxTriggerFiller3_Validated);
             // 
             // cbTriggerHeight
             // 
@@ -1534,6 +1618,8 @@ namespace PGMEWindowsUI
             resources.GetString("cbTriggerHeight.Items15")});
             resources.ApplyResources(this.cbTriggerHeight, "cbTriggerHeight");
             this.cbTriggerHeight.Name = "cbTriggerHeight";
+            this.cbTriggerHeight.SelectionChangeCommitted += new System.EventHandler(this.cbTriggerHeight_SelectionChangeCommitted);
+            this.cbTriggerHeight.Validated += new System.EventHandler(this.cbTriggerHeight_Validated);
             // 
             // label29
             // 
@@ -1550,16 +1636,20 @@ namespace PGMEWindowsUI
             this.hexNumberBoxTriggerYPos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxTriggerYPos, "hexNumberBoxTriggerYPos");
             this.hexNumberBoxTriggerYPos.Name = "hexNumberBoxTriggerYPos";
+            this.hexNumberBoxTriggerYPos.Validated += new System.EventHandler(this.hexNumberBoxTriggerYPos_Validated);
             // 
             // hexNumberBoxTriggerXPos
             // 
             this.hexNumberBoxTriggerXPos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxTriggerXPos, "hexNumberBoxTriggerXPos");
             this.hexNumberBoxTriggerXPos.Name = "hexNumberBoxTriggerXPos";
+            this.hexNumberBoxTriggerXPos.Validated += new System.EventHandler(this.hexNumberBoxTriggerXPos_Validated);
             // 
             // panelWarpEvent
             // 
             resources.ApplyResources(this.panelWarpEvent, "panelWarpEvent");
+            this.panelWarpEvent.Controls.Add(this.labelWarpOffset);
+            this.panelWarpEvent.Controls.Add(this.groupBox7);
             this.panelWarpEvent.Controls.Add(this.textBox8);
             this.panelWarpEvent.Controls.Add(this.hexNumberBoxWarpHeight);
             this.panelWarpEvent.Controls.Add(this.textBox94);
@@ -1586,6 +1676,8 @@ namespace PGMEWindowsUI
             this.hexNumberBoxWarpHeight.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxWarpHeight, "hexNumberBoxWarpHeight");
             this.hexNumberBoxWarpHeight.Name = "hexNumberBoxWarpHeight";
+            this.hexNumberBoxWarpHeight.TextChanged += new System.EventHandler(this.hexNumberBoxWarpHeight_TextChanged);
+            this.hexNumberBoxWarpHeight.Validated += new System.EventHandler(this.hexNumberBoxWarpHeight_Validated);
             // 
             // textBox94
             // 
@@ -1658,18 +1750,21 @@ namespace PGMEWindowsUI
             this.hexNumberBoxWarpMap.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxWarpMap, "hexNumberBoxWarpMap");
             this.hexNumberBoxWarpMap.Name = "hexNumberBoxWarpMap";
+            this.hexNumberBoxWarpMap.Validated += new System.EventHandler(this.hexNumberBoxWarpMap_Validated);
             // 
             // hexNumberBoxWarpNum
             // 
             this.hexNumberBoxWarpNum.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxWarpNum, "hexNumberBoxWarpNum");
             this.hexNumberBoxWarpNum.Name = "hexNumberBoxWarpNum";
+            this.hexNumberBoxWarpNum.Validated += new System.EventHandler(this.hexNumberBoxWarpNum_Validated);
             // 
             // hexNumberBoxWarpBank
             // 
             this.hexNumberBoxWarpBank.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxWarpBank, "hexNumberBoxWarpBank");
             this.hexNumberBoxWarpBank.Name = "hexNumberBoxWarpBank";
+            this.hexNumberBoxWarpBank.Validated += new System.EventHandler(this.hexNumberBoxWarpBank_Validated);
             // 
             // btnDeleteWarp
             // 
@@ -1708,6 +1803,8 @@ namespace PGMEWindowsUI
             resources.GetString("cbWarpHeight.Items15")});
             resources.ApplyResources(this.cbWarpHeight, "cbWarpHeight");
             this.cbWarpHeight.Name = "cbWarpHeight";
+            this.cbWarpHeight.SelectionChangeCommitted += new System.EventHandler(this.cbWarpHeight_SelectionChangeCommitted);
+            this.cbWarpHeight.Validated += new System.EventHandler(this.cbWarpHeight_Validated);
             // 
             // labelWarpHeight
             // 
@@ -1724,12 +1821,14 @@ namespace PGMEWindowsUI
             this.hexNumberBoxWarpYPos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxWarpYPos, "hexNumberBoxWarpYPos");
             this.hexNumberBoxWarpYPos.Name = "hexNumberBoxWarpYPos";
+            this.hexNumberBoxWarpYPos.Validated += new System.EventHandler(this.hexNumberBoxWarpYPos_Validated);
             // 
             // hexNumberBoxWarpXPos
             // 
             this.hexNumberBoxWarpXPos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             resources.ApplyResources(this.hexNumberBoxWarpXPos, "hexNumberBoxWarpXPos");
             this.hexNumberBoxWarpXPos.Name = "hexNumberBoxWarpXPos";
+            this.hexNumberBoxWarpXPos.Validated += new System.EventHandler(this.hexNumberBoxWarpXPos_Validated);
             // 
             // panelSpriteEvent
             // 
@@ -1917,6 +2016,7 @@ namespace PGMEWindowsUI
             this.hexViewerRawNPC.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
             this.hexViewerRawNPC.TabStop = false;
             this.hexViewerRawNPC.UseFixedBytesPerLine = true;
+            this.hexViewerRawNPC.Validating += new System.ComponentModel.CancelEventHandler(this.hexViewerRawNPC_Validating);
             // 
             // hexPrefixBox23
             // 
@@ -2291,6 +2391,30 @@ namespace PGMEWindowsUI
             this.hexNumberBoxNPCReplacement.Name = "hexNumberBoxNPCReplacement";
             this.hexNumberBoxNPCReplacement.Validated += new System.EventHandler(this.hexNumberBoxNPCReplacement_Validated);
             // 
+            // nudNPCSpriteNum
+            // 
+            resources.ApplyResources(this.nudNPCSpriteNum, "nudNPCSpriteNum");
+            this.nudNPCSpriteNum.Hexadecimal = true;
+            this.nudNPCSpriteNum.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.nudNPCSpriteNum.Name = "nudNPCSpriteNum";
+            this.nudNPCSpriteNum.ValueChanged += new System.EventHandler(this.nudNPCSpriteNum_ValueChanged);
+            // 
+            // nudNPCNum
+            // 
+            resources.ApplyResources(this.nudNPCNum, "nudNPCNum");
+            this.nudNPCNum.Hexadecimal = true;
+            this.nudNPCNum.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.nudNPCNum.Name = "nudNPCNum";
+            this.nudNPCNum.ValueChanged += new System.EventHandler(this.nudNPCNum_ValueChanged);
+            // 
             // labelEntityDataPanel
             // 
             resources.ApplyResources(this.labelEntityDataPanel, "labelEntityDataPanel");
@@ -2302,6 +2426,29 @@ namespace PGMEWindowsUI
             this.eventEditorPanel.Controls.Add(this.eventPaintPanel);
             this.eventEditorPanel.Controls.Add(this.toolStrip3);
             this.eventEditorPanel.Name = "eventEditorPanel";
+            // 
+            // eventPaintPanel
+            // 
+            resources.ApplyResources(this.eventPaintPanel, "eventPaintPanel");
+            this.eventPaintPanel.BackColor = System.Drawing.Color.Transparent;
+            this.eventPaintPanel.Controls.Add(this.glControlEntityEditor);
+            this.eventPaintPanel.Name = "eventPaintPanel";
+            // 
+            // glControlEntityEditor
+            // 
+            this.glControlEntityEditor.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.glControlEntityEditor.BackColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.glControlEntityEditor, "glControlEntityEditor");
+            this.glControlEntityEditor.Name = "glControlEntityEditor";
+            this.glControlEntityEditor.VSync = false;
+            this.glControlEntityEditor.Load += new System.EventHandler(this.glControlEntityEditor_Load);
+            this.glControlEntityEditor.Paint += new System.Windows.Forms.PaintEventHandler(this.glControlEntityEditor_Paint);
+            this.glControlEntityEditor.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.glControlEntityEditor_MouseDoubleClick);
+            this.glControlEntityEditor.MouseDown += new System.Windows.Forms.MouseEventHandler(this.glControlEntityEditor_MouseDown);
+            this.glControlEntityEditor.MouseEnter += new System.EventHandler(this.glControlEntityEditor_MouseEnter);
+            this.glControlEntityEditor.MouseLeave += new System.EventHandler(this.glControlEntityEditor_MouseLeave);
+            this.glControlEntityEditor.MouseMove += new System.Windows.Forms.MouseEventHandler(this.glControlEntityEditor_MouseMove);
+            this.glControlEntityEditor.MouseUp += new System.Windows.Forms.MouseEventHandler(this.glControlEntityEditor_MouseUp);
             // 
             // toolStrip3
             // 
@@ -5364,117 +5511,55 @@ namespace PGMEWindowsUI
             this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
             resources.ApplyResources(this.toolStripStatusLabel4, "toolStripStatusLabel4");
             // 
-            // mapPaintPanel
+            // hexViewerRawTrigger
             // 
-            resources.ApplyResources(this.mapPaintPanel, "mapPaintPanel");
-            this.mapPaintPanel.BackColor = System.Drawing.Color.Transparent;
-            this.mapPaintPanel.Controls.Add(this.glControlMapEditor);
-            this.mapPaintPanel.Name = "mapPaintPanel";
-            this.mapPaintPanel.Scroll += new System.Windows.Forms.ScrollEventHandler(this.panel8_Scroll);
+            this.hexViewerRawTrigger.BytesPerLine = 8;
+            resources.ApplyResources(this.hexViewerRawTrigger, "hexViewerRawTrigger");
+            this.hexViewerRawTrigger.GroupSeparatorVisible = true;
+            this.hexViewerRawTrigger.Name = "hexViewerRawTrigger";
+            this.hexViewerRawTrigger.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            this.hexViewerRawTrigger.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.hexViewerRawTrigger.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hexViewerRawTrigger.TabStop = false;
+            this.hexViewerRawTrigger.UseFixedBytesPerLine = true;
+            this.hexViewerRawTrigger.Validating += new System.ComponentModel.CancelEventHandler(this.hexViewerRawTrigger_Validating);
             // 
-            // glControlMapEditor
+            // labelTriggerOffset
             // 
-            this.glControlMapEditor.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.glControlMapEditor.BackColor = System.Drawing.Color.Black;
-            resources.ApplyResources(this.glControlMapEditor, "glControlMapEditor");
-            this.glControlMapEditor.Name = "glControlMapEditor";
-            this.glControlMapEditor.VSync = false;
-            this.glControlMapEditor.Load += new System.EventHandler(this.glControlMapEditor_Load);
-            this.glControlMapEditor.Paint += new System.Windows.Forms.PaintEventHandler(this.glControlMapEditor_Paint);
-            this.glControlMapEditor.MouseDown += new System.Windows.Forms.MouseEventHandler(this.glControlMapEditor_MouseDown);
-            this.glControlMapEditor.MouseEnter += new System.EventHandler(this.glControlMapEditor_MouseEnter);
-            this.glControlMapEditor.MouseLeave += new System.EventHandler(this.glControlMapEditor_MouseLeave);
-            this.glControlMapEditor.MouseMove += new System.Windows.Forms.MouseEventHandler(this.glControlMapEditor_MouseMove);
-            this.glControlMapEditor.MouseUp += new System.Windows.Forms.MouseEventHandler(this.glControlMapEditor_MouseUp);
+            resources.ApplyResources(this.labelTriggerOffset, "labelTriggerOffset");
+            this.labelTriggerOffset.Name = "labelTriggerOffset";
             // 
-            // blockPaintPanel
+            // groupBox6
             // 
-            resources.ApplyResources(this.blockPaintPanel, "blockPaintPanel");
-            this.blockPaintPanel.BackColor = System.Drawing.Color.Transparent;
-            this.blockPaintPanel.Controls.Add(this.glControlBlocks);
-            this.blockPaintPanel.Name = "blockPaintPanel";
-            this.blockPaintPanel.Scroll += new System.Windows.Forms.ScrollEventHandler(this.blockPaintPanel_Scroll);
+            this.groupBox6.Controls.Add(this.hexViewerRawTrigger);
+            resources.ApplyResources(this.groupBox6, "groupBox6");
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.TabStop = false;
             // 
-            // glControlBlocks
+            // hexViewerRawWarp
             // 
-            this.glControlBlocks.BackColor = System.Drawing.Color.Black;
-            resources.ApplyResources(this.glControlBlocks, "glControlBlocks");
-            this.glControlBlocks.Name = "glControlBlocks";
-            this.glControlBlocks.VSync = false;
-            this.glControlBlocks.Load += new System.EventHandler(this.glControlBlocks_Load);
-            this.glControlBlocks.Paint += new System.Windows.Forms.PaintEventHandler(this.glControlBlocks_Paint);
-            this.glControlBlocks.MouseDown += new System.Windows.Forms.MouseEventHandler(this.glControlBlocks_MouseDown);
-            this.glControlBlocks.MouseEnter += new System.EventHandler(this.glControlBlocks_MouseEnter);
-            this.glControlBlocks.MouseLeave += new System.EventHandler(this.glControlBlocks_MouseLeave);
-            this.glControlBlocks.MouseMove += new System.Windows.Forms.MouseEventHandler(this.glControlBlocks_MouseMove);
-            this.glControlBlocks.MouseUp += new System.Windows.Forms.MouseEventHandler(this.glControlBlocks_MouseUp);
+            this.hexViewerRawWarp.BytesPerLine = 8;
+            resources.ApplyResources(this.hexViewerRawWarp, "hexViewerRawWarp");
+            this.hexViewerRawWarp.GroupSeparatorVisible = true;
+            this.hexViewerRawWarp.Name = "hexViewerRawWarp";
+            this.hexViewerRawWarp.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            this.hexViewerRawWarp.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.hexViewerRawWarp.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hexViewerRawWarp.TabStop = false;
+            this.hexViewerRawWarp.UseFixedBytesPerLine = true;
+            this.hexViewerRawWarp.Validating += new System.ComponentModel.CancelEventHandler(this.hexViewerRawWarp_Validating);
             // 
-            // movementPaintPanel
+            // labelWarpOffset
             // 
-            resources.ApplyResources(this.movementPaintPanel, "movementPaintPanel");
-            this.movementPaintPanel.Controls.Add(this.glControlPermsChooser);
-            this.movementPaintPanel.Name = "movementPaintPanel";
+            resources.ApplyResources(this.labelWarpOffset, "labelWarpOffset");
+            this.labelWarpOffset.Name = "labelWarpOffset";
             // 
-            // glControlPermsChooser
+            // groupBox7
             // 
-            this.glControlPermsChooser.BackColor = System.Drawing.Color.Black;
-            resources.ApplyResources(this.glControlPermsChooser, "glControlPermsChooser");
-            this.glControlPermsChooser.Name = "glControlPermsChooser";
-            this.glControlPermsChooser.VSync = false;
-            this.glControlPermsChooser.Load += new System.EventHandler(this.glControlPermsChooser_Load);
-            this.glControlPermsChooser.Paint += new System.Windows.Forms.PaintEventHandler(this.glControlPermsChooser_Paint);
-            this.glControlPermsChooser.MouseDown += new System.Windows.Forms.MouseEventHandler(this.glControlPermsChooser_MouseDown);
-            this.glControlPermsChooser.MouseEnter += new System.EventHandler(this.glControlPermsChooser_MouseEnter);
-            this.glControlPermsChooser.MouseLeave += new System.EventHandler(this.glControlPermsChooser_MouseLeave);
-            this.glControlPermsChooser.MouseMove += new System.Windows.Forms.MouseEventHandler(this.glControlPermsChooser_MouseMove);
-            this.glControlPermsChooser.MouseUp += new System.Windows.Forms.MouseEventHandler(this.glControlPermsChooser_MouseUp);
-            // 
-            // nudNPCSpriteNum
-            // 
-            resources.ApplyResources(this.nudNPCSpriteNum, "nudNPCSpriteNum");
-            this.nudNPCSpriteNum.Hexadecimal = true;
-            this.nudNPCSpriteNum.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.nudNPCSpriteNum.Name = "nudNPCSpriteNum";
-            this.nudNPCSpriteNum.ValueChanged += new System.EventHandler(this.nudNPCSpriteNum_ValueChanged);
-            // 
-            // nudNPCNum
-            // 
-            resources.ApplyResources(this.nudNPCNum, "nudNPCNum");
-            this.nudNPCNum.Hexadecimal = true;
-            this.nudNPCNum.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.nudNPCNum.Name = "nudNPCNum";
-            this.nudNPCNum.ValueChanged += new System.EventHandler(this.nudNPCNum_ValueChanged);
-            // 
-            // eventPaintPanel
-            // 
-            resources.ApplyResources(this.eventPaintPanel, "eventPaintPanel");
-            this.eventPaintPanel.BackColor = System.Drawing.Color.Transparent;
-            this.eventPaintPanel.Controls.Add(this.glControlEntityEditor);
-            this.eventPaintPanel.Name = "eventPaintPanel";
-            // 
-            // glControlEntityEditor
-            // 
-            this.glControlEntityEditor.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.glControlEntityEditor.BackColor = System.Drawing.Color.Black;
-            resources.ApplyResources(this.glControlEntityEditor, "glControlEntityEditor");
-            this.glControlEntityEditor.Name = "glControlEntityEditor";
-            this.glControlEntityEditor.VSync = false;
-            this.glControlEntityEditor.Load += new System.EventHandler(this.glControlEntityEditor_Load);
-            this.glControlEntityEditor.Paint += new System.Windows.Forms.PaintEventHandler(this.glControlEntityEditor_Paint);
-            this.glControlEntityEditor.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.glControlEntityEditor_MouseDoubleClick);
-            this.glControlEntityEditor.MouseDown += new System.Windows.Forms.MouseEventHandler(this.glControlEntityEditor_MouseDown);
-            this.glControlEntityEditor.MouseEnter += new System.EventHandler(this.glControlEntityEditor_MouseEnter);
-            this.glControlEntityEditor.MouseLeave += new System.EventHandler(this.glControlEntityEditor_MouseLeave);
-            this.glControlEntityEditor.MouseMove += new System.Windows.Forms.MouseEventHandler(this.glControlEntityEditor_MouseMove);
-            this.glControlEntityEditor.MouseUp += new System.Windows.Forms.MouseEventHandler(this.glControlEntityEditor_MouseUp);
+            this.groupBox7.Controls.Add(this.hexViewerRawWarp);
+            resources.ApplyResources(this.groupBox7, "groupBox7");
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.TabStop = false;
             // 
             // MainWindow
             // 
@@ -5504,11 +5589,14 @@ namespace PGMEWindowsUI
             this.borderBlocksBox.ResumeLayout(false);
             this.mapEditorPanel.ResumeLayout(false);
             this.mapEditorPanel.PerformLayout();
+            this.mapPaintPanel.ResumeLayout(false);
             this.tsMapEditorTab.ResumeLayout(false);
             this.tsMapEditorTab.PerformLayout();
             this.paintTabControl.ResumeLayout(false);
             this.blocksTabPage.ResumeLayout(false);
+            this.blockPaintPanel.ResumeLayout(false);
             this.movementTabPage.ResumeLayout(false);
+            this.movementPaintPanel.ResumeLayout(false);
             this.entitiesTabPage.ResumeLayout(false);
             this.panelEntityData.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nudEntityNum)).EndInit();
@@ -5526,8 +5614,11 @@ namespace PGMEWindowsUI
             this.panelSpriteEvent.ResumeLayout(false);
             this.panelSpriteEvent.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudNPCSpriteNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNPCNum)).EndInit();
             this.eventEditorPanel.ResumeLayout(false);
             this.eventEditorPanel.PerformLayout();
+            this.eventPaintPanel.ResumeLayout(false);
             this.toolStrip3.ResumeLayout(false);
             this.toolStrip3.PerformLayout();
             this.wildTabPage.ResumeLayout(false);
@@ -5684,12 +5775,8 @@ namespace PGMEWindowsUI
             this.mainToolStrip.PerformLayout();
             this.mainStatusStrip.ResumeLayout(false);
             this.mainStatusStrip.PerformLayout();
-            this.mapPaintPanel.ResumeLayout(false);
-            this.blockPaintPanel.ResumeLayout(false);
-            this.movementPaintPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nudNPCSpriteNum)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudNPCNum)).EndInit();
-            this.eventPaintPanel.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -6265,6 +6352,12 @@ namespace PGMEWindowsUI
         private System.Windows.Forms.Label labelSignOffset;
         private System.Windows.Forms.GroupBox groupBox2;
         private Be.Windows.Forms.HexBox hexViewerRawSign;
+        private System.Windows.Forms.Label labelTriggerOffset;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private Be.Windows.Forms.HexBox hexViewerRawTrigger;
+        private System.Windows.Forms.Label labelWarpOffset;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private Be.Windows.Forms.HexBox hexViewerRawWarp;
     }
 }
 
