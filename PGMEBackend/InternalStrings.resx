@@ -406,4 +406,17 @@ Would you like to go to the Settings dialog and choose an editor?</value>
   <data name="ReplacementNPCNumber" xml:space="preserve">
     <value>Replacement NPC Number:</value>
   </data>
+  <data name="DestinationMapNotFound" xml:space="preserve">
+    <value>The warp's destination was not found.</value>
+  </data>
+  <data name="DestinationMapNotFoundTitle" xml:space="preserve">
+    <value>Destination Map Not Found</value>
+  </data>
+  <data name="LastMapWarp" xml:space="preserve">
+    <value>Cannot travel to the destination.
+This is a virtual warp that takes the player to the last warp used.</value>
+  </data>
+  <data name="LastMapWarpTitle" xml:space="preserve">
+    <value>Unable to Travel</value>
+  </data>
 </root>

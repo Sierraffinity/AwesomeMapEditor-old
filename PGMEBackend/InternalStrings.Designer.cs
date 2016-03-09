@@ -656,6 +656,24 @@ namespace PGMEBackend {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The warp&apos;s destination was not found..
+        /// </summary>
+        internal static string DestinationMapNotFound {
+            get {
+                return ResourceManager.GetString("DestinationMapNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Destination Map Not Found.
+        /// </summary>
+        internal static string DestinationMapNotFoundTitle {
+            get {
+                return ResourceManager.GetString("DestinationMapNotFoundTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to File Not Found.
         /// </summary>
         internal static string FileNotFoundTitle {
@@ -670,6 +688,25 @@ namespace PGMEBackend {
         internal static string GlobalTileset {
             get {
                 return ResourceManager.GetString("GlobalTileset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cannot travel to the destination.
+        ///This is a virtual warp that takes the player to the last warp used..
+        /// </summary>
+        internal static string LastMapWarp {
+            get {
+                return ResourceManager.GetString("LastMapWarp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to Travel.
+        /// </summary>
+        internal static string LastMapWarpTitle {
+            get {
+                return ResourceManager.GetString("LastMapWarpTitle", resourceCulture);
             }
         }
         

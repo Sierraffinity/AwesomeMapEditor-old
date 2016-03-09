@@ -938,34 +938,22 @@ namespace PGMEWindowsUI
                 default:
                     SetEntityNumValues(NPC.currentNPC, map.NPCs.Count - 1);
                     LoadNPCView(map, NPC.currentNPC);
-                    if (map.NPCs != null && map.NPCs.Count != 0)
-                        PGMEBackend.Program.glEntityEditor.currentEntities = new List<Entity> { map.NPCs[NPC.currentNPC] };
-                    else
-                        PGMEBackend.Program.glEntityEditor.currentEntities = null;
+                    PGMEBackend.Program.glEntityEditor.currentEntities = new List<Entity> { map.NPCs[NPC.currentNPC] };
                     break;
                 case Entity.EntityType.Warp:
                     SetEntityNumValues(Warp.currentWarp, map.Warps.Count - 1);
                     LoadWarpView(map, Warp.currentWarp);
-                    if (map.Warps != null && map.Warps.Count != 0)
-                        PGMEBackend.Program.glEntityEditor.currentEntities = new List<Entity> { map.Warps[Warp.currentWarp] };
-                    else
-                        PGMEBackend.Program.glEntityEditor.currentEntities = null;
+                    PGMEBackend.Program.glEntityEditor.currentEntities = new List<Entity> { map.Warps[Warp.currentWarp] };
                     break;
                 case Entity.EntityType.Trigger:
                     SetEntityNumValues(Trigger.currentTrigger, map.Triggers.Count - 1);
                     LoadTriggerView(map, Trigger.currentTrigger);
-                    if (map.Triggers != null && map.Triggers.Count != 0)
-                        PGMEBackend.Program.glEntityEditor.currentEntities = new List<Entity> { map.Triggers[Trigger.currentTrigger] };
-                    else
-                        PGMEBackend.Program.glEntityEditor.currentEntities = null;
+                    PGMEBackend.Program.glEntityEditor.currentEntities = new List<Entity> { map.Triggers[Trigger.currentTrigger] };
                     break;
                 case Entity.EntityType.Sign:
                     SetEntityNumValues(Sign.currentSign, map.Signs.Count - 1);
                     LoadSignView(map, Sign.currentSign);
-                    if (map.Triggers != null && map.Triggers.Count != 0)
-                        PGMEBackend.Program.glEntityEditor.currentEntities = new List<Entity> { map.Signs[Sign.currentSign] };
-                    else
-                        PGMEBackend.Program.glEntityEditor.currentEntities = null;
+                    PGMEBackend.Program.glEntityEditor.currentEntities = new List<Entity> { map.Signs[Sign.currentSign] };
                     break;
             }
 
@@ -2349,7 +2337,10 @@ namespace PGMEWindowsUI
                     LoadSignView(PGMEBackend.Program.currentMap, Sign.currentSign);
                 }
             }
-            PGMEBackend.Program.glEntityEditor.currentEntities.Remove(entity);
+
+            if(PGMEBackend.Program.glEntityEditor.currentEntities != null)
+                PGMEBackend.Program.glEntityEditor.currentEntities.Remove(entity);
+
             return result;
         }
         
@@ -2363,8 +2354,8 @@ namespace PGMEWindowsUI
         {
             labelEntityDataPanel.Text = PGMEBackend.Program.rmInternalStrings.GetString("NoEntitiesOfThisType");
             PGMEBackend.Program.glEntityEditor.currentEntities = null;
-            RefreshEntityEditorControl();
             HideEventEditors();
+            RefreshEntityEditorControl();
         }
 
         private void HideEventEditors()
@@ -2383,10 +2374,19 @@ namespace PGMEWindowsUI
 
         public void FollowWarp(int mapBank, int mapNum, int warpNum)
         {
-            Map destMap = PGMEBackend.Program.mapBanks[mapBank].Bank[mapNum];
+            Map destMap = null;
+            try
+            {
+                destMap = PGMEBackend.Program.mapBanks[mapBank].Bank[mapNum];
+            }
+            catch(KeyNotFoundException)
+            {
+
+            }
+            TreeNode itemNode = null;
             if (destMap != null)
             {
-                TreeNode itemNode = null;
+                tsMapFilter.Text = string.Empty;
                 foreach (TreeNode node in mapListTreeView.Nodes)
                 {
                     itemNode = GetNodeFromTag(destMap, node);
@@ -2397,9 +2397,20 @@ namespace PGMEWindowsUI
                     }
                 }
             }
-            cboEventTypes.SelectedIndex = 1;
-            nudEntityNum.Value = warpNum;
-            //LoadMap((entity as Warp).destMapBank, (entity as Warp).destMapNum);
+
+            if (itemNode == null)
+            {
+                if(mapBank == 0x7F && mapNum == 0x7F && warpNum == 0x7F)
+                    ShowMessageBox(PGMEBackend.Program.rmInternalStrings.GetString("LastMapWarp"), PGMEBackend.Program.rmInternalStrings.GetString("LastMapWarpTitle"), "OK", "Information");
+                else
+                    ShowMessageBox(PGMEBackend.Program.rmInternalStrings.GetString("DestinationMapNotFound"), PGMEBackend.Program.rmInternalStrings.GetString("DestinationMapNotFoundTitle"), "OK", "Warning");
+            }
+            else
+            {
+                cboEventTypes.SelectedIndex = 1;
+                nudEntityNum.Value = warpNum;
+                //LoadMap((entity as Warp).destMapBank, (entity as Warp).destMapNum);
+            }
         }
 
         private void btnTravelToWarpDest_Click(object sender, EventArgs e)

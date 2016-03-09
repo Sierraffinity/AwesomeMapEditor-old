@@ -314,7 +314,7 @@ namespace PGMEBackend.GLControls
                     {
                         clickedOnEntity = true;
                         rectColor = rectSelectColor;
-                        if (currentEntities.Count <= 1 || (currentEntities.Count > 1 && !currentEntities.Contains(mouseOn)))
+                        if (currentEntities == null || currentEntities.Count <= 1 || (currentEntities.Count > 1 && !currentEntities.Contains(mouseOn)))
                         {
                             currentEntities = new List<Entity> { mouseOn };
                             Program.mainGUI.LoadEntityView(currentEntities[0].GetEnum(), GetEntityNum(mouseOn));
