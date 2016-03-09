@@ -919,1879 +919,6 @@
   <data name="&gt;&gt;nudEntityNum.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="panelScriptEvent.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="panelScriptEvent.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="labelTriggerOffset.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="labelTriggerOffset.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="labelTriggerOffset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>124, 313</value>
-  </data>
-  <data name="labelTriggerOffset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 13</value>
-  </data>
-  <data name="labelTriggerOffset.TabIndex" type="System.Int32, mscorlib">
-    <value>62</value>
-  </data>
-  <data name="labelTriggerOffset.Text" xml:space="preserve">
-    <value>0x00000000</value>
-  </data>
-  <data name="&gt;&gt;labelTriggerOffset.Name" xml:space="preserve">
-    <value>labelTriggerOffset</value>
-  </data>
-  <data name="&gt;&gt;labelTriggerOffset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelTriggerOffset.Parent" xml:space="preserve">
-    <value>panelScriptEvent</value>
-  </data>
-  <data name="&gt;&gt;labelTriggerOffset.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="hexViewerRawTrigger.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Consolas, 9pt</value>
-  </data>
-  <data name="hexViewerRawTrigger.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
-  </data>
-  <data name="hexViewerRawTrigger.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 48</value>
-  </data>
-  <data name="hexViewerRawTrigger.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;hexViewerRawTrigger.Name" xml:space="preserve">
-    <value>hexViewerRawTrigger</value>
-  </data>
-  <data name="&gt;&gt;hexViewerRawTrigger.Type" xml:space="preserve">
-    <value>Be.Windows.Forms.HexBox, Be.Windows.Forms.HexBox, Version=1.6.0.33438, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;hexViewerRawTrigger.Parent" xml:space="preserve">
-    <value>groupBox6</value>
-  </data>
-  <data name="&gt;&gt;hexViewerRawTrigger.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="groupBox6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 313</value>
-  </data>
-  <data name="groupBox6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="groupBox6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 73</value>
-  </data>
-  <data name="groupBox6.TabIndex" type="System.Int32, mscorlib">
-    <value>63</value>
-  </data>
-  <data name="groupBox6.Text" xml:space="preserve">
-    <value>Raw Trigger Data</value>
-  </data>
-  <data name="&gt;&gt;groupBox6.Name" xml:space="preserve">
-    <value>groupBox6</value>
-  </data>
-  <data name="&gt;&gt;groupBox6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox6.Parent" xml:space="preserve">
-    <value>panelScriptEvent</value>
-  </data>
-  <data name="&gt;&gt;groupBox6.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="textBox6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 48</value>
-  </data>
-  <data name="textBox6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 20</value>
-  </data>
-  <data name="textBox6.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="textBox6.Text" xml:space="preserve">
-    <value>0x</value>
-  </data>
-  <data name="textBox6.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;textBox6.Name" xml:space="preserve">
-    <value>textBox6</value>
-  </data>
-  <data name="&gt;&gt;textBox6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox6.Parent" xml:space="preserve">
-    <value>panelScriptEvent</value>
-  </data>
-  <data name="&gt;&gt;textBox6.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="hexNumberBoxTriggerHeight.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Courier New, 8.25pt</value>
-  </data>
-  <data name="hexNumberBoxTriggerHeight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 48</value>
-  </data>
-  <data name="hexNumberBoxTriggerHeight.MaxLength" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="hexNumberBoxTriggerHeight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 20</value>
-  </data>
-  <data name="hexNumberBoxTriggerHeight.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="hexNumberBoxTriggerHeight.Text" xml:space="preserve">
-    <value>00</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerHeight.Name" xml:space="preserve">
-    <value>hexNumberBoxTriggerHeight</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerHeight.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerHeight.Parent" xml:space="preserve">
-    <value>panelScriptEvent</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerHeight.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="textBox79.Location" type="System.Drawing.Point, System.Drawing">
-    <value>116, 233</value>
-  </data>
-  <data name="textBox79.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 20</value>
-  </data>
-  <data name="textBox79.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="textBox79.Text" xml:space="preserve">
-    <value>0x</value>
-  </data>
-  <data name="textBox79.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;textBox79.Name" xml:space="preserve">
-    <value>textBox79</value>
-  </data>
-  <data name="&gt;&gt;textBox79.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox79.Parent" xml:space="preserve">
-    <value>panelScriptEvent</value>
-  </data>
-  <data name="&gt;&gt;textBox79.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="textBox78.Location" type="System.Drawing.Point, System.Drawing">
-    <value>159, 207</value>
-  </data>
-  <data name="textBox78.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 20</value>
-  </data>
-  <data name="textBox78.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="textBox78.Text" xml:space="preserve">
-    <value>0x</value>
-  </data>
-  <data name="textBox78.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;textBox78.Name" xml:space="preserve">
-    <value>textBox78</value>
-  </data>
-  <data name="&gt;&gt;textBox78.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox78.Parent" xml:space="preserve">
-    <value>panelScriptEvent</value>
-  </data>
-  <data name="&gt;&gt;textBox78.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="textBox77.Location" type="System.Drawing.Point, System.Drawing">
-    <value>159, 181</value>
-  </data>
-  <data name="textBox77.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 20</value>
-  </data>
-  <data name="textBox77.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="textBox77.Text" xml:space="preserve">
-    <value>0x</value>
-  </data>
-  <data name="textBox77.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;textBox77.Name" xml:space="preserve">
-    <value>textBox77</value>
-  </data>
-  <data name="&gt;&gt;textBox77.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox77.Parent" xml:space="preserve">
-    <value>panelScriptEvent</value>
-  </data>
-  <data name="&gt;&gt;textBox77.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="textBox64.Location" type="System.Drawing.Point, System.Drawing">
-    <value>159, 75</value>
-  </data>
-  <data name="textBox64.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 20</value>
-  </data>
-  <data name="textBox64.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="textBox64.Text" xml:space="preserve">
-    <value>0x</value>
-  </data>
-  <data name="textBox64.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;textBox64.Name" xml:space="preserve">
-    <value>textBox64</value>
-  </data>
-  <data name="&gt;&gt;textBox64.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox64.Parent" xml:space="preserve">
-    <value>panelScriptEvent</value>
-  </data>
-  <data name="&gt;&gt;textBox64.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="textBox62.Location" type="System.Drawing.Point, System.Drawing">
-    <value>144, 3</value>
-  </data>
-  <data name="textBox62.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 20</value>
-  </data>
-  <data name="textBox62.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="textBox62.Text" xml:space="preserve">
-    <value>0x</value>
-  </data>
-  <data name="textBox62.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;textBox62.Name" xml:space="preserve">
-    <value>textBox62</value>
-  </data>
-  <data name="&gt;&gt;textBox62.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox62.Parent" xml:space="preserve">
-    <value>panelScriptEvent</value>
-  </data>
-  <data name="&gt;&gt;textBox62.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="textBox61.Location" type="System.Drawing.Point, System.Drawing">
-    <value>86, 3</value>
-  </data>
-  <data name="textBox61.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 20</value>
-  </data>
-  <data name="textBox61.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="textBox61.Text" xml:space="preserve">
-    <value>0x</value>
-  </data>
-  <data name="textBox61.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;textBox61.Name" xml:space="preserve">
-    <value>textBox61</value>
-  </data>
-  <data name="&gt;&gt;textBox61.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox61.Parent" xml:space="preserve">
-    <value>panelScriptEvent</value>
-  </data>
-  <data name="&gt;&gt;textBox61.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="label37.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label37.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label37.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 184</value>
-  </data>
-  <data name="label37.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 13</value>
-  </data>
-  <data name="label37.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="label37.Text" xml:space="preserve">
-    <value>Filler:</value>
-  </data>
-  <data name="&gt;&gt;label37.Name" xml:space="preserve">
-    <value>label37</value>
-  </data>
-  <data name="&gt;&gt;label37.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label37.Parent" xml:space="preserve">
-    <value>panelScriptEvent</value>
-  </data>
-  <data name="&gt;&gt;label37.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="hexNumberBoxTriggerFiller2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Courier New, 8.25pt</value>
-  </data>
-  <data name="hexNumberBoxTriggerFiller2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>174, 181</value>
-  </data>
-  <data name="hexNumberBoxTriggerFiller2.MaxLength" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="hexNumberBoxTriggerFiller2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 20</value>
-  </data>
-  <data name="hexNumberBoxTriggerFiller2.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="hexNumberBoxTriggerFiller2.Text" xml:space="preserve">
-    <value>00</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerFiller2.Name" xml:space="preserve">
-    <value>hexNumberBoxTriggerFiller2</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerFiller2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerFiller2.Parent" xml:space="preserve">
-    <value>panelScriptEvent</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerFiller2.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="label27.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label27.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label27.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 78</value>
-  </data>
-  <data name="label27.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 13</value>
-  </data>
-  <data name="label27.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="label27.Text" xml:space="preserve">
-    <value>Filler:</value>
-  </data>
-  <data name="&gt;&gt;label27.Name" xml:space="preserve">
-    <value>label27</value>
-  </data>
-  <data name="&gt;&gt;label27.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label27.Parent" xml:space="preserve">
-    <value>panelScriptEvent</value>
-  </data>
-  <data name="&gt;&gt;label27.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="hexNumberBoxTriggerFiller1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Courier New, 8.25pt</value>
-  </data>
-  <data name="hexNumberBoxTriggerFiller1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>174, 75</value>
-  </data>
-  <data name="hexNumberBoxTriggerFiller1.MaxLength" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="hexNumberBoxTriggerFiller1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 20</value>
-  </data>
-  <data name="hexNumberBoxTriggerFiller1.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="hexNumberBoxTriggerFiller1.Text" xml:space="preserve">
-    <value>00</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerFiller1.Name" xml:space="preserve">
-    <value>hexNumberBoxTriggerFiller1</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerFiller1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerFiller1.Parent" xml:space="preserve">
-    <value>panelScriptEvent</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerFiller1.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="label32.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label32.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label32.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 210</value>
-  </data>
-  <data name="label32.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 13</value>
-  </data>
-  <data name="label32.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="label32.Text" xml:space="preserve">
-    <value>Filler:</value>
-  </data>
-  <data name="&gt;&gt;label32.Name" xml:space="preserve">
-    <value>label32</value>
-  </data>
-  <data name="&gt;&gt;label32.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label32.Parent" xml:space="preserve">
-    <value>panelScriptEvent</value>
-  </data>
-  <data name="&gt;&gt;label32.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="textBox75.Location" type="System.Drawing.Point, System.Drawing">
-    <value>132, 45</value>
-  </data>
-  <data name="textBox75.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 20</value>
-  </data>
-  <data name="textBox75.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="textBox75.Text" xml:space="preserve">
-    <value>0x</value>
-  </data>
-  <data name="textBox75.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;textBox75.Name" xml:space="preserve">
-    <value>textBox75</value>
-  </data>
-  <data name="&gt;&gt;textBox75.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox75.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;textBox75.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="textBox65.Location" type="System.Drawing.Point, System.Drawing">
-    <value>132, 19</value>
-  </data>
-  <data name="textBox65.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 20</value>
-  </data>
-  <data name="textBox65.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="textBox65.Text" xml:space="preserve">
-    <value>0x</value>
-  </data>
-  <data name="textBox65.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;textBox65.Name" xml:space="preserve">
-    <value>textBox65</value>
-  </data>
-  <data name="&gt;&gt;textBox65.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox65.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;textBox65.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label28.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label28.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label28.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 22</value>
-  </data>
-  <data name="label28.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 13</value>
-  </data>
-  <data name="label28.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label28.Text" xml:space="preserve">
-    <value>Variable:</value>
-  </data>
-  <data name="&gt;&gt;label28.Name" xml:space="preserve">
-    <value>label28</value>
-  </data>
-  <data name="&gt;&gt;label28.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label28.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;label28.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="label31.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label31.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label31.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 48</value>
-  </data>
-  <data name="label31.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 13</value>
-  </data>
-  <data name="label31.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="label31.Text" xml:space="preserve">
-    <value>Value:</value>
-  </data>
-  <data name="&gt;&gt;label31.Name" xml:space="preserve">
-    <value>label31</value>
-  </data>
-  <data name="&gt;&gt;label31.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label31.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;label31.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="hexNumberBoxTriggerVariable.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Courier New, 8.25pt</value>
-  </data>
-  <data name="hexNumberBoxTriggerVariable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>147, 19</value>
-  </data>
-  <data name="hexNumberBoxTriggerVariable.MaxLength" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="hexNumberBoxTriggerVariable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 20</value>
-  </data>
-  <data name="hexNumberBoxTriggerVariable.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="hexNumberBoxTriggerVariable.Text" xml:space="preserve">
-    <value>0000</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerVariable.Name" xml:space="preserve">
-    <value>hexNumberBoxTriggerVariable</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerVariable.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerVariable.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerVariable.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="hexNumberBoxTriggerValue.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Courier New, 8.25pt</value>
-  </data>
-  <data name="hexNumberBoxTriggerValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>147, 45</value>
-  </data>
-  <data name="hexNumberBoxTriggerValue.MaxLength" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="hexNumberBoxTriggerValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 20</value>
-  </data>
-  <data name="hexNumberBoxTriggerValue.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="hexNumberBoxTriggerValue.Text" xml:space="preserve">
-    <value>0000</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerValue.Name" xml:space="preserve">
-    <value>hexNumberBoxTriggerValue</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerValue.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerValue.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 101</value>
-  </data>
-  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 73</value>
-  </data>
-  <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Script Run Condition</value>
-  </data>
-  <data name="&gt;&gt;groupBox3.Name" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;groupBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox3.Parent" xml:space="preserve">
-    <value>panelScriptEvent</value>
-  </data>
-  <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="label19.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label19.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label19.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 236</value>
-  </data>
-  <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 13</value>
-  </data>
-  <data name="label19.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="label19.Text" xml:space="preserve">
-    <value>Script Offset:</value>
-  </data>
-  <data name="&gt;&gt;label19.Name" xml:space="preserve">
-    <value>label19</value>
-  </data>
-  <data name="&gt;&gt;label19.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label19.Parent" xml:space="preserve">
-    <value>panelScriptEvent</value>
-  </data>
-  <data name="&gt;&gt;label19.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="btnDeleteTrigger.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAHrSURBVDhPjZJNS1RxGMXvJ/AjzCrIectUUmscIxdD
-        2vSC0UhKZBnUFCZSVgvDTbRukQUthGgRDkL7gjGnr1EtgqixLMlb906Zp+f3585YKtiBw3+e5/mdwzCM
-        t1mLmcTMy67mYKFzt+pmZh8hDUmKPpkq3akc8Oubl/Vtblbh82cKX5jtZWbPHS6KbBRUsqncq4Mt+vrk
-        oYL5WS1Pjqg62KP3h3a5l5k9dzh4co0CmleePtLqvWlV82360JfWx/xec6t7mdlzh4Mn5woWM8mZN1Pj
-        +n7/jqr9e1Q92q6l4/u0dKJjwzaz5w4HT84VLOyPh/78Yy0PdOnz4bQ+5ZLmxDZOujscPLmoIKHwwV19
-        OdJi886CgydnsoJMUsGtUa3YV/wfwcGTM1lBd0ph8aRWCz0O2Elw8ORMnlfOpmv+hWMKRvPyh3rlG+Cf
-        ym41e7s7znhyrqDUGZ97W+jVr7FB1xxcGlBwcRvbnjscPDlXYIrxdfxiQWsTZ/RzfFi1q0NbzJ47HDy5
-        eoE3HY9dqdg/7MfYaenGea1fH9H6tbP6beZlZs8dDp5co8DUxLJsv+y74X6tTZ6TbhelKbO9zOy5R+Em
-        Qn8XIJbtpY7mUjmTqgGXD5h5bWbPPeKcNhfUFTO3moHrZmb/jyR5fwBmRDdMlTxfCQAAAABJRU5ErkJg
-        gg==
-</value>
-  </data>
-  <data name="btnDeleteTrigger.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="btnDeleteTrigger.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnDeleteTrigger.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 287</value>
-  </data>
-  <data name="btnDeleteTrigger.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 23</value>
-  </data>
-  <data name="btnDeleteTrigger.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="btnDeleteTrigger.Text" xml:space="preserve">
-    <value>Delete Entity</value>
-  </data>
-  <data name="btnDeleteTrigger.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="&gt;&gt;btnDeleteTrigger.Name" xml:space="preserve">
-    <value>btnDeleteTrigger</value>
-  </data>
-  <data name="&gt;&gt;btnDeleteTrigger.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnDeleteTrigger.Parent" xml:space="preserve">
-    <value>panelScriptEvent</value>
-  </data>
-  <data name="&gt;&gt;btnDeleteTrigger.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="hexNumberBoxTriggerScriptOffset.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Courier New, 8.25pt</value>
-  </data>
-  <data name="hexNumberBoxTriggerScriptOffset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>131, 233</value>
-  </data>
-  <data name="hexNumberBoxTriggerScriptOffset.MaxLength" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="hexNumberBoxTriggerScriptOffset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 20</value>
-  </data>
-  <data name="hexNumberBoxTriggerScriptOffset.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="hexNumberBoxTriggerScriptOffset.Text" xml:space="preserve">
-    <value>00000000</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerScriptOffset.Name" xml:space="preserve">
-    <value>hexNumberBoxTriggerScriptOffset</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerScriptOffset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerScriptOffset.Parent" xml:space="preserve">
-    <value>panelScriptEvent</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerScriptOffset.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
-  <data name="btnTriggerOpenScript.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAK5SURBVDhPjZNbSNNRHMd/RaCVF4pF2rqQPQQ9VJCU
-        XV5ESbRMgoh6E3rsSTLD29x0M80yMcLspgVZiYmsXG7zrqiZpXlB85KX5m1O59Rd1LVv5382RxFUP/hw
-        OJzz/Z7f75zfoT03tZzdjB1yNflKVPqTeY0If9KMoPsN2BD/Fh4J7ziejE1J5fBNUUEkq4BYodnnNtiV
-        rqGt0vdpL9t1+Fdo+qfxYWwOohRVjdtArFDTxgTluGsPVh0Ojv0XHK614Pwm1A8bEJhbB3f6fmlqCn/a
-        wjcsLtthsq3+xgLDvGLn6+tuKLFToUFAZqXLIF1L21IrvC6+aOMbZizL0JuXMePCYF6BwWKHdRU8C8/Y
-        4g4iOsJx1q+lLYllgRk1A9xg3GSFzsW4yYapJQdmrXwJnyZ+wPt6qVKsqKb9WbXkMtCQT/yba9oBPeas
-        Kxias+Cb0Yphow0jJjumLMDhREJcIeFy/ml4x1Tc9lO0k3/6Z6cBq4e84ooftenmMWq0oM9gxZARTAx8
-        XwT0NiBISugejYHkNSE4bb3mfDbRhbusiDWDzfFlnUKKXdOL6J11IPZVGAKTCUclhGMpTnp0UjT2X0JK
-        KSHsFhVF3mEGwgv4swYSp1WwM4Hu6SX0zwHHmWDYkIPOyQjGOXyZiETf1D3kNRCaR6IhUxLCs6hEEMNH
-        ouLddTCnFgey63EotwenZIT2yavIbyE3ec2EB2x82ErsMq8IWUDoPuHgP0IwqJ08gWe9xCnoITzucFLQ
-        RZCpCSESqiJRQklrZt0gRubNGJhdwiB7gbEFQFp6FhEZhDOZxMcQOeH5V0JhH0FayS4yidTsBgLIJzQ6
-        VPgY7BPBO7mcIZSjgSi1EdvlH+Gn6IBIPsSNinRMXO0W740SXoGFB8PZVX8hKougaOLiKjbn4jWD/401
-        swA+40H0Ew6DVbMLq4bfAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="btnTriggerOpenScript.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="btnTriggerOpenScript.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnTriggerOpenScript.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 258</value>
-  </data>
-  <data name="btnTriggerOpenScript.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 23</value>
-  </data>
-  <data name="btnTriggerOpenScript.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="btnTriggerOpenScript.Text" xml:space="preserve">
-    <value>Open Script in Editor</value>
-  </data>
-  <data name="btnTriggerOpenScript.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="&gt;&gt;btnTriggerOpenScript.Name" xml:space="preserve">
-    <value>btnTriggerOpenScript</value>
-  </data>
-  <data name="&gt;&gt;btnTriggerOpenScript.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnTriggerOpenScript.Parent" xml:space="preserve">
-    <value>panelScriptEvent</value>
-  </data>
-  <data name="&gt;&gt;btnTriggerOpenScript.ZOrder" xml:space="preserve">
-    <value>19</value>
-  </data>
-  <data name="hexNumberBoxTriggerFiller3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Courier New, 8.25pt</value>
-  </data>
-  <data name="hexNumberBoxTriggerFiller3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>174, 207</value>
-  </data>
-  <data name="hexNumberBoxTriggerFiller3.MaxLength" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="hexNumberBoxTriggerFiller3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 20</value>
-  </data>
-  <data name="hexNumberBoxTriggerFiller3.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="hexNumberBoxTriggerFiller3.Text" xml:space="preserve">
-    <value>00</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerFiller3.Name" xml:space="preserve">
-    <value>hexNumberBoxTriggerFiller3</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerFiller3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerFiller3.Parent" xml:space="preserve">
-    <value>panelScriptEvent</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerFiller3.ZOrder" xml:space="preserve">
-    <value>20</value>
-  </data>
-  <data name="cbTriggerHeight.Items" xml:space="preserve">
-    <value>[00] All heights</value>
-  </data>
-  <data name="cbTriggerHeight.Items1" xml:space="preserve">
-    <value>[01] Height 0 (Surf)</value>
-  </data>
-  <data name="cbTriggerHeight.Items2" xml:space="preserve">
-    <value>[02] Height 1</value>
-  </data>
-  <data name="cbTriggerHeight.Items3" xml:space="preserve">
-    <value>[03] Height 2 (Normal)</value>
-  </data>
-  <data name="cbTriggerHeight.Items4" xml:space="preserve">
-    <value>[04] Height 3</value>
-  </data>
-  <data name="cbTriggerHeight.Items5" xml:space="preserve">
-    <value>[05] Height 4</value>
-  </data>
-  <data name="cbTriggerHeight.Items6" xml:space="preserve">
-    <value>[06] Height 5</value>
-  </data>
-  <data name="cbTriggerHeight.Items7" xml:space="preserve">
-    <value>[07] Height 6</value>
-  </data>
-  <data name="cbTriggerHeight.Items8" xml:space="preserve">
-    <value>[08] Height 7</value>
-  </data>
-  <data name="cbTriggerHeight.Items9" xml:space="preserve">
-    <value>[09] Height 8</value>
-  </data>
-  <data name="cbTriggerHeight.Items10" xml:space="preserve">
-    <value>[0A] Height 9</value>
-  </data>
-  <data name="cbTriggerHeight.Items11" xml:space="preserve">
-    <value>[0B] Height 10</value>
-  </data>
-  <data name="cbTriggerHeight.Items12" xml:space="preserve">
-    <value>[0C] Height 11</value>
-  </data>
-  <data name="cbTriggerHeight.Items13" xml:space="preserve">
-    <value>[0D] Height 12</value>
-  </data>
-  <data name="cbTriggerHeight.Items14" xml:space="preserve">
-    <value>[0E] Height 13</value>
-  </data>
-  <data name="cbTriggerHeight.Items15" xml:space="preserve">
-    <value>[0F] Height 14</value>
-  </data>
-  <data name="cbTriggerHeight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 48</value>
-  </data>
-  <data name="cbTriggerHeight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 21</value>
-  </data>
-  <data name="cbTriggerHeight.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;cbTriggerHeight.Name" xml:space="preserve">
-    <value>cbTriggerHeight</value>
-  </data>
-  <data name="&gt;&gt;cbTriggerHeight.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbTriggerHeight.Parent" xml:space="preserve">
-    <value>panelScriptEvent</value>
-  </data>
-  <data name="&gt;&gt;cbTriggerHeight.ZOrder" xml:space="preserve">
-    <value>21</value>
-  </data>
-  <data name="label29.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label29.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label29.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 32</value>
-  </data>
-  <data name="label29.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 13</value>
-  </data>
-  <data name="label29.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="label29.Text" xml:space="preserve">
-    <value>Height:</value>
-  </data>
-  <data name="&gt;&gt;label29.Name" xml:space="preserve">
-    <value>label29</value>
-  </data>
-  <data name="&gt;&gt;label29.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label29.Parent" xml:space="preserve">
-    <value>panelScriptEvent</value>
-  </data>
-  <data name="&gt;&gt;label29.ZOrder" xml:space="preserve">
-    <value>22</value>
-  </data>
-  <data name="labelTriggerPosition.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="labelTriggerPosition.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="labelTriggerPosition.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 6</value>
-  </data>
-  <data name="labelTriggerPosition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 13</value>
-  </data>
-  <data name="labelTriggerPosition.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="labelTriggerPosition.Text" xml:space="preserve">
-    <value>Position:</value>
-  </data>
-  <data name="&gt;&gt;labelTriggerPosition.Name" xml:space="preserve">
-    <value>labelTriggerPosition</value>
-  </data>
-  <data name="&gt;&gt;labelTriggerPosition.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelTriggerPosition.Parent" xml:space="preserve">
-    <value>panelScriptEvent</value>
-  </data>
-  <data name="&gt;&gt;labelTriggerPosition.ZOrder" xml:space="preserve">
-    <value>23</value>
-  </data>
-  <data name="hexNumberBoxTriggerYPos.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Courier New, 8.25pt</value>
-  </data>
-  <data name="hexNumberBoxTriggerYPos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>159, 3</value>
-  </data>
-  <data name="hexNumberBoxTriggerYPos.MaxLength" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="hexNumberBoxTriggerYPos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 20</value>
-  </data>
-  <data name="hexNumberBoxTriggerYPos.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="hexNumberBoxTriggerYPos.Text" xml:space="preserve">
-    <value>0000</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerYPos.Name" xml:space="preserve">
-    <value>hexNumberBoxTriggerYPos</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerYPos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerYPos.Parent" xml:space="preserve">
-    <value>panelScriptEvent</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerYPos.ZOrder" xml:space="preserve">
-    <value>24</value>
-  </data>
-  <data name="hexNumberBoxTriggerXPos.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Courier New, 8.25pt</value>
-  </data>
-  <data name="hexNumberBoxTriggerXPos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 3</value>
-  </data>
-  <data name="hexNumberBoxTriggerXPos.MaxLength" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="hexNumberBoxTriggerXPos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 20</value>
-  </data>
-  <data name="hexNumberBoxTriggerXPos.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="hexNumberBoxTriggerXPos.Text" xml:space="preserve">
-    <value>0000</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerXPos.Name" xml:space="preserve">
-    <value>hexNumberBoxTriggerXPos</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerXPos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerXPos.Parent" xml:space="preserve">
-    <value>panelScriptEvent</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxTriggerXPos.ZOrder" xml:space="preserve">
-    <value>25</value>
-  </data>
-  <data name="panelScriptEvent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 31</value>
-  </data>
-  <data name="panelScriptEvent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>218, 549</value>
-  </data>
-  <data name="panelScriptEvent.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;panelScriptEvent.Name" xml:space="preserve">
-    <value>panelScriptEvent</value>
-  </data>
-  <data name="&gt;&gt;panelScriptEvent.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelScriptEvent.Parent" xml:space="preserve">
-    <value>panelEntityData</value>
-  </data>
-  <data name="&gt;&gt;panelScriptEvent.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="labelEntityDataPanel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="labelEntityDataPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 32</value>
-  </data>
-  <data name="labelEntityDataPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 113</value>
-  </data>
-  <data name="labelEntityDataPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="labelEntityDataPanel.Text" xml:space="preserve">
-    <value>There are no entities of this type available on this map.</value>
-  </data>
-  <data name="&gt;&gt;labelEntityDataPanel.Name" xml:space="preserve">
-    <value>labelEntityDataPanel</value>
-  </data>
-  <data name="&gt;&gt;labelEntityDataPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelEntityDataPanel.Parent" xml:space="preserve">
-    <value>panelEntityData</value>
-  </data>
-  <data name="&gt;&gt;labelEntityDataPanel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="panelWarpEvent.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="panelWarpEvent.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="labelWarpOffset.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="labelWarpOffset.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="labelWarpOffset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>124, 236</value>
-  </data>
-  <data name="labelWarpOffset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 13</value>
-  </data>
-  <data name="labelWarpOffset.TabIndex" type="System.Int32, mscorlib">
-    <value>62</value>
-  </data>
-  <data name="labelWarpOffset.Text" xml:space="preserve">
-    <value>0x00000000</value>
-  </data>
-  <data name="&gt;&gt;labelWarpOffset.Name" xml:space="preserve">
-    <value>labelWarpOffset</value>
-  </data>
-  <data name="&gt;&gt;labelWarpOffset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelWarpOffset.Parent" xml:space="preserve">
-    <value>panelWarpEvent</value>
-  </data>
-  <data name="&gt;&gt;labelWarpOffset.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="hexViewerRawWarp.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Consolas, 9pt</value>
-  </data>
-  <data name="hexViewerRawWarp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
-  </data>
-  <data name="hexViewerRawWarp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 48</value>
-  </data>
-  <data name="hexViewerRawWarp.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;hexViewerRawWarp.Name" xml:space="preserve">
-    <value>hexViewerRawWarp</value>
-  </data>
-  <data name="&gt;&gt;hexViewerRawWarp.Type" xml:space="preserve">
-    <value>Be.Windows.Forms.HexBox, Be.Windows.Forms.HexBox, Version=1.6.0.33438, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;hexViewerRawWarp.Parent" xml:space="preserve">
-    <value>groupBox7</value>
-  </data>
-  <data name="&gt;&gt;hexViewerRawWarp.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="groupBox7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 236</value>
-  </data>
-  <data name="groupBox7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="groupBox7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 73</value>
-  </data>
-  <data name="groupBox7.TabIndex" type="System.Int32, mscorlib">
-    <value>63</value>
-  </data>
-  <data name="groupBox7.Text" xml:space="preserve">
-    <value>Raw Warp Data</value>
-  </data>
-  <data name="&gt;&gt;groupBox7.Name" xml:space="preserve">
-    <value>groupBox7</value>
-  </data>
-  <data name="&gt;&gt;groupBox7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox7.Parent" xml:space="preserve">
-    <value>panelWarpEvent</value>
-  </data>
-  <data name="&gt;&gt;groupBox7.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="textBox8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 48</value>
-  </data>
-  <data name="textBox8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 20</value>
-  </data>
-  <data name="textBox8.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="textBox8.Text" xml:space="preserve">
-    <value>0x</value>
-  </data>
-  <data name="textBox8.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;textBox8.Name" xml:space="preserve">
-    <value>textBox8</value>
-  </data>
-  <data name="&gt;&gt;textBox8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox8.Parent" xml:space="preserve">
-    <value>panelWarpEvent</value>
-  </data>
-  <data name="&gt;&gt;textBox8.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="hexNumberBoxWarpHeight.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Courier New, 8.25pt</value>
-  </data>
-  <data name="hexNumberBoxWarpHeight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 48</value>
-  </data>
-  <data name="hexNumberBoxWarpHeight.MaxLength" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="hexNumberBoxWarpHeight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 20</value>
-  </data>
-  <data name="hexNumberBoxWarpHeight.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="hexNumberBoxWarpHeight.Text" xml:space="preserve">
-    <value>00</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxWarpHeight.Name" xml:space="preserve">
-    <value>hexNumberBoxWarpHeight</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxWarpHeight.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxWarpHeight.Parent" xml:space="preserve">
-    <value>panelWarpEvent</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxWarpHeight.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="textBox94.Location" type="System.Drawing.Point, System.Drawing">
-    <value>86, 3</value>
-  </data>
-  <data name="textBox94.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 20</value>
-  </data>
-  <data name="textBox94.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="textBox94.Text" xml:space="preserve">
-    <value>0x</value>
-  </data>
-  <data name="textBox94.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;textBox94.Name" xml:space="preserve">
-    <value>textBox94</value>
-  </data>
-  <data name="&gt;&gt;textBox94.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox94.Parent" xml:space="preserve">
-    <value>panelWarpEvent</value>
-  </data>
-  <data name="&gt;&gt;textBox94.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="textBox93.Location" type="System.Drawing.Point, System.Drawing">
-    <value>144, 3</value>
-  </data>
-  <data name="textBox93.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 20</value>
-  </data>
-  <data name="textBox93.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="textBox93.Text" xml:space="preserve">
-    <value>0x</value>
-  </data>
-  <data name="textBox93.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;textBox93.Name" xml:space="preserve">
-    <value>textBox93</value>
-  </data>
-  <data name="&gt;&gt;textBox93.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox93.Parent" xml:space="preserve">
-    <value>panelWarpEvent</value>
-  </data>
-  <data name="&gt;&gt;textBox93.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="textBox86.Location" type="System.Drawing.Point, System.Drawing">
-    <value>147, 45</value>
-  </data>
-  <data name="textBox86.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 20</value>
-  </data>
-  <data name="textBox86.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="textBox86.Text" xml:space="preserve">
-    <value>0x</value>
-  </data>
-  <data name="textBox86.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;textBox86.Name" xml:space="preserve">
-    <value>textBox86</value>
-  </data>
-  <data name="&gt;&gt;textBox86.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox86.Parent" xml:space="preserve">
-    <value>gbWarpDestination</value>
-  </data>
-  <data name="&gt;&gt;textBox86.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="textBox81.Location" type="System.Drawing.Point, System.Drawing">
-    <value>147, 71</value>
-  </data>
-  <data name="textBox81.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 20</value>
-  </data>
-  <data name="textBox81.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="textBox81.Text" xml:space="preserve">
-    <value>0x</value>
-  </data>
-  <data name="textBox81.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;textBox81.Name" xml:space="preserve">
-    <value>textBox81</value>
-  </data>
-  <data name="&gt;&gt;textBox81.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox81.Parent" xml:space="preserve">
-    <value>gbWarpDestination</value>
-  </data>
-  <data name="&gt;&gt;textBox81.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="textBox80.Location" type="System.Drawing.Point, System.Drawing">
-    <value>147, 19</value>
-  </data>
-  <data name="textBox80.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 20</value>
-  </data>
-  <data name="textBox80.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="textBox80.Text" xml:space="preserve">
-    <value>0x</value>
-  </data>
-  <data name="textBox80.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;textBox80.Name" xml:space="preserve">
-    <value>textBox80</value>
-  </data>
-  <data name="&gt;&gt;textBox80.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox80.Parent" xml:space="preserve">
-    <value>gbWarpDestination</value>
-  </data>
-  <data name="&gt;&gt;textBox80.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="labelWarpNumber.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="labelWarpNumber.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="labelWarpNumber.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 22</value>
-  </data>
-  <data name="labelWarpNumber.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 13</value>
-  </data>
-  <data name="labelWarpNumber.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="labelWarpNumber.Text" xml:space="preserve">
-    <value>Warp Number:</value>
-  </data>
-  <data name="&gt;&gt;labelWarpNumber.Name" xml:space="preserve">
-    <value>labelWarpNumber</value>
-  </data>
-  <data name="&gt;&gt;labelWarpNumber.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelWarpNumber.Parent" xml:space="preserve">
-    <value>gbWarpDestination</value>
-  </data>
-  <data name="&gt;&gt;labelWarpNumber.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="labelWarpBank.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="labelWarpBank.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="labelWarpBank.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 74</value>
-  </data>
-  <data name="labelWarpBank.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 13</value>
-  </data>
-  <data name="labelWarpBank.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="labelWarpBank.Text" xml:space="preserve">
-    <value>Map Bank:</value>
-  </data>
-  <data name="&gt;&gt;labelWarpBank.Name" xml:space="preserve">
-    <value>labelWarpBank</value>
-  </data>
-  <data name="&gt;&gt;labelWarpBank.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelWarpBank.Parent" xml:space="preserve">
-    <value>gbWarpDestination</value>
-  </data>
-  <data name="&gt;&gt;labelWarpBank.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="labelWarpMap.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="labelWarpMap.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="labelWarpMap.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 48</value>
-  </data>
-  <data name="labelWarpMap.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 13</value>
-  </data>
-  <data name="labelWarpMap.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="labelWarpMap.Text" xml:space="preserve">
-    <value>Map Number:</value>
-  </data>
-  <data name="&gt;&gt;labelWarpMap.Name" xml:space="preserve">
-    <value>labelWarpMap</value>
-  </data>
-  <data name="&gt;&gt;labelWarpMap.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelWarpMap.Parent" xml:space="preserve">
-    <value>gbWarpDestination</value>
-  </data>
-  <data name="&gt;&gt;labelWarpMap.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="hexNumberBoxWarpMap.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Courier New, 8.25pt</value>
-  </data>
-  <data name="hexNumberBoxWarpMap.Location" type="System.Drawing.Point, System.Drawing">
-    <value>162, 45</value>
-  </data>
-  <data name="hexNumberBoxWarpMap.MaxLength" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="hexNumberBoxWarpMap.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 20</value>
-  </data>
-  <data name="hexNumberBoxWarpMap.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="hexNumberBoxWarpMap.Text" xml:space="preserve">
-    <value>00</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxWarpMap.Name" xml:space="preserve">
-    <value>hexNumberBoxWarpMap</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxWarpMap.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxWarpMap.Parent" xml:space="preserve">
-    <value>gbWarpDestination</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxWarpMap.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="hexNumberBoxWarpNum.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Courier New, 8.25pt</value>
-  </data>
-  <data name="hexNumberBoxWarpNum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>162, 19</value>
-  </data>
-  <data name="hexNumberBoxWarpNum.MaxLength" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="hexNumberBoxWarpNum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 20</value>
-  </data>
-  <data name="hexNumberBoxWarpNum.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="hexNumberBoxWarpNum.Text" xml:space="preserve">
-    <value>00</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxWarpNum.Name" xml:space="preserve">
-    <value>hexNumberBoxWarpNum</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxWarpNum.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxWarpNum.Parent" xml:space="preserve">
-    <value>gbWarpDestination</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxWarpNum.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="hexNumberBoxWarpBank.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Courier New, 8.25pt</value>
-  </data>
-  <data name="hexNumberBoxWarpBank.Location" type="System.Drawing.Point, System.Drawing">
-    <value>162, 71</value>
-  </data>
-  <data name="hexNumberBoxWarpBank.MaxLength" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="hexNumberBoxWarpBank.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 20</value>
-  </data>
-  <data name="hexNumberBoxWarpBank.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="hexNumberBoxWarpBank.Text" xml:space="preserve">
-    <value>00</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxWarpBank.Name" xml:space="preserve">
-    <value>hexNumberBoxWarpBank</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxWarpBank.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxWarpBank.Parent" xml:space="preserve">
-    <value>gbWarpDestination</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxWarpBank.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="gbWarpDestination.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 75</value>
-  </data>
-  <data name="gbWarpDestination.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 100</value>
-  </data>
-  <data name="gbWarpDestination.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="gbWarpDestination.Text" xml:space="preserve">
-    <value>Destination</value>
-  </data>
-  <data name="&gt;&gt;gbWarpDestination.Name" xml:space="preserve">
-    <value>gbWarpDestination</value>
-  </data>
-  <data name="&gt;&gt;gbWarpDestination.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbWarpDestination.Parent" xml:space="preserve">
-    <value>panelWarpEvent</value>
-  </data>
-  <data name="&gt;&gt;gbWarpDestination.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="btnDeleteWarp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAHrSURBVDhPjZJNS1RxGMXvJ/AjzCrIectUUmscIxdD
-        2vSC0UhKZBnUFCZSVgvDTbRukQUthGgRDkL7gjGnr1EtgqixLMlb906Zp+f3585YKtiBw3+e5/mdwzCM
-        t1mLmcTMy67mYKFzt+pmZh8hDUmKPpkq3akc8Oubl/Vtblbh82cKX5jtZWbPHS6KbBRUsqncq4Mt+vrk
-        oYL5WS1Pjqg62KP3h3a5l5k9dzh4co0CmleePtLqvWlV82360JfWx/xec6t7mdlzh4Mn5woWM8mZN1Pj
-        +n7/jqr9e1Q92q6l4/u0dKJjwzaz5w4HT84VLOyPh/78Yy0PdOnz4bQ+5ZLmxDZOujscPLmoIKHwwV19
-        OdJi886CgydnsoJMUsGtUa3YV/wfwcGTM1lBd0ph8aRWCz0O2Elw8ORMnlfOpmv+hWMKRvPyh3rlG+Cf
-        ym41e7s7znhyrqDUGZ97W+jVr7FB1xxcGlBwcRvbnjscPDlXYIrxdfxiQWsTZ/RzfFi1q0NbzJ47HDy5
-        eoE3HY9dqdg/7MfYaenGea1fH9H6tbP6beZlZs8dDp5co8DUxLJsv+y74X6tTZ6TbhelKbO9zOy5R+Em
-        Qn8XIJbtpY7mUjmTqgGXD5h5bWbPPeKcNhfUFTO3moHrZmb/jyR5fwBmRDdMlTxfCQAAAABJRU5ErkJg
-        gg==
-</value>
-  </data>
-  <data name="btnDeleteWarp.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="btnDeleteWarp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnDeleteWarp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 210</value>
-  </data>
-  <data name="btnDeleteWarp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 23</value>
-  </data>
-  <data name="btnDeleteWarp.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="btnDeleteWarp.Text" xml:space="preserve">
-    <value>Delete Entity</value>
-  </data>
-  <data name="btnDeleteWarp.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="&gt;&gt;btnDeleteWarp.Name" xml:space="preserve">
-    <value>btnDeleteWarp</value>
-  </data>
-  <data name="&gt;&gt;btnDeleteWarp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnDeleteWarp.Parent" xml:space="preserve">
-    <value>panelWarpEvent</value>
-  </data>
-  <data name="&gt;&gt;btnDeleteWarp.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="btnWarpTravelToDest.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAMNSURBVDhPndLfT1NnHMfx75+wzIslu1p2vYttJMwE
-        CbE/6eG0paXQcs5pKa1Cq9OxbLowEDdUpggCG+AihCGB4oKTTiWKY0wcGjCQDRxRq2YxJsuiWUhMyC62
-        5L2Hbtni7rYneeXJc/J8P/l+zzky1qw9Y7xFkzP/Mn7AI6ONTpkdaJDHq1Oynvs2svFo+bfT+0qQTHNZ
-        vjCjqMvZc60a2UPPmlTPPj/g4JvBBp6sTfN45QJP780x1mhDJhr9Mv6+LpkmTc4e1Hhtq4M3iuxsLf5H
-        YZGNVwq2sZGbJpc9yFJfiPXcVc40uxDbxyKT+4My8Z5Psk1eiop17HYNh7MUh+tPNqebwm127pyuYemU
-        xWJ/hCe3LnP2Aw+id4u4e0T2tr0oe9pewN0vOEuCeNx+NI8XTdMpLdUptmmsDcdZ/DTKjd4IPy1NqvHK
-        EF+XiK54Tog4jgu5n4dx9AiavRJvWRCf14+ubHd5WR2Mcb3PYq67mh/nM0y1+VQHnbLubhccR4WSI8Lw
-        nLDy6CT2LsFXahAor8IfqMCpwpZPmcz1WGxceonbM0NcPhZANou/f1jLzQdxFu4nGZgXBm8ICw9bcfcK
-        oXKLiooImj/MzX6D2S6TX6df5tZUHzOdob8Cfkky/IMwtKqKl5Rl4ev7b+H6RAiHaqkKW3grTK73hpk5
-        EWHgXTffTR7lancYKTsuTzdDnGqE7YeFkZxw4W4cW6dghFJYZgLDihOMxLnWHeJKRyVffOhjIdPCfK+B
-        qPWqUrDJ1SFkH/ixq+JYZDfx2E7itUlq4gnC0R3Mdga41B7k4kcBrn32Dosno0i0qk6syrT6hM/J7tYt
-        +bYT1tskE7tI7qhX6kio3axN8VW7n4tt5Xx52M90X4rlgRrEMmNiGTVSHUnKWLqE+rp9pFMNpNN7SO96
-        My+lJOr3cuWYzvkjPs4d8nK+I8rKUEIFWBabDDNGtRHDMKKYholpGn8z1Lmq2mJ/Ksxoi0/9gToTreWs
-        jezMv4P8/P9FU7SwcaTJ8/vd0VQ+4P+s55XXRaTgD4xs7pP8nKLpAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="btnWarpTravelToDest.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="btnWarpTravelToDest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnWarpTravelToDest.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 181</value>
-  </data>
-  <data name="btnWarpTravelToDest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 23</value>
-  </data>
-  <data name="btnWarpTravelToDest.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="btnWarpTravelToDest.Text" xml:space="preserve">
-    <value>Travel to Destination</value>
-  </data>
-  <data name="btnWarpTravelToDest.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="&gt;&gt;btnWarpTravelToDest.Name" xml:space="preserve">
-    <value>btnWarpTravelToDest</value>
-  </data>
-  <data name="&gt;&gt;btnWarpTravelToDest.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnWarpTravelToDest.Parent" xml:space="preserve">
-    <value>panelWarpEvent</value>
-  </data>
-  <data name="&gt;&gt;btnWarpTravelToDest.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="cbWarpHeight.Items" xml:space="preserve">
-    <value>[00] All heights</value>
-  </data>
-  <data name="cbWarpHeight.Items1" xml:space="preserve">
-    <value>[01] Height 0 (Surf)</value>
-  </data>
-  <data name="cbWarpHeight.Items2" xml:space="preserve">
-    <value>[02] Height 1</value>
-  </data>
-  <data name="cbWarpHeight.Items3" xml:space="preserve">
-    <value>[03] Height 2 (Normal)</value>
-  </data>
-  <data name="cbWarpHeight.Items4" xml:space="preserve">
-    <value>[04] Height 3</value>
-  </data>
-  <data name="cbWarpHeight.Items5" xml:space="preserve">
-    <value>[05] Height 4</value>
-  </data>
-  <data name="cbWarpHeight.Items6" xml:space="preserve">
-    <value>[06] Height 5</value>
-  </data>
-  <data name="cbWarpHeight.Items7" xml:space="preserve">
-    <value>[07] Height 6</value>
-  </data>
-  <data name="cbWarpHeight.Items8" xml:space="preserve">
-    <value>[08] Height 7</value>
-  </data>
-  <data name="cbWarpHeight.Items9" xml:space="preserve">
-    <value>[09] Height 8</value>
-  </data>
-  <data name="cbWarpHeight.Items10" xml:space="preserve">
-    <value>[0A] Height 9</value>
-  </data>
-  <data name="cbWarpHeight.Items11" xml:space="preserve">
-    <value>[0B] Height 10</value>
-  </data>
-  <data name="cbWarpHeight.Items12" xml:space="preserve">
-    <value>[0C] Height 11</value>
-  </data>
-  <data name="cbWarpHeight.Items13" xml:space="preserve">
-    <value>[0D] Height 12</value>
-  </data>
-  <data name="cbWarpHeight.Items14" xml:space="preserve">
-    <value>[0E] Height 13</value>
-  </data>
-  <data name="cbWarpHeight.Items15" xml:space="preserve">
-    <value>[0F] Height 14</value>
-  </data>
-  <data name="cbWarpHeight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 48</value>
-  </data>
-  <data name="cbWarpHeight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 21</value>
-  </data>
-  <data name="cbWarpHeight.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;cbWarpHeight.Name" xml:space="preserve">
-    <value>cbWarpHeight</value>
-  </data>
-  <data name="&gt;&gt;cbWarpHeight.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbWarpHeight.Parent" xml:space="preserve">
-    <value>panelWarpEvent</value>
-  </data>
-  <data name="&gt;&gt;cbWarpHeight.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="labelWarpHeight.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="labelWarpHeight.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="labelWarpHeight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 32</value>
-  </data>
-  <data name="labelWarpHeight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 13</value>
-  </data>
-  <data name="labelWarpHeight.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="labelWarpHeight.Text" xml:space="preserve">
-    <value>Height:</value>
-  </data>
-  <data name="&gt;&gt;labelWarpHeight.Name" xml:space="preserve">
-    <value>labelWarpHeight</value>
-  </data>
-  <data name="&gt;&gt;labelWarpHeight.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelWarpHeight.Parent" xml:space="preserve">
-    <value>panelWarpEvent</value>
-  </data>
-  <data name="&gt;&gt;labelWarpHeight.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="labelWarpPosition.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="labelWarpPosition.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="labelWarpPosition.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 6</value>
-  </data>
-  <data name="labelWarpPosition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 13</value>
-  </data>
-  <data name="labelWarpPosition.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="labelWarpPosition.Text" xml:space="preserve">
-    <value>Position:</value>
-  </data>
-  <data name="&gt;&gt;labelWarpPosition.Name" xml:space="preserve">
-    <value>labelWarpPosition</value>
-  </data>
-  <data name="&gt;&gt;labelWarpPosition.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelWarpPosition.Parent" xml:space="preserve">
-    <value>panelWarpEvent</value>
-  </data>
-  <data name="&gt;&gt;labelWarpPosition.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="hexNumberBoxWarpYPos.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Courier New, 8.25pt</value>
-  </data>
-  <data name="hexNumberBoxWarpYPos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>159, 3</value>
-  </data>
-  <data name="hexNumberBoxWarpYPos.MaxLength" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="hexNumberBoxWarpYPos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 20</value>
-  </data>
-  <data name="hexNumberBoxWarpYPos.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="hexNumberBoxWarpYPos.Text" xml:space="preserve">
-    <value>0000</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxWarpYPos.Name" xml:space="preserve">
-    <value>hexNumberBoxWarpYPos</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxWarpYPos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxWarpYPos.Parent" xml:space="preserve">
-    <value>panelWarpEvent</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxWarpYPos.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="hexNumberBoxWarpXPos.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Courier New, 8.25pt</value>
-  </data>
-  <data name="hexNumberBoxWarpXPos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 3</value>
-  </data>
-  <data name="hexNumberBoxWarpXPos.MaxLength" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="hexNumberBoxWarpXPos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 20</value>
-  </data>
-  <data name="hexNumberBoxWarpXPos.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="hexNumberBoxWarpXPos.Text" xml:space="preserve">
-    <value>0000</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxWarpXPos.Name" xml:space="preserve">
-    <value>hexNumberBoxWarpXPos</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxWarpXPos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxWarpXPos.Parent" xml:space="preserve">
-    <value>panelWarpEvent</value>
-  </data>
-  <data name="&gt;&gt;hexNumberBoxWarpXPos.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="panelWarpEvent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 31</value>
-  </data>
-  <data name="panelWarpEvent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>218, 549</value>
-  </data>
-  <data name="panelWarpEvent.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;panelWarpEvent.Name" xml:space="preserve">
-    <value>panelWarpEvent</value>
-  </data>
-  <data name="&gt;&gt;panelWarpEvent.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelWarpEvent.Parent" xml:space="preserve">
-    <value>panelEntityData</value>
-  </data>
-  <data name="&gt;&gt;panelWarpEvent.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="panelSpriteEvent.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
@@ -4911,7 +3038,7 @@
     <value>panelEntityData</value>
   </data>
   <data name="&gt;&gt;panelSpriteEvent.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>3</value>
   </data>
   <data name="panelSignEvent.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -4956,7 +3083,7 @@
     <value>6, 19</value>
   </data>
   <data name="hexViewerRawSign.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 48</value>
+    <value>178, 32</value>
   </data>
   <data name="hexViewerRawSign.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -4980,7 +3107,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 73</value>
+    <value>190, 57</value>
   </data>
   <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
     <value>61</value>
@@ -5814,6 +3941,1879 @@
     <value>panelEntityData</value>
   </data>
   <data name="&gt;&gt;panelSignEvent.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="panelScriptEvent.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="panelScriptEvent.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelTriggerOffset.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelTriggerOffset.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelTriggerOffset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>124, 313</value>
+  </data>
+  <data name="labelTriggerOffset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 13</value>
+  </data>
+  <data name="labelTriggerOffset.TabIndex" type="System.Int32, mscorlib">
+    <value>62</value>
+  </data>
+  <data name="labelTriggerOffset.Text" xml:space="preserve">
+    <value>0x00000000</value>
+  </data>
+  <data name="&gt;&gt;labelTriggerOffset.Name" xml:space="preserve">
+    <value>labelTriggerOffset</value>
+  </data>
+  <data name="&gt;&gt;labelTriggerOffset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelTriggerOffset.Parent" xml:space="preserve">
+    <value>panelScriptEvent</value>
+  </data>
+  <data name="&gt;&gt;labelTriggerOffset.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="hexViewerRawTrigger.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Consolas, 9pt</value>
+  </data>
+  <data name="hexViewerRawTrigger.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 19</value>
+  </data>
+  <data name="hexViewerRawTrigger.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 32</value>
+  </data>
+  <data name="hexViewerRawTrigger.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;hexViewerRawTrigger.Name" xml:space="preserve">
+    <value>hexViewerRawTrigger</value>
+  </data>
+  <data name="&gt;&gt;hexViewerRawTrigger.Type" xml:space="preserve">
+    <value>Be.Windows.Forms.HexBox, Be.Windows.Forms.HexBox, Version=1.6.0.33438, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;hexViewerRawTrigger.Parent" xml:space="preserve">
+    <value>groupBox6</value>
+  </data>
+  <data name="&gt;&gt;hexViewerRawTrigger.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 313</value>
+  </data>
+  <data name="groupBox6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="groupBox6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 57</value>
+  </data>
+  <data name="groupBox6.TabIndex" type="System.Int32, mscorlib">
+    <value>63</value>
+  </data>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>Raw Trigger Data</value>
+  </data>
+  <data name="&gt;&gt;groupBox6.Name" xml:space="preserve">
+    <value>groupBox6</value>
+  </data>
+  <data name="&gt;&gt;groupBox6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox6.Parent" xml:space="preserve">
+    <value>panelScriptEvent</value>
+  </data>
+  <data name="&gt;&gt;groupBox6.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="textBox6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 48</value>
+  </data>
+  <data name="textBox6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 20</value>
+  </data>
+  <data name="textBox6.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="textBox6.Text" xml:space="preserve">
+    <value>0x</value>
+  </data>
+  <data name="textBox6.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;textBox6.Name" xml:space="preserve">
+    <value>textBox6</value>
+  </data>
+  <data name="&gt;&gt;textBox6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox6.Parent" xml:space="preserve">
+    <value>panelScriptEvent</value>
+  </data>
+  <data name="&gt;&gt;textBox6.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="hexNumberBoxTriggerHeight.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Courier New, 8.25pt</value>
+  </data>
+  <data name="hexNumberBoxTriggerHeight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 48</value>
+  </data>
+  <data name="hexNumberBoxTriggerHeight.MaxLength" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="hexNumberBoxTriggerHeight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 20</value>
+  </data>
+  <data name="hexNumberBoxTriggerHeight.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="hexNumberBoxTriggerHeight.Text" xml:space="preserve">
+    <value>00</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerHeight.Name" xml:space="preserve">
+    <value>hexNumberBoxTriggerHeight</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerHeight.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerHeight.Parent" xml:space="preserve">
+    <value>panelScriptEvent</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerHeight.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="textBox79.Location" type="System.Drawing.Point, System.Drawing">
+    <value>116, 233</value>
+  </data>
+  <data name="textBox79.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 20</value>
+  </data>
+  <data name="textBox79.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="textBox79.Text" xml:space="preserve">
+    <value>0x</value>
+  </data>
+  <data name="textBox79.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;textBox79.Name" xml:space="preserve">
+    <value>textBox79</value>
+  </data>
+  <data name="&gt;&gt;textBox79.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox79.Parent" xml:space="preserve">
+    <value>panelScriptEvent</value>
+  </data>
+  <data name="&gt;&gt;textBox79.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="textBox78.Location" type="System.Drawing.Point, System.Drawing">
+    <value>159, 207</value>
+  </data>
+  <data name="textBox78.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 20</value>
+  </data>
+  <data name="textBox78.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="textBox78.Text" xml:space="preserve">
+    <value>0x</value>
+  </data>
+  <data name="textBox78.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;textBox78.Name" xml:space="preserve">
+    <value>textBox78</value>
+  </data>
+  <data name="&gt;&gt;textBox78.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox78.Parent" xml:space="preserve">
+    <value>panelScriptEvent</value>
+  </data>
+  <data name="&gt;&gt;textBox78.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="textBox77.Location" type="System.Drawing.Point, System.Drawing">
+    <value>159, 181</value>
+  </data>
+  <data name="textBox77.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 20</value>
+  </data>
+  <data name="textBox77.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="textBox77.Text" xml:space="preserve">
+    <value>0x</value>
+  </data>
+  <data name="textBox77.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;textBox77.Name" xml:space="preserve">
+    <value>textBox77</value>
+  </data>
+  <data name="&gt;&gt;textBox77.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox77.Parent" xml:space="preserve">
+    <value>panelScriptEvent</value>
+  </data>
+  <data name="&gt;&gt;textBox77.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="textBox64.Location" type="System.Drawing.Point, System.Drawing">
+    <value>159, 75</value>
+  </data>
+  <data name="textBox64.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 20</value>
+  </data>
+  <data name="textBox64.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="textBox64.Text" xml:space="preserve">
+    <value>0x</value>
+  </data>
+  <data name="textBox64.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;textBox64.Name" xml:space="preserve">
+    <value>textBox64</value>
+  </data>
+  <data name="&gt;&gt;textBox64.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox64.Parent" xml:space="preserve">
+    <value>panelScriptEvent</value>
+  </data>
+  <data name="&gt;&gt;textBox64.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="textBox62.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 3</value>
+  </data>
+  <data name="textBox62.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 20</value>
+  </data>
+  <data name="textBox62.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="textBox62.Text" xml:space="preserve">
+    <value>0x</value>
+  </data>
+  <data name="textBox62.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;textBox62.Name" xml:space="preserve">
+    <value>textBox62</value>
+  </data>
+  <data name="&gt;&gt;textBox62.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox62.Parent" xml:space="preserve">
+    <value>panelScriptEvent</value>
+  </data>
+  <data name="&gt;&gt;textBox62.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="textBox61.Location" type="System.Drawing.Point, System.Drawing">
+    <value>86, 3</value>
+  </data>
+  <data name="textBox61.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 20</value>
+  </data>
+  <data name="textBox61.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="textBox61.Text" xml:space="preserve">
+    <value>0x</value>
+  </data>
+  <data name="textBox61.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;textBox61.Name" xml:space="preserve">
+    <value>textBox61</value>
+  </data>
+  <data name="&gt;&gt;textBox61.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox61.Parent" xml:space="preserve">
+    <value>panelScriptEvent</value>
+  </data>
+  <data name="&gt;&gt;textBox61.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="label37.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label37.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label37.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 184</value>
+  </data>
+  <data name="label37.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 13</value>
+  </data>
+  <data name="label37.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="label37.Text" xml:space="preserve">
+    <value>Filler:</value>
+  </data>
+  <data name="&gt;&gt;label37.Name" xml:space="preserve">
+    <value>label37</value>
+  </data>
+  <data name="&gt;&gt;label37.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label37.Parent" xml:space="preserve">
+    <value>panelScriptEvent</value>
+  </data>
+  <data name="&gt;&gt;label37.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="hexNumberBoxTriggerFiller2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Courier New, 8.25pt</value>
+  </data>
+  <data name="hexNumberBoxTriggerFiller2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>174, 181</value>
+  </data>
+  <data name="hexNumberBoxTriggerFiller2.MaxLength" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="hexNumberBoxTriggerFiller2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 20</value>
+  </data>
+  <data name="hexNumberBoxTriggerFiller2.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="hexNumberBoxTriggerFiller2.Text" xml:space="preserve">
+    <value>00</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerFiller2.Name" xml:space="preserve">
+    <value>hexNumberBoxTriggerFiller2</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerFiller2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerFiller2.Parent" xml:space="preserve">
+    <value>panelScriptEvent</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerFiller2.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="label27.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label27.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label27.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 78</value>
+  </data>
+  <data name="label27.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 13</value>
+  </data>
+  <data name="label27.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="label27.Text" xml:space="preserve">
+    <value>Filler:</value>
+  </data>
+  <data name="&gt;&gt;label27.Name" xml:space="preserve">
+    <value>label27</value>
+  </data>
+  <data name="&gt;&gt;label27.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label27.Parent" xml:space="preserve">
+    <value>panelScriptEvent</value>
+  </data>
+  <data name="&gt;&gt;label27.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="hexNumberBoxTriggerFiller1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Courier New, 8.25pt</value>
+  </data>
+  <data name="hexNumberBoxTriggerFiller1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>174, 75</value>
+  </data>
+  <data name="hexNumberBoxTriggerFiller1.MaxLength" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="hexNumberBoxTriggerFiller1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 20</value>
+  </data>
+  <data name="hexNumberBoxTriggerFiller1.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="hexNumberBoxTriggerFiller1.Text" xml:space="preserve">
+    <value>00</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerFiller1.Name" xml:space="preserve">
+    <value>hexNumberBoxTriggerFiller1</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerFiller1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerFiller1.Parent" xml:space="preserve">
+    <value>panelScriptEvent</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerFiller1.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="label32.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label32.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label32.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 210</value>
+  </data>
+  <data name="label32.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 13</value>
+  </data>
+  <data name="label32.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="label32.Text" xml:space="preserve">
+    <value>Filler:</value>
+  </data>
+  <data name="&gt;&gt;label32.Name" xml:space="preserve">
+    <value>label32</value>
+  </data>
+  <data name="&gt;&gt;label32.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label32.Parent" xml:space="preserve">
+    <value>panelScriptEvent</value>
+  </data>
+  <data name="&gt;&gt;label32.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="textBox75.Location" type="System.Drawing.Point, System.Drawing">
+    <value>132, 45</value>
+  </data>
+  <data name="textBox75.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 20</value>
+  </data>
+  <data name="textBox75.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="textBox75.Text" xml:space="preserve">
+    <value>0x</value>
+  </data>
+  <data name="textBox75.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;textBox75.Name" xml:space="preserve">
+    <value>textBox75</value>
+  </data>
+  <data name="&gt;&gt;textBox75.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox75.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;textBox75.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="textBox65.Location" type="System.Drawing.Point, System.Drawing">
+    <value>132, 19</value>
+  </data>
+  <data name="textBox65.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 20</value>
+  </data>
+  <data name="textBox65.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="textBox65.Text" xml:space="preserve">
+    <value>0x</value>
+  </data>
+  <data name="textBox65.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;textBox65.Name" xml:space="preserve">
+    <value>textBox65</value>
+  </data>
+  <data name="&gt;&gt;textBox65.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox65.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;textBox65.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label28.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label28.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label28.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 22</value>
+  </data>
+  <data name="label28.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 13</value>
+  </data>
+  <data name="label28.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label28.Text" xml:space="preserve">
+    <value>Variable:</value>
+  </data>
+  <data name="&gt;&gt;label28.Name" xml:space="preserve">
+    <value>label28</value>
+  </data>
+  <data name="&gt;&gt;label28.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label28.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;label28.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label31.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label31.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label31.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 48</value>
+  </data>
+  <data name="label31.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 13</value>
+  </data>
+  <data name="label31.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="label31.Text" xml:space="preserve">
+    <value>Value:</value>
+  </data>
+  <data name="&gt;&gt;label31.Name" xml:space="preserve">
+    <value>label31</value>
+  </data>
+  <data name="&gt;&gt;label31.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label31.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;label31.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="hexNumberBoxTriggerVariable.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Courier New, 8.25pt</value>
+  </data>
+  <data name="hexNumberBoxTriggerVariable.Location" type="System.Drawing.Point, System.Drawing">
+    <value>147, 19</value>
+  </data>
+  <data name="hexNumberBoxTriggerVariable.MaxLength" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="hexNumberBoxTriggerVariable.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
+  </data>
+  <data name="hexNumberBoxTriggerVariable.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="hexNumberBoxTriggerVariable.Text" xml:space="preserve">
+    <value>0000</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerVariable.Name" xml:space="preserve">
+    <value>hexNumberBoxTriggerVariable</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerVariable.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerVariable.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerVariable.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="hexNumberBoxTriggerValue.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Courier New, 8.25pt</value>
+  </data>
+  <data name="hexNumberBoxTriggerValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>147, 45</value>
+  </data>
+  <data name="hexNumberBoxTriggerValue.MaxLength" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="hexNumberBoxTriggerValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
+  </data>
+  <data name="hexNumberBoxTriggerValue.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="hexNumberBoxTriggerValue.Text" xml:space="preserve">
+    <value>0000</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerValue.Name" xml:space="preserve">
+    <value>hexNumberBoxTriggerValue</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerValue.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerValue.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 101</value>
+  </data>
+  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 73</value>
+  </data>
+  <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Script Run Condition</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Name" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Parent" xml:space="preserve">
+    <value>panelScriptEvent</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="label19.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label19.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label19.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 236</value>
+  </data>
+  <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 13</value>
+  </data>
+  <data name="label19.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>Script Offset:</value>
+  </data>
+  <data name="&gt;&gt;label19.Name" xml:space="preserve">
+    <value>label19</value>
+  </data>
+  <data name="&gt;&gt;label19.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label19.Parent" xml:space="preserve">
+    <value>panelScriptEvent</value>
+  </data>
+  <data name="&gt;&gt;label19.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="btnDeleteTrigger.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAHrSURBVDhPjZJNS1RxGMXvJ/AjzCrIectUUmscIxdD
+        2vSC0UhKZBnUFCZSVgvDTbRukQUthGgRDkL7gjGnr1EtgqixLMlb906Zp+f3585YKtiBw3+e5/mdwzCM
+        t1mLmcTMy67mYKFzt+pmZh8hDUmKPpkq3akc8Oubl/Vtblbh82cKX5jtZWbPHS6KbBRUsqncq4Mt+vrk
+        oYL5WS1Pjqg62KP3h3a5l5k9dzh4co0CmleePtLqvWlV82360JfWx/xec6t7mdlzh4Mn5woWM8mZN1Pj
+        +n7/jqr9e1Q92q6l4/u0dKJjwzaz5w4HT84VLOyPh/78Yy0PdOnz4bQ+5ZLmxDZOujscPLmoIKHwwV19
+        OdJi886CgydnsoJMUsGtUa3YV/wfwcGTM1lBd0ph8aRWCz0O2Elw8ORMnlfOpmv+hWMKRvPyh3rlG+Cf
+        ym41e7s7znhyrqDUGZ97W+jVr7FB1xxcGlBwcRvbnjscPDlXYIrxdfxiQWsTZ/RzfFi1q0NbzJ47HDy5
+        eoE3HY9dqdg/7MfYaenGea1fH9H6tbP6beZlZs8dDp5co8DUxLJsv+y74X6tTZ6TbhelKbO9zOy5R+Em
+        Qn8XIJbtpY7mUjmTqgGXD5h5bWbPPeKcNhfUFTO3moHrZmb/jyR5fwBmRDdMlTxfCQAAAABJRU5ErkJg
+        gg==
+</value>
+  </data>
+  <data name="btnDeleteTrigger.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="btnDeleteTrigger.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnDeleteTrigger.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 287</value>
+  </data>
+  <data name="btnDeleteTrigger.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 23</value>
+  </data>
+  <data name="btnDeleteTrigger.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="btnDeleteTrigger.Text" xml:space="preserve">
+    <value>Delete Entity</value>
+  </data>
+  <data name="btnDeleteTrigger.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;btnDeleteTrigger.Name" xml:space="preserve">
+    <value>btnDeleteTrigger</value>
+  </data>
+  <data name="&gt;&gt;btnDeleteTrigger.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDeleteTrigger.Parent" xml:space="preserve">
+    <value>panelScriptEvent</value>
+  </data>
+  <data name="&gt;&gt;btnDeleteTrigger.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="hexNumberBoxTriggerScriptOffset.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Courier New, 8.25pt</value>
+  </data>
+  <data name="hexNumberBoxTriggerScriptOffset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>131, 233</value>
+  </data>
+  <data name="hexNumberBoxTriggerScriptOffset.MaxLength" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="hexNumberBoxTriggerScriptOffset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 20</value>
+  </data>
+  <data name="hexNumberBoxTriggerScriptOffset.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="hexNumberBoxTriggerScriptOffset.Text" xml:space="preserve">
+    <value>00000000</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerScriptOffset.Name" xml:space="preserve">
+    <value>hexNumberBoxTriggerScriptOffset</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerScriptOffset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerScriptOffset.Parent" xml:space="preserve">
+    <value>panelScriptEvent</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerScriptOffset.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="btnTriggerOpenScript.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAK5SURBVDhPjZNbSNNRHMd/RaCVF4pF2rqQPQQ9VJCU
+        XV5ESbRMgoh6E3rsSTLD29x0M80yMcLspgVZiYmsXG7zrqiZpXlB85KX5m1O59Rd1LVv5382RxFUP/hw
+        OJzz/Z7f75zfoT03tZzdjB1yNflKVPqTeY0If9KMoPsN2BD/Fh4J7ziejE1J5fBNUUEkq4BYodnnNtiV
+        rqGt0vdpL9t1+Fdo+qfxYWwOohRVjdtArFDTxgTluGsPVh0Ojv0XHK614Pwm1A8bEJhbB3f6fmlqCn/a
+        wjcsLtthsq3+xgLDvGLn6+tuKLFToUFAZqXLIF1L21IrvC6+aOMbZizL0JuXMePCYF6BwWKHdRU8C8/Y
+        4g4iOsJx1q+lLYllgRk1A9xg3GSFzsW4yYapJQdmrXwJnyZ+wPt6qVKsqKb9WbXkMtCQT/yba9oBPeas
+        Kxias+Cb0Yphow0jJjumLMDhREJcIeFy/ml4x1Tc9lO0k3/6Z6cBq4e84ooftenmMWq0oM9gxZARTAx8
+        XwT0NiBISugejYHkNSE4bb3mfDbRhbusiDWDzfFlnUKKXdOL6J11IPZVGAKTCUclhGMpTnp0UjT2X0JK
+        KSHsFhVF3mEGwgv4swYSp1WwM4Hu6SX0zwHHmWDYkIPOyQjGOXyZiETf1D3kNRCaR6IhUxLCs6hEEMNH
+        ouLddTCnFgey63EotwenZIT2yavIbyE3ec2EB2x82ErsMq8IWUDoPuHgP0IwqJ08gWe9xCnoITzucFLQ
+        RZCpCSESqiJRQklrZt0gRubNGJhdwiB7gbEFQFp6FhEZhDOZxMcQOeH5V0JhH0FayS4yidTsBgLIJzQ6
+        VPgY7BPBO7mcIZSjgSi1EdvlH+Gn6IBIPsSNinRMXO0W740SXoGFB8PZVX8hKougaOLiKjbn4jWD/401
+        swA+40H0Ew6DVbMLq4bfAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnTriggerOpenScript.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="btnTriggerOpenScript.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnTriggerOpenScript.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 258</value>
+  </data>
+  <data name="btnTriggerOpenScript.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 23</value>
+  </data>
+  <data name="btnTriggerOpenScript.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="btnTriggerOpenScript.Text" xml:space="preserve">
+    <value>Open Script in Editor</value>
+  </data>
+  <data name="btnTriggerOpenScript.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;btnTriggerOpenScript.Name" xml:space="preserve">
+    <value>btnTriggerOpenScript</value>
+  </data>
+  <data name="&gt;&gt;btnTriggerOpenScript.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnTriggerOpenScript.Parent" xml:space="preserve">
+    <value>panelScriptEvent</value>
+  </data>
+  <data name="&gt;&gt;btnTriggerOpenScript.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="hexNumberBoxTriggerFiller3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Courier New, 8.25pt</value>
+  </data>
+  <data name="hexNumberBoxTriggerFiller3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>174, 207</value>
+  </data>
+  <data name="hexNumberBoxTriggerFiller3.MaxLength" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="hexNumberBoxTriggerFiller3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 20</value>
+  </data>
+  <data name="hexNumberBoxTriggerFiller3.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="hexNumberBoxTriggerFiller3.Text" xml:space="preserve">
+    <value>00</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerFiller3.Name" xml:space="preserve">
+    <value>hexNumberBoxTriggerFiller3</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerFiller3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerFiller3.Parent" xml:space="preserve">
+    <value>panelScriptEvent</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerFiller3.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="cbTriggerHeight.Items" xml:space="preserve">
+    <value>[00] All heights</value>
+  </data>
+  <data name="cbTriggerHeight.Items1" xml:space="preserve">
+    <value>[01] Height 0 (Surf)</value>
+  </data>
+  <data name="cbTriggerHeight.Items2" xml:space="preserve">
+    <value>[02] Height 1</value>
+  </data>
+  <data name="cbTriggerHeight.Items3" xml:space="preserve">
+    <value>[03] Height 2 (Normal)</value>
+  </data>
+  <data name="cbTriggerHeight.Items4" xml:space="preserve">
+    <value>[04] Height 3</value>
+  </data>
+  <data name="cbTriggerHeight.Items5" xml:space="preserve">
+    <value>[05] Height 4</value>
+  </data>
+  <data name="cbTriggerHeight.Items6" xml:space="preserve">
+    <value>[06] Height 5</value>
+  </data>
+  <data name="cbTriggerHeight.Items7" xml:space="preserve">
+    <value>[07] Height 6</value>
+  </data>
+  <data name="cbTriggerHeight.Items8" xml:space="preserve">
+    <value>[08] Height 7</value>
+  </data>
+  <data name="cbTriggerHeight.Items9" xml:space="preserve">
+    <value>[09] Height 8</value>
+  </data>
+  <data name="cbTriggerHeight.Items10" xml:space="preserve">
+    <value>[0A] Height 9</value>
+  </data>
+  <data name="cbTriggerHeight.Items11" xml:space="preserve">
+    <value>[0B] Height 10</value>
+  </data>
+  <data name="cbTriggerHeight.Items12" xml:space="preserve">
+    <value>[0C] Height 11</value>
+  </data>
+  <data name="cbTriggerHeight.Items13" xml:space="preserve">
+    <value>[0D] Height 12</value>
+  </data>
+  <data name="cbTriggerHeight.Items14" xml:space="preserve">
+    <value>[0E] Height 13</value>
+  </data>
+  <data name="cbTriggerHeight.Items15" xml:space="preserve">
+    <value>[0F] Height 14</value>
+  </data>
+  <data name="cbTriggerHeight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>49, 48</value>
+  </data>
+  <data name="cbTriggerHeight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 21</value>
+  </data>
+  <data name="cbTriggerHeight.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;cbTriggerHeight.Name" xml:space="preserve">
+    <value>cbTriggerHeight</value>
+  </data>
+  <data name="&gt;&gt;cbTriggerHeight.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbTriggerHeight.Parent" xml:space="preserve">
+    <value>panelScriptEvent</value>
+  </data>
+  <data name="&gt;&gt;cbTriggerHeight.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="label29.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label29.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label29.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 32</value>
+  </data>
+  <data name="label29.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 13</value>
+  </data>
+  <data name="label29.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="label29.Text" xml:space="preserve">
+    <value>Height:</value>
+  </data>
+  <data name="&gt;&gt;label29.Name" xml:space="preserve">
+    <value>label29</value>
+  </data>
+  <data name="&gt;&gt;label29.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label29.Parent" xml:space="preserve">
+    <value>panelScriptEvent</value>
+  </data>
+  <data name="&gt;&gt;label29.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="labelTriggerPosition.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelTriggerPosition.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelTriggerPosition.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 6</value>
+  </data>
+  <data name="labelTriggerPosition.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 13</value>
+  </data>
+  <data name="labelTriggerPosition.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelTriggerPosition.Text" xml:space="preserve">
+    <value>Position:</value>
+  </data>
+  <data name="&gt;&gt;labelTriggerPosition.Name" xml:space="preserve">
+    <value>labelTriggerPosition</value>
+  </data>
+  <data name="&gt;&gt;labelTriggerPosition.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelTriggerPosition.Parent" xml:space="preserve">
+    <value>panelScriptEvent</value>
+  </data>
+  <data name="&gt;&gt;labelTriggerPosition.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="hexNumberBoxTriggerYPos.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Courier New, 8.25pt</value>
+  </data>
+  <data name="hexNumberBoxTriggerYPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>159, 3</value>
+  </data>
+  <data name="hexNumberBoxTriggerYPos.MaxLength" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="hexNumberBoxTriggerYPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
+  </data>
+  <data name="hexNumberBoxTriggerYPos.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="hexNumberBoxTriggerYPos.Text" xml:space="preserve">
+    <value>0000</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerYPos.Name" xml:space="preserve">
+    <value>hexNumberBoxTriggerYPos</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerYPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerYPos.Parent" xml:space="preserve">
+    <value>panelScriptEvent</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerYPos.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="hexNumberBoxTriggerXPos.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Courier New, 8.25pt</value>
+  </data>
+  <data name="hexNumberBoxTriggerXPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>101, 3</value>
+  </data>
+  <data name="hexNumberBoxTriggerXPos.MaxLength" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="hexNumberBoxTriggerXPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
+  </data>
+  <data name="hexNumberBoxTriggerXPos.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="hexNumberBoxTriggerXPos.Text" xml:space="preserve">
+    <value>0000</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerXPos.Name" xml:space="preserve">
+    <value>hexNumberBoxTriggerXPos</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerXPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerXPos.Parent" xml:space="preserve">
+    <value>panelScriptEvent</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxTriggerXPos.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="panelScriptEvent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 31</value>
+  </data>
+  <data name="panelScriptEvent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>218, 549</value>
+  </data>
+  <data name="panelScriptEvent.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;panelScriptEvent.Name" xml:space="preserve">
+    <value>panelScriptEvent</value>
+  </data>
+  <data name="&gt;&gt;panelScriptEvent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelScriptEvent.Parent" xml:space="preserve">
+    <value>panelEntityData</value>
+  </data>
+  <data name="&gt;&gt;panelScriptEvent.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="panelWarpEvent.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="panelWarpEvent.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelWarpOffset.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelWarpOffset.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelWarpOffset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>124, 236</value>
+  </data>
+  <data name="labelWarpOffset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 13</value>
+  </data>
+  <data name="labelWarpOffset.TabIndex" type="System.Int32, mscorlib">
+    <value>62</value>
+  </data>
+  <data name="labelWarpOffset.Text" xml:space="preserve">
+    <value>0x00000000</value>
+  </data>
+  <data name="&gt;&gt;labelWarpOffset.Name" xml:space="preserve">
+    <value>labelWarpOffset</value>
+  </data>
+  <data name="&gt;&gt;labelWarpOffset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelWarpOffset.Parent" xml:space="preserve">
+    <value>panelWarpEvent</value>
+  </data>
+  <data name="&gt;&gt;labelWarpOffset.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="hexViewerRawWarp.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Consolas, 9pt</value>
+  </data>
+  <data name="hexViewerRawWarp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 19</value>
+  </data>
+  <data name="hexViewerRawWarp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 16</value>
+  </data>
+  <data name="hexViewerRawWarp.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;hexViewerRawWarp.Name" xml:space="preserve">
+    <value>hexViewerRawWarp</value>
+  </data>
+  <data name="&gt;&gt;hexViewerRawWarp.Type" xml:space="preserve">
+    <value>Be.Windows.Forms.HexBox, Be.Windows.Forms.HexBox, Version=1.6.0.33438, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;hexViewerRawWarp.Parent" xml:space="preserve">
+    <value>groupBox7</value>
+  </data>
+  <data name="&gt;&gt;hexViewerRawWarp.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 236</value>
+  </data>
+  <data name="groupBox7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="groupBox7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 41</value>
+  </data>
+  <data name="groupBox7.TabIndex" type="System.Int32, mscorlib">
+    <value>63</value>
+  </data>
+  <data name="groupBox7.Text" xml:space="preserve">
+    <value>Raw Warp Data</value>
+  </data>
+  <data name="&gt;&gt;groupBox7.Name" xml:space="preserve">
+    <value>groupBox7</value>
+  </data>
+  <data name="&gt;&gt;groupBox7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox7.Parent" xml:space="preserve">
+    <value>panelWarpEvent</value>
+  </data>
+  <data name="&gt;&gt;groupBox7.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="textBox8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 48</value>
+  </data>
+  <data name="textBox8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 20</value>
+  </data>
+  <data name="textBox8.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="textBox8.Text" xml:space="preserve">
+    <value>0x</value>
+  </data>
+  <data name="textBox8.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;textBox8.Name" xml:space="preserve">
+    <value>textBox8</value>
+  </data>
+  <data name="&gt;&gt;textBox8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox8.Parent" xml:space="preserve">
+    <value>panelWarpEvent</value>
+  </data>
+  <data name="&gt;&gt;textBox8.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="hexNumberBoxWarpHeight.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Courier New, 8.25pt</value>
+  </data>
+  <data name="hexNumberBoxWarpHeight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 48</value>
+  </data>
+  <data name="hexNumberBoxWarpHeight.MaxLength" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="hexNumberBoxWarpHeight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 20</value>
+  </data>
+  <data name="hexNumberBoxWarpHeight.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="hexNumberBoxWarpHeight.Text" xml:space="preserve">
+    <value>00</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxWarpHeight.Name" xml:space="preserve">
+    <value>hexNumberBoxWarpHeight</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxWarpHeight.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxWarpHeight.Parent" xml:space="preserve">
+    <value>panelWarpEvent</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxWarpHeight.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="textBox94.Location" type="System.Drawing.Point, System.Drawing">
+    <value>86, 3</value>
+  </data>
+  <data name="textBox94.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 20</value>
+  </data>
+  <data name="textBox94.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="textBox94.Text" xml:space="preserve">
+    <value>0x</value>
+  </data>
+  <data name="textBox94.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;textBox94.Name" xml:space="preserve">
+    <value>textBox94</value>
+  </data>
+  <data name="&gt;&gt;textBox94.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox94.Parent" xml:space="preserve">
+    <value>panelWarpEvent</value>
+  </data>
+  <data name="&gt;&gt;textBox94.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="textBox93.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 3</value>
+  </data>
+  <data name="textBox93.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 20</value>
+  </data>
+  <data name="textBox93.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="textBox93.Text" xml:space="preserve">
+    <value>0x</value>
+  </data>
+  <data name="textBox93.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;textBox93.Name" xml:space="preserve">
+    <value>textBox93</value>
+  </data>
+  <data name="&gt;&gt;textBox93.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox93.Parent" xml:space="preserve">
+    <value>panelWarpEvent</value>
+  </data>
+  <data name="&gt;&gt;textBox93.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="textBox86.Location" type="System.Drawing.Point, System.Drawing">
+    <value>147, 45</value>
+  </data>
+  <data name="textBox86.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 20</value>
+  </data>
+  <data name="textBox86.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="textBox86.Text" xml:space="preserve">
+    <value>0x</value>
+  </data>
+  <data name="textBox86.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;textBox86.Name" xml:space="preserve">
+    <value>textBox86</value>
+  </data>
+  <data name="&gt;&gt;textBox86.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox86.Parent" xml:space="preserve">
+    <value>gbWarpDestination</value>
+  </data>
+  <data name="&gt;&gt;textBox86.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="textBox81.Location" type="System.Drawing.Point, System.Drawing">
+    <value>147, 71</value>
+  </data>
+  <data name="textBox81.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 20</value>
+  </data>
+  <data name="textBox81.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="textBox81.Text" xml:space="preserve">
+    <value>0x</value>
+  </data>
+  <data name="textBox81.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;textBox81.Name" xml:space="preserve">
+    <value>textBox81</value>
+  </data>
+  <data name="&gt;&gt;textBox81.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox81.Parent" xml:space="preserve">
+    <value>gbWarpDestination</value>
+  </data>
+  <data name="&gt;&gt;textBox81.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="textBox80.Location" type="System.Drawing.Point, System.Drawing">
+    <value>147, 19</value>
+  </data>
+  <data name="textBox80.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 20</value>
+  </data>
+  <data name="textBox80.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="textBox80.Text" xml:space="preserve">
+    <value>0x</value>
+  </data>
+  <data name="textBox80.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;textBox80.Name" xml:space="preserve">
+    <value>textBox80</value>
+  </data>
+  <data name="&gt;&gt;textBox80.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox80.Parent" xml:space="preserve">
+    <value>gbWarpDestination</value>
+  </data>
+  <data name="&gt;&gt;textBox80.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="labelWarpNumber.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelWarpNumber.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelWarpNumber.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 22</value>
+  </data>
+  <data name="labelWarpNumber.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 13</value>
+  </data>
+  <data name="labelWarpNumber.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelWarpNumber.Text" xml:space="preserve">
+    <value>Warp Number:</value>
+  </data>
+  <data name="&gt;&gt;labelWarpNumber.Name" xml:space="preserve">
+    <value>labelWarpNumber</value>
+  </data>
+  <data name="&gt;&gt;labelWarpNumber.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelWarpNumber.Parent" xml:space="preserve">
+    <value>gbWarpDestination</value>
+  </data>
+  <data name="&gt;&gt;labelWarpNumber.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="labelWarpBank.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelWarpBank.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelWarpBank.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 74</value>
+  </data>
+  <data name="labelWarpBank.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 13</value>
+  </data>
+  <data name="labelWarpBank.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="labelWarpBank.Text" xml:space="preserve">
+    <value>Map Bank:</value>
+  </data>
+  <data name="&gt;&gt;labelWarpBank.Name" xml:space="preserve">
+    <value>labelWarpBank</value>
+  </data>
+  <data name="&gt;&gt;labelWarpBank.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelWarpBank.Parent" xml:space="preserve">
+    <value>gbWarpDestination</value>
+  </data>
+  <data name="&gt;&gt;labelWarpBank.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="labelWarpMap.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelWarpMap.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelWarpMap.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 48</value>
+  </data>
+  <data name="labelWarpMap.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 13</value>
+  </data>
+  <data name="labelWarpMap.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="labelWarpMap.Text" xml:space="preserve">
+    <value>Map Number:</value>
+  </data>
+  <data name="&gt;&gt;labelWarpMap.Name" xml:space="preserve">
+    <value>labelWarpMap</value>
+  </data>
+  <data name="&gt;&gt;labelWarpMap.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelWarpMap.Parent" xml:space="preserve">
+    <value>gbWarpDestination</value>
+  </data>
+  <data name="&gt;&gt;labelWarpMap.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="hexNumberBoxWarpMap.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Courier New, 8.25pt</value>
+  </data>
+  <data name="hexNumberBoxWarpMap.Location" type="System.Drawing.Point, System.Drawing">
+    <value>162, 45</value>
+  </data>
+  <data name="hexNumberBoxWarpMap.MaxLength" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="hexNumberBoxWarpMap.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 20</value>
+  </data>
+  <data name="hexNumberBoxWarpMap.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="hexNumberBoxWarpMap.Text" xml:space="preserve">
+    <value>00</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxWarpMap.Name" xml:space="preserve">
+    <value>hexNumberBoxWarpMap</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxWarpMap.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxWarpMap.Parent" xml:space="preserve">
+    <value>gbWarpDestination</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxWarpMap.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="hexNumberBoxWarpNum.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Courier New, 8.25pt</value>
+  </data>
+  <data name="hexNumberBoxWarpNum.Location" type="System.Drawing.Point, System.Drawing">
+    <value>162, 19</value>
+  </data>
+  <data name="hexNumberBoxWarpNum.MaxLength" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="hexNumberBoxWarpNum.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 20</value>
+  </data>
+  <data name="hexNumberBoxWarpNum.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="hexNumberBoxWarpNum.Text" xml:space="preserve">
+    <value>00</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxWarpNum.Name" xml:space="preserve">
+    <value>hexNumberBoxWarpNum</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxWarpNum.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxWarpNum.Parent" xml:space="preserve">
+    <value>gbWarpDestination</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxWarpNum.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="hexNumberBoxWarpBank.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Courier New, 8.25pt</value>
+  </data>
+  <data name="hexNumberBoxWarpBank.Location" type="System.Drawing.Point, System.Drawing">
+    <value>162, 71</value>
+  </data>
+  <data name="hexNumberBoxWarpBank.MaxLength" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="hexNumberBoxWarpBank.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 20</value>
+  </data>
+  <data name="hexNumberBoxWarpBank.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="hexNumberBoxWarpBank.Text" xml:space="preserve">
+    <value>00</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxWarpBank.Name" xml:space="preserve">
+    <value>hexNumberBoxWarpBank</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxWarpBank.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxWarpBank.Parent" xml:space="preserve">
+    <value>gbWarpDestination</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxWarpBank.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="gbWarpDestination.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 75</value>
+  </data>
+  <data name="gbWarpDestination.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 100</value>
+  </data>
+  <data name="gbWarpDestination.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="gbWarpDestination.Text" xml:space="preserve">
+    <value>Destination</value>
+  </data>
+  <data name="&gt;&gt;gbWarpDestination.Name" xml:space="preserve">
+    <value>gbWarpDestination</value>
+  </data>
+  <data name="&gt;&gt;gbWarpDestination.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbWarpDestination.Parent" xml:space="preserve">
+    <value>panelWarpEvent</value>
+  </data>
+  <data name="&gt;&gt;gbWarpDestination.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="btnDeleteWarp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAHrSURBVDhPjZJNS1RxGMXvJ/AjzCrIectUUmscIxdD
+        2vSC0UhKZBnUFCZSVgvDTbRukQUthGgRDkL7gjGnr1EtgqixLMlb906Zp+f3585YKtiBw3+e5/mdwzCM
+        t1mLmcTMy67mYKFzt+pmZh8hDUmKPpkq3akc8Oubl/Vtblbh82cKX5jtZWbPHS6KbBRUsqncq4Mt+vrk
+        oYL5WS1Pjqg62KP3h3a5l5k9dzh4co0CmleePtLqvWlV82360JfWx/xec6t7mdlzh4Mn5woWM8mZN1Pj
+        +n7/jqr9e1Q92q6l4/u0dKJjwzaz5w4HT84VLOyPh/78Yy0PdOnz4bQ+5ZLmxDZOujscPLmoIKHwwV19
+        OdJi886CgydnsoJMUsGtUa3YV/wfwcGTM1lBd0ph8aRWCz0O2Elw8ORMnlfOpmv+hWMKRvPyh3rlG+Cf
+        ym41e7s7znhyrqDUGZ97W+jVr7FB1xxcGlBwcRvbnjscPDlXYIrxdfxiQWsTZ/RzfFi1q0NbzJ47HDy5
+        eoE3HY9dqdg/7MfYaenGea1fH9H6tbP6beZlZs8dDp5co8DUxLJsv+y74X6tTZ6TbhelKbO9zOy5R+Em
+        Qn8XIJbtpY7mUjmTqgGXD5h5bWbPPeKcNhfUFTO3moHrZmb/jyR5fwBmRDdMlTxfCQAAAABJRU5ErkJg
+        gg==
+</value>
+  </data>
+  <data name="btnDeleteWarp.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="btnDeleteWarp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnDeleteWarp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 210</value>
+  </data>
+  <data name="btnDeleteWarp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 23</value>
+  </data>
+  <data name="btnDeleteWarp.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="btnDeleteWarp.Text" xml:space="preserve">
+    <value>Delete Entity</value>
+  </data>
+  <data name="btnDeleteWarp.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;btnDeleteWarp.Name" xml:space="preserve">
+    <value>btnDeleteWarp</value>
+  </data>
+  <data name="&gt;&gt;btnDeleteWarp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDeleteWarp.Parent" xml:space="preserve">
+    <value>panelWarpEvent</value>
+  </data>
+  <data name="&gt;&gt;btnDeleteWarp.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="btnWarpTravelToDest.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAMNSURBVDhPndLfT1NnHMfx75+wzIslu1p2vYttJMwE
+        CbE/6eG0paXQcs5pKa1Cq9OxbLowEDdUpggCG+AihCGB4oKTTiWKY0wcGjCQDRxRq2YxJsuiWUhMyC62
+        5L2Hbtni7rYneeXJc/J8P/l+zzky1qw9Y7xFkzP/Mn7AI6ONTpkdaJDHq1Oynvs2svFo+bfT+0qQTHNZ
+        vjCjqMvZc60a2UPPmlTPPj/g4JvBBp6sTfN45QJP780x1mhDJhr9Mv6+LpkmTc4e1Hhtq4M3iuxsLf5H
+        YZGNVwq2sZGbJpc9yFJfiPXcVc40uxDbxyKT+4My8Z5Psk1eiop17HYNh7MUh+tPNqebwm127pyuYemU
+        xWJ/hCe3LnP2Aw+id4u4e0T2tr0oe9pewN0vOEuCeNx+NI8XTdMpLdUptmmsDcdZ/DTKjd4IPy1NqvHK
+        EF+XiK54Tog4jgu5n4dx9AiavRJvWRCf14+ubHd5WR2Mcb3PYq67mh/nM0y1+VQHnbLubhccR4WSI8Lw
+        nLDy6CT2LsFXahAor8IfqMCpwpZPmcz1WGxceonbM0NcPhZANou/f1jLzQdxFu4nGZgXBm8ICw9bcfcK
+        oXKLiooImj/MzX6D2S6TX6df5tZUHzOdob8Cfkky/IMwtKqKl5Rl4ev7b+H6RAiHaqkKW3grTK73hpk5
+        EWHgXTffTR7lancYKTsuTzdDnGqE7YeFkZxw4W4cW6dghFJYZgLDihOMxLnWHeJKRyVffOhjIdPCfK+B
+        qPWqUrDJ1SFkH/ixq+JYZDfx2E7itUlq4gnC0R3Mdga41B7k4kcBrn32Dosno0i0qk6syrT6hM/J7tYt
+        +bYT1tskE7tI7qhX6kio3axN8VW7n4tt5Xx52M90X4rlgRrEMmNiGTVSHUnKWLqE+rp9pFMNpNN7SO96
+        My+lJOr3cuWYzvkjPs4d8nK+I8rKUEIFWBabDDNGtRHDMKKYholpGn8z1Lmq2mJ/Ksxoi0/9gToTreWs
+        jezMv4P8/P9FU7SwcaTJ8/vd0VQ+4P+s55XXRaTgD4xs7pP8nKLpAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnWarpTravelToDest.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="btnWarpTravelToDest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnWarpTravelToDest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 181</value>
+  </data>
+  <data name="btnWarpTravelToDest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 23</value>
+  </data>
+  <data name="btnWarpTravelToDest.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="btnWarpTravelToDest.Text" xml:space="preserve">
+    <value>Travel to Destination</value>
+  </data>
+  <data name="btnWarpTravelToDest.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;btnWarpTravelToDest.Name" xml:space="preserve">
+    <value>btnWarpTravelToDest</value>
+  </data>
+  <data name="&gt;&gt;btnWarpTravelToDest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnWarpTravelToDest.Parent" xml:space="preserve">
+    <value>panelWarpEvent</value>
+  </data>
+  <data name="&gt;&gt;btnWarpTravelToDest.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="cbWarpHeight.Items" xml:space="preserve">
+    <value>[00] All heights</value>
+  </data>
+  <data name="cbWarpHeight.Items1" xml:space="preserve">
+    <value>[01] Height 0 (Surf)</value>
+  </data>
+  <data name="cbWarpHeight.Items2" xml:space="preserve">
+    <value>[02] Height 1</value>
+  </data>
+  <data name="cbWarpHeight.Items3" xml:space="preserve">
+    <value>[03] Height 2 (Normal)</value>
+  </data>
+  <data name="cbWarpHeight.Items4" xml:space="preserve">
+    <value>[04] Height 3</value>
+  </data>
+  <data name="cbWarpHeight.Items5" xml:space="preserve">
+    <value>[05] Height 4</value>
+  </data>
+  <data name="cbWarpHeight.Items6" xml:space="preserve">
+    <value>[06] Height 5</value>
+  </data>
+  <data name="cbWarpHeight.Items7" xml:space="preserve">
+    <value>[07] Height 6</value>
+  </data>
+  <data name="cbWarpHeight.Items8" xml:space="preserve">
+    <value>[08] Height 7</value>
+  </data>
+  <data name="cbWarpHeight.Items9" xml:space="preserve">
+    <value>[09] Height 8</value>
+  </data>
+  <data name="cbWarpHeight.Items10" xml:space="preserve">
+    <value>[0A] Height 9</value>
+  </data>
+  <data name="cbWarpHeight.Items11" xml:space="preserve">
+    <value>[0B] Height 10</value>
+  </data>
+  <data name="cbWarpHeight.Items12" xml:space="preserve">
+    <value>[0C] Height 11</value>
+  </data>
+  <data name="cbWarpHeight.Items13" xml:space="preserve">
+    <value>[0D] Height 12</value>
+  </data>
+  <data name="cbWarpHeight.Items14" xml:space="preserve">
+    <value>[0E] Height 13</value>
+  </data>
+  <data name="cbWarpHeight.Items15" xml:space="preserve">
+    <value>[0F] Height 14</value>
+  </data>
+  <data name="cbWarpHeight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>49, 48</value>
+  </data>
+  <data name="cbWarpHeight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 21</value>
+  </data>
+  <data name="cbWarpHeight.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;cbWarpHeight.Name" xml:space="preserve">
+    <value>cbWarpHeight</value>
+  </data>
+  <data name="&gt;&gt;cbWarpHeight.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbWarpHeight.Parent" xml:space="preserve">
+    <value>panelWarpEvent</value>
+  </data>
+  <data name="&gt;&gt;cbWarpHeight.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="labelWarpHeight.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelWarpHeight.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelWarpHeight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 32</value>
+  </data>
+  <data name="labelWarpHeight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 13</value>
+  </data>
+  <data name="labelWarpHeight.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="labelWarpHeight.Text" xml:space="preserve">
+    <value>Height:</value>
+  </data>
+  <data name="&gt;&gt;labelWarpHeight.Name" xml:space="preserve">
+    <value>labelWarpHeight</value>
+  </data>
+  <data name="&gt;&gt;labelWarpHeight.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelWarpHeight.Parent" xml:space="preserve">
+    <value>panelWarpEvent</value>
+  </data>
+  <data name="&gt;&gt;labelWarpHeight.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="labelWarpPosition.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelWarpPosition.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelWarpPosition.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 6</value>
+  </data>
+  <data name="labelWarpPosition.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 13</value>
+  </data>
+  <data name="labelWarpPosition.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelWarpPosition.Text" xml:space="preserve">
+    <value>Position:</value>
+  </data>
+  <data name="&gt;&gt;labelWarpPosition.Name" xml:space="preserve">
+    <value>labelWarpPosition</value>
+  </data>
+  <data name="&gt;&gt;labelWarpPosition.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelWarpPosition.Parent" xml:space="preserve">
+    <value>panelWarpEvent</value>
+  </data>
+  <data name="&gt;&gt;labelWarpPosition.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="hexNumberBoxWarpYPos.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Courier New, 8.25pt</value>
+  </data>
+  <data name="hexNumberBoxWarpYPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>159, 3</value>
+  </data>
+  <data name="hexNumberBoxWarpYPos.MaxLength" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="hexNumberBoxWarpYPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
+  </data>
+  <data name="hexNumberBoxWarpYPos.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="hexNumberBoxWarpYPos.Text" xml:space="preserve">
+    <value>0000</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxWarpYPos.Name" xml:space="preserve">
+    <value>hexNumberBoxWarpYPos</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxWarpYPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxWarpYPos.Parent" xml:space="preserve">
+    <value>panelWarpEvent</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxWarpYPos.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="hexNumberBoxWarpXPos.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Courier New, 8.25pt</value>
+  </data>
+  <data name="hexNumberBoxWarpXPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>101, 3</value>
+  </data>
+  <data name="hexNumberBoxWarpXPos.MaxLength" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="hexNumberBoxWarpXPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
+  </data>
+  <data name="hexNumberBoxWarpXPos.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="hexNumberBoxWarpXPos.Text" xml:space="preserve">
+    <value>0000</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxWarpXPos.Name" xml:space="preserve">
+    <value>hexNumberBoxWarpXPos</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxWarpXPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxWarpXPos.Parent" xml:space="preserve">
+    <value>panelWarpEvent</value>
+  </data>
+  <data name="&gt;&gt;hexNumberBoxWarpXPos.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="panelWarpEvent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 31</value>
+  </data>
+  <data name="panelWarpEvent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>218, 549</value>
+  </data>
+  <data name="panelWarpEvent.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;panelWarpEvent.Name" xml:space="preserve">
+    <value>panelWarpEvent</value>
+  </data>
+  <data name="&gt;&gt;panelWarpEvent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelWarpEvent.Parent" xml:space="preserve">
+    <value>panelEntityData</value>
+  </data>
+  <data name="&gt;&gt;panelWarpEvent.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="labelEntityDataPanel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelEntityDataPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 32</value>
+  </data>
+  <data name="labelEntityDataPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>193, 113</value>
+  </data>
+  <data name="labelEntityDataPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="labelEntityDataPanel.Text" xml:space="preserve">
+    <value>There are no entities of this type available on this map.</value>
+  </data>
+  <data name="&gt;&gt;labelEntityDataPanel.Name" xml:space="preserve">
+    <value>labelEntityDataPanel</value>
+  </data>
+  <data name="&gt;&gt;labelEntityDataPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelEntityDataPanel.Parent" xml:space="preserve">
+    <value>panelEntityData</value>
+  </data>
+  <data name="&gt;&gt;labelEntityDataPanel.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
   <data name="panelEntityData.Location" type="System.Drawing.Point, System.Drawing">
