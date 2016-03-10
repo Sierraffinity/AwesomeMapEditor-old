@@ -148,7 +148,7 @@ namespace PGMEBackend.GLControls
                         Surface.DrawOutlineRect(ent.xPos * 16, ent.yPos * 16, 16, 16, rectPaintColor);
                 }
 
-                if (tool == EntityEditorTools.RectSelect || (mouseX >= 0 && mouseY >= 0 && mouseX < layout.layoutWidth && mouseY < layout.layoutHeight))
+                if (tool == EntityEditorTools.RectSelect)
                 {
                     int x = mouseX * 16;
                     int y = mouseY * 16;

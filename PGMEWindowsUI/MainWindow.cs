@@ -1,7 +1,7 @@
 ﻿// Awesome Map Editor
 // A map editor for GBA Pokémon games.
 
-// Copyright (C) 2015 Diegoisawesome
+// Copyright (C) 2015-2016 Diegoisawesome
 
 // This file is part of Awesome Map Editor.
 // Awesome Map Editor is free software: you can redistribute it and/or modify
@@ -934,32 +934,38 @@ namespace PGMEWindowsUI
             else
                 cboEventTypes.SelectedIndex = 0;
 
+            Entity currentEntity = null;
+            
             switch ((Entity.EntityType)cboEventTypes.SelectedIndex)
             {
                 default:
                     SetEntityNumValues(NPC.currentNPC, map.NPCs.Count - 1);
-                    LoadNPCView(map, NPC.currentNPC);
-                    PGMEBackend.Program.glEntityEditor.currentEntities = new List<Entity> { map.NPCs[NPC.currentNPC] };
+                    if (map.NPCs.Count > 0)
+                        currentEntity = map.NPCs[NPC.currentNPC];
                     break;
                 case Entity.EntityType.Warp:
                     SetEntityNumValues(Warp.currentWarp, map.Warps.Count - 1);
-                    LoadWarpView(map, Warp.currentWarp);
-                    PGMEBackend.Program.glEntityEditor.currentEntities = new List<Entity> { map.Warps[Warp.currentWarp] };
+                    if (map.Warps.Count > 0)
+                        currentEntity = map.Warps[Warp.currentWarp];
                     break;
                 case Entity.EntityType.Trigger:
                     SetEntityNumValues(Trigger.currentTrigger, map.Triggers.Count - 1);
-                    LoadTriggerView(map, Trigger.currentTrigger);
-                    PGMEBackend.Program.glEntityEditor.currentEntities = new List<Entity> { map.Triggers[Trigger.currentTrigger] };
+                    if (map.Triggers.Count > 0)
+                        currentEntity = map.Triggers[Trigger.currentTrigger];
                     break;
                 case Entity.EntityType.Sign:
                     SetEntityNumValues(Sign.currentSign, map.Signs.Count - 1);
-                    LoadSignView(map, Sign.currentSign);
-                    PGMEBackend.Program.glEntityEditor.currentEntities = new List<Entity> { map.Signs[Sign.currentSign] };
+                    if(map.Signs.Count > 0)
+                        currentEntity = map.Signs[Sign.currentSign];
                     break;
             }
 
+            LoadEntityView(currentEntity);
+            if (currentEntity != null)
+                PGMEBackend.Program.glEntityEditor.currentEntities = new List<Entity> { currentEntity };
+            else
+                PGMEBackend.Program.glEntityEditor.currentEntities = null;
             RefreshEntityEditorControl();
-
             entityTabLoaded = true;
         }
 
@@ -2283,6 +2289,8 @@ namespace PGMEWindowsUI
                 LoadTriggerView(entity as Trigger);
             else if (entity is Sign)
                 LoadSignView(entity as Sign);
+            else if (entity == null)
+                NoEntitiesOfType();
         }
 
         private void btnDeleteNPC_Click(object sender, EventArgs e)
