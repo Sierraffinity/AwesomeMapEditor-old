@@ -198,6 +198,11 @@ namespace PGMEBackend
                 ShowMessageBox(string.Format(rmInternalStrings.GetString("ROMCodeNotFound"), ROM.GameCode), rmInternalStrings.GetString("ROMCodeNotFoundTitle"), "OK", "Warning");
                 return -1;
             }
+            catch(NullReferenceException)
+            {
+                ShowMessageBox(string.Format(rmInternalStrings.GetString("ROMCodeNotFound"), ROM.GameCode), rmInternalStrings.GetString("ROMCodeNotFoundTitle"), "OK", "Warning");
+                return -1;
+            }
             return 0;
         }
 

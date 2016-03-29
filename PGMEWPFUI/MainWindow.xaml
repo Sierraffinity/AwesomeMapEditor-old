@@ -1,0 +1,182 @@
+﻿<Window x:Class="PGMEWPFUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PGMEWPFUI"
+        mc:Ignorable="d"
+        Title="Awesome Map Editor" Height="732" Width="1024">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Open ROM" InputGestureText="Ctrl+O"/>
+                <MenuItem Header="_Reload ROM" InputGestureText="Ctrl+R"/>
+                <Separator/>
+                <MenuItem Header="_Save Map" InputGestureText="Ctrl+S"/>
+                <MenuItem Header="Sav_e ROM" InputGestureText="Ctrl+Shift+S"/>
+                <MenuItem Header="Save ROM _As..."/>
+                <Separator/>
+                <MenuItem Header="Recent _Files">
+                    <MenuItem Header="(empty)"/>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="E_xit" InputGestureText="Alt+F4"/>
+            </MenuItem>
+            <MenuItem Header="_Edit">
+                <MenuItem Header="_Undo" InputGestureText="Ctrl+Z"/>
+                <MenuItem Header="_Redo" InputGestureText="Ctrl+Shift+Z"/>
+            </MenuItem>
+            <MenuItem Header="_Tools">
+                <MenuItem Header="_Tileset Editor"/>
+                <MenuItem Header="_Connection Editor"/>
+                <MenuItem Header="_World Map Editor"/>
+                <Separator />
+                <MenuItem Header="Show _Grid" InputGestureText="Ctrl+G"/>
+                <MenuItem Header="_Settings"/>
+            </MenuItem>
+            <MenuItem Header="_Help">
+                <MenuItem Header="_Readme" InputGestureText="F1"/>
+                <MenuItem Header="_About"/>
+            </MenuItem>
+        </Menu>
+        <ToolBarTray DockPanel.Dock="Top">
+            <ToolBar ToolBarTray.IsLocked="True">
+                <Button ToolTip="Open ROM" Click="OpenROMButton_Click">
+                    <local:AutoGreyableImage Source="/AMEWin;component/Resources/folder_32x32.png" />
+                </Button>
+                <Button ToolTip="Save ROM" IsEnabled="False">
+                    <local:AutoGreyableImage Source="/AMEWin;component/Resources/diskette_32x32.png" />
+                </Button>
+                <Separator />
+                <Button ToolTip="Save Map" IsEnabled="False">
+                    <local:AutoGreyableImage Source="/AMEWin;component/Resources/diskette_map_32x32.png" />
+                </Button>
+                <Button ToolTip="Save" IsEnabled="False">
+                    <local:AutoGreyableImage Source="/AMEWin;component/Resources/diskette_32x32.png" />
+                </Button>
+                <Button ToolTip="Save" IsEnabled="False">
+                    <local:AutoGreyableImage Source="/AMEWin;component/Resources/diskette_32x32.png" />
+                </Button>
+                <Separator />
+                <Button ToolTip="Save" IsEnabled="False">
+                    <local:AutoGreyableImage Source="/AMEWin;component/Resources/diskette_32x32.png" />
+                </Button>
+                <Button ToolTip="Save" IsEnabled="False">
+                    <local:AutoGreyableImage Source="/AMEWin;component/Resources/diskette_32x32.png" />
+                </Button>
+                <Separator />
+                <Button ToolTip="Save Map" IsEnabled="False">
+                    <local:AutoGreyableImage Source="/AMEWin;component/Resources/diskette_map_32x32.png" />
+                </Button>
+                <Button ToolTip="Save" IsEnabled="False">
+                    <local:AutoGreyableImage Source="/AMEWin;component/Resources/diskette_32x32.png" />
+                </Button>
+                <Button ToolTip="Save" IsEnabled="False">
+                    <local:AutoGreyableImage Source="/AMEWin;component/Resources/diskette_32x32.png" />
+                </Button>
+                <Separator />
+                <Button ToolTip="Save" IsEnabled="False">
+                    <local:AutoGreyableImage Source="/AMEWin;component/Resources/diskette_32x32.png" />
+                </Button>
+                <Separator />
+                <Button ToolTip="Save" IsEnabled="False">
+                    <local:AutoGreyableImage Source="/AMEWin;component/Resources/diskette_32x32.png" />
+                </Button>
+            </ToolBar>
+        </ToolBarTray>
+        <Grid DockPanel.Dock="Bottom" IsEnabled="False">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250" MinWidth="135"/>
+                <ColumnDefinition MinWidth="300"/>
+            </Grid.ColumnDefinitions>
+            <DockPanel>
+                <Grid Height="32" DockPanel.Dock="Top">
+                    <ToolBar x:Name="toolBar1" ToolBarTray.IsLocked="True" HorizontalAlignment="Stretch">
+                        <Button ToolTip="Map Sort Order">
+                            <local:AutoGreyableImage Source="/AMEWin;component/Resources/sort_alphabel_16x16.png" Height="16" />
+                        </Button>
+                        <Label Width="{Binding Converter={StaticResource WidthConverter}, ElementName=toolBar1, Path=ActualWidth, ConverterParameter=200}" />
+                        <TextBox Width="150" HorizontalAlignment="Right">
+                            <TextBox.Style>
+                                <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                                    <Style.Resources>
+                                        <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                            <VisualBrush.Visual>
+                                                <Label Content="Filter maps..." Foreground="LightGray" />
+                                            </VisualBrush.Visual>
+                                        </VisualBrush>
+                                    </Style.Resources>
+                                    <Style.Triggers>
+                                        <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                        </Trigger>
+                                        <Trigger Property="Text" Value="{x:Null}">
+                                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                        </Trigger>
+                                        <Trigger Property="IsKeyboardFocused" Value="True">
+                                            <Setter Property="Background" Value="White" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBox.Style>
+                        </TextBox>
+
+                    </ToolBar>
+                </Grid>
+                <TreeView/>
+            </DockPanel>
+            <GridSplitter Grid.Column="0" HorizontalAlignment="Right" Margin="0" VerticalAlignment="Stretch" Width="5"/>
+            <TabControl Grid.Column="1">
+                <TabItem Header="Map">
+                    <Grid DockPanel.Dock="Left">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition MinWidth="135"/>
+                            <ColumnDefinition Width="160"/>
+                        </Grid.ColumnDefinitions>
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                            <Grid Grid.Column="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Canvas x:Name="canvasMapEditor" Height="64" Width="64" Grid.Column="1" Grid.Row="1" Initialized="canvasMapEditor_Initialized"/>
+                            </Grid>
+                        </ScrollViewer>
+                        <DockPanel Grid.Column="1">
+                            <GroupBox Header="Border Blocks" DockPanel.Dock="Top" Height="64">
+                                <Canvas x:Name="canvasBorderEditor">
+
+                                </Canvas>
+                            </GroupBox>
+                            <TabControl DockPanel.Dock="Bottom">
+                                <TabItem Header="Blocks">
+                                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                                        <Canvas x:Name="canvasBlockPicker">
+
+                                        </Canvas>
+                                    </ScrollViewer>
+                                </TabItem>
+                                <TabItem Header="Movement">
+                                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                                        <Canvas x:Name="canvasMovementPicker">
+
+                                        </Canvas>
+                                    </ScrollViewer>
+                                </TabItem>
+                            </TabControl>
+                        </DockPanel>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Entities"/>
+                <TabItem Header="Wild Pokémon"/>
+                <TabItem Header="Header"/>
+            </TabControl>
+        </Grid>
+    </DockPanel>
+</Window>

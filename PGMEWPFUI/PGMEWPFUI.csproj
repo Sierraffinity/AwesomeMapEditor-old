@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PGMEWPFUI</RootNamespace>
+    <AssemblyName>AMEWin</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\add_16x16.png" />
+    <Resource Include="Resources\diskette_map_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\add_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\advance-map_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\arrow_refresh_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\arrow_right_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\arrow_right_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\connections_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\connections_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cursor_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\delete_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\delete_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\direction_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\direction_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\diskette_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\diskette_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\diskette_map_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\door_in_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\draw_clone_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\fill_color_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\folder_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\folder_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\folder_closed_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\folder_closed_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\folder_closed_map_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\folder_image_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\folder_image_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\folder_map_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\folder_map_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\folder_page_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\folder_wrench_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\grid_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\grid_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\help_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\image_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\locate_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\magic_fill_color_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\map_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\map_header_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NPCabove_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NPCbelow_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NPCblock_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NPCtranslucent_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\page_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\pencil_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\pipette_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PKMNQuestionMark_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\plugin_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Question mark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\save_as_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\script_gear_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\script_go_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\setting_tools_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sort_alphabel_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sort_date_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sort_map_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sort_number_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\stamp_edit_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\viewsprites_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\viewsprites_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\wildgrass_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\workspace_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\workspace_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\world_edit_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\world_edit_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dependencies\Hacking\GBA\GBA\GBAcore.csproj">
+      <Project>{3be7150f-648c-4b5f-ba42-ae8306074e94}</Project>
+      <Name>GBAcore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dependencies\Hacking\GBA\ROMhackingCore\ROMhackingCore.csproj">
+      <Project>{1a9cca06-ef33-4625-8dc1-a6e83eb80e66}</Project>
+      <Name>ROMhackingCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dependencies\Nintenlord.Forms\Nintenlord.Forms.csproj">
+      <Project>{d0fe49cc-1b13-4c04-b3c1-c1a9b1872a36}</Project>
+      <Name>Nintenlord.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dependencies\Nintenlord\Nintenlord.csproj">
+      <Project>{8fa48ef8-3e11-494a-b587-592d7c22efdf}</Project>
+      <Name>Nintenlord</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PGMEBackend\PGMEBackend.csproj">
+      <Project>{1683693f-34e2-44b3-be78-fbc1e224858f}</Project>
+      <Name>PGMEBackend</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(SolutionDir)PGMEBackend\*.yaml" "$(TargetDir)"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

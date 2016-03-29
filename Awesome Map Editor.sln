@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGMEWindowsUI", "PGMEWindowsUI\PGMEWindowsUI.csproj", "{D2052647-5C6A-44CF-A54B-BFB9A83CA6A0}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -38,6 +38,15 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SplitButton", "Dependencies\SplitButton\SplitButton.csproj", "{CE9CFA95-EB8D-40B5-8795-B89C7AA853A5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphicsTest", "GraphicsTest\GraphicsTest.csproj", "{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGMEWPFUI", "PGMEWPFUI\PGMEWPFUI.csproj", "{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1A9CCA06-EF33-4625-8DC1-A6E83EB80E66} = {1A9CCA06-EF33-4625-8DC1-A6E83EB80E66}
+		{3BE7150F-648C-4B5F-BA42-AE8306074E94} = {3BE7150F-648C-4B5F-BA42-AE8306074E94}
+		{1683693F-34E2-44B3-BE78-FBC1E224858F} = {1683693F-34E2-44B3-BE78-FBC1E224858F}
+		{D0FE49CC-1B13-4C04-B3C1-C1A9B1872A36} = {D0FE49CC-1B13-4C04-B3C1-C1A9B1872A36}
+		{8FA48EF8-3E11-494A-B587-592D7C22EFDF} = {8FA48EF8-3E11-494A-B587-592D7C22EFDF}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -463,6 +472,46 @@ Global
 		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Release-Unsigned|Any CPU.Build.0 = Release|Any CPU
 		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Release-Unsigned|x86.ActiveCfg = Release|Any CPU
 		{14C0EF82-E2E6-4D8B-8B61-E4E79DE08E9C}.Release-Unsigned|x86.Build.0 = Release|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Debug|x86.Build.0 = Debug|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Debug-UnitySubset-v35|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Debug-UnitySubset-v35|Any CPU.Build.0 = Debug|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Debug-UnitySubset-v35|x86.ActiveCfg = Debug|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Debug-UnitySubset-v35|x86.Build.0 = Debug|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Documentation|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Documentation|Any CPU.Build.0 = Debug|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Documentation|x86.ActiveCfg = Debug|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Documentation|x86.Build.0 = Debug|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Nsis|Any CPU.ActiveCfg = Release|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Nsis|Any CPU.Build.0 = Release|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Nsis|x86.ActiveCfg = Release|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Nsis|x86.Build.0 = Release|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Release|x86.ActiveCfg = Release|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Release|x86.Build.0 = Release|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Release-Portable-Signed|Any CPU.ActiveCfg = Release|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Release-Portable-Signed|Any CPU.Build.0 = Release|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Release-Portable-Signed|x86.ActiveCfg = Release|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Release-Portable-Signed|x86.Build.0 = Release|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Release-Portable-Unsigned|Any CPU.ActiveCfg = Release|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Release-Portable-Unsigned|Any CPU.Build.0 = Release|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Release-Portable-Unsigned|x86.ActiveCfg = Release|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Release-Portable-Unsigned|x86.Build.0 = Release|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Release-Signed|Any CPU.ActiveCfg = Release|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Release-Signed|Any CPU.Build.0 = Release|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Release-Signed|x86.ActiveCfg = Release|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Release-Signed|x86.Build.0 = Release|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Release-UnitySubset-v35|Any CPU.ActiveCfg = Release|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Release-UnitySubset-v35|Any CPU.Build.0 = Release|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Release-UnitySubset-v35|x86.ActiveCfg = Release|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Release-UnitySubset-v35|x86.Build.0 = Release|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Release-Unsigned|Any CPU.ActiveCfg = Release|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Release-Unsigned|Any CPU.Build.0 = Release|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Release-Unsigned|x86.ActiveCfg = Release|Any CPU
+		{A6B45EB9-6A38-4F92-82BC-CCFF1F30E643}.Release-Unsigned|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
