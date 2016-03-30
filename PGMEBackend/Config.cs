@@ -34,7 +34,7 @@ using static PGMEBackend.Program;
 
 namespace PGMEBackend
 {
-    static class Config
+    public static class Config
     {
         public static AMESettings settings;
         public static GameList gameList;

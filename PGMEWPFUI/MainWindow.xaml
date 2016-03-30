@@ -3,6 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xctk="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+        xmlns:bknd="clr-namespace:PGMEBackend;assembly=PGMEBackend"
         xmlns:local="clr-namespace:PGMEWPFUI"
         mc:Ignorable="d"
         Title="Awesome Map Editor" Height="732" Width="1024">
@@ -84,7 +86,7 @@
                 </Button>
             </ToolBar>
         </ToolBarTray>
-        <Grid DockPanel.Dock="Bottom" IsEnabled="False">
+        <Grid DockPanel.Dock="Bottom" IsEnabled="True">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="250" MinWidth="135"/>
                 <ColumnDefinition MinWidth="300"/>
@@ -173,7 +175,305 @@
                         </DockPanel>
                     </Grid>
                 </TabItem>
-                <TabItem Header="Entities"/>
+                <TabItem Header="Entities">
+                    <Grid DockPanel.Dock="Left">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition MinWidth="135"/>
+                            <ColumnDefinition Width="224"/>
+                        </Grid.ColumnDefinitions>
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.Column="0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Canvas x:Name="canvasEntityEditor" Height="64" Width="64" Grid.Column="1" Grid.Row="1" Initialized="canvasEntityEditor_Initialized"/>
+                            </Grid>
+                        </ScrollViewer>
+                        <DockPanel Grid.Column="1">
+                            <Canvas DockPanel.Dock="Top" Height="32">
+                                <ComboBox Canvas.Left="6" Canvas.Top="4" Width="126">
+                                    <ComboBoxItem Content="[00] NPCs" IsSelected="True"/>
+                                    <ComboBoxItem Content="[01] Warps"/>
+                                    <ComboBoxItem Content="[02] Triggers"/>
+                                    <ComboBoxItem Content="[03] Signs"/>
+                                </ComboBox>
+                                <Button Canvas.Left="137" Canvas.Top="5" Height="20" Width="20"></Button>
+                                <xctk:IntegerUpDown Canvas.Top="5" Canvas.Right="21" Value="0" ClipValueToMinMax="True" MaxWidth="41"></xctk:IntegerUpDown>
+                            </Canvas>
+                            <ScrollViewer DockPanel.Dock="Bottom">
+                                <StackPanel>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label x:Name="lblNPCNumber" Grid.Column="0" Content="NPC Number:"/>
+                                        <Border Grid.Column="2" Margin="0,3,4,3">
+                                            <DockPanel>
+                                                <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                <xctk:IntegerUpDown x:Name="iudNPCNumber"  MaxWidth="41" FontFamily="Courier New" Padding="0,2,0,0" DockPanel.Dock="Right" Value="0" FormatString="X2" Maximum="0xFF" Minimum="0" BorderThickness="0,1,1,1" ClipValueToMinMax="True"/>
+                                            </DockPanel>
+                                        </Border>
+                                    </Grid>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label x:Name="lblNPCSpriteNumber" Content="Sprite Number:" Grid.Column="0"/>
+                                        <Border Grid.Column="2" Margin="0,3,4,3">
+                                            <DockPanel>
+                                                <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                <xctk:IntegerUpDown x:Name="iudNPCSpriteNumber"  MaxWidth="41" FontFamily="Courier New" Padding="0,2,0,0" DockPanel.Dock="Right" Value="0" Maximum="0xFF" Minimum="0" FormatString="X2" BorderThickness="0,1,1,1" ClipValueToMinMax="True" DisplayDefaultValueOnEmptyText="True"/>
+                                            </DockPanel>
+                                        </Border>
+                                    </Grid>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label x:Name="lblNPCReplacement" Content="Replacement:" Grid.Column="0"/>
+                                        <Border Grid.Column="2" Margin="0,3,4,3">
+                                            <DockPanel>
+                                                <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                <TextBox x:Name="tbNPCReplacement" FontFamily="Courier New" MinWidth="20" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="00" MaxLength="2" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper" Padding="0,3,0,0"/>
+                                            </DockPanel>
+                                        </Border>
+                                    </Grid>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label x:Name="lblNPCFiller1" Content="Filler:" Grid.Column="0"/>
+                                        <Border Grid.Column="2" Margin="0,3,4,3">
+                                            <DockPanel>
+                                                <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                <TextBox x:Name="tbNPCFiller1" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="20" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="00" MaxLength="2" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                            </DockPanel>
+                                        </Border>
+                                    </Grid>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label x:Name="lblNPCPosition" Content="Position:" Canvas.Top="104"/>
+                                        <StackPanel Orientation="Horizontal" Grid.Column="2">
+                                            <Border Grid.Column="2" Margin="0,3,4,3">
+                                                <DockPanel>
+                                                    <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                    <TextBox x:Name="tbNPCXPos" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="34" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="0000" MaxLength="4" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                                </DockPanel>
+                                            </Border>
+                                            <Border Grid.Column="2" Margin="0,3,4,3">
+                                                <DockPanel>
+                                                    <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                    <TextBox x:Name="tbNPCYPos" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="34" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="0000" MaxLength="4" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                                </DockPanel>
+                                            </Border>
+                                        </StackPanel>
+                                    </Grid>
+                                    <Label x:Name="lblNPCHeight" Content="Height:"/>
+                                    <Border Padding="0,3,4,3">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Border Grid.Column="0" Margin="6,1,4,1">
+                                                <DockPanel>
+                                                    <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                    <TextBox x:Name="tbNPCHeight" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="20" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="00" MaxLength="2" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                                </DockPanel>
+                                            </Border>
+                                            <ComboBox Grid.Column="1" x:Name="cbNPCHeight"/>
+                                        </Grid>
+                                    </Border>
+                                    <Label x:Name="lblNPCIdleAnim" Content="Idle Animation:"/>
+                                    <Border Padding="0,3,4,3">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Border Grid.Column="0" Margin="6,1,4,1">
+                                                <DockPanel>
+                                                    <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                    <TextBox x:Name="tbNPCIdleAnim" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="20" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="00" MaxLength="2" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                                </DockPanel>
+                                            </Border>
+                                            <ComboBox x:Name="cbNPCIdleAnim" Grid.Column="1"/>
+                                        </Grid>
+                                    </Border>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label x:Name="lblNPCMovementBounds" Content="Movement Boundaries:" Grid.Column="0"/>
+                                        <StackPanel Orientation="Horizontal" Grid.Column="2">
+                                            <Border Margin="0,3,4,3">
+                                                <DockPanel>
+                                                    <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                    <TextBox x:Name="tbNPCXBounds" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="12" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="0" MaxLength="1" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                                </DockPanel>
+                                            </Border>
+                                            <Border Margin="0,3,4,3">
+                                                <DockPanel>
+                                                    <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                    <TextBox x:Name="tbNPCYBounds" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="12" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="0" MaxLength="1" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                                </DockPanel>
+                                            </Border>
+                                        </StackPanel>
+                                    </Grid>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label x:Name="lblNPCFiller2" Content="Filler:" Grid.Column="0"/>
+                                        <Border Grid.Column="2" Margin="0,3,4,3">
+                                            <DockPanel>
+                                                <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                <TextBox x:Name="tbNPCFiller2" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="20" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="00" MaxLength="2" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                            </DockPanel>
+                                        </Border>
+                                    </Grid>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label x:Name="lblNPCTrainer" Content="Trainer:" Grid.Column="0"/>
+                                        <Border Grid.Column="2" Margin="0,3,4,3">
+                                            <DockPanel Canvas.Right="4" Canvas.Top="283" Height="20">
+                                                <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                <TextBox x:Name="tbNPCTrainer" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="20" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="00" MaxLength="2" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                            </DockPanel>
+                                        </Border>
+                                    </Grid>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label x:Name="lblNPCFiller3" Content="Filler:" Grid.Column="0"/>
+                                        <Border Grid.Column="2" Margin="0,3,4,3">
+                                            <DockPanel Canvas.Right="4" Canvas.Top="309" Height="20">
+                                                <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                <TextBox x:Name="tbNPCFiller3" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="20" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="00" MaxLength="2" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                            </DockPanel>
+                                        </Border>
+                                    </Grid>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label x:Name="lblNPCViewRadius" Content="View Radius:" Canvas.Top="330"/>
+                                        <Border Grid.Column="2" Margin="0,3,4,3">
+                                            <DockPanel Canvas.Right="4" Canvas.Top="334" Height="20">
+                                                <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                <TextBox x:Name="tbNPCViewRadius" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="20" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="00" MaxLength="2" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                            </DockPanel>
+                                        </Border>
+                                    </Grid>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label x:Name="lblNPCFiller4" Content="Filler:" Grid.Column="0"/>
+                                        <Border Grid.Column="2" Margin="0,3,4,3">
+                                            <DockPanel>
+                                                <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                <TextBox x:Name="tbNPCFiller4" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="20" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="00" MaxLength="2" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                            </DockPanel>
+                                        </Border>
+                                    </Grid>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label x:Name="lblNPCScriptOffset" Content="Script Offset:" Grid.Column="0"/>
+                                        <Border Grid.Column="2" Margin="0,3,4,3">
+                                            <DockPanel>
+                                                <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                <TextBox x:Name="tbNPCScriptOffset" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="63" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="00000000" MaxLength="8" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                            </DockPanel>
+                                        </Border>
+                                    </Grid>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label x:Name="lblNPCVisibilityFlag" Content="Visibility Flag:" Grid.Column="0"/>
+                                        <Border Grid.Column="2" Margin="0,3,4,3">
+                                            <DockPanel>
+                                                <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                <TextBox x:Name="tbNPCVisibilityFlag" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="34" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="0000" MaxLength="4" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                            </DockPanel>
+                                        </Border>
+                                    </Grid>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label x:Name="lblNPCFiller5" Content="Filler:" Grid.Column="0"/>
+                                        <Border Grid.Column="2" Margin="0,3,4,3">
+                                            <DockPanel>
+                                                <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                <TextBox x:Name="tbNPCFiller5" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="20" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="00" MaxLength="2" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                            </DockPanel>
+                                        </Border>
+                                    </Grid>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label x:Name="lblNPCFiller6" Content="Filler:" Grid.Column="0"/>
+                                        <Border Grid.Column="2" Margin="0,3,4,3">
+                                            <DockPanel>
+                                                <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                <TextBox x:Name="tbNPCFiller6" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="20" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="00" MaxLength="2" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                            </DockPanel>
+                                        </Border>
+                                    </Grid>
+                                    <Button x:Name="btnNPCOpenScript" Content="Open Script in Editor" Margin="4,3,4,3"/>
+                                    <Button x:Name="btnNPCDeleteEntity" Content="Delete Entity" Margin="4,3,4,3"/>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </DockPanel>
+                    </Grid>
+                </TabItem>
                 <TabItem Header="Wild Pokémon"/>
                 <TabItem Header="Header"/>
             </TabControl>

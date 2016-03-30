@@ -16,6 +16,8 @@ using PGMEBackend;
 using static PGMEBackend.Config;
 using PGMEBackend.Entities;
 using Microsoft.Win32;
+using Xceed.Wpf.Toolkit;
+using System.Globalization;
 
 namespace PGMEWPFUI
 {
@@ -26,15 +28,20 @@ namespace PGMEWPFUI
     {
         public MainWindow()
         {
-            InitializeComponent();
-            Program.Initialize(this);
             if (ReadConfig() != 0)
             {
                 QuitApplication(0);
             }
+            InitializeComponent();
+            Program.Initialize(this);
         }
 
         private void canvasMapEditor_Initialized(object sender, EventArgs e)
+        {
+
+        }
+
+        private void canvasEntityEditor_Initialized(object sender, EventArgs e)
         {
 
         }
@@ -230,15 +237,21 @@ namespace PGMEWPFUI
         {
             return false;
         }
-    }
 
+        private void HexBoxOnPreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            int hexNumber;
+            e.Handled = !int.TryParse(e.Text, NumberStyles.HexNumber, CultureInfo.CurrentCulture, out hexNumber);
+        }
+    }
+    
     public class WidthConverter : IValueConverter
     {
-        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return Math.Max(System.Convert.ToDouble(value) - System.Convert.ToDouble(parameter), 0.0);
         }
-        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
         }
