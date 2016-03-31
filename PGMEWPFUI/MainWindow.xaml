@@ -153,14 +153,14 @@
                         <DockPanel Grid.Column="1">
                             <GroupBox Header="Border Blocks" DockPanel.Dock="Top" Height="64">
                                 <Canvas x:Name="canvasBorderEditor">
-
+                                    
                                 </Canvas>
                             </GroupBox>
                             <TabControl DockPanel.Dock="Bottom">
                                 <TabItem Header="Blocks">
-                                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
                                         <Canvas x:Name="canvasBlockPicker">
-
+                                            
                                         </Canvas>
                                     </ScrollViewer>
                                 </TabItem>
@@ -206,7 +206,9 @@
                                     <ComboBoxItem Content="[02] Triggers"/>
                                     <ComboBoxItem Content="[03] Signs"/>
                                 </ComboBox>
-                                <Button Canvas.Left="137" Canvas.Top="5" Height="20" Width="20"></Button>
+                                <Button Canvas.Left="137" Canvas.Top="5" Height="20" Width="20">
+                                    <local:AutoGreyableImage Source="/AMEWin;component/Resources/add_16x16.png"/>
+                                </Button>
                                 <xctk:IntegerUpDown Canvas.Top="5" Canvas.Right="21" Value="0" ClipValueToMinMax="True" MaxWidth="41"></xctk:IntegerUpDown>
                             </Canvas>
                             <ScrollViewer DockPanel.Dock="Bottom">
@@ -222,7 +224,7 @@
                                         </Style>
                                     </TabControl.Resources>
                                     <TabItem>
-                                        <StackPanel x:Name="pnlNPCEntity">
+                                        <StackPanel x:Name="pnlEntityNPC">
                                             <Grid>
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="Auto" />
@@ -481,14 +483,120 @@
                                                     </DockPanel>
                                                 </Border>
                                             </Grid>
-                                            <Button x:Name="btnNPCOpenScript" Content="Open Script in Editor" Margin="4,3,4,3"/>
-                                            <Button x:Name="btnNPCDeleteEntity" Content="Delete Entity" Margin="4,3,4,3"/>
+                                            <Button x:Name="btnNPCOpenScript" Margin="4,3,4,3">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <local:AutoGreyableImage VerticalAlignment="Center" Margin="0,0,3,0" Source="/AMEWin;component/Resources/script_go_16x16.png"/>
+                                                    <TextBlock VerticalAlignment="Center">Open Script in Editor</TextBlock>
+                                                </StackPanel>
+                                            </Button>
+                                            <Button x:Name="btnNPCDeleteEntity" Margin="4,3,4,3">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <local:AutoGreyableImage VerticalAlignment="Center" Margin="0,0,3,0" Source="/AMEWin;component/Resources/delete_16x16.png"/>
+                                                    <TextBlock VerticalAlignment="Center" Foreground="Red">Delete Entity</TextBlock>
+                                                </StackPanel>
+                                            </Button>
                                         </StackPanel>
                                     </TabItem>
                                     <TabItem>
-                                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Tab 2
-
-                                        </TextBlock>
+                                        <StackPanel x:Name="pnlEntityWarp">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <Label x:Name="lblWarpPosition" Content="Position:"/>
+                                                <StackPanel Orientation="Horizontal" Grid.Column="2">
+                                                    <Border Grid.Column="2" Margin="0,3,4,3">
+                                                        <DockPanel>
+                                                            <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                            <TextBox x:Name="tbWarpXPos" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="34" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="0000" MaxLength="4" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                                        </DockPanel>
+                                                    </Border>
+                                                    <Border Grid.Column="2" Margin="0,3,4,3">
+                                                        <DockPanel>
+                                                            <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                            <TextBox x:Name="tbWarpYPos" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="34" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="0000" MaxLength="4" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                                        </DockPanel>
+                                                    </Border>
+                                                </StackPanel>
+                                            </Grid>
+                                            <Label x:Name="lblWarpHeight" Content="Height:"/>
+                                            <Border Padding="0,3,4,3">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto" />
+                                                        <ColumnDefinition Width="*" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Border Grid.Column="0" Margin="6,1,4,1">
+                                                        <DockPanel>
+                                                            <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                            <TextBox x:Name="tbWarpHeight" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="20" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="00" MaxLength="2" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                                        </DockPanel>
+                                                    </Border>
+                                                    <ComboBox Grid.Column="1" x:Name="cbWarpHeight" SelectedIndex="{Binding ElementName=tbWarpHeight, Path=Text}">
+                                                    </ComboBox>
+                                                </Grid>
+                                            </Border>
+                                            <GroupBox Header="Destination" Margin="4">
+                                            <StackPanel>
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto" />
+                                                        <ColumnDefinition Width="*" />
+                                                        <ColumnDefinition Width="Auto" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label x:Name="lblWarpNumber" Content="Warp Number:" Grid.Column="0"/>
+                                                    <Border Grid.Column="2" Margin="0,3,4,3">
+                                                        <DockPanel>
+                                                            <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                            <TextBox x:Name="tbWarpNumber" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="20" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="00" MaxLength="2" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                                        </DockPanel>
+                                                    </Border>
+                                                </Grid>
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto" />
+                                                        <ColumnDefinition Width="*" />
+                                                        <ColumnDefinition Width="Auto" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label x:Name="lblWarpMapNumber" Content="Map Number:" Grid.Column="0"/>
+                                                    <Border Grid.Column="2" Margin="0,3,4,3">
+                                                        <DockPanel Canvas.Right="4" Canvas.Top="283" Height="20">
+                                                            <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                            <TextBox x:Name="tbWarpMapNumber" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="20" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="00" MaxLength="2" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                                        </DockPanel>
+                                                    </Border>
+                                                </Grid>
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="Auto" />
+                                                            <ColumnDefinition Width="*" />
+                                                            <ColumnDefinition Width="Auto" />
+                                                        </Grid.ColumnDefinitions>
+                                                        <Label x:Name="lblWarpMapBank" Content="Map Bank:" Grid.Column="0"/>
+                                                        <Border Grid.Column="2" Margin="0,3,4,3">
+                                                            <DockPanel Canvas.Right="4" Canvas.Top="309" Height="20">
+                                                                <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                                <TextBox x:Name="tbWarpMapBank" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="20" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="00" MaxLength="2" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                                            </DockPanel>
+                                                        </Border>
+                                                    </Grid>
+                                                </StackPanel>
+                                            </GroupBox>
+                                            <Button x:Name="btnWarpTravelToDest" Margin="4,3,4,3">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <local:AutoGreyableImage VerticalAlignment="Center" Margin="0,0,3,0" Source="/AMEWin;component/Resources/door_in_16x16.png"/>
+                                                    <TextBlock VerticalAlignment="Center">Travel to Destination</TextBlock>
+                                                </StackPanel>
+                                            </Button>
+                                            <Button x:Name="btnWarpDeleteEntity" Margin="4,3,4,3">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <local:AutoGreyableImage VerticalAlignment="Center" Margin="0,0,3,0" Source="/AMEWin;component/Resources/delete_16x16.png"/>
+                                                    <TextBlock VerticalAlignment="Center" Foreground="Red">Delete Entity</TextBlock>
+                                                </StackPanel>
+                                            </Button>
+                                        </StackPanel>
                                     </TabItem>
                                 </TabControl>
                             </ScrollViewer>

@@ -5,21 +5,21 @@
 - [ ] Day/Night systems compatibility
 
 ## Map editor tab
-- [X] Fill bucket
-- [X] Fill All bucket
-- [X] Connect toolbar tools to actions
-- [X] Movement permissions
-	- [X] Changing drawing code from map mode to perms mode as needed
-	- [X] Drawing in picker
-	- [X] Selecting in picker
-	- [X] Painting on map
-	- [X] Eyedropper on map
-	- [X] Fill on map
-	- [X] Stamp on map
-	- [X] Write changes to map
-- [X] Border block
-	- [X] Painting
-	- [X] Eyedropper
+- [ ] Fill bucket
+- [ ] Fill All bucket
+- [ ] Connect toolbar tools to actions
+- [ ] Movement permissions
+	- [ ] Changing drawing code from map mode to perms mode as needed
+	- [ ] Drawing in picker
+	- [ ] Selecting in picker
+	- [ ] Painting on map
+	- [ ] Eyedropper on map
+	- [ ] Fill on map
+	- [ ] Stamp on map
+	- [ ] Write changes to map
+- [ ] Border block
+	- [ ] Painting
+	- [ ] Eyedropper
 	- [ ] Change sizes for FRLG
 	- [ ] Center when changing sizes
 	- [ ] Expand vertically if needed
