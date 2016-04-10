@@ -122,10 +122,20 @@
                                 </Style>
                             </TextBox.Style>
                         </TextBox>
-
                     </ToolBar>
                 </Grid>
-                <TreeView/>
+                <TreeView>
+                    <TreeView ItemsSource="{Binding mapTreeViewItems}">
+                        <TreeView.ItemTemplate>
+                            <HierarchicalDataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="{Binding Icon}" />
+                                    <TextBlock Text="{Binding Name}" />
+                                </StackPanel>
+                            </HierarchicalDataTemplate>
+                        </TreeView.ItemTemplate>
+                    </TreeView>
+                </TreeView>
             </DockPanel>
             <GridSplitter Grid.Column="0" HorizontalAlignment="Right" Margin="0" VerticalAlignment="Stretch" Width="5"/>
             <TabControl Grid.Column="1">
@@ -199,8 +209,8 @@
                             </Grid>
                         </ScrollViewer>
                         <DockPanel Grid.Column="2">
-                            <Canvas DockPanel.Dock="Top" Height="32">
-                                <ComboBox x:Name="cmbEntityTypeSelector" Canvas.Left="6" Canvas.Top="4" Width="126">
+                            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                                <ComboBox x:Name="cmbEntityTypeSelector" Canvas.Left="6" Canvas.Top="4" Width="130" Margin="4,4,4,3">
                                     <ComboBoxItem Content="[00] NPCs" IsSelected="True"/>
                                     <ComboBoxItem Content="[01] Warps"/>
                                     <ComboBoxItem Content="[02] Triggers"/>
@@ -209,8 +219,9 @@
                                 <Button Canvas.Left="137" Canvas.Top="5" Height="20" Width="20">
                                     <local:AutoGreyableImage Source="/AMEWin;component/Resources/add_16x16.png"/>
                                 </Button>
-                                <xctk:IntegerUpDown Canvas.Top="5" Canvas.Right="21" Value="0" ClipValueToMinMax="True" MaxWidth="41"></xctk:IntegerUpDown>
-                            </Canvas>
+                                <xctk:IntegerUpDown Margin="4,6,4,6" Canvas.Top="5" Canvas.Right="21" Value="0" ClipValueToMinMax="True" MaxWidth="41"></xctk:IntegerUpDown>
+
+                            </StackPanel>
                             <ScrollViewer DockPanel.Dock="Bottom">
                                 <TabControl BorderThickness="0" Padding="0" SelectedIndex="{Binding ElementName=cmbEntityTypeSelector, Path=SelectedIndex}">
                                     <TabControl.Resources>
@@ -223,7 +234,7 @@
                                             </Setter>
                                         </Style>
                                     </TabControl.Resources>
-                                    <TabItem>
+                                    <TabItem Header="NPC">
                                         <StackPanel x:Name="pnlEntityNPC">
                                             <Grid>
                                                 <Grid.ColumnDefinitions>
@@ -497,7 +508,7 @@
                                             </Button>
                                         </StackPanel>
                                     </TabItem>
-                                    <TabItem>
+                                    <TabItem Header="Warp">
                                         <StackPanel x:Name="pnlEntityWarp">
                                             <Grid>
                                                 <Grid.ColumnDefinitions>
@@ -598,13 +609,699 @@
                                             </Button>
                                         </StackPanel>
                                     </TabItem>
+                                    <TabItem Header="Trigger">
+                                        <StackPanel x:Name="pnlEntityTrigger">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <Label x:Name="lblTriggerPosition" Content="Position:"/>
+                                                <StackPanel Orientation="Horizontal" Grid.Column="2">
+                                                    <Border Grid.Column="2" Margin="0,3,4,3">
+                                                        <DockPanel>
+                                                            <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                            <TextBox x:Name="tbTriggerXPos" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="34" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="0000" MaxLength="4" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                                        </DockPanel>
+                                                    </Border>
+                                                    <Border Grid.Column="2" Margin="0,3,4,3">
+                                                        <DockPanel>
+                                                            <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                            <TextBox x:Name="tbTriggerYPos" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="34" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="0000" MaxLength="4" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                                        </DockPanel>
+                                                    </Border>
+                                                </StackPanel>
+                                            </Grid>
+                                            <Label x:Name="lblTriggerHeight" Content="Height:"/>
+                                            <Border Padding="0,3,4,3">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto" />
+                                                        <ColumnDefinition Width="*" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Border Grid.Column="0" Margin="6,1,4,1">
+                                                        <DockPanel>
+                                                            <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                            <TextBox x:Name="tbTriggerHeight" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="20" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="00" MaxLength="2" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                                        </DockPanel>
+                                                    </Border>
+                                                    <ComboBox Grid.Column="1" x:Name="cbTriggerHeight" SelectedIndex="{Binding ElementName=tbWarpHeight, Path=Text}">
+                                                    </ComboBox>
+                                                </Grid>
+                                            </Border>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <Label x:Name="lblTriggerFiller1" Content="Filler:" Grid.Column="0"/>
+                                                <Border Grid.Column="2" Margin="0,3,4,3">
+                                                    <DockPanel>
+                                                        <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                        <TextBox x:Name="tbTriggerFiller1" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="20" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="00" MaxLength="2" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                                    </DockPanel>
+                                                </Border>
+                                            </Grid>
+                                            <GroupBox Header="Script Run Condition" Margin="4">
+                                                <StackPanel>
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="Auto" />
+                                                            <ColumnDefinition Width="*" />
+                                                            <ColumnDefinition Width="Auto" />
+                                                        </Grid.ColumnDefinitions>
+                                                        <Label x:Name="lblTriggerVariable" Content="Variable:" Grid.Column="0"/>
+                                                        <Border Grid.Column="2" Margin="0,3,4,3">
+                                                            <DockPanel>
+                                                                <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                                <TextBox x:Name="tbTriggerVariable" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="34" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="0000" MaxLength="4" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                                            </DockPanel>
+                                                        </Border>
+                                                    </Grid>
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="Auto" />
+                                                            <ColumnDefinition Width="*" />
+                                                            <ColumnDefinition Width="Auto" />
+                                                        </Grid.ColumnDefinitions>
+                                                        <Label x:Name="lblTriggerValue" Content="Map Number:" Grid.Column="0"/>
+                                                        <Border Grid.Column="2" Margin="0,3,4,3">
+                                                            <DockPanel Canvas.Right="4" Canvas.Top="283" Height="20">
+                                                                <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                                <TextBox x:Name="tbTriggerValue" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="34" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="0000" MaxLength="4" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                                            </DockPanel>
+                                                        </Border>
+                                                    </Grid>
+                                                </StackPanel>
+                                            </GroupBox>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <Label x:Name="lblTriggerFiller2" Content="Filler:" Grid.Column="0"/>
+                                                <Border Grid.Column="2" Margin="0,3,4,3">
+                                                    <DockPanel Canvas.Right="4" Canvas.Top="309" Height="20">
+                                                        <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                        <TextBox x:Name="tbTriggerFiller2" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="20" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="00" MaxLength="2" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                                    </DockPanel>
+                                                </Border>
+                                            </Grid>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <Label x:Name="lblTriggerFiller3" Content="Filler:" Grid.Column="0"/>
+                                                <Border Grid.Column="2" Margin="0,3,4,3">
+                                                    <DockPanel Canvas.Right="4" Canvas.Top="309" Height="20">
+                                                        <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                        <TextBox x:Name="tbTriggerFiller3" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="20" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="00" MaxLength="2" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                                    </DockPanel>
+                                                </Border>
+                                            </Grid>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <Label x:Name="lblTriggerScriptOffset" Content="Script Offset:" Grid.Column="0"/>
+                                                <Border Grid.Column="2" Margin="0,3,4,3">
+                                                    <DockPanel>
+                                                        <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                        <TextBox x:Name="tbTriggerScriptOffset" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="63" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="00000000" MaxLength="8" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                                    </DockPanel>
+                                                </Border>
+                                            </Grid>
+                                            <Button x:Name="btnTriggerOpenScript" Margin="4,3,4,3">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <local:AutoGreyableImage VerticalAlignment="Center" Margin="0,0,3,0" Source="/AMEWin;component/Resources/script_go_16x16.png"/>
+                                                    <TextBlock VerticalAlignment="Center">Open Script in Editor</TextBlock>
+                                                </StackPanel>
+                                            </Button>
+                                            <Button x:Name="btnTriggerDeleteEntity" Margin="4,3,4,3">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <local:AutoGreyableImage VerticalAlignment="Center" Margin="0,0,3,0" Source="/AMEWin;component/Resources/delete_16x16.png"/>
+                                                    <TextBlock VerticalAlignment="Center" Foreground="Red">Delete Entity</TextBlock>
+                                                </StackPanel>
+                                            </Button>
+                                        </StackPanel>
+                                    </TabItem>
+                                    <TabItem Header="Sign">
+                                        <StackPanel x:Name="pnlEntitySign">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <Label x:Name="lblSignPosition" Content="Position:"/>
+                                                <StackPanel Orientation="Horizontal" Grid.Column="2">
+                                                    <Border Grid.Column="2" Margin="0,3,4,3">
+                                                        <DockPanel>
+                                                            <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                            <TextBox x:Name="tbSignXPos" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="34" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="0000" MaxLength="4" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                                        </DockPanel>
+                                                    </Border>
+                                                    <Border Grid.Column="2" Margin="0,3,4,3">
+                                                        <DockPanel>
+                                                            <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                            <TextBox x:Name="tbSignYPos" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="34" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="0000" MaxLength="4" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                                        </DockPanel>
+                                                    </Border>
+                                                </StackPanel>
+                                            </Grid>
+                                            <Label x:Name="lblSignHeight" Content="Height:"/>
+                                            <Border Padding="0,3,4,3">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto" />
+                                                        <ColumnDefinition Width="*" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Border Grid.Column="0" Margin="6,1,4,1">
+                                                        <DockPanel>
+                                                            <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                            <TextBox x:Name="tbSignHeight" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="20" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="00" MaxLength="2" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                                        </DockPanel>
+                                                    </Border>
+                                                    <ComboBox Grid.Column="1" x:Name="cbSignHeight" SelectedIndex="{Binding ElementName=tbWarpHeight, Path=Text}">
+                                                    </ComboBox>
+                                                </Grid>
+                                            </Border>
+                                            <Label x:Name="lblSignType" Content="Type:"/>
+                                            <Border Padding="0,3,4,3">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto" />
+                                                        <ColumnDefinition Width="*" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Border Grid.Column="0" Margin="6,1,4,1">
+                                                        <DockPanel>
+                                                            <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                            <TextBox x:Name="tbSignType" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="20" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="00" MaxLength="2" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                                        </DockPanel>
+                                                    </Border>
+                                                    <ComboBox Grid.Column="1" x:Name="cbSignType" SelectedIndex="{Binding ElementName=tbWarpHeight, Path=Text}">
+                                                    </ComboBox>
+                                                </Grid>
+                                            </Border>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <Label x:Name="lblSignFiller1" Content="Filler:" Grid.Column="0"/>
+                                                <Border Grid.Column="2" Margin="0,3,4,3">
+                                                    <DockPanel>
+                                                        <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                        <TextBox x:Name="tbSignFiller1" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="20" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="00" MaxLength="2" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                                    </DockPanel>
+                                                </Border>
+                                            </Grid>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <Label x:Name="lblSignFiller2" Content="Filler:" Grid.Column="0"/>
+                                                <Border Grid.Column="2" Margin="0,3,4,3">
+                                                    <DockPanel Canvas.Right="4" Canvas.Top="309" Height="20">
+                                                        <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                        <TextBox x:Name="tbSignFiller2" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="20" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="00" MaxLength="2" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                                    </DockPanel>
+                                                </Border>
+                                            </Grid>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <Label x:Name="lblSignScriptOffset" Content="Script Offset:" Grid.Column="0"/>
+                                                <Border Grid.Column="2" Margin="0,3,4,3">
+                                                    <DockPanel>
+                                                        <TextBox DockPanel.Dock="Left" BorderThickness="1,1,0,1" Text="{Binding Source={x:Static bknd:Config.settings}, Path=HexPrefix}" IsReadOnly="True" IsTabStop="False" MaxLength="2" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                                        <TextBox x:Name="tbSignScriptOffset" FontFamily="Courier New" Padding="0,3,0,0" MinWidth="63" DockPanel.Dock="Right" BorderThickness="0,1,1,1" Text="00000000" MaxLength="8" PreviewTextInput="HexBoxOnPreviewTextInput" CharacterCasing="Upper"/>
+                                                    </DockPanel>
+                                                </Border>
+                                            </Grid>
+                                            <Button x:Name="btnSignOpenScript" Margin="4,3,4,3">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <local:AutoGreyableImage VerticalAlignment="Center" Margin="0,0,3,0" Source="/AMEWin;component/Resources/script_go_16x16.png"/>
+                                                    <TextBlock VerticalAlignment="Center">Open Script in Editor</TextBlock>
+                                                </StackPanel>
+                                            </Button>
+                                            <Button x:Name="btnSignDeleteEntity" Margin="4,3,4,3">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <local:AutoGreyableImage VerticalAlignment="Center" Margin="0,0,3,0" Source="/AMEWin;component/Resources/delete_16x16.png"/>
+                                                    <TextBlock VerticalAlignment="Center" Foreground="Red">Delete Entity</TextBlock>
+                                                </StackPanel>
+                                            </Button>
+                                        </StackPanel>
+                                    </TabItem>
                                 </TabControl>
                             </ScrollViewer>
                         </DockPanel>
                     </Grid>
                 </TabItem>
-                <TabItem Header="Wild Pokémon"/>
-                <TabItem Header="Header"/>
+                <TabItem Header="Wild Pokémon">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Label Content="Encounter Type:"/>
+                            <StackPanel Orientation="Horizontal" Grid.Column="2">
+                                <Border Margin="0,3,4,3" Width="120">
+                                    <ComboBox x:Name="cmbWildAreaSelector" SelectedIndex="0">
+                                        <ComboBoxItem Content="Grass"/>
+                                        <ComboBoxItem Content="Water"/>
+                                        <ComboBoxItem Content="Fishing"/>
+                                        <ComboBoxItem Content="Other"/>
+                                    </ComboBox>
+                                </Border>
+                                <Border Grid.Column="2" Margin="0,3,4,3">
+                                    <Button Content="Manage" Width="64"></Button>
+                                </Border>
+                            </StackPanel>
+                        </Grid>
+                        <GroupBox Header="Encounter Chance">
+                            <StackPanel>
+                                <Slider/>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <TextBlock HorizontalAlignment="Center">0%</TextBlock>
+                                    <TextBox Margin="4,0,0,0" Width="26">0</TextBox>
+                                </StackPanel>
+                            </StackPanel>
+                        </GroupBox>
+                        <TabControl BorderThickness="0" SelectedIndex="{Binding ElementName=cmbWildAreaSelector, Path=SelectedIndex}">
+                            <TabControl.Resources>
+                                <Style TargetType="TabItem">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="TabItem">
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </TabControl.Resources>
+                            <TabItem Header="Grass">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Row="0" Grid.Column="1" Content="Pokémon:"/>
+                                    <Label Grid.Row="0" Grid.Column="2" Content="Num:"/>
+                                    <Label Grid.Row="0" Grid.Column="3" Content="Min Lv:"/>
+                                    <Label Grid.Row="0" Grid.Column="4" Content="Max Lv:"/>
+                                    <Label Grid.Row="0" Grid.Column="5" Content="Chance:"/>
+                                    <Image Grid.Row="1" Grid.Column="0" Source="/AMEWin;component/Resources/PKMNQuestionMark_32x32.png"/>
+                                    <ComboBox Grid.Row="1" Grid.Column="1" Width="150" Margin="4" VerticalAlignment="Center"/>
+                                    <TextBox Grid.Row="1" Grid.Column="2" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="1" Grid.Column="3" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="1" Grid.Column="4" Margin="4" VerticalAlignment="Center"/>
+                                    <Label Grid.Row="1" Grid.Column="5" Content="20%" VerticalAlignment="Center"/>
+                                    <Image Grid.Row="2" Grid.Column="0" Source="/AMEWin;component/Resources/PKMNQuestionMark_32x32.png"/>
+                                    <ComboBox Grid.Row="2" Grid.Column="1" Width="150" Margin="4" VerticalAlignment="Center"/>
+                                    <TextBox Grid.Row="2" Grid.Column="2" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="2" Grid.Column="3" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="2" Grid.Column="4" Margin="4" VerticalAlignment="Center"/>
+                                    <Label Grid.Row="2" Grid.Column="5" Content="20%" VerticalAlignment="Center"/>
+                                    <Image Grid.Row="3" Grid.Column="0" Source="/AMEWin;component/Resources/PKMNQuestionMark_32x32.png"/>
+                                    <ComboBox Grid.Row="3" Grid.Column="1" Width="150" Margin="4" VerticalAlignment="Center"/>
+                                    <TextBox Grid.Row="3" Grid.Column="2" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="3" Grid.Column="3" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="3" Grid.Column="4" Margin="4" VerticalAlignment="Center"/>
+                                    <Label Grid.Row="3" Grid.Column="5" Content="10%" VerticalAlignment="Center"/>
+                                    <Image Grid.Row="4" Grid.Column="0" Source="/AMEWin;component/Resources/PKMNQuestionMark_32x32.png"/>
+                                    <ComboBox Grid.Row="4" Grid.Column="1" Width="150" Margin="4" VerticalAlignment="Center"/>
+                                    <TextBox Grid.Row="4" Grid.Column="2" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="4" Grid.Column="3" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="4" Grid.Column="4" Margin="4" VerticalAlignment="Center"/>
+                                    <Label Grid.Row="4" Grid.Column="5" Content="10%" VerticalAlignment="Center"/>
+                                    <Image Grid.Row="5" Grid.Column="0" Source="/AMEWin;component/Resources/PKMNQuestionMark_32x32.png"/>
+                                    <ComboBox Grid.Row="5" Grid.Column="1" Width="150" Margin="4" VerticalAlignment="Center"/>
+                                    <TextBox Grid.Row="5" Grid.Column="2" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="5" Grid.Column="3" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="5" Grid.Column="4" Margin="4" VerticalAlignment="Center"/>
+                                    <Label Grid.Row="5" Grid.Column="5" Content="10%" VerticalAlignment="Center"/>
+                                    <Image Grid.Row="6" Grid.Column="0" Source="/AMEWin;component/Resources/PKMNQuestionMark_32x32.png"/>
+                                    <ComboBox Grid.Row="6" Grid.Column="1" Width="150" Margin="4" VerticalAlignment="Center"/>
+                                    <TextBox Grid.Row="6" Grid.Column="2" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="6" Grid.Column="3" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="6" Grid.Column="4" Margin="4" VerticalAlignment="Center"/>
+                                    <Label Grid.Row="6" Grid.Column="5" Content="10%" VerticalAlignment="Center"/>
+                                    <Image Grid.Row="7" Grid.Column="0" Source="/AMEWin;component/Resources/PKMNQuestionMark_32x32.png"/>
+                                    <ComboBox Grid.Row="7" Grid.Column="1" Width="150" Margin="4" VerticalAlignment="Center"/>
+                                    <TextBox Grid.Row="7" Grid.Column="2" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="7" Grid.Column="3" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="7" Grid.Column="4" Margin="4" VerticalAlignment="Center"/>
+                                    <Label Grid.Row="7" Grid.Column="5" Content="5%" VerticalAlignment="Center"/>
+                                    <Image Grid.Row="8" Grid.Column="0" Source="/AMEWin;component/Resources/PKMNQuestionMark_32x32.png"/>
+                                    <ComboBox Grid.Row="8" Grid.Column="1" Width="150" Margin="4" VerticalAlignment="Center"/>
+                                    <TextBox Grid.Row="8" Grid.Column="2" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="8" Grid.Column="3" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="8" Grid.Column="4" Margin="4" VerticalAlignment="Center"/>
+                                    <Label Grid.Row="8" Grid.Column="5" Content="5%" VerticalAlignment="Center"/>
+                                    <Image Grid.Row="9" Grid.Column="0" Source="/AMEWin;component/Resources/PKMNQuestionMark_32x32.png"/>
+                                    <ComboBox Grid.Row="9" Grid.Column="1" Width="150" Margin="4" VerticalAlignment="Center"/>
+                                    <TextBox Grid.Row="9" Grid.Column="2" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="9" Grid.Column="3" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="9" Grid.Column="4" Margin="4" VerticalAlignment="Center"/>
+                                    <Label Grid.Row="9" Grid.Column="5" Content="4%" VerticalAlignment="Center"/>
+                                    <Image Grid.Row="10" Grid.Column="0" Source="/AMEWin;component/Resources/PKMNQuestionMark_32x32.png"/>
+                                    <ComboBox Grid.Row="10" Grid.Column="1" Width="150" Margin="4" VerticalAlignment="Center"/>
+                                    <TextBox Grid.Row="10" Grid.Column="2" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="10" Grid.Column="3" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="10" Grid.Column="4" Margin="4" VerticalAlignment="Center"/>
+                                    <Label Grid.Row="10" Grid.Column="5" Content="4%" VerticalAlignment="Center"/>
+                                    <Image Grid.Row="11" Grid.Column="0" Source="/AMEWin;component/Resources/PKMNQuestionMark_32x32.png"/>
+                                    <ComboBox Grid.Row="11" Grid.Column="1" Width="150" Margin="4" VerticalAlignment="Center"/>
+                                    <TextBox Grid.Row="11" Grid.Column="2" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="11" Grid.Column="3" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="11" Grid.Column="4" Margin="4" VerticalAlignment="Center"/>
+                                    <Label Grid.Row="11" Grid.Column="5" Content="1%" VerticalAlignment="Center"/>
+                                    <Image Grid.Row="12" Grid.Column="0" Source="/AMEWin;component/Resources/PKMNQuestionMark_32x32.png"/>
+                                    <ComboBox Grid.Row="12" Grid.Column="1" Width="150" Margin="4" VerticalAlignment="Center"/>
+                                    <TextBox Grid.Row="12" Grid.Column="2" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="12" Grid.Column="3" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="12" Grid.Column="4" Margin="4" VerticalAlignment="Center"/>
+                                    <Label Grid.Row="12" Grid.Column="5" Content="1%" VerticalAlignment="Center"/>
+                                </Grid>
+                            </TabItem>
+                            <TabItem Header="Water">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Row="0" Grid.Column="1" Content="Pokémon:"/>
+                                    <Label Grid.Row="0" Grid.Column="2" Content="Num:"/>
+                                    <Label Grid.Row="0" Grid.Column="3" Content="Min Lv:"/>
+                                    <Label Grid.Row="0" Grid.Column="4" Content="Max Lv:"/>
+                                    <Label Grid.Row="0" Grid.Column="5" Content="Chance:"/>
+                                    <Image Grid.Row="1" Grid.Column="0" Source="/AMEWin;component/Resources/PKMNQuestionMark_32x32.png"/>
+                                    <ComboBox Grid.Row="1" Grid.Column="1" Width="150" Margin="4" VerticalAlignment="Center"/>
+                                    <TextBox Grid.Row="1" Grid.Column="2" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="1" Grid.Column="3" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="1" Grid.Column="4" Margin="4" VerticalAlignment="Center"/>
+                                    <Label Grid.Row="1" Grid.Column="5" Content="60%" VerticalAlignment="Center"/>
+                                    <Image Grid.Row="2" Grid.Column="0" Source="/AMEWin;component/Resources/PKMNQuestionMark_32x32.png"/>
+                                    <ComboBox Grid.Row="2" Grid.Column="1" Width="150" Margin="4" VerticalAlignment="Center"/>
+                                    <TextBox Grid.Row="2" Grid.Column="2" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="2" Grid.Column="3" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="2" Grid.Column="4" Margin="4" VerticalAlignment="Center"/>
+                                    <Label Grid.Row="2" Grid.Column="5" Content="30%" VerticalAlignment="Center"/>
+                                    <Image Grid.Row="3" Grid.Column="0" Source="/AMEWin;component/Resources/PKMNQuestionMark_32x32.png"/>
+                                    <ComboBox Grid.Row="3" Grid.Column="1" Width="150" Margin="4" VerticalAlignment="Center"/>
+                                    <TextBox Grid.Row="3" Grid.Column="2" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="3" Grid.Column="3" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="3" Grid.Column="4" Margin="4" VerticalAlignment="Center"/>
+                                    <Label Grid.Row="3" Grid.Column="5" Content="5%" VerticalAlignment="Center"/>
+                                    <Image Grid.Row="4" Grid.Column="0" Source="/AMEWin;component/Resources/PKMNQuestionMark_32x32.png"/>
+                                    <ComboBox Grid.Row="4" Grid.Column="1" Width="150" Margin="4" VerticalAlignment="Center"/>
+                                    <TextBox Grid.Row="4" Grid.Column="2" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="4" Grid.Column="3" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="4" Grid.Column="4" Margin="4" VerticalAlignment="Center"/>
+                                    <Label Grid.Row="4" Grid.Column="5" Content="4%" VerticalAlignment="Center"/>
+                                    <Image Grid.Row="5" Grid.Column="0" Source="/AMEWin;component/Resources/PKMNQuestionMark_32x32.png"/>
+                                    <ComboBox Grid.Row="5" Grid.Column="1" Width="150" Margin="4" VerticalAlignment="Center"/>
+                                    <TextBox Grid.Row="5" Grid.Column="2" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="5" Grid.Column="3" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="5" Grid.Column="4" Margin="4" VerticalAlignment="Center"/>
+                                    <Label Grid.Row="5" Grid.Column="5" Content="1%" VerticalAlignment="Center"/>
+                                </Grid>
+                            </TabItem>
+                            <TabItem Header="Fishing">
+                                <StackPanel>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="36"/>
+                                            <ColumnDefinition Width="158"/>
+                                            <ColumnDefinition Width="38.5"/>
+                                            <ColumnDefinition Width="49"/>
+                                            <ColumnDefinition Width="49"/>
+                                            <ColumnDefinition Width="51.5"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Row="0" Grid.Column="1" Content="Pokémon:"/>
+                                        <Label Grid.Row="0" Grid.Column="2" Content="Num:"/>
+                                        <Label Grid.Row="0" Grid.Column="3" Content="Min Lv:"/>
+                                        <Label Grid.Row="0" Grid.Column="4" Content="Max Lv:"/>
+                                        <Label Grid.Row="0" Grid.Column="5" Content="Chance:"/>
+                                    </Grid>
+                                    <GroupBox Header="Old Rod">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Image Grid.Row="0" Grid.Column="0" Source="/AMEWin;component/Resources/PKMNQuestionMark_32x32.png"/>
+                                            <ComboBox Grid.Row="0" Grid.Column="1" Width="150" Margin="4" VerticalAlignment="Center"/>
+                                            <TextBox Grid.Row="0" Grid.Column="2" Margin="4" MinWidth="30" VerticalAlignment="Center"/>
+                                            <xctk:IntegerUpDown Grid.Row="0" Grid.Column="3" Margin="4" VerticalAlignment="Center"/>
+                                            <xctk:IntegerUpDown Grid.Row="0" Grid.Column="4" Margin="4" VerticalAlignment="Center"/>
+                                            <Label Grid.Row="0" Grid.Column="5" Content="20%" VerticalAlignment="Center"/>
+                                            <Image Grid.Row="1" Grid.Column="0" Source="/AMEWin;component/Resources/PKMNQuestionMark_32x32.png"/>
+                                            <ComboBox Grid.Row="1" Grid.Column="1" Width="150" Margin="4" VerticalAlignment="Center"/>
+                                            <TextBox Grid.Row="1" Grid.Column="2" Margin="4" MinWidth="30" VerticalAlignment="Center"/>
+                                            <xctk:IntegerUpDown Grid.Row="1" Grid.Column="3" Margin="4" VerticalAlignment="Center"/>
+                                            <xctk:IntegerUpDown Grid.Row="1" Grid.Column="4" Margin="4" VerticalAlignment="Center"/>
+                                            <Label Grid.Row="1" Grid.Column="5" Content="20%" VerticalAlignment="Center"/>
+                                        </Grid>
+                                    </GroupBox>
+                                    <GroupBox Header="Good Rod">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Image Grid.Row="0" Grid.Column="0" Source="/AMEWin;component/Resources/PKMNQuestionMark_32x32.png"/>
+                                            <ComboBox Grid.Row="0" Grid.Column="1" Width="150" Margin="4" VerticalAlignment="Center"/>
+                                            <TextBox Grid.Row="0" Grid.Column="2" Margin="4" MinWidth="30" VerticalAlignment="Center"/>
+                                            <xctk:IntegerUpDown Grid.Row="0" Grid.Column="3" Margin="4" VerticalAlignment="Center"/>
+                                            <xctk:IntegerUpDown Grid.Row="0" Grid.Column="4" Margin="4" VerticalAlignment="Center"/>
+                                            <Label Grid.Row="0" Grid.Column="5" Content="10%" VerticalAlignment="Center"/>
+                                            <Image Grid.Row="1" Grid.Column="0" Source="/AMEWin;component/Resources/PKMNQuestionMark_32x32.png"/>
+                                            <ComboBox Grid.Row="1" Grid.Column="1" Width="150" Margin="4" VerticalAlignment="Center"/>
+                                            <TextBox Grid.Row="1" Grid.Column="2" Margin="4" MinWidth="30" VerticalAlignment="Center"/>
+                                            <xctk:IntegerUpDown Grid.Row="1" Grid.Column="3" Margin="4" VerticalAlignment="Center"/>
+                                            <xctk:IntegerUpDown Grid.Row="1" Grid.Column="4" Margin="4" VerticalAlignment="Center"/>
+                                            <Label Grid.Row="1" Grid.Column="5" Content="10%" VerticalAlignment="Center"/>
+                                            <Image Grid.Row="2" Grid.Column="0" Source="/AMEWin;component/Resources/PKMNQuestionMark_32x32.png"/>
+                                            <ComboBox Grid.Row="2" Grid.Column="1" Width="150" Margin="4" VerticalAlignment="Center"/>
+                                            <TextBox Grid.Row="2" Grid.Column="2" Margin="4" MinWidth="30" VerticalAlignment="Center"/>
+                                            <xctk:IntegerUpDown Grid.Row="2" Grid.Column="3" Margin="4" VerticalAlignment="Center"/>
+                                            <xctk:IntegerUpDown Grid.Row="2" Grid.Column="4" Margin="4" VerticalAlignment="Center"/>
+                                            <Label Grid.Row="2" Grid.Column="5" Content="10%" VerticalAlignment="Center"/>
+                                        </Grid>
+                                    </GroupBox>
+                                    <GroupBox Header="Super Rod">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Image Grid.Row="0" Grid.Column="0" Source="/AMEWin;component/Resources/PKMNQuestionMark_32x32.png"/>
+                                            <ComboBox Grid.Row="0" Grid.Column="1" Width="150" Margin="4" VerticalAlignment="Center"/>
+                                            <TextBox Grid.Row="0" Grid.Column="2" Margin="4" MinWidth="30" VerticalAlignment="Center"/>
+                                            <xctk:IntegerUpDown Grid.Row="0" Grid.Column="3" Margin="4" VerticalAlignment="Center"/>
+                                            <xctk:IntegerUpDown Grid.Row="0" Grid.Column="4" Margin="4" VerticalAlignment="Center"/>
+                                            <Label Grid.Row="0" Grid.Column="5" Content="10%" VerticalAlignment="Center"/>
+                                            <Image Grid.Row="1" Grid.Column="0" Source="/AMEWin;component/Resources/PKMNQuestionMark_32x32.png"/>
+                                            <ComboBox Grid.Row="1" Grid.Column="1" Width="150" Margin="4" VerticalAlignment="Center"/>
+                                            <TextBox Grid.Row="1" Grid.Column="2" Margin="4" MinWidth="30" VerticalAlignment="Center"/>
+                                            <xctk:IntegerUpDown Grid.Row="1" Grid.Column="3" Margin="4" VerticalAlignment="Center"/>
+                                            <xctk:IntegerUpDown Grid.Row="1" Grid.Column="4" Margin="4" VerticalAlignment="Center"/>
+                                            <Label Grid.Row="1" Grid.Column="5" Content="5%" VerticalAlignment="Center"/>
+                                            <Image Grid.Row="2" Grid.Column="0" Source="/AMEWin;component/Resources/PKMNQuestionMark_32x32.png"/>
+                                            <ComboBox Grid.Row="2" Grid.Column="1" Width="150" Margin="4" VerticalAlignment="Center"/>
+                                            <TextBox Grid.Row="2" Grid.Column="2" Margin="4" MinWidth="30" VerticalAlignment="Center"/>
+                                            <xctk:IntegerUpDown Grid.Row="2" Grid.Column="3" Margin="4" VerticalAlignment="Center"/>
+                                            <xctk:IntegerUpDown Grid.Row="2" Grid.Column="4" Margin="4" VerticalAlignment="Center"/>
+                                            <Label Grid.Row="2" Grid.Column="5" Content="5%" VerticalAlignment="Center"/>
+                                            <Image Grid.Row="3" Grid.Column="0" Source="/AMEWin;component/Resources/PKMNQuestionMark_32x32.png"/>
+                                            <ComboBox Grid.Row="3" Grid.Column="1" Width="150" Margin="4" VerticalAlignment="Center"/>
+                                            <TextBox Grid.Row="3" Grid.Column="2" Margin="4" MinWidth="30" VerticalAlignment="Center"/>
+                                            <xctk:IntegerUpDown Grid.Row="3" Grid.Column="3" Margin="4" VerticalAlignment="Center"/>
+                                            <xctk:IntegerUpDown Grid.Row="3" Grid.Column="4" Margin="4" VerticalAlignment="Center"/>
+                                            <Label Grid.Row="3" Grid.Column="5" Content="4%" VerticalAlignment="Center"/>
+                                            <Image Grid.Row="4" Grid.Column="0" Source="/AMEWin;component/Resources/PKMNQuestionMark_32x32.png"/>
+                                            <ComboBox Grid.Row="4" Grid.Column="1" Width="150" Margin="4" VerticalAlignment="Center"/>
+                                            <TextBox Grid.Row="4" Grid.Column="2" Margin="4" MinWidth="30" VerticalAlignment="Center"/>
+                                            <xctk:IntegerUpDown Grid.Row="4" Grid.Column="3" Margin="4" VerticalAlignment="Center"/>
+                                            <xctk:IntegerUpDown Grid.Row="4" Grid.Column="4" Margin="4" VerticalAlignment="Center"/>
+                                            <Label Grid.Row="4" Grid.Column="5" Content="4%" VerticalAlignment="Center"/>
+                                        </Grid>
+                                    </GroupBox>
+                                </StackPanel>
+                            </TabItem>
+                            <TabItem Header="Other">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Row="0" Grid.Column="1" Content="Pokémon:"/>
+                                    <Label Grid.Row="0" Grid.Column="2" Content="Num:"/>
+                                    <Label Grid.Row="0" Grid.Column="3" Content="Min Lv:"/>
+                                    <Label Grid.Row="0" Grid.Column="4" Content="Max Lv:"/>
+                                    <Label Grid.Row="0" Grid.Column="5" Content="Chance:"/>
+                                    <Image Grid.Row="1" Grid.Column="0" Source="/AMEWin;component/Resources/PKMNQuestionMark_32x32.png"/>
+                                    <ComboBox Grid.Row="1" Grid.Column="1" Width="150" Margin="4" VerticalAlignment="Center"/>
+                                    <TextBox Grid.Row="1" Grid.Column="2" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="1" Grid.Column="3" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="1" Grid.Column="4" Margin="4" VerticalAlignment="Center"/>
+                                    <Label Grid.Row="1" Grid.Column="5" Content="20%" VerticalAlignment="Center"/>
+                                    <Image Grid.Row="2" Grid.Column="0" Source="/AMEWin;component/Resources/PKMNQuestionMark_32x32.png"/>
+                                    <ComboBox Grid.Row="2" Grid.Column="1" Width="150" Margin="4" VerticalAlignment="Center"/>
+                                    <TextBox Grid.Row="2" Grid.Column="2" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="2" Grid.Column="3" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="2" Grid.Column="4" Margin="4" VerticalAlignment="Center"/>
+                                    <Label Grid.Row="2" Grid.Column="5" Content="20%" VerticalAlignment="Center"/>
+                                    <Image Grid.Row="3" Grid.Column="0" Source="/AMEWin;component/Resources/PKMNQuestionMark_32x32.png"/>
+                                    <ComboBox Grid.Row="3" Grid.Column="1" Width="150" Margin="4" VerticalAlignment="Center"/>
+                                    <TextBox Grid.Row="3" Grid.Column="2" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="3" Grid.Column="3" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="3" Grid.Column="4" Margin="4" VerticalAlignment="Center"/>
+                                    <Label Grid.Row="3" Grid.Column="5" Content="10%" VerticalAlignment="Center"/>
+                                    <Image Grid.Row="4" Grid.Column="0" Source="/AMEWin;component/Resources/PKMNQuestionMark_32x32.png"/>
+                                    <ComboBox Grid.Row="4" Grid.Column="1" Width="150" Margin="4" VerticalAlignment="Center"/>
+                                    <TextBox Grid.Row="4" Grid.Column="2" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="4" Grid.Column="3" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="4" Grid.Column="4" Margin="4" VerticalAlignment="Center"/>
+                                    <Label Grid.Row="4" Grid.Column="5" Content="10%" VerticalAlignment="Center"/>
+                                    <Image Grid.Row="5" Grid.Column="0" Source="/AMEWin;component/Resources/PKMNQuestionMark_32x32.png"/>
+                                    <ComboBox Grid.Row="5" Grid.Column="1" Width="150" Margin="4" VerticalAlignment="Center"/>
+                                    <TextBox Grid.Row="5" Grid.Column="2" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="5" Grid.Column="3" Margin="4" VerticalAlignment="Center"/>
+                                    <xctk:IntegerUpDown Grid.Row="5" Grid.Column="4" Margin="4" VerticalAlignment="Center"/>
+                                    <Label Grid.Row="5" Grid.Column="5" Content="10%" VerticalAlignment="Center"/>
+                                </Grid>
+                            </TabItem>
+                        </TabControl>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Header">
+                    <StackPanel Orientation="Vertical" Width="Auto">
+                        <GroupBox Header="Map Header">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Content="Layout Header Pointer:"/>
+                                <TextBox Grid.Column="2"/>
+                            </Grid>
+                        </GroupBox>
+                        <GroupBox Header="Layout Header">
+
+                        </GroupBox>
+                    </StackPanel>
+                </TabItem>
             </TabControl>
         </Grid>
     </DockPanel>

@@ -49,6 +49,7 @@ namespace PGMEWPFUI
         private void OpenROMButton_Click(object sender, RoutedEventArgs e)
         {
             Program.LoadROM();
+            LoadMap
         }
 
         public void SetTitleText(string title)
@@ -98,9 +99,160 @@ namespace PGMEWPFUI
 
         }
 
-        public void LoadMapNodes()
-        {
+        public Dictionary<int, TreeViewItem> mapTreeViewItems;
+        ImageTreeViewItem currentTreeViewItem;
+        TreeView backupTree = new TreeView();
+        System.Drawing.Bitmap mapImage = Properties.Resources.map_16x16;
+        System.Drawing.Bitmap mapSelectedImage = Properties.Resources.image_16x16;
+        System.Drawing.Bitmap mapFolderClosedImage = Properties.Resources.folder_closed_map_16x16;
+        System.Drawing.Bitmap mapFolderOpenImage = Properties.Resources.folder_map_16x16;
+        System.Drawing.Bitmap folderClosedImage = Properties.Resources.folder_closed_16x16;
 
+        public void LoadMapNodes()
+        {/*
+            int i = 0;
+            switch (settings.MapSortOrder)
+            {
+                default:
+                    mapTreeNodes.Add(0xFF, new TreeNode(PGMEBackend.Program.rmInternalStrings.GetString("InvalidMapNameIndex")));
+                    foreach (KeyValuePair<int, MapName> mapName in PGMEBackend.Program.mapNames)
+                    {
+                        var mapNameNode = new TreeNode("[" + mapName.Key.ToString("X2") + "] " + mapName.Value.name);
+                        mapNameNode.SelectedImageKey = "Folder Closed";
+                        mapNameNode.ImageKey = "Folder Closed";
+                        backupTree.Nodes.Add(mapNameNode);
+                        mapTreeNodes.Add(mapName.Key, mapNameNode);
+
+                    }
+                    foreach (MapBank mapBank in PGMEBackend.Program.mapBanks.Values)
+                    {
+                        foreach (Map map in mapBank.GetBank().Values)
+                        {
+                            try
+                            {
+                                var node = mapTreeViewItems[map.mapNameIndex].Nodes.Add("mapNode" + i++, map.name);
+                                node.Tag = map;
+                                mapTreeViewItems[map.mapNameIndex].SelectedImageKey = "Map Folder Closed";
+                                mapTreeViewItems[map.mapNameIndex].ImageKey = "Map Folder Closed";
+                            }
+                            catch (KeyNotFoundException)
+                            {
+                                if (!backupTree.Nodes.Contains(mapTreeViewItems[0xFF]))
+                                {
+                                    backupTree.Nodes.Add(mapTreeViewItems[0xFF]);
+                                }
+                                var node = mapTreeViewItems[0xFF].Nodes.Add("mapNode" + i++, map.name);
+                                node.Tag = map;
+                                mapTreeViewItems[0xFF].SelectedImageKey = "Map Folder Closed";
+                                mapTreeViewItems[0xFF].ImageKey = "Map Folder Closed";
+                            }
+                        }
+                    }
+                    break;
+                case "Bank":
+                    foreach (KeyValuePair<int, MapBank> mapBank in PGMEBackend.Program.mapBanks)
+                    {
+                        var bankNode = new TreeViewItem("[" + mapBank.Key.ToString("X2") + "]");
+                        bankNode.SelectedImageKey = "Folder Closed";
+                        bankNode.ImageKey = "Folder Closed";
+                        backupTree.Nodes.Add(bankNode);
+                        mapTreeViewItems.Add(mapBank.Key, bankNode);
+                        foreach (Map map in mapBank.Value.GetBank().Values)
+                        {
+                            var node = bankNode.Nodes.Add("mapNode" + i++, map.name);
+                            node.Tag = map;
+                            bankNode.SelectedImageKey = "Map Folder Closed";
+                            bankNode.ImageKey = "Map Folder Closed";
+                        }
+                    }
+                    break;
+                case "Layout":
+                    foreach (KeyValuePair<int, MapLayout> mapLayout in PGMEBackend.Program.mapLayouts)
+                    {
+                        var mapLayoutNode = new TreeViewItem(mapLayout.Value.name);
+                        mapLayoutNode.Tag = mapLayout.Value;
+                        backupTree.Nodes.Add(mapLayoutNode);
+                        mapTreeViewItems.Add(mapLayout.Key, mapLayoutNode);
+                    }
+                    foreach (MapBank mapBank in PGMEBackend.Program.mapBanks.Values)
+                    {
+                        foreach (Map map in mapBank.GetBank().Values)
+                        {
+                            var node = mapTreeViewItems[map.mapLayoutIndex].Nodes.Add("mapNode" + i++, map.name);
+                            node.Tag = map;
+                            mapTreeViewItems[map.mapLayoutIndex].SelectedImageKey = "Map Folder Closed";
+                            mapTreeViewItems[map.mapLayoutIndex].ImageKey = "Map Folder Closed";
+                        }
+
+                    }
+                    break;
+                case "Tileset":
+                    int j = 0;
+                    foreach (KeyValuePair<int, MapTileset> mapTileset in PGMEBackend.Program.mapTilesets)
+                    {
+                        var mapTilesetNode = new TreeViewItem("[" + j++ + "] " + settings.HexPrefix + (mapTileset.Key + 0x8000000).ToString("X8"));
+                        backupTree.Nodes.Add(mapTilesetNode);
+                        mapTreeViewItems.Add(mapTileset.Key, mapTilesetNode);
+                    }
+                    foreach (MapBank mapBank in PGMEBackend.Program.mapBanks.Values)
+                    {
+                        foreach (Map map in mapBank.GetBank().Values)
+                        {
+                            var node = mapTreeViewItems[map.layout.globalTilesetPointer].Nodes.Add("mapNode" + i++, map.name);
+                            node.Tag = map;
+                            mapTreeViewItems[map.layout.globalTilesetPointer].SelectedImageKey = "Map Folder Closed";
+                            mapTreeViewItems[map.layout.globalTilesetPointer].ImageKey = "Map Folder Closed";
+
+                            node = mapTreeViewItems[map.layout.localTilesetPointer].Nodes.Add("mapNode" + i++, map.name);
+                            node.Tag = map;
+                            mapTreeViewItems[map.layout.localTilesetPointer].SelectedImageKey = "Map Folder Closed";
+                            mapTreeViewItems[map.layout.localTilesetPointer].ImageKey = "Map Folder Closed";
+                        }
+
+                    }
+                    foreach (KeyValuePair<int, MapLayout> mapLayout in PGMEBackend.Program.mapLayouts)
+                    {
+                        TreeViewItem node;
+                        if (mapTreeViewItems.ContainsKey(mapLayout.Value.globalTilesetPointer) && GetNodeFromTag(mapLayout.Value, mapTreeViewItems[mapLayout.Value.globalTilesetPointer]) == null)
+                        {
+                            node = mapTreeViewItems[mapLayout.Value.globalTilesetPointer].Nodes.Add("mapNode" + i++, mapLayout.Value.name);
+                            node.Tag = mapLayout.Value;
+                            //mapTreeViewItems.Add(mapLayout.Key, node);
+                            mapTreeViewItems[mapLayout.Value.globalTilesetPointer].SelectedImageKey = "Map Folder Closed";
+                            mapTreeViewItems[mapLayout.Value.globalTilesetPointer].ImageKey = "Map Folder Closed";
+                        }
+                        if (mapTreeViewItems.ContainsKey(mapLayout.Value.localTilesetPointer) && GetNodeFromTag(mapLayout.Value, mapTreeViewItems[mapLayout.Value.localTilesetPointer]) == null)
+                        {
+                            node = mapTreeViewItems[mapLayout.Value.localTilesetPointer].Nodes.Add("mapNode" + i++, mapLayout.Value.name);
+                            node.Tag = mapLayout.Value;
+                            //mapTreeViewItems.Add(mapLayout.Key, node);
+                            mapTreeViewItems[mapLayout.Value.localTilesetPointer].SelectedImageKey = "Map Folder Closed";
+                            mapTreeViewItems[mapLayout.Value.localTilesetPointer].ImageKey = "Map Folder Closed";
+                        }
+                    }
+                    break;
+            }
+            CopyTreeViewItems(backupTree, mapListTreeView);
+            if (PGMEBackend.Program.currentLayout != null)
+            {
+                TreeViewItem itemNode = null;
+                object tag = null;
+                if (PGMEBackend.Program.currentMap != null)
+                    tag = PGMEBackend.Program.currentMap;
+                else
+                    tag = PGMEBackend.Program.currentLayout;
+                foreach (TreeViewItem node in mapListTreeView.Nodes)
+                {
+                    itemNode = GetNodeFromTag(tag, node);
+                    if (itemNode != null)
+                    {
+                        itemNode.EnsureVisible();
+                        itemNode.ImageKey = "Map Selected";
+                        currentTreeViewItem = itemNode;
+                        break;
+                    }
+                }
+            }*/
         }
 
         public void ClearMapNodes()
@@ -300,5 +452,79 @@ namespace PGMEWPFUI
                 }
             }
         }
+    }
+
+    public class ImageTreeViewItem : TreeViewItem
+    {
+        #region Data Member
+
+        Uri _imageUrl = null;
+        Image _image = null;
+        TextBlock _textBlock = null;
+
+        #endregion
+
+        #region Properties
+
+        public Uri ImageUrl
+        {
+            get { return _imageUrl; }
+            set
+            {
+                _imageUrl = value;
+                _image.Source = new BitmapImage(value);
+            }
+        }
+
+        public string Text
+        {
+            get { return _textBlock.Text; }
+            set { _textBlock.Text = value; }
+        }
+
+        #endregion
+
+        #region Constructor
+
+        public ImageTreeViewItem()
+        {
+            CreateTreeViewItemTemplate();
+        }
+
+        public ImageTreeViewItem(string name, ImageSource image)
+        {
+            CreateTreeViewItemTemplate();
+            _image.Source = image;
+            _textBlock.Text = name;
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        private void CreateTreeViewItemTemplate()
+        {
+            StackPanel stack = new StackPanel();
+            stack.Orientation = Orientation.Horizontal;
+
+            _image = new Image();
+            _image.HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
+            _image.VerticalAlignment = System.Windows.VerticalAlignment.Center;
+            _image.Width = 16;
+            _image.Height = 16;
+            _image.Margin = new Thickness(2);
+
+            stack.Children.Add(_image);
+
+            _textBlock = new TextBlock();
+            _textBlock.Margin = new Thickness(2);
+            _textBlock.VerticalAlignment = System.Windows.VerticalAlignment.Center;
+
+            stack.Children.Add(_textBlock);
+
+            Header = stack;
+        }
+
+        #endregion
     }
 }

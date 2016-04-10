@@ -133,7 +133,6 @@
     </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="DMAKey.pfx" />
-    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
